@@ -106,9 +106,9 @@
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="twcss-w-full twcss-bg-primary-default twcss-text-white">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="twcss-w-full twcss-text-white">
   <!-- Mobile Header -->
-  <div class="twcss-block md:twcss-hidden">
+  <div class="twcss-block md:twcss-hidden twcss-bg-primary-default">
     <div class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-3">
       <div class="twcss-flex twcss-items-center twcss-justify-between">
         <!-- Menu Button -->
@@ -146,7 +146,7 @@
   </div>
 
   <!-- Desktop Header -->
-  <div class="twcss-hidden md:twcss-block">
+  <div class="twcss-hidden md:twcss-block twcss-bg-primary-default">
     <div class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-2">
       <div class="twcss-flex twcss-items-center twcss-justify-between twcss-gap-4">
         <!-- Logo -->
