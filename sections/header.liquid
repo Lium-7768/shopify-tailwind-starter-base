@@ -1,0 +1,223 @@
+{%- comment -%}HTML{%- endcomment -%}
+<header class="custom-header">
+  <div class="custom-header__container">
+    {%- comment -%}Logo Section{%- endcomment -%}
+    <div class="custom-header__left">
+      <a href="/" class="custom-header__logo">
+        <img src="{{ section.settings.logo | img_url: 'master' }}" alt="{{ shop.name }}">
+      </a>
+      
+      <nav class="custom-header__nav">
+        <ul class="custom-header__menu">
+          <li><a href="/products">Products</a></li>
+          <li><a href="/sales">Sales</a></li>
+          <li><a href="/brands">Brands</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    {%- comment -%}Search Section{%- endcomment -%}
+    <div class="custom-header__center">
+      <form action="/search" class="custom-header__search">
+        <input 
+          type="text" 
+          name="q" 
+          class="custom-header__search-input"
+          placeholder="{{ section.settings.search_placeholder }}"
+        >
+        <button type="submit" class="custom-header__search-button">
+          <svg class="icon icon-search" aria-hidden="true" focusable="false">
+            <use xlink:href="#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    {%- comment -%}Actions Section{%- endcomment -%}
+    <div class="custom-header__right">
+      <a href="/quick-order" class="custom-header__action-link">
+        <span class="custom-header__icon"></span>
+        <span>Quick Order</span>
+      </a>
+      <a href="/price-list" class="custom-header__action-link">
+        <span class="custom-header__icon"></span>
+        <span>Price List</span>
+      </a>
+      <div class="custom-header__notification">
+        <span class="custom-header__icon"></span>
+      </div>
+      <div class="custom-header__user-dropdown">
+        <button class="custom-header__user-button">
+          <span class="custom-header__icon"></span>
+          <span>Frank</span>
+          <span class="custom-header__dropdown-arrow"></span>
+        </button>
+      </div>
+      <div class="custom-header__cart">
+        <button class="custom-header__cart-button">
+          <span>4 items</span>
+          <span class="custom-header__cart-divider">|</span>
+          <span>$ 999.99</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+{%- comment -%}Schema{%- endcomment -%}
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Search Placeholder",
+      "default": "What can we help you find?"
+    }
+  ]
+}
+{% endschema %}
+
+{%- comment -%}CSS{%- endcomment -%}
+<style>
+.custom-header {
+  background: #1e3d8f;
+  padding: 15px 0;
+}
+
+.custom-header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.custom-header__left,
+.custom-header__center,
+.custom-header__right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.custom-header__left {
+  gap: 30px;
+}
+
+.custom-header__logo {
+  max-width: 150px;
+}
+
+.custom-header__logo img {
+  width: 100%;
+  height: auto;
+}
+
+.custom-header__menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-header__menu a {
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.custom-header__search {
+  width: 100%;
+  position: relative;
+}
+
+.custom-header__search-input {
+  width: 100%;
+  padding: 8px 40px 8px 15px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+}
+
+.custom-header__search-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.custom-header__right {
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.custom-header__action-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.custom-header__icon {
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.custom-header__user-button {
+  background: none;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.custom-header__dropdown-arrow {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white;
+  margin-left: 5px;
+}
+
+.custom-header__cart-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.custom-header__cart-divider {
+  opacity: 0.5;
+}
+
+.icon-search {
+  width: 16px;
+  height: 16px;
+  fill: #666;
+}
+</style>
