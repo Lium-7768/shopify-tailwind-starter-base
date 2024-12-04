@@ -106,7 +106,7 @@
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="twcss-w-full twcss-bg-primary-default twcss-text-white">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="twcss-w-full twcss-bg-primary-default twcss-text-white twcss-shadow-sm">
   <!-- Mobile Header -->
   <div class="twcss-block md:twcss-hidden">
     <div class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-3">
@@ -147,47 +147,6 @@
 
   <!-- Desktop Header -->
   <div class="twcss-hidden md:twcss-block">
-    <!-- Top Bar -->
-    <div class="twcss-border-b twcss-border-primary-light">
-      <div class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-2">
-        <div class="twcss-flex twcss-items-center twcss-justify-between">
-          <!-- Left: Products Dropdown -->
-          <div class="twcss-flex twcss-items-center twcss-gap-8">
-            <div class="twcss-relative">
-              <button class="twcss-flex twcss-items-center twcss-gap-2 twcss-text-sm">
-                <span>Products</span>
-                <svg class="twcss-w-4 twcss-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-            </div>
-
-            <!-- Delivery Address -->
-            <div class="twcss-flex twcss-items-center twcss-gap-2">
-              <svg class="twcss-w-4 twcss-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-              <span class="twcss-text-sm">Delivery to</span>
-              <button class="twcss-text-sm twcss-font-medium twcss-flex twcss-items-center twcss-gap-1">
-                1801 Century Park E, Suite 1470
-                <svg class="twcss-w-4 twcss-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- Right: Quick Links -->
-          <div class="twcss-flex twcss-items-center twcss-gap-6">
-            <a href="#" class="twcss-text-sm hover:twcss-text-gray-200">Quick Order</a>
-            <a href="#" class="twcss-text-sm hover:twcss-text-gray-200">Price List</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Header -->
     <div class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-2">
       <div class="twcss-flex twcss-items-center twcss-justify-between twcss-gap-4">
         <!-- Logo -->
@@ -204,15 +163,27 @@
           </a>
         </div>
 
+        <!-- Products Button -->
+        <a href="#" class="twcss-flex twcss-items-center twcss-gap-2 twcss-text-sm">
+          <button class="twcss-px-4 twcss-py-2 twcss-border twcss-border-white twcss-rounded">
+            Products
+          </button>
+        </a>
+
+        <!-- Address -->
+        <div class="twcss-text-sm">
+          Delivery to 1801 Century Park E, Suite 1470
+        </div>
+
         <!-- Search Bar -->
         <div class="twcss-hidden md:twcss-block twcss-flex-1 twcss-max-w-xl twcss-mx-4">
           <div class="twcss-relative">
             <input type="text" 
               placeholder="What can we help you find?" 
-              class="twcss-w-full twcss-pl-4 twcss-pr-10 twcss-py-2 twcss-border twcss-border-primary-light twcss-rounded-lg twcss-bg-primary-light twcss-text-white placeholder:twcss-text-gray-300 focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-primary-light"
+              class="twcss-w-full twcss-pl-4 twcss-pr-10 twcss-py-2 twcss-border twcss-border-gray-300 twcss-rounded-lg focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-blue-500"
             >
             <button class="twcss-absolute twcss-right-3 twcss-top-1/2 -twcss-translate-y-1/2">
-              <svg class="twcss-w-5 twcss-h-5 twcss-text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="twcss-w-5 twcss-h-5 twcss-text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
             </button>
@@ -220,7 +191,23 @@
         </div>
 
         <!-- Right Actions -->
-        <div class="twcss-flex twcss-items-center twcss-gap-4">
+        <div class="twcss-flex twcss-items-center twcss-gap-2 md:twcss-gap-4">
+          <!-- Quick Order -->
+          <a href="#" class="twcss-hidden md:twcss-flex twcss-items-center twcss-gap-2 twcss-text-sm">
+            <svg class="twcss-w-5 twcss-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+            <span>Quick Order</span>
+          </a>
+
+          <!-- Price List -->
+          <a href="#" class="twcss-hidden md:twcss-flex twcss-items-center twcss-gap-2 twcss-text-sm">
+            <svg class="twcss-w-5 twcss-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            <span>Price List</span>
+          </a>
+
           <!-- Cart -->
           <a href="{{ routes.cart_url }}" class="twcss-flex twcss-items-center twcss-gap-2">
             <div class="twcss-relative">
@@ -231,7 +218,7 @@
                 {{ cart.item_count }}
               </span>
             </div>
-            <span class="twcss-text-sm">$ {{ cart.total_price | money_without_currency }}</span>
+            <span class="twcss-hidden md:twcss-block twcss-text-sm">$ {{ cart.total_price | money_without_currency }}</span>
           </a>
 
           <!-- User -->
@@ -239,7 +226,7 @@
             <svg class="twcss-w-6 twcss-h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
             </svg>
-            <span class="twcss-text-sm">Frank</span>
+            <span class="twcss-hidden md:twcss-block twcss-text-sm">Frank</span>
           </button>
         </div>
       </div>
