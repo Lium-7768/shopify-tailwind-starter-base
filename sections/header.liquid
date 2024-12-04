@@ -106,9 +106,9 @@
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="twcss-w-full twcss-text-white">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="twcss-w-full twcss-bg-primary-default twcss-text-white">
   <!-- Mobile Header -->
-  <div class="twcss-block md:twcss-hidden twcss-bg-primary-default">
+  <div class="twcss-block md:twcss-hidden">
     <div class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-3">
       <div class="twcss-flex twcss-items-center twcss-justify-between">
         <!-- Menu Button -->
@@ -146,27 +146,7 @@
   </div>
 
   <!-- Desktop Header -->
-  <div class="twcss-hidden md:twcss-block twcss-bg-primary-default">
-    <!-- Top Bar with Address -->
-    <div class="twcss-border-b twcss-border-primary-light">
-      <div class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-2">
-        <div class="twcss-flex twcss-items-center twcss-gap-2">
-          <span class="twcss-text-sm">Delivery to:</span>
-          <button class="twcss-flex twcss-items-center twcss-gap-1 twcss-text-sm hover:twcss-text-gray-200">
-            <svg class="twcss-w-4 twcss-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-            1801 Century Park E, Suite 1470
-            <svg class="twcss-w-4 twcss-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Header -->
+  <div class="twcss-hidden md:twcss-block">
     <div class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-2">
       <div class="twcss-flex twcss-items-center twcss-justify-between twcss-gap-4">
         <!-- Logo -->
@@ -184,7 +164,7 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="twcss-hidden lg:twcss-flex twcss-items-center twcss-gap-6">
+        <nav class="twcss-flex twcss-items-center twcss-gap-6">
           <button class="twcss-flex twcss-items-center twcss-gap-1 hover:twcss-text-gray-200">
             Products
             <svg class="twcss-w-4 twcss-h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -194,7 +174,7 @@
         </nav>
 
         <!-- Search Bar -->
-        <div class="twcss-hidden md:twcss-block twcss-flex-1 twcss-max-w-xl twcss-mx-4">
+        <div class="twcss-flex-1 twcss-max-w-xl twcss-mx-4">
           <div class="twcss-relative">
             <input type="text" 
               placeholder="What can we help you find?" 
@@ -211,7 +191,7 @@
         <!-- Right Actions -->
         <div class="twcss-flex twcss-items-center twcss-gap-2 md:twcss-gap-4">
           <!-- Quick Order -->
-          <a href="#" class="twcss-hidden md:twcss-flex twcss-items-center twcss-gap-2 twcss-text-sm hover:twcss-text-gray-200">
+          <a href="#" class="twcss-flex twcss-items-center twcss-gap-2 twcss-text-sm hover:twcss-text-gray-200">
             <svg class="twcss-w-5 twcss-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
@@ -219,7 +199,7 @@
           </a>
 
           <!-- Price List -->
-          <a href="#" class="twcss-hidden md:twcss-flex twcss-items-center twcss-gap-2 twcss-text-sm hover:twcss-text-gray-200">
+          <a href="#" class="twcss-flex twcss-items-center twcss-gap-2 twcss-text-sm hover:twcss-text-gray-200">
             <svg class="twcss-w-5 twcss-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
             </svg>
