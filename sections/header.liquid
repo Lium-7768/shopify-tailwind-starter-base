@@ -106,83 +106,79 @@
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="twcss-w-full twcss-bg-white">
-  <header class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-3 md:twcss-py-4">
-    <div class="twcss-flex twcss-items-center twcss-justify-between">
-      <!-- 左侧菜单按钮 (移动端) -->
-      {%- if section.settings.menu != blank -%}
-        <button type="button" class="twcss-p-2 md:twcss-hidden">
-          <span class="twcss-w-6 twcss-h-6">
-            {{ 'icon-hamburger.svg' | inline_asset_content }}
-          </span>
-        </button>
-      {%- endif -%}
-
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="twcss-w-full twcss-bg-white twcss-shadow-sm">
+  <div class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-2">
+    <div class="twcss-flex twcss-items-center twcss-justify-between twcss-gap-4">
       <!-- Logo -->
-      <div class="twcss-flex-1 twcss-flex twcss-justify-center md:twcss-justify-start">
+      <div class="twcss-w-32 md:twcss-w-40">
         <a href="{{ routes.root_url }}" class="twcss-block">
           {%- if settings.logo != blank -%}
-            {{ settings.logo | image_url: width: 180 | image_tag:
-              class: 'twcss-h-8 md:twcss-h-10 twcss-w-auto',
+            {{ settings.logo | image_url: width: 160 | image_tag:
+              class: 'twcss-h-8 twcss-w-auto',
               loading: 'lazy'
             }}
           {%- else -%}
-            <span class="twcss-text-xl twcss-font-bold">{{ shop.name }}</span>
+            <span class="twcss-text-lg twcss-font-bold">{{ shop.name }}</span>
           {%- endif -%}
         </a>
       </div>
 
-      <!-- 右侧图标组 -->
+      <!-- Search Bar (Desktop) -->
+      <div class="twcss-hidden md:twcss-block twcss-flex-1 twcss-max-w-xl twcss-mx-4">
+        <div class="twcss-relative">
+          <input type="text" 
+            placeholder="What can we help you find?" 
+            class="twcss-w-full twcss-pl-4 twcss-pr-10 twcss-py-2 twcss-border twcss-border-gray-300 twcss-rounded-lg focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-blue-500"
+          >
+          <button class="twcss-absolute twcss-right-3 twcss-top-1/2 -twcss-translate-y-1/2">
+            <svg class="twcss-w-5 twcss-h-5 twcss-text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+              <!-- Search icon path -->
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Actions -->
       <div class="twcss-flex twcss-items-center twcss-gap-2 md:twcss-gap-4">
-        <!-- 搜索图标 -->
-        <button type="button" class="twcss-p-2">
-          <span class="twcss-w-6 twcss-h-6 twcss-block">
-            {{ 'icon-search.svg' | inline_asset_content }}
-          </span>
-        </button>
+        <!-- Quick Order -->
+        <a href="#" class="twcss-hidden md:twcss-flex twcss-items-center twcss-gap-2 twcss-text-sm twcss-text-blue-600">
+          <svg class="twcss-w-5 twcss-h-5" fill="currentColor" viewBox="0 0 20 20">
+            <!-- Lightning icon path -->
+          </svg>
+          <span>Quick Order</span>
+        </a>
 
-        <!-- 账户图标 -->
-        {%- if shop.customer_accounts_enabled -%}
-          <a href="{{ routes.account_url }}" class="twcss-p-2">
-            <span class="twcss-w-6 twcss-h-6 twcss-block">
-              {{ 'icon-account.svg' | inline_asset_content }}
-            </span>
-          </a>
-        {%- endif -%}
+        <!-- Price List -->
+        <a href="#" class="twcss-hidden md:twcss-flex twcss-items-center twcss-gap-2 twcss-text-sm twcss-text-blue-600">
+          <svg class="twcss-w-5 twcss-h-5" fill="currentColor" viewBox="0 0 20 20">
+            <!-- Document icon path -->
+          </svg>
+          <span>Price List</span>
+        </a>
 
-        <!-- 购物车图标 -->
-        <a href="{{ routes.cart_url }}" class="twcss-p-2 twcss-relative">
-          <span class="twcss-w-6 twcss-h-6 twcss-block">
-            {%- if cart == empty -%}
-              {{ 'icon-cart-empty.svg' | inline_asset_content }}
-            {%- else -%}
-              {{ 'icon-cart.svg' | inline_asset_content }}
-            {%- endif -%}
-          </span>
-          {%- if cart != empty -%}
-            <span class="twcss-absolute twcss-top-1 twcss-right-1 twcss-bg-primary twcss-text-white twcss-rounded-full twcss-w-4 twcss-h-4 twcss-flex twcss-items-center twcss-justify-center twcss-text-xs">
+        <!-- Cart -->
+        <a href="{{ routes.cart_url }}" class="twcss-flex twcss-items-center twcss-gap-2">
+          <div class="twcss-relative">
+            <svg class="twcss-w-6 twcss-h-6" fill="currentColor" viewBox="0 0 20 20">
+              <!-- Cart icon path -->
+            </svg>
+            <span class="twcss-absolute -twcss-top-1 -twcss-right-1 twcss-bg-blue-600 twcss-text-white twcss-rounded-full twcss-w-4 twcss-h-4 twcss-flex twcss-items-center twcss-justify-center twcss-text-xs">
               {{ cart.item_count }}
             </span>
-          {%- endif -%}
+          </div>
+          <span class="twcss-hidden md:twcss-block twcss-text-sm">$ {{ cart.total_price | money_without_currency }}</span>
         </a>
+
+        <!-- User -->
+        <button class="twcss-flex twcss-items-center twcss-gap-2">
+          <svg class="twcss-w-6 twcss-h-6" fill="currentColor" viewBox="0 0 20 20">
+            <!-- User icon path -->
+          </svg>
+          <span class="twcss-hidden md:twcss-block twcss-text-sm">Frank</span>
+        </button>
       </div>
     </div>
-
-    <!-- 导航菜单 (桌面端) -->
-    {%- if section.settings.menu != blank -%}
-      <nav class="twcss-hidden md:twcss-block twcss-mt-4">
-        <ul class="twcss-flex twcss-items-center twcss-justify-center twcss-gap-6">
-          {%- for link in section.settings.menu.links -%}
-            <li>
-              <a href="{{ link.url }}" class="twcss-text-sm twcss-font-medium twcss-text-gray-700 hover:twcss-text-primary">
-                {{ link.title }}
-              </a>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </nav>
-    {%- endif -%}
-  </header>
+  </div>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
 {%- if settings.cart_type == "notification" -%}
