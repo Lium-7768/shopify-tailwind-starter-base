@@ -1,5 +1,113 @@
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
 /*
-! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -211,6 +319,8 @@ textarea {
   /* 1 */
   line-height: inherit;
   /* 1 */
+  letter-spacing: inherit;
+  /* 1 */
   color: inherit;
   /* 1 */
   margin: 0;
@@ -234,9 +344,9 @@ select {
 */
 
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
   -webkit-appearance: button;
   /* 1 */
   background-color: transparent;
@@ -383,13 +493,6 @@ input::-moz-placeholder, textarea::-moz-placeholder {
   /* 2 */
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
@@ -447,161 +550,5984 @@ video {
 
 /* Make elements with the HTML hidden attribute stay hidden by default */
 
-[hidden] {
+[hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
 
-*, ::before, ::after {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
+.twcss-container {
+  width: 100%;
 }
 
-::-webkit-backdrop {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
+@media (min-width: 320px) {
+  .twcss-container {
+    max-width: 320px;
+  }
 }
 
-::backdrop {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
+@media (min-width: 750px) {
+  .twcss-container {
+    max-width: 750px;
+  }
 }
 
-.twcss-text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+@media (min-width: 990px) {
+  .twcss-container {
+    max-width: 990px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .twcss-container {
+    max-width: 1440px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .twcss-container {
+    max-width: 1920px;
+  }
+}
+
+.twcss-absolute {
+  position: absolute;
+}
+
+.twcss-relative {
+  position: relative;
+}
+
+.-twcss-right-1 {
+  right: -0.25rem;
+}
+
+.-twcss-top-1 {
+  top: -0.25rem;
+}
+
+.twcss-right-3 {
+  right: 0.75rem;
+}
+
+.twcss-top-1\/2 {
+  top: 50%;
+}
+
+.twcss-mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.twcss-mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.twcss-block {
+  display: block;
+}
+
+.twcss-flex {
+  display: flex;
+}
+
+.twcss-hidden {
+  display: none;
+}
+
+.twcss-h-4 {
+  height: 1rem;
+}
+
+.twcss-h-5 {
+  height: 1.25rem;
+}
+
+.twcss-h-6 {
+  height: 1.5rem;
+}
+
+.twcss-h-8 {
+  height: 2rem;
+}
+
+.twcss-w-32 {
+  width: 8rem;
+}
+
+.twcss-w-4 {
+  width: 1rem;
+}
+
+.twcss-w-5 {
+  width: 1.25rem;
+}
+
+.twcss-w-6 {
+  width: 1.5rem;
+}
+
+.twcss-w-auto {
+  width: auto;
+}
+
+.twcss-w-full {
+  width: 100%;
+}
+
+.twcss-max-w-xl {
+  max-width: 36rem;
+}
+
+.twcss-flex-1 {
+  flex: 1 1 0%;
+}
+
+.-twcss-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.twcss-items-center {
+  align-items: center;
+}
+
+.twcss-justify-center {
+  justify-content: center;
+}
+
+.twcss-justify-between {
+  justify-content: space-between;
+}
+
+.twcss-gap-1 {
+  gap: 0.25rem;
+}
+
+.twcss-gap-2 {
+  gap: 0.5rem;
+}
+
+.twcss-gap-4 {
+  gap: 1rem;
+}
+
+.twcss-gap-6 {
+  gap: 1.5rem;
+}
+
+.twcss-gap-8 {
+  gap: 2rem;
+}
+
+.twcss-rounded-full {
+  border-radius: 9999px;
+}
+
+.twcss-rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.twcss-border {
+  border-width: 1px;
+}
+
+.twcss-border-b {
+  border-bottom-width: 1px;
+}
+
+.twcss-border-accent-default {
+  --tw-border-opacity: 1;
+  border-color: rgb(245 245 245 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-accent-default\/0 {
+  border-color: rgb(245 245 245 / 0);
+}
+
+.twcss-border-accent-default\/10 {
+  border-color: rgb(245 245 245 / 0.1);
+}
+
+.twcss-border-accent-default\/100 {
+  border-color: rgb(245 245 245 / 1);
+}
+
+.twcss-border-accent-default\/15 {
+  border-color: rgb(245 245 245 / 0.15);
+}
+
+.twcss-border-accent-default\/20 {
+  border-color: rgb(245 245 245 / 0.2);
+}
+
+.twcss-border-accent-default\/25 {
+  border-color: rgb(245 245 245 / 0.25);
+}
+
+.twcss-border-accent-default\/30 {
+  border-color: rgb(245 245 245 / 0.3);
+}
+
+.twcss-border-accent-default\/35 {
+  border-color: rgb(245 245 245 / 0.35);
+}
+
+.twcss-border-accent-default\/40 {
+  border-color: rgb(245 245 245 / 0.4);
+}
+
+.twcss-border-accent-default\/45 {
+  border-color: rgb(245 245 245 / 0.45);
+}
+
+.twcss-border-accent-default\/5 {
+  border-color: rgb(245 245 245 / 0.05);
+}
+
+.twcss-border-accent-default\/50 {
+  border-color: rgb(245 245 245 / 0.5);
+}
+
+.twcss-border-accent-default\/55 {
+  border-color: rgb(245 245 245 / 0.55);
+}
+
+.twcss-border-accent-default\/60 {
+  border-color: rgb(245 245 245 / 0.6);
+}
+
+.twcss-border-accent-default\/65 {
+  border-color: rgb(245 245 245 / 0.65);
+}
+
+.twcss-border-accent-default\/70 {
+  border-color: rgb(245 245 245 / 0.7);
+}
+
+.twcss-border-accent-default\/75 {
+  border-color: rgb(245 245 245 / 0.75);
+}
+
+.twcss-border-accent-default\/80 {
+  border-color: rgb(245 245 245 / 0.8);
+}
+
+.twcss-border-accent-default\/85 {
+  border-color: rgb(245 245 245 / 0.85);
+}
+
+.twcss-border-accent-default\/90 {
+  border-color: rgb(245 245 245 / 0.9);
+}
+
+.twcss-border-accent-default\/95 {
+  border-color: rgb(245 245 245 / 0.95);
+}
+
+.twcss-border-accent-foreground {
+  --tw-border-opacity: 1;
+  border-color: rgb(26 26 26 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-accent-foreground\/0 {
+  border-color: rgb(26 26 26 / 0);
+}
+
+.twcss-border-accent-foreground\/10 {
+  border-color: rgb(26 26 26 / 0.1);
+}
+
+.twcss-border-accent-foreground\/100 {
+  border-color: rgb(26 26 26 / 1);
+}
+
+.twcss-border-accent-foreground\/15 {
+  border-color: rgb(26 26 26 / 0.15);
+}
+
+.twcss-border-accent-foreground\/20 {
+  border-color: rgb(26 26 26 / 0.2);
+}
+
+.twcss-border-accent-foreground\/25 {
+  border-color: rgb(26 26 26 / 0.25);
+}
+
+.twcss-border-accent-foreground\/30 {
+  border-color: rgb(26 26 26 / 0.3);
+}
+
+.twcss-border-accent-foreground\/35 {
+  border-color: rgb(26 26 26 / 0.35);
+}
+
+.twcss-border-accent-foreground\/40 {
+  border-color: rgb(26 26 26 / 0.4);
+}
+
+.twcss-border-accent-foreground\/45 {
+  border-color: rgb(26 26 26 / 0.45);
+}
+
+.twcss-border-accent-foreground\/5 {
+  border-color: rgb(26 26 26 / 0.05);
+}
+
+.twcss-border-accent-foreground\/50 {
+  border-color: rgb(26 26 26 / 0.5);
+}
+
+.twcss-border-accent-foreground\/55 {
+  border-color: rgb(26 26 26 / 0.55);
+}
+
+.twcss-border-accent-foreground\/60 {
+  border-color: rgb(26 26 26 / 0.6);
+}
+
+.twcss-border-accent-foreground\/65 {
+  border-color: rgb(26 26 26 / 0.65);
+}
+
+.twcss-border-accent-foreground\/70 {
+  border-color: rgb(26 26 26 / 0.7);
+}
+
+.twcss-border-accent-foreground\/75 {
+  border-color: rgb(26 26 26 / 0.75);
+}
+
+.twcss-border-accent-foreground\/80 {
+  border-color: rgb(26 26 26 / 0.8);
+}
+
+.twcss-border-accent-foreground\/85 {
+  border-color: rgb(26 26 26 / 0.85);
+}
+
+.twcss-border-accent-foreground\/90 {
+  border-color: rgb(26 26 26 / 0.9);
+}
+
+.twcss-border-accent-foreground\/95 {
+  border-color: rgb(26 26 26 / 0.95);
+}
+
+.twcss-border-background {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-background\/0 {
+  border-color: rgb(255 255 255 / 0);
+}
+
+.twcss-border-background\/10 {
+  border-color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-border-background\/100 {
+  border-color: rgb(255 255 255 / 1);
+}
+
+.twcss-border-background\/15 {
+  border-color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-border-background\/20 {
+  border-color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-border-background\/25 {
+  border-color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-border-background\/30 {
+  border-color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-border-background\/35 {
+  border-color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-border-background\/40 {
+  border-color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-border-background\/45 {
+  border-color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-border-background\/5 {
+  border-color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-border-background\/50 {
+  border-color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-border-background\/55 {
+  border-color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-border-background\/60 {
+  border-color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-border-background\/65 {
+  border-color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-border-background\/70 {
+  border-color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-border-background\/75 {
+  border-color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-border-background\/80 {
+  border-color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-border-background\/85 {
+  border-color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-border-background\/90 {
+  border-color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-border-background\/95 {
+  border-color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-border-card-default {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-card-default\/0 {
+  border-color: rgb(255 255 255 / 0);
+}
+
+.twcss-border-card-default\/10 {
+  border-color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-border-card-default\/100 {
+  border-color: rgb(255 255 255 / 1);
+}
+
+.twcss-border-card-default\/15 {
+  border-color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-border-card-default\/20 {
+  border-color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-border-card-default\/25 {
+  border-color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-border-card-default\/30 {
+  border-color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-border-card-default\/35 {
+  border-color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-border-card-default\/40 {
+  border-color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-border-card-default\/45 {
+  border-color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-border-card-default\/5 {
+  border-color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-border-card-default\/50 {
+  border-color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-border-card-default\/55 {
+  border-color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-border-card-default\/60 {
+  border-color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-border-card-default\/65 {
+  border-color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-border-card-default\/70 {
+  border-color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-border-card-default\/75 {
+  border-color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-border-card-default\/80 {
+  border-color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-border-card-default\/85 {
+  border-color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-border-card-default\/90 {
+  border-color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-border-card-default\/95 {
+  border-color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-border-card-foreground {
+  --tw-border-opacity: 1;
+  border-color: rgb(10 10 10 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-card-foreground\/0 {
+  border-color: rgb(10 10 10 / 0);
+}
+
+.twcss-border-card-foreground\/10 {
+  border-color: rgb(10 10 10 / 0.1);
+}
+
+.twcss-border-card-foreground\/100 {
+  border-color: rgb(10 10 10 / 1);
+}
+
+.twcss-border-card-foreground\/15 {
+  border-color: rgb(10 10 10 / 0.15);
+}
+
+.twcss-border-card-foreground\/20 {
+  border-color: rgb(10 10 10 / 0.2);
+}
+
+.twcss-border-card-foreground\/25 {
+  border-color: rgb(10 10 10 / 0.25);
+}
+
+.twcss-border-card-foreground\/30 {
+  border-color: rgb(10 10 10 / 0.3);
+}
+
+.twcss-border-card-foreground\/35 {
+  border-color: rgb(10 10 10 / 0.35);
+}
+
+.twcss-border-card-foreground\/40 {
+  border-color: rgb(10 10 10 / 0.4);
+}
+
+.twcss-border-card-foreground\/45 {
+  border-color: rgb(10 10 10 / 0.45);
+}
+
+.twcss-border-card-foreground\/5 {
+  border-color: rgb(10 10 10 / 0.05);
+}
+
+.twcss-border-card-foreground\/50 {
+  border-color: rgb(10 10 10 / 0.5);
+}
+
+.twcss-border-card-foreground\/55 {
+  border-color: rgb(10 10 10 / 0.55);
+}
+
+.twcss-border-card-foreground\/60 {
+  border-color: rgb(10 10 10 / 0.6);
+}
+
+.twcss-border-card-foreground\/65 {
+  border-color: rgb(10 10 10 / 0.65);
+}
+
+.twcss-border-card-foreground\/70 {
+  border-color: rgb(10 10 10 / 0.7);
+}
+
+.twcss-border-card-foreground\/75 {
+  border-color: rgb(10 10 10 / 0.75);
+}
+
+.twcss-border-card-foreground\/80 {
+  border-color: rgb(10 10 10 / 0.8);
+}
+
+.twcss-border-card-foreground\/85 {
+  border-color: rgb(10 10 10 / 0.85);
+}
+
+.twcss-border-card-foreground\/90 {
+  border-color: rgb(10 10 10 / 0.9);
+}
+
+.twcss-border-card-foreground\/95 {
+  border-color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-border-destructive-default {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 0 0 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-destructive-default\/0 {
+  border-color: rgb(255 0 0 / 0);
+}
+
+.twcss-border-destructive-default\/10 {
+  border-color: rgb(255 0 0 / 0.1);
+}
+
+.twcss-border-destructive-default\/100 {
+  border-color: rgb(255 0 0 / 1);
+}
+
+.twcss-border-destructive-default\/15 {
+  border-color: rgb(255 0 0 / 0.15);
+}
+
+.twcss-border-destructive-default\/20 {
+  border-color: rgb(255 0 0 / 0.2);
+}
+
+.twcss-border-destructive-default\/25 {
+  border-color: rgb(255 0 0 / 0.25);
+}
+
+.twcss-border-destructive-default\/30 {
+  border-color: rgb(255 0 0 / 0.3);
+}
+
+.twcss-border-destructive-default\/35 {
+  border-color: rgb(255 0 0 / 0.35);
+}
+
+.twcss-border-destructive-default\/40 {
+  border-color: rgb(255 0 0 / 0.4);
+}
+
+.twcss-border-destructive-default\/45 {
+  border-color: rgb(255 0 0 / 0.45);
+}
+
+.twcss-border-destructive-default\/5 {
+  border-color: rgb(255 0 0 / 0.05);
+}
+
+.twcss-border-destructive-default\/50 {
+  border-color: rgb(255 0 0 / 0.5);
+}
+
+.twcss-border-destructive-default\/55 {
+  border-color: rgb(255 0 0 / 0.55);
+}
+
+.twcss-border-destructive-default\/60 {
+  border-color: rgb(255 0 0 / 0.6);
+}
+
+.twcss-border-destructive-default\/65 {
+  border-color: rgb(255 0 0 / 0.65);
+}
+
+.twcss-border-destructive-default\/70 {
+  border-color: rgb(255 0 0 / 0.7);
+}
+
+.twcss-border-destructive-default\/75 {
+  border-color: rgb(255 0 0 / 0.75);
+}
+
+.twcss-border-destructive-default\/80 {
+  border-color: rgb(255 0 0 / 0.8);
+}
+
+.twcss-border-destructive-default\/85 {
+  border-color: rgb(255 0 0 / 0.85);
+}
+
+.twcss-border-destructive-default\/90 {
+  border-color: rgb(255 0 0 / 0.9);
+}
+
+.twcss-border-destructive-default\/95 {
+  border-color: rgb(255 0 0 / 0.95);
+}
+
+.twcss-border-destructive-foreground {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-destructive-foreground\/0 {
+  border-color: rgb(255 255 255 / 0);
+}
+
+.twcss-border-destructive-foreground\/10 {
+  border-color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-border-destructive-foreground\/100 {
+  border-color: rgb(255 255 255 / 1);
+}
+
+.twcss-border-destructive-foreground\/15 {
+  border-color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-border-destructive-foreground\/20 {
+  border-color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-border-destructive-foreground\/25 {
+  border-color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-border-destructive-foreground\/30 {
+  border-color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-border-destructive-foreground\/35 {
+  border-color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-border-destructive-foreground\/40 {
+  border-color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-border-destructive-foreground\/45 {
+  border-color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-border-destructive-foreground\/5 {
+  border-color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-border-destructive-foreground\/50 {
+  border-color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-border-destructive-foreground\/55 {
+  border-color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-border-destructive-foreground\/60 {
+  border-color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-border-destructive-foreground\/65 {
+  border-color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-border-destructive-foreground\/70 {
+  border-color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-border-destructive-foreground\/75 {
+  border-color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-border-destructive-foreground\/80 {
+  border-color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-border-destructive-foreground\/85 {
+  border-color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-border-destructive-foreground\/90 {
+  border-color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-border-destructive-foreground\/95 {
+  border-color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-border-foreground {
+  --tw-border-opacity: 1;
+  border-color: rgb(10 10 10 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-foreground\/0 {
+  border-color: rgb(10 10 10 / 0);
+}
+
+.twcss-border-foreground\/10 {
+  border-color: rgb(10 10 10 / 0.1);
+}
+
+.twcss-border-foreground\/100 {
+  border-color: rgb(10 10 10 / 1);
+}
+
+.twcss-border-foreground\/15 {
+  border-color: rgb(10 10 10 / 0.15);
+}
+
+.twcss-border-foreground\/20 {
+  border-color: rgb(10 10 10 / 0.2);
+}
+
+.twcss-border-foreground\/25 {
+  border-color: rgb(10 10 10 / 0.25);
+}
+
+.twcss-border-foreground\/30 {
+  border-color: rgb(10 10 10 / 0.3);
+}
+
+.twcss-border-foreground\/35 {
+  border-color: rgb(10 10 10 / 0.35);
+}
+
+.twcss-border-foreground\/40 {
+  border-color: rgb(10 10 10 / 0.4);
+}
+
+.twcss-border-foreground\/45 {
+  border-color: rgb(10 10 10 / 0.45);
+}
+
+.twcss-border-foreground\/5 {
+  border-color: rgb(10 10 10 / 0.05);
+}
+
+.twcss-border-foreground\/50 {
+  border-color: rgb(10 10 10 / 0.5);
+}
+
+.twcss-border-foreground\/55 {
+  border-color: rgb(10 10 10 / 0.55);
+}
+
+.twcss-border-foreground\/60 {
+  border-color: rgb(10 10 10 / 0.6);
+}
+
+.twcss-border-foreground\/65 {
+  border-color: rgb(10 10 10 / 0.65);
+}
+
+.twcss-border-foreground\/70 {
+  border-color: rgb(10 10 10 / 0.7);
+}
+
+.twcss-border-foreground\/75 {
+  border-color: rgb(10 10 10 / 0.75);
+}
+
+.twcss-border-foreground\/80 {
+  border-color: rgb(10 10 10 / 0.8);
+}
+
+.twcss-border-foreground\/85 {
+  border-color: rgb(10 10 10 / 0.85);
+}
+
+.twcss-border-foreground\/90 {
+  border-color: rgb(10 10 10 / 0.9);
+}
+
+.twcss-border-foreground\/95 {
+  border-color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-border-muted-default {
+  --tw-border-opacity: 1;
+  border-color: rgb(245 245 245 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-muted-default\/0 {
+  border-color: rgb(245 245 245 / 0);
+}
+
+.twcss-border-muted-default\/10 {
+  border-color: rgb(245 245 245 / 0.1);
+}
+
+.twcss-border-muted-default\/100 {
+  border-color: rgb(245 245 245 / 1);
+}
+
+.twcss-border-muted-default\/15 {
+  border-color: rgb(245 245 245 / 0.15);
+}
+
+.twcss-border-muted-default\/20 {
+  border-color: rgb(245 245 245 / 0.2);
+}
+
+.twcss-border-muted-default\/25 {
+  border-color: rgb(245 245 245 / 0.25);
+}
+
+.twcss-border-muted-default\/30 {
+  border-color: rgb(245 245 245 / 0.3);
+}
+
+.twcss-border-muted-default\/35 {
+  border-color: rgb(245 245 245 / 0.35);
+}
+
+.twcss-border-muted-default\/40 {
+  border-color: rgb(245 245 245 / 0.4);
+}
+
+.twcss-border-muted-default\/45 {
+  border-color: rgb(245 245 245 / 0.45);
+}
+
+.twcss-border-muted-default\/5 {
+  border-color: rgb(245 245 245 / 0.05);
+}
+
+.twcss-border-muted-default\/50 {
+  border-color: rgb(245 245 245 / 0.5);
+}
+
+.twcss-border-muted-default\/55 {
+  border-color: rgb(245 245 245 / 0.55);
+}
+
+.twcss-border-muted-default\/60 {
+  border-color: rgb(245 245 245 / 0.6);
+}
+
+.twcss-border-muted-default\/65 {
+  border-color: rgb(245 245 245 / 0.65);
+}
+
+.twcss-border-muted-default\/70 {
+  border-color: rgb(245 245 245 / 0.7);
+}
+
+.twcss-border-muted-default\/75 {
+  border-color: rgb(245 245 245 / 0.75);
+}
+
+.twcss-border-muted-default\/80 {
+  border-color: rgb(245 245 245 / 0.8);
+}
+
+.twcss-border-muted-default\/85 {
+  border-color: rgb(245 245 245 / 0.85);
+}
+
+.twcss-border-muted-default\/90 {
+  border-color: rgb(245 245 245 / 0.9);
+}
+
+.twcss-border-muted-default\/95 {
+  border-color: rgb(245 245 245 / 0.95);
+}
+
+.twcss-border-muted-foreground {
+  --tw-border-opacity: 1;
+  border-color: rgb(115 115 115 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-muted-foreground\/0 {
+  border-color: rgb(115 115 115 / 0);
+}
+
+.twcss-border-muted-foreground\/10 {
+  border-color: rgb(115 115 115 / 0.1);
+}
+
+.twcss-border-muted-foreground\/100 {
+  border-color: rgb(115 115 115 / 1);
+}
+
+.twcss-border-muted-foreground\/15 {
+  border-color: rgb(115 115 115 / 0.15);
+}
+
+.twcss-border-muted-foreground\/20 {
+  border-color: rgb(115 115 115 / 0.2);
+}
+
+.twcss-border-muted-foreground\/25 {
+  border-color: rgb(115 115 115 / 0.25);
+}
+
+.twcss-border-muted-foreground\/30 {
+  border-color: rgb(115 115 115 / 0.3);
+}
+
+.twcss-border-muted-foreground\/35 {
+  border-color: rgb(115 115 115 / 0.35);
+}
+
+.twcss-border-muted-foreground\/40 {
+  border-color: rgb(115 115 115 / 0.4);
+}
+
+.twcss-border-muted-foreground\/45 {
+  border-color: rgb(115 115 115 / 0.45);
+}
+
+.twcss-border-muted-foreground\/5 {
+  border-color: rgb(115 115 115 / 0.05);
+}
+
+.twcss-border-muted-foreground\/50 {
+  border-color: rgb(115 115 115 / 0.5);
+}
+
+.twcss-border-muted-foreground\/55 {
+  border-color: rgb(115 115 115 / 0.55);
+}
+
+.twcss-border-muted-foreground\/60 {
+  border-color: rgb(115 115 115 / 0.6);
+}
+
+.twcss-border-muted-foreground\/65 {
+  border-color: rgb(115 115 115 / 0.65);
+}
+
+.twcss-border-muted-foreground\/70 {
+  border-color: rgb(115 115 115 / 0.7);
+}
+
+.twcss-border-muted-foreground\/75 {
+  border-color: rgb(115 115 115 / 0.75);
+}
+
+.twcss-border-muted-foreground\/80 {
+  border-color: rgb(115 115 115 / 0.8);
+}
+
+.twcss-border-muted-foreground\/85 {
+  border-color: rgb(115 115 115 / 0.85);
+}
+
+.twcss-border-muted-foreground\/90 {
+  border-color: rgb(115 115 115 / 0.9);
+}
+
+.twcss-border-muted-foreground\/95 {
+  border-color: rgb(115 115 115 / 0.95);
+}
+
+.twcss-border-popover-default {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-popover-default\/0 {
+  border-color: rgb(255 255 255 / 0);
+}
+
+.twcss-border-popover-default\/10 {
+  border-color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-border-popover-default\/100 {
+  border-color: rgb(255 255 255 / 1);
+}
+
+.twcss-border-popover-default\/15 {
+  border-color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-border-popover-default\/20 {
+  border-color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-border-popover-default\/25 {
+  border-color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-border-popover-default\/30 {
+  border-color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-border-popover-default\/35 {
+  border-color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-border-popover-default\/40 {
+  border-color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-border-popover-default\/45 {
+  border-color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-border-popover-default\/5 {
+  border-color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-border-popover-default\/50 {
+  border-color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-border-popover-default\/55 {
+  border-color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-border-popover-default\/60 {
+  border-color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-border-popover-default\/65 {
+  border-color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-border-popover-default\/70 {
+  border-color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-border-popover-default\/75 {
+  border-color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-border-popover-default\/80 {
+  border-color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-border-popover-default\/85 {
+  border-color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-border-popover-default\/90 {
+  border-color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-border-popover-default\/95 {
+  border-color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-border-popover-foreground {
+  --tw-border-opacity: 1;
+  border-color: rgb(10 10 10 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-popover-foreground\/0 {
+  border-color: rgb(10 10 10 / 0);
+}
+
+.twcss-border-popover-foreground\/10 {
+  border-color: rgb(10 10 10 / 0.1);
+}
+
+.twcss-border-popover-foreground\/100 {
+  border-color: rgb(10 10 10 / 1);
+}
+
+.twcss-border-popover-foreground\/15 {
+  border-color: rgb(10 10 10 / 0.15);
+}
+
+.twcss-border-popover-foreground\/20 {
+  border-color: rgb(10 10 10 / 0.2);
+}
+
+.twcss-border-popover-foreground\/25 {
+  border-color: rgb(10 10 10 / 0.25);
+}
+
+.twcss-border-popover-foreground\/30 {
+  border-color: rgb(10 10 10 / 0.3);
+}
+
+.twcss-border-popover-foreground\/35 {
+  border-color: rgb(10 10 10 / 0.35);
+}
+
+.twcss-border-popover-foreground\/40 {
+  border-color: rgb(10 10 10 / 0.4);
+}
+
+.twcss-border-popover-foreground\/45 {
+  border-color: rgb(10 10 10 / 0.45);
+}
+
+.twcss-border-popover-foreground\/5 {
+  border-color: rgb(10 10 10 / 0.05);
+}
+
+.twcss-border-popover-foreground\/50 {
+  border-color: rgb(10 10 10 / 0.5);
+}
+
+.twcss-border-popover-foreground\/55 {
+  border-color: rgb(10 10 10 / 0.55);
+}
+
+.twcss-border-popover-foreground\/60 {
+  border-color: rgb(10 10 10 / 0.6);
+}
+
+.twcss-border-popover-foreground\/65 {
+  border-color: rgb(10 10 10 / 0.65);
+}
+
+.twcss-border-popover-foreground\/70 {
+  border-color: rgb(10 10 10 / 0.7);
+}
+
+.twcss-border-popover-foreground\/75 {
+  border-color: rgb(10 10 10 / 0.75);
+}
+
+.twcss-border-popover-foreground\/80 {
+  border-color: rgb(10 10 10 / 0.8);
+}
+
+.twcss-border-popover-foreground\/85 {
+  border-color: rgb(10 10 10 / 0.85);
+}
+
+.twcss-border-popover-foreground\/90 {
+  border-color: rgb(10 10 10 / 0.9);
+}
+
+.twcss-border-popover-foreground\/95 {
+  border-color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-border-primary-default {
+  --tw-border-opacity: 1;
+  border-color: rgb(23 70 162 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-primary-default\/0 {
+  border-color: rgb(23 70 162 / 0);
+}
+
+.twcss-border-primary-default\/10 {
+  border-color: rgb(23 70 162 / 0.1);
+}
+
+.twcss-border-primary-default\/100 {
+  border-color: rgb(23 70 162 / 1);
+}
+
+.twcss-border-primary-default\/15 {
+  border-color: rgb(23 70 162 / 0.15);
+}
+
+.twcss-border-primary-default\/20 {
+  border-color: rgb(23 70 162 / 0.2);
+}
+
+.twcss-border-primary-default\/25 {
+  border-color: rgb(23 70 162 / 0.25);
+}
+
+.twcss-border-primary-default\/30 {
+  border-color: rgb(23 70 162 / 0.3);
+}
+
+.twcss-border-primary-default\/35 {
+  border-color: rgb(23 70 162 / 0.35);
+}
+
+.twcss-border-primary-default\/40 {
+  border-color: rgb(23 70 162 / 0.4);
+}
+
+.twcss-border-primary-default\/45 {
+  border-color: rgb(23 70 162 / 0.45);
+}
+
+.twcss-border-primary-default\/5 {
+  border-color: rgb(23 70 162 / 0.05);
+}
+
+.twcss-border-primary-default\/50 {
+  border-color: rgb(23 70 162 / 0.5);
+}
+
+.twcss-border-primary-default\/55 {
+  border-color: rgb(23 70 162 / 0.55);
+}
+
+.twcss-border-primary-default\/60 {
+  border-color: rgb(23 70 162 / 0.6);
+}
+
+.twcss-border-primary-default\/65 {
+  border-color: rgb(23 70 162 / 0.65);
+}
+
+.twcss-border-primary-default\/70 {
+  border-color: rgb(23 70 162 / 0.7);
+}
+
+.twcss-border-primary-default\/75 {
+  border-color: rgb(23 70 162 / 0.75);
+}
+
+.twcss-border-primary-default\/80 {
+  border-color: rgb(23 70 162 / 0.8);
+}
+
+.twcss-border-primary-default\/85 {
+  border-color: rgb(23 70 162 / 0.85);
+}
+
+.twcss-border-primary-default\/90 {
+  border-color: rgb(23 70 162 / 0.9);
+}
+
+.twcss-border-primary-default\/95 {
+  border-color: rgb(23 70 162 / 0.95);
+}
+
+.twcss-border-primary-foreground {
+  border-color: #5F9DF7E5;
+}
+
+.twcss-border-primary-foreground\/0 {
+  border-color: rgb(95 157 247 / 0);
+}
+
+.twcss-border-primary-foreground\/10 {
+  border-color: rgb(95 157 247 / 0.1);
+}
+
+.twcss-border-primary-foreground\/100 {
+  border-color: rgb(95 157 247 / 1);
+}
+
+.twcss-border-primary-foreground\/15 {
+  border-color: rgb(95 157 247 / 0.15);
+}
+
+.twcss-border-primary-foreground\/20 {
+  border-color: rgb(95 157 247 / 0.2);
+}
+
+.twcss-border-primary-foreground\/25 {
+  border-color: rgb(95 157 247 / 0.25);
+}
+
+.twcss-border-primary-foreground\/30 {
+  border-color: rgb(95 157 247 / 0.3);
+}
+
+.twcss-border-primary-foreground\/35 {
+  border-color: rgb(95 157 247 / 0.35);
+}
+
+.twcss-border-primary-foreground\/40 {
+  border-color: rgb(95 157 247 / 0.4);
+}
+
+.twcss-border-primary-foreground\/45 {
+  border-color: rgb(95 157 247 / 0.45);
+}
+
+.twcss-border-primary-foreground\/5 {
+  border-color: rgb(95 157 247 / 0.05);
+}
+
+.twcss-border-primary-foreground\/50 {
+  border-color: rgb(95 157 247 / 0.5);
+}
+
+.twcss-border-primary-foreground\/55 {
+  border-color: rgb(95 157 247 / 0.55);
+}
+
+.twcss-border-primary-foreground\/60 {
+  border-color: rgb(95 157 247 / 0.6);
+}
+
+.twcss-border-primary-foreground\/65 {
+  border-color: rgb(95 157 247 / 0.65);
+}
+
+.twcss-border-primary-foreground\/70 {
+  border-color: rgb(95 157 247 / 0.7);
+}
+
+.twcss-border-primary-foreground\/75 {
+  border-color: rgb(95 157 247 / 0.75);
+}
+
+.twcss-border-primary-foreground\/80 {
+  border-color: rgb(95 157 247 / 0.8);
+}
+
+.twcss-border-primary-foreground\/85 {
+  border-color: rgb(95 157 247 / 0.85);
+}
+
+.twcss-border-primary-foreground\/90 {
+  border-color: rgb(95 157 247 / 0.9);
+}
+
+.twcss-border-primary-foreground\/95 {
+  border-color: rgb(95 157 247 / 0.95);
+}
+
+.twcss-border-secondary-default {
+  --tw-border-opacity: 1;
+  border-color: rgb(95 157 247 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-secondary-default\/0 {
+  border-color: rgb(95 157 247 / 0);
+}
+
+.twcss-border-secondary-default\/10 {
+  border-color: rgb(95 157 247 / 0.1);
+}
+
+.twcss-border-secondary-default\/100 {
+  border-color: rgb(95 157 247 / 1);
+}
+
+.twcss-border-secondary-default\/15 {
+  border-color: rgb(95 157 247 / 0.15);
+}
+
+.twcss-border-secondary-default\/20 {
+  border-color: rgb(95 157 247 / 0.2);
+}
+
+.twcss-border-secondary-default\/25 {
+  border-color: rgb(95 157 247 / 0.25);
+}
+
+.twcss-border-secondary-default\/30 {
+  border-color: rgb(95 157 247 / 0.3);
+}
+
+.twcss-border-secondary-default\/35 {
+  border-color: rgb(95 157 247 / 0.35);
+}
+
+.twcss-border-secondary-default\/40 {
+  border-color: rgb(95 157 247 / 0.4);
+}
+
+.twcss-border-secondary-default\/45 {
+  border-color: rgb(95 157 247 / 0.45);
+}
+
+.twcss-border-secondary-default\/5 {
+  border-color: rgb(95 157 247 / 0.05);
+}
+
+.twcss-border-secondary-default\/50 {
+  border-color: rgb(95 157 247 / 0.5);
+}
+
+.twcss-border-secondary-default\/55 {
+  border-color: rgb(95 157 247 / 0.55);
+}
+
+.twcss-border-secondary-default\/60 {
+  border-color: rgb(95 157 247 / 0.6);
+}
+
+.twcss-border-secondary-default\/65 {
+  border-color: rgb(95 157 247 / 0.65);
+}
+
+.twcss-border-secondary-default\/70 {
+  border-color: rgb(95 157 247 / 0.7);
+}
+
+.twcss-border-secondary-default\/75 {
+  border-color: rgb(95 157 247 / 0.75);
+}
+
+.twcss-border-secondary-default\/80 {
+  border-color: rgb(95 157 247 / 0.8);
+}
+
+.twcss-border-secondary-default\/85 {
+  border-color: rgb(95 157 247 / 0.85);
+}
+
+.twcss-border-secondary-default\/90 {
+  border-color: rgb(95 157 247 / 0.9);
+}
+
+.twcss-border-secondary-default\/95 {
+  border-color: rgb(95 157 247 / 0.95);
+}
+
+.twcss-border-secondary-foreground {
+  --tw-border-opacity: 1;
+  border-color: rgb(227 242 255 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-secondary-foreground\/0 {
+  border-color: rgb(227 242 255 / 0);
+}
+
+.twcss-border-secondary-foreground\/10 {
+  border-color: rgb(227 242 255 / 0.1);
+}
+
+.twcss-border-secondary-foreground\/100 {
+  border-color: rgb(227 242 255 / 1);
+}
+
+.twcss-border-secondary-foreground\/15 {
+  border-color: rgb(227 242 255 / 0.15);
+}
+
+.twcss-border-secondary-foreground\/20 {
+  border-color: rgb(227 242 255 / 0.2);
+}
+
+.twcss-border-secondary-foreground\/25 {
+  border-color: rgb(227 242 255 / 0.25);
+}
+
+.twcss-border-secondary-foreground\/30 {
+  border-color: rgb(227 242 255 / 0.3);
+}
+
+.twcss-border-secondary-foreground\/35 {
+  border-color: rgb(227 242 255 / 0.35);
+}
+
+.twcss-border-secondary-foreground\/40 {
+  border-color: rgb(227 242 255 / 0.4);
+}
+
+.twcss-border-secondary-foreground\/45 {
+  border-color: rgb(227 242 255 / 0.45);
+}
+
+.twcss-border-secondary-foreground\/5 {
+  border-color: rgb(227 242 255 / 0.05);
+}
+
+.twcss-border-secondary-foreground\/50 {
+  border-color: rgb(227 242 255 / 0.5);
+}
+
+.twcss-border-secondary-foreground\/55 {
+  border-color: rgb(227 242 255 / 0.55);
+}
+
+.twcss-border-secondary-foreground\/60 {
+  border-color: rgb(227 242 255 / 0.6);
+}
+
+.twcss-border-secondary-foreground\/65 {
+  border-color: rgb(227 242 255 / 0.65);
+}
+
+.twcss-border-secondary-foreground\/70 {
+  border-color: rgb(227 242 255 / 0.7);
+}
+
+.twcss-border-secondary-foreground\/75 {
+  border-color: rgb(227 242 255 / 0.75);
+}
+
+.twcss-border-secondary-foreground\/80 {
+  border-color: rgb(227 242 255 / 0.8);
+}
+
+.twcss-border-secondary-foreground\/85 {
+  border-color: rgb(227 242 255 / 0.85);
+}
+
+.twcss-border-secondary-foreground\/90 {
+  border-color: rgb(227 242 255 / 0.9);
+}
+
+.twcss-border-secondary-foreground\/95 {
+  border-color: rgb(227 242 255 / 0.95);
+}
+
+.twcss-bg-accent-default {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-accent-default\/0 {
+  background-color: rgb(245 245 245 / 0);
+}
+
+.twcss-bg-accent-default\/10 {
+  background-color: rgb(245 245 245 / 0.1);
+}
+
+.twcss-bg-accent-default\/100 {
+  background-color: rgb(245 245 245 / 1);
+}
+
+.twcss-bg-accent-default\/15 {
+  background-color: rgb(245 245 245 / 0.15);
+}
+
+.twcss-bg-accent-default\/20 {
+  background-color: rgb(245 245 245 / 0.2);
+}
+
+.twcss-bg-accent-default\/25 {
+  background-color: rgb(245 245 245 / 0.25);
+}
+
+.twcss-bg-accent-default\/30 {
+  background-color: rgb(245 245 245 / 0.3);
+}
+
+.twcss-bg-accent-default\/35 {
+  background-color: rgb(245 245 245 / 0.35);
+}
+
+.twcss-bg-accent-default\/40 {
+  background-color: rgb(245 245 245 / 0.4);
+}
+
+.twcss-bg-accent-default\/45 {
+  background-color: rgb(245 245 245 / 0.45);
+}
+
+.twcss-bg-accent-default\/5 {
+  background-color: rgb(245 245 245 / 0.05);
+}
+
+.twcss-bg-accent-default\/50 {
+  background-color: rgb(245 245 245 / 0.5);
+}
+
+.twcss-bg-accent-default\/55 {
+  background-color: rgb(245 245 245 / 0.55);
+}
+
+.twcss-bg-accent-default\/60 {
+  background-color: rgb(245 245 245 / 0.6);
+}
+
+.twcss-bg-accent-default\/65 {
+  background-color: rgb(245 245 245 / 0.65);
+}
+
+.twcss-bg-accent-default\/70 {
+  background-color: rgb(245 245 245 / 0.7);
+}
+
+.twcss-bg-accent-default\/75 {
+  background-color: rgb(245 245 245 / 0.75);
+}
+
+.twcss-bg-accent-default\/80 {
+  background-color: rgb(245 245 245 / 0.8);
+}
+
+.twcss-bg-accent-default\/85 {
+  background-color: rgb(245 245 245 / 0.85);
+}
+
+.twcss-bg-accent-default\/90 {
+  background-color: rgb(245 245 245 / 0.9);
+}
+
+.twcss-bg-accent-default\/95 {
+  background-color: rgb(245 245 245 / 0.95);
+}
+
+.twcss-bg-accent-foreground {
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 26 26 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-accent-foreground\/0 {
+  background-color: rgb(26 26 26 / 0);
+}
+
+.twcss-bg-accent-foreground\/10 {
+  background-color: rgb(26 26 26 / 0.1);
+}
+
+.twcss-bg-accent-foreground\/100 {
+  background-color: rgb(26 26 26 / 1);
+}
+
+.twcss-bg-accent-foreground\/15 {
+  background-color: rgb(26 26 26 / 0.15);
+}
+
+.twcss-bg-accent-foreground\/20 {
+  background-color: rgb(26 26 26 / 0.2);
+}
+
+.twcss-bg-accent-foreground\/25 {
+  background-color: rgb(26 26 26 / 0.25);
+}
+
+.twcss-bg-accent-foreground\/30 {
+  background-color: rgb(26 26 26 / 0.3);
+}
+
+.twcss-bg-accent-foreground\/35 {
+  background-color: rgb(26 26 26 / 0.35);
+}
+
+.twcss-bg-accent-foreground\/40 {
+  background-color: rgb(26 26 26 / 0.4);
+}
+
+.twcss-bg-accent-foreground\/45 {
+  background-color: rgb(26 26 26 / 0.45);
+}
+
+.twcss-bg-accent-foreground\/5 {
+  background-color: rgb(26 26 26 / 0.05);
+}
+
+.twcss-bg-accent-foreground\/50 {
+  background-color: rgb(26 26 26 / 0.5);
+}
+
+.twcss-bg-accent-foreground\/55 {
+  background-color: rgb(26 26 26 / 0.55);
+}
+
+.twcss-bg-accent-foreground\/60 {
+  background-color: rgb(26 26 26 / 0.6);
+}
+
+.twcss-bg-accent-foreground\/65 {
+  background-color: rgb(26 26 26 / 0.65);
+}
+
+.twcss-bg-accent-foreground\/70 {
+  background-color: rgb(26 26 26 / 0.7);
+}
+
+.twcss-bg-accent-foreground\/75 {
+  background-color: rgb(26 26 26 / 0.75);
+}
+
+.twcss-bg-accent-foreground\/80 {
+  background-color: rgb(26 26 26 / 0.8);
+}
+
+.twcss-bg-accent-foreground\/85 {
+  background-color: rgb(26 26 26 / 0.85);
+}
+
+.twcss-bg-accent-foreground\/90 {
+  background-color: rgb(26 26 26 / 0.9);
+}
+
+.twcss-bg-accent-foreground\/95 {
+  background-color: rgb(26 26 26 / 0.95);
+}
+
+.twcss-bg-background {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-background\/0 {
+  background-color: rgb(255 255 255 / 0);
+}
+
+.twcss-bg-background\/10 {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-bg-background\/100 {
+  background-color: rgb(255 255 255 / 1);
+}
+
+.twcss-bg-background\/15 {
+  background-color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-bg-background\/20 {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-bg-background\/25 {
+  background-color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-bg-background\/30 {
+  background-color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-bg-background\/35 {
+  background-color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-bg-background\/40 {
+  background-color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-bg-background\/45 {
+  background-color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-bg-background\/5 {
+  background-color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-bg-background\/50 {
+  background-color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-bg-background\/55 {
+  background-color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-bg-background\/60 {
+  background-color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-bg-background\/65 {
+  background-color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-bg-background\/70 {
+  background-color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-bg-background\/75 {
+  background-color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-bg-background\/80 {
+  background-color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-bg-background\/85 {
+  background-color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-bg-background\/90 {
+  background-color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-bg-background\/95 {
+  background-color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-card-default {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-card-default\/0 {
+  background-color: rgb(255 255 255 / 0);
+}
+
+.twcss-bg-card-default\/10 {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-bg-card-default\/100 {
+  background-color: rgb(255 255 255 / 1);
+}
+
+.twcss-bg-card-default\/15 {
+  background-color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-bg-card-default\/20 {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-bg-card-default\/25 {
+  background-color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-bg-card-default\/30 {
+  background-color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-bg-card-default\/35 {
+  background-color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-bg-card-default\/40 {
+  background-color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-bg-card-default\/45 {
+  background-color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-bg-card-default\/5 {
+  background-color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-bg-card-default\/50 {
+  background-color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-bg-card-default\/55 {
+  background-color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-bg-card-default\/60 {
+  background-color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-bg-card-default\/65 {
+  background-color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-bg-card-default\/70 {
+  background-color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-bg-card-default\/75 {
+  background-color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-bg-card-default\/80 {
+  background-color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-bg-card-default\/85 {
+  background-color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-bg-card-default\/90 {
+  background-color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-bg-card-default\/95 {
+  background-color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-bg-card-foreground {
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 10 10 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-card-foreground\/0 {
+  background-color: rgb(10 10 10 / 0);
+}
+
+.twcss-bg-card-foreground\/10 {
+  background-color: rgb(10 10 10 / 0.1);
+}
+
+.twcss-bg-card-foreground\/100 {
+  background-color: rgb(10 10 10 / 1);
+}
+
+.twcss-bg-card-foreground\/15 {
+  background-color: rgb(10 10 10 / 0.15);
+}
+
+.twcss-bg-card-foreground\/20 {
+  background-color: rgb(10 10 10 / 0.2);
+}
+
+.twcss-bg-card-foreground\/25 {
+  background-color: rgb(10 10 10 / 0.25);
+}
+
+.twcss-bg-card-foreground\/30 {
+  background-color: rgb(10 10 10 / 0.3);
+}
+
+.twcss-bg-card-foreground\/35 {
+  background-color: rgb(10 10 10 / 0.35);
+}
+
+.twcss-bg-card-foreground\/40 {
+  background-color: rgb(10 10 10 / 0.4);
+}
+
+.twcss-bg-card-foreground\/45 {
+  background-color: rgb(10 10 10 / 0.45);
+}
+
+.twcss-bg-card-foreground\/5 {
+  background-color: rgb(10 10 10 / 0.05);
+}
+
+.twcss-bg-card-foreground\/50 {
+  background-color: rgb(10 10 10 / 0.5);
+}
+
+.twcss-bg-card-foreground\/55 {
+  background-color: rgb(10 10 10 / 0.55);
+}
+
+.twcss-bg-card-foreground\/60 {
+  background-color: rgb(10 10 10 / 0.6);
+}
+
+.twcss-bg-card-foreground\/65 {
+  background-color: rgb(10 10 10 / 0.65);
+}
+
+.twcss-bg-card-foreground\/70 {
+  background-color: rgb(10 10 10 / 0.7);
+}
+
+.twcss-bg-card-foreground\/75 {
+  background-color: rgb(10 10 10 / 0.75);
+}
+
+.twcss-bg-card-foreground\/80 {
+  background-color: rgb(10 10 10 / 0.8);
+}
+
+.twcss-bg-card-foreground\/85 {
+  background-color: rgb(10 10 10 / 0.85);
+}
+
+.twcss-bg-card-foreground\/90 {
+  background-color: rgb(10 10 10 / 0.9);
+}
+
+.twcss-bg-card-foreground\/95 {
+  background-color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-bg-destructive-default {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 0 0 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-destructive-default\/0 {
+  background-color: rgb(255 0 0 / 0);
+}
+
+.twcss-bg-destructive-default\/10 {
+  background-color: rgb(255 0 0 / 0.1);
+}
+
+.twcss-bg-destructive-default\/100 {
+  background-color: rgb(255 0 0 / 1);
+}
+
+.twcss-bg-destructive-default\/15 {
+  background-color: rgb(255 0 0 / 0.15);
+}
+
+.twcss-bg-destructive-default\/20 {
+  background-color: rgb(255 0 0 / 0.2);
+}
+
+.twcss-bg-destructive-default\/25 {
+  background-color: rgb(255 0 0 / 0.25);
+}
+
+.twcss-bg-destructive-default\/30 {
+  background-color: rgb(255 0 0 / 0.3);
+}
+
+.twcss-bg-destructive-default\/35 {
+  background-color: rgb(255 0 0 / 0.35);
+}
+
+.twcss-bg-destructive-default\/40 {
+  background-color: rgb(255 0 0 / 0.4);
+}
+
+.twcss-bg-destructive-default\/45 {
+  background-color: rgb(255 0 0 / 0.45);
+}
+
+.twcss-bg-destructive-default\/5 {
+  background-color: rgb(255 0 0 / 0.05);
+}
+
+.twcss-bg-destructive-default\/50 {
+  background-color: rgb(255 0 0 / 0.5);
+}
+
+.twcss-bg-destructive-default\/55 {
+  background-color: rgb(255 0 0 / 0.55);
+}
+
+.twcss-bg-destructive-default\/60 {
+  background-color: rgb(255 0 0 / 0.6);
+}
+
+.twcss-bg-destructive-default\/65 {
+  background-color: rgb(255 0 0 / 0.65);
+}
+
+.twcss-bg-destructive-default\/70 {
+  background-color: rgb(255 0 0 / 0.7);
+}
+
+.twcss-bg-destructive-default\/75 {
+  background-color: rgb(255 0 0 / 0.75);
+}
+
+.twcss-bg-destructive-default\/80 {
+  background-color: rgb(255 0 0 / 0.8);
+}
+
+.twcss-bg-destructive-default\/85 {
+  background-color: rgb(255 0 0 / 0.85);
+}
+
+.twcss-bg-destructive-default\/90 {
+  background-color: rgb(255 0 0 / 0.9);
+}
+
+.twcss-bg-destructive-default\/95 {
+  background-color: rgb(255 0 0 / 0.95);
+}
+
+.twcss-bg-destructive-foreground {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-destructive-foreground\/0 {
+  background-color: rgb(255 255 255 / 0);
+}
+
+.twcss-bg-destructive-foreground\/10 {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-bg-destructive-foreground\/100 {
+  background-color: rgb(255 255 255 / 1);
+}
+
+.twcss-bg-destructive-foreground\/15 {
+  background-color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-bg-destructive-foreground\/20 {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-bg-destructive-foreground\/25 {
+  background-color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-bg-destructive-foreground\/30 {
+  background-color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-bg-destructive-foreground\/35 {
+  background-color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-bg-destructive-foreground\/40 {
+  background-color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-bg-destructive-foreground\/45 {
+  background-color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-bg-destructive-foreground\/5 {
+  background-color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-bg-destructive-foreground\/50 {
+  background-color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-bg-destructive-foreground\/55 {
+  background-color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-bg-destructive-foreground\/60 {
+  background-color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-bg-destructive-foreground\/65 {
+  background-color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-bg-destructive-foreground\/70 {
+  background-color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-bg-destructive-foreground\/75 {
+  background-color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-bg-destructive-foreground\/80 {
+  background-color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-bg-destructive-foreground\/85 {
+  background-color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-bg-destructive-foreground\/90 {
+  background-color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-bg-destructive-foreground\/95 {
+  background-color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-bg-foreground {
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 10 10 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-foreground\/0 {
+  background-color: rgb(10 10 10 / 0);
+}
+
+.twcss-bg-foreground\/10 {
+  background-color: rgb(10 10 10 / 0.1);
+}
+
+.twcss-bg-foreground\/100 {
+  background-color: rgb(10 10 10 / 1);
+}
+
+.twcss-bg-foreground\/15 {
+  background-color: rgb(10 10 10 / 0.15);
+}
+
+.twcss-bg-foreground\/20 {
+  background-color: rgb(10 10 10 / 0.2);
+}
+
+.twcss-bg-foreground\/25 {
+  background-color: rgb(10 10 10 / 0.25);
+}
+
+.twcss-bg-foreground\/30 {
+  background-color: rgb(10 10 10 / 0.3);
+}
+
+.twcss-bg-foreground\/35 {
+  background-color: rgb(10 10 10 / 0.35);
+}
+
+.twcss-bg-foreground\/40 {
+  background-color: rgb(10 10 10 / 0.4);
+}
+
+.twcss-bg-foreground\/45 {
+  background-color: rgb(10 10 10 / 0.45);
+}
+
+.twcss-bg-foreground\/5 {
+  background-color: rgb(10 10 10 / 0.05);
+}
+
+.twcss-bg-foreground\/50 {
+  background-color: rgb(10 10 10 / 0.5);
+}
+
+.twcss-bg-foreground\/55 {
+  background-color: rgb(10 10 10 / 0.55);
+}
+
+.twcss-bg-foreground\/60 {
+  background-color: rgb(10 10 10 / 0.6);
+}
+
+.twcss-bg-foreground\/65 {
+  background-color: rgb(10 10 10 / 0.65);
+}
+
+.twcss-bg-foreground\/70 {
+  background-color: rgb(10 10 10 / 0.7);
+}
+
+.twcss-bg-foreground\/75 {
+  background-color: rgb(10 10 10 / 0.75);
+}
+
+.twcss-bg-foreground\/80 {
+  background-color: rgb(10 10 10 / 0.8);
+}
+
+.twcss-bg-foreground\/85 {
+  background-color: rgb(10 10 10 / 0.85);
+}
+
+.twcss-bg-foreground\/90 {
+  background-color: rgb(10 10 10 / 0.9);
+}
+
+.twcss-bg-foreground\/95 {
+  background-color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-bg-muted-default {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-muted-default\/0 {
+  background-color: rgb(245 245 245 / 0);
+}
+
+.twcss-bg-muted-default\/10 {
+  background-color: rgb(245 245 245 / 0.1);
+}
+
+.twcss-bg-muted-default\/100 {
+  background-color: rgb(245 245 245 / 1);
+}
+
+.twcss-bg-muted-default\/15 {
+  background-color: rgb(245 245 245 / 0.15);
+}
+
+.twcss-bg-muted-default\/20 {
+  background-color: rgb(245 245 245 / 0.2);
+}
+
+.twcss-bg-muted-default\/25 {
+  background-color: rgb(245 245 245 / 0.25);
+}
+
+.twcss-bg-muted-default\/30 {
+  background-color: rgb(245 245 245 / 0.3);
+}
+
+.twcss-bg-muted-default\/35 {
+  background-color: rgb(245 245 245 / 0.35);
+}
+
+.twcss-bg-muted-default\/40 {
+  background-color: rgb(245 245 245 / 0.4);
+}
+
+.twcss-bg-muted-default\/45 {
+  background-color: rgb(245 245 245 / 0.45);
+}
+
+.twcss-bg-muted-default\/5 {
+  background-color: rgb(245 245 245 / 0.05);
+}
+
+.twcss-bg-muted-default\/50 {
+  background-color: rgb(245 245 245 / 0.5);
+}
+
+.twcss-bg-muted-default\/55 {
+  background-color: rgb(245 245 245 / 0.55);
+}
+
+.twcss-bg-muted-default\/60 {
+  background-color: rgb(245 245 245 / 0.6);
+}
+
+.twcss-bg-muted-default\/65 {
+  background-color: rgb(245 245 245 / 0.65);
+}
+
+.twcss-bg-muted-default\/70 {
+  background-color: rgb(245 245 245 / 0.7);
+}
+
+.twcss-bg-muted-default\/75 {
+  background-color: rgb(245 245 245 / 0.75);
+}
+
+.twcss-bg-muted-default\/80 {
+  background-color: rgb(245 245 245 / 0.8);
+}
+
+.twcss-bg-muted-default\/85 {
+  background-color: rgb(245 245 245 / 0.85);
+}
+
+.twcss-bg-muted-default\/90 {
+  background-color: rgb(245 245 245 / 0.9);
+}
+
+.twcss-bg-muted-default\/95 {
+  background-color: rgb(245 245 245 / 0.95);
+}
+
+.twcss-bg-muted-foreground {
+  --tw-bg-opacity: 1;
+  background-color: rgb(115 115 115 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-muted-foreground\/0 {
+  background-color: rgb(115 115 115 / 0);
+}
+
+.twcss-bg-muted-foreground\/10 {
+  background-color: rgb(115 115 115 / 0.1);
+}
+
+.twcss-bg-muted-foreground\/100 {
+  background-color: rgb(115 115 115 / 1);
+}
+
+.twcss-bg-muted-foreground\/15 {
+  background-color: rgb(115 115 115 / 0.15);
+}
+
+.twcss-bg-muted-foreground\/20 {
+  background-color: rgb(115 115 115 / 0.2);
+}
+
+.twcss-bg-muted-foreground\/25 {
+  background-color: rgb(115 115 115 / 0.25);
+}
+
+.twcss-bg-muted-foreground\/30 {
+  background-color: rgb(115 115 115 / 0.3);
+}
+
+.twcss-bg-muted-foreground\/35 {
+  background-color: rgb(115 115 115 / 0.35);
+}
+
+.twcss-bg-muted-foreground\/40 {
+  background-color: rgb(115 115 115 / 0.4);
+}
+
+.twcss-bg-muted-foreground\/45 {
+  background-color: rgb(115 115 115 / 0.45);
+}
+
+.twcss-bg-muted-foreground\/5 {
+  background-color: rgb(115 115 115 / 0.05);
+}
+
+.twcss-bg-muted-foreground\/50 {
+  background-color: rgb(115 115 115 / 0.5);
+}
+
+.twcss-bg-muted-foreground\/55 {
+  background-color: rgb(115 115 115 / 0.55);
+}
+
+.twcss-bg-muted-foreground\/60 {
+  background-color: rgb(115 115 115 / 0.6);
+}
+
+.twcss-bg-muted-foreground\/65 {
+  background-color: rgb(115 115 115 / 0.65);
+}
+
+.twcss-bg-muted-foreground\/70 {
+  background-color: rgb(115 115 115 / 0.7);
+}
+
+.twcss-bg-muted-foreground\/75 {
+  background-color: rgb(115 115 115 / 0.75);
+}
+
+.twcss-bg-muted-foreground\/80 {
+  background-color: rgb(115 115 115 / 0.8);
+}
+
+.twcss-bg-muted-foreground\/85 {
+  background-color: rgb(115 115 115 / 0.85);
+}
+
+.twcss-bg-muted-foreground\/90 {
+  background-color: rgb(115 115 115 / 0.9);
+}
+
+.twcss-bg-muted-foreground\/95 {
+  background-color: rgb(115 115 115 / 0.95);
+}
+
+.twcss-bg-popover-default {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-popover-default\/0 {
+  background-color: rgb(255 255 255 / 0);
+}
+
+.twcss-bg-popover-default\/10 {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-bg-popover-default\/100 {
+  background-color: rgb(255 255 255 / 1);
+}
+
+.twcss-bg-popover-default\/15 {
+  background-color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-bg-popover-default\/20 {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-bg-popover-default\/25 {
+  background-color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-bg-popover-default\/30 {
+  background-color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-bg-popover-default\/35 {
+  background-color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-bg-popover-default\/40 {
+  background-color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-bg-popover-default\/45 {
+  background-color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-bg-popover-default\/5 {
+  background-color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-bg-popover-default\/50 {
+  background-color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-bg-popover-default\/55 {
+  background-color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-bg-popover-default\/60 {
+  background-color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-bg-popover-default\/65 {
+  background-color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-bg-popover-default\/70 {
+  background-color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-bg-popover-default\/75 {
+  background-color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-bg-popover-default\/80 {
+  background-color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-bg-popover-default\/85 {
+  background-color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-bg-popover-default\/90 {
+  background-color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-bg-popover-default\/95 {
+  background-color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-bg-popover-foreground {
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 10 10 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-popover-foreground\/0 {
+  background-color: rgb(10 10 10 / 0);
+}
+
+.twcss-bg-popover-foreground\/10 {
+  background-color: rgb(10 10 10 / 0.1);
+}
+
+.twcss-bg-popover-foreground\/100 {
+  background-color: rgb(10 10 10 / 1);
+}
+
+.twcss-bg-popover-foreground\/15 {
+  background-color: rgb(10 10 10 / 0.15);
+}
+
+.twcss-bg-popover-foreground\/20 {
+  background-color: rgb(10 10 10 / 0.2);
+}
+
+.twcss-bg-popover-foreground\/25 {
+  background-color: rgb(10 10 10 / 0.25);
+}
+
+.twcss-bg-popover-foreground\/30 {
+  background-color: rgb(10 10 10 / 0.3);
+}
+
+.twcss-bg-popover-foreground\/35 {
+  background-color: rgb(10 10 10 / 0.35);
+}
+
+.twcss-bg-popover-foreground\/40 {
+  background-color: rgb(10 10 10 / 0.4);
+}
+
+.twcss-bg-popover-foreground\/45 {
+  background-color: rgb(10 10 10 / 0.45);
+}
+
+.twcss-bg-popover-foreground\/5 {
+  background-color: rgb(10 10 10 / 0.05);
+}
+
+.twcss-bg-popover-foreground\/50 {
+  background-color: rgb(10 10 10 / 0.5);
+}
+
+.twcss-bg-popover-foreground\/55 {
+  background-color: rgb(10 10 10 / 0.55);
+}
+
+.twcss-bg-popover-foreground\/60 {
+  background-color: rgb(10 10 10 / 0.6);
+}
+
+.twcss-bg-popover-foreground\/65 {
+  background-color: rgb(10 10 10 / 0.65);
+}
+
+.twcss-bg-popover-foreground\/70 {
+  background-color: rgb(10 10 10 / 0.7);
+}
+
+.twcss-bg-popover-foreground\/75 {
+  background-color: rgb(10 10 10 / 0.75);
+}
+
+.twcss-bg-popover-foreground\/80 {
+  background-color: rgb(10 10 10 / 0.8);
+}
+
+.twcss-bg-popover-foreground\/85 {
+  background-color: rgb(10 10 10 / 0.85);
+}
+
+.twcss-bg-popover-foreground\/90 {
+  background-color: rgb(10 10 10 / 0.9);
+}
+
+.twcss-bg-popover-foreground\/95 {
+  background-color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-bg-primary-default {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 70 162 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-primary-default\/0 {
+  background-color: rgb(23 70 162 / 0);
+}
+
+.twcss-bg-primary-default\/10 {
+  background-color: rgb(23 70 162 / 0.1);
+}
+
+.twcss-bg-primary-default\/100 {
+  background-color: rgb(23 70 162 / 1);
+}
+
+.twcss-bg-primary-default\/15 {
+  background-color: rgb(23 70 162 / 0.15);
+}
+
+.twcss-bg-primary-default\/20 {
+  background-color: rgb(23 70 162 / 0.2);
+}
+
+.twcss-bg-primary-default\/25 {
+  background-color: rgb(23 70 162 / 0.25);
+}
+
+.twcss-bg-primary-default\/30 {
+  background-color: rgb(23 70 162 / 0.3);
+}
+
+.twcss-bg-primary-default\/35 {
+  background-color: rgb(23 70 162 / 0.35);
+}
+
+.twcss-bg-primary-default\/40 {
+  background-color: rgb(23 70 162 / 0.4);
+}
+
+.twcss-bg-primary-default\/45 {
+  background-color: rgb(23 70 162 / 0.45);
+}
+
+.twcss-bg-primary-default\/5 {
+  background-color: rgb(23 70 162 / 0.05);
+}
+
+.twcss-bg-primary-default\/50 {
+  background-color: rgb(23 70 162 / 0.5);
+}
+
+.twcss-bg-primary-default\/55 {
+  background-color: rgb(23 70 162 / 0.55);
+}
+
+.twcss-bg-primary-default\/60 {
+  background-color: rgb(23 70 162 / 0.6);
+}
+
+.twcss-bg-primary-default\/65 {
+  background-color: rgb(23 70 162 / 0.65);
+}
+
+.twcss-bg-primary-default\/70 {
+  background-color: rgb(23 70 162 / 0.7);
+}
+
+.twcss-bg-primary-default\/75 {
+  background-color: rgb(23 70 162 / 0.75);
+}
+
+.twcss-bg-primary-default\/80 {
+  background-color: rgb(23 70 162 / 0.8);
+}
+
+.twcss-bg-primary-default\/85 {
+  background-color: rgb(23 70 162 / 0.85);
+}
+
+.twcss-bg-primary-default\/90 {
+  background-color: rgb(23 70 162 / 0.9);
+}
+
+.twcss-bg-primary-default\/95 {
+  background-color: rgb(23 70 162 / 0.95);
+}
+
+.twcss-bg-primary-foreground {
+  background-color: #5F9DF7E5;
+}
+
+.twcss-bg-primary-foreground\/0 {
+  background-color: rgb(95 157 247 / 0);
+}
+
+.twcss-bg-primary-foreground\/10 {
+  background-color: rgb(95 157 247 / 0.1);
+}
+
+.twcss-bg-primary-foreground\/100 {
+  background-color: rgb(95 157 247 / 1);
+}
+
+.twcss-bg-primary-foreground\/15 {
+  background-color: rgb(95 157 247 / 0.15);
+}
+
+.twcss-bg-primary-foreground\/20 {
+  background-color: rgb(95 157 247 / 0.2);
+}
+
+.twcss-bg-primary-foreground\/25 {
+  background-color: rgb(95 157 247 / 0.25);
+}
+
+.twcss-bg-primary-foreground\/30 {
+  background-color: rgb(95 157 247 / 0.3);
+}
+
+.twcss-bg-primary-foreground\/35 {
+  background-color: rgb(95 157 247 / 0.35);
+}
+
+.twcss-bg-primary-foreground\/40 {
+  background-color: rgb(95 157 247 / 0.4);
+}
+
+.twcss-bg-primary-foreground\/45 {
+  background-color: rgb(95 157 247 / 0.45);
+}
+
+.twcss-bg-primary-foreground\/5 {
+  background-color: rgb(95 157 247 / 0.05);
+}
+
+.twcss-bg-primary-foreground\/50 {
+  background-color: rgb(95 157 247 / 0.5);
+}
+
+.twcss-bg-primary-foreground\/55 {
+  background-color: rgb(95 157 247 / 0.55);
+}
+
+.twcss-bg-primary-foreground\/60 {
+  background-color: rgb(95 157 247 / 0.6);
+}
+
+.twcss-bg-primary-foreground\/65 {
+  background-color: rgb(95 157 247 / 0.65);
+}
+
+.twcss-bg-primary-foreground\/70 {
+  background-color: rgb(95 157 247 / 0.7);
+}
+
+.twcss-bg-primary-foreground\/75 {
+  background-color: rgb(95 157 247 / 0.75);
+}
+
+.twcss-bg-primary-foreground\/80 {
+  background-color: rgb(95 157 247 / 0.8);
+}
+
+.twcss-bg-primary-foreground\/85 {
+  background-color: rgb(95 157 247 / 0.85);
+}
+
+.twcss-bg-primary-foreground\/90 {
+  background-color: rgb(95 157 247 / 0.9);
+}
+
+.twcss-bg-primary-foreground\/95 {
+  background-color: rgb(95 157 247 / 0.95);
+}
+
+.twcss-bg-secondary-default {
+  --tw-bg-opacity: 1;
+  background-color: rgb(95 157 247 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-secondary-default\/0 {
+  background-color: rgb(95 157 247 / 0);
+}
+
+.twcss-bg-secondary-default\/10 {
+  background-color: rgb(95 157 247 / 0.1);
+}
+
+.twcss-bg-secondary-default\/100 {
+  background-color: rgb(95 157 247 / 1);
+}
+
+.twcss-bg-secondary-default\/15 {
+  background-color: rgb(95 157 247 / 0.15);
+}
+
+.twcss-bg-secondary-default\/20 {
+  background-color: rgb(95 157 247 / 0.2);
+}
+
+.twcss-bg-secondary-default\/25 {
+  background-color: rgb(95 157 247 / 0.25);
+}
+
+.twcss-bg-secondary-default\/30 {
+  background-color: rgb(95 157 247 / 0.3);
+}
+
+.twcss-bg-secondary-default\/35 {
+  background-color: rgb(95 157 247 / 0.35);
+}
+
+.twcss-bg-secondary-default\/40 {
+  background-color: rgb(95 157 247 / 0.4);
+}
+
+.twcss-bg-secondary-default\/45 {
+  background-color: rgb(95 157 247 / 0.45);
+}
+
+.twcss-bg-secondary-default\/5 {
+  background-color: rgb(95 157 247 / 0.05);
+}
+
+.twcss-bg-secondary-default\/50 {
+  background-color: rgb(95 157 247 / 0.5);
+}
+
+.twcss-bg-secondary-default\/55 {
+  background-color: rgb(95 157 247 / 0.55);
+}
+
+.twcss-bg-secondary-default\/60 {
+  background-color: rgb(95 157 247 / 0.6);
+}
+
+.twcss-bg-secondary-default\/65 {
+  background-color: rgb(95 157 247 / 0.65);
+}
+
+.twcss-bg-secondary-default\/70 {
+  background-color: rgb(95 157 247 / 0.7);
+}
+
+.twcss-bg-secondary-default\/75 {
+  background-color: rgb(95 157 247 / 0.75);
+}
+
+.twcss-bg-secondary-default\/80 {
+  background-color: rgb(95 157 247 / 0.8);
+}
+
+.twcss-bg-secondary-default\/85 {
+  background-color: rgb(95 157 247 / 0.85);
+}
+
+.twcss-bg-secondary-default\/90 {
+  background-color: rgb(95 157 247 / 0.9);
+}
+
+.twcss-bg-secondary-default\/95 {
+  background-color: rgb(95 157 247 / 0.95);
+}
+
+.twcss-bg-secondary-foreground {
+  --tw-bg-opacity: 1;
+  background-color: rgb(227 242 255 / var(--tw-bg-opacity, 1));
+}
+
+.twcss-bg-secondary-foreground\/0 {
+  background-color: rgb(227 242 255 / 0);
+}
+
+.twcss-bg-secondary-foreground\/10 {
+  background-color: rgb(227 242 255 / 0.1);
+}
+
+.twcss-bg-secondary-foreground\/100 {
+  background-color: rgb(227 242 255 / 1);
+}
+
+.twcss-bg-secondary-foreground\/15 {
+  background-color: rgb(227 242 255 / 0.15);
+}
+
+.twcss-bg-secondary-foreground\/20 {
+  background-color: rgb(227 242 255 / 0.2);
+}
+
+.twcss-bg-secondary-foreground\/25 {
+  background-color: rgb(227 242 255 / 0.25);
+}
+
+.twcss-bg-secondary-foreground\/30 {
+  background-color: rgb(227 242 255 / 0.3);
+}
+
+.twcss-bg-secondary-foreground\/35 {
+  background-color: rgb(227 242 255 / 0.35);
+}
+
+.twcss-bg-secondary-foreground\/40 {
+  background-color: rgb(227 242 255 / 0.4);
+}
+
+.twcss-bg-secondary-foreground\/45 {
+  background-color: rgb(227 242 255 / 0.45);
+}
+
+.twcss-bg-secondary-foreground\/5 {
+  background-color: rgb(227 242 255 / 0.05);
+}
+
+.twcss-bg-secondary-foreground\/50 {
+  background-color: rgb(227 242 255 / 0.5);
+}
+
+.twcss-bg-secondary-foreground\/55 {
+  background-color: rgb(227 242 255 / 0.55);
+}
+
+.twcss-bg-secondary-foreground\/60 {
+  background-color: rgb(227 242 255 / 0.6);
+}
+
+.twcss-bg-secondary-foreground\/65 {
+  background-color: rgb(227 242 255 / 0.65);
+}
+
+.twcss-bg-secondary-foreground\/70 {
+  background-color: rgb(227 242 255 / 0.7);
+}
+
+.twcss-bg-secondary-foreground\/75 {
+  background-color: rgb(227 242 255 / 0.75);
+}
+
+.twcss-bg-secondary-foreground\/80 {
+  background-color: rgb(227 242 255 / 0.8);
+}
+
+.twcss-bg-secondary-foreground\/85 {
+  background-color: rgb(227 242 255 / 0.85);
+}
+
+.twcss-bg-secondary-foreground\/90 {
+  background-color: rgb(227 242 255 / 0.9);
+}
+
+.twcss-bg-secondary-foreground\/95 {
+  background-color: rgb(227 242 255 / 0.95);
+}
+
+.twcss-p-2 {
+  padding: 0.5rem;
+}
+
+.twcss-px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.twcss-py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.twcss-py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.twcss-pl-4 {
+  padding-left: 1rem;
+}
+
+.twcss-pr-10 {
+  padding-right: 2.5rem;
+}
+
+.twcss-text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.twcss-text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.twcss-text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.twcss-font-bold {
+  font-weight: 700;
+}
+
+.twcss-font-medium {
+  font-weight: 500;
+}
+
+.twcss-text-accent-default {
+  --tw-text-opacity: 1;
+  color: rgb(245 245 245 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-accent-default\/0 {
+  color: rgb(245 245 245 / 0);
+}
+
+.twcss-text-accent-default\/10 {
+  color: rgb(245 245 245 / 0.1);
+}
+
+.twcss-text-accent-default\/100 {
+  color: rgb(245 245 245 / 1);
+}
+
+.twcss-text-accent-default\/15 {
+  color: rgb(245 245 245 / 0.15);
+}
+
+.twcss-text-accent-default\/20 {
+  color: rgb(245 245 245 / 0.2);
+}
+
+.twcss-text-accent-default\/25 {
+  color: rgb(245 245 245 / 0.25);
+}
+
+.twcss-text-accent-default\/30 {
+  color: rgb(245 245 245 / 0.3);
+}
+
+.twcss-text-accent-default\/35 {
+  color: rgb(245 245 245 / 0.35);
+}
+
+.twcss-text-accent-default\/40 {
+  color: rgb(245 245 245 / 0.4);
+}
+
+.twcss-text-accent-default\/45 {
+  color: rgb(245 245 245 / 0.45);
+}
+
+.twcss-text-accent-default\/5 {
+  color: rgb(245 245 245 / 0.05);
+}
+
+.twcss-text-accent-default\/50 {
+  color: rgb(245 245 245 / 0.5);
+}
+
+.twcss-text-accent-default\/55 {
+  color: rgb(245 245 245 / 0.55);
+}
+
+.twcss-text-accent-default\/60 {
+  color: rgb(245 245 245 / 0.6);
+}
+
+.twcss-text-accent-default\/65 {
+  color: rgb(245 245 245 / 0.65);
+}
+
+.twcss-text-accent-default\/70 {
+  color: rgb(245 245 245 / 0.7);
+}
+
+.twcss-text-accent-default\/75 {
+  color: rgb(245 245 245 / 0.75);
+}
+
+.twcss-text-accent-default\/80 {
+  color: rgb(245 245 245 / 0.8);
+}
+
+.twcss-text-accent-default\/85 {
+  color: rgb(245 245 245 / 0.85);
+}
+
+.twcss-text-accent-default\/90 {
+  color: rgb(245 245 245 / 0.9);
+}
+
+.twcss-text-accent-default\/95 {
+  color: rgb(245 245 245 / 0.95);
+}
+
+.twcss-text-accent-foreground {
+  --tw-text-opacity: 1;
+  color: rgb(26 26 26 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-accent-foreground\/0 {
+  color: rgb(26 26 26 / 0);
+}
+
+.twcss-text-accent-foreground\/10 {
+  color: rgb(26 26 26 / 0.1);
+}
+
+.twcss-text-accent-foreground\/100 {
+  color: rgb(26 26 26 / 1);
+}
+
+.twcss-text-accent-foreground\/15 {
+  color: rgb(26 26 26 / 0.15);
+}
+
+.twcss-text-accent-foreground\/20 {
+  color: rgb(26 26 26 / 0.2);
+}
+
+.twcss-text-accent-foreground\/25 {
+  color: rgb(26 26 26 / 0.25);
+}
+
+.twcss-text-accent-foreground\/30 {
+  color: rgb(26 26 26 / 0.3);
+}
+
+.twcss-text-accent-foreground\/35 {
+  color: rgb(26 26 26 / 0.35);
+}
+
+.twcss-text-accent-foreground\/40 {
+  color: rgb(26 26 26 / 0.4);
+}
+
+.twcss-text-accent-foreground\/45 {
+  color: rgb(26 26 26 / 0.45);
+}
+
+.twcss-text-accent-foreground\/5 {
+  color: rgb(26 26 26 / 0.05);
+}
+
+.twcss-text-accent-foreground\/50 {
+  color: rgb(26 26 26 / 0.5);
+}
+
+.twcss-text-accent-foreground\/55 {
+  color: rgb(26 26 26 / 0.55);
+}
+
+.twcss-text-accent-foreground\/60 {
+  color: rgb(26 26 26 / 0.6);
+}
+
+.twcss-text-accent-foreground\/65 {
+  color: rgb(26 26 26 / 0.65);
+}
+
+.twcss-text-accent-foreground\/70 {
+  color: rgb(26 26 26 / 0.7);
+}
+
+.twcss-text-accent-foreground\/75 {
+  color: rgb(26 26 26 / 0.75);
+}
+
+.twcss-text-accent-foreground\/80 {
+  color: rgb(26 26 26 / 0.8);
+}
+
+.twcss-text-accent-foreground\/85 {
+  color: rgb(26 26 26 / 0.85);
+}
+
+.twcss-text-accent-foreground\/90 {
+  color: rgb(26 26 26 / 0.9);
+}
+
+.twcss-text-accent-foreground\/95 {
+  color: rgb(26 26 26 / 0.95);
+}
+
+.twcss-text-background {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-background\/0 {
+  color: rgb(255 255 255 / 0);
+}
+
+.twcss-text-background\/10 {
+  color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-text-background\/100 {
+  color: rgb(255 255 255 / 1);
+}
+
+.twcss-text-background\/15 {
+  color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-text-background\/20 {
+  color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-text-background\/25 {
+  color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-text-background\/30 {
+  color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-text-background\/35 {
+  color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-text-background\/40 {
+  color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-text-background\/45 {
+  color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-text-background\/5 {
+  color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-text-background\/50 {
+  color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-text-background\/55 {
+  color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-text-background\/60 {
+  color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-text-background\/65 {
+  color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-text-background\/70 {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-text-background\/75 {
+  color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-text-background\/80 {
+  color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-text-background\/85 {
+  color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-text-background\/90 {
+  color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-text-background\/95 {
+  color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-text-card-default {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-card-default\/0 {
+  color: rgb(255 255 255 / 0);
+}
+
+.twcss-text-card-default\/10 {
+  color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-text-card-default\/100 {
+  color: rgb(255 255 255 / 1);
+}
+
+.twcss-text-card-default\/15 {
+  color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-text-card-default\/20 {
+  color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-text-card-default\/25 {
+  color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-text-card-default\/30 {
+  color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-text-card-default\/35 {
+  color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-text-card-default\/40 {
+  color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-text-card-default\/45 {
+  color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-text-card-default\/5 {
+  color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-text-card-default\/50 {
+  color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-text-card-default\/55 {
+  color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-text-card-default\/60 {
+  color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-text-card-default\/65 {
+  color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-text-card-default\/70 {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-text-card-default\/75 {
+  color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-text-card-default\/80 {
+  color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-text-card-default\/85 {
+  color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-text-card-default\/90 {
+  color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-text-card-default\/95 {
+  color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-text-card-foreground {
+  --tw-text-opacity: 1;
+  color: rgb(10 10 10 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-card-foreground\/0 {
+  color: rgb(10 10 10 / 0);
+}
+
+.twcss-text-card-foreground\/10 {
+  color: rgb(10 10 10 / 0.1);
+}
+
+.twcss-text-card-foreground\/100 {
+  color: rgb(10 10 10 / 1);
+}
+
+.twcss-text-card-foreground\/15 {
+  color: rgb(10 10 10 / 0.15);
+}
+
+.twcss-text-card-foreground\/20 {
+  color: rgb(10 10 10 / 0.2);
+}
+
+.twcss-text-card-foreground\/25 {
+  color: rgb(10 10 10 / 0.25);
+}
+
+.twcss-text-card-foreground\/30 {
+  color: rgb(10 10 10 / 0.3);
+}
+
+.twcss-text-card-foreground\/35 {
+  color: rgb(10 10 10 / 0.35);
+}
+
+.twcss-text-card-foreground\/40 {
+  color: rgb(10 10 10 / 0.4);
+}
+
+.twcss-text-card-foreground\/45 {
+  color: rgb(10 10 10 / 0.45);
+}
+
+.twcss-text-card-foreground\/5 {
+  color: rgb(10 10 10 / 0.05);
+}
+
+.twcss-text-card-foreground\/50 {
+  color: rgb(10 10 10 / 0.5);
+}
+
+.twcss-text-card-foreground\/55 {
+  color: rgb(10 10 10 / 0.55);
+}
+
+.twcss-text-card-foreground\/60 {
+  color: rgb(10 10 10 / 0.6);
+}
+
+.twcss-text-card-foreground\/65 {
+  color: rgb(10 10 10 / 0.65);
+}
+
+.twcss-text-card-foreground\/70 {
+  color: rgb(10 10 10 / 0.7);
+}
+
+.twcss-text-card-foreground\/75 {
+  color: rgb(10 10 10 / 0.75);
+}
+
+.twcss-text-card-foreground\/80 {
+  color: rgb(10 10 10 / 0.8);
+}
+
+.twcss-text-card-foreground\/85 {
+  color: rgb(10 10 10 / 0.85);
+}
+
+.twcss-text-card-foreground\/90 {
+  color: rgb(10 10 10 / 0.9);
+}
+
+.twcss-text-card-foreground\/95 {
+  color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-text-destructive-default {
+  --tw-text-opacity: 1;
+  color: rgb(255 0 0 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-destructive-default\/0 {
+  color: rgb(255 0 0 / 0);
+}
+
+.twcss-text-destructive-default\/10 {
+  color: rgb(255 0 0 / 0.1);
+}
+
+.twcss-text-destructive-default\/100 {
+  color: rgb(255 0 0 / 1);
+}
+
+.twcss-text-destructive-default\/15 {
+  color: rgb(255 0 0 / 0.15);
+}
+
+.twcss-text-destructive-default\/20 {
+  color: rgb(255 0 0 / 0.2);
+}
+
+.twcss-text-destructive-default\/25 {
+  color: rgb(255 0 0 / 0.25);
+}
+
+.twcss-text-destructive-default\/30 {
+  color: rgb(255 0 0 / 0.3);
+}
+
+.twcss-text-destructive-default\/35 {
+  color: rgb(255 0 0 / 0.35);
+}
+
+.twcss-text-destructive-default\/40 {
+  color: rgb(255 0 0 / 0.4);
+}
+
+.twcss-text-destructive-default\/45 {
+  color: rgb(255 0 0 / 0.45);
+}
+
+.twcss-text-destructive-default\/5 {
+  color: rgb(255 0 0 / 0.05);
+}
+
+.twcss-text-destructive-default\/50 {
+  color: rgb(255 0 0 / 0.5);
+}
+
+.twcss-text-destructive-default\/55 {
+  color: rgb(255 0 0 / 0.55);
+}
+
+.twcss-text-destructive-default\/60 {
+  color: rgb(255 0 0 / 0.6);
+}
+
+.twcss-text-destructive-default\/65 {
+  color: rgb(255 0 0 / 0.65);
+}
+
+.twcss-text-destructive-default\/70 {
+  color: rgb(255 0 0 / 0.7);
+}
+
+.twcss-text-destructive-default\/75 {
+  color: rgb(255 0 0 / 0.75);
+}
+
+.twcss-text-destructive-default\/80 {
+  color: rgb(255 0 0 / 0.8);
+}
+
+.twcss-text-destructive-default\/85 {
+  color: rgb(255 0 0 / 0.85);
+}
+
+.twcss-text-destructive-default\/90 {
+  color: rgb(255 0 0 / 0.9);
+}
+
+.twcss-text-destructive-default\/95 {
+  color: rgb(255 0 0 / 0.95);
+}
+
+.twcss-text-destructive-foreground {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-destructive-foreground\/0 {
+  color: rgb(255 255 255 / 0);
+}
+
+.twcss-text-destructive-foreground\/10 {
+  color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-text-destructive-foreground\/100 {
+  color: rgb(255 255 255 / 1);
+}
+
+.twcss-text-destructive-foreground\/15 {
+  color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-text-destructive-foreground\/20 {
+  color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-text-destructive-foreground\/25 {
+  color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-text-destructive-foreground\/30 {
+  color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-text-destructive-foreground\/35 {
+  color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-text-destructive-foreground\/40 {
+  color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-text-destructive-foreground\/45 {
+  color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-text-destructive-foreground\/5 {
+  color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-text-destructive-foreground\/50 {
+  color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-text-destructive-foreground\/55 {
+  color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-text-destructive-foreground\/60 {
+  color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-text-destructive-foreground\/65 {
+  color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-text-destructive-foreground\/70 {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-text-destructive-foreground\/75 {
+  color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-text-destructive-foreground\/80 {
+  color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-text-destructive-foreground\/85 {
+  color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-text-destructive-foreground\/90 {
+  color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-text-destructive-foreground\/95 {
+  color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-text-foreground {
+  --tw-text-opacity: 1;
+  color: rgb(10 10 10 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-foreground\/0 {
+  color: rgb(10 10 10 / 0);
+}
+
+.twcss-text-foreground\/10 {
+  color: rgb(10 10 10 / 0.1);
+}
+
+.twcss-text-foreground\/100 {
+  color: rgb(10 10 10 / 1);
+}
+
+.twcss-text-foreground\/15 {
+  color: rgb(10 10 10 / 0.15);
+}
+
+.twcss-text-foreground\/20 {
+  color: rgb(10 10 10 / 0.2);
+}
+
+.twcss-text-foreground\/25 {
+  color: rgb(10 10 10 / 0.25);
+}
+
+.twcss-text-foreground\/30 {
+  color: rgb(10 10 10 / 0.3);
+}
+
+.twcss-text-foreground\/35 {
+  color: rgb(10 10 10 / 0.35);
+}
+
+.twcss-text-foreground\/40 {
+  color: rgb(10 10 10 / 0.4);
+}
+
+.twcss-text-foreground\/45 {
+  color: rgb(10 10 10 / 0.45);
+}
+
+.twcss-text-foreground\/5 {
+  color: rgb(10 10 10 / 0.05);
+}
+
+.twcss-text-foreground\/50 {
+  color: rgb(10 10 10 / 0.5);
+}
+
+.twcss-text-foreground\/55 {
+  color: rgb(10 10 10 / 0.55);
+}
+
+.twcss-text-foreground\/60 {
+  color: rgb(10 10 10 / 0.6);
+}
+
+.twcss-text-foreground\/65 {
+  color: rgb(10 10 10 / 0.65);
+}
+
+.twcss-text-foreground\/70 {
+  color: rgb(10 10 10 / 0.7);
+}
+
+.twcss-text-foreground\/75 {
+  color: rgb(10 10 10 / 0.75);
+}
+
+.twcss-text-foreground\/80 {
+  color: rgb(10 10 10 / 0.8);
+}
+
+.twcss-text-foreground\/85 {
+  color: rgb(10 10 10 / 0.85);
+}
+
+.twcss-text-foreground\/90 {
+  color: rgb(10 10 10 / 0.9);
+}
+
+.twcss-text-foreground\/95 {
+  color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-muted-default {
+  --tw-text-opacity: 1;
+  color: rgb(245 245 245 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-muted-default\/0 {
+  color: rgb(245 245 245 / 0);
+}
+
+.twcss-text-muted-default\/10 {
+  color: rgb(245 245 245 / 0.1);
+}
+
+.twcss-text-muted-default\/100 {
+  color: rgb(245 245 245 / 1);
+}
+
+.twcss-text-muted-default\/15 {
+  color: rgb(245 245 245 / 0.15);
+}
+
+.twcss-text-muted-default\/20 {
+  color: rgb(245 245 245 / 0.2);
+}
+
+.twcss-text-muted-default\/25 {
+  color: rgb(245 245 245 / 0.25);
+}
+
+.twcss-text-muted-default\/30 {
+  color: rgb(245 245 245 / 0.3);
+}
+
+.twcss-text-muted-default\/35 {
+  color: rgb(245 245 245 / 0.35);
+}
+
+.twcss-text-muted-default\/40 {
+  color: rgb(245 245 245 / 0.4);
+}
+
+.twcss-text-muted-default\/45 {
+  color: rgb(245 245 245 / 0.45);
+}
+
+.twcss-text-muted-default\/5 {
+  color: rgb(245 245 245 / 0.05);
+}
+
+.twcss-text-muted-default\/50 {
+  color: rgb(245 245 245 / 0.5);
+}
+
+.twcss-text-muted-default\/55 {
+  color: rgb(245 245 245 / 0.55);
+}
+
+.twcss-text-muted-default\/60 {
+  color: rgb(245 245 245 / 0.6);
+}
+
+.twcss-text-muted-default\/65 {
+  color: rgb(245 245 245 / 0.65);
+}
+
+.twcss-text-muted-default\/70 {
+  color: rgb(245 245 245 / 0.7);
+}
+
+.twcss-text-muted-default\/75 {
+  color: rgb(245 245 245 / 0.75);
+}
+
+.twcss-text-muted-default\/80 {
+  color: rgb(245 245 245 / 0.8);
+}
+
+.twcss-text-muted-default\/85 {
+  color: rgb(245 245 245 / 0.85);
+}
+
+.twcss-text-muted-default\/90 {
+  color: rgb(245 245 245 / 0.9);
+}
+
+.twcss-text-muted-default\/95 {
+  color: rgb(245 245 245 / 0.95);
+}
+
+.twcss-text-muted-foreground {
+  --tw-text-opacity: 1;
+  color: rgb(115 115 115 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-muted-foreground\/0 {
+  color: rgb(115 115 115 / 0);
+}
+
+.twcss-text-muted-foreground\/10 {
+  color: rgb(115 115 115 / 0.1);
+}
+
+.twcss-text-muted-foreground\/100 {
+  color: rgb(115 115 115 / 1);
+}
+
+.twcss-text-muted-foreground\/15 {
+  color: rgb(115 115 115 / 0.15);
+}
+
+.twcss-text-muted-foreground\/20 {
+  color: rgb(115 115 115 / 0.2);
+}
+
+.twcss-text-muted-foreground\/25 {
+  color: rgb(115 115 115 / 0.25);
+}
+
+.twcss-text-muted-foreground\/30 {
+  color: rgb(115 115 115 / 0.3);
+}
+
+.twcss-text-muted-foreground\/35 {
+  color: rgb(115 115 115 / 0.35);
+}
+
+.twcss-text-muted-foreground\/40 {
+  color: rgb(115 115 115 / 0.4);
+}
+
+.twcss-text-muted-foreground\/45 {
+  color: rgb(115 115 115 / 0.45);
+}
+
+.twcss-text-muted-foreground\/5 {
+  color: rgb(115 115 115 / 0.05);
+}
+
+.twcss-text-muted-foreground\/50 {
+  color: rgb(115 115 115 / 0.5);
+}
+
+.twcss-text-muted-foreground\/55 {
+  color: rgb(115 115 115 / 0.55);
+}
+
+.twcss-text-muted-foreground\/60 {
+  color: rgb(115 115 115 / 0.6);
+}
+
+.twcss-text-muted-foreground\/65 {
+  color: rgb(115 115 115 / 0.65);
+}
+
+.twcss-text-muted-foreground\/70 {
+  color: rgb(115 115 115 / 0.7);
+}
+
+.twcss-text-muted-foreground\/75 {
+  color: rgb(115 115 115 / 0.75);
+}
+
+.twcss-text-muted-foreground\/80 {
+  color: rgb(115 115 115 / 0.8);
+}
+
+.twcss-text-muted-foreground\/85 {
+  color: rgb(115 115 115 / 0.85);
+}
+
+.twcss-text-muted-foreground\/90 {
+  color: rgb(115 115 115 / 0.9);
+}
+
+.twcss-text-muted-foreground\/95 {
+  color: rgb(115 115 115 / 0.95);
+}
+
+.twcss-text-popover-default {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-popover-default\/0 {
+  color: rgb(255 255 255 / 0);
+}
+
+.twcss-text-popover-default\/10 {
+  color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-text-popover-default\/100 {
+  color: rgb(255 255 255 / 1);
+}
+
+.twcss-text-popover-default\/15 {
+  color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-text-popover-default\/20 {
+  color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-text-popover-default\/25 {
+  color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-text-popover-default\/30 {
+  color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-text-popover-default\/35 {
+  color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-text-popover-default\/40 {
+  color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-text-popover-default\/45 {
+  color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-text-popover-default\/5 {
+  color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-text-popover-default\/50 {
+  color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-text-popover-default\/55 {
+  color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-text-popover-default\/60 {
+  color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-text-popover-default\/65 {
+  color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-text-popover-default\/70 {
+  color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-text-popover-default\/75 {
+  color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-text-popover-default\/80 {
+  color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-text-popover-default\/85 {
+  color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-text-popover-default\/90 {
+  color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-text-popover-default\/95 {
+  color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-text-popover-foreground {
+  --tw-text-opacity: 1;
+  color: rgb(10 10 10 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-popover-foreground\/0 {
+  color: rgb(10 10 10 / 0);
+}
+
+.twcss-text-popover-foreground\/10 {
+  color: rgb(10 10 10 / 0.1);
+}
+
+.twcss-text-popover-foreground\/100 {
+  color: rgb(10 10 10 / 1);
+}
+
+.twcss-text-popover-foreground\/15 {
+  color: rgb(10 10 10 / 0.15);
+}
+
+.twcss-text-popover-foreground\/20 {
+  color: rgb(10 10 10 / 0.2);
+}
+
+.twcss-text-popover-foreground\/25 {
+  color: rgb(10 10 10 / 0.25);
+}
+
+.twcss-text-popover-foreground\/30 {
+  color: rgb(10 10 10 / 0.3);
+}
+
+.twcss-text-popover-foreground\/35 {
+  color: rgb(10 10 10 / 0.35);
+}
+
+.twcss-text-popover-foreground\/40 {
+  color: rgb(10 10 10 / 0.4);
+}
+
+.twcss-text-popover-foreground\/45 {
+  color: rgb(10 10 10 / 0.45);
+}
+
+.twcss-text-popover-foreground\/5 {
+  color: rgb(10 10 10 / 0.05);
+}
+
+.twcss-text-popover-foreground\/50 {
+  color: rgb(10 10 10 / 0.5);
+}
+
+.twcss-text-popover-foreground\/55 {
+  color: rgb(10 10 10 / 0.55);
+}
+
+.twcss-text-popover-foreground\/60 {
+  color: rgb(10 10 10 / 0.6);
+}
+
+.twcss-text-popover-foreground\/65 {
+  color: rgb(10 10 10 / 0.65);
+}
+
+.twcss-text-popover-foreground\/70 {
+  color: rgb(10 10 10 / 0.7);
+}
+
+.twcss-text-popover-foreground\/75 {
+  color: rgb(10 10 10 / 0.75);
+}
+
+.twcss-text-popover-foreground\/80 {
+  color: rgb(10 10 10 / 0.8);
+}
+
+.twcss-text-popover-foreground\/85 {
+  color: rgb(10 10 10 / 0.85);
+}
+
+.twcss-text-popover-foreground\/90 {
+  color: rgb(10 10 10 / 0.9);
+}
+
+.twcss-text-popover-foreground\/95 {
+  color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-text-primary-default {
+  --tw-text-opacity: 1;
+  color: rgb(23 70 162 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-primary-default\/0 {
+  color: rgb(23 70 162 / 0);
+}
+
+.twcss-text-primary-default\/10 {
+  color: rgb(23 70 162 / 0.1);
+}
+
+.twcss-text-primary-default\/100 {
+  color: rgb(23 70 162 / 1);
+}
+
+.twcss-text-primary-default\/15 {
+  color: rgb(23 70 162 / 0.15);
+}
+
+.twcss-text-primary-default\/20 {
+  color: rgb(23 70 162 / 0.2);
+}
+
+.twcss-text-primary-default\/25 {
+  color: rgb(23 70 162 / 0.25);
+}
+
+.twcss-text-primary-default\/30 {
+  color: rgb(23 70 162 / 0.3);
+}
+
+.twcss-text-primary-default\/35 {
+  color: rgb(23 70 162 / 0.35);
+}
+
+.twcss-text-primary-default\/40 {
+  color: rgb(23 70 162 / 0.4);
+}
+
+.twcss-text-primary-default\/45 {
+  color: rgb(23 70 162 / 0.45);
+}
+
+.twcss-text-primary-default\/5 {
+  color: rgb(23 70 162 / 0.05);
+}
+
+.twcss-text-primary-default\/50 {
+  color: rgb(23 70 162 / 0.5);
+}
+
+.twcss-text-primary-default\/55 {
+  color: rgb(23 70 162 / 0.55);
+}
+
+.twcss-text-primary-default\/60 {
+  color: rgb(23 70 162 / 0.6);
+}
+
+.twcss-text-primary-default\/65 {
+  color: rgb(23 70 162 / 0.65);
+}
+
+.twcss-text-primary-default\/70 {
+  color: rgb(23 70 162 / 0.7);
+}
+
+.twcss-text-primary-default\/75 {
+  color: rgb(23 70 162 / 0.75);
+}
+
+.twcss-text-primary-default\/80 {
+  color: rgb(23 70 162 / 0.8);
+}
+
+.twcss-text-primary-default\/85 {
+  color: rgb(23 70 162 / 0.85);
+}
+
+.twcss-text-primary-default\/90 {
+  color: rgb(23 70 162 / 0.9);
+}
+
+.twcss-text-primary-default\/95 {
+  color: rgb(23 70 162 / 0.95);
+}
+
+.twcss-text-primary-foreground {
+  color: #5F9DF7E5;
+}
+
+.twcss-text-primary-foreground\/0 {
+  color: rgb(95 157 247 / 0);
+}
+
+.twcss-text-primary-foreground\/10 {
+  color: rgb(95 157 247 / 0.1);
+}
+
+.twcss-text-primary-foreground\/100 {
+  color: rgb(95 157 247 / 1);
+}
+
+.twcss-text-primary-foreground\/15 {
+  color: rgb(95 157 247 / 0.15);
+}
+
+.twcss-text-primary-foreground\/20 {
+  color: rgb(95 157 247 / 0.2);
+}
+
+.twcss-text-primary-foreground\/25 {
+  color: rgb(95 157 247 / 0.25);
+}
+
+.twcss-text-primary-foreground\/30 {
+  color: rgb(95 157 247 / 0.3);
+}
+
+.twcss-text-primary-foreground\/35 {
+  color: rgb(95 157 247 / 0.35);
+}
+
+.twcss-text-primary-foreground\/40 {
+  color: rgb(95 157 247 / 0.4);
+}
+
+.twcss-text-primary-foreground\/45 {
+  color: rgb(95 157 247 / 0.45);
+}
+
+.twcss-text-primary-foreground\/5 {
+  color: rgb(95 157 247 / 0.05);
+}
+
+.twcss-text-primary-foreground\/50 {
+  color: rgb(95 157 247 / 0.5);
+}
+
+.twcss-text-primary-foreground\/55 {
+  color: rgb(95 157 247 / 0.55);
+}
+
+.twcss-text-primary-foreground\/60 {
+  color: rgb(95 157 247 / 0.6);
+}
+
+.twcss-text-primary-foreground\/65 {
+  color: rgb(95 157 247 / 0.65);
+}
+
+.twcss-text-primary-foreground\/70 {
+  color: rgb(95 157 247 / 0.7);
+}
+
+.twcss-text-primary-foreground\/75 {
+  color: rgb(95 157 247 / 0.75);
+}
+
+.twcss-text-primary-foreground\/80 {
+  color: rgb(95 157 247 / 0.8);
+}
+
+.twcss-text-primary-foreground\/85 {
+  color: rgb(95 157 247 / 0.85);
+}
+
+.twcss-text-primary-foreground\/90 {
+  color: rgb(95 157 247 / 0.9);
+}
+
+.twcss-text-primary-foreground\/95 {
+  color: rgb(95 157 247 / 0.95);
+}
+
+.twcss-text-secondary-default {
+  --tw-text-opacity: 1;
+  color: rgb(95 157 247 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-secondary-default\/0 {
+  color: rgb(95 157 247 / 0);
+}
+
+.twcss-text-secondary-default\/10 {
+  color: rgb(95 157 247 / 0.1);
+}
+
+.twcss-text-secondary-default\/100 {
+  color: rgb(95 157 247 / 1);
+}
+
+.twcss-text-secondary-default\/15 {
+  color: rgb(95 157 247 / 0.15);
+}
+
+.twcss-text-secondary-default\/20 {
+  color: rgb(95 157 247 / 0.2);
+}
+
+.twcss-text-secondary-default\/25 {
+  color: rgb(95 157 247 / 0.25);
+}
+
+.twcss-text-secondary-default\/30 {
+  color: rgb(95 157 247 / 0.3);
+}
+
+.twcss-text-secondary-default\/35 {
+  color: rgb(95 157 247 / 0.35);
+}
+
+.twcss-text-secondary-default\/40 {
+  color: rgb(95 157 247 / 0.4);
+}
+
+.twcss-text-secondary-default\/45 {
+  color: rgb(95 157 247 / 0.45);
+}
+
+.twcss-text-secondary-default\/5 {
+  color: rgb(95 157 247 / 0.05);
+}
+
+.twcss-text-secondary-default\/50 {
+  color: rgb(95 157 247 / 0.5);
+}
+
+.twcss-text-secondary-default\/55 {
+  color: rgb(95 157 247 / 0.55);
+}
+
+.twcss-text-secondary-default\/60 {
+  color: rgb(95 157 247 / 0.6);
+}
+
+.twcss-text-secondary-default\/65 {
+  color: rgb(95 157 247 / 0.65);
+}
+
+.twcss-text-secondary-default\/70 {
+  color: rgb(95 157 247 / 0.7);
+}
+
+.twcss-text-secondary-default\/75 {
+  color: rgb(95 157 247 / 0.75);
+}
+
+.twcss-text-secondary-default\/80 {
+  color: rgb(95 157 247 / 0.8);
+}
+
+.twcss-text-secondary-default\/85 {
+  color: rgb(95 157 247 / 0.85);
+}
+
+.twcss-text-secondary-default\/90 {
+  color: rgb(95 157 247 / 0.9);
+}
+
+.twcss-text-secondary-default\/95 {
+  color: rgb(95 157 247 / 0.95);
+}
+
+.twcss-text-secondary-foreground {
+  --tw-text-opacity: 1;
+  color: rgb(227 242 255 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-secondary-foreground\/0 {
+  color: rgb(227 242 255 / 0);
+}
+
+.twcss-text-secondary-foreground\/10 {
+  color: rgb(227 242 255 / 0.1);
+}
+
+.twcss-text-secondary-foreground\/100 {
+  color: rgb(227 242 255 / 1);
+}
+
+.twcss-text-secondary-foreground\/15 {
+  color: rgb(227 242 255 / 0.15);
+}
+
+.twcss-text-secondary-foreground\/20 {
+  color: rgb(227 242 255 / 0.2);
+}
+
+.twcss-text-secondary-foreground\/25 {
+  color: rgb(227 242 255 / 0.25);
+}
+
+.twcss-text-secondary-foreground\/30 {
+  color: rgb(227 242 255 / 0.3);
+}
+
+.twcss-text-secondary-foreground\/35 {
+  color: rgb(227 242 255 / 0.35);
+}
+
+.twcss-text-secondary-foreground\/40 {
+  color: rgb(227 242 255 / 0.4);
+}
+
+.twcss-text-secondary-foreground\/45 {
+  color: rgb(227 242 255 / 0.45);
+}
+
+.twcss-text-secondary-foreground\/5 {
+  color: rgb(227 242 255 / 0.05);
+}
+
+.twcss-text-secondary-foreground\/50 {
+  color: rgb(227 242 255 / 0.5);
+}
+
+.twcss-text-secondary-foreground\/55 {
+  color: rgb(227 242 255 / 0.55);
+}
+
+.twcss-text-secondary-foreground\/60 {
+  color: rgb(227 242 255 / 0.6);
+}
+
+.twcss-text-secondary-foreground\/65 {
+  color: rgb(227 242 255 / 0.65);
+}
+
+.twcss-text-secondary-foreground\/70 {
+  color: rgb(227 242 255 / 0.7);
+}
+
+.twcss-text-secondary-foreground\/75 {
+  color: rgb(227 242 255 / 0.75);
+}
+
+.twcss-text-secondary-foreground\/80 {
+  color: rgb(227 242 255 / 0.8);
+}
+
+.twcss-text-secondary-foreground\/85 {
+  color: rgb(227 242 255 / 0.85);
+}
+
+.twcss-text-secondary-foreground\/90 {
+  color: rgb(227 242 255 / 0.9);
+}
+
+.twcss-text-secondary-foreground\/95 {
+  color: rgb(227 242 255 / 0.95);
+}
+
+.twcss-text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.twcss-ring-accent-default {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(245 245 245 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-accent-default\/0 {
+  --tw-ring-color: rgb(245 245 245 / 0);
+}
+
+.twcss-ring-accent-default\/10 {
+  --tw-ring-color: rgb(245 245 245 / 0.1);
+}
+
+.twcss-ring-accent-default\/100 {
+  --tw-ring-color: rgb(245 245 245 / 1);
+}
+
+.twcss-ring-accent-default\/15 {
+  --tw-ring-color: rgb(245 245 245 / 0.15);
+}
+
+.twcss-ring-accent-default\/20 {
+  --tw-ring-color: rgb(245 245 245 / 0.2);
+}
+
+.twcss-ring-accent-default\/25 {
+  --tw-ring-color: rgb(245 245 245 / 0.25);
+}
+
+.twcss-ring-accent-default\/30 {
+  --tw-ring-color: rgb(245 245 245 / 0.3);
+}
+
+.twcss-ring-accent-default\/35 {
+  --tw-ring-color: rgb(245 245 245 / 0.35);
+}
+
+.twcss-ring-accent-default\/40 {
+  --tw-ring-color: rgb(245 245 245 / 0.4);
+}
+
+.twcss-ring-accent-default\/45 {
+  --tw-ring-color: rgb(245 245 245 / 0.45);
+}
+
+.twcss-ring-accent-default\/5 {
+  --tw-ring-color: rgb(245 245 245 / 0.05);
+}
+
+.twcss-ring-accent-default\/50 {
+  --tw-ring-color: rgb(245 245 245 / 0.5);
+}
+
+.twcss-ring-accent-default\/55 {
+  --tw-ring-color: rgb(245 245 245 / 0.55);
+}
+
+.twcss-ring-accent-default\/60 {
+  --tw-ring-color: rgb(245 245 245 / 0.6);
+}
+
+.twcss-ring-accent-default\/65 {
+  --tw-ring-color: rgb(245 245 245 / 0.65);
+}
+
+.twcss-ring-accent-default\/70 {
+  --tw-ring-color: rgb(245 245 245 / 0.7);
+}
+
+.twcss-ring-accent-default\/75 {
+  --tw-ring-color: rgb(245 245 245 / 0.75);
+}
+
+.twcss-ring-accent-default\/80 {
+  --tw-ring-color: rgb(245 245 245 / 0.8);
+}
+
+.twcss-ring-accent-default\/85 {
+  --tw-ring-color: rgb(245 245 245 / 0.85);
+}
+
+.twcss-ring-accent-default\/90 {
+  --tw-ring-color: rgb(245 245 245 / 0.9);
+}
+
+.twcss-ring-accent-default\/95 {
+  --tw-ring-color: rgb(245 245 245 / 0.95);
+}
+
+.twcss-ring-accent-foreground {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(26 26 26 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-accent-foreground\/0 {
+  --tw-ring-color: rgb(26 26 26 / 0);
+}
+
+.twcss-ring-accent-foreground\/10 {
+  --tw-ring-color: rgb(26 26 26 / 0.1);
+}
+
+.twcss-ring-accent-foreground\/100 {
+  --tw-ring-color: rgb(26 26 26 / 1);
+}
+
+.twcss-ring-accent-foreground\/15 {
+  --tw-ring-color: rgb(26 26 26 / 0.15);
+}
+
+.twcss-ring-accent-foreground\/20 {
+  --tw-ring-color: rgb(26 26 26 / 0.2);
+}
+
+.twcss-ring-accent-foreground\/25 {
+  --tw-ring-color: rgb(26 26 26 / 0.25);
+}
+
+.twcss-ring-accent-foreground\/30 {
+  --tw-ring-color: rgb(26 26 26 / 0.3);
+}
+
+.twcss-ring-accent-foreground\/35 {
+  --tw-ring-color: rgb(26 26 26 / 0.35);
+}
+
+.twcss-ring-accent-foreground\/40 {
+  --tw-ring-color: rgb(26 26 26 / 0.4);
+}
+
+.twcss-ring-accent-foreground\/45 {
+  --tw-ring-color: rgb(26 26 26 / 0.45);
+}
+
+.twcss-ring-accent-foreground\/5 {
+  --tw-ring-color: rgb(26 26 26 / 0.05);
+}
+
+.twcss-ring-accent-foreground\/50 {
+  --tw-ring-color: rgb(26 26 26 / 0.5);
+}
+
+.twcss-ring-accent-foreground\/55 {
+  --tw-ring-color: rgb(26 26 26 / 0.55);
+}
+
+.twcss-ring-accent-foreground\/60 {
+  --tw-ring-color: rgb(26 26 26 / 0.6);
+}
+
+.twcss-ring-accent-foreground\/65 {
+  --tw-ring-color: rgb(26 26 26 / 0.65);
+}
+
+.twcss-ring-accent-foreground\/70 {
+  --tw-ring-color: rgb(26 26 26 / 0.7);
+}
+
+.twcss-ring-accent-foreground\/75 {
+  --tw-ring-color: rgb(26 26 26 / 0.75);
+}
+
+.twcss-ring-accent-foreground\/80 {
+  --tw-ring-color: rgb(26 26 26 / 0.8);
+}
+
+.twcss-ring-accent-foreground\/85 {
+  --tw-ring-color: rgb(26 26 26 / 0.85);
+}
+
+.twcss-ring-accent-foreground\/90 {
+  --tw-ring-color: rgb(26 26 26 / 0.9);
+}
+
+.twcss-ring-accent-foreground\/95 {
+  --tw-ring-color: rgb(26 26 26 / 0.95);
+}
+
+.twcss-ring-background {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-background\/0 {
+  --tw-ring-color: rgb(255 255 255 / 0);
+}
+
+.twcss-ring-background\/10 {
+  --tw-ring-color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-ring-background\/100 {
+  --tw-ring-color: rgb(255 255 255 / 1);
+}
+
+.twcss-ring-background\/15 {
+  --tw-ring-color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-ring-background\/20 {
+  --tw-ring-color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-ring-background\/25 {
+  --tw-ring-color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-ring-background\/30 {
+  --tw-ring-color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-ring-background\/35 {
+  --tw-ring-color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-ring-background\/40 {
+  --tw-ring-color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-ring-background\/45 {
+  --tw-ring-color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-ring-background\/5 {
+  --tw-ring-color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-ring-background\/50 {
+  --tw-ring-color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-ring-background\/55 {
+  --tw-ring-color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-ring-background\/60 {
+  --tw-ring-color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-ring-background\/65 {
+  --tw-ring-color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-ring-background\/70 {
+  --tw-ring-color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-ring-background\/75 {
+  --tw-ring-color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-ring-background\/80 {
+  --tw-ring-color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-ring-background\/85 {
+  --tw-ring-color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-ring-background\/90 {
+  --tw-ring-color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-ring-background\/95 {
+  --tw-ring-color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-ring-card-default {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-card-default\/0 {
+  --tw-ring-color: rgb(255 255 255 / 0);
+}
+
+.twcss-ring-card-default\/10 {
+  --tw-ring-color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-ring-card-default\/100 {
+  --tw-ring-color: rgb(255 255 255 / 1);
+}
+
+.twcss-ring-card-default\/15 {
+  --tw-ring-color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-ring-card-default\/20 {
+  --tw-ring-color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-ring-card-default\/25 {
+  --tw-ring-color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-ring-card-default\/30 {
+  --tw-ring-color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-ring-card-default\/35 {
+  --tw-ring-color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-ring-card-default\/40 {
+  --tw-ring-color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-ring-card-default\/45 {
+  --tw-ring-color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-ring-card-default\/5 {
+  --tw-ring-color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-ring-card-default\/50 {
+  --tw-ring-color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-ring-card-default\/55 {
+  --tw-ring-color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-ring-card-default\/60 {
+  --tw-ring-color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-ring-card-default\/65 {
+  --tw-ring-color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-ring-card-default\/70 {
+  --tw-ring-color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-ring-card-default\/75 {
+  --tw-ring-color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-ring-card-default\/80 {
+  --tw-ring-color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-ring-card-default\/85 {
+  --tw-ring-color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-ring-card-default\/90 {
+  --tw-ring-color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-ring-card-default\/95 {
+  --tw-ring-color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-ring-card-foreground {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(10 10 10 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-card-foreground\/0 {
+  --tw-ring-color: rgb(10 10 10 / 0);
+}
+
+.twcss-ring-card-foreground\/10 {
+  --tw-ring-color: rgb(10 10 10 / 0.1);
+}
+
+.twcss-ring-card-foreground\/100 {
+  --tw-ring-color: rgb(10 10 10 / 1);
+}
+
+.twcss-ring-card-foreground\/15 {
+  --tw-ring-color: rgb(10 10 10 / 0.15);
+}
+
+.twcss-ring-card-foreground\/20 {
+  --tw-ring-color: rgb(10 10 10 / 0.2);
+}
+
+.twcss-ring-card-foreground\/25 {
+  --tw-ring-color: rgb(10 10 10 / 0.25);
+}
+
+.twcss-ring-card-foreground\/30 {
+  --tw-ring-color: rgb(10 10 10 / 0.3);
+}
+
+.twcss-ring-card-foreground\/35 {
+  --tw-ring-color: rgb(10 10 10 / 0.35);
+}
+
+.twcss-ring-card-foreground\/40 {
+  --tw-ring-color: rgb(10 10 10 / 0.4);
+}
+
+.twcss-ring-card-foreground\/45 {
+  --tw-ring-color: rgb(10 10 10 / 0.45);
+}
+
+.twcss-ring-card-foreground\/5 {
+  --tw-ring-color: rgb(10 10 10 / 0.05);
+}
+
+.twcss-ring-card-foreground\/50 {
+  --tw-ring-color: rgb(10 10 10 / 0.5);
+}
+
+.twcss-ring-card-foreground\/55 {
+  --tw-ring-color: rgb(10 10 10 / 0.55);
+}
+
+.twcss-ring-card-foreground\/60 {
+  --tw-ring-color: rgb(10 10 10 / 0.6);
+}
+
+.twcss-ring-card-foreground\/65 {
+  --tw-ring-color: rgb(10 10 10 / 0.65);
+}
+
+.twcss-ring-card-foreground\/70 {
+  --tw-ring-color: rgb(10 10 10 / 0.7);
+}
+
+.twcss-ring-card-foreground\/75 {
+  --tw-ring-color: rgb(10 10 10 / 0.75);
+}
+
+.twcss-ring-card-foreground\/80 {
+  --tw-ring-color: rgb(10 10 10 / 0.8);
+}
+
+.twcss-ring-card-foreground\/85 {
+  --tw-ring-color: rgb(10 10 10 / 0.85);
+}
+
+.twcss-ring-card-foreground\/90 {
+  --tw-ring-color: rgb(10 10 10 / 0.9);
+}
+
+.twcss-ring-card-foreground\/95 {
+  --tw-ring-color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-ring-destructive-default {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 0 0 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-destructive-default\/0 {
+  --tw-ring-color: rgb(255 0 0 / 0);
+}
+
+.twcss-ring-destructive-default\/10 {
+  --tw-ring-color: rgb(255 0 0 / 0.1);
+}
+
+.twcss-ring-destructive-default\/100 {
+  --tw-ring-color: rgb(255 0 0 / 1);
+}
+
+.twcss-ring-destructive-default\/15 {
+  --tw-ring-color: rgb(255 0 0 / 0.15);
+}
+
+.twcss-ring-destructive-default\/20 {
+  --tw-ring-color: rgb(255 0 0 / 0.2);
+}
+
+.twcss-ring-destructive-default\/25 {
+  --tw-ring-color: rgb(255 0 0 / 0.25);
+}
+
+.twcss-ring-destructive-default\/30 {
+  --tw-ring-color: rgb(255 0 0 / 0.3);
+}
+
+.twcss-ring-destructive-default\/35 {
+  --tw-ring-color: rgb(255 0 0 / 0.35);
+}
+
+.twcss-ring-destructive-default\/40 {
+  --tw-ring-color: rgb(255 0 0 / 0.4);
+}
+
+.twcss-ring-destructive-default\/45 {
+  --tw-ring-color: rgb(255 0 0 / 0.45);
+}
+
+.twcss-ring-destructive-default\/5 {
+  --tw-ring-color: rgb(255 0 0 / 0.05);
+}
+
+.twcss-ring-destructive-default\/50 {
+  --tw-ring-color: rgb(255 0 0 / 0.5);
+}
+
+.twcss-ring-destructive-default\/55 {
+  --tw-ring-color: rgb(255 0 0 / 0.55);
+}
+
+.twcss-ring-destructive-default\/60 {
+  --tw-ring-color: rgb(255 0 0 / 0.6);
+}
+
+.twcss-ring-destructive-default\/65 {
+  --tw-ring-color: rgb(255 0 0 / 0.65);
+}
+
+.twcss-ring-destructive-default\/70 {
+  --tw-ring-color: rgb(255 0 0 / 0.7);
+}
+
+.twcss-ring-destructive-default\/75 {
+  --tw-ring-color: rgb(255 0 0 / 0.75);
+}
+
+.twcss-ring-destructive-default\/80 {
+  --tw-ring-color: rgb(255 0 0 / 0.8);
+}
+
+.twcss-ring-destructive-default\/85 {
+  --tw-ring-color: rgb(255 0 0 / 0.85);
+}
+
+.twcss-ring-destructive-default\/90 {
+  --tw-ring-color: rgb(255 0 0 / 0.9);
+}
+
+.twcss-ring-destructive-default\/95 {
+  --tw-ring-color: rgb(255 0 0 / 0.95);
+}
+
+.twcss-ring-destructive-foreground {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-destructive-foreground\/0 {
+  --tw-ring-color: rgb(255 255 255 / 0);
+}
+
+.twcss-ring-destructive-foreground\/10 {
+  --tw-ring-color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-ring-destructive-foreground\/100 {
+  --tw-ring-color: rgb(255 255 255 / 1);
+}
+
+.twcss-ring-destructive-foreground\/15 {
+  --tw-ring-color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-ring-destructive-foreground\/20 {
+  --tw-ring-color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-ring-destructive-foreground\/25 {
+  --tw-ring-color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-ring-destructive-foreground\/30 {
+  --tw-ring-color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-ring-destructive-foreground\/35 {
+  --tw-ring-color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-ring-destructive-foreground\/40 {
+  --tw-ring-color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-ring-destructive-foreground\/45 {
+  --tw-ring-color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-ring-destructive-foreground\/5 {
+  --tw-ring-color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-ring-destructive-foreground\/50 {
+  --tw-ring-color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-ring-destructive-foreground\/55 {
+  --tw-ring-color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-ring-destructive-foreground\/60 {
+  --tw-ring-color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-ring-destructive-foreground\/65 {
+  --tw-ring-color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-ring-destructive-foreground\/70 {
+  --tw-ring-color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-ring-destructive-foreground\/75 {
+  --tw-ring-color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-ring-destructive-foreground\/80 {
+  --tw-ring-color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-ring-destructive-foreground\/85 {
+  --tw-ring-color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-ring-destructive-foreground\/90 {
+  --tw-ring-color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-ring-destructive-foreground\/95 {
+  --tw-ring-color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-ring-foreground {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(10 10 10 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-foreground\/0 {
+  --tw-ring-color: rgb(10 10 10 / 0);
+}
+
+.twcss-ring-foreground\/10 {
+  --tw-ring-color: rgb(10 10 10 / 0.1);
+}
+
+.twcss-ring-foreground\/100 {
+  --tw-ring-color: rgb(10 10 10 / 1);
+}
+
+.twcss-ring-foreground\/15 {
+  --tw-ring-color: rgb(10 10 10 / 0.15);
+}
+
+.twcss-ring-foreground\/20 {
+  --tw-ring-color: rgb(10 10 10 / 0.2);
+}
+
+.twcss-ring-foreground\/25 {
+  --tw-ring-color: rgb(10 10 10 / 0.25);
+}
+
+.twcss-ring-foreground\/30 {
+  --tw-ring-color: rgb(10 10 10 / 0.3);
+}
+
+.twcss-ring-foreground\/35 {
+  --tw-ring-color: rgb(10 10 10 / 0.35);
+}
+
+.twcss-ring-foreground\/40 {
+  --tw-ring-color: rgb(10 10 10 / 0.4);
+}
+
+.twcss-ring-foreground\/45 {
+  --tw-ring-color: rgb(10 10 10 / 0.45);
+}
+
+.twcss-ring-foreground\/5 {
+  --tw-ring-color: rgb(10 10 10 / 0.05);
+}
+
+.twcss-ring-foreground\/50 {
+  --tw-ring-color: rgb(10 10 10 / 0.5);
+}
+
+.twcss-ring-foreground\/55 {
+  --tw-ring-color: rgb(10 10 10 / 0.55);
+}
+
+.twcss-ring-foreground\/60 {
+  --tw-ring-color: rgb(10 10 10 / 0.6);
+}
+
+.twcss-ring-foreground\/65 {
+  --tw-ring-color: rgb(10 10 10 / 0.65);
+}
+
+.twcss-ring-foreground\/70 {
+  --tw-ring-color: rgb(10 10 10 / 0.7);
+}
+
+.twcss-ring-foreground\/75 {
+  --tw-ring-color: rgb(10 10 10 / 0.75);
+}
+
+.twcss-ring-foreground\/80 {
+  --tw-ring-color: rgb(10 10 10 / 0.8);
+}
+
+.twcss-ring-foreground\/85 {
+  --tw-ring-color: rgb(10 10 10 / 0.85);
+}
+
+.twcss-ring-foreground\/90 {
+  --tw-ring-color: rgb(10 10 10 / 0.9);
+}
+
+.twcss-ring-foreground\/95 {
+  --tw-ring-color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-ring-muted-default {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(245 245 245 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-muted-default\/0 {
+  --tw-ring-color: rgb(245 245 245 / 0);
+}
+
+.twcss-ring-muted-default\/10 {
+  --tw-ring-color: rgb(245 245 245 / 0.1);
+}
+
+.twcss-ring-muted-default\/100 {
+  --tw-ring-color: rgb(245 245 245 / 1);
+}
+
+.twcss-ring-muted-default\/15 {
+  --tw-ring-color: rgb(245 245 245 / 0.15);
+}
+
+.twcss-ring-muted-default\/20 {
+  --tw-ring-color: rgb(245 245 245 / 0.2);
+}
+
+.twcss-ring-muted-default\/25 {
+  --tw-ring-color: rgb(245 245 245 / 0.25);
+}
+
+.twcss-ring-muted-default\/30 {
+  --tw-ring-color: rgb(245 245 245 / 0.3);
+}
+
+.twcss-ring-muted-default\/35 {
+  --tw-ring-color: rgb(245 245 245 / 0.35);
+}
+
+.twcss-ring-muted-default\/40 {
+  --tw-ring-color: rgb(245 245 245 / 0.4);
+}
+
+.twcss-ring-muted-default\/45 {
+  --tw-ring-color: rgb(245 245 245 / 0.45);
+}
+
+.twcss-ring-muted-default\/5 {
+  --tw-ring-color: rgb(245 245 245 / 0.05);
+}
+
+.twcss-ring-muted-default\/50 {
+  --tw-ring-color: rgb(245 245 245 / 0.5);
+}
+
+.twcss-ring-muted-default\/55 {
+  --tw-ring-color: rgb(245 245 245 / 0.55);
+}
+
+.twcss-ring-muted-default\/60 {
+  --tw-ring-color: rgb(245 245 245 / 0.6);
+}
+
+.twcss-ring-muted-default\/65 {
+  --tw-ring-color: rgb(245 245 245 / 0.65);
+}
+
+.twcss-ring-muted-default\/70 {
+  --tw-ring-color: rgb(245 245 245 / 0.7);
+}
+
+.twcss-ring-muted-default\/75 {
+  --tw-ring-color: rgb(245 245 245 / 0.75);
+}
+
+.twcss-ring-muted-default\/80 {
+  --tw-ring-color: rgb(245 245 245 / 0.8);
+}
+
+.twcss-ring-muted-default\/85 {
+  --tw-ring-color: rgb(245 245 245 / 0.85);
+}
+
+.twcss-ring-muted-default\/90 {
+  --tw-ring-color: rgb(245 245 245 / 0.9);
+}
+
+.twcss-ring-muted-default\/95 {
+  --tw-ring-color: rgb(245 245 245 / 0.95);
+}
+
+.twcss-ring-muted-foreground {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(115 115 115 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-muted-foreground\/0 {
+  --tw-ring-color: rgb(115 115 115 / 0);
+}
+
+.twcss-ring-muted-foreground\/10 {
+  --tw-ring-color: rgb(115 115 115 / 0.1);
+}
+
+.twcss-ring-muted-foreground\/100 {
+  --tw-ring-color: rgb(115 115 115 / 1);
+}
+
+.twcss-ring-muted-foreground\/15 {
+  --tw-ring-color: rgb(115 115 115 / 0.15);
+}
+
+.twcss-ring-muted-foreground\/20 {
+  --tw-ring-color: rgb(115 115 115 / 0.2);
+}
+
+.twcss-ring-muted-foreground\/25 {
+  --tw-ring-color: rgb(115 115 115 / 0.25);
+}
+
+.twcss-ring-muted-foreground\/30 {
+  --tw-ring-color: rgb(115 115 115 / 0.3);
+}
+
+.twcss-ring-muted-foreground\/35 {
+  --tw-ring-color: rgb(115 115 115 / 0.35);
+}
+
+.twcss-ring-muted-foreground\/40 {
+  --tw-ring-color: rgb(115 115 115 / 0.4);
+}
+
+.twcss-ring-muted-foreground\/45 {
+  --tw-ring-color: rgb(115 115 115 / 0.45);
+}
+
+.twcss-ring-muted-foreground\/5 {
+  --tw-ring-color: rgb(115 115 115 / 0.05);
+}
+
+.twcss-ring-muted-foreground\/50 {
+  --tw-ring-color: rgb(115 115 115 / 0.5);
+}
+
+.twcss-ring-muted-foreground\/55 {
+  --tw-ring-color: rgb(115 115 115 / 0.55);
+}
+
+.twcss-ring-muted-foreground\/60 {
+  --tw-ring-color: rgb(115 115 115 / 0.6);
+}
+
+.twcss-ring-muted-foreground\/65 {
+  --tw-ring-color: rgb(115 115 115 / 0.65);
+}
+
+.twcss-ring-muted-foreground\/70 {
+  --tw-ring-color: rgb(115 115 115 / 0.7);
+}
+
+.twcss-ring-muted-foreground\/75 {
+  --tw-ring-color: rgb(115 115 115 / 0.75);
+}
+
+.twcss-ring-muted-foreground\/80 {
+  --tw-ring-color: rgb(115 115 115 / 0.8);
+}
+
+.twcss-ring-muted-foreground\/85 {
+  --tw-ring-color: rgb(115 115 115 / 0.85);
+}
+
+.twcss-ring-muted-foreground\/90 {
+  --tw-ring-color: rgb(115 115 115 / 0.9);
+}
+
+.twcss-ring-muted-foreground\/95 {
+  --tw-ring-color: rgb(115 115 115 / 0.95);
+}
+
+.twcss-ring-popover-default {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-popover-default\/0 {
+  --tw-ring-color: rgb(255 255 255 / 0);
+}
+
+.twcss-ring-popover-default\/10 {
+  --tw-ring-color: rgb(255 255 255 / 0.1);
+}
+
+.twcss-ring-popover-default\/100 {
+  --tw-ring-color: rgb(255 255 255 / 1);
+}
+
+.twcss-ring-popover-default\/15 {
+  --tw-ring-color: rgb(255 255 255 / 0.15);
+}
+
+.twcss-ring-popover-default\/20 {
+  --tw-ring-color: rgb(255 255 255 / 0.2);
+}
+
+.twcss-ring-popover-default\/25 {
+  --tw-ring-color: rgb(255 255 255 / 0.25);
+}
+
+.twcss-ring-popover-default\/30 {
+  --tw-ring-color: rgb(255 255 255 / 0.3);
+}
+
+.twcss-ring-popover-default\/35 {
+  --tw-ring-color: rgb(255 255 255 / 0.35);
+}
+
+.twcss-ring-popover-default\/40 {
+  --tw-ring-color: rgb(255 255 255 / 0.4);
+}
+
+.twcss-ring-popover-default\/45 {
+  --tw-ring-color: rgb(255 255 255 / 0.45);
+}
+
+.twcss-ring-popover-default\/5 {
+  --tw-ring-color: rgb(255 255 255 / 0.05);
+}
+
+.twcss-ring-popover-default\/50 {
+  --tw-ring-color: rgb(255 255 255 / 0.5);
+}
+
+.twcss-ring-popover-default\/55 {
+  --tw-ring-color: rgb(255 255 255 / 0.55);
+}
+
+.twcss-ring-popover-default\/60 {
+  --tw-ring-color: rgb(255 255 255 / 0.6);
+}
+
+.twcss-ring-popover-default\/65 {
+  --tw-ring-color: rgb(255 255 255 / 0.65);
+}
+
+.twcss-ring-popover-default\/70 {
+  --tw-ring-color: rgb(255 255 255 / 0.7);
+}
+
+.twcss-ring-popover-default\/75 {
+  --tw-ring-color: rgb(255 255 255 / 0.75);
+}
+
+.twcss-ring-popover-default\/80 {
+  --tw-ring-color: rgb(255 255 255 / 0.8);
+}
+
+.twcss-ring-popover-default\/85 {
+  --tw-ring-color: rgb(255 255 255 / 0.85);
+}
+
+.twcss-ring-popover-default\/90 {
+  --tw-ring-color: rgb(255 255 255 / 0.9);
+}
+
+.twcss-ring-popover-default\/95 {
+  --tw-ring-color: rgb(255 255 255 / 0.95);
+}
+
+.twcss-ring-popover-foreground {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(10 10 10 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-popover-foreground\/0 {
+  --tw-ring-color: rgb(10 10 10 / 0);
+}
+
+.twcss-ring-popover-foreground\/10 {
+  --tw-ring-color: rgb(10 10 10 / 0.1);
+}
+
+.twcss-ring-popover-foreground\/100 {
+  --tw-ring-color: rgb(10 10 10 / 1);
+}
+
+.twcss-ring-popover-foreground\/15 {
+  --tw-ring-color: rgb(10 10 10 / 0.15);
+}
+
+.twcss-ring-popover-foreground\/20 {
+  --tw-ring-color: rgb(10 10 10 / 0.2);
+}
+
+.twcss-ring-popover-foreground\/25 {
+  --tw-ring-color: rgb(10 10 10 / 0.25);
+}
+
+.twcss-ring-popover-foreground\/30 {
+  --tw-ring-color: rgb(10 10 10 / 0.3);
+}
+
+.twcss-ring-popover-foreground\/35 {
+  --tw-ring-color: rgb(10 10 10 / 0.35);
+}
+
+.twcss-ring-popover-foreground\/40 {
+  --tw-ring-color: rgb(10 10 10 / 0.4);
+}
+
+.twcss-ring-popover-foreground\/45 {
+  --tw-ring-color: rgb(10 10 10 / 0.45);
+}
+
+.twcss-ring-popover-foreground\/5 {
+  --tw-ring-color: rgb(10 10 10 / 0.05);
+}
+
+.twcss-ring-popover-foreground\/50 {
+  --tw-ring-color: rgb(10 10 10 / 0.5);
+}
+
+.twcss-ring-popover-foreground\/55 {
+  --tw-ring-color: rgb(10 10 10 / 0.55);
+}
+
+.twcss-ring-popover-foreground\/60 {
+  --tw-ring-color: rgb(10 10 10 / 0.6);
+}
+
+.twcss-ring-popover-foreground\/65 {
+  --tw-ring-color: rgb(10 10 10 / 0.65);
+}
+
+.twcss-ring-popover-foreground\/70 {
+  --tw-ring-color: rgb(10 10 10 / 0.7);
+}
+
+.twcss-ring-popover-foreground\/75 {
+  --tw-ring-color: rgb(10 10 10 / 0.75);
+}
+
+.twcss-ring-popover-foreground\/80 {
+  --tw-ring-color: rgb(10 10 10 / 0.8);
+}
+
+.twcss-ring-popover-foreground\/85 {
+  --tw-ring-color: rgb(10 10 10 / 0.85);
+}
+
+.twcss-ring-popover-foreground\/90 {
+  --tw-ring-color: rgb(10 10 10 / 0.9);
+}
+
+.twcss-ring-popover-foreground\/95 {
+  --tw-ring-color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-ring-primary-default {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(23 70 162 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-primary-default\/0 {
+  --tw-ring-color: rgb(23 70 162 / 0);
+}
+
+.twcss-ring-primary-default\/10 {
+  --tw-ring-color: rgb(23 70 162 / 0.1);
+}
+
+.twcss-ring-primary-default\/100 {
+  --tw-ring-color: rgb(23 70 162 / 1);
+}
+
+.twcss-ring-primary-default\/15 {
+  --tw-ring-color: rgb(23 70 162 / 0.15);
+}
+
+.twcss-ring-primary-default\/20 {
+  --tw-ring-color: rgb(23 70 162 / 0.2);
+}
+
+.twcss-ring-primary-default\/25 {
+  --tw-ring-color: rgb(23 70 162 / 0.25);
+}
+
+.twcss-ring-primary-default\/30 {
+  --tw-ring-color: rgb(23 70 162 / 0.3);
+}
+
+.twcss-ring-primary-default\/35 {
+  --tw-ring-color: rgb(23 70 162 / 0.35);
+}
+
+.twcss-ring-primary-default\/40 {
+  --tw-ring-color: rgb(23 70 162 / 0.4);
+}
+
+.twcss-ring-primary-default\/45 {
+  --tw-ring-color: rgb(23 70 162 / 0.45);
+}
+
+.twcss-ring-primary-default\/5 {
+  --tw-ring-color: rgb(23 70 162 / 0.05);
+}
+
+.twcss-ring-primary-default\/50 {
+  --tw-ring-color: rgb(23 70 162 / 0.5);
+}
+
+.twcss-ring-primary-default\/55 {
+  --tw-ring-color: rgb(23 70 162 / 0.55);
+}
+
+.twcss-ring-primary-default\/60 {
+  --tw-ring-color: rgb(23 70 162 / 0.6);
+}
+
+.twcss-ring-primary-default\/65 {
+  --tw-ring-color: rgb(23 70 162 / 0.65);
+}
+
+.twcss-ring-primary-default\/70 {
+  --tw-ring-color: rgb(23 70 162 / 0.7);
+}
+
+.twcss-ring-primary-default\/75 {
+  --tw-ring-color: rgb(23 70 162 / 0.75);
+}
+
+.twcss-ring-primary-default\/80 {
+  --tw-ring-color: rgb(23 70 162 / 0.8);
+}
+
+.twcss-ring-primary-default\/85 {
+  --tw-ring-color: rgb(23 70 162 / 0.85);
+}
+
+.twcss-ring-primary-default\/90 {
+  --tw-ring-color: rgb(23 70 162 / 0.9);
+}
+
+.twcss-ring-primary-default\/95 {
+  --tw-ring-color: rgb(23 70 162 / 0.95);
+}
+
+.twcss-ring-primary-foreground {
+  --tw-ring-color: #5F9DF7E5;
+}
+
+.twcss-ring-primary-foreground\/0 {
+  --tw-ring-color: rgb(95 157 247 / 0);
+}
+
+.twcss-ring-primary-foreground\/10 {
+  --tw-ring-color: rgb(95 157 247 / 0.1);
+}
+
+.twcss-ring-primary-foreground\/100 {
+  --tw-ring-color: rgb(95 157 247 / 1);
+}
+
+.twcss-ring-primary-foreground\/15 {
+  --tw-ring-color: rgb(95 157 247 / 0.15);
+}
+
+.twcss-ring-primary-foreground\/20 {
+  --tw-ring-color: rgb(95 157 247 / 0.2);
+}
+
+.twcss-ring-primary-foreground\/25 {
+  --tw-ring-color: rgb(95 157 247 / 0.25);
+}
+
+.twcss-ring-primary-foreground\/30 {
+  --tw-ring-color: rgb(95 157 247 / 0.3);
+}
+
+.twcss-ring-primary-foreground\/35 {
+  --tw-ring-color: rgb(95 157 247 / 0.35);
+}
+
+.twcss-ring-primary-foreground\/40 {
+  --tw-ring-color: rgb(95 157 247 / 0.4);
+}
+
+.twcss-ring-primary-foreground\/45 {
+  --tw-ring-color: rgb(95 157 247 / 0.45);
+}
+
+.twcss-ring-primary-foreground\/5 {
+  --tw-ring-color: rgb(95 157 247 / 0.05);
+}
+
+.twcss-ring-primary-foreground\/50 {
+  --tw-ring-color: rgb(95 157 247 / 0.5);
+}
+
+.twcss-ring-primary-foreground\/55 {
+  --tw-ring-color: rgb(95 157 247 / 0.55);
+}
+
+.twcss-ring-primary-foreground\/60 {
+  --tw-ring-color: rgb(95 157 247 / 0.6);
+}
+
+.twcss-ring-primary-foreground\/65 {
+  --tw-ring-color: rgb(95 157 247 / 0.65);
+}
+
+.twcss-ring-primary-foreground\/70 {
+  --tw-ring-color: rgb(95 157 247 / 0.7);
+}
+
+.twcss-ring-primary-foreground\/75 {
+  --tw-ring-color: rgb(95 157 247 / 0.75);
+}
+
+.twcss-ring-primary-foreground\/80 {
+  --tw-ring-color: rgb(95 157 247 / 0.8);
+}
+
+.twcss-ring-primary-foreground\/85 {
+  --tw-ring-color: rgb(95 157 247 / 0.85);
+}
+
+.twcss-ring-primary-foreground\/90 {
+  --tw-ring-color: rgb(95 157 247 / 0.9);
+}
+
+.twcss-ring-primary-foreground\/95 {
+  --tw-ring-color: rgb(95 157 247 / 0.95);
+}
+
+.twcss-ring-secondary-default {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(95 157 247 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-secondary-default\/0 {
+  --tw-ring-color: rgb(95 157 247 / 0);
+}
+
+.twcss-ring-secondary-default\/10 {
+  --tw-ring-color: rgb(95 157 247 / 0.1);
+}
+
+.twcss-ring-secondary-default\/100 {
+  --tw-ring-color: rgb(95 157 247 / 1);
+}
+
+.twcss-ring-secondary-default\/15 {
+  --tw-ring-color: rgb(95 157 247 / 0.15);
+}
+
+.twcss-ring-secondary-default\/20 {
+  --tw-ring-color: rgb(95 157 247 / 0.2);
+}
+
+.twcss-ring-secondary-default\/25 {
+  --tw-ring-color: rgb(95 157 247 / 0.25);
+}
+
+.twcss-ring-secondary-default\/30 {
+  --tw-ring-color: rgb(95 157 247 / 0.3);
+}
+
+.twcss-ring-secondary-default\/35 {
+  --tw-ring-color: rgb(95 157 247 / 0.35);
+}
+
+.twcss-ring-secondary-default\/40 {
+  --tw-ring-color: rgb(95 157 247 / 0.4);
+}
+
+.twcss-ring-secondary-default\/45 {
+  --tw-ring-color: rgb(95 157 247 / 0.45);
+}
+
+.twcss-ring-secondary-default\/5 {
+  --tw-ring-color: rgb(95 157 247 / 0.05);
+}
+
+.twcss-ring-secondary-default\/50 {
+  --tw-ring-color: rgb(95 157 247 / 0.5);
+}
+
+.twcss-ring-secondary-default\/55 {
+  --tw-ring-color: rgb(95 157 247 / 0.55);
+}
+
+.twcss-ring-secondary-default\/60 {
+  --tw-ring-color: rgb(95 157 247 / 0.6);
+}
+
+.twcss-ring-secondary-default\/65 {
+  --tw-ring-color: rgb(95 157 247 / 0.65);
+}
+
+.twcss-ring-secondary-default\/70 {
+  --tw-ring-color: rgb(95 157 247 / 0.7);
+}
+
+.twcss-ring-secondary-default\/75 {
+  --tw-ring-color: rgb(95 157 247 / 0.75);
+}
+
+.twcss-ring-secondary-default\/80 {
+  --tw-ring-color: rgb(95 157 247 / 0.8);
+}
+
+.twcss-ring-secondary-default\/85 {
+  --tw-ring-color: rgb(95 157 247 / 0.85);
+}
+
+.twcss-ring-secondary-default\/90 {
+  --tw-ring-color: rgb(95 157 247 / 0.9);
+}
+
+.twcss-ring-secondary-default\/95 {
+  --tw-ring-color: rgb(95 157 247 / 0.95);
+}
+
+.twcss-ring-secondary-foreground {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(227 242 255 / var(--tw-ring-opacity, 1));
+}
+
+.twcss-ring-secondary-foreground\/0 {
+  --tw-ring-color: rgb(227 242 255 / 0);
+}
+
+.twcss-ring-secondary-foreground\/10 {
+  --tw-ring-color: rgb(227 242 255 / 0.1);
+}
+
+.twcss-ring-secondary-foreground\/100 {
+  --tw-ring-color: rgb(227 242 255 / 1);
+}
+
+.twcss-ring-secondary-foreground\/15 {
+  --tw-ring-color: rgb(227 242 255 / 0.15);
+}
+
+.twcss-ring-secondary-foreground\/20 {
+  --tw-ring-color: rgb(227 242 255 / 0.2);
+}
+
+.twcss-ring-secondary-foreground\/25 {
+  --tw-ring-color: rgb(227 242 255 / 0.25);
+}
+
+.twcss-ring-secondary-foreground\/30 {
+  --tw-ring-color: rgb(227 242 255 / 0.3);
+}
+
+.twcss-ring-secondary-foreground\/35 {
+  --tw-ring-color: rgb(227 242 255 / 0.35);
+}
+
+.twcss-ring-secondary-foreground\/40 {
+  --tw-ring-color: rgb(227 242 255 / 0.4);
+}
+
+.twcss-ring-secondary-foreground\/45 {
+  --tw-ring-color: rgb(227 242 255 / 0.45);
+}
+
+.twcss-ring-secondary-foreground\/5 {
+  --tw-ring-color: rgb(227 242 255 / 0.05);
+}
+
+.twcss-ring-secondary-foreground\/50 {
+  --tw-ring-color: rgb(227 242 255 / 0.5);
+}
+
+.twcss-ring-secondary-foreground\/55 {
+  --tw-ring-color: rgb(227 242 255 / 0.55);
+}
+
+.twcss-ring-secondary-foreground\/60 {
+  --tw-ring-color: rgb(227 242 255 / 0.6);
+}
+
+.twcss-ring-secondary-foreground\/65 {
+  --tw-ring-color: rgb(227 242 255 / 0.65);
+}
+
+.twcss-ring-secondary-foreground\/70 {
+  --tw-ring-color: rgb(227 242 255 / 0.7);
+}
+
+.twcss-ring-secondary-foreground\/75 {
+  --tw-ring-color: rgb(227 242 255 / 0.75);
+}
+
+.twcss-ring-secondary-foreground\/80 {
+  --tw-ring-color: rgb(227 242 255 / 0.8);
+}
+
+.twcss-ring-secondary-foreground\/85 {
+  --tw-ring-color: rgb(227 242 255 / 0.85);
+}
+
+.twcss-ring-secondary-foreground\/90 {
+  --tw-ring-color: rgb(227 242 255 / 0.9);
+}
+
+.twcss-ring-secondary-foreground\/95 {
+  --tw-ring-color: rgb(227 242 255 / 0.95);
+}
+
+.placeholder\:twcss-text-gray-300::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity, 1));
+}
+
+.placeholder\:twcss-text-gray-300::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity, 1));
+}
+
+.hover\:twcss-text-gray-200:hover {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity, 1));
+}
+
+.focus\:twcss-outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus\:twcss-ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+@media (min-width: 750px) {
+  .md\:twcss-block {
+    display: block;
+  }
+
+  .md\:twcss-hidden {
+    display: none;
+  }
+
+  .md\:twcss-w-40 {
+    width: 10rem;
+  }
 }
