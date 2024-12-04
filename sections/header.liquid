@@ -106,7 +106,7 @@
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="twcss-w-full twcss-bg-white twcss-shadow-sm">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="twcss-w-full twcss-bg-primary-default twcss-text-white">
   <!-- Mobile Header -->
   <div class="twcss-block md:twcss-hidden">
     <div class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-3">
@@ -136,7 +136,7 @@
             <svg class="twcss-w-6 twcss-h-6" fill="currentColor" viewBox="0 0 20 20">
               <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
             </svg>
-            <span class="twcss-absolute -twcss-top-1 -twcss-right-1 twcss-bg-primary-default twcss-text-white twcss-rounded-full twcss-w-4 twcss-h-4 twcss-flex twcss-items-center twcss-justify-center twcss-text-xs">
+            <span class="twcss-absolute -twcss-top-1 -twcss-right-1 twcss-bg-blue-600 twcss-text-white twcss-rounded-full twcss-w-4 twcss-h-4 twcss-flex twcss-items-center twcss-justify-center twcss-text-xs">
               {{ cart.item_count }}
             </span>
           </div>
@@ -147,6 +147,50 @@
 
   <!-- Desktop Header -->
   <div class="twcss-hidden md:twcss-block">
+    <!-- Top Bar -->
+    <div class="twcss-border-b twcss-border-white/10">
+      <div class="twcss-container twcss-mx-auto twcss-px-4">
+        <div class="twcss-flex twcss-items-center twcss-justify-between twcss-py-2">
+          <!-- Left: Products Button -->
+          <div class="twcss-flex twcss-items-center twcss-gap-8">
+            <button class="twcss-flex twcss-items-center twcss-gap-2">
+              <svg class="twcss-w-5 twcss-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <span>Products</span>
+            </button>
+            
+            <!-- Delivery Address -->
+            <div class="twcss-flex twcss-items-center twcss-gap-2">
+              <svg class="twcss-w-5 twcss-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span>Delivery to</span>
+              <span class="twcss-font-medium">1801 Century Park E, Suite 1470...</span>
+            </div>
+          </div>
+
+          <!-- Right: Quick Links -->
+          <div class="twcss-flex twcss-items-center twcss-gap-6">
+            <a href="#" class="twcss-flex twcss-items-center twcss-gap-2 hover:twcss-text-gray-200">
+              <svg class="twcss-w-5 twcss-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              <span>Quick Order</span>
+            </a>
+            <a href="#" class="twcss-flex twcss-items-center twcss-gap-2 hover:twcss-text-gray-200">
+              <svg class="twcss-w-5 twcss-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              <span>Price List</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
     <div class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-2">
       <div class="twcss-flex twcss-items-center twcss-justify-between twcss-gap-4">
         <!-- Logo -->
@@ -168,10 +212,10 @@
           <div class="twcss-relative">
             <input type="text" 
               placeholder="What can we help you find?" 
-              class="twcss-w-full twcss-pl-4 twcss-pr-10 twcss-py-2 twcss-border twcss-border-gray-300 twcss-rounded-lg focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-blue-500"
+              class="twcss-w-full twcss-pl-4 twcss-pr-10 twcss-py-2 twcss-border twcss-border-white/20 twcss-rounded-lg twcss-bg-white/10 twcss-text-white placeholder:twcss-text-white/70 focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-white/30"
             >
             <button class="twcss-absolute twcss-right-3 twcss-top-1/2 -twcss-translate-y-1/2">
-              <svg class="twcss-w-5 twcss-h-5 twcss-text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="twcss-w-5 twcss-h-5 twcss-text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
             </button>
@@ -179,30 +223,14 @@
         </div>
 
         <!-- Right Actions -->
-        <div class="twcss-flex twcss-items-center twcss-gap-2 md:twcss-gap-4">
-          <!-- Quick Order -->
-          <a href="#" class="twcss-hidden md:twcss-flex twcss-items-center twcss-gap-2 twcss-text-sm twcss-text-p">
-            <svg class="twcss-w-5 twcss-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-            <span>Quick Order</span>
-          </a>
-
-          <!-- Price List -->
-          <a href="#" class="twcss-hidden md:twcss-flex twcss-items-center twcss-gap-2 twcss-text-sm twcss-text-p">
-            <svg class="twcss-w-5 twcss-h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-            </svg>
-            <span>Price List</span>
-          </a>
-
+        <div class="twcss-flex twcss-items-center twcss-gap-4">
           <!-- Cart -->
-          <a href="{{ routes.cart_url }}" class="twcss-flex twcss-items-center twcss-gap-2">
+          <a href="{{ routes.cart_url }}" class="twcss-flex twcss-items-center twcss-gap-2 hover:twcss-text-gray-200">
             <div class="twcss-relative">
               <svg class="twcss-w-6 twcss-h-6" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
               </svg>
-              <span class="twcss-absolute -twcss-top-1 -twcss-right-1 twcss-bg-p twcss-text-white twcss-rounded-full twcss-w-4 twcss-h-4 twcss-flex twcss-items-center twcss-justify-center twcss-text-xs">
+              <span class="twcss-absolute -twcss-top-1 -twcss-right-1 twcss-bg-white twcss-text-primary-default twcss-rounded-full twcss-w-4 twcss-h-4 twcss-flex twcss-items-center twcss-justify-center twcss-text-xs">
                 {{ cart.item_count }}
               </span>
             </div>
@@ -210,7 +238,7 @@
           </a>
 
           <!-- User -->
-          <button class="twcss-flex twcss-items-center twcss-gap-2">
+          <button class="twcss-flex twcss-items-center twcss-gap-2 hover:twcss-text-gray-200">
             <svg class="twcss-w-6 twcss-h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
             </svg>
