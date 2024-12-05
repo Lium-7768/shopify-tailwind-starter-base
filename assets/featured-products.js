@@ -220,7 +220,8 @@ class Slider {
     const currentPage = Math.floor(this.currentIndex / slidesPerView);
 
     dots.forEach((dot, index) => {
-      dot.style.backgroundColor = index === currentPage ? '#3B82F6' : '#E5E7EB';
+      dot.style.backgroundColor =
+        index === currentPage ? '#3B82F6 !important' : '#E5E7EB !important';
     });
   }
 }
@@ -228,7 +229,7 @@ class Slider {
 // 初始化滑块
 document.addEventListener('DOMContentLoaded', () => {
   new Slider('.featured-products-slider', {
-    slidesPerView: 1,
+    slidesPerView: 5,
     spaceBetween: 16,
   });
 });
