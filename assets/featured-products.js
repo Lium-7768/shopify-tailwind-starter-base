@@ -211,7 +211,7 @@ class Slider {
   }
 
   updatePagination() {
-    console.log('执行');
+    
 
     if (!this.pagination) return;
 
