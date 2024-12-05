@@ -112,13 +112,10 @@
 
 {%- render 'component-drawer' -%}
 
-<div
-  {% if section.settings.sticky_header_type != 'none' %}
-    is='sticky-header'
-    data-sticky-type='{{ section.settings.sticky_header_type }}'
-  {% endif %}
-  class='twcss-w-full twcss-text-white twcss-bg-primary-default'
->
+{%- capture closing_tag -%}
+  {%- if section.settings.sticky_header_type != 'none' -%}sticky-header{%- else -%}div{%- endif -%}
+{%- endcapture -%}
+<{{ closing_tag }}>
   <!-- Desktop Header -->
   <div class='twcss-hidden md:twcss-block'>
     <div class='twcss-px-6 twcss-py-3'>
@@ -136,11 +133,11 @@
 
         <!-- Products Menu -->
         <nav class='md:twcss-flex twcss-items-center twcss-gap-6'>
-          <button 
+          <button
             class='twcss-flex twcss-items-center twcss-gap-2 twcss-px-4 twcss-py-2 twcss-bg-primary-light twcss-rounded-lg hover:twcss-bg-primary-dark twcss-transition-colors'
-            data-drawer-trigger="products"
-            aria-expanded="false"
-            aria-controls="products-drawer"
+            data-drawer-trigger='products'
+            aria-expanded='false'
+            aria-controls='products-drawer'
           >
             <svg class='twcss-w-5 twcss-h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
               <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'/>
@@ -237,7 +234,7 @@
       </div>
     </div>
   </div>
-</{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
+</{{ closing_tag }}>
 
 {%- if settings.cart_type == 'notification' -%}
   {%- render 'cart-notification',
