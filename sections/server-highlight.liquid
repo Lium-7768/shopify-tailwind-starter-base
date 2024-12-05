@@ -16,16 +16,16 @@
           >
         </div>
       {%- endif -%}
-      <div class="twcss-flex twcss-flex-col twcss-y-[10px]">
+      <div class="twcss-flex twcss-flex-col twcss-gap-y-[10px]">
         {%- if block.settings.heading != blank -%}
-          <h3 class="twcss-text-lg twcss-font-semibold twcss-text-blue-700 twcss-mb-2">
+          <div class="twcss-text-lg twcss-font-bold twcss-text-blue-700 twcss-mb-2">
             {{ block.settings.heading }}
-          </h3>
+          </div>
         {%- endif -%}
         {%- if block.settings.text != blank -%}
-          <p class="twcss-text-gray-600">
+          <div class="twcss-text-gray-600">
             {{ block.settings.text }}
-          </p>
+          </div>
         {%- endif -%}
       </div>
     </div>
