@@ -835,6 +835,10 @@ video {
   overflow-y: auto;
 }
 
+.twcss-text-ellipsis {
+  text-overflow: ellipsis;
+}
+
 .twcss-rounded {
   border-radius: 0.25rem;
 }
