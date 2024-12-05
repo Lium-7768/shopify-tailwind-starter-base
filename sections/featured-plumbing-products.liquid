@@ -21,8 +21,8 @@
             <a href="{{ block.settings.brand_link }}" class="twcss-block">
           {%- endif -%}
           <img
-            width="204px"
-            height="204px"
+            width="100%"
+            height="100%"
             src="{{ block.settings.brand_logo | img_url: 'medium' }}"
             alt="{{ block.settings.brand_name }}"
             loading="lazy"
@@ -41,8 +41,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.15/swiper-bundle.min.js" defer></script>
-
-<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     new Swiper('.brands-swiper', {
