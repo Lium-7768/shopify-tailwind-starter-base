@@ -4600,11 +4600,6 @@ video {
   color: rgb(10 10 10 / 0.95);
 }
 
-.twcss-text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
-}
-
 .twcss-text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity, 1));
