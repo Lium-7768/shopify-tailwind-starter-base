@@ -3786,11 +3786,6 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.twcss-py-3\.5 {
-  padding-top: 0.875rem;
-  padding-bottom: 0.875rem;
-}
-
 .twcss-py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -3799,6 +3794,11 @@ video {
 .twcss-py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.twcss-py-\[10px\] {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .twcss-py-\[32px\] {
