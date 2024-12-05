@@ -79,7 +79,7 @@
 
 .page-width {
   max-width: var(--page-width);
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 0 1.5rem;
 }
 
@@ -106,7 +106,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
     padding: 0 5rem;
   }
 
-  .header.page-width,
+  /* .header.page-width, */
   .utility-bar__grid.page-width {
     padding-left: 3.2rem;
     padding-right: 3.2rem;
