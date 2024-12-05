@@ -158,6 +158,7 @@ class Slider {
       }
     } else {
       this.updateSliderPosition();
+      this.updatePagination();
     }
   }
 
@@ -203,6 +204,7 @@ class Slider {
     }
     this.prevTranslate = this.currentTranslate;
     this.setSliderPosition(this.currentTranslate);
+    this.updatePagination();
   }
 
   setSliderPosition(position) {
