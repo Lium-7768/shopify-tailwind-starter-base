@@ -24,12 +24,16 @@
             {%- endfor -%}
           </div>
 
-          <!-- 添加导航按钮 -->
-          <button class="swiper-button-prev twcss-absolute twcss-left-0 twcss-top-1/2 twcss--translate-y-1/2 twcss--left-4 lg:twcss--left-6 twcss-z-10 twcss-w-10 twcss-h-10 twcss-hidden md:twcss-flex twcss-items-center twcss-justify-center twcss-bg-white twcss-rounded-full twcss-shadow-md hover:twcss-bg-gray-50 twcss-transition-colors twcss-duration-200">
-            {% render 'icon-chevron-left' %}
+          <!-- 修改导航按钮样式 -->
+          <button class="swiper-button-prev twcss-absolute twcss-left-0 twcss-top-1/2 twcss--translate-y-1/2 twcss--left-4 lg:twcss--left-6 twcss-z-10 twcss-w-8 twcss-h-8 twcss-hidden md:twcss-flex twcss-items-center twcss-justify-center twcss-bg-white/80 twcss-border twcss-border-gray-200 hover:twcss-bg-white twcss-transition-colors twcss-duration-200">
+            <svg class="twcss-w-4 twcss-h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 19L8 12L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </button>
-          <button class="swiper-button-next twcss-absolute twcss-right-0 twcss-top-1/2 twcss--translate-y-1/2 twcss--right-4 lg:twcss--right-6 twcss-z-10 twcss-w-10 twcss-h-10 twcss-hidden md:twcss-flex twcss-items-center twcss-justify-center twcss-bg-white twcss-rounded-full twcss-shadow-md hover:twcss-bg-gray-50 twcss-transition-colors twcss-duration-200">
-            {% render 'icon-chevron-right' %}
+          <button class="swiper-button-next twcss-absolute twcss-right-0 twcss-top-1/2 twcss--translate-y-1/2 twcss--right-4 lg:twcss--right-6 twcss-z-10 twcss-w-8 twcss-h-8 twcss-hidden md:twcss-flex twcss-items-center twcss-justify-center twcss-bg-white/80 twcss-border twcss-border-gray-200 hover:twcss-bg-white twcss-transition-colors twcss-duration-200">
+            <svg class="twcss-w-4 twcss-h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </button>
 
           <!-- 分页器 -->
