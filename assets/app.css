@@ -3796,11 +3796,6 @@ video {
   padding-bottom: 2rem;
 }
 
-.twcss-py-\[10px\] {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
 .twcss-py-\[32px\] {
   padding-top: 32px;
   padding-bottom: 32px;
@@ -4603,6 +4598,11 @@ video {
 
 .twcss-text-foreground\/95 {
   color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
 }
 
 .twcss-text-gray-500 {
