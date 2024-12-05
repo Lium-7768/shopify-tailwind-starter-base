@@ -6696,6 +6696,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+@media (max-width: 360px) {
+  .max-\[360px\]\:twcss-max-w-\[320px\] {
+    max-width: 320px;
+  }
+}
+
 @media (min-width: 750px) {
   .md\:twcss-w-\[calc\(\(100\%-32px\)\/3\)\] {
     width: calc((100% - 32px) / 3);
