@@ -575,14 +575,6 @@ video {
   bottom: 0px;
 }
 
-.twcss--left-4 {
-  left: -1rem;
-}
-
-.twcss--right-4 {
-  right: -1rem;
-}
-
 .twcss-left-0 {
   left: 0px;
 }
@@ -593,14 +585,6 @@ video {
 
 .twcss-top-0 {
   top: 0px;
-}
-
-.twcss-top-1\/2 {
-  top: 50%;
-}
-
-.twcss-z-10 {
-  z-index: 10;
 }
 
 .twcss-z-50 {
@@ -635,16 +619,16 @@ video {
   display: none;
 }
 
-.twcss-h-10 {
-  height: 2.5rem;
-}
-
 .twcss-h-6 {
   height: 1.5rem;
 }
 
 .twcss-h-\[246px\] {
   height: 246px;
+}
+
+.twcss-h-\[40px\] {
+  height: 40px;
 }
 
 .twcss-h-\[415px\] {
@@ -663,16 +647,16 @@ video {
   height: 100%;
 }
 
-.twcss-w-10 {
-  width: 2.5rem;
-}
-
 .twcss-w-6 {
   width: 1.5rem;
 }
 
 .twcss-w-\[36px\] {
   width: 36px;
+}
+
+.twcss-w-\[40px\] {
+  width: 40px;
 }
 
 .twcss-w-\[458px\] {
@@ -697,11 +681,6 @@ video {
 
 .twcss-flex-1 {
   flex: 1 1 0%;
-}
-
-.twcss--translate-y-1\/2 {
-  --tw-translate-y: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .twcss-translate-x-\[-100\%\] {
@@ -5166,12 +5145,6 @@ video {
   opacity: 0;
 }
 
-.twcss-shadow-md {
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .twcss-shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
@@ -6607,12 +6580,6 @@ video {
   --tw-ring-color: rgb(227 242 255 / 0.95);
 }
 
-.twcss-transition-colors {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .twcss-transition-opacity {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -6666,21 +6633,7 @@ video {
 }
 
 @media (min-width: 750px) {
-  .md\:twcss-flex {
-    display: flex;
-  }
-
   .md\:twcss-max-w-full {
     max-width: 100%;
-  }
-}
-
-@media (min-width: 990px) {
-  .lg\:twcss--left-6 {
-    left: -1.5rem;
-  }
-
-  .lg\:twcss--right-6 {
-    right: -1.5rem;
   }
 }
