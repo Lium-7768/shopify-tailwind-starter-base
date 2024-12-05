@@ -1,9 +1,12 @@
-class Drawer {
+class ComponentDrawer {
   constructor() {
-    this.overlay = document.querySelector('[data-drawer-overlay]');
-    this.container = document.querySelector('[data-drawer-container]');
-    this.trigger = document.querySelector('[data-drawer-trigger]');
-    this.closeBtn = document.querySelector('[data-drawer-close]');
+    this.drawer = document.getElementById('products-drawer');
+    this.content = this.drawer.querySelector('[data-drawer-content]');
+    this.backdrop = this.drawer.querySelector('[data-drawer-backdrop]');
+    this.triggers = document.querySelectorAll(
+      '[data-drawer-trigger="products"]',
+    );
+    this.closeButtons = document.querySelectorAll('[data-drawer-close]');
 
     this.isOpen = false;
 
@@ -11,34 +14,73 @@ class Drawer {
   }
 
   init() {
-    this.trigger?.addEventListener('click', () => this.open());
-    this.closeBtn?.addEventListener('click', () => this.close());
-    this.overlay?.addEventListener('click', (e) => {
-      if (e.target === this.overlay) this.close();
+    // Add click handlers to all trigger buttons
+    this.triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => this.toggle());
+    });
+
+    // Add click handlers to all close buttons
+    this.closeButtons.forEach((button) => {
+      button.addEventListener('click', () => this.close());
+    });
+
+    // Close drawer when clicking backdrop
+    this.backdrop.addEventListener('click', () => this.close());
+
+    // Close drawer when pressing Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) {
+        this.close();
+      }
     });
   }
 
+  toggle() {
+    this.isOpen ? this.close() : this.open();
+  }
+
   open() {
+    if (this.isOpen) return;
+
     this.isOpen = true;
-    this.overlay.classList.remove('twcss-hidden', 'twcss-opacity-0');
-    this.container.classList.remove('-twcss-translate-x-full');
+    this.drawer.classList.remove('twcss-hidden');
+    requestAnimationFrame(() => {
+      this.drawer.classList.remove('twcss-translate-x-[-100%]');
+      this.backdrop.classList.remove('twcss-opacity-0');
+    });
     document.body.style.overflow = 'hidden';
+
+    // Update ARIA attributes
+    this.drawer.setAttribute('aria-hidden', 'false');
+    this.triggers.forEach((trigger) =>
+      trigger.setAttribute('aria-expanded', 'true'),
+    );
   }
 
   close() {
+    if (!this.isOpen) return;
+
     this.isOpen = false;
-    this.overlay.classList.add('twcss-opacity-0');
-    this.container.classList.add('-twcss-translate-x-full');
+    this.drawer.classList.add('twcss-translate-x-[-100%]');
+    this.backdrop.classList.add('twcss-opacity-0');
 
     // Wait for animation to finish before hiding
     setTimeout(() => {
-      this.overlay.classList.add('twcss-hidden');
+      this.drawer.classList.add('twcss-hidden');
       document.body.style.overflow = '';
     }, 300);
+
+    // Update ARIA attributes
+    this.drawer.setAttribute('aria-hidden', 'true');
+    this.triggers.forEach((trigger) =>
+      trigger.setAttribute('aria-expanded', 'false'),
+    );
   }
 }
 
-// Initialize drawer
-document.addEventListener('DOMContentLoaded', () => {
-  new Drawer();
-});
+// Initialize drawer when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => new ComponentDrawer());
+} else {
+  new ComponentDrawer();
+}
