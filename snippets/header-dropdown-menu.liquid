@@ -5,13 +5,14 @@
   {% render 'header-dropdown-menu' %}
 {% endcomment %}
 
+<pre>
+  {{ section.settings.menu.links | debug }}
+</pre>
+
 <nav class='header__inline-menu'>
   <ul class='list-menu list-menu--inline' role='list'>
     {%- for link in section.settings.menu.links -%}
       <li>
-        <pre>
-          {{ link | debug }}
-        </pre>
         {%- if link.links != blank -%}
           <header-menu>
             <details id='Details-HeaderMenu-{{ forloop.index }}'>
