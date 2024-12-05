@@ -14,6 +14,13 @@
     </div>
 
     <div class="twcss-relative ">
+      <!-- 添加导航按钮 -->
+      <button class="swiper-button-prev twcss-w-[40px] twcss-h-[40px] twcss-rounded-full twcss-shadow-sm twcss-text-gray-500">
+        {% render 'icon-chevron-left' %}
+      </button>
+      <button class="swiper-button-next twcss-w-[40px] twcss-h-[40px] twcss-rounded-full twcss-shadow-sm twcss-text-gray-500">
+        {% render 'icon-chevron-right' %}
+      </button>
       {%- if section.settings.collection != blank -%}
         <div class="featured-products-slider twcss-relative twcss-overflow-hidden twcss-h-full">
           <div class="swiper-wrapper">
@@ -24,16 +31,8 @@
             {%- endfor -%}
           </div>
 
-          <!-- 添加导航按钮 -->
-          <button class="swiper-button-prev twcss-w-[40px] twcss-h-[40px] twcss-rounded-full twcss-shadow-sm twcss-text-gray-500">
-            {% render 'icon-chevron-left' %}
-          </button>
-          <button class="swiper-button-next twcss-w-[40px] twcss-h-[40px] twcss-rounded-full twcss-shadow-sm twcss-text-gray-500">
-            {% render 'icon-chevron-right' %}
-          </button>
-
           <!-- 分页器 -->
-          <div class="swiper-pagination"></div>
+          <div class="swiper-pagination twcss-relative"></div>
         </div>
       {%- endif -%}
     </div>
