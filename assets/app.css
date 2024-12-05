@@ -699,6 +699,10 @@ video {
   width: 100%;
 }
 
+.twcss-max-w-96 {
+  max-width: 24rem;
+}
+
 .twcss-max-w-\[calc\(100vw-32px\)\] {
   max-width: calc(100vw - 32px);
 }
@@ -6701,6 +6705,10 @@ video {
 }
 
 @media (min-width: 750px) {
+  .md\:twcss-max-w-full {
+    max-width: 100%;
+  }
+
   .md\:twcss-flex-\[0_0_calc\(20\%\)\] {
     flex: 0 0 calc(20%);
   }
