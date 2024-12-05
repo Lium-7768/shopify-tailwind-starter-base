@@ -83,7 +83,7 @@
       <!-- Search -->
       <button type="button" class="p-2 hover:bg-gray-100 rounded-full">
         <span class="sr-only">Search</span>
-        {{ 'icon-search.svg' | inline_asset_content }}
+        {{ 'icon-search.svg' | inline_asset_content | replace: '<svg', '<svg class="w-6 h-6"' }}
       </button>
 
       <!-- Account -->
@@ -93,7 +93,7 @@
           {%- if section.settings.enable_customer_avatar and customer and customer.has_avatar? -%}
             {{ customer | avatar }}
           {%- else -%}
-            {{ 'icon-account.svg' | inline_asset_content }}
+            {{ 'icon-account.svg' | inline_asset_content | replace: '<svg', '<svg class="w-6 h-6"' }}
           {%- endif -%}
         </a>
       {%- endif -%}
@@ -102,9 +102,9 @@
       <a href="{{ routes.cart_url }}" class="p-2 hover:bg-gray-100 rounded-full relative">
         <span class="sr-only">Cart</span>
         {% if cart == empty %}
-          {{ 'icon-cart-empty.svg' | inline_asset_content }}
+          {{ 'icon-cart-empty.svg' | inline_asset_content | replace: '<svg', '<svg class="w-6 h-6"' }}
         {% else %}
-          {{ 'icon-cart.svg' | inline_asset_content }}
+          {{ 'icon-cart.svg' | inline_asset_content | replace: '<svg', '<svg class="w-6 h-6"' }}
           <span class="absolute -top-1 -right-1 w-5 h-5 flex items-center justify-center bg-primary text-white rounded-full text-xs">
             {{ cart.item_count }}
           </span>
