@@ -43,21 +43,19 @@
     "
   >
     <div class="twcss-space-y-2 twcss-flex twcss-flex-col twcss-flex-1">
-      <div class="twcss-flex twcss-items-center twcss-justify-between twcss-flex-col">
-        <div class="twcss-text-gray-600">
-          {{ product.vendor }}
-        </div>
-
-        <a
-          href="{{ product.url }}"
-          class="
-            twcss-text-lg twcss-font-bold
-            twcss-line-clamp-2
-          "
-        >
-          {{ product.title }}
-        </a>
+      <div class="twcss-text-gray-600">
+        {{ product.vendor }}
       </div>
+
+      <a
+        href="{{ product.url }}"
+        class="
+          twcss-text-lg twcss-font-bold
+          twcss-line-clamp-2
+        "
+      >
+        {{ product.title }}
+      </a>
 
       <div class="twcss-ml-2 twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded">
         {% comment %} {%- if product.metafields.custom.is_new -%} {% endcomment %}
