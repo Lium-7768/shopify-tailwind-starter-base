@@ -800,13 +800,13 @@ video {
   justify-content: space-between;
 }
 
-.twcss-gap-4 {
-  gap: 1rem;
+.twcss-gap-\[24px\] {
+  gap: 24px;
 }
 
-.twcss-gap-x-5 {
-  -moz-column-gap: 1.25rem;
-       column-gap: 1.25rem;
+.twcss-gap-x-\[20px\] {
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 
 .twcss-gap-y-\[10px\] {
