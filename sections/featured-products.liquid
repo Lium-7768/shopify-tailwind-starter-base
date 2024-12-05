@@ -22,28 +22,60 @@
           {% render 'icon-chevron-right' %}
         </button>
 
-        <div class="featured-products-slider twcss-relative twcss-overflow-hidden twcss-h-full ">
-          <div class="swiper-wrapper twcss-flex twcss-transition-transform twcss-duration-300 twcss-ease-out">
+        <div class="featured-products-slider twcss-relative twcss-overflow-hidden twcss-h-full">
+          <div class="swiper-wrapper">
             {%- for product in section.settings.collection.products limit: 8 -%}
-              <div class="swiper-slide twcss-flex-none md:twcss-flex-[0_0_calc((100%-64px)/5)]">
+              <div class="swiper-slide">
                 {% render 'product-card', product: product, show_vendor: true %}
               </div>
             {%- endfor -%}
           </div>
 
-          <!-- 分页指示器 -->
-          <div class="swiper-pagination twcss-flex twcss-justify-center twcss-items-center twcss-gap-2 twcss-mt-6">
-            {%- for i in (1..forloop.length) -%}
-              <button
-                class="twcss-w-2 twcss-h-2 twcss-rounded-full twcss-bg-gray-200 hover:twcss-bg-gray-300 twcss-transition-colors twcss-duration-200 {% if forloop.first %}twcss-bg-blue-500{% endif %}"
-              ></button>
-            {%- endfor -%}
-          </div>
+          <!-- 添加导航按钮 -->
+          <div class="swiper-button-prev twcss-hidden md:twcss-flex"></div>
+          <div class="swiper-button-next twcss-hidden md:twcss-flex"></div>
+
+          <!-- 分页器 -->
+          <div class="swiper-pagination"></div>
         </div>
       {%- endif -%}
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.featured-products-slider', {
+      slidesPerView: 1, // 移动端默认显示1个
+      spaceBetween: 16, // 滑块之间的间距
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        // >= 768px
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+        // >= 1024px
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 24,
+        },
+        // >= 1280px
+        1280: {
+          slidesPerView: 5,
+          spaceBetween: 24,
+        },
+      },
+    });
+  });
+</script>
 
 {% schema %}
 {
