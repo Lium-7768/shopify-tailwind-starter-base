@@ -217,6 +217,12 @@ class Slider {
     const slidesPerView = this.getSlidesPerView();
     // 计算当前页码
     const currentPage = Math.floor(this.currentIndex / slidesPerView);
+    console.log(
+      '🚀 ~ Slider ~ updatePagination ~ currentPage:',
+      this.currentIndex,
+      slidesPerView,
+      currentPage,
+    );
 
     dots.forEach((dot, index) => {
       dot.style.backgroundColor = index === currentPage ? '#3B82F6' : '#E5E7EB';
