@@ -86,7 +86,7 @@
           enctype="multipart/form-data"
           novalidate="novalidate"
           data-type="add-to-cart-form"
-          data-ajax-cart-form
+          {% comment %} data-ajax-cart-form {% endcomment %}
         >
           <input type="hidden" name="form_type" value="product">
           <input type="hidden" name="utf8" value="✓">
@@ -156,15 +156,6 @@
                   } else {
                     // 更新现有计数器
                     cartCount.textContent = cart.item_count;
-                  }
-                }
-
-                // 如果使用抽屉式购物车，打开购物车抽屉
-                if (window.location.pathname !== '/cart') {
-                  const cartDrawer = document.querySelector('CartDrawer');
-                  if (cartDrawer) {
-                    cartDrawer.open();
-                    cartDrawer.renderContents(data);
                   }
                 }
               })
