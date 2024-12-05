@@ -44,20 +44,22 @@
     "
   >
     <div class="twcss-flex twcss-flex-col twcss-flex-1 twcss-justify-between">
-      <div class="twcss-text-gray-600">
-        {{ product.vendor }}
-      </div>
+      <div class="twcss-flex twcss-justify-between twcss-flex-col twcss-space-y-1">
+        <div class="twcss-text-gray-600">
+          {{ product.vendor }}
+        </div>
 
-      <a
-        href="{{ product.url }}"
-        class="
-          twcss-text-lg twcss-font-bold
-          twcss-line-clamp-2
-          twcss-text-[#353535]
-        "
-      >
-        {{ product.title }}
-      </a>
+        <a
+          href="{{ product.url }}"
+          class="
+            twcss-text-lg twcss-font-bold
+            twcss-line-clamp-2
+            twcss-text-[#353535]
+          "
+        >
+          {{ product.title }}
+        </a>
+      </div>
 
       <div class="twcss-ml-2 twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded twcss-min-h-4">
         {%- if product.metafields.custom.is_new -%}
