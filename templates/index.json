@@ -89,7 +89,7 @@
     "featured_products_dVWqqB": {
       "type": "featured-products",
       "settings": {
-        "collection": "hydrogen",
+        "collection": "automated-collection",
         "products_to_show": 8
       }
     },
