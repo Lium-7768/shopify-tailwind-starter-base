@@ -99,6 +99,7 @@
               {% endif %}
             >
               <span class='icon-wrapper'>
+                {{ section.settings.menu_icon }}
                 {%- if section.settings.menu_icon != blank -%}
                   {{ section.settings.menu_icon | image_url: width: 20 | image_tag: class: 'menu-icon' }}
                 {%- endif -%}
