@@ -6890,6 +6890,11 @@ video {
   .lg\:twcss-flex-row {
     flex-direction: row;
   }
+
+  .lg\:twcss-px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 .\[\&\:\:-webkit-search-cancel-button\]\:twcss-hidden::-webkit-search-cancel-button {
