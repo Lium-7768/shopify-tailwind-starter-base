@@ -706,10 +706,6 @@ video {
   height: 40px;
 }
 
-.twcss-h-\[415px\] {
-  height: 415px;
-}
-
 .twcss-h-\[500px\] {
   height: 500px;
 }
@@ -821,12 +817,6 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
-}
-
-.twcss-space-y-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
 .twcss-overflow-hidden {
