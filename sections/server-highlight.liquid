@@ -1,6 +1,95 @@
+<div class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-12">
+  <div class="twcss-flex twcss-flex-col md:twcss-flex-row twcss-gap-6">
+    {%- for block in section.blocks -%}
+      <div
+        class="twcss-flex-1 twcss-bg-blue-50 twcss-rounded-lg twcss-p-6 twcss-flex twcss-items-start twcss-gap-4"
+        {{ block.shopify_attributes }}
+      >
+        {%- if block.settings.icon != blank -%}
+          <div class="twcss-flex-shrink-0">
+            <img
+              height="94px"
+              width="94px"
+              src="{{ block.settings.icon | image_url: '100x' }}"
+              alt="{{ block.settings.heading | escape }}"
+              class="twcss-w-12 twcss-h-12 twcss-object-contain"
+              loading="lazy"
+            >
+          </div>
+        {%- endif -%}
+        <div class="twcss-flex twcss-flex-col">
+          {%- if block.settings.heading != blank -%}
+            <h3 class="twcss-text-lg twcss-font-semibold twcss-text-blue-700 twcss-mb-2">
+              {{ block.settings.heading }}
+            </h3>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <p class="twcss-text-gray-600">
+              {{ block.settings.text }}
+            </p>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Service Highlights",
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "highlight",
+      "name": "Service Highlight",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Service Highlight"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Describe your service highlight here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service Highlights",
+      "blocks": [
+        {
+          "type": "highlight",
+          "settings": {
+            "heading": "Fast service",
+            "text": "We understand your needs delivering your products within hours."
+          }
+        },
+        {
+          "type": "highlight",
+          "settings": {
+            "heading": "Payment Options",
+            "text": "Seamless options designed to simplify and support your business growth."
+          }
+        },
+        {
+          "type": "highlight",
+          "settings": {
+            "heading": "Personalized Attention",
+            "text": "We're here to address your questions and suggestions anytime."
+          }
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
