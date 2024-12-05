@@ -6,8 +6,8 @@ class Slider {
     this.wrapper = this.container.querySelector('.swiper-wrapper');
     this.slides = Array.from(this.container.querySelectorAll('.swiper-slide'));
     this.pagination = this.container.querySelector('.swiper-pagination');
-    this.prevBtn = this.container.querySelector('.prev-button');
-    this.nextBtn = this.container.querySelector('.next-button');
+    this.prevBtn = this.container.parentElement.querySelector('.prev-button');
+    this.nextBtn = this.container.parentElement.querySelector('.next-button');
 
     // 配置项
     this.options = {
