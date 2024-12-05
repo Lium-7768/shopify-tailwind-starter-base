@@ -774,6 +774,10 @@ video {
   justify-content: space-between;
 }
 
+.twcss-gap-2 {
+  gap: 0.5rem;
+}
+
 .twcss-gap-\[24px\] {
   gap: 24px;
 }
@@ -3748,8 +3752,8 @@ video {
   padding: 1rem;
 }
 
-.twcss-p-7 {
-  padding: 1.75rem;
+.twcss-p-6 {
+  padding: 1.5rem;
 }
 
 .twcss-p-\[24px\] {
