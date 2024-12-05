@@ -86,6 +86,13 @@
         "padding_bottom": 0
       }
     },
+    "featured_products_dVWqqB": {
+      "type": "featured-products",
+      "settings": {
+        "collection": "hydrogen",
+        "products_to_show": 8
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -218,13 +225,6 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "featured_products_dVWqqB": {
-      "type": "featured-products",
-      "settings": {
-        "collection": "automated-collection",
-        "products_to_show": 8
       }
     }
   },
