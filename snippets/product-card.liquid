@@ -3,6 +3,7 @@
   - product: 产品对象
   - show_vendor: 是否显示供应商 (可选)
   - class: 额外的 CSS 类 (可选)
+  - show_new_tag: 是否显示新品标签 (可选)
 {% endcomment %}
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -62,11 +63,13 @@
         </a>
       </div>
 
-      <div class="twcss-ml-2 twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded-lg twcss-min-h-4 twcss-mb-2">
-        {% comment %} {%- if product.metafields.custom.is_new -%} {% endcomment %}
-        New
-        {% comment %} {%- endif -%} {% endcomment %}
-      </div>
+      {% if show_new_tag %}
+        <div class="twcss-ml-2 twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded-lg twcss-min-h-4 twcss-mb-2">
+          {%- if product.metafields.custom.is_new -%}
+            New
+          {%- endif -%}
+        </div>
+      {% endif %}
 
       <div class="twcss-space-y-1 twcss-text-sm">
         <p class="twcss-text-gray-600">Customer Product # {{ product.id }}</p>
