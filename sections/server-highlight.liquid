@@ -7,8 +7,8 @@
       {%- if block.settings.icon != blank -%}
         <div class="twcss-flex-shrink-0">
           <img
-            height="100%"
-            width="100%"
+            height="94px"
+            width="94px"
             src="{{ block.settings.icon | img_url: '100x' }}"
             alt="{{ block.settings.heading | escape }}"
             class=""
@@ -18,7 +18,7 @@
       {%- endif -%}
       <div class="twcss-flex twcss-flex-col twcss-gap-y-[10px]">
         {%- if block.settings.heading != blank -%}
-          <div class="twcss-font-bold twcss-text-blue-700 twcss-mb-2 twcss-text-[18px] leading-[22px]">
+          <div class="twcss-font-bold twcss-text-blue-700 twcss-text-[18px] leading-[22px]">
             {{ block.settings.heading }}
           </div>
         {%- endif -%}
