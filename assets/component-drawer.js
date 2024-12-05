@@ -10,6 +10,11 @@ class ComponentDrawer {
 
     this.isOpen = false;
 
+    // 初始化后再显示元素
+    requestAnimationFrame(() => {
+      this.drawer.classList.add('twcss-initialized');
+    });
+
     this.init();
   }
 
