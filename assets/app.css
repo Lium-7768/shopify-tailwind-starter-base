@@ -603,9 +603,9 @@ video {
   z-index: 50;
 }
 
-.twcss-mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
+.twcss-mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
 
 .twcss-mx-auto {
@@ -3810,6 +3810,10 @@ video {
   line-height: 2rem;
 }
 
+.twcss-text-\[14px\] {
+  font-size: 14px;
+}
+
 .twcss-text-\[18px\] {
   font-size: 18px;
 }
@@ -3844,6 +3848,10 @@ video {
 
 .twcss-font-semibold {
   font-weight: 600;
+}
+
+.twcss-leading-\[22px\] {
+  line-height: 22px;
 }
 
 .\!twcss-text-black {
@@ -6875,10 +6883,6 @@ video {
 }
 
 @media (min-width: 990px) {
-  .lg\:twcss-max-w-\[158px\] {
-    max-width: 158px;
-  }
-
   .lg\:twcss-flex-row {
     flex-direction: row;
   }
