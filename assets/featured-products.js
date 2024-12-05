@@ -216,18 +216,11 @@ class Slider {
     if (!this.pagination) return;
 
     const dots = this.pagination.querySelectorAll('.pagination-dot');
-    const slidesPerView = this.getSlidesPerView();
     // 计算当前页码
-    const currentPage = Math.floor(this.currentIndex / slidesPerView);
-    console.log(
-      '🚀 ~ Slider ~ updatePagination ~ currentPage:',
-      this.currentIndex,
-      slidesPerView,
-      currentPage,
-    );
 
     dots.forEach((dot, index) => {
-      dot.style.backgroundColor = index === currentPage ? '#3B82F6' : '#E5E7EB';
+      dot.style.backgroundColor =
+        index === this.currentIndex ? '#3B82F6' : '#E5E7EB';
     });
   }
 }
