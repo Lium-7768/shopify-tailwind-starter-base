@@ -14,14 +14,15 @@
     </div>
 
     <div class="twcss-relative">
+      <button class="prev-button twcss-absolute twcss-left-0 twcss-top-1/2 twcss--translate-y-1/2 twcss--left-4 lg:twcss--left-6 twcss-z-10 twcss-w-10 twcss-h-10 twcss-flex twcss-items-center twcss-justify-center twcss-bg-white twcss-rounded-full twcss-shadow-md hover:twcss-bg-gray-50 twcss-transition-colors twcss-duration-200">
+        {% render 'icon-chevron-left' %}
+      </button>
+      <button class="next-button twcss-absolute twcss-right-0 twcss-top-1/2 twcss--translate-y-1/2 twcss--right-4 lg:twcss--right-6 twcss-z-10 twcss-w-10 twcss-h-10 twcss-flex twcss-items-center twcss-justify-center twcss-bg-white twcss-rounded-full twcss-shadow-md hover:twcss-bg-gray-50 twcss-transition-colors twcss-duration-200">
+        {% render 'icon-chevron-right' %}
+      </button>
       {%- if section.settings.collection != blank -%}
         <!-- 导航按钮 -->
-        <button class="prev-button twcss-absolute twcss-left-0 twcss-top-1/2 twcss--translate-y-1/2 twcss--left-4 lg:twcss--left-6 twcss-z-10 twcss-w-10 twcss-h-10 twcss-flex twcss-items-center twcss-justify-center twcss-bg-white twcss-rounded-full twcss-shadow-md hover:twcss-bg-gray-50 twcss-transition-colors twcss-duration-200">
-          {% render 'icon-chevron-left' %}
-        </button>
-        <button class="next-button twcss-absolute twcss-right-0 twcss-top-1/2 twcss--translate-y-1/2 twcss--right-4 lg:twcss--right-6 twcss-z-10 twcss-w-10 twcss-h-10 twcss-flex twcss-items-center twcss-justify-center twcss-bg-white twcss-rounded-full twcss-shadow-md hover:twcss-bg-gray-50 twcss-transition-colors twcss-duration-200">
-          {% render 'icon-chevron-right' %}
-        </button>
+
         <div class="featured-products-slider twcss-relative twcss-overflow-hidden twcss-h-full">
           <div class="swiper-wrapper twcss-flex twcss-transition-transform twcss-duration-300 twcss-ease-out">
             {%- for product in section.settings.collection.products limit: 8 -%}
