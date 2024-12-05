@@ -2308,6 +2308,11 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
 
+.\!twcss-bg-white {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)) !important;
+}
+
 .twcss-bg-\[\#EEF5FF\] {
   --tw-bg-opacity: 1;
   background-color: rgb(238 245 255 / var(--tw-bg-opacity, 1));
