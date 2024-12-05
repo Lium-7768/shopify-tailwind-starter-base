@@ -10,7 +10,7 @@
     {%- for link in section.settings.menu.links -%}
       <li>
         <pre>
-          {{ link}}
+          {{ link | json }}
         </pre>
         {%- if link.links != blank -%}
           <header-menu>
