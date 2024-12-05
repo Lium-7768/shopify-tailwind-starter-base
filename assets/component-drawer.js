@@ -43,20 +43,16 @@ class ComponentDrawer {
     if (this.isOpen) return;
 
     this.isOpen = true;
-    // 先移除隐藏类
+    // 先移除隐藏类，但保持内容在屏幕外
     this.drawer.classList.remove(
       'twcss-invisible',
       'twcss-opacity-0',
       'twcss-pointer-events-none',
     );
 
-    // 等待下一帧再执行动画
+    // 等待一帧以确保过渡效果生效
     requestAnimationFrame(() => {
-      this.drawer.classList.add(
-        'twcss-visible',
-        'twcss-opacity-100',
-        'twcss-pointer-events-auto',
-      );
+      this.drawer.classList.add('twcss-visible', 'twcss-opacity-100');
       this.backdrop.classList.remove('twcss-opacity-0');
       this.content.classList.remove('twcss-translate-x-[-100%]');
     });
@@ -77,17 +73,12 @@ class ComponentDrawer {
     this.backdrop.classList.add('twcss-opacity-0');
     this.content.classList.add('twcss-translate-x-[-100%]');
 
-    // 等待动画完成后再隐藏
+    // 等待过渡完成后再隐藏整个抽屉
     setTimeout(() => {
       this.drawer.classList.add(
         'twcss-invisible',
         'twcss-opacity-0',
         'twcss-pointer-events-none',
-      );
-      this.drawer.classList.remove(
-        'twcss-visible',
-        'twcss-opacity-100',
-        'twcss-pointer-events-auto',
       );
       document.body.style.overflow = '';
     }, 300);
