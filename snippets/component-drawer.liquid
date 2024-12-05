@@ -1,0 +1,48 @@
+<div
+  id='products-drawer'
+  class='twcss-fixed twcss-inset-0 twcss-z-50 twcss-transform twcss-transition-all twcss-duration-300 twcss-ease-in-out {% unless drawer_open %}twcss-translate-x-[-100%]{% endunless %}'
+  aria-hidden='true'
+>
+  <!-- Backdrop -->
+  <div
+    class='twcss-fixed twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity {% unless drawer_open %}twcss-opacity-0{% endunless %}'
+    data-drawer-backdrop
+  ></div>
+
+  <!-- Drawer Content -->
+  <div
+    class='twcss-fixed twcss-inset-y-0 twcss-left-0 twcss-w-80 twcss-max-w-[90vw] twcss-bg-white twcss-shadow-xl twcss-transition-transform'
+    data-drawer-content
+  >
+    <!-- Header -->
+    <div class='twcss-flex twcss-items-center twcss-justify-between twcss-p-4 twcss-border-b twcss-border-gray-200'>
+      <h2 class='twcss-text-lg twcss-font-medium twcss-text-gray-900'>Products</h2>
+      <button
+        class='twcss-p-2 twcss-text-gray-500 hover:twcss-text-gray-700'
+        data-drawer-close
+      >
+        <svg class='twcss-w-6 twcss-h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 18L18 6M6 6l12 12'/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Content -->
+    <div class='twcss-overflow-y-auto twcss-h-[calc(100%-65px)]'>
+      <nav class='twcss-py-4'>
+        <div class='twcss-space-y-1'>
+          {% for link in linklists['main-menu'].links %}
+            <a
+              href='{{ link.url }}'
+              class='twcss-block twcss-px-4 twcss-py-2 twcss-text-base twcss-text-gray-900 hover:twcss-bg-gray-50'
+            >
+              {{ link.title }}
+            </a>
+          {% endfor %}
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<script src='{{ 'component-drawer.js' | asset_url }}' defer='defer'></script>
