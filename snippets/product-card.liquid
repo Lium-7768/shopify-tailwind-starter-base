@@ -53,15 +53,16 @@
         class="
           twcss-text-lg twcss-font-bold
           twcss-line-clamp-2
+          twcss-text-[#353535]
         "
       >
         {{ product.title }}
       </a>
 
       <div class="twcss-ml-2 twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded">
-        {% comment %} {%- if product.metafields.custom.is_new -%} {% endcomment %}
-        New
-        {% comment %} {%- endif -%} {% endcomment %}
+        {%- if product.metafields.custom.is_new -%}
+          New
+        {%- endif -%}
       </div>
 
       <div class="twcss-space-y-1 twcss-text-sm">

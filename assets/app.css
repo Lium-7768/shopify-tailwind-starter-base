@@ -3853,6 +3853,11 @@ video {
   font-weight: 600;
 }
 
+.twcss-text-\[\#353535\] {
+  --tw-text-opacity: 1;
+  color: rgb(53 53 53 / var(--tw-text-opacity, 1));
+}
+
 .twcss-text-accent-default {
   --tw-text-opacity: 1;
   color: rgb(245 245 245 / var(--tw-text-opacity, 1));
