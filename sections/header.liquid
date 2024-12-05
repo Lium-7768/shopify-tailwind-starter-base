@@ -145,7 +145,7 @@
             <span class='twcss-font-medium'>Products</span>
           </button>
 
-          <!-- Mobile Products Icon -->
+          <!-- Mobile Products Button -->
           <button
             class='md:twcss-hidden twcss-p-2'
             onclick="document.getElementById('products-drawer').classList.remove('twcss-translate-x-[-100%]')"
@@ -309,7 +309,7 @@
     </button>
   </div>
   <div class='twcss-p-4'>
-    <!-- Drawer content goes here -->
+    <!-- Drawer content here -->
   </div>
 </div>
 
@@ -443,23 +443,23 @@
 
   customElements.define('sticky-header', StickyHeader);
 
+  // Add to your existing JavaScript
   document.addEventListener('DOMContentLoaded', function () {
     const drawer = document.getElementById('products-drawer');
     const backdrop = document.getElementById('drawer-backdrop');
 
-    // 监听 drawer 的 transitionend 事件
-    drawer.addEventListener('transitionend', function () {
-      if (this.classList.contains('twcss-translate-x-[-100%]')) {
-        backdrop.classList.add('twcss-hidden');
+    // Show backdrop when drawer opens
+    drawer.addEventListener('transitionstart', function () {
+      if (!drawer.classList.contains('twcss-translate-x-[-100%]')) {
+        backdrop.classList.remove('twcss-hidden');
       }
     });
 
-    // 打开 drawer 时显示背景遮罩
-    const drawerTriggers = document.querySelectorAll('[onclick*="products-drawer"].classList.remove"]');
-    drawerTriggers.forEach((trigger) => {
-      trigger.addEventListener('click', function () {
-        backdrop.classList.remove('twcss-hidden');
-      });
+    // Hide backdrop when drawer closes
+    drawer.addEventListener('transitionend', function () {
+      if (drawer.classList.contains('twcss-translate-x-[-100%]')) {
+        backdrop.classList.add('twcss-hidden');
+      }
     });
   });
 {% endjavascript %}
