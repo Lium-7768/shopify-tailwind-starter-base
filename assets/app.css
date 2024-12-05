@@ -702,8 +702,8 @@ video {
   height: 1.5rem;
 }
 
-.twcss-h-\[168px\] {
-  height: 168px;
+.twcss-h-\[198px\] {
+  height: 198px;
 }
 
 .twcss-h-\[246px\] {
@@ -3831,6 +3831,14 @@ video {
 .twcss-text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.twcss-text-\[16px\] {
+  font-size: 16px;
+}
+
+.twcss-text-\[20px\] {
+  font-size: 20px;
 }
 
 .twcss-text-base {
