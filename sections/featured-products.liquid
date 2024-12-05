@@ -66,10 +66,12 @@
                         <input type="hidden" name="quantity" value="1">
                         <button
                           type="submit"
-                          class="twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-between hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-w-full"
+                          class="twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-center hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-w-full twcss-font-bold twcss-relative"
                         >
                           <div class="">Add to Cart</div>
-                          <div class="twcss-ml-2">{% render 'icon-chevron-down' %}</div>
+                          <div class="twcss-absolute twcss-right-0 twcss-top-0 twcss-w-4 twcss-h-4 twcss-flex twcss-items-center twcss-justify-center twcss-border-[0.5px] twcss-border-white">
+                            {% render 'icon-chevron-down' %}
+                          </div>
                         </button>
                       </form>
                     </div>
