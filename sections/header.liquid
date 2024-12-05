@@ -120,16 +120,6 @@
     endif
   -%}
   <header class="twcss-items-center twcss-flex twcss-bg-primary-default twcss-text-white twcss-px-16">
-    {%- liquid
-      if section.settings.menu != blank
-        render 'header-drawer'
-      endif
-
-      if section.settings.logo_position == 'top-center' or section.settings.menu == blank
-        render 'header-search', input_id: 'Search-In-Modal-1'
-      endif
-    -%}
-
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="">
@@ -190,8 +180,17 @@
       {%- endif -%}
     {%- endif -%}
 
-    <div class="twcss-ml-10">
-      <button class="twcss-px-4 twcss-ring-1 twcss-ring-secondary-default twcss-py-2 twcss-text-base twcss-font-bold twcss-rounded-md hover:twcss-bg-[#0747A6] twcss-transition-colors">
+    <div>
+      {%- liquid
+        if section.settings.menu != blank
+          render 'header-drawer'
+        endif
+  
+        if section.settings.logo_position == 'top-center' or section.settings.menu == blank
+          render 'header-search', input_id: 'Search-In-Modal-1'
+        endif
+      -%}
+      <button class="twcss-p-7 twcss-ring-1 twcss-ring-secondary-default twcss-text-base twcss-font-bold twcss-rounded-md twcss-transition-colors">
         Products
       </button>
     </div>

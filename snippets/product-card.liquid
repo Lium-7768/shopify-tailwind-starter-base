@@ -4,8 +4,8 @@
   - show_vendor: 是否显示供应商 (可选)
   - class: 额外的 CSS 类 (可选)
 {% endcomment %}
-<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel='stylesheet' href='{{ 'component-menu-drawer.css' | asset_url }}' media='print' onload="this.media='all'">
+<link rel='stylesheet' href='{{ 'component-cart-items.css' | asset_url }}' media='print' onload="this.media='all'">
 
 {%- if settings.cart_type == 'drawer' -%}
   {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
@@ -17,86 +17,93 @@
 {%- endif -%}
 
 {%- if settings.cart_type == 'drawer' -%}
-  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+  <script src='{{ 'cart-drawer.js' | asset_url }}' defer='defer'></script>
 {%- endif -%}
 
-<div class="{{ class | default: '' }} twcss-bg-white twcss-rounded-lg twcss-shadow-md twcss-h-[415px] twcss-w-full hover:twcss-shadow-lg twcss-transition-shadow twcss-duration-200 twcss-flex twcss-flex-col">
+<div class='{{ class | default: '' }} twcss-bg-white twcss-rounded-lg twcss-shadow-md twcss-h-[415px] twcss-w-full hover:twcss-shadow-lg twcss-transition-shadow twcss-duration-200 twcss-flex twcss-flex-col'>
   <!-- 产品图片区域 -->
-  <div class="twcss-h-[246px] twcss-w-full twcss-shadow-sm">
-    <a href="{{ product.url }}" class="twcss-block twcss-w-full twcss-h-full">
+  <div class='twcss-h-[246px] twcss-w-full twcss-shadow-sm'>
+    <a href='{{ product.url }}' class='twcss-block twcss-w-full twcss-h-full'>
       <img
-        src="{{ product.featured_image | img_url: '246x246', crop: 'center' }}"
-        alt="{{ product.title }}"
-        class="twcss-object-contain twcss-w-full twcss-h-full"
-        loading="lazy"
-        width="246"
-        height="246"
+        src='{{ product.featured_image | img_url: '246x246', crop: 'center' }}'
+        alt='{{ product.title }}'
+        class='twcss-object-contain twcss-w-full twcss-h-full'
+        loading='lazy'
+        width='246'
+        height='246'
       >
     </a>
   </div>
 
   <!-- 产品信息区域 -->
   <div
-    class="
+    class='
       twcss-flex-1 twcss-flex twcss-flex-col twcss-bg-[#f8f8f8]
       twcss-p-4
-    "
+    '
   >
-    <div class="twcss-space-y-2 twcss-flex twcss-flex-col twcss-flex-1">
-      <div class="twcss-text-gray-600">{{ product.vendor }}</div>
+    <div class='twcss-space-y-2 twcss-flex twcss-flex-col twcss-flex-1'></div>
+      <div class='twcss-text-gray-600'>
+        {{ product.vendor }}
+        {%- if product.metafields.custom.is_new -%}
+          <span class="twcss-ml-2 twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded">
+            New
+          </span>
+        {%- endif -%}
+      </div>
 
       <a
-        href="{{ product.url }}"
-        class="
+        href='{{ product.url }}'
+        class='
           twcss-text-lg twcss-font-bold
           twcss-line-clamp-2
-        "
+        '
       >
         {{ product.title }}
       </a>
 
-      <div class="twcss-space-y-1 twcss-text-sm">
-        <p class="twcss-text-gray-600">Customer Product # {{ product.id }}</p>
-        <p class="twcss-text-gray-600">
+      <div class='twcss-space-y-1 twcss-text-sm'>
+        <p class='twcss-text-gray-600'>Customer Product # {{ product.id }}</p>
+        <p class='twcss-text-gray-600'>
           Supplier Product # {{ product.metafields.custom.supplier_id | default: 'R9013DS' }}
         </p>
-        <p class="twcss-text-gray-600">Supplier: {{ product.vendor }}</p>
+        <p class='twcss-text-gray-600'>Supplier: {{ product.vendor }}</p>
       </div>
     </div>
 
     <!-- 添加到购物车按钮 -->
 
     <div
-      class="
+      class='
         twcss-flex twcss-items-center twcss-justify-center
         twcss-relative twcss-w-full
-      "
+      '
     >
-      <product-form class="twcss-flex-1">
-        <div class="product-form__error-message-wrapper" role="alert" hidden>
-          <span class="product-form__error-message"></span>
+      <product-form class='twcss-flex-1'>
+        <div class='product-form__error-message-wrapper' role='alert' hidden>
+          <span class='product-form__error-message'></span>
         </div>
 
         <form
-          method="post"
-          action="/cart/add"
-          id="product-form-{{ product.id }}"
-          accept-charset="UTF-8"
-          class="twcss-flex-1"
-          enctype="multipart/form-data"
-          novalidate="novalidate"
-          data-type="add-to-cart-form"
+          method='post'
+          action='/cart/add'
+          id='product-form-{{ product.id }}'
+          accept-charset='UTF-8'
+          class='twcss-flex-1'
+          enctype='multipart/form-data'
+          novalidate='novalidate'
+          data-type='add-to-cart-form'
           {% comment %} data-ajax-cart-form {% endcomment %}
         >
-          <input type="hidden" name="form_type" value="product">
-          <input type="hidden" name="utf8" value="✓">
-          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-          <input type="hidden" name="quantity" value="1">
+          <input type='hidden' name='form_type' value='product'>
+          <input type='hidden' name='utf8' value='✓'>
+          <input type='hidden' name='id' value='{{ product.variants.first.id }}'>
+          <input type='hidden' name='quantity' value='1'>
 
           <button
-            type="submit"
-            name="add"
-            class="twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-center hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-w-full twcss-font-bold twcss-relative"
+            type='submit'
+            name='add'
+            class='twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-center hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-w-full twcss-font-bold twcss-relative'
             {% unless product.available %}
               disabled
             {% endunless %}
@@ -113,7 +120,7 @@
         </form>
       </product-form>
 
-      <div class="twcss-absolute twcss-right-0 twcss-top-0 twcss-w-[36px] twcss-h-full twcss-flex twcss-items-center twcss-justify-center twcss-border-l-[0.5px] twcss-border-white twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded">
+      <div class='twcss-absolute twcss-right-0 twcss-top-0 twcss-w-[36px] twcss-h-full twcss-flex twcss-items-center twcss-justify-center twcss-border-l-[0.5px] twcss-border-white twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded'>
         {% render 'icon-chevron-down' %}
       </div>
     </div>
