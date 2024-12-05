@@ -18,48 +18,41 @@
         <div class="featured-products-slider twcss-relative twcss-overflow-hidden twcss-h-full">
           <div class="swiper-wrapper twcss-flex twcss-transition-transform twcss-duration-300 twcss-ease-out">
             {%- for product in section.settings.collection.products limit: 8 -%}
-              <div class="swiper-slide twcss-flex-none twcss-w-[620px] twcss-px-2">
-                <div class="twcss-bg-white twcss-rounded-lg twcss-shadow-sm twcss-h-[415px]">
+              <div class="swiper-slide twcss-flex-none twcss-w-[246.8px] twcss-px-2">
+                <div class="twcss-bg-white twcss-rounded-lg twcss-shadow-sm twcss-h-[415px] twcss-w-[236.8px]">
                   <!-- 产品图片区域 -->
-                  <div class="twcss-h-[220px] twcss-w-full">
+                  <div class="twcss-h-[246px] twcss-w-[246px]">
                     <img
-                      src="{{ product.featured_image | img_url: '620x220', crop: 'center' }}"
+                      src="{{ product.featured_image | img_url: '246x246', crop: 'center' }}"
                       alt="{{ product.title }}"
-                      class="twcss-object-cover twcss-w-full twcss-h-full"
+                      class="twcss-object-contain twcss-w-full twcss-h-full"
                       loading="lazy"
-                      width="620"
-                      height="220"
+                      width="246"
+                      height="246"
                     >
                   </div>
 
                   <!-- 产品信息区域 -->
-                  <div class="twcss-p-6 twcss-space-y-4">
-                    <!-- 供应商和标题 -->
-                    <div>
-                      <p class="twcss-text-sm twcss-text-gray-600 twcss-mb-1">{{ product.vendor }}</p>
-                      <h3 class="twcss-text-xl twcss-font-medium twcss-line-clamp-2">{{ product.title }}</h3>
-                    </div>
+                  <div class="twcss-p-4 twcss-space-y-2">
+                    <h3 class="twcss-text-base twcss-font-medium twcss-line-clamp-2">{{ product.title }}</h3>
 
-                    <!-- 产品编号 -->
-                    <div class="twcss-space-y-1">
-                      <p class="twcss-text-sm twcss-text-gray-600">Customer Product # {{ product.id }}</p>
-                      <p class="twcss-text-sm twcss-text-gray-600">Supplier Product # R9013DS</p>
-                      <p class="twcss-text-sm twcss-text-gray-600">Supplier: MONARCH</p>
+                    <div class="twcss-space-y-1 twcss-text-sm">
+                      <p class="twcss-text-gray-600">Customer Product # {{ product.id }}</p>
+                      <p class="twcss-text-gray-600">
+                        Supplier Product # {{ product.metafields.custom.supplier_id | default: 'R9013DS' }}
+                      </p>
+                      <p class="twcss-text-gray-600">Supplier: {{ product.vendor }}</p>
                     </div>
 
                     <!-- 添加到购物车按钮 -->
-                    <div class="twcss-flex twcss-items-center twcss-justify-between twcss-mt-4">
+                    <div class="twcss-mt-4">
                       <button
-                        class="add-to-cart twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-px-6 twcss-py-2.5 twcss-rounded-md twcss-text-base twcss-w-full twcss-transition-colors twcss-duration-200"
+                        class="add-to-cart twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-text-sm twcss-w-full twcss-flex twcss-items-center twcss-justify-between"
                         data-product-id="{{ product.id }}"
                       >
                         Add to Cart
+                        <span class="twcss-ml-2">{% render 'icon-chevron-down' %}</span>
                       </button>
-                      <div class="twcss-flex twcss-items-center twcss-ml-4">
-                        <button class="twcss-text-gray-400 hover:twcss-text-gray-600">
-                          {% render 'icon-chevron-down' %}
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>
