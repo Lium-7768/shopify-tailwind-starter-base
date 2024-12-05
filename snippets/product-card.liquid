@@ -59,10 +59,10 @@
         {{ product.title }}
       </a>
 
-      <div class="twcss-ml-2 twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded twcss-min-h-6">
-        {% comment %} {%- if product.metafields.custom.is_new -%} {% endcomment %}
-        New
-        {% comment %} {%- endif -%} {% endcomment %}
+      <div class="twcss-ml-2 twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded twcss-min-h-4">
+        {%- if product.metafields.custom.is_new -%}
+          New
+        {%- endif -%}
       </div>
 
       <div class="twcss-space-y-1 twcss-text-sm">

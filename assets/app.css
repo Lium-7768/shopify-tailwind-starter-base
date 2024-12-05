@@ -722,6 +722,10 @@ video {
   height: 100%;
 }
 
+.twcss-min-h-4 {
+  min-height: 1rem;
+}
+
 .twcss-w-12 {
   width: 3rem;
 }
