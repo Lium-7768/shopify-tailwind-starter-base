@@ -27,9 +27,9 @@
             {%- for product in section.settings.collection.products limit: 8 -%}
               <div class="swiper-slide twcss-flex-none twcss-w-full xl:twcss-w-[calc((100%-64px)/5)] twcss-px-2">
                 <div class="twcss-bg-white twcss-rounded-lg twcss-shadow-sm twcss-h-[415px] twcss-w-full hover:twcss-shadow-md twcss-transition-shadow twcss-duration-200 twcss-flex twcss-flex-col">
+                  <!-- 产品图片区域 -->
                   <div class="twcss-h-[246px] twcss-w-full twcss-shadow-sm">
                     <a href="{{ product.url }}" class="twcss-block twcss-w-full twcss-h-full">
-                      <!-- 产品图片区域 -->
                       <img
                         src="{{ product.featured_image | img_url: '246x246', crop: 'center' }}"
                         alt="{{ product.title }}"
@@ -40,9 +40,10 @@
                       >
                     </a>
                   </div>
-                  <div class="twcss-flex-1 twcss-flex twcss-flex-col twcss-bg-[#f8f8f8]">
-                    <!-- 产品信息区域 -->
-                    <div class="twcss-p-4 twcss-space-y-2 twcss-flex twcss-flex-col twcss-flex-1">
+
+                  <!-- 产品信息区域 -->
+                  <div class="twcss-flex-1 twcss-flex twcss-flex-col twcss-bg-[#f8f8f8] twcss-p-4">
+                    <div class="twcss-space-y-2 twcss-flex twcss-flex-col twcss-flex-1">
                       <div class="twcss-text-gray-600">{{ product.vendor }}</div>
 
                       <div class="twcss-text-lg twcss-font-bold twcss-line-clamp-2">{{ product.title }}</div>
@@ -55,21 +56,21 @@
                         <p class="twcss-text-gray-600">Supplier: {{ product.vendor }}</p>
                       </div>
                     </div>
-                  </div>
 
-                  <!-- 添加到购物车按钮 -->
-                  <div class="">
-                    <form action="/cart/add" method="post" onclick="event.stopPropagation()">
-                      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-                      <input type="hidden" name="quantity" value="1">
-                      <button
-                        type="submit"
-                        class="twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-between hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-w-full"
-                      >
-                        <div class="">Add to Cart</div>
-                        <div class="twcss-ml-2">{% render 'icon-chevron-down' %}</div>
-                      </button>
-                    </form>
+                    <!-- 添加到购物车按钮 -->
+                    <div class="">
+                      <form action="/cart/add" method="post" onclick="event.stopPropagation()">
+                        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                        <input type="hidden" name="quantity" value="1">
+                        <button
+                          type="submit"
+                          class="twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-between hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-w-full"
+                        >
+                          <div class="">Add to Cart</div>
+                          <div class="twcss-ml-2">{% render 'icon-chevron-down' %}</div>
+                        </button>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
