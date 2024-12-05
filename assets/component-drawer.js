@@ -43,10 +43,9 @@ class ComponentDrawer {
     if (this.isOpen) return;
 
     this.isOpen = true;
-    this.drawer.classList.remove('twcss-hidden');
+    this.drawer.classList.remove('twcss-invisible', 'twcss-opacity-0');
     requestAnimationFrame(() => {
-      this.drawer.classList.remove('twcss-translate-x-[-100%]');
-      this.backdrop.classList.remove('twcss-opacity-0');
+      this.content.classList.remove('twcss-translate-x-[-100%]');
     });
     document.body.style.overflow = 'hidden';
 
@@ -61,12 +60,11 @@ class ComponentDrawer {
     if (!this.isOpen) return;
 
     this.isOpen = false;
-    this.drawer.classList.add('twcss-translate-x-[-100%]');
-    this.backdrop.classList.add('twcss-opacity-0');
+    this.content.classList.add('twcss-translate-x-[-100%]');
 
     // Wait for animation to finish before hiding
     setTimeout(() => {
-      this.drawer.classList.add('twcss-hidden');
+      this.drawer.classList.add('twcss-invisible', 'twcss-opacity-0');
       document.body.style.overflow = '';
     }, 300);
 
