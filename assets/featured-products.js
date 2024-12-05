@@ -11,7 +11,7 @@ class Slider {
 
     // 配置项
     this.options = {
-      slidesPerView: 1.2,
+      slidesPerView: 5,
       spaceBetween: 16,
       ...options,
     };
@@ -45,10 +45,13 @@ class Slider {
     this.container.style.overflow = 'hidden';
     this.wrapper.style.display = 'flex';
     this.wrapper.style.transition = 'transform 0.3s ease-out';
+    this.wrapper.style.gap = `${this.options.spaceBetween}px`;
 
     this.slides.forEach((slide) => {
-      slide.style.flex = `0 0 ${100 / this.getSlidesPerView()}%`;
-      slide.style.padding = `0 ${this.options.spaceBetween / 2}px`;
+      slide.style.flex = `0 0 calc((100% - ${
+        this.options.spaceBetween * (this.getSlidesPerView() - 1)
+      }px) / ${this.getSlidesPerView()})`;
+      slide.style.padding = '0';
     });
   }
 
@@ -58,7 +61,7 @@ class Slider {
     if (width >= 1024) return 4;
     if (width >= 768) return 3;
     if (width >= 640) return 2;
-    return this.options.slidesPerView;
+    return 1;
   }
 
   calculateSlideWidth() {
@@ -148,11 +151,11 @@ class Slider {
   }
 
   slide(direction) {
+    const maxIndex = this.slides.length - this.getSlidesPerView();
+
     if (direction === 'next') {
-      this.currentIndex = Math.min(
-        this.currentIndex + 1,
-        this.slides.length - this.getSlidesPerView(),
-      );
+      // 每次滑动一个完整的盒子
+      this.currentIndex = Math.min(this.currentIndex + 1, maxIndex);
     } else {
       this.currentIndex = Math.max(this.currentIndex - 1, 0);
     }
@@ -192,7 +195,7 @@ class Slider {
 // 初始化滑块
 document.addEventListener('DOMContentLoaded', () => {
   new Slider('.featured-products-slider', {
-    slidesPerView: 1.2,
+    slidesPerView: 5,
     spaceBetween: 16,
   });
 });
