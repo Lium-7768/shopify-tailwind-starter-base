@@ -26,10 +26,10 @@
           <div class="swiper-wrapper twcss-flex twcss-transition-transform twcss-duration-300 twcss-ease-out">
             {%- for product in section.settings.collection.products limit: 8 -%}
               <div class="swiper-slide twcss-flex-none twcss-w-full xl:twcss-w-[calc((100%-64px)/5)] twcss-px-2">
-                <div class="twcss-bg-white twcss-rounded-lg twcss-shadow-sm twcss-h-[415px] twcss-w-full hover:twcss-shadow-md twcss-transition-shadow twcss-duration-200">
-                  <a href="{{ product.url }}" class="twcss-block">
-                    <!-- 产品图片区域 -->
-                    <div class="twcss-h-[246px] twcss-w-full">
+                <div class="twcss-bg-white twcss-rounded-lg twcss-shadow-sm twcss-h-[415px] twcss-w-full hover:twcss-shadow-md twcss-transition-shadow twcss-duration-200 twcss-flex twcss-flex-col">
+                  <div class="twcss-h-[246px] twcss-w-full">
+                    <a href="{{ product.url }}" class="twcss-block">
+                      <!-- 产品图片区域 -->
                       <img
                         src="{{ product.featured_image | img_url: '246x246', crop: 'center' }}"
                         alt="{{ product.title }}"
@@ -38,10 +38,13 @@
                         width="246"
                         height="246"
                       >
-                    </div>
-
+                    </a>
+                  </div>
+                  <div class="twcss-flex-1 twcss-flex twcss-flex-col twscc-bg-[#F8F8F8] ">
                     <!-- 产品信息区域 -->
-                    <div class="twcss-p-4 twcss-space-y-2">
+                    <div class="twcss-p-4 twcss-space-y-2 twcss-flex twcss-flex-col twcss-flex-1">
+                      <p class="twcss-text-gray-600">{{ product.vendor }}</p>
+
                       <h3 class="twcss-text-base twcss-font-medium twcss-line-clamp-2">{{ product.title }}</h3>
 
                       <div class="twcss-space-y-1 twcss-text-sm">
@@ -52,7 +55,8 @@
                         <p class="twcss-text-gray-600">Supplier: {{ product.vendor }}</p>
                       </div>
                     </div>
-                  </a>
+                  </div>
+
                   <!-- 添加到购物车按钮 -->
                   <div class="twcss-mt-4">
                     <form action="/cart/add" method="post" onclick="event.stopPropagation()">
@@ -60,10 +64,10 @@
                       <input type="hidden" name="quantity" value="1">
                       <button
                         type="submit"
-                        class="twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-text-sm twcss-w-full twcss-flex twcss-items-center twcss-justify-between"
+                        class="twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-between hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-text-sm twcss-w-full"
                       >
-                        Add to Cart
-                        <span class="twcss-ml-2 twcss-border-l">{% render 'icon-chevron-down' %}</span>
+                        <div class="twcss-flex twcss-items-center twcss-justify-between">Add to Cart</div>
+                        <div class="twcss-ml-2 twcss-border-l">{% render 'icon-chevron-down' %}</div>
                       </button>
                     </form>
                   </div>
