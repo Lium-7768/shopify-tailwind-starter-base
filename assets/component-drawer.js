@@ -43,10 +43,24 @@ class ComponentDrawer {
     if (this.isOpen) return;
 
     this.isOpen = true;
-    this.drawer.classList.remove('twcss-invisible', 'twcss-opacity-0');
+    // 先移除隐藏类
+    this.drawer.classList.remove(
+      'twcss-invisible',
+      'twcss-opacity-0',
+      'twcss-pointer-events-none',
+    );
+
+    // 等待下一帧再执行动画
     requestAnimationFrame(() => {
+      this.drawer.classList.add(
+        'twcss-visible',
+        'twcss-opacity-100',
+        'twcss-pointer-events-auto',
+      );
+      this.backdrop.classList.remove('twcss-opacity-0');
       this.content.classList.remove('twcss-translate-x-[-100%]');
     });
+
     document.body.style.overflow = 'hidden';
 
     // Update ARIA attributes
@@ -60,11 +74,21 @@ class ComponentDrawer {
     if (!this.isOpen) return;
 
     this.isOpen = false;
+    this.backdrop.classList.add('twcss-opacity-0');
     this.content.classList.add('twcss-translate-x-[-100%]');
 
-    // Wait for animation to finish before hiding
+    // 等待动画完成后再隐藏
     setTimeout(() => {
-      this.drawer.classList.add('twcss-invisible', 'twcss-opacity-0');
+      this.drawer.classList.add(
+        'twcss-invisible',
+        'twcss-opacity-0',
+        'twcss-pointer-events-none',
+      );
+      this.drawer.classList.remove(
+        'twcss-visible',
+        'twcss-opacity-100',
+        'twcss-pointer-events-auto',
+      );
       document.body.style.overflow = '';
     }, 300);
 
