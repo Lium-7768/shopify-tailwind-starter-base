@@ -5,9 +5,29 @@
   {% render 'header-dropdown-menu' %}
 {% endcomment %}
 
-<pre>
-  {{ section.settings.menu.links | json }}
-</pre>
+<details>
+  <summary>Menu Debug Info</summary>
+  <pre>
+    {% for link in section.settings.menu.links %}
+      Link {{ forloop.index }}:
+      - title: {{ link.title }}
+      - url: {{ link.url }}
+      - handle: {{ link.handle }}
+      - type: {{ link.type }}
+      - child_active: {{ link.child_active }}
+      - current: {{ link.current }}
+      - active: {{ link.active }}
+      - levels: {{ link.levels }}
+      {% if link.links != blank %}
+        Sublinks:
+        {% for childlink in link.links %}
+          * {{ childlink.title }}
+        {% endfor %}
+      {% endif %}
+      ----------------
+    {% endfor %}
+  </pre>
+</details>
 
 <nav class='header__inline-menu'>
   <ul class='list-menu list-menu--inline' role='list'>
