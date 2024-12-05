@@ -687,8 +687,8 @@ video {
   width: 100%;
 }
 
-.twcss-max-w-96 {
-  max-width: 24rem;
+.twcss-max-w-\[360px\] {
+  max-width: 360px;
 }
 
 .twcss-max-w-\[calc\(100vw-32px\)\] {
