@@ -106,9 +106,7 @@
           twcss-rounded
         "
       >
-        <a href="{{ routes.cart_url }}">
-          {% render 'icon-chevron-down' %}
-        </a>
+        {% render 'icon-chevron-down' %}
       </div>
     </div>
   </div>
@@ -129,6 +127,9 @@
           .then((response) => response.json())
           .then((data) => {
             // 可以在这里添加成功提示
+            if (window.location.pathname !== '/cart') {
+              document.querySelector('cart-drawer').open();
+            }
             console.log('Added to cart:', data);
           })
           .catch((error) => {
