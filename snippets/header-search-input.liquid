@@ -1,0 +1,68 @@
+{% comment %}
+  Renders an inline search input for header. Should be used with 'header.liquid'
+
+  Accepts:
+  - input_id: {String} Id for the search input element (required)
+
+  Usage:
+  {% render 'header-search-input', input_id: 'My-Id'%}
+{% endcomment %}
+
+<div class='twcss-relative twcss-flex-1 twcss-max-w-[600px] twcss-mx-4'>
+  <form action='{{ routes.search_url }}' method='get' role='search' class='twcss-w-full'>
+    <div class='twcss-relative'>
+      <!-- Search Icon -->
+      <div class='twcss-absolute twcss-inset-y-0 twcss-left-3 twcss-flex twcss-items-center twcss-pointer-events-none'>
+        <span class='twcss-text-gray-400'>
+          {{- 'icon-search.svg' | inline_asset_content | replace: '<svg', '<svg class="twcss-w-5 twcss-h-5"' -}}
+        </span>
+      </div>
+
+      <!-- Location Dropdown -->
+      <div class='twcss-absolute twcss-inset-y-0 twcss-left-0 twcss-pl-10 twcss-flex twcss-items-center'>
+        <button
+          type='button'
+          class='twcss-flex twcss-items-center twcss-text-sm twcss-text-gray-500 twcss-border-r twcss-border-gray-300 twcss-pr-3 twcss-ml-4'
+        >
+          1801 Century Park E, Suite...
+          <svg class='twcss-w-4 twcss-h-4 twcss-ml-1' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Search Input -->
+      <input
+        class='twcss-w-full twcss-h-10 twcss-pl-44 twcss-pr-4 twcss-rounded-md twcss-border twcss-border-gray-300 twcss-bg-white focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-blue-500 focus:twcss-border-blue-500'
+        id='{{ input_id }}'
+        type='search'
+        name='q'
+        value='{{ search.terms | escape }}'
+        placeholder='What can we help you find?'
+        {%- if settings.predictive_search_enabled -%}
+          role='combobox'
+          aria-expanded='false'
+          aria-owns='predictive-search-results'
+          aria-controls='predictive-search-results'
+          aria-haspopup='listbox'
+          aria-autocomplete='list'
+          autocorrect='off'
+          autocomplete='off'
+          autocapitalize='off'
+          spellcheck='false'
+        {%- endif -%}
+      >
+    </div>
+
+    <input type='hidden' name='options[prefix]' value='last'>
+  </form>
+
+  {%- if settings.predictive_search_enabled -%}
+    <div
+      class='twcss-absolute twcss-w-full twcss-mt-1 twcss-bg-white twcss-rounded-md twcss-shadow-lg twcss-hidden'
+      id='predictive-search-results'
+    >
+      <!-- Predictive search results will be inserted here -->
+    </div>
+  {%- endif -%}
+</div>
