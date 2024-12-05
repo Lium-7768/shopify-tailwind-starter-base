@@ -15,12 +15,12 @@
 
     <div class="twcss-relative ">
       <!-- 添加导航按钮 -->
-      <button class="swiper-button-prev twcss-w-[40px] twcss-h-[40px] twcss-rounded-full twcss-shadow-sm twcss-text-gray-500 !twcss-hidden md:!twcss-flex">
+      <div class="swiper-button-prev twcss-w-[40px] twcss-h-[40px] twcss-rounded-full twcss-shadow-sm twcss-text-gray-500 !twcss-hidden md:!twcss-flex">
         {% render 'icon-chevron-left' %}
-      </button>
-      <button class="swiper-button-next twcss-w-[40px] twcss-h-[40px] twcss-rounded-full twcss-shadow-sm twcss-text-gray-500 !twcss-hidden md:!twcss-flex">
+      </div>
+      <div class="swiper-button-next twcss-w-[40px] twcss-h-[40px] twcss-rounded-full twcss-shadow-sm twcss-text-gray-500 !twcss-hidden md:!twcss-flex">
         {% render 'icon-chevron-right' %}
-      </button>
+      </div>
       {%- if section.settings.collection != blank -%}
         <div class="swiper featured-products-slider twcss-relative  twcss-h-full">
           <div class="swiper-wrapper">
