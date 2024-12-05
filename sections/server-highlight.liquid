@@ -1,14 +1,14 @@
-<div class="twcss-container twcss-mx-auto twcss-px-5">
+<div class="twcss-container twcss-mx-auto twcss-px-5 twcss-flex twcss-flex-col twcss-gap-[24px]">
   {%- for block in section.blocks -%}
     <div
-      class="twcss-flex-1 twcss-bg-[#EEF5FF] twcss-rounded-2xl twcss-p-6 twcss-flex twcss-items-start twcss-gap-4 twcss-px-5 twcss-py-8 twcss-gap-x-5"
+      class="twcss-flex-1 twcss-bg-[#EEF5FF] twcss-rounded-2xl twcss-p-6 twcss-flex twcss-items-start twcss-px-5 twcss-py-8 twcss-gap-x-[20px]"
       {{ block.shopify_attributes }}
     >
       {%- if block.settings.icon != blank -%}
         <div class="twcss-flex-shrink-0">
           <img
-            height="94px"
-            width="94px"
+            height="100%"
+            width="100%"
             src="{{ block.settings.icon | img_url: '100x' }}"
             alt="{{ block.settings.heading | escape }}"
             class=""
@@ -18,7 +18,7 @@
       {%- endif -%}
       <div class="twcss-flex twcss-flex-col twcss-gap-y-[10px]">
         {%- if block.settings.heading != blank -%}
-          <div class="twcss-font-bold twcss-text-blue-700 twcss-text-[18px] leading-[22px]">
+          <div class="twcss-font-bold twcss-text-blue-700 twcss-mb-2 twcss-text-[18px] leading-[22px]">
             {{ block.settings.heading }}
           </div>
         {%- endif -%}
