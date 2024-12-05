@@ -750,6 +750,11 @@ video {
   width: var(--page-width);
 }
 
+.twcss-w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .twcss-w-full {
   width: 100%;
 }
