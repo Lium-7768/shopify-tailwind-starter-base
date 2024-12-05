@@ -6837,9 +6837,9 @@ video {
           appearance: none;
 }
 
-.after\:twcss-content-\[\"\"\]::after {
-  --tw-content: "";
-  content: var(--tw-content);
+.after\:\!twcss-content-\[\"\"\]::after {
+  --tw-content: "" !important;
+  content: var(--tw-content) !important;
 }
 
 .hover\:twcss-bg-gray-50:hover {
