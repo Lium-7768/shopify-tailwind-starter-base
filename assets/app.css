@@ -804,17 +804,17 @@ video {
   justify-content: space-between;
 }
 
-.twcss-gap-x-5 {
-  -moz-column-gap: 1.25rem;
-       column-gap: 1.25rem;
-}
-
-.twcss-gap-y-6 {
-  row-gap: 1.5rem;
+.twcss-gap-x-\[20px\] {
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 
 .twcss-gap-y-\[10px\] {
   row-gap: 10px;
+}
+
+.twcss-gap-y-\[24px\] {
+  row-gap: 24px;
 }
 
 .twcss-space-y-1 > :not([hidden]) ~ :not([hidden]) {
@@ -839,8 +839,8 @@ video {
   border-radius: 0.25rem;
 }
 
-.twcss-rounded-2xl {
-  border-radius: 1rem;
+.twcss-rounded-\[10px\] {
+  border-radius: 10px;
 }
 
 .twcss-rounded-\[5px\] {
@@ -3778,12 +3778,12 @@ video {
   padding: 1rem;
 }
 
-.twcss-p-6 {
-  padding: 1.5rem;
-}
-
 .twcss-p-7 {
   padding: 1.75rem;
+}
+
+.twcss-p-\[24px\] {
+  padding: 24px;
 }
 
 .twcss-px-16 {
@@ -3801,9 +3801,9 @@ video {
   padding-right: 1rem;
 }
 
-.twcss-px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+.twcss-px-\[20px\] {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .twcss-py-0\.5 {
@@ -3824,6 +3824,11 @@ video {
 .twcss-py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.twcss-py-\[32px\] {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .twcss-pl-4 {
@@ -6900,6 +6905,12 @@ video {
 
   .md\:twcss-max-w-full {
     max-width: 100%;
+  }
+}
+
+@media (min-width: 990px) {
+  .lg\:twcss-flex-row {
+    flex-direction: row;
   }
 }
 
