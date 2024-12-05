@@ -3,13 +3,11 @@ class Slider {
     this.container = document.querySelector(selector);
     if (!this.container) return;
 
-    const sliderContainer = this.container.closest('.twcss-relative');
-    this.prevBtn = sliderContainer.querySelector('.prev-button');
-    this.nextBtn = sliderContainer.querySelector('.next-button');
-
     this.wrapper = this.container.querySelector('.swiper-wrapper');
     this.slides = Array.from(this.container.querySelectorAll('.swiper-slide'));
     this.pagination = this.container.querySelector('.swiper-pagination');
+    this.prevBtn = this.container.querySelector('.prev-button');
+    this.nextBtn = this.container.querySelector('.next-button');
 
     // 配置项
     this.options = {
