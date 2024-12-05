@@ -25,7 +25,7 @@
         <div class="featured-products-slider twcss-relative twcss-overflow-hidden twcss-h-full">
           <div class="swiper-wrapper twcss-flex twcss-transition-transform twcss-duration-300 twcss-ease-out">
             {%- for product in section.settings.collection.products limit: 8 -%}
-              <div class="swiper-slide twcss-flex-none twcss-w-full xl:twcss-w-[calc((100%-64px)/5)] twcss-px-2">
+              <div class="swiper-slide twcss-flex-none md:twcss-flex-[0_0_calc(20%)]">
                 {% render 'product-card', product: product, show_vendor: true %}
               </div>
             {%- endfor -%}
