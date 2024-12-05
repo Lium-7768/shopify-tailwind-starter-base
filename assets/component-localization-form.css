@@ -73,7 +73,7 @@
 
 .disclosure__button.localization-form__select {
   padding: calc(2rem + var(--inputs-border-width));
-  background: rgb(var(--color-background));
+  background: transparent;
 }
 
 .localization-form__select .icon-caret {
