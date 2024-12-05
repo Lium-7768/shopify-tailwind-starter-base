@@ -683,8 +683,8 @@ video {
   width: 1.5rem;
 }
 
-.twcss-w-8 {
-  width: 2rem;
+.twcss-w-\[32px\] {
+  width: 32px;
 }
 
 .twcss-w-\[458px\] {
@@ -777,12 +777,12 @@ video {
   border-radius: 0.5rem;
 }
 
-.twcss-border-\[0\.5px\] {
-  border-width: 0.5px;
-}
-
 .twcss-border-b {
   border-bottom-width: 1px;
+}
+
+.twcss-border-l-\[0\.5px\] {
+  border-left-width: 0.5px;
 }
 
 .twcss-border-accent-default {
