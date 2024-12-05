@@ -11,7 +11,7 @@ class Slider {
 
     // 配置项
     this.options = {
-      slidesPerView: 5,
+      slidesPerView: 1,
       spaceBetween: 16,
       ...options,
     };
@@ -48,25 +48,35 @@ class Slider {
     this.wrapper.style.gap = `${this.options.spaceBetween}px`;
 
     this.slides.forEach((slide) => {
-      slide.style.flex = `0 0 calc((100% - ${
-        this.options.spaceBetween * (this.getSlidesPerView() - 1)
-      }px) / ${this.getSlidesPerView()})`;
+      const slidesPerView = this.getSlidesPerView();
+      if (slidesPerView === 1) {
+        slide.style.flex = '0 0 100%';
+      } else {
+        slide.style.flex = `0 0 calc((100% - ${
+          this.options.spaceBetween * (slidesPerView - 1)
+        }px) / ${slidesPerView})`;
+      }
       slide.style.padding = '0';
     });
   }
 
   getSlidesPerView() {
     const width = window.innerWidth;
-    if (width >= 1280) return 5;
-    if (width >= 1024) return 4;
-    if (width >= 768) return 3;
-    if (width >= 640) return 2;
-    return 1;
+    if (width >= 1280) return 5; // xl
+    if (width >= 1024) return 4; // lg
+    if (width >= 768) return 3; // md
+    return 1; // 移动端
   }
 
   calculateSlideWidth() {
     const containerWidth = this.container.offsetWidth;
-    this.slideWidth = containerWidth / this.getSlidesPerView();
+    const slidesPerView = this.getSlidesPerView();
+    if (slidesPerView === 1) {
+      this.slideWidth = containerWidth;
+    } else {
+      const totalGaps = this.options.spaceBetween * (slidesPerView - 1);
+      this.slideWidth = (containerWidth - totalGaps) / slidesPerView;
+    }
   }
 
   createPagination() {
@@ -154,7 +164,6 @@ class Slider {
     const maxIndex = this.slides.length - this.getSlidesPerView();
 
     if (direction === 'next') {
-      // 每次滑动一个完整的盒子
       this.currentIndex = Math.min(this.currentIndex + 1, maxIndex);
     } else {
       this.currentIndex = Math.max(this.currentIndex - 1, 0);
@@ -171,7 +180,15 @@ class Slider {
   }
 
   updateSliderPosition() {
-    this.currentTranslate = -this.currentIndex * this.slideWidth;
+    const slidesPerView = this.getSlidesPerView();
+    if (slidesPerView === 1) {
+      // 移动端：完整滑动一个slide的宽度
+      this.currentTranslate =
+        -this.currentIndex * (this.slideWidth + this.options.spaceBetween);
+    } else {
+      // PC端：滑动一个slide的宽度
+      this.currentTranslate = -this.currentIndex * this.slideWidth;
+    }
     this.prevTranslate = this.currentTranslate;
     this.setSliderPosition(this.currentTranslate);
   }
@@ -195,7 +212,7 @@ class Slider {
 // 初始化滑块
 document.addEventListener('DOMContentLoaded', () => {
   new Slider('.featured-products-slider', {
-    slidesPerView: 5,
+    slidesPerView: 1,
     spaceBetween: 16,
   });
 });
