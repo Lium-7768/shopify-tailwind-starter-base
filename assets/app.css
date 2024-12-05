@@ -718,10 +718,6 @@ video {
   height: 100%;
 }
 
-.twcss-min-h-4 {
-  min-height: 1rem;
-}
-
 .twcss-w-5 {
   width: 1.25rem;
 }
@@ -800,13 +796,13 @@ video {
   justify-content: space-between;
 }
 
-.twcss-gap-\[24px\] {
-  gap: 24px;
+.twcss-gap-x-5 {
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
 }
 
-.twcss-gap-x-\[20px\] {
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+.twcss-gap-y-6 {
+  row-gap: 1.5rem;
 }
 
 .twcss-gap-y-\[10px\] {
