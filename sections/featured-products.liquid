@@ -25,7 +25,7 @@
         <div class="featured-products-slider twcss-relative twcss-overflow-hidden twcss-h-full">
           <div class="swiper-wrapper twcss-flex twcss-transition-transform twcss-duration-300 twcss-ease-out">
             {%- for product in section.settings.collection.products limit: 8 -%}
-              <div class="swiper-slide twcss-flex-none twcss-w-[calc((100%-64px)/5)] twcss-px-2">
+              <div class="swiper-slide twcss-flex-none twcss-w-full md:twcss-w-[calc((100%-32px)/3)] lg:twcss-w-[calc((100%-48px)/4)] xl:twcss-w-[calc((100%-64px)/5)] twcss-px-2">
                 <div class="twcss-bg-white twcss-rounded-lg twcss-shadow-sm twcss-h-[415px] twcss-w-full">
                   <!-- 产品图片区域 -->
                   <div class="twcss-h-[246px] twcss-w-full">
