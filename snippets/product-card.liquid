@@ -1,0 +1,58 @@
+{% comment %}
+  参数说明:
+  - product: 产品对象
+  - show_vendor: 是否显示供应商 (可选)
+  - class: 额外的 CSS 类 (可选)
+{% endcomment %}
+
+<div class="{{ class | default: '' }} twcss-bg-white twcss-rounded-lg twcss-shadow-sm twcss-h-[415px] twcss-w-full hover:twcss-shadow-md twcss-transition-shadow twcss-duration-200 twcss-flex twcss-flex-col">
+  <!-- 产品图片区域 -->
+  <div class="twcss-h-[246px] twcss-w-full twcss-shadow-sm">
+    <a href="{{ product.url }}" class="twcss-block twcss-w-full twcss-h-full">
+      <img
+        src="{{ product.featured_image | img_url: '246x246', crop: 'center' }}"
+        alt="{{ product.title }}"
+        class="twcss-object-contain twcss-w-full twcss-h-full"
+        loading="lazy"
+        width="246"
+        height="246"
+      >
+    </a>
+  </div>
+
+  <!-- 产品信息区域 -->
+  <div class="twcss-flex-1 twcss-flex twcss-flex-col twcss-bg-[#f8f8f8] twcss-p-4">
+    <div class="twcss-space-y-2 twcss-flex twcss-flex-col twcss-flex-1">
+      {% if show_vendor %}
+        <div class="twcss-text-gray-600">{{ product.vendor }}</div>
+      {% endif %}
+
+      <a href="{{ product.url }}" class="twcss-text-lg twcss-font-bold twcss-line-clamp-2">
+        {{ product.title }}
+      </a>
+
+      <div class="twcss-space-y-1 twcss-text-sm">
+        <p class="twcss-text-gray-600">Customer Product # {{ product.id }}</p>
+        <p class="twcss-text-gray-600">
+          Supplier Product # {{ product.metafields.custom.supplier_id | default: 'R9013DS' }}
+        </p>
+        <p class="twcss-text-gray-600">Supplier: {{ product.vendor }}</p>
+      </div>
+    </div>
+
+    <!-- 添加到购物车按钮 -->
+    <div class="twcss-mt-4">
+      <form action="/cart/add" method="post" onclick="event.stopPropagation()">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        <input type="hidden" name="quantity" value="1">
+        <button
+          type="submit"
+          class="twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-text-sm twcss-w-full twcss-flex twcss-items-center twcss-justify-between"
+        >
+          Add to Cart
+          <span class="twcss-ml-2">{% render 'icon-chevron-down' %}</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
