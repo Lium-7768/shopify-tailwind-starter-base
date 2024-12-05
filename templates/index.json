@@ -253,12 +253,39 @@
             "brand_name": "",
             "brand_link": ""
           }
+        },
+        "brand_eAJkkF": {
+          "type": "brand",
+          "settings": {
+            "brand_logo": "shopify://shop_images/green-and-white-marbled-coloring.jpg",
+            "brand_name": "",
+            "brand_link": ""
+          }
+        },
+        "brand_HeFgxB": {
+          "type": "brand",
+          "settings": {
+            "brand_logo": "shopify://shop_images/silhouetted-couples-look-out-at-a-city-at-night.jpg",
+            "brand_name": "",
+            "brand_link": ""
+          }
+        },
+        "brand_VpteqR": {
+          "type": "brand",
+          "settings": {
+            "brand_logo": "shopify://shop_images/seaweed-washed-up-on-beach.jpg",
+            "brand_name": "",
+            "brand_link": ""
+          }
         }
       },
       "block_order": [
         "brand_KhVeTb",
         "brand_qzpBCw",
-        "brand_QqpWiE"
+        "brand_QqpWiE",
+        "brand_eAJkkF",
+        "brand_HeFgxB",
+        "brand_VpteqR"
       ],
       "settings": {
         "title": "Featured Brands",
