@@ -126,7 +126,7 @@
   <header class="twcss-items-center twcss-flex twcss-bg-primary-default twcss-text-white twcss-px-16">
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
-        <h1 class="">
+        <h1 class="twcss-flex twcss-items-center twcss-justify-center">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="">
             {%- if settings.logo != blank -%}
