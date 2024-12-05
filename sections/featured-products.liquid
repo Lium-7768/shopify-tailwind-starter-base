@@ -51,24 +51,23 @@
                         </p>
                         <p class="twcss-text-gray-600">Supplier: {{ product.vendor }}</p>
                       </div>
-
-                      <!-- 添加到购物车按钮 -->
-                      <div class="twcss-mt-4">
-                        <form action="/cart/add" method="post" onclick="event.stopPropagation()">
-                          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-                          <input type="hidden" name="quantity" value="1">
-                          <button
-                            type="submit"
-                            class="twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-text-sm twcss-w-full twcss-flex twcss-items-center twcss-justify-between"
-                          >
-                            Add to Cart
-                            <span class="twcss-ml-2">{% render 'icon-chevron-down' %}</span>
-                          </button>
-                        </form>
-                      </div>
                     </div>
                   </div>
                 </a>
+                <!-- 添加到购物车按钮 -->
+                <div class="twcss-mt-4">
+                  <form action="/cart/add" method="post" onclick="event.stopPropagation()">
+                    <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                    <input type="hidden" name="quantity" value="1">
+                    <button
+                      type="submit"
+                      class="twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-text-sm twcss-w-full twcss-flex twcss-items-center twcss-justify-between"
+                    >
+                      Add to Cart
+                      <span class="twcss-ml-2">{% render 'icon-chevron-down' %}</span>
+                    </button>
+                  </form>
+                </div>
               </div>
             {%- endfor -%}
           </div>
