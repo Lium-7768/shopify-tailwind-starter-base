@@ -64,10 +64,11 @@
       </div>
 
       {% if show_new_tag %}
-        <div class="twcss-ml-2 twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded-lg twcss-min-h-4 twcss-mb-2">
-          {%- if product.metafields.custom.is_new -%}
-            New
-          {%- endif -%}
+        <div
+          class="twcss-ml-2 twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded-lg twcss-mb-2"
+          style="opacity: {%- if product.metafields.custom.is_new -%}1{%- else -%}0{%- endif -%}"
+        >
+          New
         </div>
       {% endif %}
 
