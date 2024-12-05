@@ -6875,6 +6875,10 @@ video {
 }
 
 @media (min-width: 990px) {
+  .lg\:twcss-max-w-\[158px\] {
+    max-width: 158px;
+  }
+
   .lg\:twcss-flex-row {
     flex-direction: row;
   }
