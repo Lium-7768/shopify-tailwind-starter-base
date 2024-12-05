@@ -1,17 +1,11 @@
 <section class="twcss-w-[var(--page-width)] twcss-mx-auto twcss-px-4 twcss-py-8">
   <div class="twcss-relative twcss-h-[500px] twcss-max-w-[360px] md:twcss-max-w-full">
-    <div class="twcss-flex twcss-items-center twcss-justify-between twcss-mb-6">
-      <h2 class="twcss-text-2xl twcss-font-semibold">
-        Featured
-        <span class="twcss-text-2xl twcss-text-blue-500">Products</span>
-      </h2>
-      <a
-        href="/collections/all"
-        class="twcss-flex twcss-items-center twcss-text-sm twcss-text-blue-600 hover:twcss-text-blue-800"
-      >
-        See all {% render 'icon-chevron-right' %}
-      </a>
-    </div>
+    {% render 'homepage-title',
+      white_title: 'Featured',
+      blue_title: 'Products',
+      link_url: '/collections/all',
+      link_text: 'See all'
+    %}
 
     <div class="twcss-relative ">
       <!-- 添加导航按钮 -->
