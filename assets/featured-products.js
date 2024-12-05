@@ -37,7 +37,9 @@ class Slider {
     // 监听窗口大小变化
     window.addEventListener('resize', () => {
       this.calculateSlideWidth();
+      this.createPagination();
       this.updateSliderPosition();
+      this.updatePagination();
     });
   }
 
@@ -82,7 +84,9 @@ class Slider {
   createPagination() {
     if (!this.pagination) return;
 
-    const pageCount = Math.ceil(this.slides.length / this.getSlidesPerView());
+    const slidesPerView = this.getSlidesPerView();
+    // 计算总页数：总slide数除以每页显示数（向上取整）
+    const pageCount = Math.ceil(this.slides.length / slidesPerView);
     this.pagination.innerHTML = '';
 
     for (let i = 0; i < pageCount; i++) {
@@ -96,6 +100,7 @@ class Slider {
         border-radius: 50%;
         background-color: ${i === 0 ? '#3B82F6' : '#E5E7EB'};
         cursor: pointer;
+        transition: background-color 0.3s ease;
       `;
       dot.addEventListener('click', () => this.goToPage(i));
       this.pagination.appendChild(dot);
@@ -174,7 +179,14 @@ class Slider {
   }
 
   goToPage(pageIndex) {
-    this.currentIndex = pageIndex * this.getSlidesPerView();
+    const slidesPerView = this.getSlidesPerView();
+    // 计算要滑动到的索引位置
+    this.currentIndex = pageIndex * slidesPerView;
+
+    // 确保不会滑过头
+    const maxIndex = this.slides.length - slidesPerView;
+    this.currentIndex = Math.min(this.currentIndex, maxIndex);
+
     this.updateSliderPosition();
     this.updatePagination();
   }
@@ -201,7 +213,9 @@ class Slider {
     if (!this.pagination) return;
 
     const dots = this.pagination.querySelectorAll('.pagination-dot');
-    const currentPage = Math.floor(this.currentIndex / this.getSlidesPerView());
+    const slidesPerView = this.getSlidesPerView();
+    // 计算当前页码
+    const currentPage = Math.floor(this.currentIndex / slidesPerView);
 
     dots.forEach((dot, index) => {
       dot.style.backgroundColor = index === currentPage ? '#3B82F6' : '#E5E7EB';
