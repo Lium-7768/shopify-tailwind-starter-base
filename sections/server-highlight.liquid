@@ -1,37 +1,35 @@
 <div class="twcss-container twcss-mx-auto twcss-px-5">
-  <div class="twcss-flex twcss-flex-col md:twcss-flex-row twcss-gap-6">
-    {%- for block in section.blocks -%}
-      <div
-        class="twcss-flex-1 twcss-bg-blue-500 twcss-rounded-lg twcss-p-6 twcss-flex twcss-items-start twcss-gap-4"
-        {{ block.shopify_attributes }}
-      >
-        {%- if block.settings.icon != blank -%}
-          <div class="twcss-flex-shrink-0">
-            <img
-              height="94px"
-              width="94px"
-              src="{{ block.settings.icon | img_url: '100x' }}"
-              alt="{{ block.settings.heading | escape }}"
-              class="twcss-w-12 twcss-h-12 twcss-object-contain"
-              loading="lazy"
-            >
-          </div>
-        {%- endif -%}
-        <div class="twcss-flex twcss-flex-col">
-          {%- if block.settings.heading != blank -%}
-            <h3 class="twcss-text-lg twcss-font-semibold twcss-text-blue-700 twcss-mb-2">
-              {{ block.settings.heading }}
-            </h3>
-          {%- endif -%}
-          {%- if block.settings.text != blank -%}
-            <p class="twcss-text-gray-600">
-              {{ block.settings.text }}
-            </p>
-          {%- endif -%}
+  {%- for block in section.blocks -%}
+    <div
+      class="twcss-flex-1 twcss-bg-blue-500 twcss-rounded-lg twcss-p-6 twcss-flex twcss-items-start twcss-gap-4"
+      {{ block.shopify_attributes }}
+    >
+      {%- if block.settings.icon != blank -%}
+        <div class="twcss-flex-shrink-0">
+          <img
+            height="94px"
+            width="94px"
+            src="{{ block.settings.icon | img_url: '100x' }}"
+            alt="{{ block.settings.heading | escape }}"
+            class="twcss-w-12 twcss-h-12 twcss-object-contain"
+            loading="lazy"
+          >
         </div>
+      {%- endif -%}
+      <div class="twcss-flex twcss-flex-col">
+        {%- if block.settings.heading != blank -%}
+          <h3 class="twcss-text-lg twcss-font-semibold twcss-text-blue-700 twcss-mb-2">
+            {{ block.settings.heading }}
+          </h3>
+        {%- endif -%}
+        {%- if block.settings.text != blank -%}
+          <p class="twcss-text-gray-600">
+            {{ block.settings.text }}
+          </p>
+        {%- endif -%}
       </div>
-    {%- endfor -%}
-  </div>
+    </div>
+  {%- endfor -%}
 </div>
 
 {% schema %}
