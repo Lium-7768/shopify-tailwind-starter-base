@@ -1,17 +1,17 @@
 <div
   id='products-drawer'
-  class='twcss-fixed twcss-inset-0 twcss-z-50 twcss-invisible twcss-opacity-0 twcss-transition-all twcss-duration-300 twcss-ease-in-out'
+  class='twcss-fixed twcss-inset-0 twcss-z-50 twcss-hidden'
   aria-hidden='true'
 >
   <!-- Backdrop -->
   <div
-    class='twcss-fixed twcss-inset-0 twcss-bg-black/50'
+    class='twcss-fixed twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity twcss-duration-300 twcss-opacity-0'
     data-drawer-backdrop
   ></div>
 
   <!-- Drawer Content -->
   <div
-    class='twcss-fixed twcss-inset-y-0 twcss-left-0 twcss-w-full twcss-max-w-[458px] twcss-bg-white twcss-shadow-xl twcss-transform twcss-transition-transform twcss-duration-300 twcss-translate-x-[-100%]'
+    class='twcss-fixed twcss-inset-y-0 twcss-left-0 twcss-w-[458px] twcss-max-w-[calc(100vw-32px)] twcss-bg-white twcss-shadow-xl twcss-transition-transform twcss-duration-300 twcss-transform twcss-translate-x-[-100%] twcss-z-10'
     data-drawer-content
   >
     <!-- Header -->
