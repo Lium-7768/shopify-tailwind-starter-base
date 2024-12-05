@@ -1,15 +1,19 @@
 <style>
   #products-drawer {
-    display: none;
+    display: none !important;
   }
   #products-drawer.twcss-initialized {
-    display: block;
+    display: block !important;
+  }
+  #products-drawer.twcss-initialized:not(.twcss-active) {
+    visibility: hidden;
+    pointer-events: none;
   }
 </style>
 
 <div
   id='products-drawer'
-  class='twcss-fixed twcss-inset-0 twcss-z-50 twcss-invisible twcss-opacity-0 twcss-pointer-events-none'
+  class='twcss-fixed twcss-inset-0 twcss-z-50'
   aria-hidden='true'
 >
   <!-- Backdrop -->

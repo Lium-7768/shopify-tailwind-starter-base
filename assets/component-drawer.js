@@ -1,6 +1,8 @@
 class ComponentDrawer {
   constructor() {
     this.drawer = document.getElementById('products-drawer');
+    if (!this.drawer) return;
+
     this.content = this.drawer.querySelector('[data-drawer-content]');
     this.backdrop = this.drawer.querySelector('[data-drawer-backdrop]');
     this.triggers = document.querySelectorAll(
@@ -10,7 +12,7 @@ class ComponentDrawer {
 
     this.isOpen = false;
 
-    // 初始化后再显示元素
+    // 初始化时添加基础类，但保持隐藏状态
     requestAnimationFrame(() => {
       this.drawer.classList.add('twcss-initialized');
     });
@@ -19,20 +21,20 @@ class ComponentDrawer {
   }
 
   init() {
-    // Add click handlers to all trigger buttons
+    // 触发器事件监听
     this.triggers.forEach((trigger) => {
       trigger.addEventListener('click', () => this.toggle());
     });
 
-    // Add click handlers to all close buttons
+    // 关闭按钮事件监听
     this.closeButtons.forEach((button) => {
       button.addEventListener('click', () => this.close());
     });
 
-    // Close drawer when clicking backdrop
+    // 背景点击关闭
     this.backdrop.addEventListener('click', () => this.close());
 
-    // Close drawer when pressing Escape key
+    // ESC 键关闭
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.isOpen) {
         this.close();
@@ -48,23 +50,14 @@ class ComponentDrawer {
     if (this.isOpen) return;
 
     this.isOpen = true;
-    // 先移除隐藏类，但保持内容在屏幕外
-    this.drawer.classList.remove(
-      'twcss-invisible',
-      'twcss-opacity-0',
-      'twcss-pointer-events-none',
-    );
+    this.drawer.classList.add('twcss-active');
 
-    // 等待一帧以确保过渡效果生效
     requestAnimationFrame(() => {
-      this.drawer.classList.add('twcss-visible', 'twcss-opacity-100');
       this.backdrop.classList.remove('twcss-opacity-0');
       this.content.classList.remove('twcss-translate-x-[-100%]');
     });
 
     document.body.style.overflow = 'hidden';
-
-    // Update ARIA attributes
     this.drawer.setAttribute('aria-hidden', 'false');
     this.triggers.forEach((trigger) =>
       trigger.setAttribute('aria-expanded', 'true'),
@@ -78,17 +71,12 @@ class ComponentDrawer {
     this.backdrop.classList.add('twcss-opacity-0');
     this.content.classList.add('twcss-translate-x-[-100%]');
 
-    // 等待过渡完成后再隐藏整个抽屉
+    // 等待过渡动画完成后再完全隐藏
     setTimeout(() => {
-      this.drawer.classList.add(
-        'twcss-invisible',
-        'twcss-opacity-0',
-        'twcss-pointer-events-none',
-      );
+      this.drawer.classList.remove('twcss-active');
       document.body.style.overflow = '';
     }, 300);
 
-    // Update ARIA attributes
     this.drawer.setAttribute('aria-hidden', 'true');
     this.triggers.forEach((trigger) =>
       trigger.setAttribute('aria-expanded', 'false'),
@@ -96,7 +84,7 @@ class ComponentDrawer {
   }
 }
 
-// Initialize drawer when DOM is ready
+// 确保 DOM 完全加载后再初始化
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => new ComponentDrawer());
 } else {
