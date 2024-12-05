@@ -43,7 +43,14 @@
     "
   >
     <div class="twcss-space-y-2 twcss-flex twcss-flex-col twcss-flex-1">
-      <div class="twcss-text-gray-600">{{ product.vendor }}</div>
+      <div class="twcss-text-gray-600">
+        {{ product.vendor }}
+        {%- if product.metafields.custom.is_new -%}
+          <span class="twcss-ml-2 twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded">
+            New
+          </span>
+        {%- endif -%}
+      </div>
 
       <a
         href="{{ product.url }}"
