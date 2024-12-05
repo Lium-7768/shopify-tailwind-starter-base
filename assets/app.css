@@ -616,10 +616,6 @@ video {
   margin-left: 0.5rem;
 }
 
-.twcss-mt-4 {
-  margin-top: 1rem;
-}
-
 .twcss-mt-6 {
   margin-top: 1.5rem;
 }
@@ -779,10 +775,6 @@ video {
 
 .twcss-border-b {
   border-bottom-width: 1px;
-}
-
-.twcss-border-l {
-  border-left-width: 1px;
 }
 
 .twcss-border-accent-default {
@@ -3721,6 +3713,10 @@ video {
 .twcss-text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.twcss-font-bold {
+  font-weight: 700;
 }
 
 .twcss-font-medium {
