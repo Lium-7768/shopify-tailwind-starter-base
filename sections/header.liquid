@@ -191,7 +191,7 @@
     {%- endif -%}
 
     <div class="twcss-ml-8">
-      <button class="twcss-px-4 twcss-border twcss-border-white twcss-py-2 twcss-text-base twcss-font-bold twcss-rounded-md hover:twcss-bg-[#0747A6] twcss-transition-colors">
+      <button class="twcss-px-4 twcss-ring-1 twcss-ring-white twcss-py-2 twcss-text-base twcss-font-bold twcss-rounded-md hover:twcss-bg-[#0747A6] twcss-transition-colors">
         Products
       </button>
     </div>
@@ -219,8 +219,10 @@
         </localization-form>
       {%- endif -%}
     </div>
+      
+    {% render 'header-search', input_id: 'Search-In-Modal' %}
 
-    {% comment %} {%- liquid
+    {%- liquid
       if section.settings.menu != blank
         if section.settings.menu_type_desktop == 'dropdown'
           render 'header-dropdown-menu'
@@ -228,10 +230,7 @@
           render 'header-mega-menu'
         endif
       endif
-    %} {% endcomment %}
-
-      
-    {% render 'header-search', input_id: 'Search-In-Modal' %}
+    %}
 
     {%- if shop.customer_accounts_enabled -%}
       <a
