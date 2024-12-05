@@ -1,0 +1,22 @@
+{% comment %}
+  参数说明:
+  - white_title: 白色标题
+  - blue_title: 蓝色标题
+  - link_url: 链接URL
+  - link_text: 链接文本
+{% endcomment %}
+<div class="twcss-flex twcss-items-center twcss-justify-between twcss-mb-6">
+  <h2 class="twcss-text-2xl twcss-font-semibold">
+    {{ white_title }}
+    <span class="twcss-text-2xl twcss-text-blue-500">{{ blue_title }}</span>
+  </h2>
+  {% if link_url %}
+    <a
+      href="{{ link_url }}"
+      class="twcss-flex twcss-items-center twcss-text-sm twcss-text-blue-600 hover:twcss-text-blue-800"
+    >
+      {{ link_text }}
+      {% render 'icon-chevron-right' %}
+    </a>
+  {% endif %}
+</div>
