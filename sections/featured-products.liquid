@@ -60,7 +60,7 @@
                     </div>
 
                     <!-- 添加到购物车按钮 -->
-                    <div class="">
+                    <div class="twcss-flex twcss-items-center twcss-justify-center twcss-relative">
                       <form action="/cart/add" method="post" onclick="event.stopPropagation()">
                         <input type="hidden" name="id" value="{{ product.variants.first.id }}">
                         <input type="hidden" name="quantity" value="1">
@@ -68,12 +68,12 @@
                           type="submit"
                           class="twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-center hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-w-full twcss-font-bold twcss-relative"
                         >
-                          <div class="">Add to Cart</div>
-                          <div class="twcss-absolute twcss-right-0 twcss-top-0 twcss-w-[32px] twcss-h-full twcss-flex twcss-items-center twcss-justify-center twcss-border-l-[0.5px] twcss-border-white">
-                            {% render 'icon-chevron-down' %}
-                          </div>
+                          Add to Cart
                         </button>
                       </form>
+                      <div class="twcss-absolute twcss-right-0 twcss-top-0 twcss-w-[32px] twcss-h-full twcss-flex twcss-items-center twcss-justify-center twcss-border-l-[0.5px] twcss-border-white">
+                        {% render 'icon-chevron-down' %}
+                      </div>
                     </div>
                   </div>
                 </div>
