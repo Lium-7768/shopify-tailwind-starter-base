@@ -134,10 +134,24 @@
 
         <!-- Products Menu -->
         <nav class='twcss-flex twcss-items-center twcss-shrink-0'>
-          <button class='twcss-flex twcss-items-center twcss-gap-2 hover:twcss-text-gray-200 twcss-text-base'>
-            Products
+          <!-- Desktop Products Button -->
+          <button
+            class='twcss-hidden md:twcss-flex twcss-items-center twcss-gap-2 twcss-bg-blue-600 twcss-px-4 twcss-py-2 twcss-rounded hover:twcss-bg-blue-700'
+            onclick="document.getElementById('products-drawer').classList.remove('twcss-translate-x-[-100%]')"
+          >
             <svg class='twcss-w-5 twcss-h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span class='twcss-font-medium'>Products</span>
+          </button>
+
+          <!-- Mobile Products Icon -->
+          <button
+            class='md:twcss-hidden twcss-p-2'
+            onclick="document.getElementById('products-drawer').classList.remove('twcss-translate-x-[-100%]')"
+          >
+            <svg class='twcss-w-6 twcss-h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
           </button>
         </nav>
@@ -278,6 +292,37 @@
   </div>
 </div>
 
+<!-- Products Drawer -->
+<div
+  id='products-drawer'
+  class='twcss-fixed twcss-inset-y-0 twcss-left-0 twcss-z-50 twcss-w-80 twcss-bg-white twcss-shadow-lg twcss-transform twcss-translate-x-[-100%] twcss-transition-transform twcss-duration-300 twcss-ease-in-out'
+>
+  <div class='twcss-flex twcss-items-center twcss-justify-between twcss-p-4 twcss-border-b'>
+    <h2 class='twcss-text-lg twcss-font-medium twcss-text-gray-900'>Products</h2>
+    <button
+      class='twcss-text-gray-500 hover:twcss-text-gray-700'
+      onclick="document.getElementById('products-drawer').classList.add('twcss-translate-x-[-100%]')"
+    >
+      <svg class='twcss-w-6 twcss-h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+  <div class='twcss-p-4'>
+    <!-- Drawer content goes here -->
+  </div>
+</div>
+
+<!-- Drawer Backdrop -->
+<div
+  id='drawer-backdrop'
+  class='twcss-fixed twcss-inset-0 twcss-bg-black twcss-bg-opacity-50 twcss-z-40 twcss-hidden'
+  onclick="
+    document.getElementById('products-drawer').classList.add('twcss-translate-x-[-100%]');
+    this.classList.add('twcss-hidden')
+  "
+></div>
+
 {%- if settings.cart_type == 'notification' -%}
   {%- render 'cart-notification',
     color_scheme: section.settings.color_scheme,
@@ -397,6 +442,26 @@
   }
 
   customElements.define('sticky-header', StickyHeader);
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const drawer = document.getElementById('products-drawer');
+    const backdrop = document.getElementById('drawer-backdrop');
+
+    // 监听 drawer 的 transitionend 事件
+    drawer.addEventListener('transitionend', function () {
+      if (this.classList.contains('twcss-translate-x-[-100%]')) {
+        backdrop.classList.add('twcss-hidden');
+      }
+    });
+
+    // 打开 drawer 时显示背景遮罩
+    const drawerTriggers = document.querySelectorAll('[onclick*="products-drawer"].classList.remove"]');
+    drawerTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', function () {
+        backdrop.classList.remove('twcss-hidden');
+      });
+    });
+  });
 {% endjavascript %}
 
 <script type='application/ld+json'>
