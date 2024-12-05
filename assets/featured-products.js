@@ -98,7 +98,6 @@ class Slider {
         height: 8px;
         margin: 0 4px;
         border-radius: 50%;
-        background-color: ${i === 0 ? '#3B82F6' : '#E5E7EB'};
         cursor: pointer;
         transition: background-color 0.3s ease;
       `;
@@ -220,8 +219,7 @@ class Slider {
     const currentPage = Math.floor(this.currentIndex / slidesPerView);
 
     dots.forEach((dot, index) => {
-      dot.style.backgroundColor =
-        index === currentPage ? '#3B82F6 !important' : '#E5E7EB !important';
+      dot.style.backgroundColor = index === currentPage ? '#3B82F6' : '#E5E7EB';
     });
   }
 }
