@@ -190,7 +190,7 @@
       {%- endif -%}
     {%- endif -%}
 
-    {%- liquid
+    {% comment %} {%- liquid
       if section.settings.menu != blank
         if section.settings.menu_type_desktop == 'dropdown'
           render 'header-dropdown-menu'
@@ -198,7 +198,7 @@
           render 'header-mega-menu'
         endif
       endif
-    %}
+    %} {% endcomment %}
 
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">
