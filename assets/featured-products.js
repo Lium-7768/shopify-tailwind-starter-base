@@ -211,6 +211,8 @@ class Slider {
   }
 
   updatePagination() {
+    console.log('执行');
+
     if (!this.pagination) return;
 
     const dots = this.pagination.querySelectorAll('.pagination-dot');
