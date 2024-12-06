@@ -45,7 +45,7 @@
         {{ section.settings.banner_title }}
       </div>
       <div class="twcss-text-gray-700 md:twcss-mt-2 twcss-text-sm">
-        {{ section.settings.banner_description }}
+        {% render 'bold-uppercase' with section.settings.banner_description as text %}
       </div>
       <a
         href="{{ section.settings.banner_link }}"

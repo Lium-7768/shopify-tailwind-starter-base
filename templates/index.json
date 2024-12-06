@@ -161,6 +161,20 @@
         "banner_link_text": "See more"
       }
     },
+    "featured_plumbing_CA7GXd": {
+      "type": "featured-plumbing",
+      "settings": {
+        "title": "Featured Plumbing Products",
+        "view_all_text": "See all",
+        "collection": "hydrogen",
+        "products_to_show": 3,
+        "show_vendor": true,
+        "collection_url": "",
+        "banner_title": "PLUMBING SOLUTIONS",
+        "banner_text": "From dripping faucets to clogged drains, our expert plumbing services have you covered.",
+        "banner_image": "shopify://shop_images/green-and-white-marbled-coloring.jpg"
+      }
+    },
     "product_brands_FQAwF4": {
       "type": "product-brands",
       "blocks": {
@@ -287,19 +301,6 @@
         "highlight_hYD8FR"
       ],
       "settings": {}
-    },
-    "featured_plumbing_CA7GXd": {
-      "type": "featured-plumbing",
-      "settings": {
-        "title": "Featured Plumbing Products",
-        "view_all_text": "See all",
-        "collection": "",
-        "products_to_show": 3,
-        "show_vendor": true,
-        "collection_url": "",
-        "banner_title": "PLUMBING SOLUTIONS",
-        "banner_text": "From dripping faucets to clogged drains, our expert plumbing services have you covered."
-      }
     }
   },
   "order": [
