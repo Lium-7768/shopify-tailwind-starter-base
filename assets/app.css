@@ -588,10 +588,6 @@ video {
   }
 }
 
-.\!twcss-static {
-  position: static !important;
-}
-
 .twcss-fixed {
   position: fixed;
 }
@@ -835,6 +831,10 @@ video {
 
 .\!twcss-max-w-\[1280px\] {
   max-width: 1280px !important;
+}
+
+.twcss-max-w-7xl {
+  max-width: 80rem;
 }
 
 .twcss-max-w-\[1280px\] {
@@ -4109,6 +4109,11 @@ video {
 .twcss-py-0\.5 {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
+}
+
+.twcss-py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .twcss-py-2 {
