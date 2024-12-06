@@ -83,7 +83,7 @@
 
     <div>
       {%- if product != blank -%}
-        <product-form class="product-form twcss-flex-1">
+        <product-form class="product-form">
           {%- form 'product',
             product,
             id: product_form_id,
@@ -107,7 +107,7 @@
               <button
                 type="submit"
                 name="addtocart"
-                class="product-form__submit twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-center hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-w-full twcss-font-bold twcss-relative "
+                class="product-form__submit button button--full-width button--primary"
                 {% if product.selected_or_first_available_variant.available == false %}
                   disabled
                 {% endif %}
