@@ -19,23 +19,11 @@
         link_text: 'See all'
       %}
 
-      <div class="twcss-grid twcss-grid-cols-1 sm:twcss-grid-cols-2 lg:twcss-grid-cols-3 twcss-gap-4">
-        {%- for product in section.settings.collection.products -%}
-          {%- if forloop.index <= section.settings.products_to_show_mobile -%}
-            <div class="sm:twcss-hidden">
-              {%- render 'product-card', product: product, show_vendor: section.settings.show_vendor -%}
-            </div>
-          {%- endif -%}
-          {%- if forloop.index <= section.settings.products_to_show_tablet -%}
-            <div class="twcss-hidden sm:twcss-block lg:twcss-hidden">
-              {%- render 'product-card', product: product, show_vendor: section.settings.show_vendor -%}
-            </div>
-          {%- endif -%}
-          {%- if forloop.index <= section.settings.products_to_show_desktop -%}
-            <div class="twcss-hidden lg:twcss-block">
-              {%- render 'product-card', product: product, show_vendor: section.settings.show_vendor -%}
-            </div>
-          {%- endif -%}
+      <div class="twcss-grid twcss-grid-cols-1 lg:twcss-grid-cols-3 twcss-gap-4">
+        {%- for product in section.settings.collection.products limit: 3 -%}
+          <div class="{% if forloop.index > 1 %}twcss-hidden lg:twcss-block{% endif %}">
+            {%- render 'product-card', product: product, show_vendor: section.settings.show_vendor -%}
+          </div>
         {%- endfor -%}
       </div>
     </div>
