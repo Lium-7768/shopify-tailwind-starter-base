@@ -2531,6 +2531,11 @@ video {
   background-color: rgb(238 245 255 / var(--tw-bg-opacity, 1));
 }
 
+.twcss-bg-\[\#FFF7E9\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 247 233 / var(--tw-bg-opacity, 1));
+}
+
 .twcss-bg-\[\#f8f8f8\] {
   --tw-bg-opacity: 1;
   background-color: rgb(248 248 248 / var(--tw-bg-opacity, 1));
@@ -7445,6 +7450,10 @@ video {
 
   .md\:twcss-hidden {
     display: none;
+  }
+
+  .md\:twcss-w-3\/5 {
+    width: 60%;
   }
 
   .md\:twcss-max-w-7xl {
