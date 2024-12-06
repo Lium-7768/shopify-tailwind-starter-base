@@ -37,7 +37,7 @@ module.exports = {
           foreground: '#ffffff',
         },
         muted: {
-          default: '#f5f5f5',
+          default: '#EBEBEB',
           foreground: '#737373',
         },
         accent: {
