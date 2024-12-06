@@ -41,7 +41,7 @@
     <div class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
       {% render 'icon-chevron-right' %}
     </div>
-    <div class="swiper-pagination-brand"></div>
+    <div class="swiper-pagination"></div>
   </div>
 </div>
 
@@ -52,12 +52,12 @@
       spaceBetween: 20,
       loop: true,
       pagination: {
-        el: '.swiper-pagination-brand',
+        el: '.swiper-pagination',
         clickable: true
       },
       navigation: {
-        nextEl: '.swiper-button-next-brand',
-        prevEl: '.swiper-button-prev-brand'
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
       },
       breakpoints: {
         640: {
