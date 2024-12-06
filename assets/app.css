@@ -7455,6 +7455,10 @@ video {
     max-width: 100%;
   }
 
+  .md\:twcss-flex-row {
+    flex-direction: row;
+  }
+
   .md\:twcss-px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
