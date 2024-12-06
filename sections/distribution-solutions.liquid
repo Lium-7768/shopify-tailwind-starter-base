@@ -34,22 +34,22 @@
       <img
         src="{{ section.settings.mobile_banner | img_url: "master" }}"
         alt="{{ section.settings.banner_title }}"
-        class="twcss-h-44  twcss-w-full twcss-object-cover"
+        class="twcss-h-44  twcss-w-full twcss-object-cover [clip-path:polygon(0_0,0_100%,100%_75%,100%_0)]"
         loading="lazy"
         width="100%"
         height="100%"
       >
     </div>
-    <div class="twcss-flex twcss-flex-col twcss-justify-center twcss-px-4 md:twcss-px-8 twcss-w-full md:twcss-w-3/5 twcss-items-center twcss-p-6 twcss-text-center">
+    <div class="twcss-flex twcss-flex-col twcss-justify-center twcss-px-4 md:twcss-px-8 twcss-w-full md:twcss-w-3/5 twcss-items-center twcss-p-2 md:twcss-p-6 twcss-text-center">
       <div class="twcss-text-[#FF6B00] twcss-text-lg twcss-font-bold">
         {{ section.settings.banner_title }}
       </div>
-      <div class="twcss-text-gray-700 twcss-mt-2 twcss-text-sm">
-        {{ section.settings.banner_description }}
+      <div class="twcss-text-gray-700 md:twcss-mt-2 twcss-text-sm">
+        {% render 'bold-uppercase' with section.settings.banner_description as text %}
       </div>
       <a
         href="{{ section.settings.banner_link }}"
-        class="twcss-text-blue-600 twcss-mt-4 twcss-flex twcss-items-center twcss-gap-2 twcss-font-bold twcss-text-sm"
+        class="twcss-text-blue-600 md:twcss-mt-4 twcss-flex twcss-items-center twcss-gap-2 twcss-font-bold twcss-text-sm"
       >
         {{ section.settings.banner_link_text }}
         {% render 'icon-chevron-right' %}

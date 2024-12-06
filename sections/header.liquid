@@ -242,51 +242,9 @@
       endif
     %}
 
-    {% comment %} {%- if shop.customer_accounts_enabled -%}
-      <a
-        href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-        class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
-        rel="nofollow"
-      >
-        {%- if section.settings.enable_customer_avatar -%}
-          <account-icon>
-            {%- if customer and customer.has_avatar? -%}
-              {{ customer | avatar }}
-            {%- else -%}
-              <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
-            {%- endif -%}
-          </account-icon>
-        {%- else -%}
-          <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
-        {%- endif -%}
-        <span class="visually-hidden">
-          {%- liquid
-            if customer
-              echo 'customer.account_fallback' | t
-            else
-              echo 'customer.log_in' | t
-            endif
-          -%}
-        </span>
-      </a>
-    {%- endif -%} {% endcomment %}
-
-    {%- if shop.customer_accounts_enabled -%}
-      <a
-        href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-        class="twcss-flex twcss-items-center twcss-gap-x-1 twcss-text-secondary-light"
-        rel="nofollow"
-      >
-        <span class="twcss-size-6 twcss-text-secondary-light">{{ 'icon-account.svg' | inline_asset_content }}</span>
-        <span class="twcss-font-semibold twcss-text-sm">
-          Frank
-        </span>
-      </a>
-    {%- endif -%}
     {%- if shop.customer_accounts_enabled -%}
       {% render 'header-account-dropdown-menu' %}
     {%- endif -%}
-
 
     {%- for block in section.blocks -%}
       {%- case block.type -%}
@@ -294,86 +252,6 @@
           {% render block %}
       {%- endcase -%}
     {%- endfor -%}
-
-
-{%- if shop.customer_accounts_enabled -%}
-  <div class="twcss-relative" x-data="{ open: false }">
-    <button 
-      @click="open = !open" 
-      @click.away="open = false"
-      class="twcss-flex twcss-items-center twcss-gap-x-1 twcss-text-secondary-light"
-    >
-      <span class="twcss-size-6 twcss-text-secondary-light">{{ 'icon-account.svg' | inline_asset_content }}</span>
-      <span class="twcss-font-semibold twcss-text-sm">
-        {%- if customer -%}
-          {{ customer.first_name }}
-        {%- else -%}
-          Account
-        {%- endif -%}
-      </span>
-      <span class="twcss-ml-1">
-        <svg class="twcss-h-4 twcss-w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </span>
-    </button>
-
-    <div 
-      x-show="open"
-      x-transition:enter="twcss-transition twcss-ease-out twcss-duration-200"
-      x-transition:enter-start="twcss-opacity-0 twcss-translate-y-1"
-      x-transition:enter-end="twcss-opacity-100 twcss-translate-y-0"
-      x-transition:leave="twcss-transition twcss-ease-in twcss-duration-150"
-      x-transition:leave-start="twcss-opacity-100 twcss-translate-y-0"
-      x-transition:leave-end="twcss-opacity-0 twcss-translate-y-1"
-      class="twcss-absolute twcss-right-0 twcss-mt-2 twcss-w-48 twcss-rounded-md twcss-shadow-lg twcss-bg-white twcss-ring-1 twcss-ring-black twcss-ring-opacity-5 twcss-z-50"
-    >
-      <div class="twcss-py-1" role="menu">
-        {%- if customer -%}
-          <a 
-            href="{{ routes.account_url }}"
-            class="twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100"
-            role="menuitem"
-          >
-            My Account
-          </a>
-          <a 
-            href="{{ routes.account_url }}/orders"
-            class="twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100"
-            role="menuitem"
-          >
-            Order History
-          </a>
-          <form method="post" action="{{ routes.account_logout_url }}">
-            <button 
-              type="submit"
-              class="twcss-block twcss-w-full twcss-text-left twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100"
-              role="menuitem"
-            >
-              Log out
-            </button>
-          </form>
-        {%- else -%}
-          <a 
-            href="{{ routes.account_login_url }}"
-            class="twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100"
-            role="menuitem"
-          >
-            Log in
-          </a>
-          <a 
-            href="{{ routes.account_register_url }}"
-            class="twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100"
-            role="menuitem"
-          >
-            Create account
-          </a>
-        {%- endif -%}
-      </div>
-    </div>
-  </div>
-{%- endif -%}
-
 
     {% comment %} <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         {% if cart == empty %}
