@@ -306,14 +306,14 @@
       {%- endif -%}
     </a> {% endcomment %}
 
-    <a href="{{ routes.cart_url }}" class="twcss-flex twcss-items-center twcss-gap-x-1 twcss-bg-secondary-light twcss-py-2 twcss-px-4 twcss-text-white" id="cart-icon-bubble">
+    <a href="{{ routes.cart_url }}" class="twcss-flex twcss-items-center twcss-gap-x-1 twcss-bg-secondary-light twcss-font-semibold twcss-py-2 twcss-px-4 twcss-text-white" id="cart-icon-bubble">
       <div class="twcss-flex twcss-items-center twcss-gap-x-1">
         <span class="twcss-size-6">{{'icon-cart.svg' | inline_asset_content }}</span>
         <span>
           {{ 'sections.header.cart_count' | t: count: cart.item_count }}
         </span>
       </div>
-      <span class="twcss-font-semibold twcss-text-sm">
+      <span class="">
         {{ cart.total_price | money_without_trailing_zeros }}
       </span>
     </a>
