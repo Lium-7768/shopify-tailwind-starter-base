@@ -93,32 +93,64 @@
         "products_to_show": 8
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "distribution_solutions_Qax78x": {
+      "type": "distribution-solutions",
+      "blocks": {
+        "solution_VQWHX7": {
+          "type": "solution",
+          "settings": {
+            "title": "Freight Transport Solutions"
+          }
+        },
+        "solution_z9VaxU": {
+          "type": "solution",
+          "settings": {
+            "title": "Warehouse and Distribution Solutions"
+          }
+        },
+        "solution_CjeeRg": {
+          "type": "solution",
+          "settings": {
+            "title": "Last-Mile Logistics"
+          }
+        },
+        "solution_AfDxMh": {
+          "type": "solution",
+          "settings": {
+            "title": "Cold Chain Solutions"
+          }
+        },
+        "solution_JjKDb9": {
+          "type": "solution",
+          "settings": {
+            "title": "Intermodal Transport Services"
+          }
+        },
+        "solution_JhEhVe": {
+          "type": "solution",
+          "settings": {
+            "title": "Real-Time Tracking and Monitoring"
+          }
+        },
+        "solution_hbRJtg": {
+          "type": "solution",
+          "settings": {
+            "title": "Green Transportation Initiatives"
+          }
+        }
+      },
+      "block_order": [
+        "solution_VQWHX7",
+        "solution_z9VaxU",
+        "solution_CjeeRg",
+        "solution_AfDxMh",
+        "solution_JjKDb9",
+        "solution_JhEhVe",
+        "solution_hbRJtg"
+      ],
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
+        "white_title": "Distribution",
+        "blue_title": "Solutions"
       }
     },
     "product_brands_FQAwF4": {
@@ -208,7 +240,7 @@
     "image_banner",
     "rich_text",
     "featured_products_dVWqqB",
-    "featured_collection",
+    "distribution_solutions_Qax78x",
     "product_brands_FQAwF4",
     "server_highlight_DGeehf"
   ]
