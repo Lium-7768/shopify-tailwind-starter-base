@@ -1,6 +1,109 @@
+<section class="twcss-w-[var(--page-width)] twcss-mx-auto twcss-px-4 twcss-py-8">
+  {% render 'homepage-title', white_title: section.settings.white_title, blue_title: section.settings.blue_title %}
+
+  <div class="twcss-grid twcss-grid-cols-1 md:twcss-grid-cols-3 lg:twcss-grid-cols-4 twcss-gap-6 twcss-mt-8">
+    {% for block in section.blocks %}
+      <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center">
+        <div class="twcss-w-full twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4">
+          <img
+            src="{{ block.settings.image | img_url: 'master' }}"
+            alt="{{ block.settings.title }}"
+            class="twcss-w-full twcss-h-full twcss-object-cover"
+            loading="lazy"
+            width="100%"
+            height="100%"
+          >
+        </div>
+        <h3 class="twcss-text-lg twcss-font-medium">{{ block.settings.title }}</h3>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Distribution Solutions",
+  "settings": [
+    {
+      "type": "text",
+      "id": "white_title",
+      "label": "White Title",
+      "default": "Distribution"
+    },
+    {
+      "type": "text",
+      "id": "blue_title",
+      "label": "Blue Title",
+      "default": "Solutions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "solution",
+      "name": "Solution",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Solution Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Solution Title",
+          "default": "Solution Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Distribution Solutions",
+      "blocks": [
+        {
+          "type": "solution",
+          "settings": {
+            "title": "Freight Transport Solutions"
+          }
+        },
+        {
+          "type": "solution",
+          "settings": {
+            "title": "Warehouse and Distribution Solutions"
+          }
+        },
+        {
+          "type": "solution",
+          "settings": {
+            "title": "Last-Mile Logistics"
+          }
+        },
+        {
+          "type": "solution",
+          "settings": {
+            "title": "Cold Chain Solutions"
+          }
+        },
+        {
+          "type": "solution",
+          "settings": {
+            "title": "Intermodal Transport Services"
+          }
+        },
+        {
+          "type": "solution",
+          "settings": {
+            "title": "Real-Time Tracking and Monitoring"
+          }
+        },
+        {
+          "type": "solution",
+          "settings": {
+            "title": "Green Transportation Initiatives"
+          }
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
