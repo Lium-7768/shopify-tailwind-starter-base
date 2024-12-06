@@ -1,20 +1,20 @@
 <section class="twcss-w-[var(--page-width)] twcss-mx-auto twcss-px-[5rem] twcss-py-8">
   {% render 'homepage-title', white_title: section.settings.white_title, blue_title: section.settings.blue_title %}
 
-  <div class="twcss-flex twcss-flex-row twcss-justify-between twcss-gap-x-6 twcss-items-center twcss-mt-8">
+  <div class="twcss-flex twcss-flex-row twcss-justify-between twcss-gap-x-6 twcss-items-stretch twcss-mt-8">
     {% for block in section.blocks %}
-      <div class="twcss-flex twcss-h-full twcss-flex-col twcss-items-center twcss-text-center twcss-flex-1">
-        <div class="twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-bg-[#EEF5FF] twcss-w-full twcss-flex twcss-justify-center twcss-items-center">
+      <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-1">
+        <div class="twcss-w-full twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-bg-[#EEF5FF] twcss-flex twcss-justify-center twcss-items-center twcss-p-4">
           <img
-            src="{{ block.settings.image | img_url: 'master' }}"
+            src="{{ block.settings.image | img_url: '400x400', crop: 'center' }}"
             alt="{{ block.settings.title }}"
-            class="twcss-object-cover"
+            class=" twcss-object-contain"
             loading="lazy"
-            width="85%"
-            height="85%"
+            width="100%"
+            height="100%"
           >
         </div>
-        <div class="twcss-text-lg twcss-font-medium twcss-h-1/3">{{ block.settings.title }}</div>
+        <div class="twcss-text-lg twcss-font-medium">{{ block.settings.title }}</div>
       </div>
     {% endfor %}
   </div>
