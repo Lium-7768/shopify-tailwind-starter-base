@@ -1,0 +1,50 @@
+<div class='twcss-relative'>
+  <button
+    onclick="this.nextElementSibling.classList.toggle('twcss-hidden')"
+    class='twcss-flex twcss-items-center twcss-gap-2 twcss-px-4 twcss-py-2 twcss-text-sm hover:twcss-bg-primary-light twcss-rounded-md twcss-text-white'
+  >
+    <span class='twcss-size-6'>
+      {{ 'icon-location.svg' | inline_asset_content }}
+    </span>
+    <span>配送至</span>
+    <svg class='twcss-w-4 twcss-h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+
+  <!-- 下拉内容 -->
+  <div class='twcss-hidden twcss-absolute twcss-left-0 twcss-mt-2 twcss-w-72 twcss-bg-white twcss-rounded-md twcss-shadow-lg twcss-ring-1 twcss-ring-black twcss-ring-opacity-5 twcss-z-50'>
+    <div class='twcss-p-4'>
+      <div class='twcss-mb-4'>
+        <input
+          type='text'
+          placeholder='请输入收货地址'
+          class='twcss-w-full twcss-px-3 twcss-py-2 twcss-border twcss-border-gray-300 twcss-rounded-md twcss-text-sm'
+        >
+      </div>
+      <div class='twcss-space-y-2'>
+        <h3 class='twcss-text-sm twcss-font-medium twcss-text-gray-900'>常用地址</h3>
+        <div class='twcss-space-y-1'>
+          <a
+            href='#'
+            class='twcss-block twcss-px-3 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100 twcss-rounded-md'
+          >
+            北京市朝阳区三里屯
+          </a>
+          <a
+            href='#'
+            class='twcss-block twcss-px-3 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100 twcss-rounded-md'
+          >
+            上海市浦东新区陆家嘴
+          </a>
+          <a
+            href='#'
+            class='twcss-block twcss-px-3 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100 twcss-rounded-md'
+          >
+            广州市天河区珠江新城
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
