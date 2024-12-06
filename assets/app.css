@@ -941,6 +941,10 @@ video {
   width: 100%;
 }
 
+.twcss-min-w-0 {
+  min-width: 0px;
+}
+
 .\!twcss-max-w-\[1280px\] {
   max-width: 1280px !important;
 }
@@ -1075,6 +1079,12 @@ video {
 
 .twcss-overflow-y-auto {
   overflow-y: auto;
+}
+
+.twcss-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .twcss-text-ellipsis {
@@ -4232,6 +4242,11 @@ video {
 
 .twcss-p-\[24px\] {
   padding: 24px;
+}
+
+.\!twcss-py-0 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 .twcss-px-2 {
