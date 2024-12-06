@@ -72,17 +72,19 @@
           ></div>
         </div>
         {%- if section.blocks.size > 0 -%}
-          {%- liquid
-            if section.blocks.size == 9
-              assign footer_grid_class = 'grid--3-col-tablet'
-            elsif section.blocks.size > 6
-              assign footer_grid_class = 'grid--4-col-desktop'
-            elsif section.blocks.size > 4
-              assign footer_grid_class = 'grid--3-col-tablet'
-            endif
-          -%}
+          {% comment %}
+            {%- liquid
+              if section.blocks.size == 9
+                assign footer_grid_class = 'grid--3-col-tablet'
+              elsif section.blocks.size > 6
+                assign footer_grid_class = 'grid--4-col-desktop'
+              elsif section.blocks.size > 4
+                assign footer_grid_class = 'grid--3-col-tablet'
+              endif
+            -%}
+          {% endcomment %}
           <div
-            class='twcss-grid twcss-grid-cols-1 md:twcss-grid-cols-2 lg:twcss-grid-cols-6 {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+            class='twcss-grid twcss-grid-cols-1 md:twcss-grid-cols-2 lg:twcss-grid-cols-5 {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
             {% endif %}
