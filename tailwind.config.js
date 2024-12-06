@@ -41,7 +41,7 @@ module.exports = {
           foreground: '#737373',
         },
         accent: {
-          default: '#f5f5f5',
+          default: '#353535',
           foreground: '#1a1a1a',
         },
         popover: {
