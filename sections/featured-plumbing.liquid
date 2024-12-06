@@ -1,6 +1,122 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{%- style -%}
+  .banner-image {
+    aspect-ratio: 1/1;
   }
+  @media (min-width: 768px) {
+    .banner-image {
+      aspect-ratio: 16/9;
+    }
+  }
+{%- endstyle -%}
+
+<div class="twcss-container twcss-mx-auto twcss-px-4 twcss-py-8">
+  <div class="twcss-flex twcss-flex-col lg:twcss-flex-row twcss-gap-6">
+    <div class="twcss-flex-1">
+      {% render 'homepage-title',
+        white_title: 'Featured',
+        blue_title: 'Plumbing Products',
+        link_url: '/collections/all',
+        link_text: 'See all'
+      %}
+
+      <div class="twcss-grid twcss-grid-cols-1 md:twcss-grid-cols-2 lg:twcss-grid-cols-3 twcss-gap-4">
+        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+          {%- render 'product-card', product: product, show_vendor: section.settings.show_vendor -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="twcss-w-full lg:twcss-w-[400px]">
+      <div class="twcss-bg-blue-600 twcss-rounded-lg twcss-overflow-hidden">
+        <div class="twcss-p-6 twcss-text-white">
+          <h3 class="twcss-text-2xl twcss-font-bold twcss-mb-2">
+            {{ section.settings.banner_title }}
+          </h3>
+          <p class="twcss-text-blue-100">
+            {{ section.settings.banner_text }}
+          </p>
+        </div>
+        {%- if section.settings.banner_image != blank -%}
+          <img
+            height="100%"
+            width="100%"
+            src="{{ section.settings.banner_image | img_url: '800x' }}"
+            alt="{{ section.settings.banner_title | escape }}"
+            class="twcss-w-full twcss-h-full twcss-object-cover banner-image"
+            loading="lazy"
+          >
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured Plumbing",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Featured Plumbing Products"
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View all text",
+      "default": "See all"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 3,
+      "max": 12,
+      "step": 3,
+      "default": 3,
+      "label": "Products to show"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show vendor",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "collection_url",
+      "label": "Collection URL"
+    },
+    {
+      "type": "text",
+      "id": "banner_title",
+      "label": "Banner title",
+      "default": "PLUMBING SOLUTIONS"
+    },
+    {
+      "type": "textarea",
+      "id": "banner_text",
+      "label": "Banner text",
+      "default": "From dripping faucets to clogged drains, our expert plumbing services have you covered."
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Plumbing",
+      "settings": {
+        "products_to_show": 3
+      }
+    }
+  ]
+}
 {% endschema %}
