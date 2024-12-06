@@ -152,6 +152,9 @@
                       {%- if block.settings.show_social and has_social_icons -%}
                         {%- render 'social-icons', class: 'twcss-mt-4' -%}
                       {%- endif -%}
+                      {%- if section.settings.show_social and has_social_icons -%}
+                        {%- render 'social-icons', class: 'footer__list-social' -%}
+                      {%- endif -%}
                     </div>
                   {%- when 'image' -%}
                     <div class='twcss-space-y-4 {% if block.settings.alignment == "center" %}twcss-text-center{% elsif block.settings.alignment == "right" %}twcss-text-right{% endif %}'>
@@ -259,10 +262,6 @@
             <div class='footer__follow-on-shop'>
               {{ shop | login_button: action: 'follow' }}
             </div>
-          {%- endif -%}
-
-          {%- if section.settings.show_social and has_social_icons -%}
-            {%- render 'social-icons', class: 'footer__list-social' -%}
           {%- endif -%}
         </div>
       </div>
