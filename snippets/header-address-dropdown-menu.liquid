@@ -1,6 +1,6 @@
 <div class='twcss-relative'>
   <button
-    onclick="this.querySelector('.caret-icon').classList.toggle('twcss-rotate-180')"
+    onclick="this.querySelector('.caret-icon').classList.toggle('twcss-rotate-180'); this.nextElementSibling.classList.toggle('twcss-hidden')"
     class='twcss-flex twcss-flex-col twcss-px-4 twcss-py-2 twcss-text-sm hover:twcss-bg-primary-light twcss-rounded-md twcss-text-white'
   >
     <p>Delivery to</p>
@@ -12,7 +12,7 @@
           1801 Century Park E, Suite 1470...
         {% endif %}
       </span>
-      <span class='caret-icon twcss-size-6 twcss-transition-transform twcss-duration-200'>
+      <span class='caret-icon twcss-w-6 twcss-transition-transform twcss-duration-200'>
         {{ 'icon-caret.svg' | inline_asset_content }}
       </span>
     </div>
