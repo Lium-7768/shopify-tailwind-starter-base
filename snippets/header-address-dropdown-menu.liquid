@@ -14,7 +14,7 @@
           1801 Century Park E, Suite 1470...
         {% endif %}
       </span>
-      <span class='caret-icon twcss-transition-transform twcss-duration-200 twcss-w-6'>
+      <span class='caret-down-icon twcss-transition-transform twcss-duration-200 twcss-w-6'>
         {{ 'icon-caret.svg' | inline_asset_content }}
       </span>
     </div>
@@ -24,3 +24,9 @@
     <div class='twcss-p-4'>address list</div>
   </div>
 </div>
+
+<style>
+  .disclosure__button[aria-expanded='true'] .caret-down-icon {
+    transform: rotate(180deg);
+  }
+</style>
