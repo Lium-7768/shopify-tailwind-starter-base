@@ -204,7 +204,7 @@
       </div>
     </div>
 
-    <div class="desktop-localization-wrapper twcss-text-white">
+    {% comment %} <div class="desktop-localization-wrapper twcss-text-white">
       {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
         <localization-form class="small-hide medium-hide" data-prevent-hide>
           {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
@@ -226,7 +226,7 @@
           {%- endform -%}
         </localization-form>
       {%- endif -%}
-    </div>
+    </div> {% endcomment %}
       
     {% render 'header-search-input', input_id: 'Search-In-Modal' %}
 
