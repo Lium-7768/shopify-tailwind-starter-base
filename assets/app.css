@@ -860,12 +860,13 @@ video {
   gap: 0.5rem;
 }
 
-.twcss-gap-6 {
-  gap: 1.5rem;
-}
-
 .twcss-gap-\[24px\] {
   gap: 24px;
+}
+
+.twcss-gap-x-6 {
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
 }
 
 .twcss-gap-x-\[20px\] {
@@ -885,10 +886,6 @@ video {
 
 .twcss-overflow-hidden {
   overflow: hidden;
-}
-
-.twcss-overflow-x-auto {
-  overflow-x: auto;
 }
 
 .twcss-overflow-y-auto {
