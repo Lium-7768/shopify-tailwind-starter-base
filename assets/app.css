@@ -776,6 +776,10 @@ video {
   height: 15rem;
 }
 
+.twcss-h-80 {
+  height: 20rem;
+}
+
 .twcss-h-\[calc\(100\%-65px\)\] {
   height: calc(100% - 65px);
 }
