@@ -306,7 +306,16 @@
       {%- endif -%}
     </a> {% endcomment %}
 
-    <a href="{{ routes.cart_url }}" class="" id="cart-icon-bubble">
+    <a href="{{ routes.cart_url }}" class="twcss-flex twcss-items-center twcss-gap-x-1 twcss-text-secondary-light" id="cart-icon-bubble">
+      <div class="twcss-size-6 twcss-text-secondary-light">
+        <span class="svg-wrapper">{{'icon-cart.svg' | inline_asset_content }}</span>
+        <span>
+          {{ 'sections.header.cart_count' | t: count: cart.item_count }}
+        </span>
+      </div>
+      <span class="twcss-font-semibold twcss-text-sm">
+        ${{ cart.total_price | money_without_trailing_zeros }}
+      </span>
     </a>
     
   </header>
