@@ -46,7 +46,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     new Swiper('.brands-swiper', {
-      slidesPerView: 2,
+      slidesPerView: 3,
       spaceBetween: 20,
       loop: false,
       pagination: {
@@ -58,14 +58,8 @@
         prevEl: '.swiper-button-prev'
       },
       breakpoints: {
-        640: {
-          slidesPerView: 3
-        },
-        768: {
-          slidesPerView: 4
-        },
-        1024: {
-          slidesPerView: 5
+        1280: {
+          slidesPerView: 8
         }
       }
     });
