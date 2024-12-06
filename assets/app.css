@@ -953,14 +953,6 @@ video {
   max-width: 1280px;
 }
 
-.twcss-max-w-\[160px\] {
-  max-width: 160px;
-}
-
-.twcss-max-w-\[200px\] {
-  max-width: 200px;
-}
-
 .twcss-max-w-\[285px\] {
   max-width: 285px;
 }
@@ -4335,6 +4327,10 @@ video {
 .twcss-py-\[32px\] {
   padding-top: 32px;
   padding-bottom: 32px;
+}
+
+.\!twcss-pb-8 {
+  padding-bottom: 2rem !important;
 }
 
 .twcss-pl-4 {
