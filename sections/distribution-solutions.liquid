@@ -4,13 +4,17 @@
   <div class="twcss-flex twcss-flex-row twcss-justify-between twcss-gap-x-6 twcss-items-stretch twcss-mt-8">
     {% for block in section.blocks %}
       <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-1">
-        <div class="twcss-w-full twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-bg-[#EEF5FF] twcss-flex twcss-justify-center twcss-items-center">
-          <img
-            src="{{ block.settings.image | img_url: 'master' }}"
-            alt="{{ block.settings.title }}"
-            class="twcss-w-4/5 twcss-h-4/5 twcss-object-contain"
-            loading="lazy"
-          >
+        <div class="twcss-w-full twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-bg-[#EEF5FF] twcss-flex twcss-justify-center twcss-items-center twcss-p-4">
+          <div>
+            <img
+              src="{{ block.settings.image | img_url: 'master' }}"
+              alt="{{ block.settings.title }}"
+              class=" twcss-object-contain"
+              loading="lazy"
+              width="100%"
+              height="100%"
+            >
+          </div>
         </div>
         <div class="twcss-text-lg twcss-font-medium">{{ block.settings.title }}</div>
       </div>

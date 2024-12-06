@@ -734,10 +734,6 @@ video {
   height: 3.5rem;
 }
 
-.twcss-h-4\/5 {
-  height: 80%;
-}
-
 .twcss-h-5 {
   height: 1.25rem;
 }
@@ -780,10 +776,6 @@ video {
 
 .twcss-w-10 {
   width: 2.5rem;
-}
-
-.twcss-w-4\/5 {
-  width: 80%;
 }
 
 .twcss-w-5 {
