@@ -708,16 +708,16 @@ video {
   width: 2.5rem !important;
 }
 
+.twcss-w-10 {
+  width: 2.5rem;
+}
+
 .twcss-w-5 {
   width: 1.25rem;
 }
 
 .twcss-w-6 {
   width: 1.5rem;
-}
-
-.twcss-w-9 {
-  width: 2.25rem;
 }
 
 .twcss-w-\[458px\] {
@@ -847,6 +847,14 @@ video {
 
 .twcss-rounded-md {
   border-radius: 0.375rem;
+}
+
+.twcss-rounded-br-lg {
+  border-bottom-right-radius: 0.5rem;
+}
+
+.twcss-rounded-tr-lg {
+  border-top-right-radius: 0.5rem;
 }
 
 .twcss-border {
