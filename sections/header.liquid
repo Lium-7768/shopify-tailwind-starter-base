@@ -240,7 +240,7 @@
       endif
     %}
 
-    {%- if shop.customer_accounts_enabled -%}
+    {% comment %} {%- if shop.customer_accounts_enabled -%}
       <a
         href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
         class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
@@ -265,6 +265,19 @@
               echo 'customer.log_in' | t
             endif
           -%}
+        </span>
+      </a>
+    {%- endif -%} {% endcomment %}
+
+    {%- if shop.customer_accounts_enabled -%}
+      <a
+        href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+        class="twcss-flex twcss-items-center twcss-gap-x-1 twcss-text-secondary-light"
+        rel="nofollow"
+      >
+        <span class="twcss-size-6 twcss-text-secondary-light">{{ 'icon-account.svg' | inline_asset_content }}</span>
+        <span class="twcss-font-semibold twcss-text-sm">
+          Frank
         </span>
       </a>
     {%- endif -%}
