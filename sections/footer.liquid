@@ -148,7 +148,12 @@
                       {%- endif -%}
                       {%- if settings.brand_description != blank -%}
                         <div class='twcss-prose twcss-max-w-none'>
-                          {%- render 'social-icons', class: 'footer__list-social' -%}
+                          {% if section.blocks.size == 4 %}
+                            <div class='twcss-mt-4'>
+                              1111
+                              {%- render 'social-icons', class: 'footer__list-social' -%}
+                            </div>
+                          {% endif %}
                           {{ settings.brand_description }}
                         </div>
                       {%- endif -%}
