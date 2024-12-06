@@ -1,108 +1,107 @@
 <section class="twcss-w-[var(--page-width)] twcss-mx-auto twcss-px-[5rem] twcss-py-8">
-  {% render 'homepage-title', white_title: section.settings.white_title, blue_title: section.settings.blue_title %}
+  <div class="twcss-relative twcss-h-[32rem] twcss-max-w-sm md:twcss-max-w-full">
+    {% render 'homepage-title',
+      white_title: 'Featured',
+      blue_title: 'Products',
+      link_url: '/collections/all',
+      link_text: 'See all'
+    %}
 
-  <div class="twcss-flex twcss-flex-row twcss-gap-6 twcss-mt-8 twcss-overflow-x-auto">
-    {% for block in section.blocks %}
-      <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-shrink-0">
-        <div class="twcss-w-[250px] twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4">
-          <img
-            src="{{ block.settings.image | img_url: 'master' }}"
-            alt="{{ block.settings.title }}"
-            class="twcss-w-full twcss-h-full twcss-object-cover"
-            loading="lazy"
-            width="100%"
-            height="100%"
-          >
-        </div>
-        <h3 class="twcss-text-lg twcss-font-medium">{{ block.settings.title }}</h3>
+    <div class="twcss-relative ">
+      <!-- 添加导航按钮 -->
+      <div class='swiper-button-prev !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-[""]  !twcss-left-[-1rem]'>
+        {% render 'icon-chevron-left' %}
       </div>
-    {% endfor %}
+      <div class='swiper-button-next !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-[""]  !twcss-right-[-1rem]'>
+        {% render 'icon-chevron-right' %}
+      </div>
+      {%- if section.settings.collection != blank -%}
+        <div class="swiper featured-products-slider twcss-relative  twcss-h-full">
+          <div class="swiper-wrapper">
+            {%- for product in section.settings.collection.products limit: 8 -%}
+              <div class="swiper-slide">
+                {% render 'product-card', product: product, show_vendor: true, show_new_tag: true %}
+              </div>
+            {%- endfor -%}
+          </div>
+
+          <!-- 分页器 -->
+          <div class="swiper-pagination !twcss-relative twcss-mt-4"></div>
+        </div>
+      {%- endif -%}
+    </div>
   </div>
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.featured-products-slider', {
+      slidesPerView: 1, // 移动端默认显示1个
+      spaceBetween: 16, // 滑块之间的间距
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        // >= 768px
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+        // >= 1024px
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 24,
+        },
+        // >= 1280px
+        1280: {
+          slidesPerView: 5,
+          spaceBetween: 24,
+        },
+      },
+    });
+  });
+</script>
+
 {% schema %}
 {
-  "name": "Distribution Solutions",
+  "name": "Featured Products",
   "settings": [
     {
       "type": "text",
       "id": "white_title",
       "label": "White Title",
-      "default": "Distribution"
+      "default": "Featured"
     },
     {
       "type": "text",
       "id": "blue_title",
       "label": "Blue Title",
-      "default": "Solutions"
-    }
-  ],
-  "blocks": [
+      "default": "Products"
+    },
     {
-      "type": "solution",
-      "name": "Solution",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Solution Image"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Solution Title",
-          "default": "Solution Title"
-        }
-      ]
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "default": 8,
+      "label": "Maximum products to show"
     }
   ],
   "presets": [
     {
-      "name": "Distribution Solutions",
-      "blocks": [
-        {
-          "type": "solution",
-          "settings": {
-            "title": "Freight Transport Solutions"
-          }
-        },
-        {
-          "type": "solution",
-          "settings": {
-            "title": "Warehouse and Distribution Solutions"
-          }
-        },
-        {
-          "type": "solution",
-          "settings": {
-            "title": "Last-Mile Logistics"
-          }
-        },
-        {
-          "type": "solution",
-          "settings": {
-            "title": "Cold Chain Solutions"
-          }
-        },
-        {
-          "type": "solution",
-          "settings": {
-            "title": "Intermodal Transport Services"
-          }
-        },
-        {
-          "type": "solution",
-          "settings": {
-            "title": "Real-Time Tracking and Monitoring"
-          }
-        },
-        {
-          "type": "solution",
-          "settings": {
-            "title": "Green Transportation Initiatives"
-          }
-        }
-      ]
+      "name": "Featured Products",
+      "category": "Products"
     }
   ]
 }
