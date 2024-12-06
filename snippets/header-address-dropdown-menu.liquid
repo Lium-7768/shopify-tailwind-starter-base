@@ -6,7 +6,7 @@
     <div>Delivery to</div>
     <div class='twcss-flex twcss-items-center twcss-gap-1 twcss-text-secondary-light'>
       <span>
-        {{ customer.default_address.city | default }}
+        {{ customer.default_address.city | 'test' }}
       </span>
       <span class='twcss-size-6'>{{ 'icon-chevron-down.svg' | inline_asset_content }}</span>
     </div>
