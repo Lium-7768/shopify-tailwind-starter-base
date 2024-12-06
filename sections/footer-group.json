@@ -34,19 +34,27 @@
             "heading": "Our mission",
             "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
           }
+        },
+        "text_UinC67": {
+          "type": "text",
+          "settings": {
+            "heading": "Sign Up for Updates",
+            "subtext": "<p>Sign up to receive email about product launches, events, deals & more! </p>"
+          }
         }
       },
       "block_order": [
         "footer-0",
         "footer-1",
-        "footer-2"
+        "footer-2",
+        "text_UinC67"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "newsletter_enable": true,
         "newsletter_heading": "",
         "enable_follow_on_shop": false,
-        "show_social": false,
+        "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": false,
