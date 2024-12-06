@@ -3781,6 +3781,11 @@ video {
   padding: 24px;
 }
 
+.twcss-px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .twcss-px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -3824,6 +3829,11 @@ video {
 .twcss-py-\[32px\] {
   padding-top: 32px;
   padding-bottom: 32px;
+}
+
+.twcss-py-\[5rem\] {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .twcss-pl-4 {
