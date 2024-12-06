@@ -20,9 +20,9 @@
   </div>
 
   <div class="twcss-mt-8 twcss-flex twcss-flex-col md:twcss-flex-row twcss-justify-center twcss-items-center">
-    <div class="twcss-hidden md:twcss-block twcss-flex-1">
+    <div class="twcss-hidden md:twcss-block ">
       <img
-        src="{{ section.settings.desktop_banner | img_url: "640px" }}"
+        src="{{ section.settings.desktop_banner | img_url: 'master' }}"
         alt="{{ section.settings.banner_title }}"
         class="twcss-w-full twcss-rounded-lg"
         loading="lazy"
@@ -30,9 +30,9 @@
         height="100%"
       >
     </div>
-    <div class="md:twcss-hidden twcss-flex-1">
+    <div class="md:twcss-hidden ">
       <img
-        src="{{ section.settings.mobile_banner | img_url: "320px" }}"
+        src="{{ section.settings.mobile_banner | img_url: 'master' }}"
         alt="{{ section.settings.banner_title }}"
         class="twcss-w-full twcss-rounded-lg"
         loading="lazy"
