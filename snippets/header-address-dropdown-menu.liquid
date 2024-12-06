@@ -1,7 +1,6 @@
 <div class='twcss-relative'>
-  <input type='checkbox' id='address-toggle' class='twcss-hidden peer'>
-  <label
-    for='address-toggle'
+  <button
+    onclick="this.querySelector('.caret-icon').classList.toggle('twcss-rotate-180'); this.nextElementSibling.classList.toggle('twcss-hidden')"
     class='twcss-flex twcss-flex-col twcss-px-4 twcss-py-2 twcss-text-sm hover:twcss-bg-primary-light twcss-rounded-md twcss-text-white'
   >
     <p>Delivery to</p>
@@ -13,15 +12,13 @@
           1801 Century Park E, Suite 1470...
         {% endif %}
       </span>
-      <span class='caret-icon twcss-transition-transform twcss-duration-200 twcss-w-6 peer-checked:twcss-rotate-180'>
+      <span class='caret-icon twcss-transition-transform twcss-duration-200 twcss-w-6 twcss-rotate-180'>
         {{ 'icon-caret.svg' | inline_asset_content }}
       </span>
     </div>
-  </label>
+  </button>
 
-  <div
-    class='twcss-absolute twcss-left-0 twcss-mt-2 twcss-w-72 twcss-bg-white twcss-rounded-md twcss-shadow-lg twcss-ring-1 twcss-ring-black twcss-ring-opacity-5 twcss-z-50 twcss-hidden peer-checked:twcss-block'
-  >
+  <div class='twcss-hidden twcss-absolute twcss-left-0 twcss-mt-2 twcss-w-72 twcss-bg-white twcss-rounded-md twcss-shadow-lg twcss-ring-1 twcss-ring-black twcss-ring-opacity-5 twcss-z-50'>
     <div class='twcss-p-4'>address list</div>
   </div>
 </div>
