@@ -81,13 +81,61 @@
     </div>
 
     <!-- 添加到购物车按钮 -->
-    {% render 'buy-buttons',
-      block: block,
-      product: product,
-      product_form_id: product_form_id,
-      section_id: section.id,
-      show_pickup_availability: true
-    %}
+    {% comment %}
+      {% render 'buy-buttons',
+        block: block,
+        product: product,
+        product_form_id: product_form_id,
+        section_id: section.id,
+        show_pickup_availability: true
+      %}
+    {% endcomment %}
+
+    <div>
+      {%- if product != blank -%}
+        <product-form class="product-form">
+          {%- form 'product',
+            product,
+            id: product_form_id,
+            class: 'form',
+            novalidate: 'novalidate',
+            data-type: 'add-to-cart-form'
+          -%}
+            <!-- 产品变体ID输入 -->
+            <input
+              type="hidden"
+              name="id"
+              value="{{ product.selected_or_first_available_variant.id }}"
+              {% if product.selected_or_first_available_variant.available == false %}
+                disabled
+              {% endif %}
+              class="product-variant-id"
+            >
+
+            <!-- 添加到购物车按钮 -->
+            <div class="product-form__buttons">
+              <button
+                type="submit"
+                name="add"
+                class="product-form__submit button button--full-width button--primary"
+                {% if product.selected_or_first_available_variant.available == false %}
+                  disabled
+                {% endif %}
+              >
+                <span>
+                  {%- if product.selected_or_first_available_variant.available == false -%}
+                    {{ 'products.product.sold_out' | t }}
+                  {%- else -%}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {%- endif -%}
+                </span>
+                {%- render 'loading-spinner' -%}
+              </button>
+            </div>
+          {%- endform -%}
+        </product-form>
+      {%- endif -%}
+    </div>
 
     <div
       class="
