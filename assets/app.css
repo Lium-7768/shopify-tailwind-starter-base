@@ -708,6 +708,10 @@ video {
   order: 2;
 }
 
+.twcss-m-0 {
+  margin: 0px;
+}
+
 .twcss-mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -941,16 +945,20 @@ video {
   width: 100%;
 }
 
-.twcss-min-w-0 {
-  min-width: 0px;
-}
-
 .\!twcss-max-w-\[1280px\] {
   max-width: 1280px !important;
 }
 
 .twcss-max-w-\[1280px\] {
   max-width: 1280px;
+}
+
+.twcss-max-w-\[160px\] {
+  max-width: 160px;
+}
+
+.twcss-max-w-\[200px\] {
+  max-width: 200px;
 }
 
 .twcss-max-w-\[285px\] {
