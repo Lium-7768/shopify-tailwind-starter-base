@@ -204,6 +204,57 @@
       </div>
     </div>
 
+
+    <nav class="header__inline-menu">
+      <ul class="twcss-flex twcss-items-center twcss-gap-6" role="list">
+        {%- for link in section.settings.menu.links -%}
+          <li class="twcss-relative twcss-group">
+            {%- if link.links != blank -%}
+              <header-menu>
+                <details id="Details-HeaderMenu-{{ forloop.index }}">
+                  <summary 
+                    id="HeaderMenu-{{ link.handle }}"
+                    class="twcss-flex twcss-items-center twcss-gap-1 twcss-cursor-pointer twcss-py-2"
+                  >
+                    <span class="twcss-text-sm twcss-font-medium">
+                      {{- link.title | escape -}}
+                    </span>
+                    <span class="twcss-w-4 twcss-h-4">
+                      {{- 'icon-caret.svg' | inline_asset_content -}}
+                    </span>
+                  </summary>
+                  <ul
+                    class="twcss-absolute twcss-left-0 twcss-top-full twcss-bg-white twcss-shadow-lg twcss-rounded-md twcss-min-w-[200px] twcss-py-2 twcss-mt-1 twcss-z-50"
+                    role="list"
+                  >
+                    {%- for childlink in link.links -%}
+                      <li>
+                        <a
+                          href="{{ childlink.url }}"
+                          class="twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100"
+                          {% if childlink.current %}aria-current="page"{% endif %}
+                        >
+                          {{ childlink.title | escape }}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </details>
+              </header-menu>
+            {%- else -%}
+              <a
+                href="{{ link.url }}"
+                class="twcss-text-sm twcss-font-medium twcss-py-2"
+                {% if link.current %}aria-current="page"{% endif %}
+              >
+                {{- link.title | escape -}}
+              </a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+
     {% comment %} <div class="desktop-localization-wrapper twcss-text-white">
       {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
         <localization-form class="small-hide medium-hide" data-prevent-hide>
