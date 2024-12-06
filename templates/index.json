@@ -152,7 +152,13 @@
       ],
       "settings": {
         "white_title": "Distribution",
-        "blue_title": "Solutions"
+        "blue_title": "Solutions",
+        "desktop_banner": "shopify://shop_images/unsplash_pdrckQDTxWY.png",
+        "mobile_banner": "shopify://shop_images/unsplash_pdrckQDTxWY_669cbc1e-a559-4538-8419-240a64af8943.png",
+        "banner_title": "Redefining Efficiency in Manufacturing and Distribution",
+        "banner_description": "Streamlining processes with innovative solutions, NEXAFLOW, empowering businesses to meet customer demands with precision and reliability.",
+        "banner_link": "",
+        "banner_link_text": "See more"
       }
     },
     "product_brands_FQAwF4": {
