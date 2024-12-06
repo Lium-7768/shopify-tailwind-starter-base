@@ -101,49 +101,42 @@
         "solution_QWBCrC": {
           "type": "solution",
           "settings": {
-            "image": "shopify://shop_images/unsplash_2O2RZfPI26Y.png",
             "title": "Freight Transport Solutions"
           }
         },
         "solution_J7k7QQ": {
           "type": "solution",
           "settings": {
-            "image": "shopify://shop_images/unsplash_sw5qehkjlzI.png",
             "title": "Warehouse and Distribution Solutions"
           }
         },
         "solution_TjtcBk": {
           "type": "solution",
           "settings": {
-            "image": "shopify://shop_images/unsplash_pz_z3Tg6fSI.png",
             "title": "Last-Mile Logistics"
           }
         },
         "solution_N8HQJb": {
           "type": "solution",
           "settings": {
-            "image": "shopify://shop_images/unsplash_xGYp_h7fm2I.png",
             "title": "Cold Chain Solutions"
           }
         },
         "solution_hJQG8W": {
           "type": "solution",
           "settings": {
-            "image": "shopify://shop_images/unsplash_LOgrmWMvj_0.png",
             "title": "Intermodal Transport Services"
           }
         },
         "solution_jCnXEz": {
           "type": "solution",
           "settings": {
-            "image": "shopify://shop_images/unsplash_pz_z3Tg6fSI_4862ea05-ca13-4d61-93e3-1bab91a4b472.png",
             "title": "Real-Time Tracking and Monitoring"
           }
         },
         "solution_mqUwxH": {
           "type": "solution",
           "settings": {
-            "image": "shopify://shop_images/unsplash_YduNPEXoNeU.png",
             "title": "Green Transportation Initiatives"
           }
         }
@@ -197,6 +190,14 @@
             "brand_link": ""
           }
         },
+        "brand_jGP7Np": {
+          "type": "brand",
+          "settings": {
+            "brand_logo": "shopify://shop_images/brand-tamko.png",
+            "brand_name": "",
+            "brand_link": ""
+          }
+        },
         "brand_HPRphU": {
           "type": "brand",
           "settings": {
@@ -205,10 +206,10 @@
             "brand_link": ""
           }
         },
-        "brand_jGP7Np": {
+        "brand_F8gBdH": {
           "type": "brand",
           "settings": {
-            "brand_logo": "shopify://shop_images/brand-tamko.png",
+            "brand_logo": "shopify://shop_images/brand-velux.png",
             "brand_name": "",
             "brand_link": ""
           }
@@ -227,8 +228,9 @@
         "brand_kXTJGN",
         "brand_kWH9Ri",
         "brand_4ABedr",
-        "brand_HPRphU",
         "brand_jGP7Np",
+        "brand_HPRphU",
+        "brand_F8gBdH",
         "brand_fpKQDd"
       ],
       "settings": {
