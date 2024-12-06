@@ -4,7 +4,7 @@
   <div class="twcss-flex twcss-flex-row twcss-gap-6 twcss-mt-8 twcss-overflow-x-auto">
     {% for block in section.blocks %}
       <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-shrink-0">
-        <div class="twcss-w-[250px] twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4">
+        <div class="twcss-w-[250px] twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-flex-1">
           <img
             src="{{ block.settings.image | img_url: 'master' }}"
             alt="{{ block.settings.title }}"
