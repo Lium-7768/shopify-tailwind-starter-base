@@ -1,18 +1,18 @@
 <div class='twcss-relative'>
   <button
     onclick="this.querySelector('.caret-icon').classList.toggle('twcss-rotate-180'); this.nextElementSibling.classList.toggle('twcss-hidden')"
-    class='twcss-flex twcss-flex-col twcss-text-sm hover:twcss-bg-primary-light twcss-rounded-md twcss-text-white'
+    class='twcss-flex twcss-flex-col twcss-text-sm hover:twcss-bg-primary-light twcss-rounded-md twcss-text-white twcss-w-fit'
   >
     <p>Delivery to</p>
-    <div class='twcss-flex twcss-items-center twcss-gap-x-1 twcss-text-secondary-light twcss-w-full'>
-      <div class='twcss-min-w-0 twcss-flex-1'>
-        <span class='twcss-truncate twcss-block'>
+    <div class='twcss-flex twcss-items-center twcss-gap-x-1 twcss-text-secondary-light'>
+      <div class='twcss-overflow-hidden' style='max-width: min(200px, calc(50vw - 50px));'>
+        <p class='twcss-truncate twcss-m-0'>
           {% if customer.default_address %}
             {{ customer.default_address.city }}
           {% else %}
             1801 Century Park E, Suite 1470
           {% endif %}
-        </span>
+        </p>
       </div>
       <span class='caret-icon twcss-transition-transform twcss-duration-200 twcss-w-4 twcss-flex-shrink-0'>
         {{ 'icon-caret.svg' | inline_asset_content }}
