@@ -730,10 +730,6 @@ video {
   height: 40px !important;
 }
 
-.twcss-h-1\/3 {
-  height: 33.333333%;
-}
-
 .twcss-h-14 {
   height: 3.5rem;
 }
@@ -850,6 +846,10 @@ video {
 
 .twcss-items-center {
   align-items: center;
+}
+
+.twcss-items-stretch {
+  align-items: stretch;
 }
 
 .twcss-justify-center {
@@ -3841,11 +3841,6 @@ video {
 .twcss-object-contain {
   -o-object-fit: contain;
      object-fit: contain;
-}
-
-.twcss-object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .twcss-p-2 {
