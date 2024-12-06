@@ -5,7 +5,6 @@
     {% for block in section.blocks %}
       <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-1 {% if forloop.index > 2 %} twcss-hidden md:!twcss-flex  {% endif %}">
         <div class="twcss-w-full twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-bg-[#EEF5FF] twcss-flex twcss-justify-center twcss-items-center">
-          <div>{{ forloop.index }}</div>
           <img
             src="{{ block.settings.image | img_url: '400x400', crop: 'center' }}"
             alt="{{ block.settings.title }}"
