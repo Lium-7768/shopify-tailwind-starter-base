@@ -1,6 +1,7 @@
-<div class='twcss-relative' x-data='{ isOpen: false }'>
-  <button
-    @click='isOpen = !isOpen'
+<div class='twcss-relative'>
+  <input type='checkbox' id='address-toggle' class='twcss-hidden peer'>
+  <label
+    for='address-toggle'
     class='twcss-flex twcss-flex-col twcss-px-4 twcss-py-2 twcss-text-sm hover:twcss-bg-primary-light twcss-rounded-md twcss-text-white'
   >
     <p>Delivery to</p>
@@ -12,18 +13,14 @@
           1801 Century Park E, Suite 1470...
         {% endif %}
       </span>
-      <span
-        class='caret-icon twcss-transition-transform twcss-duration-200 twcss-w-6'
-        :class="{ 'twcss-rotate-180': isOpen }"
-      >
+      <span class='caret-icon twcss-transition-transform twcss-duration-200 twcss-w-6 peer-checked:twcss-rotate-180'>
         {{ 'icon-caret.svg' | inline_asset_content }}
       </span>
     </div>
-  </button>
+  </label>
 
   <div
-    class='twcss-absolute twcss-left-0 twcss-mt-2 twcss-w-72 twcss-bg-white twcss-rounded-md twcss-shadow-lg twcss-ring-1 twcss-ring-black twcss-ring-opacity-5 twcss-z-50'
-    x-show='isOpen'
+    class='twcss-absolute twcss-left-0 twcss-mt-2 twcss-w-72 twcss-bg-white twcss-rounded-md twcss-shadow-lg twcss-ring-1 twcss-ring-black twcss-ring-opacity-5 twcss-z-50 twcss-hidden peer-checked:twcss-block'
   >
     <div class='twcss-p-4'>address list</div>
   </div>

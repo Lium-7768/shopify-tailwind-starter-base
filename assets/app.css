@@ -760,10 +760,6 @@ video {
   height: 3.5rem;
 }
 
-.twcss-h-4 {
-  height: 1rem;
-}
-
 .twcss-h-40 {
   height: 10rem;
 }
@@ -778,6 +774,10 @@ video {
 
 .twcss-h-60 {
   height: 15rem;
+}
+
+.twcss-h-80 {
+  height: 20rem;
 }
 
 .twcss-h-\[calc\(100\%-65px\)\] {
@@ -814,10 +814,6 @@ video {
 
 .twcss-w-2\/5 {
   width: 40%;
-}
-
-.twcss-w-4 {
-  width: 1rem;
 }
 
 .twcss-w-5 {
@@ -7460,6 +7456,10 @@ video {
     display: none;
   }
 
+  .md\:twcss-h-40 {
+    height: 10rem;
+  }
+
   .md\:twcss-w-3\/5 {
     width: 60%;
   }
@@ -7479,16 +7479,6 @@ video {
   .md\:twcss-px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  .md\:twcss-text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
-  .md\:twcss-text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 }
 
