@@ -4,9 +4,9 @@
     class='twcss-flex twcss-items-center twcss-gap-2 twcss-px-4 twcss-py-2 twcss-text-sm hover:twcss-bg-primary-light twcss-rounded-md twcss-text-white'
   >
     <div>Delivery to</div>
-    <div>
+    <div class='twcss-flex twcss-items-center twcss-gap-1 twcss-text-secondary-light'>
       <span>
-        {{ address.city }}
+        {{ customer.default_address.city | default }}
       </span>
       <span class='twcss-size-6'>{{ 'icon-chevron-down.svg' | inline_asset_content }}</span>
     </div>
