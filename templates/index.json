@@ -221,6 +221,14 @@
             "brand_name": "",
             "brand_link": ""
           }
+        },
+        "brand_NNptpG": {
+          "type": "brand",
+          "settings": {
+            "brand_logo": "shopify://shop_images/brand-velux.png",
+            "brand_name": "",
+            "brand_link": ""
+          }
         }
       },
       "block_order": [
@@ -231,7 +239,8 @@
         "brand_jGP7Np",
         "brand_HPRphU",
         "brand_F8gBdH",
-        "brand_fpKQDd"
+        "brand_fpKQDd",
+        "brand_NNptpG"
       ],
       "settings": {
         "title": "Featured Brands",
