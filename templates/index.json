@@ -287,6 +287,19 @@
         "highlight_hYD8FR"
       ],
       "settings": {}
+    },
+    "featured_plumbing_CA7GXd": {
+      "type": "featured-plumbing",
+      "settings": {
+        "title": "Featured Plumbing Products",
+        "view_all_text": "See all",
+        "collection": "",
+        "products_to_show": 3,
+        "show_vendor": true,
+        "collection_url": "",
+        "banner_title": "PLUMBING SOLUTIONS",
+        "banner_text": "From dripping faucets to clogged drains, our expert plumbing services have you covered."
+      }
     }
   },
   "order": [
@@ -294,6 +307,7 @@
     "rich_text",
     "featured_products_dVWqqB",
     "distribution_solutions_wXkLVR",
+    "featured_plumbing_CA7GXd",
     "product_brands_FQAwF4",
     "server_highlight_DGeehf"
   ]
