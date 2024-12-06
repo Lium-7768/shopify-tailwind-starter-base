@@ -41,13 +41,21 @@
             "heading": "Sign Up for Updates",
             "subtext": "<p>Sign up to receive email about product launches, events, deals & more! </p>"
           }
+        },
+        "text_HcMeA4": {
+          "type": "text",
+          "settings": {
+            "heading": "Sign Up for Updates",
+            "subtext": "<p>Sign up to receive email about product launches, events, deals & more! </p>"
+          }
         }
       },
       "block_order": [
         "footer-0",
         "footer-1",
         "footer-2",
-        "text_UinC67"
+        "text_UinC67",
+        "text_HcMeA4"
       ],
       "settings": {
         "color_scheme": "scheme-2",
