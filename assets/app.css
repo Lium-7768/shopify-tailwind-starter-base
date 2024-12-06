@@ -657,11 +657,6 @@ video {
   order: 2;
 }
 
-.twcss-mx-\[285px\] {
-  margin-left: 285px;
-  margin-right: 285px;
-}
-
 .twcss-mx-auto {
   margin-left: auto;
   margin-right: auto;
