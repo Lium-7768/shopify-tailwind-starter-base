@@ -7626,10 +7626,6 @@ video {
     max-width: 100%;
   }
 
-  .md\:twcss-grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .md\:twcss-flex-row {
     flex-direction: row;
   }
@@ -7660,6 +7656,10 @@ video {
 
   .lg\:twcss-mb-\[40px\] {
     margin-bottom: 40px;
+  }
+
+  .lg\:twcss-block {
+    display: block;
   }
 
   .lg\:\!twcss-w-\[139px\] {
