@@ -41,7 +41,19 @@
       >
     </div>
     <div class="twcss-flex twcss-flex-col twcss-justify-center twcss-px-4 md:twcss-px-8 twcss-w-full md:twcss-w-3/5 twcss-items-center">
-      {{ section.settings.banner_content }}
+      <div class="twcss-text-[#FF6B00] twcss-text-lg twcss-font-bold">
+        {{ section.settings.banner_title }}
+      </div>
+      <div class="twcss-text-gray-700 twcss-mt-2 twcss-text-sm">
+        {{ section.settings.banner_description }}
+      </div>
+      <a
+        href="{{ section.settings.banner_link }}"
+        class="twcss-text-blue-600 twcss-mt-4 twcss-flex twcss-items-center twcss-gap-2 twcss-font-bold twcss-text-sm"
+      >
+        {{ section.settings.banner_link_text }}
+        {% render 'icon-chevron-right' %}
+      </a>
     </div>
   </div>
 </section>
@@ -73,10 +85,27 @@
       "label": "Mobile Banner Image"
     },
     {
-      "type": "richtext",
-      "id": "banner_content",
-      "label": "Banner Content",
-      "default": "<p>rich text</p>"
+      "type": "text",
+      "id": "banner_title",
+      "label": "Banner Title",
+      "default": "Redefining Efficiency in Manufacturing and Distribution"
+    },
+    {
+      "type": "text",
+      "id": "banner_description",
+      "label": "Banner Description",
+      "default": "Streamlining processes with innovative solutions, NEXAFLOW, empowering businesses to meet customer demands with precision and reliability."
+    },
+    {
+      "type": "url",
+      "id": "banner_link",
+      "label": "Banner Link"
+    },
+    {
+      "type": "text",
+      "id": "banner_link_text",
+      "label": "Banner Link Text",
+      "default": "See more"
     }
   ],
   "blocks": [
