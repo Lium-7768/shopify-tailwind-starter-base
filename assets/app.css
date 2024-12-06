@@ -7452,6 +7452,14 @@ video {
 }
 
 @media (min-width: 750px) {
+  .md\:twcss-mt-2 {
+    margin-top: 0.5rem;
+  }
+
+  .md\:twcss-mt-4 {
+    margin-top: 1rem;
+  }
+
   .md\:twcss-block {
     display: block;
   }
@@ -7478,6 +7486,10 @@ video {
 
   .md\:twcss-flex-row {
     flex-direction: row;
+  }
+
+  .md\:twcss-p-6 {
+    padding: 1.5rem;
   }
 
   .md\:twcss-px-8 {
