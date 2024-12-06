@@ -19,25 +19,21 @@
     {% endfor %}
   </div>
 
-  <div class="twcss-mt-8 twcss-flex twcss-flex-col md:twcss-flex-row twcss-justify-center twcss-items-center twcss-bg-[#FFF7E9] twcss-h-40">
-    <div class="twcss-hidden md:twcss-block ">
+  <div class="twcss-mt-8 twcss-flex twcss-flex-col md:twcss-flex-row twcss-justify-between twcss-items-center twcss-bg-[#FFF7E9] twcss-h-40">
+    <div class="twcss-hidden md:twcss-block twcss-w-2/5">
       <img
-        src="{{ section.settings.desktop_banner | img_url: 'master' }}"
+        src="{{ section.settings.desktop_banner | img_url: "600x" }}"
         alt="{{ section.settings.banner_title }}"
-        class="twcss-w-full twcss-rounded-lg"
+        class="twcss-h-40 twcss-w-full twcss-object-cover"
         loading="lazy"
-        width="100%"
-        height="100%"
       >
     </div>
-    <div class="md:twcss-hidden ">
+    <div class="md:twcss-hidden twcss-w-full">
       <img
-        src="{{ section.settings.mobile_banner | img_url: 'master' }}"
+        src="{{ section.settings.mobile_banner | img_url: "800x" }}"
         alt="{{ section.settings.banner_title }}"
-        class="twcss-w-full twcss-rounded-lg"
+        class="twcss-w-full twcss-object-cover"
         loading="lazy"
-        width="100%"
-        height="100%"
       >
     </div>
     <div class="twcss-flex twcss-flex-col twcss-justify-center twcss-px-4 md:twcss-px-8 twcss-w-full md:twcss-w-3/5">
