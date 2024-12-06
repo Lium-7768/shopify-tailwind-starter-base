@@ -121,6 +121,53 @@
         "padding_bottom": 36
       }
     },
+    "product_brands_FQAwF4": {
+      "type": "product-brands",
+      "blocks": {
+        "brand_nXAFMA": {
+          "type": "brand",
+          "settings": {
+            "brand_logo": "shopify://shop_images/a-bridge-sitting-in-thick-pink-and-purple-fog.jpg",
+            "brand_name": "",
+            "brand_link": ""
+          }
+        },
+        "brand_kXTJGN": {
+          "type": "brand",
+          "settings": {
+            "brand_logo": "shopify://shop_images/silhouetted-couples-look-out-at-a-city-at-night.jpg",
+            "brand_name": "",
+            "brand_link": ""
+          }
+        },
+        "brand_kWH9Ri": {
+          "type": "brand",
+          "settings": {
+            "brand_logo": "shopify://shop_images/green-and-white-marbled-coloring.jpg",
+            "brand_name": "",
+            "brand_link": ""
+          }
+        },
+        "brand_4ABedr": {
+          "type": "brand",
+          "settings": {
+            "brand_logo": "shopify://shop_images/two-people-surfing-in-blue-choppy-water.jpg",
+            "brand_name": "",
+            "brand_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "brand_nXAFMA",
+        "brand_kXTJGN",
+        "brand_kWH9Ri",
+        "brand_4ABedr"
+      ],
+      "settings": {
+        "title": "Featured Brands",
+        "active_dot_color": "#000000"
+      }
+    },
     "server_highlight_DGeehf": {
       "type": "server-highlight",
       "blocks": {
@@ -162,6 +209,7 @@
     "rich_text",
     "featured_products_dVWqqB",
     "featured_collection",
+    "product_brands_FQAwF4",
     "server_highlight_DGeehf"
   ]
 }
