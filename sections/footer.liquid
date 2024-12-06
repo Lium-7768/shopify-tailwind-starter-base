@@ -153,6 +153,7 @@
                               {%- render 'social-icons', class: 'footer__list-social' -%}
                             {%- endif -%}
                           {% endif %}
+                          {{ settings.brand_description }}
                         </div>
                       {%- endif -%}
                       {%- if block.settings.show_social and has_social_icons -%}
@@ -265,6 +266,10 @@
             <div class='footer__follow-on-shop'>
               {{ shop | login_button: action: 'follow' }}
             </div>
+          {%- endif -%}
+
+          {%- if section.settings.show_social and has_social_icons -%}
+            {%- render 'social-icons', class: 'footer__list-social' -%}
           {%- endif -%}
         </div>
       </div>
