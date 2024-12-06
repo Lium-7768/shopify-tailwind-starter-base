@@ -7460,8 +7460,8 @@ video {
     display: none;
   }
 
-  .md\:twcss-w-2\/3 {
-    width: 66.666667%;
+  .md\:twcss-w-3\/5 {
+    width: 60%;
   }
 
   .md\:twcss-max-w-7xl {
