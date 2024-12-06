@@ -44,26 +44,37 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    new Swiper('.brands-swiper', {
-      slidesPerView: 3,
-      spaceBetween: 20,
-      loop: false,
-      pagination: {
-        el: '.swiper-pagination-brand',
-        clickable: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next-brand',
-        prevEl: '.swiper-button-prev-brand'
-      },
-      breakpoints: {
-        1280: {
-          slidesPerView: 8
+  initSwiper('.brands-swiper', {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        loop: false,
+        breakpoints: {
+          1280: {
+            slidesPerView: 8
+          }
         }
-      }
-    });
-  });
+      });
+
+    // document.addEventListener('DOMContentLoaded', function() {
+    //   new Swiper('.brands-swiper', {
+    //     slidesPerView: 3,
+    //     spaceBetween: 20,
+    //     loop: false,
+    //     pagination: {
+    //       el: '.swiper-pagination-brand',
+    //       clickable: true
+    //     },
+    //     navigation: {
+    //       nextEl: '.swiper-button-next-brand',
+    //       prevEl: '.swiper-button-prev-brand'
+    //     },
+    //     breakpoints: {
+    //       1280: {
+    //         slidesPerView: 8
+    //       }
+    //     }
+    //   });
+    // });
 </script>
 
 {% schema %}
