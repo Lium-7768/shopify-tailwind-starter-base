@@ -7,38 +7,40 @@
 <div class="twcss-container twcss-mx-auto twcss-my-[32px] lg:twcss-my-[50px] twcss-px-4 twcss-py-8 !twcss-max-w-[1280px] !twcss-p-0">
   {% render 'homepage-title', white_title: 'Featured', blue_title: 'Brands' %}
 
-  <div><div class="swiper brands-swiper">
-    <div class="swiper-wrapper twcss-gap-[24px]">
-      {%- for block in section.blocks -%}
-        <div
-          class="swiper-slide !twcss-w-[90px] !twcss-h-[116px] !twcss-flex twcss-items-center lg:!twcss-w-[139px] !twcss-mr-0"
-          {{ block.shopify_attributes }}
-        >
-          {%- if block.settings.brand_link != blank -%}
-            <a href="{{ block.settings.brand_link }}" class="twcss-block">
-          {%- endif -%}
-          <img
-            width="90"
-            height="90"
-            src="{{ block.settings.brand_logo | img_url: 'medium' }}"
-            alt="{{ block.settings.brand_name }}"
-            loading="lazy"
-            class="twcss-max-h-16 twcss-w-auto twcss-mx-auto twcss-object-contain"
+  <div>
+    <div class="swiper brands-swiper">
+      <div class="swiper-wrapper twcss-gap-[24px]">
+        {%- for block in section.blocks -%}
+          <div
+            class="swiper-slide !twcss-w-[90px] !twcss-h-[116px] !twcss-flex twcss-items-center lg:!twcss-w-[139px] !twcss-mr-0"
+            {{ block.shopify_attributes }}
           >
-          {%- if block.settings.brand_link != blank -%}
-            </a>
-          {%- endif -%}
-        </div>
-      {%- endfor -%}
+            {%- if block.settings.brand_link != blank -%}
+              <a href="{{ block.settings.brand_link }}" class="twcss-block">
+            {%- endif -%}
+            <img
+              width="90"
+              height="90"
+              src="{{ block.settings.brand_logo | img_url: 'medium' }}"
+              alt="{{ block.settings.brand_name }}"
+              loading="lazy"
+              class="twcss-max-h-16 twcss-w-auto twcss-mx-auto twcss-object-contain"
+            >
+            {%- if block.settings.brand_link != blank -%}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+      <div class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]">
+        {% render 'icon-chevron-left' %}
+      </div>
+      <div class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
+        {% render 'icon-chevron-right' %}
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]">
-      {% render 'icon-chevron-left' %}
-    </div>
-    <div class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
-      {% render 'icon-chevron-right' %}
-    </div>
-    <div class="swiper-pagination"></div>
-  </div></div
+  </div>
 </div>
 
 <script>
