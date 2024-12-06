@@ -1,10 +1,10 @@
 <section class="twcss-w-[var(--page-width)] twcss-mx-auto twcss-px-[5rem] twcss-py-8">
   {% render 'homepage-title', white_title: section.settings.white_title, blue_title: section.settings.blue_title %}
 
-  <div class="twcss-flex twcss-flex-row twcss-gap-6 twcss-mt-8 twcss-overflow-x-auto">
+  <div class="twcss-flex twcss-flex-row  twcss-mt-8 ">
     {% for block in section.blocks %}
-      <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-shrink-0">
-        <div class="twcss-w-[250px] twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-flex-1">
+      <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center  twcss-flex-1">
+        <div class=" twcss-aspect-square twcss-rounded-lg twcss-mb-4 ">
           <img
             src="{{ block.settings.image | img_url: 'master' }}"
             alt="{{ block.settings.title }}"
