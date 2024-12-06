@@ -8,19 +8,51 @@
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
-{%- if settings.cart_type == 'drawer' -%}
-  {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
-  {{ 'component-cart.css' | asset_url | stylesheet_tag }}
-  {{ 'component-totals.css' | asset_url | stylesheet_tag }}
-  {{ 'component-price.css' | asset_url | stylesheet_tag }}
-  {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
-  {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
-{%- endif -%}
+{% comment %}
+  {%- if settings.cart_type == 'drawer' -%}
+    {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+    {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+    {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+    {{ 'component-price.css' | asset_url | stylesheet_tag }}
+    {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+    {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+  {%- endif -%}
+{% endcomment %}
 
 {%- if settings.cart_type == 'drawer' -%}
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+<style>
+  .homepage-product-card-button.loading {
+    color: transparent;
+    position: relative;
+  }
+
+  @media screen and (forced-colors: active) {
+    .homepage-product-card-button.loading {
+      color: rgb(var(--color-foreground));
+    }
+  }
+
+  .homepage-product-card-button.loading > .loading__spinner {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .homepage-product-card-button.loading > .loading__spinner .spinner {
+    width: fit-content;
+  }
+
+  .homepage-product-card-button.loading > .loading__spinner .path {
+    stroke: rgb(var(--color-button-text));
+  }
+</style>
 
 <div class="{{ class | default: '' }} twcss-bg-white twcss-rounded-lg twcss-shadow-md twcss-w-full hover:twcss-shadow-lg twcss-transition-shadow twcss-duration-200 twcss-flex twcss-flex-col">
   <!-- 产品图片区域 -->
@@ -111,7 +143,7 @@
           <button
             type="submit"
             name="add"
-            class=" twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-center hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-w-full twcss-font-bold twcss-relative"
+            class="homepage-product-card-button twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-center hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded twcss-w-full twcss-font-bold twcss-relative"
             {% unless product.available %}
               disabled
             {% endunless %}
