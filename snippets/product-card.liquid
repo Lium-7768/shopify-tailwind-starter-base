@@ -81,56 +81,6 @@
       </div>
     </div>
 
-    <div>
-      {%- if product != blank -%}
-        <product-form class="product-form">
-          {%- form 'product',
-            product,
-            id: product_form_id,
-            class: 'form',
-            novalidate: 'novalidate',
-            data-type: 'add-to-cart-form'
-          -%}
-            <!-- 产品变体ID输入 -->
-            <input
-              type="hidden"
-              name="id"
-              value="{{ product.selected_or_first_available_variant.id }}"
-              {% if product.selected_or_first_available_variant.available == false %}
-                disabled
-              {% endif %}
-              class="product-variant-id"
-            >
-
-            <!-- 添加到购物车按钮 -->
-            <div class="product-form__buttons">
-              <button
-                type="submit"
-                name="addtocart"
-                class="product-form__submit button button--full-width button--primary"
-                {% if product.selected_or_first_available_variant.available == false %}
-                  disabled
-                {% endif %}
-              >
-                <span>
-                  {%- if product.selected_or_first_available_variant.available == false -%}
-                    {{ 'products.product.sold_out' | t }}
-                  {%- else -%}
-                    {{ 'products.product.add_to_cart' | t }}
-                  {%- endif -%}
-                </span>
-                {%- render 'loading-spinner' -%}
-              </button>
-            </div>
-          {%- endform -%}
-        </product-form>
-
-        <div class="twcss-absolute twcss-right-0 twcss-top-0 twcss-w-10 twcss-h-full twcss-flex twcss-items-center twcss-justify-center twcss-border-l-[0.5px] twcss-border-white twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-rounded-tr-lg twcss-rounded-br-lg">
-          {% render 'icon-chevron-down' %}
-        </div>
-      {%- endif -%}
-    </div>
-
     <div
       class="
         twcss-flex twcss-items-center twcss-justify-center
