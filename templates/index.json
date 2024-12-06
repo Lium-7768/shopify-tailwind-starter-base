@@ -95,6 +95,67 @@
         "products_to_show": 8
       }
     },
+    "distribution_solutions_wXkLVR": {
+      "type": "distribution-solutions",
+      "blocks": {
+        "solution_QWBCrC": {
+          "type": "solution",
+          "settings": {
+            "image": "shopify://shop_images/unsplash_2O2RZfPI26Y.png",
+            "title": "Freight Transport Solutions"
+          }
+        },
+        "solution_J7k7QQ": {
+          "type": "solution",
+          "settings": {
+            "title": "Warehouse and Distribution Solutions"
+          }
+        },
+        "solution_TjtcBk": {
+          "type": "solution",
+          "settings": {
+            "title": "Last-Mile Logistics"
+          }
+        },
+        "solution_N8HQJb": {
+          "type": "solution",
+          "settings": {
+            "title": "Cold Chain Solutions"
+          }
+        },
+        "solution_hJQG8W": {
+          "type": "solution",
+          "settings": {
+            "title": "Intermodal Transport Services"
+          }
+        },
+        "solution_jCnXEz": {
+          "type": "solution",
+          "settings": {
+            "title": "Real-Time Tracking and Monitoring"
+          }
+        },
+        "solution_mqUwxH": {
+          "type": "solution",
+          "settings": {
+            "title": "Green Transportation Initiatives"
+          }
+        }
+      },
+      "block_order": [
+        "solution_QWBCrC",
+        "solution_J7k7QQ",
+        "solution_TjtcBk",
+        "solution_N8HQJb",
+        "solution_hJQG8W",
+        "solution_jCnXEz",
+        "solution_mqUwxH"
+      ],
+      "settings": {
+        "white_title": "Distribution",
+        "blue_title": "Solutions"
+      }
+    },
     "product_brands_FQAwF4": {
       "type": "product-brands",
       "blocks": {
@@ -203,66 +264,6 @@
         "highlight_hYD8FR"
       ],
       "settings": {}
-    },
-    "distribution_solutions_wXkLVR": {
-      "type": "distribution-solutions",
-      "blocks": {
-        "solution_QWBCrC": {
-          "type": "solution",
-          "settings": {
-            "title": "Freight Transport Solutions"
-          }
-        },
-        "solution_J7k7QQ": {
-          "type": "solution",
-          "settings": {
-            "title": "Warehouse and Distribution Solutions"
-          }
-        },
-        "solution_TjtcBk": {
-          "type": "solution",
-          "settings": {
-            "title": "Last-Mile Logistics"
-          }
-        },
-        "solution_N8HQJb": {
-          "type": "solution",
-          "settings": {
-            "title": "Cold Chain Solutions"
-          }
-        },
-        "solution_hJQG8W": {
-          "type": "solution",
-          "settings": {
-            "title": "Intermodal Transport Services"
-          }
-        },
-        "solution_jCnXEz": {
-          "type": "solution",
-          "settings": {
-            "title": "Real-Time Tracking and Monitoring"
-          }
-        },
-        "solution_mqUwxH": {
-          "type": "solution",
-          "settings": {
-            "title": "Green Transportation Initiatives"
-          }
-        }
-      },
-      "block_order": [
-        "solution_QWBCrC",
-        "solution_J7k7QQ",
-        "solution_TjtcBk",
-        "solution_N8HQJb",
-        "solution_hJQG8W",
-        "solution_jCnXEz",
-        "solution_mqUwxH"
-      ],
-      "settings": {
-        "white_title": "Distribution",
-        "blue_title": "Solutions"
-      }
     }
   },
   "order": [
