@@ -147,13 +147,16 @@
                         <h2 class='twcss-text-lg twcss-font-semibold'>{{ settings.brand_headline }}</h2>
                       {%- endif -%}
                       {%- if settings.brand_description != blank -%}
-                        <div class='twcss-prose twcss-max-w-none'>{{ settings.brand_description }}</div>
+                        <div class='twcss-prose twcss-max-w-none'>
+                          {% if section.blocks.size == 5 %}
+                            {%- if section.settings.show_social and has_social_icons -%}
+                              {%- render 'social-icons', class: 'footer__list-social' -%}
+                            {%- endif -%}
+                          {% endif %}
+                        </div>
                       {%- endif -%}
                       {%- if block.settings.show_social and has_social_icons -%}
                         {%- render 'social-icons', class: 'twcss-mt-4' -%}
-                      {%- endif -%}
-                      {%- if section.settings.show_social and has_social_icons -%}
-                        {%- render 'social-icons', class: 'footer__list-social' -%}
                       {%- endif -%}
                     </div>
                   {%- when 'image' -%}
