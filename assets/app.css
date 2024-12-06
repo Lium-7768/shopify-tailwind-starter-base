@@ -655,6 +655,10 @@ video {
   margin-right: auto;
 }
 
+.\!twcss-mr-0 {
+  margin-right: 0px !important;
+}
+
 .twcss-mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -673,10 +677,6 @@ video {
 
 .twcss-ml-2 {
   margin-left: 0.5rem;
-}
-
-.twcss-mr-0 {
-  margin-right: 0px;
 }
 
 .twcss-mt-1 {
@@ -722,6 +722,10 @@ video {
   height: 2.5rem !important;
 }
 
+.\!twcss-h-\[116px\] {
+  height: 116px !important;
+}
+
 .\!twcss-h-\[40px\] {
   height: 40px !important;
 }
@@ -740,10 +744,6 @@ video {
 
 .twcss-h-60 {
   height: 15rem;
-}
-
-.twcss-h-\[116px\] {
-  height: 116px;
 }
 
 .twcss-h-\[32rem\] {
@@ -770,6 +770,10 @@ video {
   width: 40px !important;
 }
 
+.\!twcss-w-\[90px\] {
+  width: 90px !important;
+}
+
 .twcss-w-10 {
   width: 2.5rem;
 }
@@ -784,10 +788,6 @@ video {
 
 .twcss-w-\[458px\] {
   width: 458px;
-}
-
-.twcss-w-\[90px\] {
-  width: 90px;
 }
 
 .twcss-w-\[var\(--page-width\)\] {
@@ -7008,8 +7008,8 @@ video {
     margin-bottom: 40px;
   }
 
-  .lg\:twcss-w-\[133px\] {
-    width: 133px;
+  .lg\:\!twcss-w-\[133px\] {
+    width: 133px !important;
   }
 
   .lg\:twcss-flex-row {
