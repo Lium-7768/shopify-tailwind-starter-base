@@ -44,7 +44,7 @@
 
 <div class='twcss-relative'>
   <button
-    class='twcss-flex twcss-items-center twcss-gap-x-1 twcss-text-secondary-light'
+    class='twcss-flex twcss-items-center twcss-gap-x-2 twcss-text-secondary-light'
     data-account-button
   >
     <span class='twcss-size-6 twcss-text-secondary-light'>
@@ -56,6 +56,9 @@
       {%- else -%}
         Frank
       {%- endif -%}
+    </span>
+    <span class='twcss-w-4 twcss-transition-transform twcss-duration-200' data-account-icon>
+      {{ 'icon-caret.svg' | inline_asset_content }}
     </span>
   </button>
 
@@ -106,16 +109,21 @@
 <script>
   const accountButton = document.querySelector('[data-account-button]');
   const accountDropdown = document.querySelector('[data-account-dropdown]');
+  const accountIcon = document.querySelector('[data-account-icon]');
 
   if (accountButton && accountDropdown) {
     accountButton.addEventListener('click', () => {
       accountDropdown.classList.toggle('twcss-hidden');
+      accountIcon.style.transform = accountDropdown.classList.contains('twcss-hidden')
+        ? 'rotate(0deg)'
+        : 'rotate(180deg)';
     });
 
     // Close dropdown when clicking outside
     document.addEventListener('click', (event) => {
       if (!accountButton.contains(event.target) && !accountDropdown.contains(event.target)) {
         accountDropdown.classList.add('twcss-hidden');
+        accountIcon.style.transform = 'rotate(0deg)';
       }
     });
   }
