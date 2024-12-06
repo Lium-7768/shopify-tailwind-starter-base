@@ -81,52 +81,6 @@
       </div>
     </div>
 
-    <div>
-      {%- if product != blank -%}
-        <product-form class="product-form">
-          {%- form 'product',
-            product,
-            id: product_form_id,
-            class: 'form',
-            novalidate: 'novalidate',
-            data-type: 'add-to-cart-form'
-          -%}
-            <!-- 产品变体ID输入 -->
-            <input
-              type="hidden"
-              name="id"
-              value="{{ product.selected_or_first_available_variant.id }}"
-              {% if product.selected_or_first_available_variant.available == false %}
-                disabled
-              {% endif %}
-              class="product-variant-id"
-            >
-
-            <!-- 添加到购物车按钮 -->
-            <div class="product-form__buttons">
-              <button
-                type="submit"
-                name="addtocart"
-                class="product-form__submit button button--full-width button--primary"
-                {% if product.selected_or_first_available_variant.available == false %}
-                  disabled
-                {% endif %}
-              >
-                <span>
-                  {%- if product.selected_or_first_available_variant.available == false -%}
-                    {{ 'products.product.sold_out' | t }}
-                  {%- else -%}
-                    {{ 'products.product.add_to_cart' | t }}
-                  {%- endif -%}
-                </span>
-                {%- render 'loading-spinner' -%}
-              </button>
-            </div>
-          {%- endform -%}
-        </product-form>
-      {%- endif -%}
-    </div>
-
     <div
       class="
         twcss-flex twcss-items-center twcss-justify-center
@@ -181,56 +135,3 @@
     </div>
   </div>
 </div>
-
-{% comment %}
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('[data-ajax-cart-form]').forEach((form) => {
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-
-          const formData = new FormData(form);
-
-          fetch('/cart/add.js', {
-            method: 'POST',
-            body: formData,
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              // 添加商品后，获取最新的购物车数据
-              fetch('/cart.js')
-                .then((res) => res.json())
-                .then((cart) => {
-                  // 更新购物车计数器
-                  const cartCountBubble = document.querySelector('.cart-count-bubble');
-                  const cartCount = document.querySelector('.cart-count-bubble span[aria-hidden="true"]');
-
-                  if (cart.item_count > 0) {
-                    if (!cartCountBubble) {
-                      // 如果计数器不存在，创建新的计数器
-                      const cartIcon = document.getElementById('cart-icon-bubble');
-                      const newBubble = document.createElement('div');
-                      newBubble.className = 'cart-count-bubble';
-                      newBubble.innerHTML = `
-                        <span aria-hidden="true">${cart.item_count}</span>
-                        <span class="visually-hidden">${cart.item_count} items</span>
-                      `;
-                      cartIcon.appendChild(newBubble);
-                    } else {
-                      // 更新现有计数器
-                      cartCount.textContent = cart.item_count;
-                    }
-                  }
-                })
-                .catch((error) => {
-                  console.error('Error fetching cart:', error);
-                });
-            })
-            .catch((error) => {
-              console.error('Error adding to cart:', error);
-            });
-        });
-      });
-    });
-  </script>
-{% endcomment %}
