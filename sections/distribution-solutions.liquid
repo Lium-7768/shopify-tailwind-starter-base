@@ -1,14 +1,14 @@
 <section class="twcss-w-[var(--page-width)] twcss-mx-auto twcss-px-[5rem] twcss-py-10">
   {% render 'homepage-title', white_title: section.settings.white_title, blue_title: section.settings.blue_title %}
 
-  <div class="twcss-flex twcss-flex-row twcss-justify-between twcss-gap-x-6 twcss-items-stretch twcss-mt-8">
+  <div class="twcss-flex twcss-flex-row twcss-flex-wrap twcss-justify-between twcss-gap-x-6 twcss-gap-y-6 twcss-items-stretch twcss-mt-8">
     {% for block in section.blocks %}
-      <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-1">
+      <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center md:twcss-flex-1 twcss-w-[calc(50%-12px)] {% if forloop.index > 2 %}md:twcss-block twcss-hidden{% endif %}">
         <div class="twcss-w-full twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-bg-[#EEF5FF] twcss-flex twcss-justify-center twcss-items-center">
           <img
             src="{{ block.settings.image | img_url: '400x400', crop: 'center' }}"
             alt="{{ block.settings.title }}"
-            class=" twcss-object-cover !twcss-w-[85%] !twcss-h-[85%]"
+            class="twcss-object-cover !twcss-w-[85%] !twcss-h-[85%]"
             loading="lazy"
             width="100%"
             height="100%"
