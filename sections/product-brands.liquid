@@ -14,7 +14,10 @@
   <div class="swiper brands-swiper">
     <div class="swiper-wrapper twcss-gap-[24px]">
       {%- for block in section.blocks -%}
-        <div class="swiper-slide twcss-w-[90px] lg:twcss-w-[133px] twcss-mr-0" {{ block.shopify_attributes }}>
+        <div
+          class="swiper-slide twcss-w-[90px] twcss-h-[116px] twcss-flex twcss-items-center lg:twcss-w-[133px] twcss-mr-0"
+          {{ block.shopify_attributes }}
+        >
           {%- if block.settings.brand_link != blank -%}
             <a href="{{ block.settings.brand_link }}" class="twcss-block">
           {%- endif -%}
