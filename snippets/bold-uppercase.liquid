@@ -1,6 +1,7 @@
 {% assign words = text | split: ' ' %}
 {% for word in words %}
-  {% if word == word | upcase and word.size > 1 %}
+  {% assign upcase_word = word | upcase %}
+  {% if word == upcase_word and word.size > 1 %}
     <strong>{{ word }}</strong>
   {% else %}
     {{ word }}
