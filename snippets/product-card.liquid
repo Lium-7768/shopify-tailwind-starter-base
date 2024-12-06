@@ -20,6 +20,7 @@
 {%- if settings.cart_type == 'drawer' -%}
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
 <div class="{{ class | default: '' }} twcss-bg-white twcss-rounded-lg twcss-shadow-md twcss-w-full hover:twcss-shadow-lg twcss-transition-shadow twcss-duration-200 twcss-flex twcss-flex-col">
   <!-- 产品图片区域 -->
