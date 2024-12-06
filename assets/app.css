@@ -702,10 +702,6 @@ video {
   display: block;
 }
 
-.\!twcss-flex {
-  display: flex !important;
-}
-
 .twcss-flex {
   display: flex;
 }
@@ -720,11 +716,6 @@ video {
 
 .twcss-aspect-square {
   aspect-ratio: 1 / 1;
-}
-
-.twcss-size-6 {
-  width: 1.5rem;
-  height: 1.5rem;
 }
 
 .\!twcss-h-10 {
@@ -883,11 +874,6 @@ video {
 
 .twcss-gap-\[24px\] {
   gap: 24px;
-}
-
-.twcss-gap-x-1 {
-  -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
 }
 
 .twcss-gap-x-6 {
@@ -2394,95 +2380,6 @@ video {
   border-color: rgb(227 242 255 / 0.95);
 }
 
-.twcss-border-secondary-light {
-  --tw-border-opacity: 1;
-  border-color: rgb(194 227 255 / var(--tw-border-opacity, 1));
-}
-
-.twcss-border-secondary-light\/0 {
-  border-color: rgb(194 227 255 / 0);
-}
-
-.twcss-border-secondary-light\/10 {
-  border-color: rgb(194 227 255 / 0.1);
-}
-
-.twcss-border-secondary-light\/100 {
-  border-color: rgb(194 227 255 / 1);
-}
-
-.twcss-border-secondary-light\/15 {
-  border-color: rgb(194 227 255 / 0.15);
-}
-
-.twcss-border-secondary-light\/20 {
-  border-color: rgb(194 227 255 / 0.2);
-}
-
-.twcss-border-secondary-light\/25 {
-  border-color: rgb(194 227 255 / 0.25);
-}
-
-.twcss-border-secondary-light\/30 {
-  border-color: rgb(194 227 255 / 0.3);
-}
-
-.twcss-border-secondary-light\/35 {
-  border-color: rgb(194 227 255 / 0.35);
-}
-
-.twcss-border-secondary-light\/40 {
-  border-color: rgb(194 227 255 / 0.4);
-}
-
-.twcss-border-secondary-light\/45 {
-  border-color: rgb(194 227 255 / 0.45);
-}
-
-.twcss-border-secondary-light\/5 {
-  border-color: rgb(194 227 255 / 0.05);
-}
-
-.twcss-border-secondary-light\/50 {
-  border-color: rgb(194 227 255 / 0.5);
-}
-
-.twcss-border-secondary-light\/55 {
-  border-color: rgb(194 227 255 / 0.55);
-}
-
-.twcss-border-secondary-light\/60 {
-  border-color: rgb(194 227 255 / 0.6);
-}
-
-.twcss-border-secondary-light\/65 {
-  border-color: rgb(194 227 255 / 0.65);
-}
-
-.twcss-border-secondary-light\/70 {
-  border-color: rgb(194 227 255 / 0.7);
-}
-
-.twcss-border-secondary-light\/75 {
-  border-color: rgb(194 227 255 / 0.75);
-}
-
-.twcss-border-secondary-light\/80 {
-  border-color: rgb(194 227 255 / 0.8);
-}
-
-.twcss-border-secondary-light\/85 {
-  border-color: rgb(194 227 255 / 0.85);
-}
-
-.twcss-border-secondary-light\/90 {
-  border-color: rgb(194 227 255 / 0.9);
-}
-
-.twcss-border-secondary-light\/95 {
-  border-color: rgb(194 227 255 / 0.95);
-}
-
 .twcss-border-transparent {
   border-color: transparent;
 }
@@ -3944,95 +3841,6 @@ video {
   background-color: rgb(227 242 255 / 0.95);
 }
 
-.twcss-bg-secondary-light {
-  --tw-bg-opacity: 1;
-  background-color: rgb(194 227 255 / var(--tw-bg-opacity, 1));
-}
-
-.twcss-bg-secondary-light\/0 {
-  background-color: rgb(194 227 255 / 0);
-}
-
-.twcss-bg-secondary-light\/10 {
-  background-color: rgb(194 227 255 / 0.1);
-}
-
-.twcss-bg-secondary-light\/100 {
-  background-color: rgb(194 227 255 / 1);
-}
-
-.twcss-bg-secondary-light\/15 {
-  background-color: rgb(194 227 255 / 0.15);
-}
-
-.twcss-bg-secondary-light\/20 {
-  background-color: rgb(194 227 255 / 0.2);
-}
-
-.twcss-bg-secondary-light\/25 {
-  background-color: rgb(194 227 255 / 0.25);
-}
-
-.twcss-bg-secondary-light\/30 {
-  background-color: rgb(194 227 255 / 0.3);
-}
-
-.twcss-bg-secondary-light\/35 {
-  background-color: rgb(194 227 255 / 0.35);
-}
-
-.twcss-bg-secondary-light\/40 {
-  background-color: rgb(194 227 255 / 0.4);
-}
-
-.twcss-bg-secondary-light\/45 {
-  background-color: rgb(194 227 255 / 0.45);
-}
-
-.twcss-bg-secondary-light\/5 {
-  background-color: rgb(194 227 255 / 0.05);
-}
-
-.twcss-bg-secondary-light\/50 {
-  background-color: rgb(194 227 255 / 0.5);
-}
-
-.twcss-bg-secondary-light\/55 {
-  background-color: rgb(194 227 255 / 0.55);
-}
-
-.twcss-bg-secondary-light\/60 {
-  background-color: rgb(194 227 255 / 0.6);
-}
-
-.twcss-bg-secondary-light\/65 {
-  background-color: rgb(194 227 255 / 0.65);
-}
-
-.twcss-bg-secondary-light\/70 {
-  background-color: rgb(194 227 255 / 0.7);
-}
-
-.twcss-bg-secondary-light\/75 {
-  background-color: rgb(194 227 255 / 0.75);
-}
-
-.twcss-bg-secondary-light\/80 {
-  background-color: rgb(194 227 255 / 0.8);
-}
-
-.twcss-bg-secondary-light\/85 {
-  background-color: rgb(194 227 255 / 0.85);
-}
-
-.twcss-bg-secondary-light\/90 {
-  background-color: rgb(194 227 255 / 0.9);
-}
-
-.twcss-bg-secondary-light\/95 {
-  background-color: rgb(194 227 255 / 0.95);
-}
-
 .twcss-bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
@@ -4092,6 +3900,11 @@ video {
 .twcss-py-0\.5 {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
+}
+
+.twcss-py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .twcss-py-2 {
@@ -5648,95 +5461,6 @@ video {
   color: rgb(227 242 255 / 0.95);
 }
 
-.twcss-text-secondary-light {
-  --tw-text-opacity: 1;
-  color: rgb(194 227 255 / var(--tw-text-opacity, 1));
-}
-
-.twcss-text-secondary-light\/0 {
-  color: rgb(194 227 255 / 0);
-}
-
-.twcss-text-secondary-light\/10 {
-  color: rgb(194 227 255 / 0.1);
-}
-
-.twcss-text-secondary-light\/100 {
-  color: rgb(194 227 255 / 1);
-}
-
-.twcss-text-secondary-light\/15 {
-  color: rgb(194 227 255 / 0.15);
-}
-
-.twcss-text-secondary-light\/20 {
-  color: rgb(194 227 255 / 0.2);
-}
-
-.twcss-text-secondary-light\/25 {
-  color: rgb(194 227 255 / 0.25);
-}
-
-.twcss-text-secondary-light\/30 {
-  color: rgb(194 227 255 / 0.3);
-}
-
-.twcss-text-secondary-light\/35 {
-  color: rgb(194 227 255 / 0.35);
-}
-
-.twcss-text-secondary-light\/40 {
-  color: rgb(194 227 255 / 0.4);
-}
-
-.twcss-text-secondary-light\/45 {
-  color: rgb(194 227 255 / 0.45);
-}
-
-.twcss-text-secondary-light\/5 {
-  color: rgb(194 227 255 / 0.05);
-}
-
-.twcss-text-secondary-light\/50 {
-  color: rgb(194 227 255 / 0.5);
-}
-
-.twcss-text-secondary-light\/55 {
-  color: rgb(194 227 255 / 0.55);
-}
-
-.twcss-text-secondary-light\/60 {
-  color: rgb(194 227 255 / 0.6);
-}
-
-.twcss-text-secondary-light\/65 {
-  color: rgb(194 227 255 / 0.65);
-}
-
-.twcss-text-secondary-light\/70 {
-  color: rgb(194 227 255 / 0.7);
-}
-
-.twcss-text-secondary-light\/75 {
-  color: rgb(194 227 255 / 0.75);
-}
-
-.twcss-text-secondary-light\/80 {
-  color: rgb(194 227 255 / 0.8);
-}
-
-.twcss-text-secondary-light\/85 {
-  color: rgb(194 227 255 / 0.85);
-}
-
-.twcss-text-secondary-light\/90 {
-  color: rgb(194 227 255 / 0.9);
-}
-
-.twcss-text-secondary-light\/95 {
-  color: rgb(194 227 255 / 0.95);
-}
-
 .twcss-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
@@ -7191,95 +6915,6 @@ video {
 
 .twcss-ring-secondary-foreground\/95 {
   --tw-ring-color: rgb(227 242 255 / 0.95);
-}
-
-.twcss-ring-secondary-light {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(194 227 255 / var(--tw-ring-opacity, 1));
-}
-
-.twcss-ring-secondary-light\/0 {
-  --tw-ring-color: rgb(194 227 255 / 0);
-}
-
-.twcss-ring-secondary-light\/10 {
-  --tw-ring-color: rgb(194 227 255 / 0.1);
-}
-
-.twcss-ring-secondary-light\/100 {
-  --tw-ring-color: rgb(194 227 255 / 1);
-}
-
-.twcss-ring-secondary-light\/15 {
-  --tw-ring-color: rgb(194 227 255 / 0.15);
-}
-
-.twcss-ring-secondary-light\/20 {
-  --tw-ring-color: rgb(194 227 255 / 0.2);
-}
-
-.twcss-ring-secondary-light\/25 {
-  --tw-ring-color: rgb(194 227 255 / 0.25);
-}
-
-.twcss-ring-secondary-light\/30 {
-  --tw-ring-color: rgb(194 227 255 / 0.3);
-}
-
-.twcss-ring-secondary-light\/35 {
-  --tw-ring-color: rgb(194 227 255 / 0.35);
-}
-
-.twcss-ring-secondary-light\/40 {
-  --tw-ring-color: rgb(194 227 255 / 0.4);
-}
-
-.twcss-ring-secondary-light\/45 {
-  --tw-ring-color: rgb(194 227 255 / 0.45);
-}
-
-.twcss-ring-secondary-light\/5 {
-  --tw-ring-color: rgb(194 227 255 / 0.05);
-}
-
-.twcss-ring-secondary-light\/50 {
-  --tw-ring-color: rgb(194 227 255 / 0.5);
-}
-
-.twcss-ring-secondary-light\/55 {
-  --tw-ring-color: rgb(194 227 255 / 0.55);
-}
-
-.twcss-ring-secondary-light\/60 {
-  --tw-ring-color: rgb(194 227 255 / 0.6);
-}
-
-.twcss-ring-secondary-light\/65 {
-  --tw-ring-color: rgb(194 227 255 / 0.65);
-}
-
-.twcss-ring-secondary-light\/70 {
-  --tw-ring-color: rgb(194 227 255 / 0.7);
-}
-
-.twcss-ring-secondary-light\/75 {
-  --tw-ring-color: rgb(194 227 255 / 0.75);
-}
-
-.twcss-ring-secondary-light\/80 {
-  --tw-ring-color: rgb(194 227 255 / 0.8);
-}
-
-.twcss-ring-secondary-light\/85 {
-  --tw-ring-color: rgb(194 227 255 / 0.85);
-}
-
-.twcss-ring-secondary-light\/90 {
-  --tw-ring-color: rgb(194 227 255 / 0.9);
-}
-
-.twcss-ring-secondary-light\/95 {
-  --tw-ring-color: rgb(194 227 255 / 0.95);
 }
 
 .twcss-transition-colors {
