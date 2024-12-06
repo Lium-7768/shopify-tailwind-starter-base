@@ -1,9 +1,7 @@
-<div class='disclosure'>
+<div class='twcss-relative' x-data='{ isOpen: false }'>
   <button
-    type='button'
-    class='disclosure__button localization-form__select localization-selector link link--text caption-large'
-    aria-expanded='false'
-    aria-controls='address-list'
+    @click='isOpen = !isOpen'
+    class='twcss-flex twcss-flex-col twcss-px-4 twcss-py-2 twcss-text-sm hover:twcss-bg-primary-light twcss-rounded-md twcss-text-white'
   >
     <p>Delivery to</p>
     <div class='twcss-flex twcss-items-center twcss-gap-x-1 twcss-text-secondary-light'>
@@ -14,19 +12,19 @@
           1801 Century Park E, Suite 1470...
         {% endif %}
       </span>
-      <span class='caret-down-icon twcss-transition-transform twcss-duration-200 twcss-w-6'>
+      <span
+        class='caret-icon twcss-transition-transform twcss-duration-200 twcss-w-6'
+        :class="{ 'twcss-rotate-180': isOpen }"
+      >
         {{ 'icon-caret.svg' | inline_asset_content }}
       </span>
     </div>
   </button>
 
-  <div class='disclosure__list-wrapper' hidden>
+  <div
+    class='twcss-absolute twcss-left-0 twcss-mt-2 twcss-w-72 twcss-bg-white twcss-rounded-md twcss-shadow-lg twcss-ring-1 twcss-ring-black twcss-ring-opacity-5 twcss-z-50'
+    x-show='isOpen'
+  >
     <div class='twcss-p-4'>address list</div>
   </div>
 </div>
-
-<style>
-  .disclosure__button[aria-expanded='true'] .caret-down-icon {
-    transform: rotate(180deg);
-  }
-</style>
