@@ -764,6 +764,10 @@ video {
   height: 10rem;
 }
 
+.twcss-h-44 {
+  height: 11rem;
+}
+
 .twcss-h-5 {
   height: 1.25rem;
 }
@@ -774,10 +778,6 @@ video {
 
 .twcss-h-60 {
   height: 15rem;
-}
-
-.twcss-h-80 {
-  height: 20rem;
 }
 
 .twcss-h-\[calc\(100\%-65px\)\] {
