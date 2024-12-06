@@ -841,16 +841,16 @@ video {
   max-width: 1280px !important;
 }
 
-.twcss-max-w-7xl {
-  max-width: 80rem;
-}
-
 .twcss-max-w-\[1280px\] {
   max-width: 1280px;
 }
 
 .twcss-max-w-\[calc\(100vw-32px\)\] {
   max-width: calc(100vw - 32px);
+}
+
+.twcss-max-w-screen-sm {
+  max-width: 320px;
 }
 
 .twcss-max-w-sm {
@@ -896,6 +896,10 @@ video {
 
 .twcss-justify-between {
   justify-content: space-between;
+}
+
+.twcss-gap-1 {
+  gap: 0.25rem;
 }
 
 .twcss-gap-2 {
@@ -7419,6 +7423,10 @@ video {
 @media (min-width: 750px) {
   .md\:\!twcss-flex {
     display: flex !important;
+  }
+
+  .md\:twcss-max-w-7xl {
+    max-width: 80rem;
   }
 
   .md\:twcss-max-w-full {
