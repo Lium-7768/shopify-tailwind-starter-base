@@ -3,7 +3,7 @@
 
   <div class="twcss-flex twcss-flex-row twcss-justify-between twcss-gap-x-6 twcss-items-center twcss-mt-8">
     {% for block in section.blocks %}
-      <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-1">
+      <div class="twcss-flex twcss-h-full twcss-flex-col twcss-items-center twcss-text-center twcss-flex-1">
         <div class="twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-bg-[#EEF5FF] twcss-w-full twcss-flex twcss-justify-center twcss-items-center">
           <img
             src="{{ block.settings.image | img_url: 'master' }}"
