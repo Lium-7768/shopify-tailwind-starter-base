@@ -81,17 +81,6 @@
       </div>
     </div>
 
-    <!-- 添加到购物车按钮 -->
-    {% comment %}
-      {% render 'buy-buttons',
-        block: block,
-        product: product,
-        product_form_id: product_form_id,
-        section_id: section.id,
-        show_pickup_availability: true
-      %}
-    {% endcomment %}
-
     <div>
       {%- if product != blank -%}
         <product-form class="product-form">
@@ -193,53 +182,55 @@
   </div>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('[data-ajax-cart-form]').forEach((form) => {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
+{% comment %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('[data-ajax-cart-form]').forEach((form) => {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
 
-        const formData = new FormData(form);
+          const formData = new FormData(form);
 
-        fetch('/cart/add.js', {
-          method: 'POST',
-          body: formData,
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            // 添加商品后，获取最新的购物车数据
-            fetch('/cart.js')
-              .then((res) => res.json())
-              .then((cart) => {
-                // 更新购物车计数器
-                const cartCountBubble = document.querySelector('.cart-count-bubble');
-                const cartCount = document.querySelector('.cart-count-bubble span[aria-hidden="true"]');
-
-                if (cart.item_count > 0) {
-                  if (!cartCountBubble) {
-                    // 如果计数器不存在，创建新的计数器
-                    const cartIcon = document.getElementById('cart-icon-bubble');
-                    const newBubble = document.createElement('div');
-                    newBubble.className = 'cart-count-bubble';
-                    newBubble.innerHTML = `
-                      <span aria-hidden="true">${cart.item_count}</span>
-                      <span class="visually-hidden">${cart.item_count} items</span>
-                    `;
-                    cartIcon.appendChild(newBubble);
-                  } else {
-                    // 更新现有计数器
-                    cartCount.textContent = cart.item_count;
-                  }
-                }
-              })
-              .catch((error) => {
-                console.error('Error fetching cart:', error);
-              });
+          fetch('/cart/add.js', {
+            method: 'POST',
+            body: formData,
           })
-          .catch((error) => {
-            console.error('Error adding to cart:', error);
-          });
+            .then((response) => response.json())
+            .then((data) => {
+              // 添加商品后，获取最新的购物车数据
+              fetch('/cart.js')
+                .then((res) => res.json())
+                .then((cart) => {
+                  // 更新购物车计数器
+                  const cartCountBubble = document.querySelector('.cart-count-bubble');
+                  const cartCount = document.querySelector('.cart-count-bubble span[aria-hidden="true"]');
+
+                  if (cart.item_count > 0) {
+                    if (!cartCountBubble) {
+                      // 如果计数器不存在，创建新的计数器
+                      const cartIcon = document.getElementById('cart-icon-bubble');
+                      const newBubble = document.createElement('div');
+                      newBubble.className = 'cart-count-bubble';
+                      newBubble.innerHTML = `
+                        <span aria-hidden="true">${cart.item_count}</span>
+                        <span class="visually-hidden">${cart.item_count} items</span>
+                      `;
+                      cartIcon.appendChild(newBubble);
+                    } else {
+                      // 更新现有计数器
+                      cartCount.textContent = cart.item_count;
+                    }
+                  }
+                })
+                .catch((error) => {
+                  console.error('Error fetching cart:', error);
+                });
+            })
+            .catch((error) => {
+              console.error('Error adding to cart:', error);
+            });
+        });
       });
     });
-  });
-</script>
+  </script>
+{% endcomment %}
