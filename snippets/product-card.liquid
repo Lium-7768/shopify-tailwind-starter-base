@@ -23,15 +23,15 @@
 
 <div class="{{ class | default: '' }} twcss-bg-white twcss-rounded-lg twcss-shadow-md twcss-w-full hover:twcss-shadow-lg twcss-transition-shadow twcss-duration-200 twcss-flex twcss-flex-col">
   <!-- 产品图片区域 -->
-  <div class="twcss-h-[246px] twcss-w-full twcss-shadow-sm">
+  <div class="twcss-h-60 twcss-w-full twcss-shadow-sm">
     <a href="{{ product.url }}" class="twcss-block twcss-w-full twcss-h-full">
       <img
-        src="{{ product.featured_image | img_url: '246x246', crop: 'center' }}"
+        src="{{ product.featured_image | img_url: '240x240', crop: 'center' }}"
         alt="{{ product.title }}"
         class="twcss-object-contain twcss-w-full twcss-h-full"
         loading="lazy"
-        width="246"
-        height="246"
+        width="240"
+        height="240"
       >
     </a>
   </div>
@@ -41,7 +41,7 @@
     class="
           twcss-flex twcss-flex-col twcss-bg-[#f8f8f8]
       twcss-p-4
-      twcss-h-[198px]
+      twcss-h-48
     "
   >
     <div class="twcss-flex twcss-flex-col twcss-flex-1 twcss-space-y-1">
@@ -56,7 +56,7 @@
             twcss-text-2xl twcss-font-bold
             twcss-line-clamp-2
             twcss-text-[#353535]
-            twcss-h-[40px] twcss-overflow-hidden twcss-text-ellipsis
+            twcss-h-10 twcss-overflow-hidden twcss-text-ellipsis
           "
         >
           {{ product.title }}
@@ -131,7 +131,7 @@
         </form>
       </product-form>
 
-      <div class="twcss-absolute twcss-right-0 twcss-top-0 twcss-w-[36px] twcss-h-full twcss-flex twcss-items-center twcss-justify-center twcss-border-l-[0.5px] twcss-border-white twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded">
+      <div class="twcss-absolute twcss-right-0 twcss-top-0 twcss-w-9 twcss-h-full twcss-flex twcss-items-center twcss-justify-center twcss-border-l-[0.5px] twcss-border-white twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-px-4 twcss-py-2 twcss-rounded">
         {% render 'icon-chevron-down' %}
       </div>
     </div>
