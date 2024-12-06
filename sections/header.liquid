@@ -127,7 +127,7 @@
       assign localization_forms = true
     endif
   -%}
-  <header class="twcss-items-center twcss-flex twcss-bg-primary-default twcss-text-white twcss-px-16 twcss-py-4 twcss-gap-x-6">
+  <header class="twcss-items-center twcss-flex twcss-bg-primary-default twcss-text-white twcss-px-6 twcss-py-4 twcss-gap-x-6">
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="twcss-flex twcss-items-center twcss-justify-center">
@@ -198,7 +198,7 @@
           render 'header-search', input_id: 'Search-In-Modal-1'
         endif
       -%}
-      <div class="twcss-py-1 twcss-px-4 twcss-border twcss-border-secondary-default twcss-font-bold twcss-rounded-md twcss-transition-colors twcss-flex twcss-items-center twcss-gap-2">
+      <div class="twcss-py-1 twcss-px-2 twcss-border twcss-border-secondary-default twcss-font-bold twcss-rounded-md twcss-transition-colors twcss-flex twcss-items-center twcss-gap-2">
         <span class="svg-wrapper">{{'icon-hamburger.svg' | inline_asset_content }}</span>
         Products
       </div>
@@ -283,6 +283,10 @@
         </span>
       </a>
     {%- endif -%}
+    {%- if shop.customer_accounts_enabled -%}
+      {% render 'header-account-dropdown-menu' %}
+    {%- endif -%}
+
 
     {%- for block in section.blocks -%}
       {%- case block.type -%}

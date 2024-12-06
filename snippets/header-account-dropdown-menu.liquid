@@ -1,0 +1,78 @@
+<div class='twcss-relative'>
+  <button
+    class='twcss-flex twcss-items-center twcss-gap-x-1 twcss-text-secondary-light'
+    data-account-button
+  >
+    <span class='twcss-size-6 twcss-text-secondary-light'>
+      {{ 'icon-account.svg' | inline_asset_content }}
+    </span>
+    <span class='twcss-font-semibold twcss-text-sm'>
+      {%- if customer -%}
+        {{ customer.first_name }}
+      {%- else -%}
+        Account
+      {%- endif -%}
+    </span>
+  </button>
+
+  <div
+    class='twcss-absolute twcss-right-0 twcss-mt-2 twcss-w-48 twcss-bg-white twcss-rounded-md twcss-shadow-lg twcss-hidden'
+    data-account-dropdown
+  >
+    <div class='twcss-py-1'>
+      {%- if customer -%}
+        <a
+          href='{{ routes.account_url }}'
+          class='twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100'
+        >
+          My Account
+        </a>
+        <a
+          href='{{ routes.account_orders_url }}'
+          class='twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100'
+        >
+          Orders
+        </a>
+        <form method='post' action='{{ routes.account_logout_url }}'>
+          <button
+            type='submit'
+            class='twcss-block twcss-w-full twcss-text-left twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100'
+          >
+            Log out
+          </button>
+        </form>
+      {%- else -%}
+        <a
+          href='{{ routes.account_login_url }}'
+          class='twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100'
+        >
+          Log in
+        </a>
+        <a
+          href='{{ routes.account_register_url }}'
+          class='twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-gray-700 hover:twcss-bg-gray-100'
+        >
+          Create account
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+<script>
+  const accountButton = document.querySelector('[data-account-button]');
+  const accountDropdown = document.querySelector('[data-account-dropdown]');
+
+  if (accountButton && accountDropdown) {
+    accountButton.addEventListener('click', () => {
+      accountDropdown.classList.toggle('twcss-hidden');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!accountButton.contains(event.target) && !accountDropdown.contains(event.target)) {
+        accountDropdown.classList.add('twcss-hidden');
+      }
+    });
+  }
+</script>
