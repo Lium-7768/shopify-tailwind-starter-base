@@ -108,18 +108,21 @@
         "solution_J7k7QQ": {
           "type": "solution",
           "settings": {
+            "image": "shopify://shop_images/unsplash_sw5qehkjlzI.png",
             "title": "Warehouse and Distribution Solutions"
           }
         },
         "solution_TjtcBk": {
           "type": "solution",
           "settings": {
+            "image": "shopify://shop_images/unsplash_pz_z3Tg6fSI.png",
             "title": "Last-Mile Logistics"
           }
         },
         "solution_N8HQJb": {
           "type": "solution",
           "settings": {
+            "image": "shopify://shop_images/unsplash_xGYp_h7fm2I.png",
             "title": "Cold Chain Solutions"
           }
         },
