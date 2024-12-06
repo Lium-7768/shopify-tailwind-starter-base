@@ -1,17 +1,17 @@
 <section class="twcss-w-[var(--page-width)] twcss-mx-auto twcss-px-[5rem] twcss-py-8">
   {% render 'homepage-title', white_title: section.settings.white_title, blue_title: section.settings.blue_title %}
 
-  <div class="twcss-flex twcss-flex-row twcss-gap-6 twcss-mt-8 ">
+  <div class="twcss-flex twcss-flex-row twcss-gap-6 twcss-mt-8 twcss-overflow-x-auto">
     {% for block in section.blocks %}
-      <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center  twcss-flex-1">
-        <div class=" twcss-aspect-square twcss-rounded-lg twcss-mb-4 ">
+      <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-shrink-0">
+        <div class="twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-bg-[#EEF5FF] twcss-w-full twcss-flex twcss-justify-center twcss-items-center">
           <img
             src="{{ block.settings.image | img_url: 'master' }}"
             alt="{{ block.settings.title }}"
             class="twcss-w-full twcss-h-full twcss-object-cover"
             loading="lazy"
-            width="100%"
-            height="100%"
+            width="85%"
+            height="85%"
           >
         </div>
         <h3 class="twcss-text-lg twcss-font-medium">{{ block.settings.title }}</h3>
