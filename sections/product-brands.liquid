@@ -32,13 +32,13 @@
           </div>
         {%- endfor -%}
       </div>
-      <div class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]">
+      <div class="swiper-button-prev swiper-button-prev-brand !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]">
         {% render 'icon-chevron-left' %}
       </div>
-      <div class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
+      <div class="swiper-button-next swiper-button-next-brand !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
         {% render 'icon-chevron-right' %}
       </div>
-      <div class="swiper-pagination"></div>
+      <div class="swiper-pagination swiper-pagination-brand"></div>
     </div>
   </div>
 </div>
@@ -50,12 +50,12 @@
       spaceBetween: 20,
       loop: false,
       pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination-brand',
         clickable: true
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+        nextEl: '.swiper-button-next-brand',
+        prevEl: '.swiper-button-prev-brand'
       },
       breakpoints: {
         1280: {
