@@ -41,7 +41,9 @@
         "custom_account_wNra3N": {
           "type": "custom_account",
           "settings": {
+            "menu_1_title": "Profiles & Addresses",
             "account_menu_1": "customer-header-account-profiles-addresses",
+            "menu_2_title": "Orders",
             "account_menu_2": "customer-header-account-profiles-addresses"
           }
         }
