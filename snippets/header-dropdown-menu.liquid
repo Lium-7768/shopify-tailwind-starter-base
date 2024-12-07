@@ -7,7 +7,12 @@
 
 
 Menu Links Debug:
-{{ section.settings.menu.links | json }}
+{% for link in section.settings.menu.links %}
+  Title: {{ link.title }}
+  URL: {{ link.url }}
+  Handle: {{ link.handle }}
+  ---
+{% endfor %}
 
 
 {%- assign menu_icons = section.settings.menu_icons | default: '{}' | json -%}
