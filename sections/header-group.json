@@ -65,7 +65,7 @@
       "settings": {
         "logo_position": "middle-left",
         "menu": "main-menu",
-        "menu_icons": "{  \"quick-order\": \"icon-quick-order.svg\",  \"price-list\": \"icon-quick-order.svg\",  , \"orders\": \"icon-quick-order.svg\",  \"quotes\": \"icon-quick-order.svg\"}",
+        "menu_icons": "{\"quick-order\":\"icon-quick-order.svg\",\"price-list\":\"icon-price-list.svg\",\"orders\":\"icon-orders.svg\",\"quotes\":\"icon-quotes.svg\"}",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
