@@ -258,6 +258,8 @@
       {%- case block.type -%}
         {%- when '@app' -%}
           {% render block %}
+        {%- when 'custom_account' -%}
+          {% render 'header-account-dropdown-menu', menuList: block %} 
       {%- endcase -%}
     {%- endfor -%}
 
