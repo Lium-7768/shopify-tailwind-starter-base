@@ -987,16 +987,16 @@ video {
   justify-content: space-between;
 }
 
-.twcss-gap-0 {
-  gap: 0px;
-}
-
 .twcss-gap-2 {
   gap: 0.5rem;
 }
 
 .twcss-gap-4 {
   gap: 1rem;
+}
+
+.twcss-gap-5 {
+  gap: 1.25rem;
 }
 
 .twcss-gap-6 {
@@ -7673,10 +7673,6 @@ video {
 
   .md\:twcss-flex-row {
     flex-direction: row;
-  }
-
-  .md\:twcss-gap-5 {
-    gap: 1.25rem;
   }
 
   .md\:twcss-p-6 {
