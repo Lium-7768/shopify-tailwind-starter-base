@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  column-gap: 16px;
 }
 
 @media only screen and (max-width: 749px) {
