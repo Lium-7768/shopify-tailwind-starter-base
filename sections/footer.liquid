@@ -99,7 +99,7 @@
                 {% endif %}
               >
                 {%- if block.settings.heading != blank -%}
-                  <h2 class='twcss-text-lg twcss-font-semibold twcss-mb-4'>{{- block.settings.heading -}}</h2>
+                  <h2 class='twcss-text-lg twcss-font-semibold twcss-mb-5'>{{- block.settings.heading -}}</h2>
                 {%- endif -%}
 
                 {%- case block.type -%}
@@ -171,11 +171,8 @@
                     </div>
                   {%- when 'custom_follow' %}
                     <div class="twcss-space-y-5">
-                      {%- if settings.heading != blank -%}
-                        <h2 class='twcss-text-lg twcss-font-semibold'>{{ settings.heading }}</h2>
-                      {%- endif -%}
                       {%- if has_social_icons -%}
-                        {%- render 'social-icons', class: 'twcss-mt-5' -%}
+                        {%- render 'social-icons', class: '' -%}
                       {%- endif -%}
                     </div>
                 {%- endcase -%}
@@ -265,10 +262,6 @@
             <div class='footer__follow-on-shop'>
               {{ shop | login_button: action: 'follow' }}
             </div>
-          {%- endif -%}
-
-          {%- if section.settings.show_social and has_social_icons -%}
-            {%- render 'social-icons', class: 'footer__list-social' -%}
           {%- endif -%}
         </div>
       </div>
