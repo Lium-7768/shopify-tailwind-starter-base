@@ -4491,10 +4491,6 @@ video {
   font-weight: 600;
 }
 
-.twcss-uppercase {
-  text-transform: uppercase;
-}
-
 .twcss-leading-\[22px\] {
   line-height: 22px;
 }
