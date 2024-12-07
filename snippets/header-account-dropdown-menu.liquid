@@ -66,23 +66,6 @@
     class='twcss-absolute twcss-z-10 twcss-right-0 twcss-mt-2 twcss-w-48 twcss-bg-muted-default twcss-rounded-md twcss-shadow-lg twcss-hidden'
     data-account-dropdown
   >
-    <!-- Debug output -->
-    <div class="twcss-p-4 twcss-text-sm">
-      <pre>
-Menu 1: {{ block.settings.account_menu_1 }}
-Menu 1 Links: 
-{% for link in linklists[block.settings.account_menu_1].links %}
-  - {{ link.title }}: {{ link.url }}
-{% endfor %}
-
-Menu 2: {{ block.settings.account_menu_2 }}
-Menu 2 Links:
-{% for link in linklists[block.settings.account_menu_2].links %}
-  - {{ link.title }}: {{ link.url }}
-{% endfor %}
-      </pre>
-    </div>
-    
     <div class='twcss-py-1 twcss-z-10'>
       {% for link in linklists[block.settings.account_menu_1].links %}
         <a
