@@ -111,12 +111,12 @@
                     </div>
                   {%- when 'link_list' -%}
                     {%- if block.settings.menu != blank -%}
-                      <ul class='twcss-space-y-2'>
+                      <ul class='twcss-space-y-5'>
                         {%- for link in block.settings.menu.links -%}
                           <li>
                             <a
                               href='{{ link.url }}'
-                              class='twcss-text-secondary-light hover:twcss-text-secondary-dark twcss-transition-colors{% if link.active %} twcss-font-semibold{% endif %}'
+                              class='twcss-text-accent-default hover:twcss-text-accent-foreground twcss-transition-colors{% if link.active %} twcss-font-semibold{% endif %}'
                             >
                               {{ link.title | escape }}
                             </a>
