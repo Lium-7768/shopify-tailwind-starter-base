@@ -91,7 +91,7 @@
           >
             {%- for block in section.blocks -%}
               <div
-                class='twcss-p-4 {% if block.type == "link_list" %} twcss-space-y-4{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+                class='{% if block.type == "link_list" %} twcss-space-y-4{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
