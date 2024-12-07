@@ -5,15 +5,15 @@
   {% render 'header-dropdown-menu' %}
 {% endcomment %}
 
-<details>
+{% comment %} <details>
   <summary>Menu Links Debug</summary>
   {% for link in section.settings.menu.links %}
     Title: {{ link.title }}
     URL: {{ link.url }}
-    Handle: {{ link.handle }}
+    
     ---
   {% endfor %}
-</details>
+</details> {% endcomment %}
 
 {%- assign menu_icons = section.settings.menu_icons | default: '{}' | json -%}
 
@@ -27,6 +27,7 @@
               {{ menu_icons[link.handle] | inline_asset_content }}
             </span>
           {%- endif -%}
+          Handle: {{ link.handle }}
           <span>{{ link.title | escape }}</span>
         </a>
       </li>
