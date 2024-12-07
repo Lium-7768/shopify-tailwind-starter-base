@@ -44,7 +44,7 @@
           "settings": {
             "show_notification": true,
             "notification_link": "",
-            "icon_color": "#94A3B8"
+            "icon_color": "#94a3b8"
           }
         },
         "custom_account_wNra3N": {
@@ -65,6 +65,7 @@
       "settings": {
         "logo_position": "middle-left",
         "menu": "main-menu",
+        "menu_icons": "{  \"home\": \"icon-home.svg\",  \"shop\": \"icon-shop.svg\",  \"about\": \"icon-about.svg\"}",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
