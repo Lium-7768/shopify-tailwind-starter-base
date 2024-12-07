@@ -46,7 +46,7 @@
           "type": "text",
           "settings": {
             "heading": "Follow Us",
-            "subtext": "<p>Sign up to receive email about product launches, events, deals & more! </p>"
+            "subtext": ""
           }
         }
       },
