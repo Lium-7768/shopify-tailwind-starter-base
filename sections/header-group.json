@@ -16,6 +16,7 @@
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "Welcome to our store",
             "link": ""
@@ -38,6 +39,14 @@
     "header": {
       "type": "header",
       "blocks": {
+        "notification_ABepkm": {
+          "type": "notification",
+          "settings": {
+            "show_notification": true,
+            "notification_link": "",
+            "icon_color": "#94A3B8"
+          }
+        },
         "custom_account_wNra3N": {
           "type": "custom_account",
           "settings": {
@@ -50,6 +59,7 @@
         }
       },
       "block_order": [
+        "notification_ABepkm",
         "custom_account_wNra3N"
       ],
       "settings": {
