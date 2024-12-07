@@ -5,29 +5,18 @@
   {% render 'header-dropdown-menu' %}
 {% endcomment %}
 
-{% comment %} <details>
-  <summary>Menu Links Debug</summary>
-  {% for link in section.settings.menu.links %}
-    Title: {{ link.title }}
-    URL: {{ link.url }}
-    
-    ---
-  {% endfor %}
-</details> {% endcomment %}
-
 {%- assign menu_icons = section.settings.menu_icons | default: '{}' | json -%}
 
-<nav class='header__inline-menu'>
-  <ul class='list-menu list-menu--inline' role='list'>
+<nav class="twcss-relative">
+  <ul class="twcss-flex twcss-flex-wrap twcss-items-center twcss-gap-4" role="list">
     {%- for link in section.settings.menu.links -%}
       <li>
-        <a href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset">
+        <a href="{{ link.url }}" class="twcss-inline-flex twcss-items-center twcss-gap-2 twcss-px-3 twcss-py-2 twcss-text-gray-700 hover:twcss-text-gray-900 focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-offset-2 focus:twcss-ring-primary-500">
           {%- if menu_icons[link.handle] != blank -%}
-            <span class="menu-icon">
+            <span class="twcss-size-6">
               {{ menu_icons[link.handle] | inline_asset_content }}
             </span>
           {%- endif -%}
-          Handle: {{ link.handle }}
           <span>{{ link.title | escape }}</span>
         </a>
       </li>
