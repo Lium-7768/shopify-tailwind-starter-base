@@ -750,10 +750,6 @@ video {
   display: flex;
 }
 
-.twcss-inline-flex {
-  display: inline-flex;
-}
-
 .twcss-grid {
   display: grid;
 }
@@ -768,6 +764,11 @@ video {
 
 .twcss-aspect-square {
   aspect-ratio: 1 / 1;
+}
+
+.twcss-size-4 {
+  width: 1rem;
+  height: 1rem;
 }
 
 .twcss-size-6 {
@@ -941,6 +942,10 @@ video {
   flex-wrap: wrap;
 }
 
+.twcss-items-start {
+  align-items: flex-start;
+}
+
 .twcss-items-center {
   align-items: center;
 }
@@ -999,6 +1004,10 @@ video {
 .twcss-gap-x-\[20px\] {
   -moz-column-gap: 20px;
        column-gap: 20px;
+}
+
+.twcss-gap-y-1 {
+  row-gap: 0.25rem;
 }
 
 .twcss-gap-y-\[10px\] {
