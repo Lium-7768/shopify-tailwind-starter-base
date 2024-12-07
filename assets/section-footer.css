@@ -512,24 +512,3 @@
     }
   }
 }
-
-.footer-block {
-  flex: 1 1 auto;
-  min-width: 200px;
-  padding: 20px;
-}
-
-.footer-block h2 {
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-.footer-block ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-block li {
-  margin-bottom: 10px;
-}
