@@ -5,6 +5,11 @@
   {% render 'header-dropdown-menu' %}
 {% endcomment %}
 
+
+Menu Links Debug:
+{{ section.settings.menu.links | json }}
+
+
 {%- assign menu_icons = section.settings.menu_icons | default: '{}' | json -%}
 
 <nav class='header__inline-menu'>
