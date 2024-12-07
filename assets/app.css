@@ -750,6 +750,10 @@ video {
   display: flex;
 }
 
+.twcss-inline-flex {
+  display: inline-flex;
+}
+
 .twcss-grid {
   display: grid;
 }
@@ -884,6 +888,10 @@ video {
   width: 100%;
 }
 
+.twcss-max-w-11 {
+  max-width: 2.75rem;
+}
+
 .twcss-max-w-\[285px\] {
   max-width: 285px;
 }
@@ -927,6 +935,10 @@ video {
 
 .twcss-flex-col {
   flex-direction: column;
+}
+
+.twcss-flex-wrap {
+  flex-wrap: wrap;
 }
 
 .twcss-items-center {
