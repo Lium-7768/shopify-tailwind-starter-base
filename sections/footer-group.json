@@ -35,17 +35,17 @@
             "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
           }
         },
-        "custom_follow_8aWhP9": {
-          "type": "custom_follow",
-          "settings": {
-            "heading": "Follow Us"
-          }
-        },
         "custom_sign_up_REE3dr": {
           "type": "custom_sign_up",
           "settings": {
             "heading": "Sign Up for Updates",
             "text": "Sign up to receive email about product launches, events, deals & more! "
+          }
+        },
+        "custom_follow_8aWhP9": {
+          "type": "custom_follow",
+          "settings": {
+            "heading": "Follow Us"
           }
         }
       },
@@ -53,8 +53,8 @@
         "footer-0",
         "footer-1",
         "footer-2",
-        "custom_follow_8aWhP9",
-        "custom_sign_up_REE3dr"
+        "custom_sign_up_REE3dr",
+        "custom_follow_8aWhP9"
       ],
       "settings": {
         "color_scheme": "scheme-724c636d-524f-45cc-8653-dd35022bf3de",
