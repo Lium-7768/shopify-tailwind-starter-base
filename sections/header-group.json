@@ -65,7 +65,7 @@
       "settings": {
         "logo_position": "middle-left",
         "menu": "main-menu",
-        "menu_icons": "{  \"home\": \"icon-home.svg\",  \"orders\": \"icon-shop.svg\",  \"about\": \"icon-about.svg\"}",
+        "menu_icons": "{  \"quick-order\": \"icon-quick-order.svg\",  \"orders\": \"icon-shop.svg\",  \"about\": \"icon-about.svg\"}",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
