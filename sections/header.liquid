@@ -259,7 +259,7 @@
         {%- when '@app' -%}
           {% render block %}
         {%- when 'custom_account' -%}
-          {% render 'header-account-dropdown-menu', menuList: block %} 
+          {% render 'header-account-dropdown-menu', block: block %} 
       {%- endcase -%}
     {%- endfor -%}
 

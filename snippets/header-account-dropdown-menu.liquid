@@ -69,26 +69,41 @@
     <!-- Debug output -->
     <div class="twcss-p-4 twcss-text-sm">
       <pre>
-menuList class: {{ menuList.class }}
-menuList size: {{ menuList.size }}
-menuList items:
-{% for item in menuList %}
-  - title: {{ item.title }}
-  - url: {{ item.url }}
-  - type: {{ item.type }}
+Menu 1: {{ block.settings.account_menu_1 }}
+Menu 1 Links: 
+{% for link in linklists[block.settings.account_menu_1].links %}
+  - {{ link.title }}: {{ link.url }}
+{% endfor %}
+
+Menu 2: {{ block.settings.account_menu_2 }}
+Menu 2 Links:
+{% for link in linklists[block.settings.account_menu_2].links %}
+  - {{ link.title }}: {{ link.url }}
 {% endfor %}
       </pre>
     </div>
     
     <div class='twcss-py-1 twcss-z-10'>
-      {% for item in menuList %}
+      {% for link in linklists[block.settings.account_menu_1].links %}
         <a
-          href="{{ item.url }}"
+          href="{{ link.url }}"
           class="twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-secondary-light hover:twcss-bg-muted-light"
         >
-          {{ item.title }}
+          {{ link.title }}
         </a>
       {% endfor %}
+
+      {% if block.settings.account_menu_2 != blank %}
+        <div class="twcss-border-t twcss-border-muted-light"></div>
+        {% for link in linklists[block.settings.account_menu_2].links %}
+          <a
+            href="{{ link.url }}"
+            class="twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-secondary-light hover:twcss-bg-muted-light"
+          >
+            {{ link.title }}
+          </a>
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
 </div>
