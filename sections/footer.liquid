@@ -149,9 +149,6 @@
                       {%- if settings.brand_description != blank -%}
                         <div class='twcss-prose twcss-max-w-none'>{{ settings.brand_description }}</div>
                       {%- endif -%}
-                      {%- if block.settings.show_social and has_social_icons -%}
-                        {%- render 'social-icons', class: 'twcss-mt-4' -%}
-                      {%- endif -%}
                     </div>
                   {%- when 'image' -%}
                     <div class='twcss-space-y-4 {% if block.settings.alignment == "center" %}twcss-text-center{% elsif block.settings.alignment == "right" %}twcss-text-right{% endif %}'>
@@ -172,30 +169,14 @@
                         {{ 'image' | placeholder_svg_tag: 'twcss-w-full twcss-h-auto twcss-bg-gray-100' }}
                       {%- endif -%}
                     </div>
-                  {%- when 'custom_menu' %}
+                  {%- when 'custom_follow' %}
                     <div class="footer-block" {{ block.shopify_attributes }}>
                       {%- if block.settings.heading != blank -%}
                         <h2>{{ block.settings.heading }}</h2>
                       {%- endif -%}
                       
-                      {%- if block.settings.menu != blank -%}
-                        <ul>
-                          {%- for link in block.settings.menu.links -%}
-                            <li>
-                              <a href="{{ link.url }}">{{ link.title }}</a>
-                            </li>
-                          {%- endfor -%}
-                        </ul>
-                      {%- endif -%}
-                    </div>
-                  {%- when 'custom_text' %}
-                    <div class="footer-block" {{ block.shopify_attributes }}>
-                      {%- if block.settings.title != blank -%}
-                        <h2>{{ block.settings.title }}</h2>
-                      {%- endif -%}
-                      
-                      {%- if block.settings.content != blank -%}
-                        {{ block.settings.content }}
+                      {%- if block.settings.show_social and has_social_icons -%}
+                        {%- render 'social-icons', class: 'twcss-mt-4' -%}
                       {%- endif -%}
                     </div>
                 {%- endcase -%}
@@ -473,36 +454,13 @@
       ]
     },
     {
-      "type": "custom_menu",
-      "name": "自定义菜单",
-      "settings": [
-        {
-          "type": "text",
-          "id": "heading",
-          "label": "标题",
-          "default": "快速链接"
-        },
-        {
-          "type": "link_list",
-          "id": "menu",
-          "label": "菜单",
-          "default": "footer"
-        }
-      ]
-    },
-    {
-      "type": "custom_text",
-      "name": "自定义文本",
+      "type": "custom_follow",
+      "name": "Follow Us",
       "settings": [
         {
           "type": "text",
           "id": "title",
-          "label": "标题"
-        },
-        {
-          "type": "richtext",
-          "id": "content",
-          "label": "内容"
+          "label": "title"
         }
       ]
     }
