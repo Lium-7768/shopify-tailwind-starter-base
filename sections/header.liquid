@@ -250,9 +250,9 @@
       {{ 'icon-notification.svg' | inline_asset_content }}
     </span>
 
-    {%- if shop.customer_accounts_enabled -%}
+    {% comment %} {%- if shop.customer_accounts_enabled -%}
       {% render 'header-account-dropdown-menu' %}
-    {%- endif -%}
+    {%- endif -%} {% endcomment %}
 
     {%- for block in section.blocks -%}
       {%- case block.type -%}
