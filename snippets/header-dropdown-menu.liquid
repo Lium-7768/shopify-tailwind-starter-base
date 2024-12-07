@@ -14,11 +14,12 @@
     {%- for link in section.settings.menu.links -%}
       <li>
         <a href="{{ link.url }}" class="twcss-inline-flex twcss-items-center twcss-gap-2 twcss-px-3 twcss-py-2 twcss-text-gray-700 hover:twcss-text-gray-900 focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-offset-2 focus:twcss-ring-primary-500">
-          {%- assign icon_key = '"' | append: link.handle | append: '"' -%}
+          {%- assign icon_key = '"' | append: link.handle | append: '":"' -%}
           {%- if menu_icons_string contains icon_key -%}
-            {%- assign start_index = menu_icons_string | split: icon_key | last | split: ':' | last | remove: '"' | remove: '}' | strip -%}
+            {%- assign icon_part = menu_icons_string | split: icon_key | last -%}
+            {%- assign icon_name = icon_part | split: '"' | first -%}
             <span class="twcss-size-6">
-              {{ start_index | inline_asset_content }}
+              {{ icon_name | inline_asset_content }}
             </span>
           {%- endif -%}
           <span>{{ link.title | escape }}</span>
@@ -35,10 +36,11 @@
   <p>Menu icons string: {{ menu_icons_string }}</p>
   {%- for link in section.settings.menu.links -%}
     <p>Link handle: {{ link.handle }}</p>
-    {%- assign icon_key = '"' | append: link.handle | append: '"' -%}
+    {%- assign icon_key = '"' | append: link.handle | append: '":"' -%}
     {%- if menu_icons_string contains icon_key -%}
-      {%- assign start_index = menu_icons_string | split: icon_key | last | split: ':' | last | remove: '"' | remove: '}' | strip -%}
-      <p>Icon for handle: {{ start_index }}</p>
+      {%- assign icon_part = menu_icons_string | split: icon_key | last -%}
+      {%- assign icon_name = icon_part | split: '"' | first -%}
+      <p>Icon for handle: {{ icon_name }}</p>
     {%- endif -%}
   {%- endfor -%}
 </div>
