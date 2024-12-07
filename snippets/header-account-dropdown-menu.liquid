@@ -67,6 +67,12 @@
     data-account-dropdown
   >
     <div class='twcss-py-1 twcss-z-10'>
+      {% if block.settings.menu_1_title != blank %}
+        <div class="twcss-px-4 twcss-py-2 twcss-text-xs twcss-font-semibold twcss-text-secondary-light twcss-uppercase">
+          {{ block.settings.menu_1_title }}
+        </div>
+      {% endif %}
+      
       {% for link in linklists[block.settings.account_menu_1].links %}
         <a
           href="{{ link.url }}"
@@ -77,7 +83,13 @@
       {% endfor %}
 
       {% if block.settings.account_menu_2 != blank %}
-        <div class="twcss-border-t twcss-border-muted-light"></div>
+        {% if block.settings.menu_2_title != blank %}
+          <div class="twcss-border-t twcss-border-muted-light twcss-mt-2"></div>
+          <div class="twcss-px-4 twcss-py-2 twcss-text-xs twcss-font-semibold twcss-text-secondary-light twcss-uppercase">
+            {{ block.settings.menu_2_title }}
+          </div>
+        {% endif %}
+        
         {% for link in linklists[block.settings.account_menu_2].links %}
           <a
             href="{{ link.url }}"
