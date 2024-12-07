@@ -169,6 +169,10 @@
                         {{ 'image' | placeholder_svg_tag: 'twcss-w-full twcss-h-auto twcss-bg-gray-100' }}
                       {%- endif -%}
                     </div>
+                  {%- when 'custom_sign_up' %}
+                    <div class="twcss-space-y-5">
+                      {{ block.settings.text }}
+                    </div>
                   {%- when 'custom_follow' %}
                     <div class="twcss-space-y-5">
                       {%- if has_social_icons -%}
@@ -442,6 +446,17 @@
             }
           ],
           "default": "center"
+        }
+      ]
+    },
+    {
+      "type": "custom_sign_up",
+      "name": "Sign Up for Updates",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text"
         }
       ]
     },
