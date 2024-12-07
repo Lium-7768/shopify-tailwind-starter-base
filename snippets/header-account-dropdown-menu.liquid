@@ -66,13 +66,18 @@
     class='twcss-absolute twcss-z-10 twcss-right-0 twcss-mt-2 twcss-w-48 twcss-bg-muted-default twcss-rounded-md twcss-shadow-lg twcss-hidden'
     data-account-dropdown
   >
+    <!-- Debug output -->
+    <div class="twcss-p-4 twcss-text-sm">
+      <pre>menuList: {{ menuList | json }}</pre>
+    </div>
+    
     <div class='twcss-py-1 twcss-z-10'>
       {% for item in menuList %}
         <a
           href="{{ item.url }}"
           class="twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-secondary-light hover:twcss-bg-muted-light"
         >
-          {{ item.label }}
+          {{ item.title }}
         </a>
       {% endfor %}
     </div>
