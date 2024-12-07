@@ -12,9 +12,9 @@
     {%- for link in section.settings.menu.links -%}
       <li>
         <a href="{{ link.url }}" class="header__menu-item list-menu__item link link--text focus-inset">
-          {%- if menu_icons[link.handle] -%}
+          {%- if menu_icons[link.handle] != blank -%}
             <span class="menu-icon">
-              {{ menu_icons[link.handle] | inline_asset_content}}
+              {{ menu_icons[link.handle] | inline_asset_content }}
             </span>
           {%- endif -%}
           <span>{{ link.title | escape }}</span>
