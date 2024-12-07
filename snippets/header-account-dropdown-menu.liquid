@@ -100,12 +100,13 @@
         {% endfor %}
       {% endif %}
 
-      <div class="twcss-border-t twcss-border-muted-light twcss-mt-2"></div>
+      <div class="twcss-border-t twcss-border-secondary-middle !twcss-block"></div>
       <form method="post" action="{{ routes.account_logout_url }}">
         <button 
           type="submit" 
-          class="twcss-w-full twcss-text-left twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-red-500 hover:twcss-bg-muted-light"
+          class="twcss-font-bold twcss-text-primary-default"
         >
+          {{ 'icon-sign-out.svg' | inline_asset_content }}
           {{ block.settings.sign_out_text }}
         </button>
       </form>
