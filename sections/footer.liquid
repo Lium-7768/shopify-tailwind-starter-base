@@ -171,8 +171,8 @@
                     </div>
                   {%- when 'custom_follow' %}
                     <div class="twcss-space-y-5">
-                      {%- if settings.brand_headline != blank -%}
-                        <h2 class='twcss-text-lg twcss-font-semibold'>{{ settings.brand_headline }}</h2>
+                      {%- if settings.heading != blank -%}
+                        <h2 class='twcss-text-lg twcss-font-semibold'>{{ settings.heading }}</h2>
                       {%- endif -%}
                       {%- if has_social_icons -%}
                         {%- render 'social-icons', class: 'twcss-mt-5' -%}
