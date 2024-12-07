@@ -31,6 +31,7 @@ module.exports = {
           default: '#5F9DF7',
           foreground: '#E3F2FF',
           light: '#C2E3FF',
+          middle: '#BCBDB9',
         },
         destructive: {
           default: '#ff0000',
