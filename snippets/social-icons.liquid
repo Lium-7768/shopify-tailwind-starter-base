@@ -30,16 +30,6 @@
       </a>
     </li>
   {%- endif -%}
-  {%- if settings.social_facebook_link != blank -%}
-    <li class="list-social__item">
-      <a href="{{ settings.social_facebook_link }}" class="link list-social__link">
-        <span class="svg-wrapper">
-          {{- 'icon-facebook.svg' | inline_asset_content -}}
-        </span>
-        <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
-      </a>
-    </li>
-  {%- endif -%}
   {%- if settings.social_youtube_link != blank -%}
     <li class="list-social__item">
       <a href="{{ settings.social_youtube_link }}" class="link list-social__link">
@@ -54,7 +44,7 @@
     <li class="list-social__item">
       <a href="{{ settings.social_shopify_link }}" class="link list-social__link">
         <span class="svg-wrapper">
-          {{- 'icon-shopify.svg' | inline_asset_content -}}
+          {{- 'icon-shopify-footer.svg' | inline_asset_content -}}
         </span>
         <span class="visually-hidden">{{ 'general.social.links.shopify' | t }}</span>
       </a>
