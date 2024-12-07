@@ -171,77 +171,76 @@
                     </div>
                   {%- when 'custom_sign_up' %}
                     <div>
-                    <div class="twcss-space-y-5">
-                      {{ block.settings.text }}
-                    </div>
-                    <div class='footer-block__newsletter'>
-                      {%- if section.settings.newsletter_heading != blank -%}
-                        <h2 class='footer-block__heading inline-richtext'>{{ section.settings.newsletter_heading }}</h2>
-                      {%- endif -%}
-                      {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
-                        <input type='hidden' name='contact[tags]' value='newsletter'>
-                        <div class='newsletter-form__field-wrapper'>
-                          <div class='field'>
-                            <input
-                              id='NewsletterForm--{{ section.id }}'
-                              type='email'
-                              name='contact[email]'
-                              class='field__input'
-                              value='{{ form.email }}'
-                              aria-required='true'
-                              autocorrect='off'
-                              autocapitalize='off'
-                              autocomplete='email'
-                              {% if form.errors %}
-                                autofocus
-                                aria-invalid='true'
-                                aria-describedby='ContactFooter-error'
-                              {% elsif form.posted_successfully? %}
-                                aria-describedby='ContactFooter-success'
-                              {% endif %}
-                              placeholder='{{ 'newsletter.label' | t }}'
-                              required
-                            >
-                            <label class='field__label' for='NewsletterForm--{{ section.id }}'>
-                              {{ 'newsletter.label' | t }}
-                            </label>
-                            <button
-                              type='submit'
-                              class='newsletter-form__button field__button'
-                              name='commit'
-                              id='Subscribe'
-                              aria-label='{{ 'newsletter.button_label' | t }}'
-                            >
-                              <span class='svg-wrapper'>
-                                {{- 'icon-arrow.svg' | inline_asset_content -}}
-                              </span>
-                            </button>
-                          </div>
-                          {%- if form.errors -%}
-                            <small class='newsletter-form__message form__message' id='ContactFooter-error'>
-                              <span class='svg-wrapper'>
-                                {{- 'icon-error.svg' | inline_asset_content -}}
-                              </span>
-                              {{- form.errors.translated_fields.email | capitalize }}
-                              {{ form.errors.messages.email -}}
-                            </small>
-                          {%- endif -%}
-                        </div>
-                        {%- if form.posted_successfully? -%}
-                          <h3
-                            class='newsletter-form__message newsletter-form__message--success form__message'
-                            id='ContactFooter-success'
-                            tabindex='-1'
-                            autofocus
-                          >
-                            <span class='svg-wrapper'>
-                              {{- 'icon-success.svg' | inline_asset_content -}}
-                            </span>
-                            {{- 'newsletter.success' | t }}
-                          </h3>
+                      <div class="twcss-space-y-5">
+                        {{ block.settings.text }}
+                      </div>
+                      <div class='footer-block__newsletter'>
+                        {%- if section.settings.newsletter_heading != blank -%}
+                          <h2 class='footer-block__heading inline-richtext'>{{ section.settings.newsletter_heading }}</h2>
                         {%- endif -%}
-                      {%- endform -%}
-                    </div>
+                        {%- form 'customer', id: 'ContactFooter', class: 'twcss-space-y-4' -%}
+                          <input type='hidden' name='contact[tags]' value='newsletter'>
+                          <div class="twcss-relative">
+                            <div class="twcss-relative">
+                              <input
+                                id='NewsletterForm--{{ section.id }}'
+                                type='email'
+                                name='contact[email]'
+                                class="twcss-w-full twcss-rounded-[4px] twcss-border twcss-border-muted-default twcss-px-4 twcss-py-2 twcss-pr-12"
+                                value='{{ form.email }}'
+                                aria-required='true'
+                                autocorrect='off'
+                                autocapitalize='off'
+                                autocomplete='email'
+                                {% if form.errors %}
+                                  autofocus
+                                  aria-invalid='true'
+                                  aria-describedby='ContactFooter-error'
+                                {% elsif form.posted_successfully? %}
+                                  aria-describedby='ContactFooter-success'
+                                {% endif %}
+                                placeholder='{{ 'newsletter.label' | t }}'
+                                required
+                              >
+                              <button
+                                type='submit'
+                                class="twcss-absolute twcss-right-0 twcss-top-0 twcss-h-full twcss-px-3 twcss-flex twcss-items-center twcss-justify-center"
+                                name='commit'
+                                id='Subscribe'
+                                aria-label='{{ 'newsletter.button_label' | t }}'
+                              >
+                                <span class="twcss-w-5 twcss-h-5">
+                                  {{- 'icon-arrow.svg' | inline_asset_content -}}
+                                </span>
+                              </button>
+                            </div>
+                            
+                            {%- if form.errors -%}
+                              <small class="twcss-text-destructive-default twcss-flex twcss-items-center twcss-gap-2 twcss-mt-2" id='ContactFooter-error'>
+                                <span class="twcss-w-4 twcss-h-4">
+                                  {{- 'icon-error.svg' | inline_asset_content -}}
+                                </span>
+                                {{- form.errors.translated_fields.email | capitalize }}
+                                {{ form.errors.messages.email -}}
+                              </small>
+                            {%- endif -%}
+                          </div>
+                          
+                          {%- if form.posted_successfully? -%}
+                            <h3
+                              class="twcss-text-success-default twcss-flex twcss-items-center twcss-gap-2"
+                              id='ContactFooter-success'
+                              tabindex='-1'
+                              autofocus
+                            >
+                              <span class="twcss-w-4 twcss-h-4">
+                                {{- 'icon-success.svg' | inline_asset_content -}}
+                              </span>
+                              {{- 'newsletter.success' | t }}
+                            </h3>
+                          {%- endif -%}
+                        {%- endform -%}
+                      </div>
                     </div>
                   {%- when 'custom_follow' %}
                     <div class="twcss-space-y-5">
@@ -266,15 +265,15 @@
               {%- if section.settings.newsletter_heading != blank -%}
                 <h2 class='footer-block__heading inline-richtext'>{{ section.settings.newsletter_heading }}</h2>
               {%- endif -%}
-              {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
+              {%- form 'customer', id: 'ContactFooter', class: 'twcss-space-y-4' -%}
                 <input type='hidden' name='contact[tags]' value='newsletter'>
-                <div class='newsletter-form__field-wrapper'>
-                  <div class='field'>
+                <div class="twcss-relative">
+                  <div class="twcss-relative">
                     <input
                       id='NewsletterForm--{{ section.id }}'
                       type='email'
                       name='contact[email]'
-                      class='field__input'
+                      class="twcss-w-full twcss-rounded-[4px] twcss-border twcss-border-muted-default twcss-px-4 twcss-py-2 twcss-pr-12"
                       value='{{ form.email }}'
                       aria-required='true'
                       autocorrect='off'
@@ -290,24 +289,22 @@
                       placeholder='{{ 'newsletter.label' | t }}'
                       required
                     >
-                    <label class='field__label' for='NewsletterForm--{{ section.id }}'>
-                      {{ 'newsletter.label' | t }}
-                    </label>
                     <button
                       type='submit'
-                      class='newsletter-form__button field__button'
+                      class="twcss-absolute twcss-right-0 twcss-top-0 twcss-h-full twcss-px-3 twcss-flex twcss-items-center twcss-justify-center"
                       name='commit'
                       id='Subscribe'
                       aria-label='{{ 'newsletter.button_label' | t }}'
                     >
-                      <span class='svg-wrapper'>
+                      <span class="twcss-w-5 twcss-h-5">
                         {{- 'icon-arrow.svg' | inline_asset_content -}}
                       </span>
                     </button>
                   </div>
+                  
                   {%- if form.errors -%}
-                    <small class='newsletter-form__message form__message' id='ContactFooter-error'>
-                      <span class='svg-wrapper'>
+                    <small class="twcss-text-destructive-default twcss-flex twcss-items-center twcss-gap-2 twcss-mt-2" id='ContactFooter-error'>
+                      <span class="twcss-w-4 twcss-h-4">
                         {{- 'icon-error.svg' | inline_asset_content -}}
                       </span>
                       {{- form.errors.translated_fields.email | capitalize }}
@@ -315,14 +312,15 @@
                     </small>
                   {%- endif -%}
                 </div>
+                
                 {%- if form.posted_successfully? -%}
                   <h3
-                    class='newsletter-form__message newsletter-form__message--success form__message'
+                    class="twcss-text-success-default twcss-flex twcss-items-center twcss-gap-2"
                     id='ContactFooter-success'
                     tabindex='-1'
                     autofocus
                   >
-                    <span class='svg-wrapper'>
+                    <span class="twcss-w-4 twcss-h-4">
                       {{- 'icon-success.svg' | inline_asset_content -}}
                     </span>
                     {{- 'newsletter.success' | t }}
