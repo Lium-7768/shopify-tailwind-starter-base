@@ -69,11 +69,14 @@
     <!-- Debug output -->
     <div class="twcss-p-4 twcss-text-sm">
       <pre>
-menuList type: {{ menuList.type }}
-menuList: {{ menuList | json }}
-first item: {{ menuList.first | json }}
-all variables: {{ variables | json }}
-all: {{ all | json }}
+menuList class: {{ menuList.class }}
+menuList size: {{ menuList.size }}
+menuList items:
+{% for item in menuList %}
+  - title: {{ item.title }}
+  - url: {{ item.url }}
+  - type: {{ item.type }}
+{% endfor %}
       </pre>
     </div>
     
