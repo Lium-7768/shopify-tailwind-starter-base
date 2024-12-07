@@ -68,7 +68,13 @@
   >
     <!-- Debug output -->
     <div class="twcss-p-4 twcss-text-sm">
-      <pre>menuList: {{ menuList | json }}</pre>
+      <pre>
+menuList type: {{ menuList.type }}
+menuList: {{ menuList | json }}
+first item: {{ menuList.first | json }}
+all variables: {{ variables | json }}
+all: {{ all | json }}
+      </pre>
     </div>
     
     <div class='twcss-py-1 twcss-z-10'>
