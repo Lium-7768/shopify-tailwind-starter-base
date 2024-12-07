@@ -63,10 +63,10 @@
   </button>
 
   <div
-    class='twcss-absolute twcss-z-10 twcss-right-0 twcss-mt-2 twcss-w-48 twcss-bg-muted-default twcss-rounded-md twcss-shadow-lg twcss-hidden'
+    class='twcss-absolute twcss-right-0 twcss-mt-2 twcss-w-48 twcss-bg-muted-default twcss-rounded-md twcss-shadow-lg twcss-hidden'
     data-account-dropdown
   >
-    <div class='twcss-py-1 twcss-z-10'>
+    <div class='twcss-py-4'>
       {% if block.settings.menu_1_title != blank %}
         <div class="twcss-px-4 twcss-py-2 twcss-text-xs twcss-font-semibold twcss-text-accent-default twcss-uppercase">
           {{ block.settings.menu_1_title }}
@@ -84,7 +84,7 @@
 
       {% if block.settings.account_menu_2 != blank %}
         {% if block.settings.menu_2_title != blank %}
-          <div class="twcss-border-t twcss-border-muted-light twcss-mt-2"></div>
+          <div class="twcss-border-t twcss-border-secondary-middle"></div>
           <div class="twcss-px-4 twcss-py-2 twcss-text-xs twcss-font-semibold twcss-text-accent-default twcss-uppercase">
             {{ block.settings.menu_2_title }}
           </div>
