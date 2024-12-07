@@ -13,7 +13,7 @@
   <ul class="twcss-flex twcss-flex-wrap twcss-items-center twcss-gap-4" role="list">
     {%- for link in section.settings.menu.links -%}
       <li>
-        <a href="{{ link.url }}" class="twcss-inline-flex twcss-max-w-11 twcss-items-center twcss-gap-2 twcss-px-3 twcss-py-2 twcss-text-white hover:twcss-underline">
+        <a href="{{ link.url }}" class="twcss-flex twcss-flex-row twcss-items-center twcss-gap-x-2 twcss-text-white hover:twcss-underline">
           {%- assign icon_key = '"' | append: link.handle | append: '":"' -%}
           {%- if menu_icons_string contains icon_key -%}
             {%- assign icon_part = menu_icons_string | split: icon_key | last -%}
@@ -22,7 +22,7 @@
               {{ icon_name | inline_asset_content }}
             </span>
           {%- endif -%}
-          <span>{{ link.title | escape }}</span>
+          <span class="twcss-max-w-11">{{ link.title | escape }}</span>
         </a>
       </li>
     {%- endfor -%}
