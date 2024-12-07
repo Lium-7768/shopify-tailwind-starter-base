@@ -4512,6 +4512,10 @@ video {
   font-weight: 600;
 }
 
+.twcss-leading-\[12\.5px\] {
+  line-height: 12.5px;
+}
+
 .twcss-leading-\[22px\] {
   line-height: 22px;
 }
