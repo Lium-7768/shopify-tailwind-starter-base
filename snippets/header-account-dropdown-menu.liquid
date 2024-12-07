@@ -106,7 +106,9 @@
           type="submit" 
           class="twcss-font-bold twcss-text-primary-default"
         >
-          {{ 'icon-sign-out.svg' | inline_asset_content }}
+          <span class="size-6">
+            {{ 'icon-sign-out.svg' | inline_asset_content }}
+          </span>
           {{ block.settings.sign_out_text }}
         </button>
       </form>
