@@ -800,6 +800,10 @@ video {
   height: 3.5rem;
 }
 
+.twcss-h-4 {
+  height: 1rem;
+}
+
 .twcss-h-40 {
   height: 10rem;
 }
@@ -1071,6 +1075,10 @@ video {
 
 .twcss-rounded-\[10px\] {
   border-radius: 10px;
+}
+
+.twcss-rounded-\[4px\] {
+  border-radius: 4px;
 }
 
 .twcss-rounded-full {
