@@ -67,41 +67,14 @@
     data-account-dropdown
   >
     <div class='twcss-py-1 twcss-z-10'>
-      {%- if customer -%}
+      {% for item in menuList %}
         <a
-          href='{{ routes.account_url }}'
-          class='twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-accent-default hover:twcss-bg-gray-100'
+          href="{{ item.url }}"
+          class="twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-secondary-light hover:twcss-bg-muted-light"
         >
-          My Account
+          {{ item.title }}
         </a>
-        <a
-          href='{{ routes.account_orders_url }}'
-          class='twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-accent-default hover:twcss-bg-gray-100'
-        >
-          Orders
-        </a>
-        <form method='post' action='{{ routes.account_logout_url }}'>
-          <button
-            type='submit'
-            class='twcss-block twcss-w-full twcss-text-left twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-accent-default hover:twcss-bg-gray-100'
-          >
-            Log out
-          </button>
-        </form>
-      {%- else -%}
-        <a
-          href='{{ routes.account_login_url }}'
-          class='twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-accent-default hover:twcss-bg-gray-100'
-        >
-          Log in
-        </a>
-        <a
-          href='{{ routes.account_register_url }}'
-          class='twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-accent-default hover:twcss-bg-gray-100'
-        >
-          Create account
-        </a>
-      {%- endif -%}
+      {% endfor %}
     </div>
   </div>
 </div>
