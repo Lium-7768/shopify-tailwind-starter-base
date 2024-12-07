@@ -42,11 +42,10 @@
             "subtext": "<p>Sign up to receive email about product launches, events, deals & more! </p>"
           }
         },
-        "text_HcMeA4": {
-          "type": "text",
+        "custom_follow_aHy3Gg": {
+          "type": "custom_follow",
           "settings": {
-            "heading": "Follow Us",
-            "subtext": ""
+            "heading": "Follow Us"
           }
         }
       },
@@ -55,7 +54,7 @@
         "footer-1",
         "footer-2",
         "text_UinC67",
-        "text_HcMeA4"
+        "custom_follow_aHy3Gg"
       ],
       "settings": {
         "color_scheme": "scheme-724c636d-524f-45cc-8653-dd35022bf3de",
