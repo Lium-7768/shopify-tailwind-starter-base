@@ -35,11 +35,10 @@
             "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
           }
         },
-        "text_UinC67": {
-          "type": "text",
+        "custom_sign_up_eKYi4p": {
+          "type": "custom_sign_up",
           "settings": {
-            "heading": "Sign Up for Updates",
-            "subtext": "<p>Sign up to receive email about product launches, events, deals & more! </p>"
+            "text": ""
           }
         },
         "custom_follow_8aWhP9": {
@@ -53,7 +52,7 @@
         "footer-0",
         "footer-1",
         "footer-2",
-        "text_UinC67",
+        "custom_sign_up_eKYi4p",
         "custom_follow_8aWhP9"
       ],
       "settings": {
