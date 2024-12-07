@@ -11,7 +11,7 @@
   <ul class="twcss-flex twcss-flex-wrap twcss-items-center twcss-gap-4" role="list">
     {%- for link in section.settings.menu.links -%}
       <li>
-        <a href="{{ link.url }}" data-data="{{ menu_icons[link.handle] }}" class="twcss-inline-flex twcss-items-center twcss-gap-2 twcss-px-3 twcss-py-2 twcss-text-gray-700 hover:twcss-text-gray-900 focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-offset-2 focus:twcss-ring-primary-500">
+        <a href="{{ link.url }}" data-data="{{ menu_icons }}" data-data1="{{ link.handle }}" class="twcss-inline-flex twcss-items-center twcss-gap-2 twcss-px-3 twcss-py-2 twcss-text-gray-700 hover:twcss-text-gray-900 focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-offset-2 focus:twcss-ring-primary-500">
           {%- if menu_icons[link.handle] != blank -%}
             <span class="twcss-size-6">
               {{ menu_icons[link.handle] | inline_asset_content }}
