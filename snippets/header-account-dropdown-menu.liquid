@@ -37,7 +37,7 @@
       rel='nofollow'
     >
       <span class='twcss-size-6 twcss-text-secondary-light'>{{ 'icon-account.svg' | inline_asset_content }}</span>
-      <span class='twcss-font-semibold twcss-text-sm'> Frank </span>
+      <span class='twcss-font-semibol'> Frank </span>
     </a>
   {%- endif -%}
 {% endcomment %}
@@ -50,7 +50,7 @@
     <span class='twcss-size-6 twcss-text-secondary-light'>
       {{ 'icon-account.svg' | inline_asset_content }}
     </span>
-    <span class='twcss-font-semibold twcss-text-sm'>
+    <span class='twcss-font-semibol'>
       {%- if customer -%}
         {{ customer.first_name }}
       {%- else -%}
@@ -66,9 +66,9 @@
     class='twcss-absolute twcss-right-0 twcss-mt-2 twcss-w-48 twcss-bg-muted-default twcss-rounded-md twcss-shadow-lg twcss-hidden'
     data-account-dropdown
   >
-    <div class='twcss-py-4'>
+    <div class='twcss-py-4 twcss-text-sm'>
       {% if block.settings.menu_1_title != blank %}
-        <div class="twcss-px-4 twcss-py-2 twcss-text-xs twcss-font-semibold twcss-text-accent-default twcss-uppercase">
+        <div class="twcss-font-semibold twcss-text-accent-default twcss-uppercase">
           {{ block.settings.menu_1_title }}
         </div>
       {% endif %}
@@ -76,7 +76,7 @@
       {% for link in linklists[block.settings.account_menu_1].links %}
         <a
           href="{{ link.url }}"
-          class="twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-accent-default hover:twcss-bg-muted-light"
+          class="twcss-block twcss-text-accent-default hover:twcss-bg-muted-light"
         >
           {{ link.title }}
         </a>
@@ -84,8 +84,8 @@
 
       {% if block.settings.account_menu_2 != blank %}
         {% if block.settings.menu_2_title != blank %}
-          <div class="twcss-border-t twcss-border-secondary-middle"></div>
-          <div class="twcss-px-4 twcss-py-2 twcss-text-xs twcss-font-semibold twcss-text-accent-default twcss-uppercase">
+          <div class="twcss-border-t twcss-border-secondary-middle twcss-block"></div>
+          <div class="twcss-font-semibold twcss-text-accent-default twcss-uppercase">
             {{ block.settings.menu_2_title }}
           </div>
         {% endif %}
@@ -93,7 +93,7 @@
         {% for link in linklists[block.settings.account_menu_2].links %}
           <a
             href="{{ link.url }}"
-            class="twcss-block twcss-px-4 twcss-py-2 twcss-text-sm twcss-text-accent-default hover:twcss-bg-muted-light"
+            class="twcss-block twcss-text-accent-default hover:twcss-bg-muted-light"
           >
             {{ link.title }}
           </a>
