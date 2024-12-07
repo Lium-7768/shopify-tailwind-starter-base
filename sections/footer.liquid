@@ -171,12 +171,8 @@
                     </div>
                   {%- when 'custom_follow' %}
                     <div class="footer-block" {{ block.shopify_attributes }}>
-                      {%- if block.settings.heading != blank -%}
-                        <h2>{{ block.settings.heading }}</h2>
-                      {%- endif -%}
-                      
                       {%- if has_social_icons -%}
-                        {%- render 'social-icons', class: 'twcss-mt-4' -%}
+                        {%- render 'social-icons', class: 'twcss-mt-5' -%}
                       {%- endif -%}
                     </div>
                 {%- endcase -%}
@@ -458,11 +454,10 @@
       "name": "Follow Us",
       "settings": [
         {
-          "type": "inline_richtext",
-          "id": "heading",
-          "default": "t:sections.footer.blocks.text.settings.heading.default",
-          "label": "t:sections.footer.blocks.text.settings.heading.label"
-        },
+          "type": "text",
+          "id": "title",
+          "label": "title"
+        }
       ]
     }
   ],
