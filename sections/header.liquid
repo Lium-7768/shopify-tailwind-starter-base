@@ -246,20 +246,24 @@
       endif
     %}
 
-    <span class='twcss-size-6 twcss-text-secondary-light twcss-ml-4 twcss-mr-2'>
-      {{ 'icon-notification.svg' | inline_asset_content }}
-    </span>
-
-    {% comment %} {%- if shop.customer_accounts_enabled -%}
-      {% render 'header-account-dropdown-menu' %}
-    {%- endif -%} {% endcomment %}
-
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when '@app' -%}
           {% render block %}
         {%- when 'custom_account' -%}
-          {% render 'header-account-dropdown-menu', block: block %} 
+          {% render 'header-account-dropdown-menu', block: block %}
+        {%- when 'notification' -%}
+          {%- if block.settings.show_notification -%}
+            <a 
+              href="{{ block.settings.notification_link }}" 
+              class="twcss-size-6 twcss-text-secondary-light twcss-ml-4 twcss-mr-2"
+              {% if block.settings.icon_color != blank %}
+                style="color: {{ block.settings.icon_color }};"
+              {% endif %}
+            >
+              {{ 'icon-notification.svg' | inline_asset_content }}
+            </a>
+          {%- endif -%}
       {%- endcase -%}
     {%- endfor -%}
 
@@ -686,6 +690,29 @@
           "id": "sign_out_text",
           "label": "Sign Out Button Text",
           "default": "Sign Out"
+        }
+      ]
+    },
+    {
+      "type": "notification",
+      "name": "Notification Icon",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_notification",
+          "label": "Show Notification Icon",
+          "default": true
+        },
+        {
+          "type": "url",
+          "id": "notification_link",
+          "label": "Notification Link"
+        },
+        {
+          "type": "color",
+          "id": "icon_color",
+          "label": "Icon Color",
+          "default": "#94A3B8"
         }
       ]
     }
