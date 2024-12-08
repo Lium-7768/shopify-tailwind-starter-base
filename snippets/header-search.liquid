@@ -19,13 +19,25 @@
         name="q"
         value="{{ search.terms | escape }}"
         placeholder="{{ 'general.search.search' | t }}"
+        {%- if settings.predictive_search_enabled -%}
+          role="combobox"
+          aria-expanded="false"
+          aria-owns="predictive-search-results"
+          aria-controls="predictive-search-results"
+          aria-haspopup="listbox"
+          aria-autocomplete="list"
+          autocorrect="off"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+        {%- endif -%}
       >
         <button
           type="reset"
-          class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
+          class="twcss-absolute twcss-right-12 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %}twcss-hidden{% endif %}"
           aria-label="{{ 'general.search.reset' | t }}"
         >
-          <span class="svg-wrapper">
+          <span class="twcss-size-6">
             {{- 'icon-reset.svg' | inline_asset_content -}}
           </span>
         </button>
@@ -91,7 +103,7 @@
                 class="twcss-absolute twcss-right-12 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %}twcss-hidden{% endif %}"
                 aria-label="{{ 'general.search.reset' | t }}"
               >
-                <span class="twcss-w-5 twcss-h-5">
+                <span class="twcss-size-6">
                   {{- 'icon-reset.svg' | inline_asset_content -}}
                 </span>
               </button>
@@ -99,7 +111,7 @@
                 class="twcss-absolute twcss-right-2 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110"
                 aria-label="{{ 'general.search.search' | t }}"
               >
-                <span class="twcss-w-5 twcss-h-5">
+                <span class="twcss-size-6">
                   {{- 'icon-search.svg' | inline_asset_content -}}
                 </span>
               </button>
