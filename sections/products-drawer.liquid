@@ -225,25 +225,23 @@
       const trigger = document.getElementById('products-drawer-trigger');
       
       if (trigger) {
-        trigger.addEventListener('click', () => {
-          this.open();
-        });
+        trigger.addEventListener('click', () => this.open());
       }
 
-      // 关闭按钮事件
+      // Close button events
       this.closeButtons.forEach(button => {
         button.addEventListener('click', () => this.close());
       });
 
-      // 点击遮罩层关闭
+      // Close when clicking overlay
       this.drawer.addEventListener('click', (e) => {
-        // 如果点击的是遮罩层（drawer 本身或 overlay），则关闭抽屉
+        // Close drawer if clicking on drawer background or overlay
         if (e.target === this.drawer || e.target === this.overlay) {
           this.close();
         }
       });
 
-      // ESC 键关闭
+      // Close on ESC key
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && this.drawer.style.display === 'block') {
           this.close();
@@ -252,7 +250,6 @@
     }
 
     open() {
-      console.log('Opening drawer');
       this.drawer.style.display = 'block';
       document.body.style.overflow = 'hidden';
       
@@ -263,7 +260,6 @@
     }
 
     close() {
-      console.log('Closing drawer');
       const drawer = this.drawer.querySelector('.twcss-max-w-md');
       drawer.classList.add('twcss-animate-slide-out');
       
@@ -275,7 +271,7 @@
     }
   }
 
-  // 确保在 DOM 完全加载后再定义自定义元素
+  // Initialize custom element after DOM is fully loaded
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       customElements.define('products-drawer', ProductsDrawer);
