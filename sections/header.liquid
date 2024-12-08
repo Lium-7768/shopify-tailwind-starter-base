@@ -110,14 +110,6 @@
 
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 
-{%- liquid
-  for block in section.blocks
-    if block.type == '@app'
-      assign has_app_block = true
-    endif
-  endfor
--%}
-
 <{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
   {%- liquid
     assign social_links = false
@@ -160,10 +152,10 @@
       </h1>
     {%- endif -%}
 
-    <div class="twcss-py-2 twcss-px-3 twcss-border twcss-border-secondary-default twcss-font-bold twcss-rounded-md twcss-mr-5 twcss-ml-6 twcss-transition-colors twcss-flex twcss-items-center twcss-gap-2">
+    <products-toggle class="twcss-py-2 twcss-px-3 twcss-border twcss-border-secondary-default twcss-font-bold twcss-rounded twcss-mr-5 twcss-ml-6 twcss-transition-colors twcss-flex twcss-items-center twcss-gap-2 twcss-cursor-pointer">
       <span class='twcss-size-6'>{{'icon-hamburger.svg' | inline_asset_content }}</span>
       Products
-    </div>
+    </products-toggle>
 
     {% comment %} {% render 'header-address-dropdown-menu' %} {% endcomment %}
 
