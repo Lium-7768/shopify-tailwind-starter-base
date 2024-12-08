@@ -241,7 +241,7 @@
       {%- endif -%}
     </a> {% endcomment %}
 
-    <a href="{{ routes.cart_url }}" class="twcss-flex twcss-items-center twcss-gap-x-1 twcss-ml-4 twcss-rounded twcss-bg-secondary-default twcss-font-semibold twcss-py-2 twcss-px-4 twcss-text-white" id="cart-icon-bubble">
+    {% comment %} <a href="{{ routes.cart_url }}" class="twcss-flex twcss-items-center twcss-gap-x-1 twcss-ml-4 twcss-rounded twcss-bg-secondary-default twcss-font-semibold twcss-py-2 twcss-px-4 twcss-text-white" id="cart-icon-bubble">
       <div class="twcss-flex twcss-items-center twcss-gap-x-1">
         <span class="twcss-size-6">{{'icon-cart.svg' | inline_asset_content }}</span>
         <span>
@@ -254,7 +254,7 @@
       <span class="">
         {{ cart.total_price | money_without_trailing_zeros }}
       </span>
-    </a>
+    </a> {% endcomment %}
     
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
