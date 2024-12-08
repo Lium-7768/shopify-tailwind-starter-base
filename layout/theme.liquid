@@ -310,11 +310,11 @@
       {{ 'accessibility.skip_to_text' | t }}
     </a>
 
+    {%- section 'products-drawer' -%}
+
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
     {%- endif -%}
-
-    {%- section 'products-drawer' -%}
 
     {% sections 'header-group' %}
 
