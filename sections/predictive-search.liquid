@@ -6,9 +6,6 @@
     | plus: predictive_search.resources.articles.size
   %}
   <div id="predictive-search-results" role="listbox">
-    <div class="twcss-p-4 twcss-text-sm twcss-text-gray-500">
-      Search terms: {{ predictive_search.terms | escape }}
-    </div>
     {%- if first_column_results_size > 0 or predictive_search.resources.products.size > 0 -%}
       <div
         id="predictive-search-results-groups-wrapper"
