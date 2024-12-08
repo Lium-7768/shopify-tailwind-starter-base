@@ -8,39 +8,39 @@
   {% render 'header-search', input_id: 'My-Id'%}
 {% endcomment %}
 
-<details-modal class="relative">
+<details-modal class="twcss-relative">
   <details>
     <summary
-      class="flex items-center justify-center w-10 h-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary cursor-pointer"
+      class="twcss-flex twcss-items-center twcss-cursor-pointer twcss-focus:outline-none twcss-focus:ring-2 twcss-focus:ring-offset-2"
       aria-haspopup="dialog"
       aria-label="{{ 'general.search.search' | t }}"
     >
-      <span class="relative">
-        <span class="block">
+      <span class="twcss-flex twcss-items-center">
+        <span class="twcss-w-6 twcss-h-6">
           {{- 'icon-search.svg' | inline_asset_content -}}
         </span>
-        <span class="hidden group-open:block absolute top-0 left-0">
+        <span class="twcss-w-6 twcss-h-6 twcss-hidden group-open:twcss-block">
           {{- 'icon-close.svg' | inline_asset_content -}}
         </span>
       </span>
     </summary>
     <div
-      class="fixed inset-0 z-50 bg-gradient-to-b from-background/80 to-background"
+      class="twcss-fixed twcss-inset-0 twcss-bg-gradient-to-b twcss-from-background"
       role="dialog"
       aria-modal="true"
       aria-label="{{ 'general.search.search' | t }}"
     >
-      <div class="absolute inset-0 bg-black/40"></div>
-      <div class="relative w-full max-w-2xl mx-auto mt-20 px-4">
+      <div class="twcss-absolute twcss-inset-0 twcss-bg-black/50"></div>
+      <div class="twcss-relative twcss-w-full twcss-max-w-2xl twcss-mx-auto twcss-mt-20 twcss-p-4">
         {%- if settings.predictive_search_enabled -%}
-          <predictive-search class="w-full" data-loading-text="{{ 'accessibility.loading' | t }}">
+          <predictive-search class="twcss-block" data-loading-text="{{ 'accessibility.loading' | t }}">
         {%- else -%}
-          <search-form class="w-full">
+          <search-form class="twcss-block">
         {%- endif -%}
-        <form action="{{ routes.search_url }}" method="get" role="search" class="relative">
-          <div class="relative">
+        <form action="{{ routes.search_url }}" method="get" role="search" class="twcss-relative">
+          <div class="twcss-relative">
             <input
-              class="w-full h-12 pl-4 pr-24 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+              class="twcss-w-full twcss-pl-4 twcss-pr-24 twcss-py-2 twcss-border twcss-rounded-lg"
               id="{{ input_id }}"
               type="search"
               name="q"
@@ -59,33 +59,33 @@
                 spellcheck="false"
               {%- endif -%}
             >
-            <label class="sr-only" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
+            <label class="twcss-sr-only" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
             <input type="hidden" name="options[prefix]" value="last">
             <button
               type="reset"
-              class="absolute right-12 top-1/2 -translate-y-1/2 p-2 hover:scale-110 transition-transform{% if search.terms == blank %} hidden{% endif %}"
+              class="twcss-absolute twcss-right-12 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %}twcss-hidden{% endif %}"
               aria-label="{{ 'general.search.reset' | t }}"
             >
-              <span class="block w-5 h-5">
+              <span class="twcss-w-5 twcss-h-5">
                 {{- 'icon-reset.svg' | inline_asset_content -}}
               </span>
             </button>
             <button 
-              class="absolute right-2 top-1/2 -translate-y-1/2 p-2 hover:scale-110 transition-transform"
+              class="twcss-absolute twcss-right-2 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110"
               aria-label="{{ 'general.search.search' | t }}"
             >
-              <span class="block w-5 h-5">
+              <span class="twcss-w-5 twcss-h-5">
                 {{- 'icon-search.svg' | inline_asset_content -}}
               </span>
             </button>
           </div>
 
           {%- if settings.predictive_search_enabled -%}
-            <div class="mt-4" tabindex="-1" data-predictive-search>
-              {%- render 'loading-spinner', class: 'mx-auto' -%}
+            <div class="twcss-mt-4" tabindex="-1" data-predictive-search>
+              {%- render 'loading-spinner', class: 'twcss-mx-auto' -%}
             </div>
 
-            <span class="sr-only" role="status" aria-hidden="true"></span>
+            <span class="twcss-sr-only" role="status" aria-hidden="true"></span>
           {%- endif -%}
         </form>
         {%- if settings.predictive_search_enabled -%}
@@ -95,10 +95,10 @@
         {%- endif -%}
         <button
           type="button"
-          class="absolute top-4 right-4 p-2 hover:scale-110 transition-transform focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+          class="twcss-absolute twcss-top-4 twcss-right-4 twcss-p-2 hover:twcss-scale-110 twcss-focus:outline-none twcss-focus:ring-2 twcss-focus:ring-offset-2"
           aria-label="{{ 'accessibility.close' | t }}"
         >
-          <span class="block w-5 h-5">
+          <span class="twcss-w-6 twcss-h-6">
             {{- 'icon-close.svg' | inline_asset_content -}}
           </span>
         </button>
