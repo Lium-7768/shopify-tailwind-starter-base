@@ -819,11 +819,6 @@ video {
   height: 1rem;
 }
 
-.twcss-size-5 {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
 .twcss-size-6 {
   width: 1.5rem;
   height: 1.5rem;
@@ -923,10 +918,6 @@ video {
 
 .twcss-w-\[210px\] {
   width: 210px;
-}
-
-.twcss-w-\[280px\] {
-  width: 280px;
 }
 
 .twcss-w-\[var\(--page-width\)\] {
