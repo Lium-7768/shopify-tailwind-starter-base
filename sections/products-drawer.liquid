@@ -79,14 +79,11 @@
       super();
       this.drawer = this.querySelector('#products-drawer');
       this.closeButtons = this.querySelectorAll('.products-drawer-close');
-      this.trigger = document.getElementById('products-drawer-trigger');
       this.bindEvents();
     }
 
     bindEvents() {
-      if (this.trigger) {
-        this.trigger.addEventListener('click', () => this.open());
-      }
+      document.getElementById('products-drawer-trigger')?.addEventListener('click', () => this.open());
 
       this.closeButtons.forEach(button => {
         button.addEventListener('click', this.close.bind(this));
