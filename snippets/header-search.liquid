@@ -52,7 +52,7 @@
       </div>
 
       {%- if settings.predictive_search_enabled -%}
-        <div class="twcss-absolute twcss-left-0 twcss-right-0 twcss-mt-1 twcss-bg-white twcss-rounded twcss-border twcss-border-primary-default twcss-text-accent-default {% if search.terms == blank %} twcss-hidden{% endif %}" tabindex="-1" data-predictive-search>
+        <div class="twcss-absolute twcss-left-0 twcss-right-0 twcss-mt-1 twcss-bg-white twcss-rounded twcss-border twcss-border-primary-default twcss-text-accent-default {% if search.terms == blank %} hidden{% endif %}" tabindex="-1" data-predictive-search>
           {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
         </div>
 
