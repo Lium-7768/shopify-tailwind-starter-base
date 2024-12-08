@@ -6,10 +6,16 @@
 
 <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
 {%- if cart != empty -%}
-  <div class="cart-count-bubble">
-    {%- if cart.item_count < 100 -%}
-      <span aria-hidden="true">{{ cart.item_count }}</span>
-    {%- endif -%}
-    <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+  <div class="twcss-flex twcss-items-center twcss-gap-x-1">
+    <span class="twcss-size-6">{{'icon-cart.svg' | inline_asset_content }}</span>
+    <span>
+      {{ 'sections.header.cart_count' | t: count: cart.item_count }}
+    </span>
   </div>
+  <span>
+    |
+  </span>
+  <span class="">
+    {{ cart.total_price | money_without_trailing_zeros }}
+  </span>
 {%- endif -%}
