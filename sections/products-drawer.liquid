@@ -28,10 +28,9 @@
 
 <products-drawer>
   <div id="products-drawer" class="twcss-fixed twcss-inset-0 twcss-z-50 twcss-overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true" style="display: none;">
-    <div class="twcss-absolute twcss-inset-0 twcss-overflow-hidden">
-      <!-- Overlay -->
-      <div class="products-drawer-overlay twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity" aria-hidden="true"></div>
-      
+    <div class="products-drawer-overlay twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity" aria-hidden="true"></div>
+    
+    <div class="twcss-absolute twcss-inset-0 twcss-overflow-hidden twcss-pointer-events-none">
       <div class="twcss-pointer-events-none twcss-fixed twcss-inset-y-0 twcss-left-0 twcss-flex twcss-max-w-full">
         <div class="twcss-pointer-events-auto twcss-w-screen twcss-max-w-md">
           <div class="twcss-flex twcss-h-full twcss-flex-col twcss-overflow-y-scroll twcss-bg-white">
@@ -224,12 +223,9 @@
 
     bindEvents() {
       const trigger = document.getElementById('products-drawer-trigger');
-      console.log('Trigger element:', trigger);
       
       if (trigger) {
-        console.log('Adding click listener to trigger');
         trigger.addEventListener('click', () => {
-          console.log('Trigger clicked');
           this.open();
         });
       }
@@ -240,7 +236,12 @@
       });
 
       // 点击遮罩层关闭
-      this.overlay.addEventListener('click', () => this.close());
+      this.drawer.addEventListener('click', (e) => {
+        // 如果点击的是遮罩层（drawer 本身或 overlay），则关闭抽屉
+        if (e.target === this.drawer || e.target === this.overlay) {
+          this.close();
+        }
+      });
 
       // ESC 键关闭
       document.addEventListener('keydown', (e) => {
