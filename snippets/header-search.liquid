@@ -32,9 +32,6 @@
           spellcheck="false"
         {%- endif -%}
       >
-        <div class="twcss-mt-2 twcss-text-sm twcss-text-gray-500">
-          Current search terms: {{ search.terms | escape }}
-        </div>
         <button
           type="reset"
           class="twcss-absolute twcss-right-12 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %}twcss-hidden{% endif %}"
@@ -106,18 +103,18 @@
                 class="twcss-absolute twcss-right-12 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %} hidden{% endif %}"
                 aria-label="{{ 'general.search.reset' | t }}"
               >
-                <span class="twcss-size-6">
+                <span class="twcss-size-6 twcss-text-accent-default">
                   {{- 'icon-reset.svg' | inline_asset_content -}}
                 </span>
               </button>
-              <button 
+              {% comment %} <button 
                 class="twcss-absolute twcss-right-2 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110"
                 aria-label="{{ 'general.search.search' | t }}"
               >
                 <span class="twcss-size-6">
                   {{- 'icon-search.svg' | inline_asset_content -}}
                 </span>
-              </button>
+              </button> {% endcomment %}
             </div>
 
             {%- if settings.predictive_search_enabled -%}
