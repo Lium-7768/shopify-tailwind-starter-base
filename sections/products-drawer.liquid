@@ -74,13 +74,20 @@
       super();
       this.drawer = this.querySelector('#products-drawer');
       this.closeButtons = this.querySelectorAll('.products-drawer-close');
-      this.bindEvents();
+      // 延迟绑定事件，确保所有元素都已加载
+      window.addEventListener('DOMContentLoaded', () => this.bindEvents());
     }
 
     bindEvents() {
       const trigger = document.getElementById('products-drawer-trigger');
+      console.log('Trigger element:', trigger); // Debug log
+      
       if (trigger) {
-        trigger.addEventListener('click', () => this.open());
+        console.log('Adding click listener to trigger'); // Debug log
+        trigger.addEventListener('click', () => {
+          console.log('Trigger clicked'); // Debug log
+          this.open();
+        });
       }
 
       this.closeButtons.forEach(button => {
@@ -126,7 +133,14 @@
     }
   }
 
-  customElements.define('products-drawer', ProductsDrawer);
+  // 确保在 DOM 完全加载后再定义自定义元素
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      customElements.define('products-drawer', ProductsDrawer);
+    });
+  } else {
+    customElements.define('products-drawer', ProductsDrawer);
+  }
 </script>
 
 {% schema %}
