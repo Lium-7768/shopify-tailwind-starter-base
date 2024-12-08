@@ -652,10 +652,6 @@ video {
   right: 0px;
 }
 
-.twcss-right-12 {
-  right: 3rem;
-}
-
 .twcss-right-3 {
   right: 0.75rem;
 }
@@ -8121,4 +8117,8 @@ video {
 
 .\[\&\:\:-webkit-search-results-decoration\]\:twcss-hidden::-webkit-search-results-decoration {
   display: none;
+}
+
+.\[\&\[open\]\]\:twcss-block[open] {
+  display: block;
 }
