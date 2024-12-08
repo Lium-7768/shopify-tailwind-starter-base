@@ -8,42 +8,39 @@
   {% render 'header-search', input_id: 'My-Id'%}
 {% endcomment %}
 
-<details-modal class="header__search">
+<details-modal class="relative">
   <details>
     <summary
-      class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle"
+      class="flex items-center justify-center w-10 h-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary cursor-pointer"
       aria-haspopup="dialog"
       aria-label="{{ 'general.search.search' | t }}"
     >
-      <span>
-        <span class="svg-wrapper">
+      <span class="relative">
+        <span class="block">
           {{- 'icon-search.svg' | inline_asset_content -}}
         </span>
-        <span class="svg-wrapper header__icon-close">
+        <span class="hidden group-open:block absolute top-0 left-0">
           {{- 'icon-close.svg' | inline_asset_content -}}
         </span>
       </span>
     </summary>
     <div
-      class="search-modal modal__content gradient"
+      class="fixed inset-0 z-50 bg-gradient-to-b from-background/80 to-background"
       role="dialog"
       aria-modal="true"
       aria-label="{{ 'general.search.search' | t }}"
     >
-      <div class="modal-overlay"></div>
-      <div
-        class="search-modal__content{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} search-modal__content-top{% else %} search-modal__content-bottom{% endif %}"
-        tabindex="-1"
-      >
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="relative w-full max-w-2xl mx-auto mt-20 px-4">
         {%- if settings.predictive_search_enabled -%}
-          <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+          <predictive-search class="w-full" data-loading-text="{{ 'accessibility.loading' | t }}">
         {%- else -%}
-          <search-form class="search-modal__form">
+          <search-form class="w-full">
         {%- endif -%}
-        <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
-          <div class="field">
+        <form action="{{ routes.search_url }}" method="get" role="search" class="relative">
+          <div class="relative">
             <input
-              class="search__input field__input"
+              class="w-full h-12 pl-4 pr-24 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
               id="{{ input_id }}"
               type="search"
               name="q"
@@ -62,30 +59,33 @@
                 spellcheck="false"
               {%- endif -%}
             >
-            <label class="field__label" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
+            <label class="sr-only" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
             <input type="hidden" name="options[prefix]" value="last">
             <button
               type="reset"
-              class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
+              class="absolute right-12 top-1/2 -translate-y-1/2 p-2 hover:scale-110 transition-transform{% if search.terms == blank %} hidden{% endif %}"
               aria-label="{{ 'general.search.reset' | t }}"
             >
-              <span class="svg-wrapper">
+              <span class="block w-5 h-5">
                 {{- 'icon-reset.svg' | inline_asset_content -}}
               </span>
             </button>
-            <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-              <span class="svg-wrapper">
+            <button 
+              class="absolute right-2 top-1/2 -translate-y-1/2 p-2 hover:scale-110 transition-transform"
+              aria-label="{{ 'general.search.search' | t }}"
+            >
+              <span class="block w-5 h-5">
                 {{- 'icon-search.svg' | inline_asset_content -}}
               </span>
             </button>
           </div>
 
           {%- if settings.predictive_search_enabled -%}
-            <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
-              {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
+            <div class="mt-4" tabindex="-1" data-predictive-search>
+              {%- render 'loading-spinner', class: 'mx-auto' -%}
             </div>
 
-            <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+            <span class="sr-only" role="status" aria-hidden="true"></span>
           {%- endif -%}
         </form>
         {%- if settings.predictive_search_enabled -%}
@@ -95,10 +95,10 @@
         {%- endif -%}
         <button
           type="button"
-          class="search-modal__close-button modal__close-button link link--text focus-inset"
+          class="absolute top-4 right-4 p-2 hover:scale-110 transition-transform focus:ring-2 focus:ring-offset-2 focus:ring-primary"
           aria-label="{{ 'accessibility.close' | t }}"
         >
-          <span class="svg-wrapper">
+          <span class="block w-5 h-5">
             {{- 'icon-close.svg' | inline_asset_content -}}
           </span>
         </button>
