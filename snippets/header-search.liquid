@@ -100,6 +100,7 @@
               <input type="hidden" name="options[prefix]" value="last">
               <button
                 type="reset"
+                data="{{ search.terms }}"
                 class="twcss-absolute twcss-right-12 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %}twcss-hidden{% endif %}"
                 aria-label="{{ 'general.search.reset' | t }}"
               >
