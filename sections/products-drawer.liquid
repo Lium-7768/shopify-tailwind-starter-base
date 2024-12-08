@@ -1,3 +1,31 @@
+{%- style -%}
+  .twcss-animate-slide-in {
+    animation: slideIn 300ms ease-out forwards;
+  }
+
+  .twcss-animate-slide-out {
+    animation: slideOut 300ms ease-in forwards;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+{%- endstyle -%}
+
 <products-drawer>
   <div id="products-drawer" class="twcss-fixed twcss-inset-0 twcss-z-50 twcss-overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true" style="display: none;">
     <div class="twcss-absolute twcss-inset-0 twcss-overflow-hidden">
@@ -22,16 +50,16 @@
 
             <!-- Categories -->
             <div class="twcss-flex-1 twcss-overflow-y-auto">
-              {% for category in section.blocks %}
-                <a href="{{ category.settings.category_link }}" class="twcss-block twcss-px-6 twcss-py-4 twcss-border-b twcss-border-gray-200 hover:twcss-bg-gray-50">
+              {%- for block in section.blocks -%}
+                <a href="{{ block.settings.category_link }}" class="twcss-block twcss-px-6 twcss-py-4 twcss-border-b twcss-border-gray-200 hover:twcss-bg-gray-50">
                   <div class="twcss-flex twcss-items-center twcss-justify-between">
-                    <h3 class="twcss-text-base twcss-text-gray-900">{{ category.settings.category_title }}</h3>
+                    <h3 class="twcss-text-base twcss-text-gray-900">{{ block.settings.category_title }}</h3>
                     <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
                       <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                     </svg>
                   </div>
                 </a>
-              {% endfor %}
+              {%- endfor -%}
             </div>
           </div>
         </div>
@@ -39,6 +67,67 @@
     </div>
   </div>
 </products-drawer>
+
+<script>
+  class ProductsDrawer extends HTMLElement {
+    constructor() {
+      super();
+      this.drawer = this.querySelector('#products-drawer');
+      this.closeButtons = this.querySelectorAll('.products-drawer-close');
+      this.bindEvents();
+    }
+
+    bindEvents() {
+      const trigger = document.getElementById('products-drawer-trigger');
+      if (trigger) {
+        trigger.addEventListener('click', () => this.open());
+      }
+
+      this.closeButtons.forEach(button => {
+        button.addEventListener('click', () => this.close());
+      });
+
+      // Close drawer when clicking overlay
+      this.drawer.addEventListener('click', (e) => {
+        if (e.target === this.drawer) {
+          this.close();
+        }
+      });
+
+      // Close drawer on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.drawer.style.display === 'block') {
+          this.close();
+        }
+      });
+    }
+
+    open() {
+      console.log('Opening drawer');  // Debug log
+      this.drawer.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+      
+      requestAnimationFrame(() => {
+        const drawer = this.drawer.querySelector('.twcss-max-w-md');
+        drawer.classList.add('twcss-animate-slide-in');
+      });
+    }
+
+    close() {
+      console.log('Closing drawer');  // Debug log
+      const drawer = this.drawer.querySelector('.twcss-max-w-md');
+      drawer.classList.add('twcss-animate-slide-out');
+      
+      setTimeout(() => {
+        this.drawer.style.display = 'none';
+        document.body.style.overflow = '';
+        drawer.classList.remove('twcss-animate-slide-out', 'twcss-animate-slide-in');
+      }, 300);
+    }
+  }
+
+  customElements.define('products-drawer', ProductsDrawer);
+</script>
 
 {% schema %}
 {
@@ -72,88 +161,3 @@
   ]
 }
 {% endschema %}
-
-<script>
-  class ProductsDrawer extends HTMLElement {
-    constructor() {
-      super();
-      this.drawer = this.querySelector('#products-drawer');
-      this.closeButtons = this.querySelectorAll('.products-drawer-close');
-      this.bindEvents();
-    }
-
-    bindEvents() {
-      document.getElementById('products-drawer-trigger')?.addEventListener('click', () => this.open());
-
-      this.closeButtons.forEach(button => {
-        button.addEventListener('click', this.close.bind(this));
-      });
-
-      // Close drawer when clicking overlay
-      this.addEventListener('click', (e) => {
-        if (e.target === this.drawer) {
-          this.close();
-        }
-      });
-
-      // Close drawer on escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && this.drawer.style.display === 'block') {
-          this.close();
-        }
-      });
-    }
-
-    open() {
-      this.drawer.style.display = 'block';
-      document.body.style.overflow = 'hidden';
-      
-      // Add animation classes
-      requestAnimationFrame(() => {
-        const drawer = this.drawer.querySelector('.twcss-max-w-md');
-        drawer.classList.add('twcss-animate-slide-in');
-      });
-    }
-
-    close() {
-      const drawer = this.drawer.querySelector('.twcss-max-w-md');
-      drawer.classList.add('twcss-animate-slide-out');
-      
-      setTimeout(() => {
-        this.drawer.style.display = 'none';
-        document.body.style.overflow = '';
-        drawer.classList.remove('twcss-animate-slide-out', 'twcss-animate-slide-in');
-      }, 300);
-    }
-  }
-
-  customElements.define('products-drawer', ProductsDrawer);
-</script>
-
-<style>
-  .twcss-animate-slide-in {
-    animation: slideIn 300ms ease-out forwards;
-  }
-
-  .twcss-animate-slide-out {
-    animation: slideOut 300ms ease-in forwards;
-  }
-
-  @keyframes slideIn {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slideOut {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(100%);
-    }
-  }
-</style>
