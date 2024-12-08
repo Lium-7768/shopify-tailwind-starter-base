@@ -9,14 +9,12 @@ class Slider {
     this.prevBtn = this.container.parentElement.querySelector('.prev-button');
     this.nextBtn = this.container.parentElement.querySelector('.next-button');
 
-    // 配置项
     this.options = {
       slidesPerView: 1,
       spaceBetween: 16,
       ...options,
     };
 
-    // 状态变量
     this.currentIndex = 0;
     this.slideWidth = 0;
     this.isDragging = false;
@@ -34,7 +32,6 @@ class Slider {
     this.bindEvents();
     this.updateSliderPosition();
 
-    // 监听窗口大小变化
     window.addEventListener('resize', () => {
       this.calculateSlideWidth();
       this.createPagination();
@@ -67,7 +64,7 @@ class Slider {
     if (width >= 1280) return 5; // xl
     if (width >= 1024) return 4; // lg
     if (width >= 768) return 3; // md
-    return 1; // 移动端
+    return 1; // mobile
   }
 
   calculateSlideWidth() {
@@ -85,7 +82,7 @@ class Slider {
     if (!this.pagination) return;
 
     const slidesPerView = this.getSlidesPerView();
-    // 计算总页数：总slide数除以每页显示数（向上取整）
+    // Calculate total pages: total slides divided by slides per page (rounded up)
     const pageCount = Math.ceil(this.slides.length / slidesPerView);
     this.pagination.innerHTML = '';
 
@@ -107,18 +104,18 @@ class Slider {
   }
 
   bindEvents() {
-    // 触摸事件
+    // Touch events
     this.wrapper.addEventListener('touchstart', this.touchStart.bind(this));
     this.wrapper.addEventListener('touchmove', this.touchMove.bind(this));
     this.wrapper.addEventListener('touchend', this.touchEnd.bind(this));
 
-    // 鼠标事件
+    // Mouse events
     this.wrapper.addEventListener('mousedown', this.touchStart.bind(this));
     this.wrapper.addEventListener('mousemove', this.touchMove.bind(this));
     this.wrapper.addEventListener('mouseup', this.touchEnd.bind(this));
     this.wrapper.addEventListener('mouseleave', this.touchEnd.bind(this));
 
-    // 导航按钮
+    // Navigation buttons
     if (this.prevBtn) {
       this.prevBtn.addEventListener('click', () => this.slide('prev'));
     }
@@ -180,10 +177,10 @@ class Slider {
 
   goToPage(pageIndex) {
     const slidesPerView = this.getSlidesPerView();
-    // 计算要滑动到的索引位置
+    // Calculate the index to slide to
     this.currentIndex = pageIndex * slidesPerView;
 
-    // 确保不会滑过头
+    // Ensure not to slide past the last slide
     const maxIndex = this.slides.length - slidesPerView;
     this.currentIndex = Math.min(this.currentIndex, maxIndex);
 
@@ -194,11 +191,11 @@ class Slider {
   updateSliderPosition() {
     const slidesPerView = this.getSlidesPerView();
     if (slidesPerView === 1) {
-      // 移动端：完整滑动一个slide的宽度
+      // Mobile: slide the full width of one slide
       this.currentTranslate =
         -this.currentIndex * (this.slideWidth + this.options.spaceBetween);
     } else {
-      // PC端：滑动一个slide的宽度
+      // Desktop: slide the width of one slide
       this.currentTranslate = -this.currentIndex * this.slideWidth;
     }
     this.prevTranslate = this.currentTranslate;
@@ -216,7 +213,7 @@ class Slider {
     if (!this.pagination) return;
 
     const dots = this.pagination.querySelectorAll('.pagination-dot');
-    // 计算当前页码
+    // Calculate current page number
 
     dots.forEach((dot, index) => {
       dot.style.backgroundColor =
@@ -225,7 +222,7 @@ class Slider {
   }
 }
 
-// 初始化滑块
+// Initialize slider
 document.addEventListener('DOMContentLoaded', () => {
   new Slider('.featured-products-slider', {
     slidesPerView: 5,

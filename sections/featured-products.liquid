@@ -8,7 +8,6 @@
     %}
 
     <div class="twcss-relative ">
-      <!-- 添加导航按钮 -->
       <div class='swiper-button-prev !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-[""]  !twcss-left-[-1rem]'>
         {% render 'icon-chevron-left' %}
       </div>
@@ -25,7 +24,6 @@
             {%- endfor -%}
           </div>
 
-          <!-- 分页器 -->
           <div class="swiper-pagination !twcss-relative twcss-mt-4"></div>
         </div>
       {%- endif -%}
@@ -36,8 +34,8 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     new Swiper('.featured-products-slider', {
-      slidesPerView: 1, // 移动端默认显示1个
-      spaceBetween: 16, // 滑块之间的间距
+      slidesPerView: 1,
+      spaceBetween: 16,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
