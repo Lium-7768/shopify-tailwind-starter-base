@@ -100,12 +100,10 @@
               <input type="hidden" name="options[prefix]" value="last">
               <button
                 type="reset"
-                class="twcss-absolute twcss-right-12 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %} hidden{% endif %}"
+                class="twcss-absolute twcss-right-12 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 twcss-size-6 twcss-text-accent-default {% if search.terms == blank %} hidden{% endif %}"
                 aria-label="{{ 'general.search.reset' | t }}"
               >
-                <span class="twcss-size-6 twcss-text-accent-default">
-                  {{- 'icon-reset.svg' | inline_asset_content -}}
-                </span>
+                {{- 'icon-reset.svg' | inline_asset_content -}}
               </button>
             </div>
 
