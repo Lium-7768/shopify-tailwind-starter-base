@@ -656,12 +656,8 @@ video {
   right: 3rem;
 }
 
-.twcss-right-2 {
-  right: 0.5rem;
-}
-
-.twcss-right-4 {
-  right: 1rem;
+.twcss-right-3 {
+  right: 0.75rem;
 }
 
 .twcss-top-0 {
@@ -670,10 +666,6 @@ video {
 
 .twcss-top-1\/2 {
   top: 50%;
-}
-
-.twcss-top-4 {
-  top: 1rem;
 }
 
 .twcss-z-10 {
