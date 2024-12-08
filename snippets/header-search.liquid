@@ -11,10 +11,15 @@
 <details-modal class="twcss-relative lg:twcss-flex-1">
   <!-- Desktop Search Input (>=1280px) -->
   <div class="twcss-hidden lg:twcss-block">
+    {%- if settings.predictive_search_enabled -%}
+      <predictive-search class="twcss-block" data-loading-text="{{ 'accessibility.loading' | t }}">
+    {%- else -%}
+      <search-form class="twcss-block">
+    {%- endif -%}
     <form action="{{ routes.search_url }}" method="get" role="search" class="twcss-relative">
       <div class="twcss-relative">
         <input
-          class="twcss-w-full twcss-p-3 twcss-border twcss-rounded twcss-text-accent-default [appearance:none] [&::-webkit-search-decoration]:twcss-hidden [&::-webkit-search-cancel-button]:twcss-hidden [&::-webkit-search-results-button]:twcss-hidden [&::-webkit-search-results-decoration]:twcss-hidden"
+          class="twcss-w-full twcss-p-3 twcss-rounded twcss-border twcss-text-accent-default twcss-bg-white focus:twcss-outline-none focus:twcss-ring-0 focus:twcss-ring-offset-0 [appearance:none] [&::-webkit-search-decoration]:twcss-hidden [&::-webkit-search-cancel-button]:twcss-hidden [&::-webkit-search-results-button]:twcss-hidden [&::-webkit-search-results-decoration]:twcss-hidden"
           id="{{ input_id }}-desktop"
           type="search"
           name="q"
@@ -47,12 +52,18 @@
       </div>
 
       {%- if settings.predictive_search_enabled -%}
-        <div class="twcss-absolute twcss-w-full twcss-mt-1 twcss-bg-white twcss-rounded twcss-border twcss-border-primary-default twcss-text-accent-default" tabindex="-1" data-predictive-search>
+        <div class="twcss-absolute twcss-left-0 twcss-right-0 twcss-mt-1 twcss-bg-white twcss-rounded twcss-border twcss-border-primary-default twcss-text-accent-default" tabindex="-1" data-predictive-search>
           {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
         </div>
+
         <span class="twcss-sr-only predictive-search-status" role="status" aria-hidden="true"></span>
       {%- endif -%}
     </form>
+    {%- if settings.predictive_search_enabled -%}
+      </predictive-search>
+    {%- else -%}
+      </search-form>
+    {%- endif -%}
   </div>
 
   <!-- Mobile Search Icon and Modal (<1280px) -->
