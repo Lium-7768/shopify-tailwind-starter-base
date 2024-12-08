@@ -9,7 +9,7 @@
 
   @keyframes slideIn {
     from {
-      transform: translateX(100%);
+      transform: translateX(-100%);
     }
     to {
       transform: translateX(0);
@@ -21,7 +21,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(100%);
+      transform: translateX(-100%);
     }
   }
 {%- endstyle -%}
@@ -30,9 +30,9 @@
   <div id="products-drawer" class="twcss-fixed twcss-inset-0 twcss-z-50 twcss-overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true" style="display: none;">
     <div class="twcss-absolute twcss-inset-0 twcss-overflow-hidden">
       <!-- Overlay -->
-      <div class="twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity" aria-hidden="true"></div>
+      <div class="products-drawer-overlay twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity" aria-hidden="true"></div>
       
-      <div class="twcss-pointer-events-none twcss-fixed twcss-inset-y-0 twcss-right-0 twcss-flex twcss-max-w-full">
+      <div class="twcss-pointer-events-none twcss-fixed twcss-inset-y-0 twcss-left-0 twcss-flex twcss-max-w-full">
         <div class="twcss-pointer-events-auto twcss-w-screen twcss-max-w-md">
           <div class="twcss-flex twcss-h-full twcss-flex-col twcss-overflow-y-scroll twcss-bg-white">
             <!-- Header -->
@@ -218,34 +218,31 @@
       super();
       this.drawer = this.querySelector('#products-drawer');
       this.closeButtons = this.querySelectorAll('.products-drawer-close');
-      // 延迟绑定事件，确保所有元素都已加载
+      this.overlay = this.querySelector('.products-drawer-overlay');
       window.addEventListener('DOMContentLoaded', () => this.bindEvents());
     }
 
     bindEvents() {
       const trigger = document.getElementById('products-drawer-trigger');
-      console.log('Trigger element:', trigger); // Debug log
+      console.log('Trigger element:', trigger);
       
       if (trigger) {
-        console.log('Adding click listener to trigger'); // Debug log
+        console.log('Adding click listener to trigger');
         trigger.addEventListener('click', () => {
-          console.log('Trigger clicked'); // Debug log
+          console.log('Trigger clicked');
           this.open();
         });
       }
 
+      // 关闭按钮事件
       this.closeButtons.forEach(button => {
         button.addEventListener('click', () => this.close());
       });
 
-      // Close drawer when clicking overlay
-      this.drawer.addEventListener('click', (e) => {
-        if (e.target === this.drawer) {
-          this.close();
-        }
-      });
+      // 点击遮罩层关闭
+      this.overlay.addEventListener('click', () => this.close());
 
-      // Close drawer on escape key
+      // ESC 键关闭
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && this.drawer.style.display === 'block') {
           this.close();
@@ -254,7 +251,7 @@
     }
 
     open() {
-      console.log('Opening drawer');  // Debug log
+      console.log('Opening drawer');
       this.drawer.style.display = 'block';
       document.body.style.overflow = 'hidden';
       
@@ -265,7 +262,7 @@
     }
 
     close() {
-      console.log('Closing drawer');  // Debug log
+      console.log('Closing drawer');
       const drawer = this.drawer.querySelector('.twcss-max-w-md');
       drawer.classList.add('twcss-animate-slide-out');
       
