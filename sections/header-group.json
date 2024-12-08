@@ -65,7 +65,7 @@
       "settings": {
         "menu": "main-menu",
         "menu_icons": "{\"quick-order\":\"icon-quick-order.svg\",\"price-list\":\"icon-price-list.svg\",\"orders\":\"icon-orders.svg\",\"quotes\":\"icon-quotes.svg\"}",
-        "menu_type_desktop": "dropdown",
+        "menu_type_desktop": "drawer",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
