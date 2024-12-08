@@ -4583,6 +4583,10 @@ video {
   font-weight: 600;
 }
 
+.twcss-leading-4 {
+  line-height: 1rem;
+}
+
 .twcss-leading-\[12\.5px\] {
   line-height: 12.5px;
 }
@@ -8117,8 +8121,4 @@ video {
 
 .\[\&\:\:-webkit-search-results-decoration\]\:twcss-hidden::-webkit-search-results-decoration {
   display: none;
-}
-
-.\[\&\[open\]\]\:twcss-block[open] {
-  display: block;
 }
