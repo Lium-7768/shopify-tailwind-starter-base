@@ -1,42 +1,44 @@
-<div id="products-drawer" class="twcss-fixed twcss-inset-0 twcss-z-50 twcss-overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true" style="display: none;">
-  <div class="twcss-absolute twcss-inset-0 twcss-overflow-hidden">
-    <!-- Overlay -->
-    <div class="twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity" aria-hidden="true"></div>
-    
-    <div class="twcss-pointer-events-none twcss-fixed twcss-inset-y-0 twcss-right-0 twcss-flex twcss-max-w-full">
-      <div class="twcss-pointer-events-auto twcss-w-screen twcss-max-w-md">
-        <div class="twcss-flex twcss-h-full twcss-flex-col twcss-overflow-y-scroll twcss-bg-white">
-          <!-- Header -->
-          <div class="twcss-flex twcss-items-center twcss-justify-between twcss-px-6 twcss-py-4 twcss-border-b twcss-border-gray-200">
-            <h2 class="twcss-text-xl twcss-font-bold twcss-text-gray-900" id="slide-over-title">
-              {{ section.settings.drawer_title }}
-            </h2>
-            <button type="button" class="products-drawer-close twcss-text-gray-400 hover:twcss-text-gray-500">
-              <span class="twcss-sr-only">Close panel</span>
-              <svg class="twcss-h-6 twcss-w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+<products-drawer>
+  <div id="products-drawer" class="twcss-fixed twcss-inset-0 twcss-z-50 twcss-overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true" style="display: none;">
+    <div class="twcss-absolute twcss-inset-0 twcss-overflow-hidden">
+      <!-- Overlay -->
+      <div class="twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity" aria-hidden="true"></div>
+      
+      <div class="twcss-pointer-events-none twcss-fixed twcss-inset-y-0 twcss-right-0 twcss-flex twcss-max-w-full">
+        <div class="twcss-pointer-events-auto twcss-w-screen twcss-max-w-md">
+          <div class="twcss-flex twcss-h-full twcss-flex-col twcss-overflow-y-scroll twcss-bg-white">
+            <!-- Header -->
+            <div class="twcss-flex twcss-items-center twcss-justify-between twcss-px-6 twcss-py-4 twcss-border-b twcss-border-gray-200">
+              <h2 class="twcss-text-xl twcss-font-bold twcss-text-gray-900" id="slide-over-title">
+                {{ section.settings.drawer_title }}
+              </h2>
+              <button type="button" class="products-drawer-close twcss-text-gray-400 hover:twcss-text-gray-500">
+                <span class="twcss-sr-only">Close panel</span>
+                <svg class="twcss-h-6 twcss-w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
 
-          <!-- Categories -->
-          <div class="twcss-flex-1 twcss-overflow-y-auto">
-            {% for category in section.blocks %}
-              <a href="{{ category.settings.category_link }}" class="twcss-block twcss-px-6 twcss-py-4 twcss-border-b twcss-border-gray-200 hover:twcss-bg-gray-50">
-                <div class="twcss-flex twcss-items-center twcss-justify-between">
-                  <h3 class="twcss-text-base twcss-text-gray-900">{{ category.settings.category_title }}</h3>
-                  <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-              </a>
-            {% endfor %}
+            <!-- Categories -->
+            <div class="twcss-flex-1 twcss-overflow-y-auto">
+              {% for category in section.blocks %}
+                <a href="{{ category.settings.category_link }}" class="twcss-block twcss-px-6 twcss-py-4 twcss-border-b twcss-border-gray-200 hover:twcss-bg-gray-50">
+                  <div class="twcss-flex twcss-items-center twcss-justify-between">
+                    <h3 class="twcss-text-base twcss-text-gray-900">{{ category.settings.category_title }}</h3>
+                    <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </a>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</products-drawer>
 
 {% schema %}
 {
@@ -77,10 +79,15 @@
       super();
       this.drawer = this.querySelector('#products-drawer');
       this.closeButtons = this.querySelectorAll('.products-drawer-close');
+      this.trigger = document.getElementById('products-drawer-trigger');
       this.bindEvents();
     }
 
     bindEvents() {
+      if (this.trigger) {
+        this.trigger.addEventListener('click', () => this.open());
+      }
+
       this.closeButtons.forEach(button => {
         button.addEventListener('click', this.close.bind(this));
       });
@@ -121,7 +128,7 @@
         drawer.classList.remove('twcss-animate-slide-out', 'twcss-animate-slide-in');
       }, 300);
     }
-}
+  }
 
   customElements.define('products-drawer', ProductsDrawer);
 </script>
