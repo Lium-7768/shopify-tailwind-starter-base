@@ -676,6 +676,10 @@ video {
   top: 1rem;
 }
 
+.twcss-z-10 {
+  z-index: 10;
+}
+
 .twcss-z-50 {
   z-index: 50;
 }
@@ -4449,6 +4453,10 @@ video {
   padding: 0.5rem;
 }
 
+.twcss-p-3 {
+  padding: 0.75rem;
+}
+
 .twcss-p-4 {
   padding: 1rem;
 }
@@ -4541,10 +4549,6 @@ video {
 
 .twcss-pr-12 {
   padding-right: 3rem;
-}
-
-.twcss-pr-24 {
-  padding-right: 6rem;
 }
 
 .twcss-pt-\[20px\] {
