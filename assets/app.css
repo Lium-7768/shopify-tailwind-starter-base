@@ -869,6 +869,10 @@ video {
   height: 15rem;
 }
 
+.twcss-h-8 {
+  height: 2rem;
+}
+
 .twcss-h-auto {
   height: auto;
 }
@@ -4553,6 +4557,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.twcss-py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .twcss-py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -4608,11 +4617,6 @@ video {
 
 .twcss-text-\[18px\] {
   font-size: 18px;
-}
-
-.twcss-text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .twcss-text-lg {
