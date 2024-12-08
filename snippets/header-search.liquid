@@ -42,7 +42,7 @@
         <input type="hidden" name="options[prefix]" value="last">
         <button
           type="reset"
-          class="twcss-absolute twcss-right-3 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %} hidden{% endif %}"
+          class="twcss-absolute twcss-right-3 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %} twcss-hidden{% endif %}"
           aria-label="{{ 'general.search.reset' | t }}"
         >
           <span class="twcss-size-6 twcss-text-accent-default twcss-block">
