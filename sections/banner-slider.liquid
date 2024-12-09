@@ -31,11 +31,11 @@
           ></div>
         -->
 
-        <div class="twcss-absolute twcss-top-[50%] twcss-translate-y-[-50%] twcss-left-50% twcss-translate-x-[-50%]">
-          <div class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]">
+        <div class="twcss-absolute twcss-top-[50%] twcss-translate-y-[-50%] twcss-left-[50%] twcss-translate-x-[-50%] lg:twcss-pl-15 lg:twcss-w-[1280px]">
+          <div class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-0">
             {% render 'icon-chevron-left' %}
           </div>
-          <div class="">
+          <div class="lg:twcss-w-[435px]">
             {%- if block.settings.heading != blank -%}
               <h2 class="twcss-text-2xl md:twcss-text-4xl twcss-font-black twcss-text-white">
                 {{ block.settings.heading }}
@@ -58,7 +58,7 @@
               </a>
             {%- endif -%}
           </div>
-          <div class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
+          <div class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-0">
             {% render 'icon-chevron-right' %}
           </div>
         </div>
