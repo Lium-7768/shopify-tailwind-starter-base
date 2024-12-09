@@ -32,7 +32,7 @@
     "delivery_delay_notice_keD9NB": {
       "type": "delivery-delay-notice",
       "settings": {
-        "show_notice": false,
+        "show_notice": true,
         "notice_heading": "Delivery Delays in Selected Area",
         "notice_text": "We are experiencing delivery delays in West Coast. Please allow extra time for your order to arrive. Thank you for your patience!",
         "button_link": "",
