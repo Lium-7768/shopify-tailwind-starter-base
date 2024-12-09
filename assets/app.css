@@ -724,6 +724,10 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.twcss-mb-3 {
+  margin-bottom: 0.75rem;
+}
+
 .twcss-mb-4 {
   margin-bottom: 1rem;
 }
@@ -762,6 +766,10 @@ video {
 
 .twcss-mr-5 {
   margin-right: 1.25rem;
+}
+
+.twcss-mt-0 {
+  margin-top: 0px;
 }
 
 .twcss-mt-1 {
@@ -1011,6 +1019,11 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.twcss-translate-x-\[-50\%\] {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .twcss-translate-y-\[-50\%\] {
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1124,6 +1137,12 @@ video {
 
 .twcss-gap-y-\[10px\] {
   row-gap: 10px;
+}
+
+.twcss-space-y-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0px * var(--tw-space-y-reverse));
 }
 
 .twcss-space-y-1 > :not([hidden]) ~ :not([hidden]) {
@@ -4647,6 +4666,11 @@ video {
   font-size: 18px;
 }
 
+.twcss-text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .twcss-text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -4657,14 +4681,13 @@ video {
   line-height: 1.25rem;
 }
 
-.twcss-text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .twcss-text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.twcss-font-black {
+  font-weight: 900;
 }
 
 .twcss-font-bold {
@@ -4704,6 +4727,11 @@ video {
 .twcss-text-\[\#353535\] {
   --tw-text-opacity: 1;
   color: rgb(53 53 53 / var(--tw-text-opacity, 1));
+}
+
+.twcss-text-\[\#84888B\] {
+  --tw-text-opacity: 1;
+  color: rgb(132 136 139 / var(--tw-text-opacity, 1));
 }
 
 .twcss-text-\[\#FF6B00\] {
