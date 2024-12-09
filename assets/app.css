@@ -637,6 +637,10 @@ video {
   bottom: 0px;
 }
 
+.\!twcss-bottom-\[10px\] {
+  bottom: 10px !important;
+}
+
 .\!twcss-left-0 {
   left: 0px !important;
 }
@@ -8208,6 +8212,10 @@ video {
 }
 
 @media (min-width: 990px) {
+  .lg\:\!twcss-bottom-5 {
+    bottom: 1.25rem !important;
+  }
+
   .lg\:twcss-left-\[30px\] {
     left: 30px;
   }
@@ -8231,6 +8239,10 @@ video {
 
   .lg\:twcss-hidden {
     display: none;
+  }
+
+  .lg\:\!twcss-h-\[400px\] {
+    height: 400px !important;
   }
 
   .lg\:\!twcss-w-\[139px\] {
