@@ -57,7 +57,7 @@
         Frank
       {%- endif -%}
     </span>
-    <span class='twcss-w-4 twcss-transition-transform twcss-duration-200 twcss-rotate-180' data-account-icon>
+    <span class='twcss-w-4 twcss-transition-transform twcss-duration-200' data-account-icon>
       {{ 'icon-caret.svg' | inline_asset_content }}
     </span>
   </button>
@@ -125,8 +125,8 @@
     accountButton.addEventListener('click', () => {
       accountDropdown.classList.toggle('twcss-hidden');
       accountIcon.style.transform = accountDropdown.classList.contains('twcss-hidden')
-        ? 'rotate(0deg)'
-        : 'rotate(180deg)';
+        ? 'rotate(180deg)'
+        : 'rotate(0deg)';
     });
 
     // Close dropdown when clicking outside
