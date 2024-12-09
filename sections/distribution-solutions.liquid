@@ -1,7 +1,6 @@
 <section class="twcss-px-4 twcss-py-10">
-  {% render 'homepage-title', white_title: section.settings.white_title, blue_title: section.settings.blue_title %}
-
   <div class="md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto">
+    {% render 'homepage-title', white_title: section.settings.white_title, blue_title: section.settings.blue_title %}
     <div class="twcss-flex twcss-flex-row twcss-justify-between twcss-gap-x-6 twcss-items-stretch twcss-mt-8">
       {% for block in section.blocks %}
         <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-1 {% if forloop.index > 2 %} twcss-hidden md:!twcss-flex  {% endif %}">
