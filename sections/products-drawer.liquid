@@ -77,8 +77,10 @@
                     {%- for link in block.settings.menu.links -%}
                       <a href='{{ link.url }}' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
                         <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                          <span class='twcss-text-gray-700'>{{ link.title }}</span>
-                          {% render 'icon-chevron-right' %}
+                          <span class='twcss-text-accent-default'>{{ link.title }}</span>
+                          <span class='twcss-text-secondary-middle'>
+                            {{- 'icon-chevron-right.svg' | inline_asset_content -}}
+                          </span>
                         </div>
                       </a>
                     {%- endfor -%}
