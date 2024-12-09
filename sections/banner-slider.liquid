@@ -1,4 +1,4 @@
-<div class="banner-slider swiper">
+<div class="banner-slider swiper" id="banner-slider">
   <div class="swiper-wrapper">
     {%- for block in section.blocks -%}
       <div class="swiper-slide twcss-relative twcss-h-[400px] md:twcss-h-[600px]" {{ block.shopify_attributes }}>
@@ -32,7 +32,10 @@
         -->
 
         <div class="twcss-absolute twcss-top-[50%] twcss-translate-y-[-50%] twcss-left-[50%] twcss-translate-x-[-50%] twcss-pl-[60px] lg:twcss-w-[1280px] twcss-w-full">
-          <div class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-0">
+          <div
+            id="swiper-button-prev-banner"
+            class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-0"
+          >
             {% render 'icon-chevron-left' %}
           </div>
           <div class="twcss-w-[263px] lg:twcss-w-[435px]">
@@ -58,7 +61,10 @@
               </a>
             {%- endif -%}
           </div>
-          <div class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-0">
+          <div
+            id="swiper-button-next-banner"
+            class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-0"
+          >
             {% render 'icon-chevron-right' %}
           </div>
         </div>
@@ -71,7 +77,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    new Swiper('.banner-slider', {
+    new Swiper('#banner-slider', {
       loop: true,
       effect: 'fade',
       fadeEffect: {
@@ -82,12 +88,12 @@
       //   disableOnInteraction: false
       // },
       pagination: {
-        el: '.swiper-pagination',
+        el: '#swiper-pagination-banner',
         clickable: true
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+        nextEl: '#swiper-button-next-banner',
+        prevEl: '#swiper-button-prev-banner'
       }
     });
   });
