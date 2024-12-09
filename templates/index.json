@@ -29,34 +29,14 @@
       ],
       "settings": {}
     },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
+    "delivery_delay_notice_keD9NB": {
+      "type": "delivery-delay-notice",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "show_notice": false,
+        "notice_heading": "Delivery Delays in Selected Area",
+        "notice_text": "We are experiencing delivery delays in West Coast. Please allow extra time for your order to arrive. Thank you for your patience!",
+        "button_link": "",
+        "button_text": "See more info »"
       }
     },
     "featured_products_dVWqqB": {
@@ -287,7 +267,7 @@
   },
   "order": [
     "banner_slider_eC74fk",
-    "rich_text",
+    "delivery_delay_notice_keD9NB",
     "featured_products_dVWqqB",
     "distribution_solutions_wXkLVR",
     "featured_plumbing_CA7GXd",
