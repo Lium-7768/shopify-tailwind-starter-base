@@ -22,10 +22,22 @@
             "button_text": "See more",
             "button_link": "shopify://blogs/news"
           }
+        },
+        "slide_qRgEpY": {
+          "type": "slide",
+          "settings": {
+            "image_mobile": "shopify://shop_images/banner-mobile.png",
+            "image_desktop": "shopify://shop_images/banner-desktop.png",
+            "heading": "SEAMLESS MANUFACTURING 1",
+            "subheading": "Reliable Distribution 2",
+            "button_text": "See more",
+            "button_link": "shopify://blogs/news"
+          }
         }
       },
       "block_order": [
-        "slide_7iMn6f"
+        "slide_7iMn6f",
+        "slide_qRgEpY"
       ],
       "settings": {}
     },
