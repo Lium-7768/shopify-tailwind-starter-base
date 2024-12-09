@@ -8,10 +8,16 @@
     %}
 
     <div class="twcss-relative ">
-      <div class='swiper-button-prev !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-[""]  !twcss-left-[-1rem]'>
+      <div
+        id="featured-products-slider-prev"
+        class='swiper-button-prev !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-[""]  !twcss-left-[-1rem]'
+      >
         {% render 'icon-chevron-left' %}
       </div>
-      <div class='swiper-button-next !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-[""]  !twcss-right-[-1rem]'>
+      <div
+        id="featured-products-slider-next"
+        class='swiper-button-next !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-[""]  !twcss-right-[-1rem]'
+      >
         {% render 'icon-chevron-right' %}
       </div>
       {%- if section.settings.collection != blank -%}
@@ -41,8 +47,8 @@
         clickable: true,
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '#featured-products-slider-next',
+        prevEl: '#featured-products-slider-prev',
       },
       breakpoints: {
         // >= 768px
