@@ -29,15 +29,27 @@
             "image_mobile": "shopify://shop_images/banner-mobile.png",
             "image_desktop": "shopify://shop_images/banner-desktop.png",
             "heading": "SEAMLESS MANUFACTURING 1",
-            "subheading": "Reliable Distribution 2",
+            "subheading": "Reliable Distribution 1",
             "button_text": "See more",
             "button_link": "shopify://blogs/news"
+          }
+        },
+        "slide_d6kCGj": {
+          "type": "slide",
+          "settings": {
+            "image_mobile": "shopify://shop_images/banner-mobile.png",
+            "image_desktop": "shopify://shop_images/banner-desktop.png",
+            "heading": "SEAMLESS MANUFACTURING 2",
+            "subheading": "Reliable Distribution 2",
+            "button_text": "See more",
+            "button_link": ""
           }
         }
       },
       "block_order": [
         "slide_7iMn6f",
-        "slide_qRgEpY"
+        "slide_qRgEpY",
+        "slide_d6kCGj"
       ],
       "settings": {}
     },
