@@ -29,8 +29,11 @@
           class="twcss-absolute twcss-top-0 twcss-left-0 twcss-w-full md:twcss-w-3/5 twcss-h-full twcss-bg-gradient-to-r md:twcss-bg-gradient-to-br twcss-from-blue-600/90 twcss-to-blue-600/70 md:twcss-to-blue-600/0"
         ></div>
 
-        <div>
-          <div class="twcss-absolute twcss-top-1/2 twcss-left-1/2 md:twcss-left-1/4 twcss-transform -twcss-translate-x-1/2 -twcss-translate-y-1/2 md:twcss-translate-x-0 twcss-w-11/12 md:twcss-w-auto twcss-text-center md:twcss-text-left">
+        <div class="twcss-absolute">
+          <div class="swiper-button-prev-banner !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]">
+            {% render 'icon-chevron-left' %}
+          </div>
+          <div class="twcss-top-1/2 twcss-left-1/2 md:twcss-left-1/4 twcss-transform -twcss-translate-x-1/2 -twcss-translate-y-1/2 md:twcss-translate-x-0 twcss-w-11/12 md:twcss-w-auto twcss-text-center md:twcss-text-left">
             {%- if block.settings.heading != blank -%}
               <h2 class="twcss-text-2xl md:twcss-text-4xl twcss-font-bold twcss-text-white twcss-mb-2">
                 {{ block.settings.heading }}
@@ -55,11 +58,7 @@
               </a>
             {%- endif -%}
           </div>
-
-          <div class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]">
-            {% render 'icon-chevron-left' %}
-          </div>
-          <div class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
+          <div class="swiper-button-next-banner !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
             {% render 'icon-chevron-right' %}
           </div>
         </div>
@@ -86,8 +85,8 @@
         clickable: true
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+        nextEl: '.swiper-button-next-banner',
+        prevEl: '.swiper-button-prev-banner'
       }
     });
   });
