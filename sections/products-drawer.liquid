@@ -60,11 +60,9 @@
                   <span class='twcss-text-lg twcss-font-medium'>{{ shop.name }}</span>
                 {%- endif -%}
               </div>
-              <button type='button' class='products-drawer-close twcss-text-gray-400 hover:twcss-text-gray-500'>
+              <button type='button' class='products-drawer-close twcss-text-accent-default hover:twcss-text-gray-500'>
                 <span class='twcss-sr-only'>Close panel</span>
-                <svg class='twcss-h-6 twcss-w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <span class='twcss-text-secondary-middle'>{{ 'icon-close.svg' | inline_asset_content }}</span>
               </button>
             </div>
 
