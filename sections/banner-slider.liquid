@@ -58,8 +58,12 @@
     {%- endfor -%}
   </div>
 
-  <div class="swiper-button-prev !twcss-text-white">{% render 'icon-chevron-left' %}</div>
-  <div class="swiper-button-next !twcss-text-white">{% render 'icon-chevron-right' %}</div>
+  <div class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]">
+    {% render 'icon-chevron-left' %}
+  </div>
+  <div class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
+    {% render 'icon-chevron-right' %}
+  </div>
   <div class="swiper-pagination"></div>
 </div>
 

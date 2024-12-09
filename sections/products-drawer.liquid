@@ -62,7 +62,9 @@
               </div>
               <button type='button' class='products-drawer-close twcss-text-accent-default hover:twcss-text-gray-500'>
                 <span class='twcss-sr-only'>Close panel</span>
-                <span class='twcss-text-secondary-middle'>{{ 'icon-close.svg' | inline_asset_content }}</span>
+                <span class='twcss-text-secondary-middle twcss-size-6'>
+                  {{- 'icon-close.svg' | inline_asset_content -}}
+                </span>
               </button>
             </div>
 
@@ -75,7 +77,10 @@
                   </h3>
                   <div class='twcss-mt-2'>
                     {%- for link in block.settings.menu.links -%}
-                      <a href='{{ link.url }}' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                      <a
+                        href='{{ link.url }}'
+                        class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50 twcss-underline'
+                      >
                         <div class='twcss-flex twcss-items-center twcss-justify-between'>
                           <span class='twcss-text-accent-default'>{{ link.title }}</span>
                           <span class='twcss-text-secondary-middle twcss-rotate-90 twcss-size-4'>
