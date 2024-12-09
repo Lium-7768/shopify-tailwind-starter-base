@@ -69,17 +69,17 @@
             </div>
 
             <!-- Categories -->
-            <div class='twcss-flex-1 twcss-overflow-y-auto'>
+            <div class='twcss-flex-1'>
               {%- for block in section.blocks -%}
-                <div class='twcss-py-4 {% unless forloop.first %}twcss-border-t twcss-border-gray-200{% endunless %}'>
-                  <h3 class='twcss-px-6 twcss-text-lg twcss-font-semibold twcss-text-primary-default'>
+                <div class='twcss-py-4 twcss-px-6 {% unless forloop.first %}twcss-border-t twcss-border-gray-200{% endunless %}'>
+                  <h3 class='twcss-text-lg twcss-font-semibold twcss-text-primary-default'>
                     {{ block.settings.category_title }}
                   </h3>
                   <div class='twcss-mt-2'>
                     {%- for link in block.settings.menu.links -%}
                       <a
                         href='{{ link.url }}'
-                        class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'
+                        class='twcss-block twcss-py-3 hover:twcss-bg-gray-50'
                       >
                         <div class='twcss-flex twcss-items-center twcss-justify-between'>
                           <span class='twcss-text-accent-default'>{{ link.title }}</span>
