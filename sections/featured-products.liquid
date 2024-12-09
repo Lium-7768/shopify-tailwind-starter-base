@@ -15,7 +15,7 @@
         {% render 'icon-chevron-right' %}
       </div>
       {%- if section.settings.collection != blank -%}
-        <div class="swiper featured-products-slider twcss-relative  twcss-h-full">
+        <div id="featured-products-slider" class="swiper featured-products-slider twcss-relative  twcss-h-full">
           <div class="swiper-wrapper">
             {%- for product in section.settings.collection.products limit: 15 -%}
               <div class="swiper-slide !twcss-h-auto">
@@ -33,7 +33,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const x = new Swiper('.featured-products-slider', {
+    new Swiper('#featured-products-slider', {
       slidesPerView: 1,
       spaceBetween: 16,
       pagination: {
@@ -63,7 +63,6 @@
       },
     });
   });
-  console.log('🚀 ~ x:', x);
 </script>
 
 {% schema %}
