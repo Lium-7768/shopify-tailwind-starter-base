@@ -114,7 +114,9 @@
         <p>
           Customer Product # <span class="twcss-text-[#84888B]">{{ product.id }}</span>
         </p>
-        <p>Supplier Product # {{ product.metafields.custom.supplier_id | default: 'R9013DS' }}</p>
+        <p>
+          Supplier Product # <span class="twcss-text-[#84888B]">{{ product.metafields.custom.supplier_id }}</span>
+        </p>
         <p>
           Supplier: <span class="twcss-text-[#84888B]">{{ product.vendor }}</span>
         </p>
