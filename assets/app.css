@@ -1139,6 +1139,10 @@ video {
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
+.twcss-self-start {
+  align-self: flex-start;
+}
+
 .twcss-overflow-hidden {
   overflow: hidden;
 }
@@ -8147,12 +8151,12 @@ video {
     flex-direction: row;
   }
 
-  .md\:twcss-items-start {
-    align-items: flex-start;
-  }
-
   .md\:twcss-items-center {
     align-items: center;
+  }
+
+  .md\:twcss-items-stretch {
+    align-items: stretch;
   }
 
   .md\:twcss-bg-gradient-to-br {
