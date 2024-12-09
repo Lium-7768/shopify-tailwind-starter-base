@@ -91,6 +91,9 @@
         >
           {{ product.title }}
         </a>
+        <div>
+          Price:<span class="twcss-font-bold">{{ product.price | money }}</span><span>/each</span>
+        </div>
       </div>
 
       {% if show_new_tag %}
