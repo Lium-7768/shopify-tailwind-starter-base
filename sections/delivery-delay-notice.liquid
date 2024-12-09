@@ -5,16 +5,18 @@
   >
     <div class="md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto twcss-relative twcss-flex twcss-justify-center twcss-p-4">
       <span class="twcss-mr-2.5">
-        <img src="{{ 'icon-clock.svg' | asset_url }}" alt="Clock icon" width="24" height="24">
+        <img src="{{ 'icon-clock.svg' | asset_url }}" alt="Clock icon" width="32" height="32">
       </span>
       <div class="twcss-flex twcss-flex-col twcss-gap-2 twcss-flex-1">
         <span class="twcss-text-[#1746A2] twcss-text-2xl twcss-font-bold">
           {{- section.settings.notice_heading | escape -}}
         </span>
         <span class="twcss-font-bold">
-          {{- section.settings.notice_text -}}
+          <span class="twcss-block twcss-mr-2">
+            {{- section.settings.notice_text -}}
+          </span>
           {%- if section.settings.button_link != blank -%}
-            <a href="{{ section.settings.button_link }}" class="twcss-ml-1 twcss-text-[#1746A2]">
+            <a href="{{ section.settings.button_link }}" class="twcss-text-[#1746A2]">
               {{- section.settings.button_text -}}
             </a>
           {%- endif -%}
