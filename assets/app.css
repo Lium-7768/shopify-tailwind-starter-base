@@ -8181,11 +8181,6 @@ video {
     padding-right: 2rem;
   }
 
-  .md\:twcss-text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
   .md\:twcss-text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -8266,6 +8261,14 @@ video {
   .lg\:twcss-px-0 {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .lg\:twcss-text-\[38px\] {
+    font-size: 38px;
+  }
+
+  .lg\:twcss-leading-\[38px\] {
+    line-height: 38px;
   }
 }
 
