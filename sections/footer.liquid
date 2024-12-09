@@ -50,27 +50,6 @@
   -%}
     {%- unless only_empty_brand -%}
       <div class='footer__content-top page-width'>
-        <div class='twcss-hidden'>
-          <!-- Text colors -->
-          <div
-            class='twcss-text-foreground twcss-text-background twcss-text-primary twcss-text-primary-foreground twcss-text-secondary twcss-text-secondary-foreground twcss-text-destructive twcss-text-destructive-foreground twcss-text-muted twcss-text-muted-foreground twcss-text-accent twcss-text-accent-foreground twcss-text-popover twcss-text-popover-foreground twcss-text-card twcss-text-card-foreground'
-          ></div>
-
-          <!-- Background colors -->
-          <div
-            class='twcss-bg-foreground twcss-bg-background twcss-bg-primary twcss-bg-primary-foreground twcss-bg-secondary twcss-bg-secondary-foreground twcss-bg-destructive twcss-bg-destructive-foreground twcss-bg-muted twcss-bg-muted-foreground twcss-bg-accent twcss-bg-accent-foreground twcss-bg-popover twcss-bg-popover-foreground twcss-bg-card twcss-bg-card-foreground'
-          ></div>
-
-          <!-- Border colors -->
-          <div
-            class='twcss-border-foreground twcss-border-background twcss-border-primary twcss-border-primary-foreground twcss-border-secondary twcss-border-secondary-foreground twcss-border-destructive twcss-border-destructive-foreground twcss-border-muted twcss-border-muted-foreground twcss-border-accent twcss-border-accent-foreground twcss-border-popover twcss-border-popover-foreground twcss-border-card twcss-border-card-foreground'
-          ></div>
-
-          <!-- Ring colors -->
-          <div
-            class='twcss-ring-foreground twcss-ring-background twcss-ring-primary twcss-ring-primary-foreground twcss-ring-secondary twcss-ring-secondary-foreground twcss-ring-destructive twcss-ring-destructive-foreground twcss-ring-muted twcss-ring-muted-foreground twcss-ring-accent twcss-ring-accent-foreground twcss-ring-popover twcss-ring-popover-foreground twcss-ring-card twcss-ring-card-foreground'
-          ></div>
-        </div>
         {%- if section.blocks.size > 0 -%}
           {% comment %}
             {%- liquid
@@ -171,22 +150,24 @@
                     </div>
                   {%- when 'custom_sign_up' %}
                     <div>
-                      <div class="twcss-space-y-5">
+                      <div class='twcss-space-y-5'>
                         {{ block.settings.text }}
                       </div>
                       <div class='footer-block__newsletter'>
                         {%- if section.settings.newsletter_heading != blank -%}
-                          <h2 class='footer-block__heading inline-richtext'>{{ section.settings.newsletter_heading }}</h2>
+                          <h2 class='footer-block__heading inline-richtext'>
+                            {{ section.settings.newsletter_heading }}
+                          </h2>
                         {%- endif -%}
                         {%- form 'customer', id: 'ContactFooter', class: 'twcss-space-y-4' -%}
                           <input type='hidden' name='contact[tags]' value='newsletter'>
-                          <div class="twcss-relative">
-                            <div class="twcss-relative">
+                          <div class='twcss-relative'>
+                            <div class='twcss-relative'>
                               <input
                                 id='NewsletterForm--{{ section.id }}'
                                 type='email'
                                 name='contact[email]'
-                                class="twcss-w-full twcss-rounded twcss-border twcss-border-muted-default twcss-px-4 twcss-py-2 twcss-pr-12"
+                                class='twcss-w-full twcss-rounded twcss-border twcss-border-muted-default twcss-px-4 twcss-py-2 twcss-pr-12'
                                 value='{{ form.email }}'
                                 aria-required='true'
                                 autocorrect='off'
@@ -204,7 +185,7 @@
                               >
                               <button
                                 type='submit'
-                                class="twcss-absolute twcss-r-rounded twcss-bg-secondary-default twcss-text-white twcss-font-bold twcss-text-sm twcss-right-0 twcss-top-0 twcss-h-full twcss-px-3 twcss-flex twcss-items-center twcss-justify-center"
+                                class='twcss-absolute twcss-r-rounded twcss-bg-secondary-default twcss-text-white twcss-font-bold twcss-text-sm twcss-right-0 twcss-top-0 twcss-h-full twcss-px-3 twcss-flex twcss-items-center twcss-justify-center'
                                 name='commit'
                                 id='Subscribe'
                                 aria-label='{{ 'newsletter.button_label' | t }}'
@@ -212,10 +193,13 @@
                                 Sign Up
                               </button>
                             </div>
-                            
+
                             {%- if form.errors -%}
-                              <small class="twcss-text-destructive-default twcss-flex twcss-items-center twcss-gap-2 twcss-mt-2" id='ContactFooter-error'>
-                                <span class="twcss-w-4 twcss-h-4">
+                              <small
+                                class='twcss-text-destructive-default twcss-flex twcss-items-center twcss-gap-2 twcss-mt-2'
+                                id='ContactFooter-error'
+                              >
+                                <span class='twcss-w-4 twcss-h-4'>
                                   {{- 'icon-error.svg' | inline_asset_content -}}
                                 </span>
                                 {{- form.errors.translated_fields.email | capitalize }}
@@ -223,15 +207,15 @@
                               </small>
                             {%- endif -%}
                           </div>
-                          
+
                           {%- if form.posted_successfully? -%}
                             <h3
-                              class="twcss-text-success-default twcss-flex twcss-items-center twcss-gap-2"
+                              class='twcss-text-success-default twcss-flex twcss-items-center twcss-gap-2'
                               id='ContactFooter-success'
                               tabindex='-1'
                               autofocus
                             >
-                              <span class="twcss-w-4 twcss-h-4">
+                              <span class='twcss-w-4 twcss-h-4'>
                                 {{- 'icon-success.svg' | inline_asset_content -}}
                               </span>
                               {{- 'newsletter.success' | t }}
@@ -241,7 +225,7 @@
                       </div>
                     </div>
                   {%- when 'custom_follow' %}
-                    <div class="twcss-space-y-5">
+                    <div class='twcss-space-y-5'>
                       {%- if has_social_icons -%}
                         {%- render 'social-icons', class: '' -%}
                       {%- endif -%}
@@ -265,13 +249,13 @@
               {%- endif -%}
               {%- form 'customer', id: 'ContactFooter', class: 'twcss-space-y-4' -%}
                 <input type='hidden' name='contact[tags]' value='newsletter'>
-                <div class="twcss-relative">
-                  <div class="twcss-relative">
+                <div class='twcss-relative'>
+                  <div class='twcss-relative'>
                     <input
                       id='NewsletterForm--{{ section.id }}'
                       type='email'
                       name='contact[email]'
-                      class="twcss-w-full twcss-rounded-[4px] twcss-border twcss-border-muted-default twcss-px-4 twcss-py-2 twcss-pr-12"
+                      class='twcss-w-full twcss-rounded-[4px] twcss-border twcss-border-muted-default twcss-px-4 twcss-py-2 twcss-pr-12'
                       value='{{ form.email }}'
                       aria-required='true'
                       autocorrect='off'
@@ -289,20 +273,23 @@
                     >
                     <button
                       type='submit'
-                      class="twcss-absolute twcss-right-0 twcss-top-0 twcss-h-full twcss-px-3 twcss-flex twcss-items-center twcss-justify-center"
+                      class='twcss-absolute twcss-right-0 twcss-top-0 twcss-h-full twcss-px-3 twcss-flex twcss-items-center twcss-justify-center'
                       name='commit'
                       id='Subscribe'
                       aria-label='{{ 'newsletter.button_label' | t }}'
                     >
-                      <span class="twcss-w-5 twcss-h-5">
+                      <span class='twcss-w-5 twcss-h-5'>
                         {{- 'icon-arrow.svg' | inline_asset_content -}}
                       </span>
                     </button>
                   </div>
-                  
+
                   {%- if form.errors -%}
-                    <small class="twcss-text-destructive-default twcss-flex twcss-items-center twcss-gap-2 twcss-mt-2" id='ContactFooter-error'>
-                      <span class="twcss-w-4 twcss-h-4">
+                    <small
+                      class='twcss-text-destructive-default twcss-flex twcss-items-center twcss-gap-2 twcss-mt-2'
+                      id='ContactFooter-error'
+                    >
+                      <span class='twcss-w-4 twcss-h-4'>
                         {{- 'icon-error.svg' | inline_asset_content -}}
                       </span>
                       {{- form.errors.translated_fields.email | capitalize }}
@@ -310,15 +297,15 @@
                     </small>
                   {%- endif -%}
                 </div>
-                
+
                 {%- if form.posted_successfully? -%}
                   <h3
-                    class="twcss-text-success-default twcss-flex twcss-items-center twcss-gap-2"
+                    class='twcss-text-success-default twcss-flex twcss-items-center twcss-gap-2'
                     id='ContactFooter-success'
                     tabindex='-1'
                     autofocus
                   >
-                    <span class="twcss-w-4 twcss-h-4">
+                    <span class='twcss-w-4 twcss-h-4'>
                       {{- 'icon-success.svg' | inline_asset_content -}}
                     </span>
                     {{- 'newsletter.success' | t }}
@@ -387,13 +374,13 @@
     </div>
     <div class='footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}'>
       <div class='footer__copyright caption'>
-        <small>
-          &copy; {{ 'now' | date: '%Y' }}, Hexaflow, Inc. Powered by AAXIS. All Rights Reserved.
-        </small>
-        {% comment %} <small class='copyright__content'
-          >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
-        </small>
-        <small class='copyright__content'>{{ powered_by_link }}</small> {% endcomment %}
+        <small> &copy; {{ 'now' | date: '%Y' }}, Hexaflow, Inc. Powered by AAXIS. All Rights Reserved. </small>
+        {% comment %}
+          <small class='copyright__content'
+            >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+          </small>
+          <small class='copyright__content'>{{ powered_by_link }}</small>
+        {% endcomment %}
         {%- if section.settings.show_policy -%}
           <ul class='policies list-unstyled'>
             {%- for policy in shop.policies -%}
