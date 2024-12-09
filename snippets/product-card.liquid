@@ -109,11 +109,15 @@
       {% endif %}
 
       <div class="twcss-space-y-1 twcss-text-sm">
-        <p class="twcss-text-gray-600">Customer Product # {{ product.id }}</p>
-        <p class="twcss-text-gray-600">
+        <p class="twcss-text-[#353535]">
+          Customer Product # <span class="twcss-text-[#84888B]">{{ product.id }}</span>
+        </p>
+        <p class="twcss-text-[#353535]">
           Supplier Product # {{ product.metafields.custom.supplier_id | default: 'R9013DS' }}
         </p>
-        <p class="twcss-text-gray-600">Supplier: {{ product.vendor }}</p>
+        <p class="twcss-text-[#353535]">
+          Supplier: <span class="twcss-text-[#84888B]">{{ product.vendor }}</span>
+        </p>
       </div>
     </div>
 
