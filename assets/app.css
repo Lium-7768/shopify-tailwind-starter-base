@@ -8147,12 +8147,12 @@ video {
     flex-direction: row;
   }
 
-  .md\:twcss-items-center {
-    align-items: center;
+  .md\:twcss-items-start {
+    align-items: flex-start;
   }
 
-  .md\:twcss-items-stretch {
-    align-items: stretch;
+  .md\:twcss-items-center {
+    align-items: center;
   }
 
   .md\:twcss-bg-gradient-to-br {
