@@ -8,7 +8,7 @@
   {% render 'homepage-title', white_title: 'Featured', blue_title: 'Brands' %}
 
   <div class="twcss-relative">
-    <div class="swiper brands-swiper !twcss-static">
+    <div id="brands-swiper" class="swiper brands-swiper !twcss-static">
       <div class="swiper-wrapper twcss-gap-[24px]">
         {%- for block in section.blocks -%}
           <div
@@ -32,30 +32,36 @@
           </div>
         {%- endfor -%}
       </div>
-      <div class="swiper-button-prev swiper-button-prev-brand !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]">
+      <div
+        id="swiper-button-prev-brand"
+        class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]"
+      >
         {% render 'icon-chevron-left' %}
       </div>
-      <div class="swiper-button-next swiper-button-next-brand !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
+      <div
+        id="swiper-button-next-brand"
+        class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]"
+      >
         {% render 'icon-chevron-right' %}
       </div>
-      <div class="swiper-pagination swiper-pagination-brand !twcss-top-[116px]"></div>
+      <div id="swiper-pagination-brand" class="swiper-pagination !twcss-top-[116px]"></div>
     </div>
   </div>
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    new Swiper('.brands-swiper', {
+    new Swiper('#brands-swiper', {
       slidesPerView: 3,
       spaceBetween: 20,
       loop: false,
       pagination: {
-        el: '.swiper-pagination-brand',
+        el: '#swiper-pagination-brand',
         clickable: true
       },
       navigation: {
-        nextEl: '.swiper-button-next-brand',
-        prevEl: '.swiper-button-prev-brand'
+        nextEl: '#swiper-button-next-brand',
+        prevEl: '#swiper-button-prev-brand'
       },
       breakpoints: {
         1280: {
