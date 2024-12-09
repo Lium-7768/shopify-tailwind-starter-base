@@ -15,6 +15,8 @@
         "slide_7iMn6f": {
           "type": "slide",
           "settings": {
+            "image_mobile": "shopify://shop_images/banner-mobile.png",
+            "image_desktop": "shopify://shop_images/banner-desktop.png",
             "heading": "SEAMLESS MANUFACTURING",
             "subheading": "Reliable Distribution",
             "button_text": "See more",

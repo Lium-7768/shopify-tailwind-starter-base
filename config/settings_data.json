@@ -140,20 +140,7 @@
       },
       "products-drawer": {
         "type": "products-drawer",
-        "blocks": {
-          "category_ygJgEG": {
-            "type": "category",
-            "settings": {
-              "category_title": "Operational Products",
-              "menu": "customer-header-products-drawer"
-            }
-          }
-        },
-        "block_order": [
-          "category_ygJgEG"
-        ],
         "settings": {
-          "drawer_logo_width": 100,
           "drawer_title": "Operational Products"
         }
       }
