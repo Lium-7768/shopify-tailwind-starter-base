@@ -1,6 +1,70 @@
+{%- if section.settings.show_notice -%}
+  <div
+    class="twcss-bg-[#C2E3FF] twcss-py-3 twcss-px-5 twcss-flex twcss-items-center twcss-justify-center twcss-relative"
+    id="deliveryNotice"
+  >
+    <span class="twcss-mr-2.5">
+      <img src="{{ 'icon-clock.svg' | asset_url }}" alt="Clock icon" width="24" height="24">
+    </span>
+    <div class="twcss-flex twcss-flex-col twcss-gap-2">
+      <span class="twcss-text-[#1746A2] twcss-text-2xl twcss-font-bold">
+        {{- section.settings.notice_heading | escape -}}
+      </span>
+      <span>
+        {{- section.settings.notice_text -}}
+      </span>
+      {%- if section.settings.button_link != blank -%}
+        <a href="{{ section.settings.button_link }}" class="twcss-ml-1">{{ section.settings.button_text }}</a>
+      {%- endif -%}
+    </div>
+    <button
+      class="twcss-absolute twcss-right-4 twcss-cursor-pointer twcss-border-none twcss-bg-transparent twcss-p-1.5"
+      aria-label="{{ 'general.accessibility.close' | t }}"
+      onclick="document.getElementById('deliveryNotice').style.display='none'"
+    >
+      <img src="{{ 'icon-close.svg' | asset_url }}" alt="Close icon" width="24" height="24">
+    </button>
+  </div>
+{%- endif -%}
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Delivery Delay Notice",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_notice",
+      "label": "Show Notice",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "notice_heading",
+      "label": "Notice Heading",
+      "default": "Delivery Delays in Selected Area"
+    },
+    {
+      "type": "text",
+      "id": "notice_text",
+      "label": "Notice Text",
+      "default": "We are experiencing delivery delays in West Coast. Please allow extra time for your order to arrive. Thank you for your patience!"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "See more info »"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Delivery Delay Notice"
+    }
+  ]
+}
 {% endschema %}
