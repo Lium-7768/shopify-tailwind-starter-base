@@ -1,6 +1,6 @@
 <section
   class="md:twcss-px-4 md:twcss-max-w-7xl  twcss-mx-auto"
-  style="padding-top: {{ section.settings.section_padding }}px; padding-bottom: {{ section.settings.section_padding }}px;"
+  style="padding-top: {{ section.settings.section_padding_top }}px; padding-bottom: {{ section.settings.section_padding_bottom   }}px;"
 >
   <div class="twcss-mt-8 twcss-flex twcss-flex-col md:twcss-flex-row twcss-justify-between twcss-items-center twcss-bg-[#FFF7E9]">
     <div class="twcss-hidden md:twcss-block twcss-w-2/5 twcss-relative">
@@ -47,11 +47,21 @@
   "settings": [
     {
       "type": "range",
-      "id": "section_padding",
-      "label": "Section Vertical Padding",
+      "id": "section_padding_top",
+      "label": "Section Top Padding",
       "min": 0,
-      "max": 100,
-      "step": 5,
+      "max": 40,
+      "step": 1,
+      "default": 10,
+      "info": "Vertical padding (in pixels)"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section Bottom Padding",
+      "min": 0,
+      "max": 40,
+      "step": 1,
       "default": 10,
       "info": "Vertical padding (in pixels)"
     },
