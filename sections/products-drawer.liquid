@@ -36,7 +36,7 @@
     style='display: none;'
   >
     <div
-      class='products-drawer-overlay twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity'
+      class='products-drawer-overlay twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity !twcss-block'
       aria-hidden='true'
     ></div>
 
@@ -45,7 +45,7 @@
         <div class='twcss-pointer-events-auto twcss-w-screen twcss-max-w-md'>
           <div class='twcss-flex twcss-h-full twcss-flex-col twcss-overflow-y-scroll twcss-bg-white'>
             <!-- Header -->
-            <div class='twcss-flex twcss-items-center twcss-justify-between twcss-px-6 twcss-py-4 twcss-border-b twcss-border-gray-200'>
+            <div class='twcss-flex twcss-items-center twcss-justify-between twcss-px-6 twcss-py-4'>
               <div class='twcss-flex twcss-items-center'>
                 {%- if settings.logo != blank -%}
                   <div class='header__heading-logo-wrapper'>
