@@ -34,13 +34,13 @@
         <div class="twcss-absolute twcss-top-[50%] twcss-translate-y-[-50%] twcss-left-50% twcss-translate-x-[-50%]">
           <div class="">
             {%- if block.settings.heading != blank -%}
-              <h2 class="twcss-text-2xl md:twcss-text-4xl twcss-font-bold twcss-text-white twcss-mb-2">
+              <h2 class="twcss-text-2xl md:twcss-text-4xl twcss-font-black twcss-text-white">
                 {{ block.settings.heading }}
               </h2>
             {%- endif -%}
 
             {%- if block.settings.subheading != blank -%}
-              <p class="twcss-text-lg md:twcss-text-xl twcss-text-orange-400 twcss-mb-4">
+              <p class="twcss-text-lg md:twcss-text-xl twcss-text-orange-400 twcss-mb-3 twcss-font-bold">
                 {{ block.settings.subheading }}
               </p>
             {%- endif -%}
@@ -51,9 +51,7 @@
                 class="twcss-inline-flex twcss-items-center twcss-text-white hover:twcss-text-orange-400 twcss-transition-colors"
               >
                 {{ block.settings.button_text }}
-                <svg class="twcss-w-4 twcss-h-4 twcss-ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
+                {% render 'icon-chevron-right' %}
               </a>
             {%- endif -%}
           </div>
