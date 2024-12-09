@@ -93,7 +93,9 @@
           {{ product.title }}
         </a>
         <div alt="{{ product.price | money }}">
-          Price:<span class="twcss-font-bold twcss-mx-1">{{ product.price | money }}</span>/each
+          Price:
+          <p class="twcss-font-bold twcss-mx-1">{{ product.price | money }}</p>
+          /each
         </div>
       </div>
 
