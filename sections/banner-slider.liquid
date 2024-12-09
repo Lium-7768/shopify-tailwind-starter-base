@@ -29,40 +29,42 @@
           class="twcss-absolute twcss-top-0 twcss-left-0 twcss-w-full md:twcss-w-3/5 twcss-h-full twcss-bg-gradient-to-r md:twcss-bg-gradient-to-br twcss-from-blue-600/90 twcss-to-blue-600/70 md:twcss-to-blue-600/0"
         ></div>
 
-        <div class="twcss-absolute twcss-top-1/2 twcss-left-1/2 md:twcss-left-1/4 twcss-transform -twcss-translate-x-1/2 -twcss-translate-y-1/2 md:twcss-translate-x-0 twcss-w-11/12 md:twcss-w-auto twcss-text-center md:twcss-text-left">
-          {%- if block.settings.heading != blank -%}
-            <h2 class="twcss-text-2xl md:twcss-text-4xl twcss-font-bold twcss-text-white twcss-mb-2">
-              {{ block.settings.heading }}
-            </h2>
-          {%- endif -%}
+        <div>
+          <div class="twcss-absolute twcss-top-1/2 twcss-left-1/2 md:twcss-left-1/4 twcss-transform -twcss-translate-x-1/2 -twcss-translate-y-1/2 md:twcss-translate-x-0 twcss-w-11/12 md:twcss-w-auto twcss-text-center md:twcss-text-left">
+            {%- if block.settings.heading != blank -%}
+              <h2 class="twcss-text-2xl md:twcss-text-4xl twcss-font-bold twcss-text-white twcss-mb-2">
+                {{ block.settings.heading }}
+              </h2>
+            {%- endif -%}
 
-          {%- if block.settings.subheading != blank -%}
-            <p class="twcss-text-lg md:twcss-text-xl twcss-text-orange-400 twcss-mb-4">
-              {{ block.settings.subheading }}
-            </p>
-          {%- endif -%}
+            {%- if block.settings.subheading != blank -%}
+              <p class="twcss-text-lg md:twcss-text-xl twcss-text-orange-400 twcss-mb-4">
+                {{ block.settings.subheading }}
+              </p>
+            {%- endif -%}
 
-          {%- if block.settings.button_text != blank and block.settings.button_link != blank -%}
-            <a
-              href="{{ block.settings.button_link }}"
-              class="twcss-inline-flex twcss-items-center twcss-text-white hover:twcss-text-orange-400 twcss-transition-colors"
-            >
-              {{ block.settings.button_text }}
-              <svg class="twcss-w-4 twcss-h-4 twcss-ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </a>
-          {%- endif -%}
+            {%- if block.settings.button_text != blank and block.settings.button_link != blank -%}
+              <a
+                href="{{ block.settings.button_link }}"
+                class="twcss-inline-flex twcss-items-center twcss-text-white hover:twcss-text-orange-400 twcss-transition-colors"
+              >
+                {{ block.settings.button_text }}
+                <svg class="twcss-w-4 twcss-h-4 twcss-ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            {%- endif -%}
+          </div>
+
+          <div class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]">
+            {% render 'icon-chevron-left' %}
+          </div>
+          <div class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
+            {% render 'icon-chevron-right' %}
+          </div>
         </div>
       </div>
     {%- endfor -%}
-  </div>
-
-  <div class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]">
-    {% render 'icon-chevron-left' %}
-  </div>
-  <div class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
-    {% render 'icon-chevron-right' %}
   </div>
   <div class="swiper-pagination"></div>
 </div>
