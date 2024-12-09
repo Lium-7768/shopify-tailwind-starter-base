@@ -33,7 +33,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    new Swiper('.featured-products-slider', {
+    const x = new Swiper('.featured-products-slider', {
       slidesPerView: 1,
       spaceBetween: 16,
       pagination: {
@@ -63,6 +63,7 @@
       },
     });
   });
+  console.log('🚀 ~ x:', x);
 </script>
 
 {% schema %}
