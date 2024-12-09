@@ -30,7 +30,7 @@
             {%- endfor -%}
           </div>
 
-          <div class="swiper-pagination !twcss-relative twcss-mt-4"></div>
+          <div id="featured-products-slider-pagination" class="swiper-pagination !twcss-relative twcss-mt-4"></div>
         </div>
       {%- endif -%}
     </div>
@@ -43,7 +43,7 @@
       slidesPerView: 1,
       spaceBetween: 16,
       pagination: {
-        el: '.swiper-pagination',
+        el: '#featured-products-slider-pagination',
         clickable: true,
       },
       navigation: {
