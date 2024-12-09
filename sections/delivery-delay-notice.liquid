@@ -1,29 +1,31 @@
 {%- if section.settings.show_notice -%}
   <div
-    class="twcss-bg-[#C2E3FF] twcss-py-3 twcss-px-5 twcss-flex twcss-items-center twcss-justify-center twcss-relative"
+    class="twcss-bg-[#C2E3FF] twcss-relative"
     id="deliveryNotice"
   >
-    <span class="twcss-mr-2.5">
-      <img src="{{ 'icon-clock.svg' | asset_url }}" alt="Clock icon" width="24" height="24">
-    </span>
-    <div class="twcss-flex twcss-flex-col twcss-gap-2">
-      <span class="twcss-text-[#1746A2] twcss-text-2xl twcss-font-bold">
-        {{- section.settings.notice_heading | escape -}}
+    <div class="md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto twcss-px-4 twcss-py-10 twcss-relative">
+      <span class="twcss-mr-2.5">
+        <img src="{{ 'icon-clock.svg' | asset_url }}" alt="Clock icon" width="24" height="24">
       </span>
-      <span>
-        {{- section.settings.notice_text -}}
-      </span>
-      {%- if section.settings.button_link != blank -%}
-        <a href="{{ section.settings.button_link }}" class="twcss-ml-1">{{ section.settings.button_text }}</a>
-      {%- endif -%}
+      <div class="twcss-flex twcss-flex-col twcss-gap-2">
+        <span class="twcss-text-[#1746A2] twcss-text-2xl twcss-font-bold">
+          {{- section.settings.notice_heading | escape -}}
+        </span>
+        <span>
+          {{- section.settings.notice_text -}}
+        </span>
+        {%- if section.settings.button_link != blank -%}
+          <a href="{{ section.settings.button_link }}" class="twcss-ml-1">{{ section.settings.button_text }}</a>
+        {%- endif -%}
+      </div>
+      <button
+        class=""
+        aria-label="{{ 'general.accessibility.close' | t }}"
+        onclick="document.getElementById('deliveryNotice').style.display='none'"
+      >
+        <img src="{{ 'icon-close.svg' | asset_url }}" alt="Close icon" width="24" height="24">
+      </button>
     </div>
-    <button
-      class="twcss-absolute twcss-right-4 twcss-cursor-pointer twcss-border-none twcss-bg-transparent twcss-p-1.5"
-      aria-label="{{ 'general.accessibility.close' | t }}"
-      onclick="document.getElementById('deliveryNotice').style.display='none'"
-    >
-      <img src="{{ 'icon-close.svg' | asset_url }}" alt="Close icon" width="24" height="24">
-    </button>
   </div>
 {%- endif -%}
 
