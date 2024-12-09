@@ -901,6 +901,10 @@ video {
   width: 90px !important;
 }
 
+.twcss-w-1\/2 {
+  width: 50%;
+}
+
 .twcss-w-2\/5 {
   width: 40%;
 }
