@@ -1,43 +1,43 @@
 <div class="banner-slider swiper">
   <div class="swiper-wrapper">
     {%- for block in section.blocks -%}
-      <div class="swiper-slide relative h-[400px] md:h-[600px]" {{ block.shopify_attributes }}>
-        <div class="w-full h-full">
+      <div class="swiper-slide twcss-relative twcss-h-[400px] md:twcss-h-[600px]" {{ block.shopify_attributes }}>
+        <div class="twcss-w-full twcss-h-full">
           {%- if block.settings.image_mobile != blank or block.settings.image_desktop != blank -%}
             <img
-              width="100%"
-              height="100%"
+              height="100"
+              width="100"
               src="{{ block.settings.image_mobile | img_url: 'master' }}"
-              class="lg:hidden w-full h-full object-cover"
+              class="md:twcss-hidden twcss-w-full twcss-h-full twcss-object-cover"
               alt="{{ block.settings.heading | escape }}"
               loading="lazy"
             >
             <img
-              width="100%"
-              height="100%"
+              height="100"
+              width="100"
               src="{{ block.settings.image_desktop | img_url: 'master' }}"
-              class="hidden lg:block w-full h-full object-cover"
+              class="twcss-hidden md:twcss-block twcss-w-full twcss-h-full twcss-object-cover"
               alt="{{ block.settings.heading | escape }}"
               loading="lazy"
             >
           {%- else -%}
-            {{ 'lifestyle-1' | placeholder_svg_tag: 'w-full h-full object-cover' }}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'twcss-w-full twcss-h-full twcss-object-cover' }}
           {%- endif -%}
         </div>
 
         <div
-          class="absolute top-0 left-0 w-full md:w-3/5 h-full bg-gradient-to-r md:bg-gradient-to-br from-blue-600/90 to-blue-600/70 md:to-blue-600/0"
+          class="twcss-absolute twcss-top-0 twcss-left-0 twcss-w-full md:twcss-w-3/5 twcss-h-full twcss-bg-gradient-to-r md:twcss-bg-gradient-to-br twcss-from-blue-600/90 twcss-to-blue-600/70 md:twcss-to-blue-600/0"
         ></div>
 
-        <div class="absolute top-1/2 left-1/2 md:left-1/4 transform -translate-x-1/2 -translate-y-1/2 md:translate-x-0 w-11/12 md:w-auto text-center md:text-left">
+        <div class="twcss-absolute twcss-top-1/2 twcss-left-1/2 md:twcss-left-1/4 twcss-transform -twcss-translate-x-1/2 -twcss-translate-y-1/2 md:twcss-translate-x-0 twcss-w-11/12 md:twcss-w-auto twcss-text-center md:twcss-text-left">
           {%- if block.settings.heading != blank -%}
-            <h2 class="text-2xl md:text-4xl font-bold text-white mb-2">
+            <h2 class="twcss-text-2xl md:twcss-text-4xl twcss-font-bold twcss-text-white twcss-mb-2">
               {{ block.settings.heading }}
             </h2>
           {%- endif -%}
 
           {%- if block.settings.subheading != blank -%}
-            <p class="text-lg md:text-xl text-orange-400 mb-4">
+            <p class="twcss-text-lg md:twcss-text-xl twcss-text-orange-400 twcss-mb-4">
               {{ block.settings.subheading }}
             </p>
           {%- endif -%}
@@ -45,10 +45,10 @@
           {%- if block.settings.button_text != blank and block.settings.button_link != blank -%}
             <a
               href="{{ block.settings.button_link }}"
-              class="inline-flex items-center text-white hover:text-orange-400 transition-colors"
+              class="twcss-inline-flex twcss-items-center twcss-text-white hover:twcss-text-orange-400 twcss-transition-colors"
             >
               {{ block.settings.button_text }}
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="twcss-w-4 twcss-h-4 twcss-ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
               </svg>
             </a>
@@ -58,8 +58,8 @@
     {%- endfor -%}
   </div>
 
-  <div class="swiper-button-prev !text-white">{% render 'icon-chevron-left' %}</div>
-  <div class="swiper-button-next !text-white">{% render 'icon-chevron-right' %}</div>
+  <div class="swiper-button-prev !twcss-text-white"></div>
+  <div class="swiper-button-next !twcss-text-white"></div>
   <div class="swiper-pagination"></div>
 </div>
 
