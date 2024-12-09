@@ -32,9 +32,6 @@
         -->
 
         <div class="twcss-absolute twcss-flex twcss-justify-between twcss-gap-5">
-          <div class="swiper-button-prev !twcss-static !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]">
-            {% render 'icon-chevron-left' %}
-          </div>
           <div class="">
             {%- if block.settings.heading != blank -%}
               <h2 class="twcss-text-2xl md:twcss-text-4xl twcss-font-bold twcss-text-white twcss-mb-2">
@@ -60,14 +57,17 @@
               </a>
             {%- endif -%}
           </div>
-          <div class="swiper-button-next !twcss-static !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
-            {% render 'icon-chevron-right' %}
-          </div>
         </div>
       </div>
     {%- endfor -%}
   </div>
   <div class="swiper-pagination"></div>
+  <div class="swiper-button-next !twcss-static !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]">
+    {% render 'icon-chevron-right' %}
+  </div>
+  <div class="swiper-button-prev !twcss-static !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]">
+    {% render 'icon-chevron-left' %}
+  </div>
 </div>
 
 <script>
