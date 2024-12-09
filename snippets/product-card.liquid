@@ -54,7 +54,7 @@
   }
 {%- endstyle -%}
 
-<div class="{{ class | default: '' }} twcss-bg-white twcss-rounded-lg twcss-shadow-md twcss-w-full hover:twcss-shadow-lg twcss-transition-shadow twcss-duration-200 twcss-flex twcss-flex-col">
+<div class="{{ class | default: '' }} twcss-bg-white twcss-rounded-lg twcss-shadow-md twcss-w-full twcss-h-full hover:twcss-shadow-lg twcss-transition-shadow twcss-duration-200 twcss-flex twcss-flex-col">
   <div class="twcss-h-60 twcss-w-full twcss-shadow-sm">
     <a href="{{ product.url }}" class="twcss-block twcss-w-full twcss-h-full">
       <img
@@ -76,7 +76,7 @@
   >
     {% comment %} Product Info {% endcomment %}
 
-    <div class="twcss-flex twcss-flex-col twcss-flex-1 twcss-space-y-1">
+    <div class="twcss-flex twcss-flex-col twcss-flex-1 twcss-space-y-1 twcss-justify-between">
       <div class="twcss-flex twcss-justify-between twcss-flex-col">
         <div class="twcss-text-[#84888B] twcss-text-xs twcss-font-bold">
           {{ product.vendor }}
@@ -128,7 +128,6 @@
       class="
         twcss-flex twcss-items-center twcss-justify-center
         twcss-relative twcss-w-full
-        twcss-mt-4
       "
     >
       <product-form class="twcss-flex-1">
