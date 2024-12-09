@@ -136,24 +136,7 @@
       ],
       "settings": {
         "white_title": "Distribution",
-        "blue_title": "Solutions",
-        "desktop_banner": "shopify://shop_images/unsplash_pdrckQDTxWY.png",
-        "mobile_banner": "shopify://shop_images/unsplash_pdrckQDTxWY_669cbc1e-a559-4538-8419-240a64af8943.png",
-        "banner_title": "Redefining Efficiency in Manufacturing and Distribution",
-        "banner_description": "Streamlining processes with innovative solutions, NEXAFLOW, empowering businesses to meet customer demands with precision and reliability.",
-        "banner_link": "",
-        "banner_link_text": "See more"
-      }
-    },
-    "promo_banner_PWiD93": {
-      "type": "promo-banner",
-      "settings": {
-        "desktop_banner": "shopify://shop_images/unsplash_pdrckQDTxWY.png",
-        "mobile_banner": "shopify://shop_images/unsplash_pdrckQDTxWY_669cbc1e-a559-4538-8419-240a64af8943.png",
-        "banner_title": "Redefining Efficiency in Manufacturing and Distribution",
-        "banner_description": "Streamlining processes with innovative solutions, NEXAFLOW, empowering businesses to meet customer demands with precision and reliability.",
-        "banner_link": "shopify://policies/privacy-policy",
-        "banner_link_text": "See more"
+        "blue_title": "Solutions"
       }
     },
     "featured_plumbing_CA7GXd": {
@@ -305,7 +288,6 @@
     "delivery_delay_notice_keD9NB",
     "featured_products_dVWqqB",
     "distribution_solutions_wXkLVR",
-    "promo_banner_PWiD93",
     "featured_plumbing_CA7GXd",
     "product_brands_FQAwF4",
     "server_highlight_DGeehf"
