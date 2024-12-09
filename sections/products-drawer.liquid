@@ -41,7 +41,7 @@
                   {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
                   {%- assign logo_height = 32 -%}
                   {%- assign logo_width = logo_height | times: settings.logo.aspect_ratio | round -%}
-                  {{ settings.logo | image_url: width: logo_width | image_tag:
+                  {{ settings.logo | image_url: width: 104 | image_tag:
                     class: 'twcss-h-8 twcss-w-auto',
                     widths: logo_width,
                     height: logo_height,
