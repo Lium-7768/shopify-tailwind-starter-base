@@ -11,12 +11,13 @@
     <span class="twcss-text-2xl twcss-text-blue-500">{{ blue_title }}</span>
   </h2>
   {% if link_url %}
-    <a
-      href="{{ link_url }}"
-      class="twcss-flex twcss-items-center twcss-text-sm twcss-text-blue-600 hover:twcss-text-blue-800 twcss-flex-row-reverse"
-    >
-      <span class="twcss-order-2">{{ link_text }}</span>
-      <span class="twcss-order-1">{% render 'icon-chevron-right' %}</span>
-    </a>
+    <div class="twcss-flex twcss-items-center twcss-text-sm twcss-text-blue-600 hover:twcss-text-blue-800 twcss-flex-row-reverse">
+      <a
+        href="{{ link_url }}"
+      >
+        <span class="twcss-order-2">{{ link_text }}</span>
+        <span class="twcss-order-1">{% render 'icon-chevron-right' %}</span>
+      </a>
+    </div>
   {% endif %}
 </div>
