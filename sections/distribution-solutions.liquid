@@ -19,46 +19,6 @@
       {% endfor %}
     </div>
   </div>
-
-  <div class="md:twcss-px-4 md:twcss-max-w-7xl  twcss-mx-auto">
-    <div class="twcss-mt-8 twcss-flex twcss-flex-col md:twcss-flex-row twcss-justify-between twcss-items-center twcss-bg-[#FFF7E9]">
-      <div class="twcss-hidden md:twcss-block twcss-w-2/5 twcss-relative">
-        <img
-          src="{{ section.settings.desktop_banner | img_url: 'master' }}"
-          alt="{{ section.settings.banner_title }}"
-          class="twcss-h-40 twcss-w-full twcss-object-cover [clip-path:polygon(0_0,85%_0,100%_100%,0%_100%)]"
-          loading="lazy"
-          width="100%"
-          height="100%"
-        >
-      </div>
-      <div class="md:twcss-hidden twcss-w-full">
-        <img
-          src="{{ section.settings.mobile_banner | img_url: "master" }}"
-          alt="{{ section.settings.banner_title }}"
-          class="twcss-h-44  twcss-w-full twcss-object-cover [clip-path:polygon(0_0,0_100%,100%_75%,100%_0)]"
-          loading="lazy"
-          width="100%"
-          height="100%"
-        >
-      </div>
-      <div class="twcss-flex twcss-flex-col twcss-justify-center twcss-px-4 md:twcss-px-8 twcss-w-full md:twcss-w-3/5 twcss-items-center twcss-p-2 md:twcss-p-6 twcss-text-center">
-        <div class="twcss-text-[#FF6B00] twcss-text-lg twcss-font-bold">
-          {{ section.settings.banner_title }}
-        </div>
-        <div class="twcss-text-gray-700 md:twcss-mt-2 twcss-text-sm">
-          {% render 'bold-uppercase' with section.settings.banner_description as text %}
-        </div>
-        <a
-          href="{{ section.settings.banner_link }}"
-          class="twcss-text-[#1746A2] md:twcss-mt-4 twcss-flex twcss-items-center twcss-gap-2 twcss-font-bold twcss-text-sm"
-        >
-          {{ section.settings.banner_link_text }}
-          {% render 'icon-chevron-right' %}
-        </a>
-      </div>
-    </div>
-  </div>
 </section>
 
 {% schema %}
@@ -76,39 +36,6 @@
       "id": "blue_title",
       "label": "Blue Title",
       "default": "Solutions"
-    },
-    {
-      "type": "image_picker",
-      "id": "desktop_banner",
-      "label": "Desktop Banner Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "mobile_banner",
-      "label": "Mobile Banner Image"
-    },
-    {
-      "type": "text",
-      "id": "banner_title",
-      "label": "Banner Title",
-      "default": "Redefining Efficiency in Manufacturing and Distribution"
-    },
-    {
-      "type": "text",
-      "id": "banner_description",
-      "label": "Banner Description",
-      "default": "Streamlining processes with innovative solutions, NEXAFLOW, empowering businesses to meet customer demands with precision and reliability."
-    },
-    {
-      "type": "url",
-      "id": "banner_link",
-      "label": "Banner Link"
-    },
-    {
-      "type": "text",
-      "id": "banner_link_text",
-      "label": "Banner Link Text",
-      "default": "See more"
     }
   ],
   "blocks": [
