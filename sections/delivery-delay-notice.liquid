@@ -3,7 +3,7 @@
     class="twcss-bg-[#C2E3FF] twcss-relative"
     id="deliveryDelayNotice"
   >
-    <div class="md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto twcss-relative twcss-flex twcss-justify-center twcss-items-baseline md:twcss-items-start twcss-p-4">
+    <div class="md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto twcss-relative twcss-flex twcss-justify-center twcss-items-baseline md:twcss-items-stretch twcss-p-4">
       <span class="twcss-mr-2.5">
         <img src="{{ 'icon-clock.svg' | asset_url }}" alt="Clock icon" width="32" height="32">
       </span>
@@ -23,7 +23,7 @@
         </span>
       </div>
       <button
-        class=""
+        class="twcss-flex twcss-items-baseline md:twcss-items-center twcss-justify-center"
         aria-label="{{ 'general.accessibility.close' | t }}"
         onclick="document.getElementById('deliveryDelayNotice').style.display='none'"
       >
