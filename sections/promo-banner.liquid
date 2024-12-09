@@ -1,4 +1,7 @@
-<section class="md:twcss-px-4 md:twcss-max-w-7xl  twcss-mx-auto">
+<section
+  class="md:twcss-px-4 md:twcss-max-w-7xl  twcss-mx-auto"
+  style="padding-top: {{ section.settings.section_padding }}px; padding-bottom: {{ section.settings.section_padding }}px;"
+>
   <div class="twcss-mt-8 twcss-flex twcss-flex-col md:twcss-flex-row twcss-justify-between twcss-items-center twcss-bg-[#FFF7E9]">
     <div class="twcss-hidden md:twcss-block twcss-w-2/5 twcss-relative">
       <img
@@ -42,6 +45,16 @@
 {
   "name": "Promo Banner",
   "settings": [
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section Vertical Padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 10,
+      "info": "Vertical padding (in pixels)"
+    },
     {
       "type": "image_picker",
       "id": "desktop_banner",
