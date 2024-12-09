@@ -47,27 +47,23 @@
             <!-- Header -->
             <div class='twcss-flex twcss-items-center twcss-justify-between twcss-px-6 twcss-py-4'>
               <div class='twcss-flex twcss-items-center'>
-                {%- if settings.logo != blank -%}
-                  <div class='header__heading-logo-wrapper'>
-                    {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-                    {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-                    {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
-                    {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+                {%- if section.settings.drawer_logo != blank -%}
+                  <div class='twcss-h-8'>
+                    {%- assign logo_alt = section.settings.drawer_logo.alt | default: shop.name | escape -%}
                     {{
-                      settings.logo
-                      | image_url: width: 600
+                      section.settings.drawer_logo
+                      | image_url: width: section.settings.drawer_logo_width
                       | image_tag:
-                        class: '',
-                        widths: widths,
-                        height: logo_height,
-                        width: settings.logo_width,
-                        alt: logo_alt,
-                        sizes: sizes,
-                        preload: true
+                        class: 'twcss-h-full twcss-w-auto',
+                        widths: '50, 100, 150, 200, 250, 300',
+                        height: section.settings.drawer_logo_width
+                      | divided_by: section.settings.drawer_logo.aspect_ratio,
+                        width: section.settings.drawer_logo_width,
+                        alt: logo_alt
                     }}
                   </div>
                 {%- else -%}
-                  <span class=''>{{ shop.name }}</span>
+                  <span class='twcss-text-lg twcss-font-medium'>{{ shop.name }}</span>
                 {%- endif -%}
               </div>
               <button type='button' class='products-drawer-close twcss-text-gray-400 hover:twcss-text-gray-500'>
@@ -80,152 +76,23 @@
 
             <!-- Categories -->
             <div class='twcss-flex-1 twcss-overflow-y-auto'>
-              <!-- Operational Products -->
-              <div class='twcss-py-4'>
-                <h3 class='twcss-px-6 twcss-text-lg twcss-font-semibold twcss-text-primary-default'>
-                  Operational Products
-                </h3>
-                <div class='twcss-mt-2'>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>Office supplies</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>Industrial safety equipment</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>Tools and machinery</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>Packaging materials</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>Furniture and storage</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
+              {%- for block in section.blocks -%}
+                <div class='twcss-py-4 {% unless forloop.first %}twcss-border-t twcss-border-gray-200{% endunless %}'>
+                  <h3 class='twcss-px-6 twcss-text-lg twcss-font-semibold twcss-text-primary-default'>
+                    {{ block.settings.category_title }}
+                  </h3>
+                  <div class='twcss-mt-2'>
+                    {%- for link in block.settings.menu.links -%}
+                      <a href='{{ link.url }}' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                        <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                          <span class='twcss-text-gray-700'>{{ link.title }}</span>
+                          {% render 'icon-chevron-right' %}
+                        </div>
+                      </a>
+                    {%- endfor -%}
+                  </div>
                 </div>
-              </div>
-
-              <!-- Logistics Services -->
-              <div class='twcss-py-4 twcss-border-t twcss-border-gray-200'>
-                <h3 class='twcss-px-6 twcss-text-lg twcss-font-semibold twcss-text-primary-default'>
-                  Logistics Services
-                </h3>
-                <div class='twcss-mt-2'>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>Transportation and distribution</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>Inventory management</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>Warehousing and storage</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>International shipping</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>Tracking and monitoring</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Technology and Digital Solutions -->
-              <div class='twcss-py-4 twcss-border-t twcss-border-gray-200'>
-                <h3 class='twcss-px-6 twcss-text-lg twcss-font-semibold twcss-text-primary-default'>
-                  Technology and Digital Solutions
-                </h3>
-                <div class='twcss-mt-2'>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>Enterprise management software (ERP)</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>E-commerce solutions</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>Tracking and optimization systems</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>IT infrastructure</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
-                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                      <span class='twcss-text-gray-700'>Business communication devices</span>
-                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
-                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </a>
-                </div>
-              </div>
+              {%- endfor -%}
             </div>
           </div>
         </div>
@@ -309,10 +176,25 @@
   "name": "Products Drawer",
   "settings": [
     {
+      "type": "image_picker",
+      "id": "drawer_logo",
+      "label": "Drawer Logo"
+    },
+    {
+      "type": "range",
+      "id": "drawer_logo_width",
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo Width",
+      "default": 100
+    },
+    {
       "type": "text",
       "id": "drawer_title",
       "label": "Drawer Title",
-      "default": "Operational Products"
+      "default": "Products Menu"
     }
   ],
   "blocks": [
@@ -327,9 +209,20 @@
           "default": "Category"
         },
         {
-          "type": "url",
-          "id": "category_link",
-          "label": "Category Link"
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "info": "Select a menu for this category"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Products Drawer",
+      "blocks": [
+        {
+          "type": "category"
         }
       ]
     }
