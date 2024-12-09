@@ -74,9 +74,11 @@
       twcss-p-4
     "
   >
+    {% comment %} Product Info {% endcomment %}
+
     <div class="twcss-flex twcss-flex-col twcss-flex-1 twcss-space-y-1">
       <div class="twcss-flex twcss-justify-between twcss-flex-col twcss-space-y-1">
-        <div class="twcss-text-gray-600 twcss-text-sm">
+        <div class="twcss-text-[#84888B] twcss-text-sm">
           {{ product.vendor }}
         </div>
 
@@ -121,6 +123,7 @@
       </div>
     </div>
 
+    {% comment %} Add to Cart {% endcomment %}
     <div
       class="
         twcss-flex twcss-items-center twcss-justify-center
