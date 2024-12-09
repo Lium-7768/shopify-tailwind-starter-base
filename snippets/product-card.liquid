@@ -78,14 +78,14 @@
 
     <div class="twcss-flex twcss-flex-col twcss-flex-1 twcss-space-y-1">
       <div class="twcss-flex twcss-justify-between twcss-flex-col twcss-space-y-1">
-        <div class="twcss-text-[#84888B] twcss-text-sm">
+        <div class="twcss-text-[#84888B] twcss-text-xs twcss-font-bold">
           {{ product.vendor }}
         </div>
 
         <a
           href="{{ product.url }}"
           class="
-            twcss-text-xl twcss-font-bold
+            twcss-text-base twcss-font-bold
             twcss-line-clamp-2
             twcss-text-[#353535]
             twcss-h-14 twcss-overflow-hidden twcss-text-ellipsis
@@ -94,9 +94,9 @@
         >
           {{ product.title }}
         </a>
-        <p alt="{{ product.price | money }}">
+        <p alt="{{ product.price | money }}" class="twcss-text-sm">
           Price:
-          <span class="twcss-font-bold twcss-mx-1">{{ product.price | money }}</span>
+          <span class="twcss-font-bold twcss-mx-1 twcss-text-lg">{{ product.price | money }}</span>
           /each
         </p>
       </div>
@@ -110,14 +110,12 @@
         </div>
       {% endif %}
 
-      <div class="twcss-space-y-1 twcss-text-sm">
-        <p class="twcss-text-[#353535]">
+      <div class="twcss-space-y-1 twcss-text-xs twcss-text-[#353535]">
+        <p>
           Customer Product # <span class="twcss-text-[#84888B]">{{ product.id }}</span>
         </p>
-        <p class="twcss-text-[#353535]">
-          Supplier Product # {{ product.metafields.custom.supplier_id | default: 'R9013DS' }}
-        </p>
-        <p class="twcss-text-[#353535]">
+        <p>Supplier Product # {{ product.metafields.custom.supplier_id | default: 'R9013DS' }}</p>
+        <p>
           Supplier: <span class="twcss-text-[#84888B]">{{ product.vendor }}</span>
         </p>
       </div>
