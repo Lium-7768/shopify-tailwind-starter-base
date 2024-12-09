@@ -55,7 +55,7 @@
 {%- endstyle -%}
 
 <div class="{{ class | default: '' }} twcss-bg-white twcss-border twcss-border-[#EBEBEB] twcss-rounded-lg twcss-w-full twcss-h-full twcss-flex twcss-flex-col">
-  <div class="twcss-h-60 twcss-w-full twcss-shadow-sm">
+  <div class="twcss-h-60 twcss-w-full twcss-shadow-sm twcss-border-b twcss-border-[#EBEBEB]">
     <a href="{{ product.url }}" class="twcss-block twcss-w-full twcss-h-full">
       <img
         src="{{ product.featured_image | img_url: '240x240', crop: 'center' }}"
