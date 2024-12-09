@@ -11,10 +11,12 @@
         <span class="twcss-text-[#1746A2] twcss-text-2xl twcss-font-bold">
           {{- section.settings.notice_heading | escape -}}
         </span>
-        <span>
+        <span class="twcss-font-bold">
           {{- section.settings.notice_text -}}
           {%- if section.settings.button_link != blank -%}
-            <a href="{{ section.settings.button_link }}" class="twcss-ml-1">{{ section.settings.button_text }}</a>
+            <a href="{{ section.settings.button_link }}" class="twcss-ml-1 twcss-text-[#1746A2]">
+              {{- section.settings.button_text -}}
+            </a>
           {%- endif -%}
         </span>
       </div>
