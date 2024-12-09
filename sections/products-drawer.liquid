@@ -27,82 +27,101 @@
 {%- endstyle -%}
 
 <products-drawer>
-  <div id="products-drawer" class="twcss-fixed twcss-inset-0 twcss-z-50 twcss-overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true" style="display: none;">
-    <div class="products-drawer-overlay twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity" aria-hidden="true"></div>
-    
-    <div class="twcss-absolute twcss-inset-0 twcss-overflow-hidden twcss-pointer-events-none">
-      <div class="twcss-pointer-events-none twcss-fixed twcss-inset-y-0 twcss-left-0 twcss-flex twcss-max-w-full">
-        <div class="twcss-pointer-events-auto twcss-w-screen twcss-max-w-md">
-          <div class="twcss-flex twcss-h-full twcss-flex-col twcss-overflow-y-scroll twcss-bg-white">
+  <div
+    id='products-drawer'
+    class='twcss-fixed twcss-inset-0 twcss-z-50 twcss-overflow-hidden'
+    aria-labelledby='slide-over-title'
+    role='dialog'
+    aria-modal='true'
+    style='display: none;'
+  >
+    <div
+      class='products-drawer-overlay twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity'
+      aria-hidden='true'
+    ></div>
+
+    <div class='twcss-absolute twcss-inset-0 twcss-overflow-hidden twcss-pointer-events-none'>
+      <div class='twcss-pointer-events-none twcss-fixed twcss-inset-y-0 twcss-left-0 twcss-flex twcss-max-w-full'>
+        <div class='twcss-pointer-events-auto twcss-w-screen twcss-max-w-md'>
+          <div class='twcss-flex twcss-h-full twcss-flex-col twcss-overflow-y-scroll twcss-bg-white'>
             <!-- Header -->
-            <div class="twcss-flex twcss-items-center twcss-justify-between twcss-px-6 twcss-py-4 twcss-border-b twcss-border-gray-200">
-              <div class="twcss-flex twcss-items-center">
+            <div class='twcss-flex twcss-items-center twcss-justify-between twcss-px-6 twcss-py-4 twcss-border-b twcss-border-gray-200'>
+              <div class='twcss-flex twcss-items-center'>
                 {%- if settings.logo != blank -%}
-                  {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-                  {%- assign logo_height = 32 -%}
-                  {%- assign logo_width = logo_height | times: settings.logo.aspect_ratio | round -%}
-                  {{ settings.logo | image_url: width: 104 | image_tag:
-                    class: 'twcss-h-8 twcss-w-auto',
-                    widths: logo_width,
-                    height: logo_height,
-                    width: logo_width,
-                    alt: logo_alt,
-                    loading: 'lazy'
-                  }}
+                  <div class='header__heading-logo-wrapper'>
+                    {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+                    {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+                    {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+                    {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+                    {{
+                      settings.logo
+                      | image_url: width: 600
+                      | image_tag:
+                        class: '',
+                        widths: widths,
+                        height: logo_height,
+                        width: settings.logo_width,
+                        alt: logo_alt,
+                        sizes: sizes,
+                        preload: true
+                    }}
+                  </div>
                 {%- else -%}
-                  <span class="twcss-text-lg twcss-font-semibold twcss-text-gray-900">{{ shop.name }}</span>
+                  <span class=''>{{ shop.name }}</span>
                 {%- endif -%}
               </div>
-              <button type="button" class="products-drawer-close twcss-text-gray-400 hover:twcss-text-gray-500">
-                <span class="twcss-sr-only">Close panel</span>
-                <svg class="twcss-h-6 twcss-w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <button type='button' class='products-drawer-close twcss-text-gray-400 hover:twcss-text-gray-500'>
+                <span class='twcss-sr-only'>Close panel</span>
+                <svg class='twcss-h-6 twcss-w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
 
             <!-- Categories -->
-            <div class="twcss-flex-1 twcss-overflow-y-auto">
+            <div class='twcss-flex-1 twcss-overflow-y-auto'>
               <!-- Operational Products -->
-              <div class="twcss-py-4">
-                <h3 class="twcss-px-6 twcss-text-lg twcss-font-semibold twcss-text-primary-default">Operational Products</h3>
-                <div class="twcss-mt-2">
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">Office supplies</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+              <div class='twcss-py-4'>
+                <h3 class='twcss-px-6 twcss-text-lg twcss-font-semibold twcss-text-primary-default'>
+                  Operational Products
+                </h3>
+                <div class='twcss-mt-2'>
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>Office supplies</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
                   </a>
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">Industrial safety equipment</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>Industrial safety equipment</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
                   </a>
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">Tools and machinery</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>Tools and machinery</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
                   </a>
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">Packaging materials</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>Packaging materials</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
                   </a>
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">Furniture and storage</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>Furniture and storage</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
@@ -111,45 +130,47 @@
               </div>
 
               <!-- Logistics Services -->
-              <div class="twcss-py-4 twcss-border-t twcss-border-gray-200">
-                <h3 class="twcss-px-6 twcss-text-lg twcss-font-semibold twcss-text-primary-default">Logistics Services</h3>
-                <div class="twcss-mt-2">
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">Transportation and distribution</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+              <div class='twcss-py-4 twcss-border-t twcss-border-gray-200'>
+                <h3 class='twcss-px-6 twcss-text-lg twcss-font-semibold twcss-text-primary-default'>
+                  Logistics Services
+                </h3>
+                <div class='twcss-mt-2'>
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>Transportation and distribution</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
                   </a>
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">Inventory management</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>Inventory management</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
                   </a>
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">Warehousing and storage</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>Warehousing and storage</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
                   </a>
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">International shipping</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>International shipping</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
                   </a>
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">Tracking and monitoring</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>Tracking and monitoring</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
@@ -158,45 +179,47 @@
               </div>
 
               <!-- Technology and Digital Solutions -->
-              <div class="twcss-py-4 twcss-border-t twcss-border-gray-200">
-                <h3 class="twcss-px-6 twcss-text-lg twcss-font-semibold twcss-text-primary-default">Technology and Digital Solutions</h3>
-                <div class="twcss-mt-2">
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">Enterprise management software (ERP)</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+              <div class='twcss-py-4 twcss-border-t twcss-border-gray-200'>
+                <h3 class='twcss-px-6 twcss-text-lg twcss-font-semibold twcss-text-primary-default'>
+                  Technology and Digital Solutions
+                </h3>
+                <div class='twcss-mt-2'>
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>Enterprise management software (ERP)</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
                   </a>
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">E-commerce solutions</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>E-commerce solutions</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
                   </a>
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">Tracking and optimization systems</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>Tracking and optimization systems</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
                   </a>
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">IT infrastructure</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>IT infrastructure</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
                   </a>
-                  <a href="#" class="twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50">
-                    <div class="twcss-flex twcss-items-center twcss-justify-between">
-                      <span class="twcss-text-gray-700">Business communication devices</span>
-                      <svg class="twcss-h-5 twcss-w-5 twcss-text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                  <a href='#' class='twcss-block twcss-px-6 twcss-py-3 hover:twcss-bg-gray-50'>
+                    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+                      <span class='twcss-text-gray-700'>Business communication devices</span>
+                      <svg class='twcss-h-5 twcss-w-5 twcss-text-gray-400' viewBox='0 0 20 20' fill='currentColor'>
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                       </svg>
                     </div>
@@ -223,13 +246,13 @@
 
     bindEvents() {
       const trigger = document.getElementById('products-drawer-trigger');
-      
+
       if (trigger) {
         trigger.addEventListener('click', () => this.open());
       }
 
       // Close button events
-      this.closeButtons.forEach(button => {
+      this.closeButtons.forEach((button) => {
         button.addEventListener('click', () => this.close());
       });
 
@@ -252,7 +275,7 @@
     open() {
       this.drawer.style.display = 'block';
       document.body.style.overflow = 'hidden';
-      
+
       requestAnimationFrame(() => {
         const drawer = this.drawer.querySelector('.twcss-max-w-md');
         drawer.classList.add('twcss-animate-slide-in');
@@ -262,7 +285,7 @@
     close() {
       const drawer = this.drawer.querySelector('.twcss-max-w-md');
       drawer.classList.add('twcss-animate-slide-out');
-      
+
       setTimeout(() => {
         this.drawer.style.display = 'none';
         document.body.style.overflow = '';
