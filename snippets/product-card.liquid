@@ -24,7 +24,7 @@
 {%- endif -%}
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
-<style>
+{%- style -%}
   .homepage-product-card-button.loading {
     color: transparent;
     position: relative;
@@ -52,7 +52,7 @@
   .homepage-product-card-button.loading > .loading__spinner .path {
     stroke: rgb(var(--color-button-text));
   }
-</style>
+{%- endstyle -%}
 
 <div class="{{ class | default: '' }} twcss-bg-white twcss-rounded-lg twcss-shadow-md twcss-w-full hover:twcss-shadow-lg twcss-transition-shadow twcss-duration-200 twcss-flex twcss-flex-col">
   <div class="twcss-h-60 twcss-w-full twcss-shadow-sm">
@@ -88,11 +88,12 @@
             twcss-text-[#353535]
             twcss-h-14 twcss-overflow-hidden twcss-text-ellipsis
           "
+          alt="{{ product.title }}"
         >
           {{ product.title }}
         </a>
-        <div>
-          Price:<span class="twcss-font-bold twcss-mx-1">{{ product.price | money }}</span><span>/each</span>
+        <div alt="{{ product.price | money }}">
+          Price:<span class="twcss-font-bold twcss-mx-1">{{ product.price | money }}</span>/each
         </div>
       </div>
 
