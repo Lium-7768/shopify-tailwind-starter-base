@@ -92,11 +92,11 @@
         >
           {{ product.title }}
         </a>
-        <div alt="{{ product.price | money }}">
+        <p alt="{{ product.price | money }}">
           Price:
-          <p class="twcss-font-bold twcss-mx-1">{{ product.price | money }}</p>
+          <span class="twcss-font-bold twcss-mx-1">{{ product.price | money }}</span>
           /each
-        </div>
+        </p>
       </div>
 
       {% if show_new_tag %}
