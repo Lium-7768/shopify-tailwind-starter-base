@@ -35,7 +35,7 @@
         "show_notice": true,
         "notice_heading": "Delivery Delays in Selected Area",
         "notice_text": "We are experiencing delivery delays in West Coast. Please allow extra time for your order to arrive. Thank you for your patience!",
-        "button_link": "",
+        "button_link": "shopify://policies/privacy-policy",
         "button_text": "See more info »"
       }
     },
