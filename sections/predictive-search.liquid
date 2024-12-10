@@ -59,26 +59,6 @@
       </div>
     {%- endif -%}
 
-    {%- if predictive_search.terms != blank -%}
-      <div class='predictive-search__result-group'>
-        <h2 class='predictive-search__heading text-body caption-with-letter-spacing'>Related Terms</h2>
-        <ul class='predictive-search__results-list list-unstyled' role='group'>
-          {%- assign search_terms = predictive_search.terms | split: ' ' -%}
-          {%- for term in search_terms -%}
-            <li class='predictive-search__list-item' role='option'>
-              <button
-                class='predictive-search__item predictive-search__item--term link link--text'
-                tabindex='-1'
-                data-search-term='{{ term }}'
-              >
-                <span>{{ term }}</span>
-              </button>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </div>
-    {%- endif -%}
-
     {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
 
     <div id='predictive-search-option-search-keywords' class='predictive-search__search-for-button'>
