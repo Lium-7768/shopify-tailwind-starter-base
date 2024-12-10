@@ -3,8 +3,8 @@
     {% render 'homepage-title',
       white_title: 'Featured',
       blue_title: 'Products',
-      link_url: '/collections/all',
-      link_text: 'See all'
+      link_url: section.settings.link_url,
+      link_text: section.settings.link_text
     %}
 
     <div class="twcss-relative ">
@@ -88,11 +88,22 @@
       "default": "Products"
     },
     {
+      "type": "text",
+      "id": "link_url",
+      "label": "Link URL",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text",
+      "default": "See all"
+    },
+    {
       "type": "collection",
       "id": "collection",
       "label": "Collection"
-    },
-
+    }
   ],
   "presets": [
     {
