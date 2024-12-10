@@ -326,18 +326,16 @@
 
     {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
 
-    <div id='predictive-search-option-search-keywords' class='predictive-search__search-for-button'>
+    <div id='predictive-search-option-search-keywords' class=''>
       <button
-        class='predictive-search__item predictive-search__item--term link link--text h5 animate-arrow'
+        class=''
         tabindex='-1'
         role='option'
         aria-selected='false'
       >
-        <span data-predictive-search-search-for-text>
-          {{- 'templates.search.search_for' | t: terms: predictive_search.terms -}}
-        </span>
-        <span class='svg-wrapper'>
-          {{- 'icon-arrow.svg' | inline_asset_content -}}
+        <span class='twcss-text-primary-default twcss-text-sm twcss-font-bold'>See All Results</span>
+        <span class='twcss-size-6'>
+          {{- 'icon-caret.svg' | inline_asset_content -}}
         </span>
       </button>
     </div>
