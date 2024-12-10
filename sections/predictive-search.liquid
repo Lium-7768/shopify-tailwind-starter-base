@@ -271,7 +271,7 @@
         <div class=''>
           <h2
             id='predictive-search-products'
-            class='twcss-text-accent-default twcss-text-sm twcss-font-bold twcss-t-5 twcs-b-2'
+            class='twcss-text-accent-default twcss-text-sm twcss-font-bold twcss-pt-5 twcss-pb-2'
           >
             {{- 'templates.search.products' | t -}}
           </h2>
@@ -284,7 +284,7 @@
             {%- for product in predictive_search.resources.products -%}
               <li
                 id='predictive-search-option-product-{{ forloop.index }}'
-                class='[&:(first-child)]:twcss-border-t twcss-border-b'
+                class='twcss-border-b'
                 role='option'
                 aria-selected='false'
               >

@@ -4702,6 +4702,10 @@ video {
   padding-bottom: 2rem !important;
 }
 
+.twcss-pb-2 {
+  padding-bottom: 0.5rem;
+}
+
 .twcss-pl-\[60px\] {
   padding-left: 60px;
 }
