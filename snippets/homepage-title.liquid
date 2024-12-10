@@ -1,10 +1,10 @@
-{%- assign wrapper_classes = wrapper_classes
-  | default: 'twcss-flex twcss-items-baseline twcss-justify-between twcss-mb-6'
+{%- assign wrapper_classes = 'twcss-flex twcss-items-baseline twcss-justify-between twcss-mb-6 '
+  | append: wrapper_classes
 -%}
-{%- assign white_title_classes = white_title_classes | default: 'twcss-text-2xl twcss-font-semibold' -%}
-{%- assign blue_title_classes = blue_title_classes | default: 'twcss-text-2xl twcss-text-blue-500' -%}
-{%- assign link_classes = link_classes
-  | default: 'twcss-flex twcss-items-center twcss-text-sm twcss-text-blue-600 hover:twcss-text-blue-800 twcss-w-1/4 twcss-flex-row-reverse'
+{%- assign white_title_classes = 'twcss-text-2xl twcss-font-semibold ' | append: white_title_classes -%}
+{%- assign blue_title_classes = 'twcss-text-2xl twcss-text-blue-500 ' | append: blue_title_classes -%}
+{%- assign link_classes = 'twcss-flex twcss-items-center twcss-text-sm twcss-text-blue-600 hover:twcss-text-blue-800 twcss-w-1/4 twcss-flex-row-reverse '
+  | append: link_classes
 -%}
 
 <div class="{{ wrapper_classes }}">
