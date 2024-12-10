@@ -4692,8 +4692,8 @@ video {
   font-size: 18px;
 }
 
-.twcss-text-\[22px\] {
-  font-size: 22px;
+.twcss-text-\[20px\] {
+  font-size: 20px;
 }
 
 .twcss-text-base {
@@ -4746,6 +4746,10 @@ video {
 
 .twcss-leading-\[22px\] {
   line-height: 22px;
+}
+
+.twcss-leading-normal {
+  line-height: 1.5;
 }
 
 .\!twcss-text-black {
@@ -5038,11 +5042,6 @@ video {
 
 .twcss-text-background\/95 {
   color: rgb(255 255 255 / 0.95);
-}
-
-.twcss-text-blue-100 {
-  --tw-text-opacity: 1;
-  color: rgb(219 234 254 / var(--tw-text-opacity, 1));
 }
 
 .twcss-text-blue-500 {
@@ -8302,6 +8301,10 @@ video {
   .lg\:twcss-px-0 {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .lg\:twcss-text-\[22px\] {
+    font-size: 22px;
   }
 
   .lg\:twcss-text-\[38px\] {
