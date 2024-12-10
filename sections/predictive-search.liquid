@@ -290,7 +290,7 @@
               >
                 <a
                   href='{{ product.url }}'
-                  class='twcss-flex twcss-items-center twcss-py-2 twcss-gap-x-5 twcss-border-t twcss-border-b'
+                  class='twcss-flex twcss-items-center twcss-py-2 twcss-gap-x-5 [&:(first-child)]:twcss-border-t twcss-border-b'
                   tabindex='-1'
                 >
                   {%- if product.featured_media != blank -%}
@@ -309,7 +309,9 @@
                         {{ product.vendor }}
                       </div>
                     {%- endif -%}
-                    <p class='predictive-search__item-heading h5'>{{ product.title | escape }}</p>
+                    <p class='twcss-text-accent-default twcss-text-sm twcss-font-semibold'>
+                      {{ product.title | escape }}
+                    </p>
                     {%- if settings.predictive_search_show_price -%}
                       {% render 'price', product: product, use_variant: true, show_badges: false %}
                     {%- endif -%}
