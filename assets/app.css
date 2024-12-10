@@ -736,6 +736,10 @@ video {
   margin-bottom: 1.25rem !important;
 }
 
+.\!twcss-mb-\[10px\] {
+  margin-bottom: 10px !important;
+}
+
 .\!twcss-mr-0 {
   margin-right: 0px !important;
 }
