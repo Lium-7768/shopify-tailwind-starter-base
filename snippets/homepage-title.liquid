@@ -6,17 +6,17 @@
   - link_text: 链接文本
 {% endcomment %}
 <div class="twcss-flex twcss-items-baseline twcss-justify-between twcss-mb-6">
-  <h2 class="twcss-text-2xl twcss-font-semibold">
+  <h2 class="twcss-text-2xl twcss-font-semibold twcss-w-[70%]">
     {{ white_title }}
     <span class="twcss-text-2xl twcss-text-blue-500">{{ blue_title }}</span>
   </h2>
   {% if link_url %}
     <a
       href="{{ link_url }}"
-      class="twcss-flex twcss-items-center twcss-text-sm twcss-font-bold twcss-text-[#1746A2] "
+      class="twcss-flex twcss-items-center twcss-text-sm twcss-font-bold twcss-text-[#1746A2] twcss-flex-row-reverse"
     >
-      <div class="">{{ link_text }}</div>
-      <div class="">{% render 'icon-chevron-right' %}</div>
+      <div class="twcss-order-2">{{ link_text }}</div>
+      <div class="twcss-order-1">{% render 'icon-chevron-right' %}</div>
     </a>
   {% endif %}
 </div>
