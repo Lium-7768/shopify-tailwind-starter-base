@@ -1,20 +1,23 @@
 <section class="twcss-py-10">
   <div class="twcss-px-4 md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto">
     {% render 'homepage-title', white_title: section.settings.white_title, blue_title: section.settings.blue_title %}
+
     <div class="twcss-flex twcss-flex-row twcss-justify-between twcss-gap-x-6 twcss-items-stretch twcss-mt-8">
       {% for block in section.blocks %}
         <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-1 {% if forloop.index > 2 %} twcss-hidden md:!twcss-flex  {% endif %}">
-          <div class="twcss-w-full twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-bg-[#EEF5FF] twcss-flex twcss-justify-center twcss-items-center">
-            <img
-              src="{{ block.settings.image | img_url: '400x400', crop: 'center' }}"
-              alt="{{ block.settings.title }}"
-              class="twcss-object-cover !twcss-w-[85%] !twcss-h-[85%]"
-              loading="lazy"
-              width="100%"
-              height="100%"
-            >
-          </div>
-          <div class="twcss-text-sm twcss-font-semibold">{{ block.settings.title }}</div>
+          <a href="{{ block.settings.link }}" class="twcss-block twcss-w-full">
+            <div class="twcss-w-full twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-bg-[#EEF5FF] twcss-flex twcss-justify-center twcss-items-center">
+              <img
+                src="{{ block.settings.image | img_url: '400x400', crop: 'center' }}"
+                alt="{{ block.settings.title }}"
+                class="twcss-object-cover !twcss-w-[85%] !twcss-h-[85%]"
+                loading="lazy"
+                width="100%"
+                height="100%"
+              >
+            </div>
+            <div class="twcss-text-sm twcss-font-semibold">{{ block.settings.title }}</div>
+          </a>
         </div>
       {% endfor %}
     </div>
@@ -134,6 +137,11 @@
           "id": "title",
           "label": "Solution Title",
           "default": "Solution Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Solution Link"
         }
       ]
     }
