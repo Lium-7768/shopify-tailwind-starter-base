@@ -4595,6 +4595,10 @@ video {
   padding: 1rem;
 }
 
+.twcss-p-5 {
+  padding: 1.25rem;
+}
+
 .twcss-p-6 {
   padding: 1.5rem;
 }
@@ -4699,10 +4703,6 @@ video {
 
 .twcss-text-right {
   text-align: right;
-}
-
-.twcss-text-end {
-  text-align: end;
 }
 
 .\!twcss-text-lg {
