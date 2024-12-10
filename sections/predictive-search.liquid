@@ -284,13 +284,13 @@
             {%- for product in predictive_search.resources.products -%}
               <li
                 id='predictive-search-option-product-{{ forloop.index }}'
-                class=''
+                class='[&:(first-child)]:twcss-border-t twcss-border-b'
                 role='option'
                 aria-selected='false'
               >
                 <a
                   href='{{ product.url }}'
-                  class='twcss-flex twcss-items-center twcss-py-2 twcss-gap-x-5 [&:(first-child)]:twcss-border-t twcss-border-b'
+                  class='twcss-flex twcss-items-center twcss-py-2 twcss-gap-x-5'
                   tabindex='-1'
                 >
                   {%- if product.featured_media != blank -%}
