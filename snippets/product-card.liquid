@@ -103,6 +103,8 @@
           style="opacity: {%- if is_new -%}1{%- else -%}0{%- endif -%}"
         >
           {{ product.published_at }}
+          {{ days_since_published }}
+          {{ is_new }}
           New
         </div>
       {% endif %}
