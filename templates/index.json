@@ -44,12 +44,24 @@
             "button_text": "See more",
             "button_link": "shopify://blogs/news"
           }
+        },
+        "slide_dAQJCm": {
+          "type": "slide",
+          "settings": {
+            "image_mobile": "shopify://shop_images/banner-mobile.png",
+            "image_desktop": "shopify://shop_images/banner-desktop.png",
+            "heading": "SEAMLESS MANUFACTURING 3",
+            "subheading": "Reliable Distribution 3",
+            "button_text": "See more",
+            "button_link": "shopify://pages/contact"
+          }
         }
       },
       "block_order": [
         "slide_7iMn6f",
         "slide_qRgEpY",
-        "slide_d6kCGj"
+        "slide_d6kCGj",
+        "slide_dAQJCm"
       ],
       "settings": {}
     },
@@ -79,56 +91,49 @@
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_2O2RZfPI26Y.png",
-            "title": "Freight Transport Solutions",
-            "link": "shopify://policies/privacy-policy"
+            "title": "Freight Transport Solutions"
           }
         },
         "solution_J7k7QQ": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_sw5qehkjlzI.png",
-            "title": "Warehouse and Distribution Solutions",
-            "link": "shopify://policies/privacy-policy"
+            "title": "Warehouse and Distribution Solutions"
           }
         },
         "solution_TjtcBk": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_pz_z3Tg6fSI.png",
-            "title": "Last-Mile Logistics",
-            "link": "shopify://policies/privacy-policy"
+            "title": "Last-Mile Logistics"
           }
         },
         "solution_N8HQJb": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_xGYp_h7fm2I.png",
-            "title": "Cold Chain Solutions",
-            "link": "shopify://policies/privacy-policy"
+            "title": "Cold Chain Solutions"
           }
         },
         "solution_hJQG8W": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_LOgrmWMvj_0.png",
-            "title": "Intermodal Transport Services",
-            "link": "shopify://policies/privacy-policy"
+            "title": "Intermodal Transport Services"
           }
         },
         "solution_jCnXEz": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_pz_z3Tg6fSI_4862ea05-ca13-4d61-93e3-1bab91a4b472.png",
-            "title": "Real-Time Tracking and Monitoring",
-            "link": "shopify://policies/privacy-policy"
+            "title": "Real-Time Tracking and Monitoring"
           }
         },
         "solution_mqUwxH": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_YduNPEXoNeU.png",
-            "title": "Green Transportation Initiatives",
-            "link": "shopify://policies/privacy-policy"
+            "title": "Green Transportation Initiatives"
           }
         }
       },
@@ -149,8 +154,7 @@
         "banner_title": "Redefining Efficiency in Manufacturing and Distribution",
         "banner_description": "Streamlining processes with innovative solutions, NEXAFLOW, empowering businesses to meet customer demands with precision and reliability.",
         "banner_link": "",
-        "banner_link_text": "See more",
-        "show_banner": true
+        "banner_link_text": "See more"
       }
     },
     "featured_plumbing_CA7GXd": {
