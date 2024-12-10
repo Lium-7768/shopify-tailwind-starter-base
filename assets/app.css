@@ -949,10 +949,6 @@ video {
   width: 90px !important;
 }
 
-.twcss-w-1\/2 {
-  width: 50%;
-}
-
 .twcss-w-2\/5 {
   width: 40%;
 }
@@ -979,6 +975,10 @@ video {
 
 .twcss-w-\[263px\] {
   width: 263px;
+}
+
+.twcss-w-\[70\%\] {
+  width: 70%;
 }
 
 .twcss-w-auto {
