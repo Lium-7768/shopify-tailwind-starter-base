@@ -23,7 +23,7 @@
       {%- if section.settings.collection != blank -%}
         <div id="featured-products-slider" class="swiper featured-products-slider twcss-relative  twcss-h-full">
           <div class="swiper-wrapper">
-            {%- for product in section.settings.collection.products limit: section.settings.total_products_to_show -%}
+            {%- for product in section.settings.collection.products limit: 25 -%}
               <div class="swiper-slide !twcss-h-auto">
                 {% render 'product-card', product: product, show_vendor: true, show_new_tag: true %}
               </div>
@@ -63,7 +63,7 @@
         }, {% endcomment %}
         // >= 1280px
         1280: {
-          slidesPerView: {{ section.settings.products_to_show }},
+          slidesPerView: 5,
           spaceBetween: 24,
         },
       },
@@ -92,24 +92,7 @@
       "id": "collection",
       "label": "Collection"
     },
-    {
-      "type": "range",
-      "id": "products_to_show",
-      "min": 1,
-      "max": 5,
-      "step": 1,
-      "default": 5,
-      "label": "Maximum products to show"
-    },
-    {
-      "type": "range",
-      "id": "total_products_to_show",
-      "min": 1,
-      "max": 25,
-      "step": 1,
-      "default": 15,
-      "label": "Total products to show"
-    }
+
   ],
   "presets": [
     {
