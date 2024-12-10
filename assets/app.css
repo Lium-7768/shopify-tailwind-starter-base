@@ -4748,8 +4748,8 @@ video {
   line-height: 22px;
 }
 
-.twcss-leading-normal {
-  line-height: 1.5;
+.twcss-leading-none {
+  line-height: 1;
 }
 
 .\!twcss-text-black {
