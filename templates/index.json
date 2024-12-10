@@ -79,49 +79,56 @@
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_2O2RZfPI26Y.png",
-            "title": "Freight Transport Solutions"
+            "title": "Freight Transport Solutions",
+            "link": "shopify://policies/privacy-policy"
           }
         },
         "solution_J7k7QQ": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_sw5qehkjlzI.png",
-            "title": "Warehouse and Distribution Solutions"
+            "title": "Warehouse and Distribution Solutions",
+            "link": "shopify://policies/privacy-policy"
           }
         },
         "solution_TjtcBk": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_pz_z3Tg6fSI.png",
-            "title": "Last-Mile Logistics"
+            "title": "Last-Mile Logistics",
+            "link": "shopify://policies/privacy-policy"
           }
         },
         "solution_N8HQJb": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_xGYp_h7fm2I.png",
-            "title": "Cold Chain Solutions"
+            "title": "Cold Chain Solutions",
+            "link": "shopify://policies/privacy-policy"
           }
         },
         "solution_hJQG8W": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_LOgrmWMvj_0.png",
-            "title": "Intermodal Transport Services"
+            "title": "Intermodal Transport Services",
+            "link": "shopify://policies/privacy-policy"
           }
         },
         "solution_jCnXEz": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_pz_z3Tg6fSI_4862ea05-ca13-4d61-93e3-1bab91a4b472.png",
-            "title": "Real-Time Tracking and Monitoring"
+            "title": "Real-Time Tracking and Monitoring",
+            "link": "shopify://policies/privacy-policy"
           }
         },
         "solution_mqUwxH": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_YduNPEXoNeU.png",
-            "title": "Green Transportation Initiatives"
+            "title": "Green Transportation Initiatives",
+            "link": "shopify://policies/privacy-policy"
           }
         }
       },
