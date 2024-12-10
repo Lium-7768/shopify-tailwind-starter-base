@@ -40,7 +40,8 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
    const x = new Swiper('#featured-products-slider', {
-
+      slidesPerView: 1,
+      spaceBetween: 16,
       pagination: {
         el: '#featured-products-slider-pagination',
         clickable: true,
@@ -61,10 +62,6 @@
           spaceBetween: 24,
         }, {% endcomment %}
         // >= 1280px
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 16,
-        },
         1280: {
           slidesPerView: 5,
           spaceBetween: 24,
