@@ -929,10 +929,6 @@ video {
   max-height: 4rem;
 }
 
-.twcss-max-h-\[432px\] {
-  max-height: 432px;
-}
-
 .\!twcss-w-10 {
   width: 2.5rem !important;
 }
@@ -4683,12 +4679,21 @@ video {
   line-height: 2rem;
 }
 
+.twcss-text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .twcss-text-\[14px\] {
   font-size: 14px;
 }
 
 .twcss-text-\[18px\] {
   font-size: 18px;
+}
+
+.twcss-text-\[22px\] {
+  font-size: 22px;
 }
 
 .twcss-text-base {
@@ -4717,6 +4722,10 @@ video {
 
 .twcss-font-bold {
   font-weight: 700;
+}
+
+.twcss-font-extrabold {
+  font-weight: 800;
 }
 
 .twcss-font-medium {
