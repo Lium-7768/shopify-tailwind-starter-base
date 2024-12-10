@@ -768,10 +768,6 @@ video {
   margin-bottom: 1.5rem;
 }
 
-.twcss-ml-2 {
-  margin-left: 0.5rem;
-}
-
 .twcss-ml-4 {
   margin-left: 1rem;
 }
@@ -1231,6 +1227,10 @@ video {
 
 .twcss-rounded-md {
   border-radius: 0.375rem;
+}
+
+.twcss-rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .twcss-rounded-bl-md {
