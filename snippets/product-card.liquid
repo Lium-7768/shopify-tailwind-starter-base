@@ -92,19 +92,12 @@
       </div>
 
       {% if show_new_tag %}
-        {% assign days_since_published = product.published_at | date: '%s' | minus: now | divided_by: 86400 | abs %}
-        {% if days_since_published <= 30 %}
-          {% assign is_new = true %}
-        {% else %}
-          {% assign is_new = false %}
-        {% endif %}
         <div
           class="twcss-ml-2 twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded-lg twcss-mb-2"
-          style="opacity: {%- if is_new -%}1{%- else -%}0{%- endif -%}"
+          style="opacity: {%- if product.published_at > now | date: "%s" | minus: 2592000 -%}1{%- else -%}0{%- endif -%}"
         >
           {{ product.published_at }}
-          {{ days_since_published }}
-          {{ is_new }}
+          {{ now | date: '%s' | minus: 2592000 }}
           New
         </div>
       {% endif %}
