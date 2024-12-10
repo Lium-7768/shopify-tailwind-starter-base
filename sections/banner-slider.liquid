@@ -9,7 +9,7 @@
 <div class="banner-slider swiper" id="banner-slider">
   <div class="swiper-wrapper">
     {%- for block in section.blocks -%}
-      <div class="swiper-slide twcss-relative twcss-h-100 md:twcss-h-150" {{ block.shopify_attributes }}>
+      <div class="swiper-slide twcss-relative twcss-h-[400px] md:twcss-h-[600px]" {{ block.shopify_attributes }}>
         <div class="twcss-w-full twcss-h-full">
           {%- if block.settings.image_mobile != blank or block.settings.image_desktop != blank -%}
             <img
@@ -24,7 +24,7 @@
               height="100"
               width="100"
               src="{{ block.settings.image_desktop | img_url: 'master' }}"
-              class="lg:!twcss-h-100 twcss-hidden md:twcss-block twcss-w-full twcss-h-full twcss-object-cover"
+              class="lg:!twcss-h-[400px] twcss-hidden md:twcss-block twcss-w-full twcss-h-full twcss-object-cover"
               alt="{{ block.settings.heading | escape }}"
               loading="lazy"
             >
@@ -36,7 +36,7 @@
         <div class="twcss-absolute twcss-top-[50%] twcss-translate-y-[-50%] twcss-left-[50%] twcss-translate-x-[-50%] twcss-pl-[60px] lg:twcss-w-[1280px] twcss-w-full">
           <div
             id="swiper-button-prev-banner"
-            class="swiper-button-prev !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-0"
+            class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-0"
           >
             {% render 'icon-chevron-left' %}
           </div>
@@ -65,7 +65,7 @@
           </div>
           <div
             id="swiper-button-next-banner"
-            class="swiper-button-next !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-0"
+            class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-0"
           >
             {% render 'icon-chevron-right' %}
           </div>
@@ -76,7 +76,7 @@
 
   <div
     id="swiper-pagination-banner"
-    class="swiper-pagination !twcss-w-22 !twcss-bottom-[10px] lg:!twcss-bottom-5 twcss-gap-2 twcss-rounded-[5px] !twcss-left-[50%] twcss-translate-x-[-50%] twcss-p-[10px] twcss-bg-[#FFFFFF80] twcss-flex twcss-items-center twcss-items-justify-center"
+    class="swiper-pagination !twcss-w-[88px] lg:!twcss-bottom-5 twcss-gap-2 twcss-rounded-[5px] !twcss-left-[50%] twcss-translate-x-[-50%] twcss-p-[10px] twcss-bg-[#FFFFFF80] twcss-flex twcss-items-center twcss-items-justify-center"
   ></div>
 </div>
 
