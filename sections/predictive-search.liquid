@@ -267,11 +267,11 @@
 {%- if predictive_search.performed -%}
   <div id='predictive-search-results' role='listbox'>
     {%- if predictive_search.resources.products.size > 0 -%}
-      <div id='predictive-search-results-groups-wrapper' class='twcss-px-5 twcss-top-5'>
+      <div id='predictive-search-results-groups-wrapper' class='twcss-px-5'>
         <div class=''>
           <h2
             id='predictive-search-products'
-            class='twcss-text-accent-default twcss-text-sm twcss-font-bold'
+            class='twcss-text-accent-default twcss-text-sm twcss-font-bold twcss-t-5 twcs-b-2'
           >
             {{- 'templates.search.products' | t -}}
           </h2>
