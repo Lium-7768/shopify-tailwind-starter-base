@@ -39,9 +39,9 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    new Swiper('#featured-products-slider', {
+   const x = new Swiper('#featured-products-slider', {
       slidesPerView: 5,
-      spaceBetween: 16,
+      spaceBetween: 24,
       pagination: {
         el: '#featured-products-slider-pagination',
         clickable: true,
@@ -73,6 +73,7 @@
       },
     });
   });
+   console.log("🚀 ~ x:", x)
 </script>
 
 {% schema %}
