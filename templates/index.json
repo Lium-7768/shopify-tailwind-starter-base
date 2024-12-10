@@ -80,8 +80,6 @@
       "settings": {
         "white_title": "Featured",
         "blue_title": "Products",
-        "link_url": "shopify://collections/automated-collection",
-        "link_text": "See all",
         "collection": "automated-collection"
       }
     },
@@ -92,56 +90,49 @@
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_2O2RZfPI26Y.png",
-            "title": "Freight Transport Solutions",
-            "link": ""
+            "title": "Freight Transport Solutions"
           }
         },
         "solution_J7k7QQ": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_sw5qehkjlzI.png",
-            "title": "Warehouse and Distribution Solutions",
-            "link": ""
+            "title": "Warehouse and Distribution Solutions"
           }
         },
         "solution_TjtcBk": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_pz_z3Tg6fSI.png",
-            "title": "Last-Mile Logistics",
-            "link": ""
+            "title": "Last-Mile Logistics"
           }
         },
         "solution_N8HQJb": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_xGYp_h7fm2I.png",
-            "title": "Cold Chain Solutions",
-            "link": ""
+            "title": "Cold Chain Solutions"
           }
         },
         "solution_hJQG8W": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_LOgrmWMvj_0.png",
-            "title": "Intermodal Transport Services",
-            "link": ""
+            "title": "Intermodal Transport Services"
           }
         },
         "solution_jCnXEz": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_pz_z3Tg6fSI_4862ea05-ca13-4d61-93e3-1bab91a4b472.png",
-            "title": "Real-Time Tracking and Monitoring",
-            "link": ""
+            "title": "Real-Time Tracking and Monitoring"
           }
         },
         "solution_mqUwxH": {
           "type": "solution",
           "settings": {
             "image": "shopify://shop_images/unsplash_YduNPEXoNeU.png",
-            "title": "Green Transportation Initiatives",
-            "link": ""
+            "title": "Green Transportation Initiatives"
           }
         }
       },
@@ -162,8 +153,7 @@
         "banner_title": "Redefining Efficiency in Manufacturing and Distribution",
         "banner_description": "Streamlining processes with innovative solutions, NEXAFLOW, empowering businesses to meet customer demands with precision and reliability.",
         "banner_link": "",
-        "banner_link_text": "See more",
-        "show_banner": true
+        "banner_link_text": "See more"
       }
     },
     "featured_plumbing_CA7GXd": {
@@ -177,9 +167,9 @@
         "products_to_show_desktop": 3,
         "show_vendor": true,
         "collection_url": "",
-        "banner_title": "PLUMBING SOLUTIONS",
-        "banner_text": "From dripping faucets to clogged drains, our expert plumbing services have you covered.",
-        "banner_image": "shopify://shop_images/green-and-white-marbled-coloring.jpg"
+        "banner_title": "",
+        "banner_text": "",
+        "banner_image": "shopify://shop_images/plumbing-solutions.png"
       }
     },
     "product_brands_FQAwF4": {
