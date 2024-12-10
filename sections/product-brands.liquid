@@ -4,12 +4,12 @@
   }
 {%- endstyle -%}
 
-<div class="twcss-container twcss-mx-auto twcss-my-[32px] lg:twcss-my-[50px] twcss-px-4 twcss-py-8 xlg:!twcss-max-w-[1280px] lg:!twcss-max-w-[1232px] lg:!twcss-p-0 twcss-px-5 !twcss-py-0 !twcss-pb-8">
+<div class="twcss-container twcss-mx-auto twcss-my-8 lg:twcss-my-[50px] twcss-px-4 twcss-py-8 xlg:!twcss-max-w-[1280px] lg:!twcss-max-w-[1232px] lg:!twcss-p-0 twcss-px-5 !twcss-py-0 !twcss-pb-8">
   {% render 'homepage-title', white_title: 'Featured', blue_title: 'Brands' %}
 
   <div class="twcss-relative">
     <div id="brands-swiper" class="swiper brands-swiper !twcss-static">
-      <div class="swiper-wrapper twcss-gap-[24px]">
+      <div class="swiper-wrapper twcss-gap-6">
         {%- for block in section.blocks -%}
           <div
             class="swiper-slide !twcss-w-[90px] !twcss-h-[116px] !twcss-flex twcss-items-center lg:!twcss-w-[139px] !twcss-mr-0"
@@ -34,13 +34,13 @@
       </div>
       <div
         id="swiper-button-prev-brand"
-        class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]"
+        class="swiper-button-prev !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-[-16px]"
       >
         {% render 'icon-chevron-left' %}
       </div>
       <div
         id="swiper-button-next-brand"
-        class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]"
+        class="swiper-button-next !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-[-16px]"
       >
         {% render 'icon-chevron-right' %}
       </div>
