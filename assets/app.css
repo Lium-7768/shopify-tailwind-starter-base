@@ -937,12 +937,12 @@ video {
   width: 85% !important;
 }
 
-.\!twcss-w-\[88px\] {
-  width: 88px !important;
-}
-
 .\!twcss-w-\[90px\] {
   width: 90px !important;
+}
+
+.\!twcss-w-auto {
+  width: auto !important;
 }
 
 .twcss-w-1\/4 {
