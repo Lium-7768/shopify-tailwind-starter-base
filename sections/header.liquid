@@ -288,6 +288,27 @@
       <a href="{{ routes.cart_url }}" class="twcss-size-6" id="cart-icon-bubble">
         <span class="twcss-size-6">{{'icon-cart.svg' | inline_asset_content }}</span>
       </a>
+
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when '@app' -%}
+            {% render block %}
+          {%- when 'custom_account' -%}
+            {% render 'header-account-dropdown-menu', block: block %}
+          {%- when 'notification' -%}
+            {%- if block.settings.show_notification -%}
+              <a 
+                href="{{ block.settings.notification_link }}" 
+                class="twcss-size-6 twcss-text-white twcss-ml-4 twcss-mr-2"
+                {% if block.settings.icon_color != blank %}
+                  style="color: {{ block.settings.icon_color }};"
+                {% endif %}
+              >
+                {{ 'icon-notification.svg' | inline_asset_content }}
+              </a>
+            {%- endif -%}
+        {%- endcase -%}
+      {%- endfor -%}
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
