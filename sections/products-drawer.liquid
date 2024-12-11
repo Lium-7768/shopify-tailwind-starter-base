@@ -28,7 +28,7 @@
 
 <products-drawer>
   <div
-    id='products-drawer'
+    id='products-drawer-{{ section.id }}'
     class='twcss-fixed twcss-inset-0 twcss-z-50 twcss-overflow-hidden'
     aria-labelledby='slide-over-title'
     role='dialog'
@@ -36,7 +36,7 @@
     style='display: none;'
   >
     <div
-      class='products-drawer-overlay twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity !twcss-block'
+      class='products-drawer-overlay-{{ section.id }} twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity !twcss-block'
       aria-hidden='true'
     ></div>
 
@@ -104,20 +104,20 @@
   class ProductsDrawer extends HTMLElement {
     constructor() {
       super();
-      this.drawer = this.querySelector('#products-drawer');
+      const sectionId = '{{ section.id }}';
+      this.drawer = this.querySelector(`#products-drawer-${sectionId}`);
       this.closeButtons = this.querySelectorAll('.products-drawer-close');
-      this.overlay = this.querySelector('.products-drawer-overlay');
+      this.overlay = this.querySelector(`.products-drawer-overlay-${sectionId}`);
       window.addEventListener('DOMContentLoaded', () => this.bindEvents());
     }
 
     bindEvents() {
-      const trigger =
-        document.getElementById('products-drawer-trigger-desktop') ||
-        document.getElementById('products-drawer-trigger-mobile');
+      const sectionId = '{{ section.id }}';
+      const triggers = document.querySelectorAll(`[data-drawer-trigger="${sectionId}"]`);
 
-      if (trigger) {
+      triggers.forEach((trigger) => {
         trigger.addEventListener('click', () => this.open());
-      }
+      });
 
       // Close button events
       this.closeButtons.forEach((button) => {
@@ -126,7 +126,6 @@
 
       // Close when clicking overlay
       this.drawer.addEventListener('click', (e) => {
-        // Close drawer if clicking on drawer background or overlay
         if (e.target === this.drawer || e.target === this.overlay) {
           this.close();
         }

@@ -156,7 +156,7 @@
     <button 
       type="button"
       class="twcss-py-2 twcss-px-3 twcss-border twcss-border-secondary-default twcss-font-bold twcss-rounded twcss-mr-5 twcss-ml-6 twcss-transition-colors twcss-flex twcss-items-center twcss-gap-2 twcss-cursor-pointer hover:twcss-bg-secondary-default hover:twcss-text-white"
-      id="products-drawer-trigger-desktop"
+      data-drawer-trigger="{{ section.id }}"
     >
       <span class='twcss-size-6'>{{'icon-hamburger.svg' | inline_asset_content }}</span>
       Products
@@ -276,7 +276,7 @@
       {%- endif -%}
     </a>
     <div class="twcss-grid twcss-grid-flow-col twcss-auto-cols-fr twcss-justify-items-center twcss-w-full twcss-py-2 twcss-bg-secondary-light twcss-text-primary-default">
-      <button type="button" class="twcss-flex twcss-items-center twcss-gap-x-1" id="products-drawer-trigger-mobile">
+      <button type="button" class="twcss-flex twcss-items-center twcss-gap-x-1" data-drawer-trigger="{{ section.id }}">
         <span class="twcss-size-6">{{'icon-hamburger.svg' | inline_asset_content }}</span>
       </button>
       
