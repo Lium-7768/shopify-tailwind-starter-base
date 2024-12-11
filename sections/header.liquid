@@ -278,12 +278,16 @@
         <span class="">{{ shop.name }}</span>
       {%- endif -%}
     </a>
-    <div class="twcss-flex twcss-items-center twcss-justify-between twcss-w-full twcss-bg-secondary-light twcss-text-primary-default">
+    <div class="twcss-flex twcss-items-center twcss-w-full twcss-py-2 twcss-bg-secondary-light twcss-text-primary-default">
       <button type="button" class="twcss-flex twcss-items-center twcss-gap-x-1">
         <span class="twcss-size-6">{{'icon-hamburger.svg' | inline_asset_content }}</span>
       </button>
       
       {% render 'header-search', input_id: 'Search-In-Modal' %}
+
+      <a href="{{ routes.cart_url }}" class="twcss-flex twcss-items-center twcss-gap-x-1 twcss-ml-4 twcss-rounded twcss-bg-secondary-default twcss-font-semibold twcss-py-2 twcss-px-4 twcss-text-white" id="cart-icon-bubble">
+        <span class="twcss-size-6">{{'icon-cart.svg' | inline_asset_content }}</span>
+      </a>
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
