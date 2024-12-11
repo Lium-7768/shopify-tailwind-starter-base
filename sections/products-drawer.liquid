@@ -104,20 +104,31 @@
   class ProductsDrawer extends HTMLElement {
     constructor() {
       super();
+      this.init();
+    }
+
+    init() {
       const sectionId = '{{ section.id }}';
       this.drawer = this.querySelector(`#products-drawer-${sectionId}`);
       this.closeButtons = this.querySelectorAll('.products-drawer-close');
       this.overlay = this.querySelector(`.products-drawer-overlay-${sectionId}`);
-      window.addEventListener('DOMContentLoaded', () => this.bindEvents());
+      this.bindEvents();
     }
 
     bindEvents() {
       const sectionId = '{{ section.id }}';
       const triggers = document.querySelectorAll(`[data-drawer-trigger="${sectionId}"]`);
 
-      triggers.forEach((trigger) => {
-        trigger.addEventListener('click', () => this.open());
-      });
+      if (triggers.length > 0) {
+        triggers.forEach((trigger) => {
+          trigger.addEventListener('click', () => {
+            console.log('Drawer trigger clicked');
+            this.open();
+          });
+        });
+      } else {
+        console.warn(`No triggers found for drawer ${sectionId}`);
+      }
 
       // Close button events
       this.closeButtons.forEach((button) => {
@@ -140,6 +151,7 @@
     }
 
     open() {
+      console.log('Opening drawer');
       this.drawer.style.display = 'block';
       document.body.style.overflow = 'hidden';
 
@@ -161,14 +173,8 @@
     }
   }
 
-  // Initialize custom element after DOM is fully loaded
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      customElements.define('products-drawer', ProductsDrawer);
-    });
-  } else {
-    customElements.define('products-drawer', ProductsDrawer);
-  }
+  // 立即定义自定义元素
+  customElements.define('products-drawer', ProductsDrawer);
 </script>
 
 {% schema %}
