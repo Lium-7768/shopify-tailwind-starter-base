@@ -256,8 +256,8 @@
   </header>
 
   <!-- mobile header -->
-  <header class="twcss-items-center twcss-bg-primary-default twcss-text-white twcss-px-6 twcss-py-5 twcss-flex lg:twcss-hidden twcss-flex-col">
-    <a href="{{ routes.root_url }}" class="twcss-flex twcss-items-center twcss-justify-center">
+  <header class="twcss-items-center twcss-text-white twcss-px-6 twcss-py-5 twcss-flex lg:twcss-hidden twcss-flex-col">
+    <a href="{{ routes.root_url }}" class="twcss-flex twcss-items-center twcss-justify-center twcss-bg-primary-default">
       {%- if settings.logo != blank -%}
         <div class="header__heading-logo-wrapper">
           {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
