@@ -275,40 +275,41 @@
         <span class="">{{ shop.name }}</span>
       {%- endif -%}
     </a>
-    <div class="twcss-flex twcss-items-center twcss-w-full twcss-py-2 twcss-bg-secondary-light twcss-text-primary-default">
-      <button type="button" class="twcss-flex twcss-items-center twcss-gap-x-1 twcss-flex-1">
-        <span class="twcss-size-6">{{'icon-hamburger.svg' | inline_asset_content }}</span>
+    <div class="twcss-grid twcss-grid-cols-5 twcss-items-center twcss-w-full twcss-py-2 twcss-bg-secondary-light twcss-text-primary-default">
+      <!-- 汉堡菜单按钮 -->
+      <button type="button" class="twcss-flex twcss-items-center twcss-justify-center">
+        <span class="twcss-size-6">{{ 'icon-hamburger.svg' | inline_asset_content }}</span>
       </button>
       
-      <div class="twcss-flex-1">
+      <!-- 搜索框 -->
+      <div class="twcss-col-span-2">
         {% render 'header-search', input_id: 'Search-In-Modal' %}
       </div>
 
-      <div class="twcss-flex-1">
+      <!-- 购物车图标 -->
+      <div class="twcss-flex twcss-justify-center">
         <a href="{{ routes.cart_url }}" class="twcss-size-6" id="cart-icon-bubble">
-          <span class="twcss-size-6">{{'icon-cart.svg' | inline_asset_content }}</span>
+          <span class="twcss-size-6">{{ 'icon-cart.svg' | inline_asset_content }}</span>
         </a>
       </div>
 
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when '@app' -%}
-            {% render block %}
-          {%- when 'custom_account' -%}
-            <div class="twcss-flex-1">
+      <!-- 其他图标区域 -->
+      <div class="twcss-flex twcss-justify-end twcss-gap-x-2">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+            {%- when 'custom_account' -%}
               {% render 'header-account-dropdown-menu', block: block %}
-            </div>
-          {%- when 'notification' -%}
-            {%- if block.settings.show_notification -%}
-              <a 
-                href="{{ block.settings.notification_link }}" 
-                class="twcss-size-6 twcss-text-transparent twcss-flex-1"
-              >
-                {{ 'icon-notification.svg' | inline_asset_content }}
-              </a>
-            {%- endif -%}
-        {%- endcase -%}
-      {%- endfor -%}
+            {%- when 'notification' -%}
+              {%- if block.settings.show_notification -%}
+                <a href="{{ block.settings.notification_link }}" class="twcss-size-6 twcss-text-transparent">
+                  {{ 'icon-notification.svg' | inline_asset_content }}
+                </a>
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
