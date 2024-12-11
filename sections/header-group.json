@@ -62,6 +62,7 @@
         "notification_ABepkm",
         "custom_account_wNra3N"
       ],
+      "disabled": true,
       "settings": {
         "menu": "main-menu",
         "menu_icons": "{\"quick-order\":\"icon-quick-order.svg\",\"price-list\":\"icon-price-list.svg\",\"orders\":\"icon-orders.svg\",\"quotes\":\"icon-quotes.svg\"}",
