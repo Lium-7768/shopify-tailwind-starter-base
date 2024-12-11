@@ -8281,6 +8281,10 @@ video {
     display: block;
   }
 
+  .lg\:twcss-flex {
+    display: flex;
+  }
+
   .lg\:twcss-hidden {
     display: none;
   }
