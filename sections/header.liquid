@@ -211,9 +211,6 @@
             <a 
               href="{{ block.settings.notification_link }}" 
               class="twcss-size-6 twcss-text-transparent twcss-ml-4 twcss-mr-2"
-              {% if block.settings.icon_color != blank %}
-                style="color: {{ block.settings.icon_color }};"
-              {% endif %}
             >
               {{ 'icon-notification.svg' | inline_asset_content }}
             </a>
@@ -300,9 +297,6 @@
               <a 
                 href="{{ block.settings.notification_link }}" 
                 class="twcss-size-6 twcss-text-transparent twcss-ml-4 twcss-mr-2"
-                {% if block.settings.icon_color != blank %}
-                  style="color: {{ block.settings.icon_color }};"
-                {% endif %}
               >
                 {{ 'icon-notification.svg' | inline_asset_content }}
               </a>
@@ -657,12 +651,6 @@
           "type": "url",
           "id": "notification_link",
           "label": "Notification Link"
-        },
-        {
-          "type": "color",
-          "id": "icon_color",
-          "label": "Icon Color",
-          "default": "#94A3B8"
         }
       ]
     }
