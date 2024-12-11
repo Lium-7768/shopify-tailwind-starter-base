@@ -123,6 +123,7 @@
       assign localization_forms = true
     endif
   -%}
+  <!-- desktop header -->
   <header class="twcss-items-center twcss-bg-primary-default twcss-text-white twcss-px-6 twcss-py-5 twcss-hidden lg:twcss-flex">
     {%- if request.page_type == 'index' -%}
       <h1 class="twcss-flex twcss-items-center twcss-justify-center">
@@ -252,6 +253,31 @@
       </span>
     </a>
     
+  </header>
+
+  <!-- mobile header -->
+  <header class="twcss-items-center twcss-bg-primary-default twcss-text-white twcss-px-6 twcss-py-5 twcss-flex lg:twcss-hidden twcss-flex-col">
+    <a href="{{ routes.root_url }}" class="twcss-flex twcss-items-center twcss-justify-center">
+      {%- if settings.logo != blank -%}
+        <div class="header__heading-logo-wrapper">
+          {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+          {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+          {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+          {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+          {{ settings.logo | image_url: width: 600 | image_tag:
+            class: '',
+            widths: widths,
+            height: logo_height,
+            width: settings.logo_width,
+            alt: logo_alt,
+            sizes: sizes,
+            preload: true
+          }}
+        </div>
+      {%- else -%}
+        <span class="">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
