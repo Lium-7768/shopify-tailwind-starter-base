@@ -111,7 +111,9 @@
     }
 
     bindEvents() {
-      const trigger = document.getElementById('products-drawer-trigger');
+      const trigger =
+        document.getElementById('products-drawer-trigger-desktop') ||
+        document.getElementById('products-drawer-trigger-mobile');
 
       if (trigger) {
         trigger.addEventListener('click', () => this.open());
