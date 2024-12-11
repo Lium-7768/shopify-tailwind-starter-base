@@ -276,27 +276,33 @@
       {%- endif -%}
     </a>
     <div class="twcss-flex twcss-items-center twcss-w-full twcss-py-2 twcss-bg-secondary-light twcss-text-primary-default">
-      <button type="button" class="twcss-flex twcss-items-center twcss-gap-x-1">
+      <button type="button" class="twcss-flex twcss-items-center twcss-gap-x-1 twcss-flex-1">
         <span class="twcss-size-6">{{'icon-hamburger.svg' | inline_asset_content }}</span>
       </button>
       
-      {% render 'header-search', input_id: 'Search-In-Modal' %}
+      <div class="twcss-flex-1">
+        {% render 'header-search', input_id: 'Search-In-Modal' %}
+      </div>
 
-      <a href="{{ routes.cart_url }}" class="twcss-size-6" id="cart-icon-bubble">
-        <span class="twcss-size-6">{{'icon-cart.svg' | inline_asset_content }}</span>
-      </a>
+      <div class="twcss-flex-1">
+        <a href="{{ routes.cart_url }}" class="twcss-size-6" id="cart-icon-bubble">
+          <span class="twcss-size-6">{{'icon-cart.svg' | inline_asset_content }}</span>
+        </a>
+      </div>
 
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when '@app' -%}
             {% render block %}
           {%- when 'custom_account' -%}
-            {% render 'header-account-dropdown-menu', block: block %}
+            <div class="twcss-flex-1">
+              {% render 'header-account-dropdown-menu', block: block %}
+            </div>
           {%- when 'notification' -%}
             {%- if block.settings.show_notification -%}
               <a 
                 href="{{ block.settings.notification_link }}" 
-                class="twcss-size-6 twcss-text-transparent"
+                class="twcss-size-6 twcss-text-transparent twcss-flex-1"
               >
                 {{ 'icon-notification.svg' | inline_asset_content }}
               </a>
