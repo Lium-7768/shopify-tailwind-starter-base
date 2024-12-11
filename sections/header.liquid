@@ -278,6 +278,11 @@
         <span class="">{{ shop.name }}</span>
       {%- endif -%}
     </a>
+    <div class="twcss-flex twcss-items-center twcss-justify-between twcss-w-full">
+      <button type="button" class="twcss-flex twcss-items-center twcss-gap-x-1 twcss-text-white">
+        <span class="twcss-size-6">{{'icon-hamburger.svg' | inline_asset_content }}</span>
+      </button>
+    </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
