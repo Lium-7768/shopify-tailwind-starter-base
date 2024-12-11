@@ -1142,6 +1142,10 @@ video {
   justify-content: space-between;
 }
 
+.twcss-justify-items-center {
+  justify-items: center;
+}
+
 .twcss-gap-2 {
   gap: 0.5rem;
 }
@@ -6445,10 +6449,6 @@ video {
 
 .twcss-text-secondary-middle\/95 {
   color: rgb(188 189 185 / 0.95);
-}
-
-.twcss-text-transparent {
-  color: transparent;
 }
 
 .twcss-text-white {
