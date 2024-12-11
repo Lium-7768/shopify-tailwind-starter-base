@@ -120,24 +120,27 @@
 </div>
 
 <script>
-  const accountButton_{{ id }} = document.querySelector('#{{ id }}');
-  const accountDropdown_{{ id }} = document.querySelector('[data-account-dropdown]');
-  const accountIcon_{{ id }} = document.querySelector('[data-account-icon]');
+  (function() {
+    const buttonId = '{{ id | replace: '-', '_' }}';
+    const accountButton = document.querySelector('#{{ id }}');
+    const accountDropdown = document.querySelector('[data-account-dropdown]');
+    const accountIcon = document.querySelector('[data-account-icon]');
 
-  if (accountButton_{{ id }} && accountDropdown_{{ id }}) {
-    accountButton_{{ id }}.addEventListener('click', () => {
-      accountDropdown_{{ id }}.classList.toggle('twcss-hidden');
-      accountIcon_{{ id }}.style.transform = accountDropdown_{{ id }}.classList.contains('twcss-hidden')
-        ? 'rotate(180deg)'
-        : 'rotate(0deg)';
-    });
+    if (accountButton && accountDropdown) {
+      accountButton.addEventListener('click', () => {
+        accountDropdown.classList.toggle('twcss-hidden');
+        accountIcon.style.transform = accountDropdown.classList.contains('twcss-hidden')
+          ? 'rotate(180deg)'
+          : 'rotate(0deg)';
+      });
 
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (event) => {
-      if (!accountButton_{{ id }}.contains(event.target) && !accountDropdown_{{ id }}.contains(event.target)) {
-        accountDropdown_{{ id }}.classList.add('twcss-hidden');
-        accountIcon_{{ id }}.style.transform = 'rotate(180deg)';
-      }
-    });
-  }
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (event) => {
+        if (!accountButton.contains(event.target) && !accountDropdown.contains(event.target)) {
+          accountDropdown.classList.add('twcss-hidden');
+          accountIcon.style.transform = 'rotate(180deg)';
+        }
+      });
+    }
+  })();
 </script>
