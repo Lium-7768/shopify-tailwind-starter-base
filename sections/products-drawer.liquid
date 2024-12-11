@@ -108,16 +108,15 @@
     }
 
     init() {
-      const sectionId = '{{ section.id }}';
-      this.drawer = this.querySelector(`#products-drawer-${sectionId}`);
+      this.drawer = this.querySelector('#products-drawer-{{ section.id }}');
       this.closeButtons = this.querySelectorAll('.products-drawer-close');
-      this.overlay = this.querySelector(`.products-drawer-overlay-${sectionId}`);
+      this.overlay = this.querySelector('.products-drawer-overlay-{{ section.id }}');
       this.bindEvents();
     }
 
     bindEvents() {
-      const sectionId = '{{ section.id }}';
-      const triggers = document.querySelectorAll(`[data-drawer-trigger="${sectionId}"]`);
+      const triggers = document.querySelectorAll('[data-drawer-trigger="products-drawer-{{ section.id }}"]');
+      console.log('Looking for triggers with:', 'products-drawer-{{ section.id }}');
 
       if (triggers.length > 0) {
         triggers.forEach((trigger) => {
@@ -127,7 +126,7 @@
           });
         });
       } else {
-        console.warn(`No triggers found for drawer ${sectionId}`);
+        console.warn(`No triggers found for drawer products-drawer-{{ section.id }}`);
       }
 
       // Close button events
@@ -173,7 +172,6 @@
     }
   }
 
-  // 立即定义自定义元素
   customElements.define('products-drawer', ProductsDrawer);
 </script>
 
