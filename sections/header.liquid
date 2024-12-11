@@ -205,7 +205,7 @@
         {%- when '@app' -%}
           {% render block %}
         {%- when 'custom_account' -%}
-          {% render 'header-account-dropdown-menu', block: block %}
+          {% render 'header-account-dropdown-menu', block: block, id: 'account-button-desktop' %}
         {%- when 'notification' -%}
           {%- if block.settings.show_notification -%}
             <a 
@@ -291,7 +291,7 @@
           {%- when '@app' -%}
             {% render block %}
           {%- when 'custom_account' -%}
-            {% render 'header-account-dropdown-menu', block: block %}
+            {% render 'header-account-dropdown-menu', block: block, id: 'account-button-mobile' %}
           {%- when 'notification' -%}
             {%- if block.settings.show_notification -%}
               <a 
