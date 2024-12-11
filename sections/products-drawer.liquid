@@ -104,6 +104,9 @@
   class ProductsDrawer extends HTMLElement {
     constructor() {
       super();
+    }
+
+    connectedCallback() {
       this.init();
     }
 
@@ -111,22 +114,29 @@
       this.drawer = this.querySelector('#products-drawer-{{ section.id }}');
       this.closeButtons = this.querySelectorAll('.products-drawer-close');
       this.overlay = this.querySelector('.products-drawer-overlay-{{ section.id }}');
-      this.bindEvents();
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => this.bindEvents());
+      } else {
+        this.bindEvents();
+      }
     }
 
     bindEvents() {
-      const triggers = document.querySelectorAll('[data-drawer-trigger="{{ section.id }}"]');
-      console.log('Looking for triggers with:', '{{ section.id }}');
+      const triggers = document.querySelectorAll('[data-drawer-trigger="products-drawer"]');
+      console.log('Looking for triggers with: products-drawer');
+      console.log('Found triggers:', triggers.length);
 
       if (triggers.length > 0) {
         triggers.forEach((trigger) => {
+          console.log('Adding click listener to trigger');
           trigger.addEventListener('click', () => {
             console.log('Drawer trigger clicked');
             this.open();
           });
         });
       } else {
-        console.warn(`No triggers found for drawer {{ section.id }}`);
+        console.warn('No triggers found for drawer products-drawer');
       }
 
       // Close button events
@@ -172,7 +182,9 @@
     }
   }
 
-  customElements.define('products-drawer', ProductsDrawer);
+  if (!customElements.get('products-drawer')) {
+    customElements.define('products-drawer', ProductsDrawer);
+  }
 </script>
 
 {% schema %}
