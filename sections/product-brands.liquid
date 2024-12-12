@@ -8,7 +8,7 @@
   {% render 'homepage-title', white_title: 'Featured', blue_title: 'Brands', wrapper_classes: '!twcss-mb-[10px]' %}
 
   <div class="twcss-relative">
-    <div id="brands-swiper" class="swiper brands-swiper !twcss-static">
+    <div id="carousel-swiper" class="swiper carousel-swiper !twcss-static">
       <div class="swiper-wrapper twcss-gap-6">
         {%- for block in section.blocks -%}
           <div
@@ -51,7 +51,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    new Swiper('#brands-swiper', {
+    new Swiper('#carousel-swiper', {
       slidesPerView: 3,
       spaceBetween: 20,
       loop: false,
@@ -74,13 +74,13 @@
 
 {% schema %}
 {
-  "name": "Featured Brands",
+  "name": "Featured Carousel",
   "settings": [
     {
       "type": "text",
       "id": "title",
       "label": "Title",
-      "default": "Featured Brands"
+      "default": "Featured Carousel"
     },
     {
       "type": "color",
@@ -91,8 +91,8 @@
   ],
   "blocks": [
     {
-      "type": "brand",
-      "name": "Brand",
+      "type": "card",
+      "name": "Card",
       "settings": [
         {
           "type": "image_picker",
@@ -117,13 +117,13 @@
       "name": "Featured Brands",
       "blocks": [
         {
-          "type": "brand"
+          "type": "card"
         },
         {
-          "type": "brand"
+          "type": "card"
         },
         {
-          "type": "brand"
+          "type": "card"
         }
       ]
     }
