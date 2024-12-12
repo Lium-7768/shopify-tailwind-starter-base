@@ -5,7 +5,7 @@
 {%- endstyle -%}
 
 <div class="twcss-mx-auto twcss-my-8 lg:twcss-my-[50px] twcss-px-5 lg:twcss-px-6 twcss-py-8 xlg:!twcss-max-w-[1280px] lg:!twcss-max-w-[1232px] xlg:!twcss-p-0 !twcss-py-0 !twcss-pb-8">
-  {% render 'homepage-title', white_title: 'Featured', blue_title: 'Brands', wrapper_classes: '!twcss-mb-[10px]' %}
+  {% render 'homepage-title', white_title: {{ section.settings.white_title }}, blue_title: {{ section.settings.blue_title }}, wrapper_classes: '!twcss-mb-[10px]' %}
 
   <div class="twcss-relative">
     <div id="carousel-swiper" class="swiper carousel-swiper !twcss-static">
