@@ -26,6 +26,9 @@
               loading="lazy"
               class="twcss-max-h-16 twcss-w-auto twcss-mx-auto twcss-object-contain"
             >
+            {%- if block.settings.name != blank -%}
+              <div>{{ block.settings.name }}</div>
+            {%- endif -%}
             {%- if block.settings.link != blank -%}
               </a>
             {%- endif -%}
