@@ -248,6 +248,14 @@
             "name": "CARLISLE",
             "link": ""
           }
+        },
+        "item_D79LF4": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/brand-lp.png",
+            "name": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -258,7 +266,8 @@
         "item_Me3meJ",
         "item_UegbPn",
         "item_RbCPY6",
-        "item_a68Ep8"
+        "item_a68Ep8",
+        "item_D79LF4"
       ],
       "settings": {
         "white_title": "Featured",
@@ -334,6 +343,14 @@
             "name": "",
             "link": ""
           }
+        },
+        "item_jeDeNA": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/branc-elevate.png",
+            "name": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -344,7 +361,8 @@
         "item_4JTxVT",
         "item_LkTeAm",
         "item_PnNUee",
-        "item_Ww6ThQ"
+        "item_Ww6ThQ",
+        "item_jeDeNA"
       ],
       "settings": {
         "white_title": "Featured",
