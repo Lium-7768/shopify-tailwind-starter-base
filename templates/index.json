@@ -182,6 +182,44 @@
         "banner_image": "shopify://shop_images/plumbing-solutions.png"
       }
     },
+    "product_brands_Ph83qy": {
+      "type": "product-brands",
+      "blocks": {
+        "item_UegbPn": {
+          "type": "item",
+          "settings": {
+            "name": "",
+            "link": ""
+          }
+        },
+        "item_RbCPY6": {
+          "type": "item",
+          "settings": {
+            "name": "",
+            "link": ""
+          }
+        },
+        "item_a68Ep8": {
+          "type": "item",
+          "settings": {
+            "name": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_UegbPn",
+        "item_RbCPY6",
+        "item_a68Ep8"
+      ],
+      "settings": {
+        "white_title": "Featured",
+        "blue_title": "Categories",
+        "link_text": "View All",
+        "link_url": "",
+        "active_dot_color": "#000000"
+      }
+    },
     "product_brands_FQAwF4": {
       "type": "product-brands",
       "blocks": {
@@ -302,44 +340,6 @@
         "highlight_hYD8FR"
       ],
       "settings": {}
-    },
-    "product_brands_Ph83qy": {
-      "type": "product-brands",
-      "blocks": {
-        "item_UegbPn": {
-          "type": "item",
-          "settings": {
-            "name": "",
-            "link": ""
-          }
-        },
-        "item_RbCPY6": {
-          "type": "item",
-          "settings": {
-            "name": "",
-            "link": ""
-          }
-        },
-        "item_a68Ep8": {
-          "type": "item",
-          "settings": {
-            "name": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_UegbPn",
-        "item_RbCPY6",
-        "item_a68Ep8"
-      ],
-      "settings": {
-        "white_title": "Featured",
-        "blue_title": "Products",
-        "link_text": "View All",
-        "link_url": "",
-        "active_dot_color": "#000000"
-      }
     }
   },
   "order": [
