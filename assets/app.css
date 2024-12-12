@@ -4745,10 +4745,6 @@ video {
   line-height: 1;
 }
 
-.twcss-leading-normal {
-  line-height: 1.5;
-}
-
 .\!twcss-text-black {
   --tw-text-opacity: 1 !important;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1)) !important;
