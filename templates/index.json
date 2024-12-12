@@ -299,8 +299,8 @@
         "item_Ww6ThQ"
       ],
       "settings": {
-        "white_title": "",
-        "blue_title": "",
+        "white_title": "Featured",
+        "blue_title": "Brands",
         "link_text": "View All",
         "link_url": "",
         "active_dot_color": "#5f9df7"
