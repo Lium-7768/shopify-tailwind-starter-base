@@ -185,9 +185,50 @@
     "product_brands_Ph83qy": {
       "type": "product-brands",
       "blocks": {
+        "item_hWXRXT": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/brand-velux.png",
+            "name": "",
+            "link": ""
+          }
+        },
+        "item_GaJRk4": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/brand-lp.png",
+            "name": "",
+            "link": ""
+          }
+        },
+        "item_bfYbG8": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/branc-elevate.png",
+            "name": "",
+            "link": ""
+          }
+        },
+        "item_jhcxmE": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/brand-tamko.png",
+            "name": "",
+            "link": ""
+          }
+        },
+        "item_Me3meJ": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/brand-atlas.png",
+            "name": "",
+            "link": ""
+          }
+        },
         "item_UegbPn": {
           "type": "item",
           "settings": {
+            "logo": "shopify://shop_images/brand-built.png",
             "name": "",
             "link": ""
           }
@@ -195,6 +236,7 @@
         "item_RbCPY6": {
           "type": "item",
           "settings": {
+            "logo": "shopify://shop_images/brand-hardle.png",
             "name": "",
             "link": ""
           }
@@ -202,12 +244,18 @@
         "item_a68Ep8": {
           "type": "item",
           "settings": {
+            "logo": "shopify://shop_images/brand-carlisle.png",
             "name": "",
             "link": ""
           }
         }
       },
       "block_order": [
+        "item_hWXRXT",
+        "item_GaJRk4",
+        "item_bfYbG8",
+        "item_jhcxmE",
+        "item_Me3meJ",
         "item_UegbPn",
         "item_RbCPY6",
         "item_a68Ep8"
