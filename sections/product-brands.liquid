@@ -12,7 +12,7 @@
       <div class="swiper-wrapper twcss-gap-6">
         {%- for block in section.blocks -%}
           <div
-            class="swiper-slide twcss-flex-col !twcss-w-[90px] !twcss-h-[116px] !twcss-flex twcss-items-center lg:!twcss-w-[139px] !twcss-mr-0 {%- if block.settings.link != blank -%}twcss-cursor-pointer{%- endif -%}"
+            class="swiper-slide twcss-flex-col twcss-justify-around !twcss-w-[90px] !twcss-h-[116px] !twcss-flex twcss-items-center lg:!twcss-w-[139px] !twcss-mr-0 {%- if block.settings.link != blank -%}twcss-cursor-pointer{%- endif -%}"
             {{ block.shopify_attributes }}
           >
             {%- if block.settings.link != blank -%}
