@@ -190,7 +190,7 @@
           "settings": {
             "logo": "shopify://shop_images/brand-velux.png",
             "name": "VELUX",
-            "link": ""
+            "link": "shopify://collections"
           }
         },
         "item_GaJRk4": {
@@ -198,7 +198,7 @@
           "settings": {
             "logo": "shopify://shop_images/brand-lp.png",
             "name": "LP",
-            "link": ""
+            "link": "shopify://collections"
           }
         },
         "item_bfYbG8": {
@@ -206,7 +206,7 @@
           "settings": {
             "logo": "shopify://shop_images/branc-elevate.png",
             "name": "ELEVATE",
-            "link": ""
+            "link": "shopify://collections"
           }
         },
         "item_jhcxmE": {
@@ -214,7 +214,7 @@
           "settings": {
             "logo": "shopify://shop_images/brand-tamko.png",
             "name": "TAMKO",
-            "link": ""
+            "link": "shopify://collections"
           }
         },
         "item_Me3meJ": {
@@ -222,7 +222,7 @@
           "settings": {
             "logo": "shopify://shop_images/brand-atlas.png",
             "name": "ATLAS",
-            "link": ""
+            "link": "shopify://collections"
           }
         },
         "item_UegbPn": {
@@ -230,7 +230,7 @@
           "settings": {
             "logo": "shopify://shop_images/brand-built.png",
             "name": "TRABUILT",
-            "link": ""
+            "link": "shopify://collections"
           }
         },
         "item_RbCPY6": {
@@ -238,7 +238,7 @@
           "settings": {
             "logo": "shopify://shop_images/brand-hardle.png",
             "name": "JAMES HARDIE",
-            "link": ""
+            "link": "shopify://collections"
           }
         },
         "item_a68Ep8": {
@@ -246,15 +246,15 @@
           "settings": {
             "logo": "shopify://shop_images/brand-carlisle.png",
             "name": "CARLISLE",
-            "link": ""
+            "link": "shopify://collections"
           }
         },
         "item_D79LF4": {
           "type": "item",
           "settings": {
             "logo": "shopify://shop_images/brand-lp.png",
-            "name": "",
-            "link": ""
+            "name": "LP",
+            "link": "shopify://collections"
           }
         }
       },
@@ -348,7 +348,7 @@
           "type": "item",
           "settings": {
             "logo": "shopify://shop_images/branc-elevate.png",
-            "name": "",
+            "name": "ELEVATE",
             "link": ""
           }
         }
