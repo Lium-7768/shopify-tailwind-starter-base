@@ -153,24 +153,6 @@
       </h1>
     {%- endif -%}
 
-    {% if customer %}
-      <div class="customer-info">
-        <p>Customer Name: {{ customer.name }}</p>
-        <p>Customer Email: {{ customer.email }}</p>
-        <p>Customer ID: {{ customer.id }}</p>
-        <p>Customer Orders Count: {{ customer.orders_count }}</p>
-        <p>Customer Tags: {{ customer.tags | join: ', ' }}</p>
-        <p>Customer Default Address: 
-          {% if customer.default_address %}
-            {{ customer.default_address.address1 }},
-            {{ customer.default_address.city }},
-            {{ customer.default_address.province }},
-            {{ customer.default_address.country }}
-          {% endif %}
-        </p>
-      </div>
-    {% endif %}
-
     <button 
       type="button"
       class="twcss-py-2 twcss-px-3 twcss-border twcss-border-secondary-default twcss-font-bold twcss-rounded twcss-mr-5 twcss-ml-6 twcss-transition-colors twcss-flex twcss-items-center twcss-gap-2 twcss-cursor-pointer hover:twcss-bg-secondary-default hover:twcss-text-white"
