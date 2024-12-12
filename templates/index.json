@@ -197,7 +197,7 @@
           "type": "item",
           "settings": {
             "logo": "shopify://shop_images/brand-lp.png",
-            "name": "",
+            "name": "LP",
             "link": ""
           }
         },
@@ -205,7 +205,7 @@
           "type": "item",
           "settings": {
             "logo": "shopify://shop_images/branc-elevate.png",
-            "name": "",
+            "name": "ELEVATE",
             "link": ""
           }
         },
@@ -213,7 +213,7 @@
           "type": "item",
           "settings": {
             "logo": "shopify://shop_images/brand-tamko.png",
-            "name": "",
+            "name": "TAMKO",
             "link": ""
           }
         },
@@ -221,7 +221,7 @@
           "type": "item",
           "settings": {
             "logo": "shopify://shop_images/brand-atlas.png",
-            "name": "",
+            "name": "ATLAS",
             "link": ""
           }
         },
@@ -229,7 +229,7 @@
           "type": "item",
           "settings": {
             "logo": "shopify://shop_images/brand-built.png",
-            "name": "",
+            "name": "TRABUILT",
             "link": ""
           }
         },
@@ -237,7 +237,7 @@
           "type": "item",
           "settings": {
             "logo": "shopify://shop_images/brand-hardle.png",
-            "name": "",
+            "name": "JAMES HARDIE",
             "link": ""
           }
         },
@@ -245,7 +245,7 @@
           "type": "item",
           "settings": {
             "logo": "shopify://shop_images/brand-carlisle.png",
-            "name": "",
+            "name": "CARLISLE",
             "link": ""
           }
         }
