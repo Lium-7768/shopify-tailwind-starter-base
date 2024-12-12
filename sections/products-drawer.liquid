@@ -60,7 +60,10 @@
                   <span class='twcss-text-lg twcss-font-medium'>{{ shop.name }}</span>
                 {%- endif -%}
               </div>
-              <button type='button' class='products-drawer-close twcss-text-accent-default hover:twcss-text-gray-500'>
+              <button
+                type='button'
+                class='products-drawer-close twcss-text-accent-default twcss-size-6 hover:twcss-text-gray-500'
+              >
                 <span class='twcss-sr-only'>Close panel</span>
                 <span class='twcss-text-secondary-middle twcss-size-6'>
                   {{- 'icon-close.svg' | inline_asset_content -}}
