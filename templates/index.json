@@ -185,89 +185,80 @@
     "product_brands_FQAwF4": {
       "type": "product-brands",
       "blocks": {
-        "brand_nXAFMA": {
-          "type": "brand",
+        "item_66pei9": {
+          "type": "item",
           "settings": {
-            "brand_logo": "shopify://shop_images/brand-atlas.png",
-            "brand_name": "",
-            "brand_link": ""
+            "logo": "shopify://shop_images/brand-atlas.png",
+            "name": "",
+            "link": ""
           }
         },
-        "brand_kXTJGN": {
-          "type": "brand",
+        "item_xP8446": {
+          "type": "item",
           "settings": {
-            "brand_logo": "shopify://shop_images/brand-lp.png",
-            "brand_name": "",
-            "brand_link": ""
+            "logo": "shopify://shop_images/brand-lp.png",
+            "name": "",
+            "link": ""
           }
         },
-        "brand_kWH9Ri": {
-          "type": "brand",
+        "item_aJExFi": {
+          "type": "item",
           "settings": {
-            "brand_logo": "shopify://shop_images/brand-carlisle.png",
-            "brand_name": "",
-            "brand_link": ""
+            "logo": "shopify://shop_images/brand-carlisle.png",
+            "name": "",
+            "link": ""
           }
         },
-        "brand_4ABedr": {
-          "type": "brand",
+        "item_qAJKHe": {
+          "type": "item",
           "settings": {
-            "brand_logo": "shopify://shop_images/branc-elevate.png",
-            "brand_name": "",
-            "brand_link": ""
+            "logo": "shopify://shop_images/branc-elevate.png",
+            "name": "",
+            "link": ""
           }
         },
-        "brand_jGP7Np": {
-          "type": "brand",
+        "item_4JTxVT": {
+          "type": "item",
           "settings": {
-            "brand_logo": "shopify://shop_images/brand-tamko.png",
-            "brand_name": "",
-            "brand_link": ""
+            "logo": "shopify://shop_images/brand-tamko.png",
+            "name": "",
+            "link": ""
           }
         },
-        "brand_HPRphU": {
-          "type": "brand",
+        "item_LkTeAm": {
+          "type": "item",
           "settings": {
-            "brand_logo": "shopify://shop_images/brand-hardle.png",
-            "brand_name": "",
-            "brand_link": ""
+            "logo": "shopify://shop_images/brand-hardle.png",
+            "name": "",
+            "link": ""
           }
         },
-        "brand_F8gBdH": {
-          "type": "brand",
+        "item_PnNUee": {
+          "type": "item",
           "settings": {
-            "brand_logo": "shopify://shop_images/brand-velux.png",
-            "brand_name": "",
-            "brand_link": ""
+            "logo": "shopify://shop_images/brand-velux.png",
+            "name": "",
+            "link": ""
           }
         },
-        "brand_fpKQDd": {
-          "type": "brand",
+        "item_Ww6ThQ": {
+          "type": "item",
           "settings": {
-            "brand_logo": "shopify://shop_images/brand-built.png",
-            "brand_name": "",
-            "brand_link": ""
-          }
-        },
-        "brand_NNptpG": {
-          "type": "brand",
-          "settings": {
-            "brand_logo": "shopify://shop_images/brand-velux.png",
-            "brand_name": "",
-            "brand_link": ""
+            "logo": "shopify://shop_images/brand-built.png",
+            "name": "",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "brand_nXAFMA",
-        "brand_kXTJGN",
-        "brand_kWH9Ri",
-        "brand_4ABedr",
-        "brand_jGP7Np",
-        "brand_HPRphU",
-        "brand_F8gBdH",
-        "brand_fpKQDd",
-        "brand_NNptpG"
+        "item_66pei9",
+        "item_xP8446",
+        "item_aJExFi",
+        "item_qAJKHe",
+        "item_4JTxVT",
+        "item_LkTeAm",
+        "item_PnNUee",
+        "item_Ww6ThQ"
       ],
       "settings": {
         "title": "Featured Brands",
