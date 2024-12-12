@@ -53,9 +53,9 @@
           class='twcss-absolute twcss-bg-secondary-default twcss-right-0 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 twcss-h-full twcss-rounded-r'
           aria-label='{{ 'general.search.search' | t }}'
         >
-          <svg class='twcss-size-6 twcss-text-white twcss-block' aria-hidden='true' focusable='false'>
-            <use href="#icon-search">
-          </svg>
+          <span class='twcss-size-6 twcss-text-white twcss-block'>
+            {{- 'icon-search.svg' | inline_asset_content -}}
+          </span>
         </button>
       </div>
 
