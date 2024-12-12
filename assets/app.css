@@ -693,6 +693,11 @@ video {
   margin-right: auto;
 }
 
+.twcss-my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .twcss-my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -4731,6 +4736,10 @@ video {
 
 .twcss-leading-4 {
   line-height: 1rem;
+}
+
+.twcss-leading-5 {
+  line-height: 1.25rem;
 }
 
 .twcss-leading-\[12\.5px\] {
