@@ -301,8 +301,8 @@
       "settings": {
         "white_title": "Featured",
         "blue_title": "Brands",
-        "link_text": "View All",
-        "link_url": "",
+        "link_text": "",
+        "link_url": "shopify://pages/contact",
         "active_dot_color": "#5f9df7"
       }
     },
