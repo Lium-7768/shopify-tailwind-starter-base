@@ -1,13 +1,10 @@
-{%- liquid
-  assign wrapper_classes = 'twcss-flex twcss-items-baseline twcss-justify-between twcss-mb-6 ' | append: wrapper_classes
-  assign white_title_classes = 'twcss-text-2xl twcss-font-semibold ' | append: white_title_classes
-  assign blue_title_classes = 'twcss-text-2xl twcss-text-blue-500 ' | append: blue_title_classes
-  assign link_classes = 'twcss-flex twcss-items-center twcss-text-sm twcss-text-blue-600 hover:twcss-text-blue-800 twcss-w-1/4 twcss-flex-row-reverse ' | append: link_classes
-
-  assign white_title = white_title | default: section.settings.white_title
-  assign blue_title = blue_title | default: section.settings.blue_title
-  assign link_text = link_text | default: section.settings.link_text
-  assign link_url = link_url | default: section.settings.link_url
+{%- assign wrapper_classes = 'twcss-flex twcss-items-baseline twcss-justify-between twcss-mb-6 '
+  | append: wrapper_classes
+-%}
+{%- assign white_title_classes = 'twcss-text-2xl twcss-font-semibold ' | append: white_title_classes -%}
+{%- assign blue_title_classes = 'twcss-text-2xl twcss-text-blue-500 ' | append: blue_title_classes -%}
+{%- assign link_classes = 'twcss-flex twcss-items-center twcss-text-sm twcss-text-blue-600 hover:twcss-text-blue-800 twcss-w-1/4 twcss-flex-row-reverse '
+  | append: link_classes
 -%}
 
 <div class="{{ wrapper_classes }}">
