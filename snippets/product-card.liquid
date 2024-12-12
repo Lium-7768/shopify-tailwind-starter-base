@@ -82,7 +82,7 @@
         {% assign published_time = product.published_at | date: '%s' %}
         {% assign days_since_published = current_time | minus: published_time | divided_by: 86400 %}
         <div
-          class="twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded-xl twcss-mb-2"
+          class="twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded-xl"
           style="opacity: {%- if days_since_published <= 30 -%}1{%- else -%}0{%- endif -%}"
         >
           New
