@@ -162,7 +162,7 @@
       Products
     </button>
 
-    {% comment %} {% render 'header-address-dropdown-menu' %} {% endcomment %}
+    {% render 'header-address-dropdown-menu' %}
 
     {% comment %} <div class="desktop-localization-wrapper twcss-text-white">
       {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
@@ -204,17 +204,17 @@
       {%- case block.type -%}
         {%- when '@app' -%}
           {% render block %}
+        {%- when 'custom_account' -%}
+          {% render 'header-account-dropdown-menu', block: block, id: 'account-button-desktop' %}
         {%- when 'notification' -%}
           {%- if block.settings.show_notification -%}
             <a 
               href="{{ block.settings.notification_link }}" 
-              class="twcss-size-6 twcss-ml-4 twcss-mr-7"
+              class="twcss-size-6 twcss-ml-4 twcss-mr-2"
             >
               {{ 'icon-notification.svg' | inline_asset_content }}
             </a>
           {%- endif -%}
-        {%- when 'custom_account' -%}
-          {% render 'header-account-dropdown-menu', block: block, id: 'account-button-desktop' %}
       {%- endcase -%}
     {%- endfor -%}
 
@@ -290,6 +290,8 @@
         {%- case block.type -%}
           {%- when '@app' -%}
             {% render block %}
+          {%- when 'custom_account' -%}
+            {% render 'header-account-dropdown-menu', block: block, id: 'account-button-mobile' %}
           {%- when 'notification' -%}
             {%- if block.settings.show_notification -%}
               <a 
@@ -299,8 +301,6 @@
                 {{ 'icon-notification.svg' | inline_asset_content }}
               </a>
             {%- endif -%}
-          {%- when 'custom_account' -%}
-            {% render 'header-account-dropdown-menu', block: block, id: 'account-button-mobile' %}
         {%- endcase -%}
       {%- endfor -%}
     </div>
