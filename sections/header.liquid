@@ -153,6 +153,7 @@
       </h1>
     {%- endif -%}
 
+    {% if customer %}
       <div class="customer-info">
         <p>Customer Name: {{ customer.name }}</p>
         <p>Customer Email: {{ customer.email }}</p>
@@ -168,6 +169,7 @@
           {% endif %}
         </p>
       </div>
+    {% endif %}
 
     <button 
       type="button"
