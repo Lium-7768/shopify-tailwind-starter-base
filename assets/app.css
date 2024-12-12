@@ -759,10 +759,6 @@ video {
   margin-right: 1.25rem;
 }
 
-.twcss-mr-7 {
-  margin-right: 1.75rem;
-}
-
 .twcss-mt-0 {
   margin-top: 0px;
 }
@@ -1103,6 +1099,10 @@ video {
   justify-content: space-between;
 }
 
+.twcss-justify-around {
+  justify-content: space-around;
+}
+
 .twcss-justify-items-center {
   justify-items: center;
 }
@@ -1173,12 +1173,12 @@ video {
   align-self: flex-start;
 }
 
-.twcss-overflow-hidden {
-  overflow: hidden;
+.twcss-overflow-auto {
+  overflow: auto;
 }
 
-.twcss-overflow-y-scroll {
-  overflow-y: scroll;
+.twcss-overflow-hidden {
+  overflow: hidden;
 }
 
 .twcss-truncate {
