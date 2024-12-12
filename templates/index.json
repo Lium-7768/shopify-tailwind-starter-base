@@ -273,7 +273,7 @@
         "white_title": "Featured",
         "blue_title": "Categories",
         "link_text": "View All",
-        "link_url": "shopify://collections/all",
+        "link_url": "shopify://collections",
         "active_dot_color": "#5f9df7"
       }
     },
