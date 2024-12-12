@@ -261,7 +261,10 @@
         "item_Ww6ThQ"
       ],
       "settings": {
-        "title": "Featured Brands",
+        "white_title": "",
+        "blue_title": "",
+        "link_text": "View All",
+        "link_url": "",
         "active_dot_color": "#5f9df7"
       }
     },
@@ -299,6 +302,44 @@
         "highlight_hYD8FR"
       ],
       "settings": {}
+    },
+    "product_brands_Ph83qy": {
+      "type": "product-brands",
+      "blocks": {
+        "item_UegbPn": {
+          "type": "item",
+          "settings": {
+            "name": "",
+            "link": ""
+          }
+        },
+        "item_RbCPY6": {
+          "type": "item",
+          "settings": {
+            "name": "",
+            "link": ""
+          }
+        },
+        "item_a68Ep8": {
+          "type": "item",
+          "settings": {
+            "name": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_UegbPn",
+        "item_RbCPY6",
+        "item_a68Ep8"
+      ],
+      "settings": {
+        "white_title": "Featured",
+        "blue_title": "Products",
+        "link_text": "View All",
+        "link_url": "",
+        "active_dot_color": "#000000"
+      }
     }
   },
   "order": [
@@ -307,6 +348,7 @@
     "featured_products_dVWqqB",
     "distribution_solutions_wXkLVR",
     "featured_plumbing_CA7GXd",
+    "product_brands_Ph83qy",
     "product_brands_FQAwF4",
     "server_highlight_DGeehf"
   ]
