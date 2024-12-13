@@ -15,16 +15,16 @@
 
   {% if customer.company_available_locations.size > 1 %}
     <div
-      class='twcss-absolute twcss-right-0 twcss-mt-2 twcss-bg-white twcss-rounded-lg twcss-shadow-lg twcss-hidden'
+      class='twcss-absolute twcss-right-0 twcss-mt-2 twcss-bg-white twcss-rounded twcss-shadow-lg twcss-hidden twcss-w-96'
       data-location-dropdown
     >
       <div class='twcss-p-6 twcss-text-base twcss-space-y-4'>
-        <div class='twcss-font-medium twcss-text-gray-700'>Choose your location</div>
+        <div class='twcss-font-medium twcss-text-gray-700 twcss-text-center'>Choose your location</div>
 
         <div class='location-switcher twcss-space-y-2' data-url='{{ routes.location_set_current_url }}'>
           {% for location in customer.company_available_locations %}
             {% unless location.current? %}
-              <div class='twcss-flex twcss-items-center twcss-p-3 twcss-rounded-lg hover:twcss-bg-blue-50'>
+              <div class='twcss-flex twcss-items-center twcss-p-3 twcss-rounded twcss-border twcss-border-gray-300 hover:twcss-bg-blue-50'>
                 <input
                   type='radio'
                   id='location-{{ location.id }}'
@@ -52,13 +52,13 @@
 
         <div class='twcss-flex twcss-gap-4 twcss-mt-6'>
           <button
-            class='twcss-flex-1 twcss-py-3 twcss-px-4 twcss-border twcss-border-gray-300 twcss-rounded-lg twcss-text-gray-700'
+            class='twcss-flex-1 twcss-py-3 twcss-px-4 twcss-border twcss-border-gray-300 twcss-rounded twcss-text-gray-700 hover:twcss-bg-gray-100'
             data-action='cancel'
           >
             Cancel
           </button>
           <button
-            class='twcss-flex-1 twcss-py-3 twcss-px-4 twcss-bg-orange-500 twcss-text-white twcss-rounded-lg'
+            class='twcss-flex-1 twcss-py-3 twcss-px-4 twcss-bg-orange-500 twcss-text-white twcss-rounded hover:twcss-bg-orange-600'
             data-action='confirm'
           >
             Confirm
