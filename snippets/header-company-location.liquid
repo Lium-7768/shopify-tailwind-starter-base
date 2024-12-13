@@ -1,66 +1,111 @@
-<div class="location-manager">
-  <h3>Current Location: {{ customer.current_location.name }}</h3>
-  
+<div class='twcss-relative'>
+  <button class='twcss-flex twcss-items-center twcss-gap-x-2'>
+    <span class='twcss-size-6'>
+      {{ 'icon-location.svg' | inline_asset_content }}
+    </span>
+    <span class='twcss-font-semibol twcss-hidden lg:twcss-flex'>
+      {{ customer.current_location.name }}
+    </span>
+    {% if customer.company_available_locations.size > 1 %}
+      <span
+        class='twcss-w-4 twcss-transition-transform twcss-duration-200 twcss-rotate-180 twcss-hidden lg:twcss-flex'
+        data-location-icon
+      >
+        {{ 'icon-caret.svg' | inline_asset_content }}
+      </span>
+    {% endif %}
+  </button>
+
   {% if customer.company_available_locations.size > 1 %}
-    <div class="location-switcher" data-url="{{ routes.location_set_current_url }}">
-      <h4>Available Locations:</h4>
-      <div class="location-list">
-        {% for location in customer.company_available_locations %}
-          {% unless location.current? %}
-            <button 
-              class="location-btn {% if location.current? %}current{% endif %}"
-              data-location-id="{{ location.id }}"
-              {% if location.current? %}disabled{% endif %}
-            >
-              <span class="location-name">{{ location.name }}</span>
-              <span class="loading-indicator" style="display: none;">
-                Switching...
-              </span>
-            </button>
-          {% endunless %}
-        {% endfor %}
+    <div
+      class='twcss-absolute twcss-right-0 twcss-mt-2 twcss-w-[210px] twcss-bg-white twcss-rounded twcss-shadow-lg twcss-hidden'
+      data-location-dropdown
+    >
+      <div class='twcss-p-6 twcss-text-sm twcss-space-y-4'>
+        <div class='twcss-font-semibold twcss-text-accent-default'>Available Locations</div>
+
+        <div class='location-switcher' data-url='{{ routes.location_set_current_url }}'>
+          {% for location in customer.company_available_locations %}
+            {% unless location.current? %}
+              <button
+                class='twcss-block twcss-w-full twcss-text-left twcss-text-accent-default hover:twcss-bg-muted-light location-btn'
+                data-location-id='{{ location.id }}'
+                {% if location.current? %}
+                  disabled
+                {% endif %}
+              >
+                <span class='location-name'>{{ location.name }}</span>
+                <span class='loading-indicator twcss-hidden twcss-ml-2 twcss-text-primary-default'> Switching... </span>
+              </button>
+            {% endunless %}
+          {% endfor %}
+
+          <div class='error-message twcss-hidden twcss-text-red-500 twcss-mt-2'></div>
+        </div>
       </div>
-      <div class="error-message" style="display: none; color: red;"></div>
     </div>
-    
+
     <script>
-      document.querySelectorAll('.location-btn').forEach(button => {
-        button.addEventListener('click', async function() {
-          const locationId = this.dataset.locationId;
-          const url = this.closest('.location-switcher').dataset.url;
-          const loadingIndicator = this.querySelector('.loading-indicator');
-          const errorMessage = this.closest('.location-switcher').querySelector('.error-message');
-          
-          try {
-            loadingIndicator.style.display = 'inline';
-            button.disabled = true;
-            errorMessage.style.display = 'none';
-            
-            const response = await fetch(url, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
-              },
-              body: JSON.stringify({
-                location_id: locationId
-              })
-            });
-            
-            if (response.ok) {
-              window.location.reload();
-            } else {
-              throw new Error('Failed to switch location');
+      (function () {
+        const locationButton = document.querySelector('[data-location-icon]').parentElement;
+        const locationDropdown = document.querySelector('[data-location-dropdown]');
+        const locationIcon = document.querySelector('[data-location-icon]');
+
+        if (locationButton && locationDropdown) {
+          locationButton.addEventListener('click', () => {
+            locationDropdown.classList.toggle('twcss-hidden');
+            locationIcon.style.transform = locationDropdown.classList.contains('twcss-hidden')
+              ? 'rotate(180deg)'
+              : 'rotate(0deg)';
+          });
+
+          // Close dropdown when clicking outside
+          document.addEventListener('click', (event) => {
+            if (!locationButton.contains(event.target) && !locationDropdown.contains(event.target)) {
+              locationDropdown.classList.add('twcss-hidden');
+              locationIcon.style.transform = 'rotate(180deg)';
             }
-          } catch (error) {
-            errorMessage.textContent = 'Failed to switch location. Please try again.';
-            errorMessage.style.display = 'block';
-            
-            loadingIndicator.style.display = 'none';
-            button.disabled = false;
-          }
+          });
+        }
+
+        // Location switching functionality
+        document.querySelectorAll('.location-btn').forEach((button) => {
+          button.addEventListener('click', async function () {
+            const locationId = this.dataset.locationId;
+            const url = this.closest('.location-switcher').dataset.url;
+            const loadingIndicator = this.querySelector('.loading-indicator');
+            const errorMessage = this.closest('.location-switcher').querySelector('.error-message');
+
+            try {
+              loadingIndicator.classList.remove('twcss-hidden');
+              button.disabled = true;
+              errorMessage.classList.add('twcss-hidden');
+
+              const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content,
+                },
+                body: JSON.stringify({
+                  location_id: locationId,
+                }),
+              });
+
+              if (response.ok) {
+                window.location.reload();
+              } else {
+                throw new Error('Failed to switch location');
+              }
+            } catch (error) {
+              errorMessage.textContent = 'Failed to switch location. Please try again.';
+              errorMessage.classList.remove('twcss-hidden');
+              loadingIndicator.classList.add('twcss-hidden');
+              button.disabled = false;
+            }
+          });
         });
-      });
+      })();
     </script>
   {% endif %}
 </div>
