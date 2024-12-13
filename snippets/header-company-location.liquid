@@ -1,8 +1,8 @@
 <div class='twcss-relative'>
-  <button class='twcss-flex twcss-flex-col twcss-gap-y-2'>
+  <button class='twcss-flex twcss-flex-col twcss-gap-y-2 twcss-text-sm twcss-text-white twcss-font-bold'>
     <span>Delivery to</span>
-    <div>
-      <span class='twcss-font-bold twcss-text-sm twcss-text-white twcss-hidden lg:twcss-flex'>
+    <div class='twcss-flex twcss-items-center twcss-gap-x-2'>
+      <span class='twcss-text-secondary-light twcss-hidden lg:twcss-flex'>
         {{ customer.current_location.name }}
       </span>
       {% if customer.company_available_locations.size > 1 %}
