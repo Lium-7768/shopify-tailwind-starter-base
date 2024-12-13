@@ -18,7 +18,7 @@
           "type": "link_list",
           "settings": {
             "heading": "Information",
-            "menu": "customfooterinformation"
+            "menu": "customer-footer-information"
           }
         },
         "footer-1": {
