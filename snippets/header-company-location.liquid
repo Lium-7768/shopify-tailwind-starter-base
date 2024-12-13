@@ -24,17 +24,26 @@
         <div class='location-switcher twcss-space-y-2' data-url='{{ routes.location_set_current_url }}'>
           {% for location in customer.company_available_locations %}
             {% unless location.current? %}
-              <button
-                class='twcss-block twcss-w-full twcss-text-left twcss-p-3 twcss-rounded-lg hover:twcss-bg-blue-50 location-btn twcss-flex twcss-items-center twcss-gap-3'
-                data-location-id='{{ location.id }}'
-                {% if location.current? %}
-                  disabled
-                {% endif %}
-              >
-                <div class='twcss-w-4 twcss-h-4 twcss-border twcss-border-gray-300 twcss-rounded-full'></div>
-                <span class='location-name'>{{ location.name }}</span>
+              <div class='twcss-flex twcss-items-center twcss-p-3 twcss-rounded-lg hover:twcss-bg-blue-50'>
+                <input
+                  type='radio'
+                  id='location-{{ location.id }}'
+                  name='location'
+                  value='{{ location.id }}'
+                  class='twcss-w-4 twcss-h-4 twcss-border twcss-border-gray-300 twcss-rounded-full twcss-text-blue-600 focus:twcss-ring-blue-500'
+                  data-location-id='{{ location.id }}'
+                  {% if location.current? %}
+                    checked
+                  {% endif %}
+                >
+                <label
+                  for='location-{{ location.id }}'
+                  class='twcss-ml-3 twcss-block twcss-text-sm twcss-font-medium twcss-text-gray-700'
+                >
+                  {{ location.name }}
+                </label>
                 <span class='loading-indicator twcss-hidden twcss-ml-2 twcss-text-primary-default'> Switching... </span>
-              </button>
+              </div>
             {% endunless %}
           {% endfor %}
 
