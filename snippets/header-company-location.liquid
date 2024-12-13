@@ -1,0 +1,69 @@
+<div class="location-manager">
+  <h3>Current Location: {{ customer.current_location.name }}</h3>
+  
+  {% if customer.company_available_locations.size > 1 %}
+    <div class="location-switcher" data-url="{{ routes.location_set_current_url }}">
+      <h4>Available Locations:</h4>
+      <div class="location-list">
+        {% for location in customer.company_available_locations %}
+          {% unless location.current? %}
+            <button 
+              class="location-btn {% if location.current? %}current{% endif %}"
+              data-location-id="{{ location.id }}"
+              {% if location.current? %}disabled{% endif %}
+            >
+              <span class="location-name">{{ location.name }}</span>
+              <span class="loading-indicator" style="display: none;">
+                Switching...
+              </span>
+            </button>
+          {% endunless %}
+        {% endfor %}
+      </div>
+      <div class="error-message" style="display: none; color: red;"></div>
+    </div>
+    
+    <script>
+      document.querySelectorAll('.location-btn').forEach(button => {
+        button.addEventListener('click', async function() {
+          const locationId = this.dataset.locationId;
+          const url = this.closest('.location-switcher').dataset.url;
+          const loadingIndicator = this.querySelector('.loading-indicator');
+          const errorMessage = this.closest('.location-switcher').querySelector('.error-message');
+          
+          try {
+            // 显示加载状态
+            loadingIndicator.style.display = 'inline';
+            button.disabled = true;
+            errorMessage.style.display = 'none';
+            
+            const response = await fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+              },
+              body: JSON.stringify({
+                location_id: locationId
+              })
+            });
+            
+            if (response.ok) {
+              window.location.reload();
+            } else {
+              throw new Error('Failed to switch location');
+            }
+          } catch (error) {
+            // 显示错误信息
+            errorMessage.textContent = 'Failed to switch location. Please try again.';
+            errorMessage.style.display = 'block';
+            
+            // 重置按钮状态
+            loadingIndicator.style.display = 'none';
+            button.disabled = false;
+          }
+        });
+      });
+    </script>
+  {% endif %}
+</div>
