@@ -214,7 +214,7 @@
             </a>
           {%- endif -%}
         {%- when 'custom_account' -%}
-          {% render 'header-account-dropdown-menu', block: block, id: 'account-button-desktop' %}
+          {% render 'header-account-dropdown-menu', block: block, customer: customer, id: 'account-button-desktop' %}
       {%- endcase -%}
     {%- endfor -%}
 
