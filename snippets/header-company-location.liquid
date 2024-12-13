@@ -15,22 +15,23 @@
 
   {% if customer.company_available_locations.size > 1 %}
     <div
-      class='twcss-absolute twcss-right-0 twcss-mt-2 twcss-w-[210px] twcss-bg-white twcss-rounded twcss-shadow-lg twcss-hidden'
+      class='twcss-absolute twcss-right-0 twcss-mt-2 twcss-w-[400px] twcss-bg-white twcss-rounded-lg twcss-shadow-lg twcss-hidden'
       data-location-dropdown
     >
-      <div class='twcss-p-6 twcss-text-sm twcss-space-y-4'>
-        <div class='twcss-font-semibold twcss-text-accent-default'>Available Locations</div>
+      <div class='twcss-p-6 twcss-text-base twcss-space-y-4'>
+        <div class='twcss-font-medium twcss-text-gray-700'>Choose your location</div>
 
-        <div class='location-switcher' data-url='{{ routes.location_set_current_url }}'>
+        <div class='location-switcher twcss-space-y-2' data-url='{{ routes.location_set_current_url }}'>
           {% for location in customer.company_available_locations %}
             {% unless location.current? %}
               <button
-                class='twcss-block twcss-w-full twcss-text-left twcss-text-accent-default hover:twcss-bg-muted-light location-btn'
+                class='twcss-block twcss-w-full twcss-text-left twcss-p-3 twcss-rounded-lg hover:twcss-bg-blue-50 location-btn twcss-flex twcss-items-center twcss-gap-3'
                 data-location-id='{{ location.id }}'
                 {% if location.current? %}
                   disabled
                 {% endif %}
               >
+                <div class='twcss-w-4 twcss-h-4 twcss-border twcss-border-gray-300 twcss-rounded-full'></div>
                 <span class='location-name'>{{ location.name }}</span>
                 <span class='loading-indicator twcss-hidden twcss-ml-2 twcss-text-primary-default'> Switching... </span>
               </button>
@@ -38,6 +39,21 @@
           {% endfor %}
 
           <div class='error-message twcss-hidden twcss-text-red-500 twcss-mt-2'></div>
+        </div>
+
+        <div class='twcss-flex twcss-gap-4 twcss-mt-6'>
+          <button
+            class='twcss-flex-1 twcss-py-3 twcss-px-4 twcss-border twcss-border-gray-300 twcss-rounded-lg twcss-text-gray-700'
+            data-action='cancel'
+          >
+            Cancel
+          </button>
+          <button
+            class='twcss-flex-1 twcss-py-3 twcss-px-4 twcss-bg-orange-500 twcss-text-white twcss-rounded-lg'
+            data-action='confirm'
+          >
+            Confirm
+          </button>
         </div>
       </div>
     </div>
