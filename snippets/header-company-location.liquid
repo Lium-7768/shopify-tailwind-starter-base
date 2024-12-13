@@ -1,19 +1,22 @@
 <div class='twcss-relative'>
-  <button class='twcss-flex twcss-items-center twcss-gap-x-2'>
-    <span class='twcss-font-bold twcss-text-sm twcss-text-white twcss-hidden lg:twcss-flex'>
-      {{ customer.current_location.name }}
-    </span>
-    {% if customer.company_available_locations.size > 1 %}
-      <span
-        class='twcss-w-4 twcss-transition-transform twcss-duration-200 twcss-rotate-180 twcss-hidden lg:twcss-flex'
-        data-location-icon
-      >
-        {{ 'icon-caret.svg' | inline_asset_content }}
+  <button class='twcss-flex twcss-flex-col twcss-gap-y-2'>
+    <span>Delivery to</span>
+    <div>
+      <span class='twcss-font-bold twcss-text-sm twcss-text-white twcss-hidden lg:twcss-flex'>
+        {{ customer.current_location.name }}
       </span>
-    {% endif %}
+      {% if customer.company_available_locations.size > 1 %}
+        <span
+          class='twcss-w-4 twcss-transition-transform twcss-duration-200 twcss-rotate-180 twcss-hidden lg:twcss-flex'
+          data-location-icon
+        >
+          {{ 'icon-caret.svg' | inline_asset_content }}
+        </span>
+      {% endif %}
+    </div>
   </button>
 
-  {% if customer.company_available_locations.size > 0 %}
+  {% if customer.company_available_locations.size > 1 %}
     <div
       class='twcss-absolute twcss-right-0 twcss-mt-2 twcss-bg-white twcss-rounded twcss-shadow-lg twcss-hidden twcss-text-accent-default'
       data-location-dropdown
