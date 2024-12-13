@@ -5,9 +5,11 @@
   >
     <span>Delivery to</span>
     <div class='twcss-flex twcss-items-center twcss-gap-x-2'>
-      <span class='twcss-text-secondary-light twcss-hidden lg:twcss-flex twcss-truncate twcss-m-0'>
-        {{ customer.current_location.name }}
-      </span>
+      <div class='twcss-overflow-hidden' style='max-width: min(200px, calc(20vw - 200px));'>
+        <p class='twcss-text-secondary-light twcss-hidden lg:twcss-flex twcss-truncate twcss-m-0'>
+          {{ customer.current_location.name }}
+        </p>
+      </div>
       {% if customer.company_available_locations.size > 1 %}
         <span
           class='twcss-w-4 twcss-transition-transform twcss-duration-200 twcss-rotate-180 twcss-hidden lg:twcss-flex'
