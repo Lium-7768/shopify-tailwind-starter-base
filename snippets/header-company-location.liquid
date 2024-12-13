@@ -27,53 +27,53 @@
       <div class='twcss-p-6 twcss-text-base twcss-space-y-4'>
         <div class='twcss-font-bold twcss-text-accent-default twcss-text-center'>Choose your location</div>
 
-        <div
-          class='location-switcher twcss-space-y-2 twcss-max-h-[206px] twcss-overflow-y-auto'
-        >
-          {% for location in customer.company_available_locations %}
-            {% unless location.current? %}
-              <div class='twcss-flex twcss-items-center twcss-p-2 twcss-gap-y-2 twcss-rounded twcss-border twcss-border-secondary-middle'>
-                <input
-                  type='radio'
-                  id='location-{{ location.id }}'
-                  name='location'
-                  value='{{ location.id }}'
-                  class='twcss-size-6 twcss-border twcss-border-secondary-middle twcss-rounded-full twcss-text-primary-default focus:twcss-ring-blue-500'
-                  data-location-id='{{ location.id }}'
-                  data-location-url='/location/switch?id={{ location.id }}'
-                  {% if location.current? %}
-                    checked
-                  {% endif %}
-                >
-                <label
-                  for='location-{{ location.id }}'
-                  class='twcss-ml-3 twcss-block twcss-text-sm twcss-text-accent-default'
-                >
-                  {{ location.name }}
-                </label>
-                <span class='loading-indicator twcss-hidden twcss-ml-2 twcss-text-primary-default'> Switching... </span>
-              </div>
-            {% endunless %}
-          {% endfor %}
+        <form action='/location/switch' method='POST' class='location-switcher'>
+          <div class='twcss-space-y-2 twcss-max-h-[206px] twcss-overflow-y-auto'>
+            {% for location in customer.company_available_locations %}
+              {% unless location.current? %}
+                <div class='twcss-flex twcss-items-center twcss-p-2 twcss-gap-y-2 twcss-rounded twcss-border twcss-border-secondary-middle'>
+                  <input
+                    type='radio'
+                    id='location-{{ location.id }}'
+                    name='location_id'
+                    value='{{ location.id }}'
+                    class='twcss-size-6 twcss-border twcss-border-secondary-middle twcss-rounded-full twcss-text-primary-default focus:twcss-ring-blue-500'
+                    {% if location.current? %}
+                      checked
+                    {% endif %}
+                  >
+                  <label
+                    for='location-{{ location.id }}'
+                    class='twcss-ml-3 twcss-block twcss-text-sm twcss-text-accent-default'
+                  >
+                    {{ location.name }}
+                  </label>
+                  <span class='loading-indicator twcss-hidden twcss-ml-2 twcss-text-primary-default'>
+                    Switching...
+                  </span>
+                </div>
+              {% endunless %}
+            {% endfor %}
 
-          <div class='error-message twcss-hidden twcss-text-red-500 twcss-mt-2'></div>
-        </div>
+            <div class='error-message twcss-hidden twcss-text-red-500 twcss-mt-2'></div>
+          </div>
 
-        <div class='twcss-flex twcss-gap-4 twcss-mt-6'>
-          <button
-            class='twcss-flex-1 twcss-font-bold twcss-text-sm twcss-p-4 twcss-border twcss-border-primary-default twcss-rounded twcss-text-primary-default hover:twcss-bg-gray-100'
-            data-action='cancel'
-          >
-            Cancel
-          </button>
-          <a
-            href='#'
-            class='twcss-flex-1 twcss-p-4 twcss-bg-orange-500 twcss-text-white twcss-rounded hover:twcss-bg-orange-600 twcss-text-center'
-            data-action='confirm'
-          >
-            Confirm
-          </a>
-        </div>
+          <div class='twcss-flex twcss-gap-4 twcss-mt-6'>
+            <button
+              type='button'
+              class='twcss-flex-1 twcss-font-bold twcss-text-sm twcss-p-4 twcss-border twcss-border-primary-default twcss-rounded twcss-text-primary-default hover:twcss-bg-gray-100'
+              data-action='cancel'
+            >
+              Cancel
+            </button>
+            <button
+              type='submit'
+              class='twcss-flex-1 twcss-p-4 twcss-bg-orange-500 twcss-text-white twcss-rounded hover:twcss-bg-orange-600 twcss-text-center'
+            >
+              Confirm
+            </button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -83,7 +83,6 @@
         const locationDropdown = document.querySelector('[data-location-dropdown]');
         const locationIcon = document.querySelector('[data-location-icon]');
         const cancelButton = document.querySelector('[data-action="cancel"]');
-        const confirmButton = document.querySelector('[data-action="confirm"]');
 
         function closeDropdown() {
           locationDropdown.classList.add('twcss-hidden');
@@ -108,35 +107,6 @@
 
           // Cancel button handler
           cancelButton.addEventListener('click', closeDropdown);
-
-          // Confirm button handler
-          confirmButton.addEventListener('click', (event) => {
-            event.preventDefault();
-            const selectedLocation = document.querySelector('input[name="location"]:checked');
-            if (selectedLocation) {
-              const locationId = selectedLocation.dataset.locationId;
-              // 添加加载指示器显示
-              const loadingIndicator = selectedLocation.parentElement.querySelector('.loading-indicator');
-              const errorMessage = document.querySelector('.error-message');
-
-              loadingIndicator.classList.remove('twcss-hidden');
-              errorMessage.classList.add('twcss-hidden');
-
-              // 发送位置切换请求
-              fetch(selectedLocation.dataset.locationUrl)
-                .then((response) => {
-                  if (!response.ok) {
-                    throw new Error('Failed to switch location');
-                  }
-                  window.location.reload();
-                })
-                .catch((error) => {
-                  loadingIndicator.classList.add('twcss-hidden');
-                  errorMessage.classList.remove('twcss-hidden');
-                  errorMessage.textContent = 'Failed to switch location. Please try again.';
-                });
-            }
-          });
         }
       })();
     </script>
