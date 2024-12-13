@@ -680,10 +680,6 @@ video {
   order: 2;
 }
 
-.twcss-m-0 {
-  margin: 0px;
-}
-
 .twcss-mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
@@ -740,6 +736,14 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.twcss-ml-2 {
+  margin-left: 0.5rem;
+}
+
+.twcss-ml-3 {
+  margin-left: 0.75rem;
+}
+
 .twcss-ml-4 {
   margin-left: 1rem;
 }
@@ -782,6 +786,10 @@ video {
 
 .twcss-mt-4 {
   margin-top: 1rem;
+}
+
+.twcss-mt-6 {
+  margin-top: 1.5rem;
 }
 
 .twcss-mt-8 {
@@ -935,10 +943,6 @@ video {
 
 .twcss-w-5 {
   width: 1.25rem;
-}
-
-.twcss-w-72 {
-  width: 18rem;
 }
 
 .twcss-w-\[20\%\] {
@@ -1152,6 +1156,10 @@ video {
   row-gap: 0.25rem;
 }
 
+.twcss-gap-y-2 {
+  row-gap: 0.5rem;
+}
+
 .twcss-gap-y-\[10px\] {
   row-gap: 10px;
 }
@@ -1160,6 +1168,12 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0px * var(--tw-space-y-reverse));
+}
+
+.twcss-space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
 .twcss-space-y-4 > :not([hidden]) ~ :not([hidden]) {
@@ -1184,12 +1198,6 @@ video {
 
 .twcss-overflow-hidden {
   overflow: hidden;
-}
-
-.twcss-truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .twcss-text-ellipsis {
@@ -1985,6 +1993,11 @@ video {
 .twcss-border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+.twcss-border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .twcss-border-muted-default {
@@ -6073,6 +6086,11 @@ video {
   color: rgb(95 157 247 / 0.95);
 }
 
+.twcss-text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
 .twcss-text-secondary-default {
   --tw-text-opacity: 1;
   color: rgb(95 157 247 / var(--tw-text-opacity));
@@ -6446,12 +6464,6 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.twcss-ring-1 {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
 .twcss-ring-accent-default {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(53 53 53 / var(--tw-ring-opacity));
@@ -6717,11 +6729,6 @@ video {
 
 .twcss-ring-background\/95 {
   --tw-ring-color: rgb(255 255 255 / 0.95);
-}
-
-.twcss-ring-black {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
 }
 
 .twcss-ring-card-default {
@@ -8058,10 +8065,6 @@ video {
   --tw-ring-color: rgb(188 189 185 / 0.95);
 }
 
-.twcss-ring-opacity-5 {
-  --tw-ring-opacity: 0.05;
-}
-
 .twcss-transition-colors {
   transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -8116,6 +8119,11 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:twcss-bg-gray-100:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
 .hover\:twcss-bg-orange-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(234 88 12 / var(--tw-bg-opacity));
@@ -8160,6 +8168,11 @@ video {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.focus\:twcss-ring-blue-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
 }
 
 .focus\:twcss-ring-offset-0:focus {
