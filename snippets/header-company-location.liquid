@@ -5,7 +5,7 @@
   >
     <span>Delivery to</span>
     <div class='twcss-flex twcss-items-center twcss-gap-x-2'>
-      <span class='twcss-text-secondary-light twcss-hidden lg:twcss-flex'>
+      <span class='twcss-text-secondary-light twcss-hidden lg:twcss-flex twcss-truncate twcss-m-0'>
         {{ customer.current_location.name }}
       </span>
       {% if customer.company_available_locations.size > 1 %}
