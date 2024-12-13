@@ -32,7 +32,6 @@
           const errorMessage = this.closest('.location-switcher').querySelector('.error-message');
           
           try {
-            // 显示加载状态
             loadingIndicator.style.display = 'inline';
             button.disabled = true;
             errorMessage.style.display = 'none';
@@ -54,11 +53,9 @@
               throw new Error('Failed to switch location');
             }
           } catch (error) {
-            // 显示错误信息
             errorMessage.textContent = 'Failed to switch location. Please try again.';
             errorMessage.style.display = 'block';
             
-            // 重置按钮状态
             loadingIndicator.style.display = 'none';
             button.disabled = false;
           }
