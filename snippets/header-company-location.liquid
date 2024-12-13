@@ -19,18 +19,18 @@
       data-location-dropdown
     >
       <div class='twcss-p-6 twcss-text-base twcss-space-y-4'>
-        <div class='twcss-font-medium twcss-text-gray-700 twcss-text-center'>Choose your location</div>
+        <div class='twcss-font-medium twcss-ac twcss-text-center'>Choose your location</div>
 
         <div class='location-switcher twcss-space-y-2' data-url='{{ routes.location_set_current_url }}'>
           {% for location in customer.company_available_locations %}
             {% unless location.current? %}
-              <div class='twcss-flex twcss-items-center twcss-p-3 twcss-rounded twcss-border twcss-border-gray-300 hover:twcss-bg-blue-50'>
+              <div class='twcss-flex twcss-items-center twcss-p-3 twcss-rounded twcss-border twcss-border-secondary-middle'>
                 <input
                   type='radio'
                   id='location-{{ location.id }}'
                   name='location'
                   value='{{ location.id }}'
-                  class='twcss-w-4 twcss-h-4 twcss-border twcss-border-gray-300 twcss-rounded-full twcss-text-blue-600 focus:twcss-ring-blue-500'
+                  class='twcss-size-6 twcss-border twcss-border-secondary-middle twcss-rounded-full twcss-text-primary-default focus:twcss-ring-blue-500'
                   data-location-id='{{ location.id }}'
                   {% if location.current? %}
                     checked
@@ -38,7 +38,7 @@
                 >
                 <label
                   for='location-{{ location.id }}'
-                  class='twcss-ml-3 twcss-block twcss-text-sm twcss-font-medium twcss-text-gray-700'
+                  class='twcss-ml-3 twcss-block twcss-text-sm twcss-text-accent-default'
                 >
                   {{ location.name }}
                 </label>
@@ -52,7 +52,7 @@
 
         <div class='twcss-flex twcss-gap-4 twcss-mt-6'>
           <button
-            class='twcss-flex-1 twcss-py-3 twcss-px-4 twcss-border twcss-border-gray-300 twcss-rounded twcss-text-gray-700 hover:twcss-bg-gray-100'
+            class='twcss-flex-1 twcss-py-3 twcss-px-4 twcss-border twcss-border-gray-300 twcss-rounded twcss-ac hover:twcss-bg-gray-100'
             data-action='cancel'
           >
             Cancel
