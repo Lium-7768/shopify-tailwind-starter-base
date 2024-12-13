@@ -40,6 +40,7 @@
                   value='{{ location.id }}'
                   class='twcss-size-6 twcss-border twcss-border-secondary-middle twcss-rounded-full twcss-text-primary-default focus:twcss-ring-blue-500'
                   data-location-id='{{ location.id }}'
+                  data-location-url='/location/switch?id={{ location.id }}'
                   {% if location.current? %}
                     checked
                   {% endif %}
@@ -113,7 +114,27 @@
             event.preventDefault();
             const selectedLocation = document.querySelector('input[name="location"]:checked');
             if (selectedLocation) {
-              window.location.href = selectedLocation.dataset.locationUrl;
+              const locationId = selectedLocation.dataset.locationId;
+              // 添加加载指示器显示
+              const loadingIndicator = selectedLocation.parentElement.querySelector('.loading-indicator');
+              const errorMessage = document.querySelector('.error-message');
+
+              loadingIndicator.classList.remove('twcss-hidden');
+              errorMessage.classList.add('twcss-hidden');
+
+              // 发送位置切换请求
+              fetch(selectedLocation.dataset.locationUrl)
+                .then((response) => {
+                  if (!response.ok) {
+                    throw new Error('Failed to switch location');
+                  }
+                  window.location.reload();
+                })
+                .catch((error) => {
+                  loadingIndicator.classList.add('twcss-hidden');
+                  errorMessage.classList.remove('twcss-hidden');
+                  errorMessage.textContent = 'Failed to switch location. Please try again.';
+                });
             }
           });
         }
