@@ -24,7 +24,7 @@
         <div class='location-switcher twcss-space-y-2' data-url='{{ routes.location_set_current_url }}'>
           {% for location in customer.company_available_locations %}
             {% unless location.current? %}
-              <div class='twcss-flex twcss-items-center twcss-p-3 twcss-rounded twcss-border twcss-border-secondary-middle'>
+              <div class='twcss-flex twcss-items-center twcss-p-2 twcss-gap-x-2 twcss-rounded twcss-border twcss-border-secondary-middle'>
                 <input
                   type='radio'
                   id='location-{{ location.id }}'
