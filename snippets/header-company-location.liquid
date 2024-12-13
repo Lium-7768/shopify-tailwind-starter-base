@@ -19,9 +19,12 @@
       data-location-dropdown
     >
       <div class='twcss-p-6 twcss-text-base twcss-space-y-4'>
-        <div class='twcss-font-medium twcss-ac twcss-text-center'>Choose your location</div>
+        <div class='twcss-font-bold twcss-text-accent-default twcss-text-center'>Choose your location</div>
 
-        <div class='location-switcher twcss-space-y-2' data-url='{{ routes.location_set_current_url }}'>
+        <div
+          class='location-switcher twcss-space-y-2 twcss-max-h-[206px] twcss-overflow-y-auto'
+          data-url='{{ routes.location_set_current_url }}'
+        >
           {% for location in customer.company_available_locations %}
             {% unless location.current? %}
               <div class='twcss-flex twcss-items-center twcss-p-2 twcss-gap-y-2 twcss-rounded twcss-border twcss-border-secondary-middle'>
@@ -72,6 +75,13 @@
         const locationButton = document.querySelector('[data-location-icon]').parentElement;
         const locationDropdown = document.querySelector('[data-location-dropdown]');
         const locationIcon = document.querySelector('[data-location-icon]');
+        const cancelButton = document.querySelector('[data-action="cancel"]');
+        const confirmButton = document.querySelector('[data-action="confirm"]');
+
+        function closeDropdown() {
+          locationDropdown.classList.add('twcss-hidden');
+          locationIcon.style.transform = 'rotate(180deg)';
+        }
 
         if (locationButton && locationDropdown) {
           locationButton.addEventListener('click', () => {
@@ -88,19 +98,23 @@
               locationIcon.style.transform = 'rotate(180deg)';
             }
           });
-        }
 
-        // Location switching functionality
-        document.querySelectorAll('.location-btn').forEach((button) => {
-          button.addEventListener('click', async function () {
-            const locationId = this.dataset.locationId;
-            const url = this.closest('.location-switcher').dataset.url;
-            const loadingIndicator = this.querySelector('.loading-indicator');
-            const errorMessage = this.closest('.location-switcher').querySelector('.error-message');
+          // Cancel button handler
+          cancelButton.addEventListener('click', closeDropdown);
+
+          // Confirm button handler
+          confirmButton.addEventListener('click', async () => {
+            const selectedLocation = document.querySelector('input[name="location"]:checked');
+            if (!selectedLocation) return;
+
+            const locationId = selectedLocation.dataset.locationId;
+            const url = document.querySelector('.location-switcher').dataset.url;
+            const loadingIndicator = selectedLocation.parentElement.querySelector('.loading-indicator');
+            const errorMessage = document.querySelector('.error-message');
 
             try {
               loadingIndicator.classList.remove('twcss-hidden');
-              button.disabled = true;
+              confirmButton.disabled = true;
               errorMessage.classList.add('twcss-hidden');
 
               const response = await fetch(url, {
@@ -123,10 +137,10 @@
               errorMessage.textContent = 'Failed to switch location. Please try again.';
               errorMessage.classList.remove('twcss-hidden');
               loadingIndicator.classList.add('twcss-hidden');
-              button.disabled = false;
+              confirmButton.disabled = false;
             }
           });
-        });
+        }
       })();
     </script>
   {% endif %}
