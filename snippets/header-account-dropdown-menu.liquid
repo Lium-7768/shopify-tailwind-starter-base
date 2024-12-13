@@ -43,27 +43,35 @@
 {% endcomment %}
 
 <div class='twcss-relative'>
-  <button
-    class='twcss-flex twcss-items-center twcss-gap-x-2'
-    id='{{ id }}'
-  >
-    <span class='twcss-size-6'>
-      {{ 'icon-account.svg' | inline_asset_content }}
-    </span>
-    <span class='twcss-font-semibol twcss-hidden lg:twcss-flex'>
-      {%- if customer -%}
-        {{ customer.first_name }}
-      {%- else -%}
-        Frank
-      {%- endif -%}
-    </span>
-    <span
-      class='twcss-w-4 twcss-transition-transform twcss-duration-200 twcss-rotate-180 twcss-hidden lg:twcss-flex'
-      data-account-icon='{{ id }}'
+  {% if customer %}
+    <button
+      class='twcss-flex twcss-items-center twcss-gap-x-2'
+      id='{{ id }}'
     >
-      {{ 'icon-caret.svg' | inline_asset_content }}
-    </span>
-  </button>
+      <span class='twcss-size-6'>
+        {{ 'icon-account.svg' | inline_asset_content }}
+      </span>
+      <span class='twcss-font-semibol twcss-hidden lg:twcss-flex'>
+        {%- if customer -%}
+          {{ customer.first_name }}
+        {%- else -%}
+          Frank
+        {%- endif -%}
+      </span>
+      <span
+        class='twcss-w-4 twcss-transition-transform twcss-duration-200 twcss-rotate-180 twcss-hidden lg:twcss-flex'
+        data-account-icon='{{ id }}'
+      >
+        {{ 'icon-caret.svg' | inline_asset_content }}
+      </span>
+    </button>
+  {% else %}
+    <a href='{{ routes.account_login_url }}' class='twcss-flex twcss-items-center twcss-gap-x-2'>
+      <span class='twcss-size-6'>
+        {{ 'icon-account.svg' | inline_asset_content }}
+      </span>
+    </a>
+  {% endif %}
 
   <div
     class='twcss-absolute twcss-right-0 twcss-mt-2 twcss-w-[210px] twcss-bg-white twcss-rounded twcss-shadow-lg twcss-hidden'
@@ -104,17 +112,15 @@
       {% endif %}
 
       <div class='twcss-border-t twcss-border-secondary-middle !twcss-block'></div>
-      <form method='post' action='{{ routes.account_logout_url }}'>
-        <button
-          type='submit'
-          class='twcss-font-bold twcss-text-primary-default twcss-flex twcss-items-center twcss-justify-center twcss-gap-x-1'
-        >
-          <span class='twcss-size-6'>
-            {{ 'icon-sign-out.svg' | inline_asset_content }}
-          </span>
-          {{ block.settings.sign_out_text }}
-        </button>
-      </form>
+      <a
+        href='{{ routes.account_logout_url }}'
+        class='twcss-font-bold twcss-text-primary-default twcss-flex twcss-items-center twcss-justify-center twcss-gap-x-1'
+      >
+        <span class='twcss-size-6'>
+          {{ 'icon-sign-out.svg' | inline_asset_content }}
+        </span>
+        {{ block.settings.sign_out_text }}
+      </a>
     </div>
   </div>
 </div>
