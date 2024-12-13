@@ -191,7 +191,7 @@
     {% render 'header-search', input_id: 'Search-In-Modal' %}
 
     {%- liquid
-      if section.settings.menu != blank
+      if section.settings.menu != blank and customer
         if section.settings.menu_type_desktop == 'dropdown'
           render 'header-dropdown-menu'
         elsif section.settings.menu_type_desktop != 'drawer'
