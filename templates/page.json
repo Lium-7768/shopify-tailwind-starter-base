@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -6,9 +15,25 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "173416992109292754": {
+      "type": "apps",
+      "blocks": {
+        "b2b_customer_account_quick_order_page_Ehhiqh": {
+          "type": "shopify://apps/b2b-customer-account/blocks/quick_order_page/dc555af6-fc85-4531-b55d-c7b3086d86b0",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "b2b_customer_account_quick_order_page_Ehhiqh"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "173416992109292754"
   ]
 }
