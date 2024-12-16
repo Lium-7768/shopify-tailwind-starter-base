@@ -1,4 +1,4 @@
-<facet-filters-form class="twcss-max-w-[1240px] twcss-bg-gray-50 twcss-p-4">
+<facet-filters-form class="twcss-max-w-[1240px] twcss-mx-auto twcss-bg-gray-50 twcss-p-4">
   <form class="twcss-flex twcss-justify-between twcss-items-center" id="FacetSortForm">
     {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
 
@@ -44,11 +44,13 @@
             <option value="24">24</option>
             <option value="48">48</option>
           </select>
-          <div class="twcss-pointer-events-none twcss-absolute twcss-inset-y-0 twcss-right-0 twcss-flex twcss-items-center twcss-px-2">
-            <svg class="twcss-h-4 twcss-w-4 twcss-text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
+          <!--
+            <div class="twcss-pointer-events-none twcss-absolute twcss-inset-y-0 twcss-right-0 twcss-flex twcss-items-center twcss-px-2">
+              <svg class="twcss-h-4 twcss-w-4 twcss-text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          -->
         </div>
       </div>
 
