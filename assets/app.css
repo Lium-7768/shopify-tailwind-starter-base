@@ -4617,6 +4617,10 @@ video {
   padding: 1.5rem;
 }
 
+.twcss-p-8 {
+  padding: 2rem;
+}
+
 .twcss-p-\[0\.5rem_0\.75rem_0\.75rem\] {
   padding: 0.5rem 0.75rem 0.75rem;
 }
