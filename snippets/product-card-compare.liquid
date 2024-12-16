@@ -1,0 +1,15 @@
+{% comment %}
+  Parameters:
+  - product: The product object (required)
+{% endcomment %}
+
+<div class="twcss-inline-flex twcss-items-center twcss-my-1">
+  <input
+    type="checkbox"
+    id="compare-{{ product.id }}"
+    name="compare"
+    value="{{ product.id }}"
+    class="twcss-mr-1"
+  >
+  <label for="compare-{{ product.id }}" class="twcss-text-sm twcss-cursor-pointer"> Compare </label>
+</div>
