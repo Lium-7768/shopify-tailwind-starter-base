@@ -72,13 +72,11 @@
       </div>
     </div>
 
-    {%- liquid
-      assign cart_class = card_type == 'list' ? 'twcss-block md:twcss-hidden' : ''
-    -%}
-
-    {{ card_type }}
-    {% comment %} Add to Cart Button {% endcomment %}
-    {% render 'product-card-add-to-cart-button', product: product, cart_class: cart_class %}
+    {% if card_type == 'list' %}
+      {% render 'product-card-add-to-cart-button', product: product, cart_class: 'twcss-block md:twcss-hidden' %}
+    {% else %}
+      {% render 'product-card-add-to-cart-button', product: product %}
+    {% endif %}
   </div>
 
   {% if card_type == 'list' %}
