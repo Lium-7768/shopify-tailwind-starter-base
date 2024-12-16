@@ -12,7 +12,7 @@
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
 <div class="{{ class | default: '' }} twcss-bg-[#f8f8f8] twcss-border twcss-border-[#EBEBEB] twcss-rounded-md twcss-w-full twcss-h-full twcss-flex {% if card_type == 'list' %}twcss-flex-row{% else %}twcss-flex-col{% endif %}">
-  <div class="{% if card_type == 'list' %}h- md:twcss-h-52{% else %}twcss-h-52{% endif %} twcss-shadow-sm twcss-border-b twcss-bg-white twcss-border-[#EBEBEB]">
+  <div class="{% if card_type == 'list' %}twcss-h-28 md:twcss-h-52{% else %}twcss-h-52{% endif %} twcss-shadow-sm twcss-border-b twcss-bg-white twcss-border-[#EBEBEB]">
     <a href="{{ product.url }}" class="twcss-block twcss-h-full">
       <img
         src="{{ product.featured_image | img_url: '240x240', crop: 'center' }}"
@@ -80,6 +80,7 @@
         assign cart_class_list = ''
       endif
     -%}
+
     {% render 'product-card-add-to-cart-button', product: product, cart_class: cart_class_list %}
   </div>
 
