@@ -1,11 +1,11 @@
 <!-- Middle Section - Pagination -->
 <div class="twcss-flex twcss-items-center twcss-gap-[10px]">
   <span class="twcss-text-gray-600">
-    <span>
+    <span class="twcss-font-bold">
       {{- paginate.current_offset | plus: 1 }}-
       {{- paginate.current_offset | plus: paginate.page_size | at_most: paginate.items -}}
     </span>
-    of <span>{{ paginate.items }}</span> Records
+    of <span class="twcss-font-bold">{{ paginate.items }}</span> Records
   </span>
   <div class="twcss-flex twcss-items-center twcss-gap-2">
     {% if paginate.current_page > 1 %}
