@@ -72,7 +72,9 @@
       </div>
     </div>
 
-    {% assign test = card_type == 'list' %}
+    {%- liquid
+      assign test = card_type == 'list'
+    -%}
     {{ test }}
     {% if card_type == 'list' %}
       {% render 'product-card-add-to-cart-button', product: product, cart_class: 'twcss-block md:twcss-hidden' %}
