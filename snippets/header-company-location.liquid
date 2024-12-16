@@ -32,6 +32,33 @@
           class='location-switcher twcss-space-y-2 twcss-max-h-[206px] twcss-overflow-y-auto'
         >
           {% for location in customer.company_available_locations %}
+            {% if location.current? %}
+              <div class='twcss-flex twcss-items-center twcss-p-2 twcss-gap-y-2 twcss-rounded twcss-border twcss-border-primary-default twcss-bg-primary-light'>
+                <input
+                  type='radio'
+                  id='location-{{ location.id }}'
+                  name='location'
+                  value='{{ location.id }}'
+                  class='twcss-size-6 twcss-border twcss-border-secondary-middle twcss-rounded-full twcss-text-primary-default focus:twcss-ring-blue-500'
+                  data-location-id='{{ location.id }}'
+                  data-location-url='{{ location.url_to_set_as_current }}'
+                  checked
+                >
+                <label
+                  for='location-{{ location.id }}'
+                  class='twcss-ml-3 twcss-block twcss-text-sm twcss-text-accent-default'
+                >
+                  <div class='twcss-font-bold'>{{ location.name }}</div>
+                  <div class='twcss-text-xs twcss-text-gray-600'>
+                    {{ location.city }}, {{ location.state }}
+                    {{ location.zipcode }}
+                  </div>
+                </label>
+              </div>
+            {% endif %}
+          {% endfor %}
+
+          {% for location in customer.company_available_locations %}
             {% unless location.current? %}
               <div class='twcss-flex twcss-items-center twcss-p-2 twcss-gap-y-2 twcss-rounded twcss-border twcss-border-secondary-middle'>
                 <input
@@ -42,17 +69,17 @@
                   class='twcss-size-6 twcss-border twcss-border-secondary-middle twcss-rounded-full twcss-text-primary-default focus:twcss-ring-blue-500'
                   data-location-id='{{ location.id }}'
                   data-location-url='{{ location.url_to_set_as_current }}'
-                  {% if location.current? %}
-                    checked
-                  {% endif %}
                 >
                 <label
                   for='location-{{ location.id }}'
                   class='twcss-ml-3 twcss-block twcss-text-sm twcss-text-accent-default'
                 >
-                  {{ location.name }}
+                  <div class='twcss-font-bold'>{{ location.name }}</div>
+                  <div class='twcss-text-xs twcss-text-gray-600'>
+                    {{ location.city }}, {{ location.state }}
+                    {{ location.zipcode }}
+                  </div>
                 </label>
-                <span class='loading-indicator twcss-hidden twcss-ml-2 twcss-text-primary-default'> Switching... </span>
               </div>
             {% endunless %}
           {% endfor %}
