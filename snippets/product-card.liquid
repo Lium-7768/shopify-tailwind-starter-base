@@ -72,9 +72,8 @@
       </div>
     </div>
 
-    {{ cart_type }}
     {% comment %} Add to Cart Button {% endcomment %}
-    {% render 'product-card-add-to-cart-button', product: product, cart_class: cart_type %}
+    {% render 'product-card-add-to-cart-button', product: product, cart_class: card_type == 'list' ? 'twcss-block md:twcss-hidden' : '' %}
   </div>
 
   {% if card_type == 'list' %}
