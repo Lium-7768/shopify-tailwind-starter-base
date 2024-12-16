@@ -73,7 +73,7 @@
     </div>
 
     {% comment %} Add to Cart Button {% endcomment %}
-    {% render 'product-card-add-to-cart-button', product: product, cart_class: cart_type == 'list' ? 'twcss-block md:twcss-hidden' : '' %}
+    {% render 'product-card-add-to-cart-button', product: product, cart_class: cart_type == 'list' ? 'twcss-block md:twcss-hidden' : 'twcss-hidden md:twcss-block' %}
   </div>
 
   {% if card_type == 'list' %}
