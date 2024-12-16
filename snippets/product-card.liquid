@@ -89,9 +89,9 @@
       endif
     -%}
 
-    {% comment %} {% if enable_compare %} {% endcomment %}
-    {% render 'product-card-compare', product: product, compare_class: compare_class_list %}
-    {% comment %} {% endif %} {% endcomment %}
+    {% if enable_compare %}
+      {% render 'product-card-compare', product: product, compare_class: compare_class_list %}
+    {% endif %}
 
     {% render 'product-card-add-to-cart-button', product: product, cart_class: cart_class_list %}
   </div>
@@ -106,9 +106,9 @@
         / each
       </p>
 
-      {% comment %} {% if enable_compare %} {% endcomment %}
-      {% render 'product-card-compare', product: product %}
-      {% comment %} {% endif %} {% endcomment %}
+      {% if enable_compare %}
+        {% render 'product-card-compare', product: product, compare_class: 'twcss-mb-0' %}
+      {% endif %}
 
       {% render 'product-card-add-to-cart-button', product: product %}
     </div>
