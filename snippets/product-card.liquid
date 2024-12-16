@@ -95,9 +95,9 @@
         / each
       </p>
 
-      {% if enable_compare %}
-        {% render 'product-card-compare', product: product %}
-      {% endif %}
+      {% comment %} {% if enable_compare %} {% endcomment %}
+      {% render 'product-card-compare', product: product %}
+      {% comment %} {% endif %} {% endcomment %}
 
       {% render 'product-card-add-to-cart-button', product: product %}
     </div>
