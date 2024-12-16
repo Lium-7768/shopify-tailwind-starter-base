@@ -80,7 +80,18 @@
       else
         assign cart_class_list = ''
       endif
+
+      assign compare_class_list = card_type
+      if compare_class_list == 'list'
+        assign compare_class_list = 'twcss-block md:twcss-hidden'
+      else
+        assign compare_class_list = ''
+      endif
     -%}
+
+    {% comment %} {% if enable_compare %} {% endcomment %}
+    {% render 'product-card-compare', product: product, compare_class: compare_class_list %}
+    {% comment %} {% endif %} {% endcomment %}
 
     {% render 'product-card-add-to-cart-button', product: product, cart_class: cart_class_list %}
   </div>
