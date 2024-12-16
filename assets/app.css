@@ -884,6 +884,10 @@ video {
   height: auto !important;
 }
 
+.twcss-h-11 {
+  height: 2.75rem;
+}
+
 .twcss-h-28 {
   height: 7rem;
 }
@@ -1185,10 +1189,6 @@ video {
 
 .twcss-gap-6 {
   gap: 1.5rem;
-}
-
-.twcss-gap-8 {
-  gap: 2rem;
 }
 
 .twcss-gap-x-1 {
