@@ -1,0 +1,89 @@
+{% comment %}
+  Parameters:
+  - cart_class: Additional CSS classes for the cart button (optional)
+{% endcomment %}
+
+{%- style -%}
+  .product-card-add-to-cart-button.loading {
+    color: transparent;
+    position: relative;
+  }
+
+  @media screen and (forced-colors: active) {
+    .product-card-add-to-cart-button.loading {
+      color: rgb(var(--color-foreground));
+    }
+  }
+
+  .product-card-add-to-cart-button.loading > .loading__spinner {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .product-card-add-to-cart-button.loading > .loading__spinner .spinner {
+    width: fit-content;
+  }
+
+  .product-card-add-to-cart-button.loading > .loading__spinner .path {
+    stroke: rgb(var(--color-button-text));
+  }
+{%- endstyle -%}
+
+{% comment %} Add to Cart {% endcomment %}
+<div
+  class="
+    twcss-flex twcss-items-center twcss-justify-center
+    twcss-relative twcss-w-full
+    {% if cart_class %}
+      {{ cart_class }}
+    {% endif %}
+  "
+>
+  <product-form class="twcss-flex-1">
+    <div class="product-form__error-message-wrapper" role="alert" hidden>
+      <span class="product-form__error-message"></span>
+    </div>
+
+    <form
+      method="post"
+      action="/cart/add"
+      id="product-form-{{ product.id }}"
+      accept-charset="UTF-8"
+      class="twcss-flex-1"
+      enctype="multipart/form-data"
+      novalidate="novalidate"
+      data-type="add-to-cart-form"
+    >
+      <input type="hidden" name="form_type" value="product">
+      <input type="hidden" name="utf8" value="✓">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <input type="hidden" name="quantity" value="1">
+
+      <button
+        type="submit"
+        name="add"
+        class="product-card-add-to-cart-button twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-center hover:twcss-bg-orange-600 twcss-text-white twcss-text-sm twcss-px-4 twcss-py-2 twcss-rounded-tl-md twcss-rounded-bl-md twcss-w-full twcss-font-bold twcss-relative"
+        {% unless product.available %}
+          disabled
+        {% endunless %}
+      >
+        <span>
+          {%- if product.available -%}
+            Add to Cart
+          {%- else -%}
+            Sold out
+          {%- endif -%}
+        </span>
+        {% render 'loading-spinner' %}
+      </button>
+    </form>
+  </product-form>
+
+  <div class="twcss-w-[20%] twcss-h-full twcss-flex twcss-items-center twcss-justify-center twcss-border-l-[0.5px] twcss-border-white twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-rounded-tr-md twcss-rounded-br-md">
+    {% render 'icon-chevron-down' %}
+  </div>
+</div>
