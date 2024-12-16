@@ -8282,6 +8282,14 @@ video {
     align-items: stretch;
   }
 
+  .md\:twcss-border-0 {
+    border-width: 0px;
+  }
+
+  .md\:twcss-border-r-0 {
+    border-right-width: 0px;
+  }
+
   .md\:twcss-p-0 {
     padding: 0px;
   }
