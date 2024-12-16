@@ -66,12 +66,9 @@
                   for='location-{{ location.id }}'
                   class='twcss-ml-3 twcss-block twcss-text-sm twcss-text-accent-default'
                 >
-                  <div class='twcss-font-bold'>{{ location.name }}</div>
-                  <div class='twcss-text-xs twcss-text-gray-600'>
-                    {{ location.shipping_address.address1 }}, {{ location.shipping_address.city }},
-                    {{ location.shipping_address.state }}
-                    {{ location.shipping_address.zipcode }}
-                  </div>
+                  {{ location.shipping_address.address1 }}, {{ location.shipping_address.city }},
+                  {{ location.shipping_address.state }}
+                  {{ location.shipping_address.zip }}
                 </label>
               </div>
             {% endif %}
@@ -95,7 +92,7 @@
                 >
                   {{ location.shipping_address.address1 }}, {{ location.shipping_address.city }},
                   {{ location.shipping_address.state }}
-                  {{ location.shipping_address.zipcode }}
+                  {{ location.shipping_address.zip }}
                 </label>
               </div>
             {% endunless %}
