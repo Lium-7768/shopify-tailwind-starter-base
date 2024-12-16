@@ -1,10 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "main-account"
+      "type": "main-account",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "173431997620031ff7": {
+      "type": "apps",
+      "blocks": {
+        "wishlist_b2b_project_planner_wishlist_account_PqXGnF": {
+          "type": "shopify://apps/wishlist-b2b-project-planner/blocks/wishlist_account/faa9bf4c-9c03-4215-8af7-e2122a5d5f27",
+          "settings": {
+            "title": "Wishlists",
+            "background": "#FFFFFF",
+            "text_color": "#121212",
+            "primary_button_background": "#121212",
+            "primary_button_text_color": "#FFFFFF",
+            "circle_button_background": "#FFFFFF",
+            "circle_button_icon": "#121212"
+          }
+        }
+      },
+      "block_order": [
+        "wishlist_b2b_project_planner_wishlist_account_PqXGnF"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "173431997620031ff7"
   ]
 }
