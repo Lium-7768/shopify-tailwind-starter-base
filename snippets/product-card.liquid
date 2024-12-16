@@ -12,7 +12,7 @@
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
 <div class="{{ class | default: '' }} twcss-bg-[#f8f8f8] twcss-border twcss-border-[#EBEBEB] twcss-rounded-md twcss-w-full twcss-h-full twcss-flex {% if card_type == 'list' %}twcss-flex-row twcss-p-[0.625rem] md:twcss-p-0{% else %}twcss-flex-col{% endif %}">
-  <div class="{% if card_type == 'list' %}twcss-w-28 twcss-h-28 md:twcss-h-52 twcss-mr-3 md:twcss-mr-0 twcss-border{% else %}twcss-h-52 twcss-border-b{% endif %} twcss-border-b twcss-bg-white twcss-border-[#EBEBEB]">
+  <div class="{% if card_type == 'list' %}twcss-w-28 twcss-h-28 md:twcss-w-52 md:twcss-h-52 twcss-mr-3 md:twcss-mr-0 twcss-border{% else %}twcss-h-52 twcss-border-b{% endif %} twcss-border-b twcss-bg-white twcss-border-[#EBEBEB]">
     <a href="{{ product.url }}" class="twcss-block twcss-h-full">
       <img
         src="{{ product.featured_image | img_url: '240x240', crop: 'center' }}"
@@ -26,7 +26,7 @@
   </div>
 
   {% comment %} Product Info {% endcomment %}
-  <div class="twcss-flex twcss-flex-col twcss-justify-between twcss-rounded-bl-md twcss-rounded-br-md  {% if card_type == 'list' %}twcss-flex-1 md:twcss-w-1/2 md:twcss-p-5{% else %}twcss-p-[0.5rem_0.75rem_0.75rem] twcss-flex-1{% endif %}">
+  <div class="twcss-flex twcss-flex-col twcss-justify-between twcss-rounded-bl-md twcss-rounded-br-md  {% if card_type == 'list' %} md:twcss-w-1/2 md:twcss-p-5{% else %}twcss-p-[0.5rem_0.75rem_0.75rem] twcss-flex-1{% endif %}">
     <div class="twcss-flex twcss-flex-col twcss-flex-1 twcss-mb-2">
       <div class="twcss-flex twcss-justify-between twcss-flex-col">
         <div class="twcss-text-[#84888B] twcss-text-xs twcss-font-bold">
