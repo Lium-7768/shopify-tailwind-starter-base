@@ -1,9 +1,10 @@
 {% comment %}
-  参数说明:
-  - product: 产品对象
-  - show_vendor: 是否显示供应商 (可选)
-  - class: 额外的 CSS 类 (可选)
-  - show_new_tag: 是否显示新品标签 (可选)
+  Parameter Description:
+  - product: Product object
+  - show_vendor: Whether to display vendor (optional)
+  - class: Additional CSS classes (optional)
+  - show_new_tag: Whether to display new product tag (optional)
+  - card_type: 'list' or 'grid' (optional), defaults to 'grid'
 {% endcomment %}
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -40,7 +41,7 @@
   }
 {%- endstyle -%}
 
-<div class="{{ class | default: '' }} twcss-bg-white twcss-border twcss-border-[#EBEBEB] twcss-rounded-md twcss-w-full twcss-h-full twcss-flex twcss-flex-col">
+<div class="{{ class | default: '' }} twcss-bg-white twcss-border twcss-border-[#EBEBEB] twcss-rounded-md twcss-w-full twcss-h-full twcss-flex {% if card_type == 'list' %}twcss-flex-row{% else %}twcss-flex-col{% endif %}">
   <div class="twcss-h-52 twcss-w-full twcss-shadow-sm twcss-border-b twcss-border-[#EBEBEB]">
     <a href="{{ product.url }}" class="twcss-block twcss-w-full twcss-h-full">
       <img
