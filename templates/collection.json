@@ -40,7 +40,7 @@
     "collection_test_temp_FjfERh": {
       "type": "collection-test-temp",
       "settings": {
-        "collection": ""
+        "collection": "automated-collection"
       }
     }
   },
