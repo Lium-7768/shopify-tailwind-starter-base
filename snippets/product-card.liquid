@@ -26,7 +26,7 @@
   </div>
 
   {% comment %} Product Info {% endcomment %}
-  <div class="twcss-flex twcss-flex-col twcss-justify-between twcss-rounded-bl-md twcss-rounded-br-md {% if card_type == 'list' %}md:twcss-w-1/2 twcss-p-5{% else %}twcss-flex-1 twcss-p-[0.5rem_0.75rem_0.75rem]{% endif %}">
+  <div class="twcss-flex twcss-flex-col twcss-justify-between twcss-rounded-bl-md twcss-rounded-br-md  {% if card_type == 'list' %}twcss-w-1/2 md:twcss-flex-1 twcss-p-5{% else %}twcss-p-[0.5rem_0.75rem_0.75rem] twcss-flex-1{% endif %}">
     <div class="twcss-flex twcss-flex-col twcss-flex-1 twcss-mb-2">
       <div class="twcss-flex twcss-justify-between twcss-flex-col">
         <div class="twcss-text-[#84888B] twcss-text-xs twcss-font-bold">
@@ -73,14 +73,12 @@
     </div>
 
     {% comment %} Add to Cart Button {% endcomment %}
-    {% if card_type != 'list' %}
-      {% render 'product-card-add-to-cart-button', product: product %}
-    {% endif %}
+    {% render 'product-card-add-to-cart-button', product: product, cart_class: cart_type == 'list' ? 'twcss-block md:twcss-hidden' : '' %}
   </div>
 
   {% if card_type == 'list' %}
     {% comment %} Add to Cart Button {% endcomment %}
-    <div class="twcss-flex twcss-flex-col twcss-mb-2 twcss-flex-1 twcss-p-8 twcss-space-y-5">
+    <div class="twcss-flex-col twcss-mb-2 twcss-flex-1 twcss-p-8 twcss-space-y-5 twcss-hidden md:twcss-flex">
       <p alt="{{ product.price | money }}" class="twcss-text-sm twcss-mt-0 twcss-hidden md:twcss-block ">
         Price:
         <span class="twcss-font-bold twcss-mx-1 twcss-text-lg">{{ product.price | money }}</span>

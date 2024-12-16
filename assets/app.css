@@ -876,10 +876,6 @@ video {
   height: auto !important;
 }
 
-.twcss-h-28 {
-  height: 7rem;
-}
-
 .twcss-h-4 {
   height: 1rem;
 }
@@ -942,6 +938,10 @@ video {
 
 .\!twcss-w-auto {
   width: auto !important;
+}
+
+.twcss-w-1\/2 {
+  width: 50%;
 }
 
 .twcss-w-1\/4 {
@@ -8220,6 +8220,10 @@ video {
     display: flex !important;
   }
 
+  .md\:twcss-flex {
+    display: flex;
+  }
+
   .md\:twcss-hidden {
     display: none;
   }
@@ -8232,10 +8236,6 @@ video {
     height: 600px;
   }
 
-  .md\:twcss-w-1\/2 {
-    width: 50%;
-  }
-
   .md\:twcss-w-3\/5 {
     width: 60%;
   }
@@ -8246,6 +8246,10 @@ video {
 
   .md\:twcss-max-w-full {
     max-width: 100%;
+  }
+
+  .md\:twcss-flex-1 {
+    flex: 1 1 0%;
   }
 
   .md\:twcss-grid-cols-2 {
