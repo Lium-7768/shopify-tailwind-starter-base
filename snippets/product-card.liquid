@@ -73,7 +73,12 @@
     </div>
 
     {%- liquid
-      assign test = card_type == 'list'
+      assign test = card_type
+      if test == 'list'
+        assign test = true
+      else
+        assign test = false
+      endif
     -%}
     {{ test }}
     {% if card_type == 'list' %}
