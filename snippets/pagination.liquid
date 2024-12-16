@@ -14,9 +14,9 @@
 {{ 'component-pagination.css' | asset_url | stylesheet_tag }}
 
 {%- if paginate.parts.size > 0 -%}
-  <div class="">
+  <div class="pagination-wrapper twcss-mt-0">
     <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
-      <ul class="" role="list">
+      <ul class="pagination__list list-unstyled !twcss-flex-nowrap" role="list">
         {%- if paginate.previous -%}
           <li>
             <a
