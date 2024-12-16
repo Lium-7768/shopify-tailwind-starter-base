@@ -1,7 +1,13 @@
 <section class="md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto twcss-px-4 twcss-py-10">
   {%- for product in section.settings.collection.products -%}
     <div class="swiper-slide !twcss-h-auto">
-      {% render 'product-card', product: product, show_vendor: true, show_new_tag: true, card_type: 'list' %}
+      {% render 'product-card',
+        product: product,
+        show_vendor: true,
+        show_new_tag: true,
+        card_type: 'list',
+        enable_compare: true
+      %}
     </div>
   {%- endfor -%}
 </section>
