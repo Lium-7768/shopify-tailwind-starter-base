@@ -93,8 +93,9 @@
                   for='location-{{ location.id }}'
                   class='twcss-ml-3 twcss-block twcss-text-sm twcss-text-accent-default'
                 >
-                  {{ location.name }}, {{ location.city }}, {{ location.state }}
-                  {{ location.zipcode }}
+                  {{ location.shipping_address.address1 }}, {{ location.shipping_address.city }},
+                  {{ location.shipping_address.state }}
+                  {{ location.shipping_address.zipcode }}
                 </label>
               </div>
             {% endunless %}
