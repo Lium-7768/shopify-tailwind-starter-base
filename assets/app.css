@@ -6493,6 +6493,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.twcss-shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .twcss-ring-accent-default {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(53 53 53 / var(--tw-ring-opacity, 1));
@@ -8252,10 +8258,6 @@ video {
 
   .md\:twcss-w-3\/5 {
     width: 60%;
-  }
-
-  .md\:twcss-w-52 {
-    width: 13rem;
   }
 
   .md\:twcss-max-w-7xl {
