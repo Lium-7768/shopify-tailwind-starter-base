@@ -876,6 +876,10 @@ video {
   height: auto !important;
 }
 
+.twcss-h-28 {
+  height: 7rem;
+}
+
 .twcss-h-4 {
   height: 1rem;
 }
