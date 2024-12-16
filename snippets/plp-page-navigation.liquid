@@ -29,48 +29,7 @@
       <div class="twcss-text-gray-600">{{ collection.products_count }} total records</div>
     </div>
 
-    <!-- Middle Section - Pagination -->
-    <div class="twcss-flex twcss-items-center twcss-gap-4">
-      <div class="twcss-flex twcss-items-center twcss-gap-2">
-        {% if paginate.current_page > 1 %}
-          <a
-            href="{{ paginate.previous.url }}"
-            class="twcss-flex twcss-items-center twcss-px-3 twcss-py-1 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
-          >
-            <span>Prev</span>
-          </a>
-        {% else %}
-          <button
-            disabled
-            class="twcss-flex twcss-items-center twcss-px-3 twcss-py-1 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
-          >
-            <span>Prev</span>
-          </button>
-        {% endif %}
-
-        <span class="twcss-text-gray-600">
-          {{ paginate.current_offset | plus: 1 }}-
-          {{- paginate.current_offset | plus: paginate.page_size | at_most: paginate.items }}
-          of {{ paginate.items }} Records
-        </span>
-
-        {% if paginate.next %}
-          <a
-            href="{{ paginate.next.url }}"
-            class="twcss-flex twcss-items-center twcss-px-3 twcss-py-1 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
-          >
-            <span>Next</span>
-          </a>
-        {% else %}
-          <button
-            disabled
-            class="twcss-flex twcss-items-center twcss-px-3 twcss-py-1 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
-          >
-            <span>Next</span>
-          </button>
-        {% endif %}
-      </div>
-    </div>
+    {% render 'pagination', paginate: paginate %}
 
     <!-- Right Section -->
     <div class="twcss-flex twcss-items-center twcss-gap-4">
