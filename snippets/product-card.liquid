@@ -26,7 +26,7 @@
   </div>
 
   {% comment %} Product Info {% endcomment %}
-  <div class="twcss-flex twcss-flex-col twcss-justify-between twcss-rounded-bl-md twcss-rounded-br-md {% if card_type == 'list' %}md:twcss-w-1/2 twcss-p-5{% else %}twcss-flex-1 twcss-p-[0.5rem_0.75rem_0.75rem]{% endif %}">
+  <div class="twcss-flex twcss-flex-col twcss-justify-between twcss-rounded-bl-md twcss-rounded-br-md twcss-flex-1 {% if card_type == 'list' %}twcss-flex-col md:twcss-flex-row twcss-p-5{% else %}twcss-flex-col twcss-p-[0.5rem_0.75rem_0.75rem]{% endif %}">
     <div class="twcss-flex twcss-flex-col twcss-flex-1 twcss-mb-2">
       <div class="twcss-flex twcss-justify-between twcss-flex-col">
         <div class="twcss-text-[#84888B] twcss-text-xs twcss-font-bold">
@@ -72,22 +72,29 @@
       </div>
     </div>
 
-    {% comment %} Add to Cart Button {% endcomment %}
-    {% if card_type != 'list' %}
-      {% render 'product-card-add-to-cart-button', product: product %}
-    {% endif %}
-  </div>
-
-  {% if card_type == 'list' %}
-    {% comment %} Add to Cart Button {% endcomment %}
-    <div class="twcss-flex twcss-flex-col twcss-mb-2 twcss-flex-1 twcss-p-8 twcss-space-y-5">
+    <div class="{% if card_type == 'list' %}twcss-flex twcss-flex-col twcss-mb-2 twcss-flex-1 twcss-p-8 twcss-space-y-5{% endif %}">
+      {% comment %} Add to Cart Button {% endcomment %}
       <p alt="{{ product.price | money }}" class="twcss-text-sm twcss-mt-0 twcss-hidden md:twcss-block ">
         Price:
         <span class="twcss-font-bold twcss-mx-1 twcss-text-lg">{{ product.price | money }}</span>
         / each
       </p>
-
-      {% render 'product-card-add-to-cart-button', product: product %}
+      {% render 'product-card-add-to-cart-button', product: product, cart_class: cart_type == 'list' ? 'twcss-block md:twcss-hidden' : '' %}
     </div>
-  {% endif %}
+  </div>
+
+  {% comment %}
+    {% if card_type == 'list' %}
+      {% comment %} Add to Cart Button {% endcomment %}
+      <div class='twcss-flex twcss-flex-col twcss-mb-2 twcss-flex-1 twcss-p-8 twcss-space-y-5'>
+        <p alt='{{ product.price | money }}' class='twcss-text-sm twcss-mt-0 twcss-hidden md:twcss-block '>
+          Price:
+          <span class='twcss-font-bold twcss-mx-1 twcss-text-lg'>{{ product.price | money }}</span>
+          / each
+        </p>
+
+        {% render 'product-card-add-to-cart-button', product: product %}
+      </div>
+    {% endif %}
+  {% endcomment %}
 </div>
