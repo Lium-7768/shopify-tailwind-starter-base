@@ -1,6 +1,7 @@
 {% comment %}
   Parameters:
   - cart_class: Additional CSS classes for the cart button (optional)
+  - product: The product object (required)
 {% endcomment %}
 
 {%- style -%}
@@ -33,16 +34,12 @@
   }
 {%- endstyle -%}
 
+{%- liquid
+  assign cart_class = 'twcss-flex twcss-items-center twcss-justify-center twcss-relative twcss-w-full' | append: cart_class
+-%}
+
 {% comment %} Add to Cart {% endcomment %}
-<div
-  class="
-    twcss-flex twcss-items-center twcss-justify-center
-    twcss-relative twcss-w-full
-    {% if cart_class %}
-      {{ cart_class }}
-    {% endif %}
-  "
->
+<div class="{{ cart_class }}">
   <product-form class="twcss-flex-1">
     <div class="product-form__error-message-wrapper" role="alert" hidden>
       <span class="product-form__error-message"></span>
