@@ -5,6 +5,7 @@
   - class: Additional CSS classes (optional)
   - show_new_tag: Whether to display new product tag (optional)
   - card_type: 'list' or 'grid' (optional), defaults to 'grid'
+  - enable_compare: Whether to enable compare checkbox (optional), defaults to false
 {% endcomment %}
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -86,12 +87,17 @@
 
   {% if card_type == 'list' %}
     {% comment %} Add to Cart Button {% endcomment %}
+
     <div class="twcss-flex-col twcss-mb-2 twcss-flex-1 twcss-p-8 twcss-space-y-5 twcss-hidden md:twcss-flex">
       <p alt="{{ product.price | money }}" class="twcss-text-sm twcss-mt-0 twcss-hidden md:twcss-block ">
         Price:
         <span class="twcss-font-bold twcss-mx-1 twcss-text-lg">{{ product.price | money }}</span>
         / each
       </p>
+
+      {% if enable_compare %}
+        {% render 'product-card-compare', product: product %}
+      {% endif %}
 
       {% render 'product-card-add-to-cart-button', product: product %}
     </div>
