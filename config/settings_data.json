@@ -160,6 +160,18 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "13404945217663073764": {
+        "type": "shopify://apps/wishlist-b2b-project-planner/blocks/wishlist_app/faa9bf4c-9c03-4215-8af7-e2122a5d5f27",
+        "disabled": false,
+        "settings": {
+          "text_wishlist": "Wishlist",
+          "text_wishlist_plural": "Wishlists",
+          "text_subgroup": "Subgroup",
+          "text_subgroup_plural": "Subgroups"
+        }
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
