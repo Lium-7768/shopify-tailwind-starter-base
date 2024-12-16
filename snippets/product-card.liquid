@@ -74,13 +74,13 @@
     </div>
 
     {% if card_type != 'list' %}
-      {% render 'product-card-add-to-cart-button' %}
+      {% render 'product-card-add-to-cart-button', product: product %}
     {% endif %}
   </div>
 
   {% if card_type == 'list' %}
     <div class="twcss-flex twcss-flex-col twcss-mb-2">
-      {% render 'product-card-add-to-cart-button' %}
+      {% render 'product-card-add-to-cart-button', product: product %}
     </div>
   {% endif %}
 </div>
