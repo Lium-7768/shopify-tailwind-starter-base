@@ -73,7 +73,7 @@
       </div>
     </div>
 
-    {% if card_type == 'grid' %}
+    {% if card_type != 'list' %}
       {% render 'product-card-add-to-cart-button' %}
     {% endif %}
   </div>
