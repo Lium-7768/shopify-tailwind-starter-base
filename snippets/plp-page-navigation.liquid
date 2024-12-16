@@ -1,13 +1,15 @@
-<facet-filters-form class="facets facets-vertical-sort page-width small-hide">
-  <form class="twcss-flex twcss-gap-2" id="FacetSortForm">
-    <div class="twcss-flex twcss-gap-4">
-      <div class="twcss-flex twcss-gap-[10px]">
-        <div>{{ 'products.facets.sort_by_label' | t }}</div>
-        <div class="select">
-          {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+<facet-filters-form class="twcss-w-full twcss-bg-gray-50 twcss-p-4">
+  <form class="twcss-flex twcss-justify-between twcss-items-center" id="FacetSortForm">
+    {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+
+    <!-- Left Section -->
+    <div class="twcss-flex twcss-items-center twcss-gap-8">
+      <div class="twcss-flex twcss-items-center twcss-gap-2">
+        <span class="twcss-text-gray-600">Sorted By:</span>
+        <div class="twcss-relative">
           <select
             name="sort_by"
-            class="facet-filters__sort select__select caption-large"
+            class="twcss-appearance-none twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded twcss-py-1 twcss-pl-3 twcss-pr-8 twcss-cursor-pointer focus:twcss-outline-none"
             id="SortBy"
             aria-describedby="a11y-refresh-page-message"
           >
@@ -22,33 +24,103 @@
               </option>
             {%- endfor -%}
           </select>
-          <span class="svg-wrapper">
-            {{- 'icon-caret.svg' | inline_asset_content -}}
-          </span>
+          <div class="twcss-pointer-events-none twcss-absolute twcss-inset-y-0 twcss-right-0 twcss-flex twcss-items-center twcss-px-2">
+            <svg class="twcss-h-4 twcss-w-4 twcss-text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
         </div>
       </div>
-      <div>64 total records</div>
+      <div class="twcss-text-gray-600">{{ collection.products_count }} total records</div>
     </div>
 
-    <div class="twcss-flex twcss-gap-4">
-      <div class="" role="status">
-        <h2 class="product-count__text text-body">
-          <span id="ProductCountDesktop">
-            {%- if collection.results_count -%}
-              {{ 'templates.search.results_with_count' | t: terms: collection.terms, count: collection.results_count }}
-            {%- elsif collection.products_count == collection.all_products_count -%}
-              {{ 'products.facets.product_count_simple' | t: count: collection.products_count }}
-            {%- else -%}
-              {{
-                'products.facets.product_count'
-                | t: product_count: collection.products_count, count: collection.all_products_count
-              }}
-            {%- endif -%}
-          </span>
-        </h2>
-        {%- render 'loading-spinner' -%}
+    <!-- Middle Section - Pagination -->
+    <div class="twcss-flex twcss-items-center twcss-gap-4">
+      <div class="twcss-flex twcss-items-center twcss-gap-2">
+        {% if paginate.current_page > 1 %}
+          <a
+            href="{{ paginate.previous.url }}"
+            class="twcss-flex twcss-items-center twcss-px-3 twcss-py-1 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
+          >
+            <span>Prev</span>
+          </a>
+        {% else %}
+          <button
+            disabled
+            class="twcss-flex twcss-items-center twcss-px-3 twcss-py-1 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
+          >
+            <span>Prev</span>
+          </button>
+        {% endif %}
+
+        <span class="twcss-text-gray-600">
+          {{ paginate.current_offset | plus: 1 }}-
+          {{- paginate.current_offset | plus: paginate.page_size | at_most: paginate.items }}
+          of {{ paginate.items }} Records
+        </span>
+
+        {% if paginate.next %}
+          <a
+            href="{{ paginate.next.url }}"
+            class="twcss-flex twcss-items-center twcss-px-3 twcss-py-1 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
+          >
+            <span>Next</span>
+          </a>
+        {% else %}
+          <button
+            disabled
+            class="twcss-flex twcss-items-center twcss-px-3 twcss-py-1 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
+          >
+            <span>Next</span>
+          </button>
+        {% endif %}
       </div>
-      {% render 'pagination', paginate: paginate, anchor: '' %}
+    </div>
+
+    <!-- Right Section -->
+    <div class="twcss-flex twcss-items-center twcss-gap-4">
+      <div class="twcss-flex twcss-items-center twcss-gap-2">
+        <span class="twcss-text-gray-600">Per page:</span>
+        <div class="twcss-relative">
+          <select
+            name="page_size"
+            class="twcss-appearance-none twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded twcss-py-1 twcss-pl-3 twcss-pr-8 twcss-cursor-pointer focus:twcss-outline-none"
+          >
+            <option value="12" selected>12</option>
+            <option value="24">24</option>
+            <option value="48">48</option>
+          </select>
+          <div class="twcss-pointer-events-none twcss-absolute twcss-inset-y-0 twcss-right-0 twcss-flex twcss-items-center twcss-px-2">
+            <svg class="twcss-h-4 twcss-w-4 twcss-text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="twcss-flex twcss-items-center twcss-gap-2">
+        <span class="twcss-text-gray-600">Display:</span>
+        <div class="twcss-flex twcss-gap-1">
+          <button
+            type="button"
+            class="twcss-p-1 twcss-text-gray-600 twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
+            data-view="list"
+          >
+            <svg class="twcss-h-5 twcss-w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="twcss-p-1 twcss-text-blue-600 twcss-border twcss-border-blue-600 twcss-rounded twcss-bg-blue-50"
+            data-view="grid"
+          >
+            <svg class="twcss-h-5 twcss-w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   </form>
 </facet-filters-form>
