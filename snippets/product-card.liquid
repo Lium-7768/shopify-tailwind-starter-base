@@ -13,7 +13,7 @@
 
 <div class="{{ class | default: '' }} twcss-bg-white twcss-border twcss-border-[#EBEBEB] twcss-rounded-md twcss-w-full twcss-h-full twcss-flex {% if card_type == 'list' %}twcss-flex-row{% else %}twcss-flex-col{% endif %}">
   <div class="twcss-h-52 twcss-w-full twcss-shadow-sm twcss-border-b twcss-border-[#EBEBEB]">
-    <a href="{{ product.url }}" class="twcss-block twcss-w-full twcss-h-full">
+    <a href="{{ product.url }}" class="twcss-block twcss-h-full">
       <img
         src="{{ product.featured_image | img_url: '240x240', crop: 'center' }}"
         alt="{{ product.title }}"
