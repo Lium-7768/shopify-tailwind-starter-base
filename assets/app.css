@@ -719,6 +719,10 @@ video {
   margin-right: 0px !important;
 }
 
+.twcss-mb-0 {
+  margin-bottom: 0px;
+}
+
 .twcss-mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -757,6 +761,10 @@ video {
 
 .twcss-ml-6 {
   margin-left: 1.5rem;
+}
+
+.twcss-mr-1 {
+  margin-right: 0.25rem;
 }
 
 .twcss-mr-2 {
@@ -904,6 +912,10 @@ video {
   height: 13rem;
 }
 
+.twcss-h-6 {
+  height: 1.5rem;
+}
+
 .twcss-h-8 {
   height: 2rem;
 }
@@ -966,6 +978,10 @@ video {
 
 .twcss-w-5 {
   width: 1.25rem;
+}
+
+.twcss-w-6 {
+  width: 1.5rem;
 }
 
 .twcss-w-\[210px\] {
