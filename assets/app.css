@@ -8286,8 +8286,8 @@ video {
     border-width: 0px;
   }
 
-  .md\:twcss-border-r-0 {
-    border-right-width: 0px;
+  .md\:twcss-border-r {
+    border-right-width: 1px;
   }
 
   .md\:twcss-p-0 {
