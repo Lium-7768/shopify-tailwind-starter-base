@@ -93,6 +93,8 @@
             </h2>
             {%- render 'loading-spinner' -%}
           </div>
+
+          {% render 'pagination', paginate: paginate, anchor: '' %}
         </form>
       </facet-filters-form>
     {%- endif -%}
