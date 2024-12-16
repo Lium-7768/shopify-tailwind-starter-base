@@ -6,25 +6,7 @@
     <div class='twcss-flex twcss-items-center twcss-gap-x-2'>
       <div class='twcss-overflow-hidden' style='max-width: min(180px, calc(20vw - 224px));'>
         <p class='twcss-text-secondary-light twcss-block twcss-truncate twcss-whitespace-nowrap twcss-m-0'>
-          name: {{ customer.current_location.name }}
-          <br>
-          address1: {{ customer.current_location.address1 }}
-          <br>
-          address: {{ customer.current_location.default_address }}
-          <br>
-          city: {{ customer.current_location.city }}
-          <br>
-          province: {{ customer.current_location.province }}
-          <br>
-          state: {{ customer.current_location.state }}
-          <br>
-          postal: {{ customer.current_location.postal }}
-          <br>
-          postal_code: {{ customer.current_location.postal_code }}
-          <br>
-          zip: {{ customer.current_location.zip }}
-          <br>
-          zipcode: {{ customer.current_location.zipcode }}
+          {{ customer.current_location.name }}
         </p>
       </div>
       {% if customer.company_available_locations.size > 1 %}
