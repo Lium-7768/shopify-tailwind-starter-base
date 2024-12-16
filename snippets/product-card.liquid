@@ -12,7 +12,7 @@
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
 <div class="{{ class | default: '' }} twcss-bg-[#f8f8f8] twcss-border twcss-border-[#EBEBEB] twcss-rounded-md twcss-w-full twcss-h-full twcss-flex {% if card_type == 'list' %}twcss-flex-row{% else %}twcss-flex-col{% endif %}">
-  <div class="twcss-h-52 twcss-shadow-sm twcss-border-b twcss-border-[#EBEBEB]">
+  <div class="twcss-h-52 twcss-shadow-sm twcss-border-b twcss-bg-white twcss-border-[#EBEBEB]">
     <a href="{{ product.url }}" class="twcss-block twcss-h-full">
       <img
         src="{{ product.featured_image | img_url: '240x240', crop: 'center' }}"
