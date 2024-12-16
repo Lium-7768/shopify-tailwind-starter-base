@@ -104,7 +104,9 @@
       <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 
       <!-- slide filter components -->
-      {% render 'collection-filters' %}
+      {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+        {% render 'collection-filters' %}
+      {%- endif -%}
 
       <div
         class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
