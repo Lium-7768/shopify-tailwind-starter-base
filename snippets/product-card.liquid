@@ -12,7 +12,7 @@
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
 <div class="{{ class | default: '' }} twcss-bg-[#f8f8f8] twcss-border twcss-border-[#EBEBEB] twcss-rounded-md twcss-w-full twcss-h-full twcss-flex {% if card_type == 'list' %}twcss-flex-row{% else %}twcss-flex-col{% endif %}">
-  <div class="{% if card_type == 'list' %}twcss-h-28 md:twcss-h-52{% else %}twcss-h-52{% endif %} twcss-shadow-sm twcss-border-b twcss-bg-white twcss-border-[#EBEBEB]">
+  <div class="{% if card_type == 'list' %}h- md:twcss-h-52{% else %}twcss-h-52{% endif %} twcss-shadow-sm twcss-border-b twcss-bg-white twcss-border-[#EBEBEB]">
     <a href="{{ product.url }}" class="twcss-block twcss-h-full">
       <img
         src="{{ product.featured_image | img_url: '240x240', crop: 'center' }}"
@@ -25,69 +25,71 @@
     </a>
   </div>
 
-  {% comment %} Product Info {% endcomment %}
-  <div class="twcss-flex twcss-flex-col  twcss-justify-between twcss-rounded-bl-md twcss-rounded-br-md {% if card_type == 'list' %}md:twcss-w-1/2 twcss-p-5{% else %}twcss-flex-1 twcss-p-[0.5rem_0.75rem_0.75rem]{% endif %}">
-    <div class="twcss-flex twcss-flex-col twcss-flex-1 twcss-mb-2">
-      <div class="twcss-flex twcss-justify-between twcss-flex-col">
-        <div class="twcss-text-[#84888B] twcss-text-xs twcss-font-bold">
-          {{ product.vendor }}
+  <div>
+    {% comment %} Product Info {% endcomment %}
+    <div class="twcss-flex twcss-flex-col twcss-justify-between twcss-rounded-bl-md twcss-rounded-br-md {% if card_type == 'list' %}md:twcss-w-1/2 twcss-p-5{% else %}twcss-flex-1 twcss-p-[0.5rem_0.75rem_0.75rem]{% endif %}">
+      <div class="twcss-flex twcss-flex-col twcss-flex-1 twcss-mb-2">
+        <div class="twcss-flex twcss-justify-between twcss-flex-col">
+          <div class="twcss-text-[#84888B] twcss-text-xs twcss-font-bold">
+            {{ product.vendor }}
+          </div>
+
+          <a
+            href="{{ product.url }}"
+            class="twcss-text-base twcss-font-bold twcss-line-clamp-2 twcss-text-[#353535] twcss-overflow-hidden twcss-text-ellipsis twcss-leading-5"
+            alt="{{ product.title }}"
+          >
+            {{ product.title }}
+          </a>
+          <p alt="{{ product.price | money }}" class="twcss-text-sm twcss-mt-0 twcss-block md:twcss-hidden">
+            Price:
+            <span class="twcss-font-bold twcss-mx-1 twcss-text-lg">{{ product.price | money }}</span>
+            / each
+          </p>
         </div>
 
-        <a
-          href="{{ product.url }}"
-          class="twcss-text-base twcss-font-bold twcss-line-clamp-2 twcss-text-[#353535] twcss-overflow-hidden twcss-text-ellipsis twcss-leading-5"
-          alt="{{ product.title }}"
-        >
-          {{ product.title }}
-        </a>
-        <p alt="{{ product.price | money }}" class="twcss-text-sm twcss-mt-0 twcss-block md:twcss-hidden">
+        {% if show_new_tag %}
+          {% assign current_time = 'now' | date: '%s' %}
+          {% assign published_time = product.published_at | date: '%s' %}
+          {% assign days_since_published = current_time | minus: published_time | divided_by: 86400 %}
+          <div
+            class="twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded-xl twcss-my-1"
+            style="opacity: {%- if days_since_published <= 30 -%}1{%- else -%}0{%- endif -%}"
+          >
+            New
+          </div>
+        {% endif %}
+
+        <div class="twcss-space-y-0 twcss-text-xs twcss-text-[#353535]">
+          <p class="twcss-mt-0">
+            Customer Product # <span class="twcss-text-[#84888B]">{{ product.id }}</span>
+          </p>
+          <p class="twcss-mt-0">
+            Supplier Product # <span class="twcss-text-[#84888B]">{{ product.metafields.custom.supplier_id }}</span>
+          </p>
+          <p class="twcss-mt-0">
+            Supplier: <span class="twcss-text-[#84888B]">{{ product.vendor }}</span>
+          </p>
+        </div>
+      </div>
+
+      {% comment %} Add to Cart Button {% endcomment %}
+      {% if card_type != 'list' %}
+        {% render 'product-card-add-to-cart-button', product: product %}
+      {% endif %}
+    </div>
+
+    {% if card_type == 'list' %}
+      {% comment %} Add to Cart Button {% endcomment %}
+      <div class="twcss-flex twcss-flex-col twcss-mb-2 twcss-flex-1 twcss-p-8 twcss-space-y-5">
+        <p alt="{{ product.price | money }}" class="twcss-text-sm twcss-mt-0 twcss-hidden md:twcss-block ">
           Price:
           <span class="twcss-font-bold twcss-mx-1 twcss-text-lg">{{ product.price | money }}</span>
           / each
         </p>
+
+        {% render 'product-card-add-to-cart-button', product: product %}
       </div>
-
-      {% if show_new_tag %}
-        {% assign current_time = 'now' | date: '%s' %}
-        {% assign published_time = product.published_at | date: '%s' %}
-        {% assign days_since_published = current_time | minus: published_time | divided_by: 86400 %}
-        <div
-          class="twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded-xl twcss-my-1"
-          style="opacity: {%- if days_since_published <= 30 -%}1{%- else -%}0{%- endif -%}"
-        >
-          New
-        </div>
-      {% endif %}
-
-      <div class="twcss-space-y-0 twcss-text-xs twcss-text-[#353535]">
-        <p class="twcss-mt-0">
-          Customer Product # <span class="twcss-text-[#84888B]">{{ product.id }}</span>
-        </p>
-        <p class="twcss-mt-0">
-          Supplier Product # <span class="twcss-text-[#84888B]">{{ product.metafields.custom.supplier_id }}</span>
-        </p>
-        <p class="twcss-mt-0">
-          Supplier: <span class="twcss-text-[#84888B]">{{ product.vendor }}</span>
-        </p>
-      </div>
-    </div>
-
-    {% comment %} Add to Cart Button {% endcomment %}
-    {% if card_type != 'list' %}
-      {% render 'product-card-add-to-cart-button', product: product %}
     {% endif %}
   </div>
-
-  {% if card_type == 'list' %}
-    {% comment %} Add to Cart Button {% endcomment %}
-    <div class="twcss-flex twcss-flex-col twcss-mb-2 twcss-flex-1 twcss-p-8 twcss-space-y-5">
-      <p alt="{{ product.price | money }}" class="twcss-text-sm twcss-mt-0 twcss-hidden md:twcss-block ">
-        Price:
-        <span class="twcss-font-bold twcss-mx-1 twcss-text-lg">{{ product.price | money }}</span>
-        / each
-      </p>
-
-      {% render 'product-card-add-to-cart-button', product: product %}
-    </div>
-  {% endif %}
 </div>
