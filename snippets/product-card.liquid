@@ -73,6 +73,14 @@
       </div>
     </div>
 
-    {% render 'product-card-add-to-cart-button', product: product %}
+    {% if card_type == 'grid' %}
+      {% render 'product-card-add-to-cart-button' %}
+    {% endif %}
   </div>
+
+  {% if card_type == 'list' %}
+    <div class="twcss-flex twcss-flex-col twcss-mb-2">
+      {% render 'product-card-add-to-cart-button' %}
+    </div>
+  {% endif %}
 </div>
