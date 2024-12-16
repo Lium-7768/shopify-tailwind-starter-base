@@ -68,8 +68,9 @@
                 >
                   <div class='twcss-font-bold'>{{ location.name }}</div>
                   <div class='twcss-text-xs twcss-text-gray-600'>
-                    {{ location.city }}, {{ location.state }}
-                    {{ location.zipcode }}
+                    {{ location.shipping_address.address1 }}, {{ location.shipping_address.city }},
+                    {{ location.shipping_address.state }}
+                    {{ location.shipping_address.zipcode }}
                   </div>
                 </label>
               </div>
