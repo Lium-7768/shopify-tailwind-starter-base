@@ -876,6 +876,10 @@ video {
   height: auto !important;
 }
 
+.twcss-h-28 {
+  height: 7rem;
+}
+
 .twcss-h-4 {
   height: 1rem;
 }
@@ -938,10 +942,6 @@ video {
 
 .\!twcss-w-auto {
   width: auto !important;
-}
-
-.twcss-w-1\/2 {
-  width: 50%;
 }
 
 .twcss-w-1\/4 {
@@ -8224,8 +8224,16 @@ video {
     display: none;
   }
 
+  .md\:twcss-h-52 {
+    height: 13rem;
+  }
+
   .md\:twcss-h-\[600px\] {
     height: 600px;
+  }
+
+  .md\:twcss-w-1\/2 {
+    width: 50%;
   }
 
   .md\:twcss-w-3\/5 {
