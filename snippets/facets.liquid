@@ -160,7 +160,7 @@
                     </summary>
                     <div
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
-                      class="parent-display {% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
+                      class="parent-display {% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical !twcss-pb-0{% endif %}"
                     >
                       {%- if filter_type != 'vertical' -%}
                         <div class="facets__header">
@@ -242,7 +242,7 @@
                                   {{ text_value }}
                                 </div>
                               {%- else -%}
-                                <label for="{{ input_id }}" class="{{ label_class }}">
+                                <label for="{{ input_id }}" class="{{ label_class }} !twcss-p-0">
                                   <input
                                     type="checkbox"
                                     name="{{ value.param_name }}"
@@ -316,7 +316,7 @@
                     </summary>
                     <div
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
-                      class="{% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
+                      class="{% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical !twcss-pb-0{% endif %}"
                     >
                       <div class="{% if filter_type == 'horizontal' %}facets__header{% else %}facets__header-vertical{% endif %}">
                         {%- assign max_price_amount = filter.range_max | money | strip_html | escape -%}
