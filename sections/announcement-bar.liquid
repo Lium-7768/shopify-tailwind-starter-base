@@ -4,18 +4,20 @@
   {{ block.shopify_attributes }}
 >
   <div class='twcss-bg-primary-default twcss-text-white twcss-px-4 sm:twcss-px-6 lg:twcss-px-8'>
-    {% if section.settings.menu != blank %}
-      {%- if section.settings.menu_type == 'dropdown' -%}
-        {% render 'header-dropdown-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
-      {%- elsif section.settings.menu_type == 'mega' -%}
-        {% render 'header-mega-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
-      {%- endif -%}
-    {% endif %}
-    {% if section.settings.show_company_location %}
-      {% if customer %}
-        {% render 'header-company-location', customer: customer %}
+    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+      {% if section.settings.menu != blank %}
+        {%- if section.settings.menu_type == 'dropdown' -%}
+          {% render 'header-dropdown-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
+        {%- elsif section.settings.menu_type == 'mega' -%}
+          {% render 'header-mega-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
+        {%- endif -%}
       {% endif %}
-    {% endif %}
+      {% if section.settings.show_company_location %}
+        {% if customer %}
+          {% render 'header-company-location', customer: customer %}
+        {% endif %}
+      {% endif %}
+    </div>
   </div>
 </div>
 
