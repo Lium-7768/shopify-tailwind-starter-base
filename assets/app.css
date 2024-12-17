@@ -1030,16 +1030,16 @@ video {
   min-width: 474px;
 }
 
-.twcss-max-w-11 {
-  max-width: 2.75rem;
-}
-
 .twcss-max-w-2xl {
   max-width: 42rem;
 }
 
 .twcss-max-w-\[1280px\] {
   max-width: 1280px;
+}
+
+.twcss-max-w-\[206px\] {
+  max-width: 206px;
 }
 
 .twcss-max-w-\[285px\] {
@@ -1226,10 +1226,6 @@ video {
 .twcss-gap-x-6 {
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
-}
-
-.twcss-gap-y-1 {
-  row-gap: 0.25rem;
 }
 
 .twcss-gap-y-2 {
@@ -2546,91 +2542,91 @@ video {
 
 .twcss-border-primary-foreground {
   --tw-border-opacity: 1;
-  border-color: rgb(95 157 247 / var(--tw-border-opacity));
+  border-color: rgb(19 59 133 / var(--tw-border-opacity));
 }
 
 .twcss-border-primary-foreground\/0 {
-  border-color: rgb(95 157 247 / 0);
+  border-color: rgb(19 59 133 / 0);
 }
 
 .twcss-border-primary-foreground\/10 {
-  border-color: rgb(95 157 247 / 0.1);
+  border-color: rgb(19 59 133 / 0.1);
 }
 
 .twcss-border-primary-foreground\/100 {
-  border-color: rgb(95 157 247 / 1);
+  border-color: rgb(19 59 133 / 1);
 }
 
 .twcss-border-primary-foreground\/15 {
-  border-color: rgb(95 157 247 / 0.15);
+  border-color: rgb(19 59 133 / 0.15);
 }
 
 .twcss-border-primary-foreground\/20 {
-  border-color: rgb(95 157 247 / 0.2);
+  border-color: rgb(19 59 133 / 0.2);
 }
 
 .twcss-border-primary-foreground\/25 {
-  border-color: rgb(95 157 247 / 0.25);
+  border-color: rgb(19 59 133 / 0.25);
 }
 
 .twcss-border-primary-foreground\/30 {
-  border-color: rgb(95 157 247 / 0.3);
+  border-color: rgb(19 59 133 / 0.3);
 }
 
 .twcss-border-primary-foreground\/35 {
-  border-color: rgb(95 157 247 / 0.35);
+  border-color: rgb(19 59 133 / 0.35);
 }
 
 .twcss-border-primary-foreground\/40 {
-  border-color: rgb(95 157 247 / 0.4);
+  border-color: rgb(19 59 133 / 0.4);
 }
 
 .twcss-border-primary-foreground\/45 {
-  border-color: rgb(95 157 247 / 0.45);
+  border-color: rgb(19 59 133 / 0.45);
 }
 
 .twcss-border-primary-foreground\/5 {
-  border-color: rgb(95 157 247 / 0.05);
+  border-color: rgb(19 59 133 / 0.05);
 }
 
 .twcss-border-primary-foreground\/50 {
-  border-color: rgb(95 157 247 / 0.5);
+  border-color: rgb(19 59 133 / 0.5);
 }
 
 .twcss-border-primary-foreground\/55 {
-  border-color: rgb(95 157 247 / 0.55);
+  border-color: rgb(19 59 133 / 0.55);
 }
 
 .twcss-border-primary-foreground\/60 {
-  border-color: rgb(95 157 247 / 0.6);
+  border-color: rgb(19 59 133 / 0.6);
 }
 
 .twcss-border-primary-foreground\/65 {
-  border-color: rgb(95 157 247 / 0.65);
+  border-color: rgb(19 59 133 / 0.65);
 }
 
 .twcss-border-primary-foreground\/70 {
-  border-color: rgb(95 157 247 / 0.7);
+  border-color: rgb(19 59 133 / 0.7);
 }
 
 .twcss-border-primary-foreground\/75 {
-  border-color: rgb(95 157 247 / 0.75);
+  border-color: rgb(19 59 133 / 0.75);
 }
 
 .twcss-border-primary-foreground\/80 {
-  border-color: rgb(95 157 247 / 0.8);
+  border-color: rgb(19 59 133 / 0.8);
 }
 
 .twcss-border-primary-foreground\/85 {
-  border-color: rgb(95 157 247 / 0.85);
+  border-color: rgb(19 59 133 / 0.85);
 }
 
 .twcss-border-primary-foreground\/90 {
-  border-color: rgb(95 157 247 / 0.9);
+  border-color: rgb(19 59 133 / 0.9);
 }
 
 .twcss-border-primary-foreground\/95 {
-  border-color: rgb(95 157 247 / 0.95);
+  border-color: rgb(19 59 133 / 0.95);
 }
 
 .twcss-border-secondary-default {
@@ -4220,91 +4216,91 @@ video {
 
 .twcss-bg-primary-foreground {
   --tw-bg-opacity: 1;
-  background-color: rgb(95 157 247 / var(--tw-bg-opacity));
+  background-color: rgb(19 59 133 / var(--tw-bg-opacity));
 }
 
 .twcss-bg-primary-foreground\/0 {
-  background-color: rgb(95 157 247 / 0);
+  background-color: rgb(19 59 133 / 0);
 }
 
 .twcss-bg-primary-foreground\/10 {
-  background-color: rgb(95 157 247 / 0.1);
+  background-color: rgb(19 59 133 / 0.1);
 }
 
 .twcss-bg-primary-foreground\/100 {
-  background-color: rgb(95 157 247 / 1);
+  background-color: rgb(19 59 133 / 1);
 }
 
 .twcss-bg-primary-foreground\/15 {
-  background-color: rgb(95 157 247 / 0.15);
+  background-color: rgb(19 59 133 / 0.15);
 }
 
 .twcss-bg-primary-foreground\/20 {
-  background-color: rgb(95 157 247 / 0.2);
+  background-color: rgb(19 59 133 / 0.2);
 }
 
 .twcss-bg-primary-foreground\/25 {
-  background-color: rgb(95 157 247 / 0.25);
+  background-color: rgb(19 59 133 / 0.25);
 }
 
 .twcss-bg-primary-foreground\/30 {
-  background-color: rgb(95 157 247 / 0.3);
+  background-color: rgb(19 59 133 / 0.3);
 }
 
 .twcss-bg-primary-foreground\/35 {
-  background-color: rgb(95 157 247 / 0.35);
+  background-color: rgb(19 59 133 / 0.35);
 }
 
 .twcss-bg-primary-foreground\/40 {
-  background-color: rgb(95 157 247 / 0.4);
+  background-color: rgb(19 59 133 / 0.4);
 }
 
 .twcss-bg-primary-foreground\/45 {
-  background-color: rgb(95 157 247 / 0.45);
+  background-color: rgb(19 59 133 / 0.45);
 }
 
 .twcss-bg-primary-foreground\/5 {
-  background-color: rgb(95 157 247 / 0.05);
+  background-color: rgb(19 59 133 / 0.05);
 }
 
 .twcss-bg-primary-foreground\/50 {
-  background-color: rgb(95 157 247 / 0.5);
+  background-color: rgb(19 59 133 / 0.5);
 }
 
 .twcss-bg-primary-foreground\/55 {
-  background-color: rgb(95 157 247 / 0.55);
+  background-color: rgb(19 59 133 / 0.55);
 }
 
 .twcss-bg-primary-foreground\/60 {
-  background-color: rgb(95 157 247 / 0.6);
+  background-color: rgb(19 59 133 / 0.6);
 }
 
 .twcss-bg-primary-foreground\/65 {
-  background-color: rgb(95 157 247 / 0.65);
+  background-color: rgb(19 59 133 / 0.65);
 }
 
 .twcss-bg-primary-foreground\/70 {
-  background-color: rgb(95 157 247 / 0.7);
+  background-color: rgb(19 59 133 / 0.7);
 }
 
 .twcss-bg-primary-foreground\/75 {
-  background-color: rgb(95 157 247 / 0.75);
+  background-color: rgb(19 59 133 / 0.75);
 }
 
 .twcss-bg-primary-foreground\/80 {
-  background-color: rgb(95 157 247 / 0.8);
+  background-color: rgb(19 59 133 / 0.8);
 }
 
 .twcss-bg-primary-foreground\/85 {
-  background-color: rgb(95 157 247 / 0.85);
+  background-color: rgb(19 59 133 / 0.85);
 }
 
 .twcss-bg-primary-foreground\/90 {
-  background-color: rgb(95 157 247 / 0.9);
+  background-color: rgb(19 59 133 / 0.9);
 }
 
 .twcss-bg-primary-foreground\/95 {
-  background-color: rgb(95 157 247 / 0.95);
+  background-color: rgb(19 59 133 / 0.95);
 }
 
 .twcss-bg-secondary-default {
@@ -4741,6 +4737,11 @@ video {
   padding-bottom: 0px !important;
 }
 
+.twcss-px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .twcss-px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -4925,10 +4926,6 @@ video {
 
 .twcss-leading-5 {
   line-height: 1.25rem;
-}
-
-.twcss-leading-\[12\.5px\] {
-  line-height: 12.5px;
 }
 
 .twcss-leading-\[22px\] {
@@ -6163,91 +6160,91 @@ video {
 
 .twcss-text-primary-foreground {
   --tw-text-opacity: 1;
-  color: rgb(95 157 247 / var(--tw-text-opacity));
+  color: rgb(19 59 133 / var(--tw-text-opacity));
 }
 
 .twcss-text-primary-foreground\/0 {
-  color: rgb(95 157 247 / 0);
+  color: rgb(19 59 133 / 0);
 }
 
 .twcss-text-primary-foreground\/10 {
-  color: rgb(95 157 247 / 0.1);
+  color: rgb(19 59 133 / 0.1);
 }
 
 .twcss-text-primary-foreground\/100 {
-  color: rgb(95 157 247 / 1);
+  color: rgb(19 59 133 / 1);
 }
 
 .twcss-text-primary-foreground\/15 {
-  color: rgb(95 157 247 / 0.15);
+  color: rgb(19 59 133 / 0.15);
 }
 
 .twcss-text-primary-foreground\/20 {
-  color: rgb(95 157 247 / 0.2);
+  color: rgb(19 59 133 / 0.2);
 }
 
 .twcss-text-primary-foreground\/25 {
-  color: rgb(95 157 247 / 0.25);
+  color: rgb(19 59 133 / 0.25);
 }
 
 .twcss-text-primary-foreground\/30 {
-  color: rgb(95 157 247 / 0.3);
+  color: rgb(19 59 133 / 0.3);
 }
 
 .twcss-text-primary-foreground\/35 {
-  color: rgb(95 157 247 / 0.35);
+  color: rgb(19 59 133 / 0.35);
 }
 
 .twcss-text-primary-foreground\/40 {
-  color: rgb(95 157 247 / 0.4);
+  color: rgb(19 59 133 / 0.4);
 }
 
 .twcss-text-primary-foreground\/45 {
-  color: rgb(95 157 247 / 0.45);
+  color: rgb(19 59 133 / 0.45);
 }
 
 .twcss-text-primary-foreground\/5 {
-  color: rgb(95 157 247 / 0.05);
+  color: rgb(19 59 133 / 0.05);
 }
 
 .twcss-text-primary-foreground\/50 {
-  color: rgb(95 157 247 / 0.5);
+  color: rgb(19 59 133 / 0.5);
 }
 
 .twcss-text-primary-foreground\/55 {
-  color: rgb(95 157 247 / 0.55);
+  color: rgb(19 59 133 / 0.55);
 }
 
 .twcss-text-primary-foreground\/60 {
-  color: rgb(95 157 247 / 0.6);
+  color: rgb(19 59 133 / 0.6);
 }
 
 .twcss-text-primary-foreground\/65 {
-  color: rgb(95 157 247 / 0.65);
+  color: rgb(19 59 133 / 0.65);
 }
 
 .twcss-text-primary-foreground\/70 {
-  color: rgb(95 157 247 / 0.7);
+  color: rgb(19 59 133 / 0.7);
 }
 
 .twcss-text-primary-foreground\/75 {
-  color: rgb(95 157 247 / 0.75);
+  color: rgb(19 59 133 / 0.75);
 }
 
 .twcss-text-primary-foreground\/80 {
-  color: rgb(95 157 247 / 0.8);
+  color: rgb(19 59 133 / 0.8);
 }
 
 .twcss-text-primary-foreground\/85 {
-  color: rgb(95 157 247 / 0.85);
+  color: rgb(19 59 133 / 0.85);
 }
 
 .twcss-text-primary-foreground\/90 {
-  color: rgb(95 157 247 / 0.9);
+  color: rgb(19 59 133 / 0.9);
 }
 
 .twcss-text-primary-foreground\/95 {
-  color: rgb(95 157 247 / 0.95);
+  color: rgb(19 59 133 / 0.95);
 }
 
 .twcss-text-red-500 {
@@ -7781,91 +7778,91 @@ video {
 
 .twcss-ring-primary-foreground {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(95 157 247 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(19 59 133 / var(--tw-ring-opacity));
 }
 
 .twcss-ring-primary-foreground\/0 {
-  --tw-ring-color: rgb(95 157 247 / 0);
+  --tw-ring-color: rgb(19 59 133 / 0);
 }
 
 .twcss-ring-primary-foreground\/10 {
-  --tw-ring-color: rgb(95 157 247 / 0.1);
+  --tw-ring-color: rgb(19 59 133 / 0.1);
 }
 
 .twcss-ring-primary-foreground\/100 {
-  --tw-ring-color: rgb(95 157 247 / 1);
+  --tw-ring-color: rgb(19 59 133 / 1);
 }
 
 .twcss-ring-primary-foreground\/15 {
-  --tw-ring-color: rgb(95 157 247 / 0.15);
+  --tw-ring-color: rgb(19 59 133 / 0.15);
 }
 
 .twcss-ring-primary-foreground\/20 {
-  --tw-ring-color: rgb(95 157 247 / 0.2);
+  --tw-ring-color: rgb(19 59 133 / 0.2);
 }
 
 .twcss-ring-primary-foreground\/25 {
-  --tw-ring-color: rgb(95 157 247 / 0.25);
+  --tw-ring-color: rgb(19 59 133 / 0.25);
 }
 
 .twcss-ring-primary-foreground\/30 {
-  --tw-ring-color: rgb(95 157 247 / 0.3);
+  --tw-ring-color: rgb(19 59 133 / 0.3);
 }
 
 .twcss-ring-primary-foreground\/35 {
-  --tw-ring-color: rgb(95 157 247 / 0.35);
+  --tw-ring-color: rgb(19 59 133 / 0.35);
 }
 
 .twcss-ring-primary-foreground\/40 {
-  --tw-ring-color: rgb(95 157 247 / 0.4);
+  --tw-ring-color: rgb(19 59 133 / 0.4);
 }
 
 .twcss-ring-primary-foreground\/45 {
-  --tw-ring-color: rgb(95 157 247 / 0.45);
+  --tw-ring-color: rgb(19 59 133 / 0.45);
 }
 
 .twcss-ring-primary-foreground\/5 {
-  --tw-ring-color: rgb(95 157 247 / 0.05);
+  --tw-ring-color: rgb(19 59 133 / 0.05);
 }
 
 .twcss-ring-primary-foreground\/50 {
-  --tw-ring-color: rgb(95 157 247 / 0.5);
+  --tw-ring-color: rgb(19 59 133 / 0.5);
 }
 
 .twcss-ring-primary-foreground\/55 {
-  --tw-ring-color: rgb(95 157 247 / 0.55);
+  --tw-ring-color: rgb(19 59 133 / 0.55);
 }
 
 .twcss-ring-primary-foreground\/60 {
-  --tw-ring-color: rgb(95 157 247 / 0.6);
+  --tw-ring-color: rgb(19 59 133 / 0.6);
 }
 
 .twcss-ring-primary-foreground\/65 {
-  --tw-ring-color: rgb(95 157 247 / 0.65);
+  --tw-ring-color: rgb(19 59 133 / 0.65);
 }
 
 .twcss-ring-primary-foreground\/70 {
-  --tw-ring-color: rgb(95 157 247 / 0.7);
+  --tw-ring-color: rgb(19 59 133 / 0.7);
 }
 
 .twcss-ring-primary-foreground\/75 {
-  --tw-ring-color: rgb(95 157 247 / 0.75);
+  --tw-ring-color: rgb(19 59 133 / 0.75);
 }
 
 .twcss-ring-primary-foreground\/80 {
-  --tw-ring-color: rgb(95 157 247 / 0.8);
+  --tw-ring-color: rgb(19 59 133 / 0.8);
 }
 
 .twcss-ring-primary-foreground\/85 {
-  --tw-ring-color: rgb(95 157 247 / 0.85);
+  --tw-ring-color: rgb(19 59 133 / 0.85);
 }
 
 .twcss-ring-primary-foreground\/90 {
-  --tw-ring-color: rgb(95 157 247 / 0.9);
+  --tw-ring-color: rgb(19 59 133 / 0.9);
 }
 
 .twcss-ring-primary-foreground\/95 {
-  --tw-ring-color: rgb(95 157 247 / 0.95);
+  --tw-ring-color: rgb(19 59 133 / 0.95);
 }
 
 .twcss-ring-secondary-default {
