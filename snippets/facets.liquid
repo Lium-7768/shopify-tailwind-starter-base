@@ -235,7 +235,7 @@
                               </span>
                             {%- endcapture -%}
 
-                            <li class="twcss-cursor-pointer {% if forloop.index > show_more_number and filter_type == 'vertical' %} show-more-item hidden{% endif %}">
+                            <li class="{% if forloop.index > show_more_number and filter_type == 'vertical' %} show-more-item hidden{% endif %}">
                               {%- if presentation == 'swatch' -%}
                                 <div class="{{ label_class }}">
                                   <div class="swatch-input-wrapper">
@@ -254,7 +254,7 @@
                                   {{ text_value }}
                                 </div>
                               {%- else -%}
-                                <label for="{{ input_id }}" class="{{ label_class }} !twcss-p-0">
+                                <label for="{{ input_id }}" class="{{ label_class }} !twcss-p-0 twcss-cursor-pointer">
                                   <input
                                     type="checkbox"
                                     name="{{ value.param_name }}"
