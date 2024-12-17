@@ -57,11 +57,11 @@
             {%- endif -%}
             {% comment %} Pills are right below the title for filter type vertical {% endcomment %}
             {%- if filter_type == 'vertical' -%}
-              <div class="twcss-flex twcss-flex-col twcss-gap-2">
-                <div class="twcss-flex twcss-justify-between">
+              <div class="twcss-flex twcss-flex-col twcss-gap-2 active-facets active-facets-desktop">
+                <div class="twcss-flex twcss-justify-between active-facets-vertical-filter">
                   {%- unless results.filters == empty -%}
                     <div
-                      class="twcss-text-base twcss-font-bold"
+                      class="twcss-text-base twcss-font-bold facets__heading facets__heading--vertical caption-large text-body"
                       id="verticalTitle"
                       tabindex="-1"
                     >
@@ -69,7 +69,7 @@
                     </div>
                   {%- endunless -%}
                   <facet-remove class="active-facets__button-wrapper">
-                    <a href="{{ results_url }}">
+                    <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
                       <span class="!twcss-text-sm twcss-font-semibold twcss-text-[#BCBDB9]">
                         {{- 'products.facets.clear_all' | t -}}
                       </span>
