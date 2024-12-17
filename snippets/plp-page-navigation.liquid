@@ -1,3 +1,8 @@
+{%- liquid
+  assign is_show_sortby = is_show_sortby | default: true
+  assign is_show_display = is_show_display | default: true
+-%}
+
 <facet-filters-form class="">
   <form
     class="twcss-flex twcss-justify-between twcss-items-center twcss-h-[60px] twcss-bg-gray-50 rounded-[5px] twcss-px-5 twcss-py-2 twcss-max-w-[1280px] twcss-mx-auto"
