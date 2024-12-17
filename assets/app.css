@@ -1232,6 +1232,10 @@ video {
   row-gap: 0.5rem;
 }
 
+.twcss-gap-y-4 {
+  row-gap: 1rem;
+}
+
 .twcss-gap-y-\[10px\] {
   row-gap: 10px;
 }
@@ -8532,12 +8536,12 @@ video {
     flex-direction: row;
   }
 
-  .lg\:twcss-flex-col {
-    flex-direction: column;
-  }
-
   .lg\:twcss-gap-10 {
     gap: 2.5rem;
+  }
+
+  .lg\:twcss-gap-y-0 {
+    row-gap: 0px;
   }
 
   .lg\:\!twcss-p-0 {
