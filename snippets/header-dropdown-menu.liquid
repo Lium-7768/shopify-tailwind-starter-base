@@ -21,11 +21,11 @@
           {%- if menu_icons_string contains icon_key -%}
             {%- assign icon_part = menu_icons_string | split: icon_key | last -%}
             {%- assign icon_name = icon_part | split: '"' | first -%}
-            <span class='twcss-size-4 twcss-block'>
+            <span class='twcss-size-6 twcss-block'>
               {{ icon_name | inline_asset_content }}
             </span>
           {%- endif -%}
-          <span class='twcss-max-w-11 twcss-text-xs twcss-text-center twcss-font-bold twcss-leading-[12.5px]'>
+          <span class='twcss-text-center twcss-font-bold'>
             {{- link.title | escape -}}
           </span>
         </a>
