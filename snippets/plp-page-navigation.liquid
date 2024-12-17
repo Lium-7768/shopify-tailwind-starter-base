@@ -1,5 +1,5 @@
 {%- liquid
-  assign is_show_sortby = is_show_sortby
+  assign is_show_sortby = is_show_sortby | default: true
   assign is_show_display = is_show_display | default: true
 -%}
 
