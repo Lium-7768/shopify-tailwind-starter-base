@@ -40,7 +40,7 @@
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
-      {% render 'plp-page-navigation', paginate: paginate, is_show_sortby: true %}
+      {% render 'plp-page-navigation', paginate: paginate, is_show_sortby: true, is_show_display: true %}
     {%- endif -%}
 
     <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
