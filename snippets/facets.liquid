@@ -80,7 +80,7 @@
                   {%- for value in filter.active_values -%}
                     <facet-remove>
                       <a href="{{ value.url_to_remove }}" class="">
-                        <span class="twcss-flex twcss-items-center twcss-gap-4">
+                        <span class="twcss-flex twcss-items-center twcss-justify-between twcss-text-sm">
                           {{ filter.label | escape }}: {{ value.label | escape }}
                           <span class="svg-wrapper !twcss-h-5 !twcss-w-5">
                             {{- 'icon-close-small.svg' | inline_asset_content -}}
@@ -96,7 +96,7 @@
                     {%- if min != null or max != null -%}
                       <facet-remove>
                         <a href="{{ filter.url_to_remove }}" class="">
-                          <span class="twcss-flex twcss-items-center twcss-gap-4">
+                          <span class="twcss-flex twcss-items-center twcss-justify-between twcss-text-sm">
                             {{ min | default: 0 | money }} - {{ max | default: filter.range_max | money }}
                             <span class="svg-wrapper !twcss-h-5 !twcss-w-5">
                               {{- 'icon-close-small.svg' | inline_asset_content -}}
