@@ -55,7 +55,7 @@
             {%- endif -%}
             {% comment %} Pills are right below the title for filter type vertical {% endcomment %}
             {%- if filter_type == 'vertical' -%}
-              <div class="">
+              <div class="twcss-flex twcss-flex-col">
                 <div class="twcss-flex twcss-justify-between">
                   {%- unless results.filters == empty -%}
                     <div

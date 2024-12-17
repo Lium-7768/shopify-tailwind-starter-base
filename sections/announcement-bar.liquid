@@ -3,7 +3,7 @@
   style='background: {{ section.settings.color_scheme }}'
   {{ block.shopify_attributes }}
 >
-  <div class='twcss-max-w-7xl twcss-mx-auto twcss-px-4 sm:twcss-px-6 lg:twcss-px-8'>
+  <div class='twcss-bg-primary-default twcss-text-white twcss-px-4 sm:twcss-px-6 lg:twcss-px-8'>
     {% if section.settings.menu != blank %}
       {%- if section.settings.menu_type == 'dropdown' -%}
         {% render 'header-dropdown-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
