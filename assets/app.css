@@ -779,6 +779,10 @@ video {
   margin-right: 1.25rem;
 }
 
+.twcss-mr-6 {
+  margin-right: 1.5rem;
+}
+
 .twcss-mt-0 {
   margin-top: 0px;
 }
@@ -1027,6 +1031,10 @@ video {
 
 .\!twcss-max-w-\[1280px\] {
   max-width: 1280px !important;
+}
+
+.\!twcss-max-w-\[173px\] {
+  max-width: 173px !important;
 }
 
 .twcss-max-w-2xl {
