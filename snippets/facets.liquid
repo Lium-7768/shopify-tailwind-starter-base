@@ -55,7 +55,7 @@
             {%- endif -%}
             {% comment %} Pills are right below the title for filter type vertical {% endcomment %}
             {%- if filter_type == 'vertical' -%}
-              <div class="active-facets active-facets-desktop">
+              <div class="twcss-flex">
                 <div class="">
                   {%- unless results.filters == empty -%}
                     <div
@@ -66,7 +66,7 @@
                       {{ 'products.facets.filter_by_label' | t }}
                     </div>
                   {%- endunless -%}
-                  <facet-remove class="active-facets__button-wrapper">
+                  <facet-remove class="">
                     <a href="{{ results_url }}">
                       <span class="!twcss-text-sm twcss-font-semibold twcss-text-[#BCBDB9]">
                         {{- 'products.facets.clear_all' | t -}}
