@@ -1354,6 +1354,10 @@ video {
   border-width: 1px;
 }
 
+.\!twcss-border-b {
+  border-bottom-width: 1px !important;
+}
+
 .twcss-border-b {
   border-bottom-width: 1px;
 }
