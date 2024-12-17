@@ -1,6 +1,7 @@
 {% comment %}
   Parameters:
   - product: The product object (required)
+  - card_type: The card type (required)
 {% endcomment %}
 
 {%- liquid
@@ -15,5 +16,14 @@
     value="{{ product.id }}"
     class="compare-checkbox twcss-scale-[1.8]"
   >
-  <label for="compare-{{ product.id }}" class="twcss-text-sm twcss-cursor-pointer"> Compare </label>
+  {% if card_type == 'list' %}
+    <label for="compare-{{ product.id }}" class="twcss-text-sm twcss-cursor-pointer twcss-block md:twcss-hidden">
+      Compare
+    </label>
+    <label for="compare-{{ product.id }}" class="twcss-text-sm twcss-cursor-pointer twcss-hidden md:twcss-block">
+      Select Item
+    </label>
+  {% else %}
+    <label for="compare-{{ product.id }}" class="twcss-text-sm twcss-cursor-pointer"> Compare </label>
+  {% endif %}
 </div>

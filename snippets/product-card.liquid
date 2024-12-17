@@ -90,7 +90,7 @@
     -%}
 
     {% if enable_compare %}
-      {% render 'product-card-compare', product: product, compare_class: compare_class_list %}
+      {% render 'product-card-compare', product: product, compare_class: compare_class_list, card_type: card_type %}
     {% endif %}
 
     {% render 'product-card-add-to-cart-button', product: product, cart_class: cart_class_list %}
@@ -107,7 +107,7 @@
       </p>
 
       {% if enable_compare %}
-        {% render 'product-card-compare', product: product, compare_class: 'twcss-mb-0' %}
+        {% render 'product-card-compare', product: product, compare_class: 'twcss-mb-0', card_type: card_type %}
       {% endif %}
 
       {% render 'product-card-add-to-cart-button', product: product %}
