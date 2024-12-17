@@ -4695,10 +4695,6 @@ video {
      object-fit: cover;
 }
 
-.\!twcss-p-0 {
-  padding: 0px !important;
-}
-
 .\!twcss-p-\[10px\] {
   padding: 10px !important;
 }
@@ -4828,6 +4824,10 @@ video {
 
 .twcss-pb-2 {
   padding-bottom: 0.5rem;
+}
+
+.twcss-pb-3 {
+  padding-bottom: 0.75rem;
 }
 
 .twcss-pl-3 {
