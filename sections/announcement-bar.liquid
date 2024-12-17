@@ -5,11 +5,37 @@
 >
   <div class='twcss-bg-primary-foreground twcss-text-white twcss-px-10 twcss-py-3'>
     <div class='twcss-flex twcss-items-center twcss-justify-between twcss-flex-col lg:twcss-flex-row twcss-gap-y-4 lg:twcss-gap-y-0'>
-      {% if section.settings.show_company_location %}
-        {% if customer %}
-          {% render 'header-company-location', customer: customer %}
+      <div>
+        <a href='{{ routes.root_url }}' class='twcss-flex twcss-items-center twcss-justify-center'>
+          {%- if settings.logo != blank -%}
+            <div class='header__heading-logo-wrapper'>
+              {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+              {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+              {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
+              {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+              {{
+                settings.logo
+                | image_url: width: 600
+                | image_tag:
+                  class: '',
+                  widths: widths,
+                  height: logo_height,
+                  width: settings.logo_width,
+                  alt: logo_alt,
+                  sizes: sizes,
+                  preload: true
+              }}
+            </div>
+          {%- else -%}
+            <span class=''>{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+        {% if section.settings.show_company_location %}
+          {% if customer %}
+            {% render 'header-company-location', customer: customer %}
+          {% endif %}
         {% endif %}
-      {% endif %}
+      </div>
       {% if section.settings.menu != blank %}
         {%- if section.settings.menu_type == 'dropdown' -%}
           {% render 'header-dropdown-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
