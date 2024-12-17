@@ -25,7 +25,7 @@ module.exports = {
         foreground: '#0a0a0a',
         primary: {
           default: '#1746A2',
-          foreground: '#5F9DF7E5',
+          foreground: '#133B85',
         },
         secondary: {
           default: '#5F9DF7',
