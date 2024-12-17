@@ -67,8 +67,10 @@
                     </div>
                   {%- endunless -%}
                   <facet-remove class="active-facets__button-wrapper">
-                    <a href="{{ results_url }}" class="twcss-text-sm twcss-font-semibold twcss-text-[#BCBDB9]">
-                      <span>{{ 'products.facets.clear_all' | t }}</span>
+                    <a href="{{ results_url }}">
+                      <span class="twcss-text-sm twcss-font-semibold twcss-text-[#BCBDB9]">
+                        {{- 'products.facets.clear_all' | t -}}
+                      </span>
                     </a>
                   </facet-remove>
                 </div>
