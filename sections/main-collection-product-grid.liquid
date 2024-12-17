@@ -43,7 +43,7 @@
       {% render 'plp-page-navigation', paginate: paginate, is_show_sortby: true, is_show_display: true %}
     {%- endif -%}
 
-    <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical twcss-max-w-[1280px] !twcss-p-0 page-width{% endif %}">
+    <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical !twcss-max-w-[1280px] !twcss-p-0 page-width{% endif %}">
       {{ 'component-facets.css' | asset_url | stylesheet_tag }}
       <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 
