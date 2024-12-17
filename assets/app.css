@@ -1171,6 +1171,10 @@ video {
   flex-direction: row-reverse;
 }
 
+.\!twcss-flex-col {
+  flex-direction: column !important;
+}
+
 .twcss-flex-col {
   flex-direction: column;
 }
@@ -1203,6 +1207,10 @@ video {
   justify-content: center;
 }
 
+.\!twcss-justify-between {
+  justify-content: space-between !important;
+}
+
 .twcss-justify-between {
   justify-content: space-between;
 }
@@ -1213,6 +1221,10 @@ video {
 
 .twcss-justify-items-center {
   justify-items: center;
+}
+
+.\!twcss-gap-2 {
+  gap: 0.5rem !important;
 }
 
 .twcss-gap-2 {
