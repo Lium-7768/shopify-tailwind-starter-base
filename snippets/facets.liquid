@@ -46,6 +46,8 @@
             id="FacetsWrapperDesktop"
             {% if filter_type == 'horizontal' %}
               class="facets__wrapper"
+            {% else %}
+              class="twcss-flex twcss-flex-col twcss-gap-6"
             {% endif %}
           >
             {%- if filter_type == 'horizontal' and results.filters != empty -%}
