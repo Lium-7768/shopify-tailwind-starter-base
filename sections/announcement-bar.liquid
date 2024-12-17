@@ -11,6 +11,11 @@
         {% render 'header-mega-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
       {%- endif -%}
     {% endif %}
+    {% if section.settings.show_company_location %}
+      {% if customer %}
+        {% render 'header-company-location', customer: customer %}
+      {% endif %}
+    {% endif %}
   </div>
 </div>
 
@@ -33,6 +38,13 @@
       "id": "show_line_separator",
       "default": true,
       "label": "t:sections.header.settings.show_line_separator.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_company_location",
+      "default": true,
+      "label": "Show Company Location",
+      "info": "Show the customer's company and location information"
     },
     {
       "type": "link_list",
