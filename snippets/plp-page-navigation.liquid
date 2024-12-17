@@ -74,25 +74,27 @@
         </div>
       </div>
 
-      <div class="twcss-flex twcss-items-center twcss-gap-[10px]">
-        <span class="twcss-text-gray-600 twcss-text-[14px]">Display:</span>
-        <div class="twcss-flex twcss-gap-[10px]">
-          <button
-            type="button"
-            class="twcss-p-[11px] twcss-text-gray-600 twcss-h-11 twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
-            data-view="list"
-          >
-            {% render 'icon-list-view' %}
-          </button>
-          <button
-            type="button"
-            class="twcss-p-[11px] twcss-text-blue-600 twcss-h-11 twcss-border twcss-border-blue-600 twcss-rounded twcss-bg-blue-50"
-            data-view="grid"
-          >
-            {% render 'icon-grid-view' %}
-          </button>
+      {% if is_show_display %}
+        <div class="twcss-flex twcss-items-center twcss-gap-[10px]">
+          <span class="twcss-text-gray-600 twcss-text-[14px]">Display:</span>
+          <div class="twcss-flex twcss-gap-[10px]">
+            <button
+              type="button"
+              class="twcss-p-[11px] twcss-text-gray-600 twcss-h-11 twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
+              data-view="list"
+            >
+              {% render 'icon-list-view' %}
+            </button>
+            <button
+              type="button"
+              class="twcss-p-[11px] twcss-text-blue-600 twcss-h-11 twcss-border twcss-border-blue-600 twcss-rounded twcss-bg-blue-50"
+              data-view="grid"
+            >
+              {% render 'icon-grid-view' %}
+            </button>
+          </div>
         </div>
-      </div>
+      {% endif %}
     </div>
   </form>
 </facet-filters-form>
