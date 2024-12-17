@@ -872,6 +872,10 @@ video {
   height: 2.5rem !important;
 }
 
+.\!twcss-h-5 {
+  height: 1.25rem !important;
+}
+
 .\!twcss-h-\[116px\] {
   height: 116px !important;
 }
@@ -950,6 +954,10 @@ video {
 
 .\!twcss-w-10 {
   width: 2.5rem !important;
+}
+
+.\!twcss-w-5 {
+  width: 1.25rem !important;
 }
 
 .\!twcss-w-\[40px\] {
@@ -1811,6 +1819,10 @@ video {
 
 .twcss-border-card-foreground\/95 {
   border-color: rgb(10 10 10 / 0.95);
+}
+
+.twcss-border-current {
+  border-color: currentColor;
 }
 
 .twcss-border-destructive-default {
@@ -2982,6 +2994,10 @@ video {
 .twcss-border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+
+.twcss-border-opacity-10 {
+  --tw-border-opacity: 0.1;
 }
 
 .\!twcss-bg-white {
@@ -4655,6 +4671,10 @@ video {
 
 .twcss-bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.twcss-bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
 .twcss-from-background {
@@ -8318,6 +8338,13 @@ video {
   display: block;
 }
 
+@media (min-width: 320px) {
+  .sm\:twcss-px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
 @media (min-width: 750px) {
   .md\:twcss-mr-0 {
     margin-right: 0px;
@@ -8522,6 +8549,11 @@ video {
   .lg\:twcss-px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .lg\:twcss-px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .lg\:twcss-text-\[22px\] {
