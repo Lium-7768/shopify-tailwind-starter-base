@@ -17,7 +17,7 @@
         "color_scheme": "scheme-724c636d-524f-45cc-8653-dd35022bf3de",
         "show_line_separator": true,
         "menu": "main-menu",
-        "menu_icons": "",
+        "menu_icons": "{\"quick-order\":\"icon-quick-order.svg\",\"price-list\":\"icon-price-list.svg\",\"orders\":\"icon-orders.svg\",\"quotes\":\"icon-quotes.svg\"}",
         "menu_type": "dropdown"
       }
     },
