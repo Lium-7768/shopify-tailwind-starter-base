@@ -58,7 +58,7 @@
             {% comment %} Pills are right below the title for filter type vertical {% endcomment %}
             {%- if filter_type == 'vertical' -%}
               <div class="!twcss-flex !twcss-flex-col !twcss-gap-2 active-facets active-facets-desktop">
-                <div class="!twcss-flex !twcss-justify-between active-facets-vertical-filter">
+                <div class="!twcss-flex !twcss-justify-between twcss-items-center active-facets-vertical-filter">
                   {%- unless results.filters == empty -%}
                     <div
                       class="twcss-text-base twcss-font-bold !facets__heading !facets__heading--vertical"
