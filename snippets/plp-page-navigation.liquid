@@ -1,5 +1,5 @@
 {%- liquid
-  assign is_show_sortby = is_show_sortby | default: true
+  assign is_show_sortby = is_show_sortby
   assign is_show_display = is_show_display | default: true
 -%}
 
@@ -12,7 +12,7 @@
 
     <!-- Left Section -->
     <div class="twcss-flex twcss-items-center twcss-gap-4">
-      {% if is_show_sortby == true %}
+      {% if is_show_sortby %}
         <div class="twcss-flex twcss-items-center twcss-gap-[10px]">
           <span class="twcss-text-[14px]">Sorted By:</span>
           <div class="twcss-relative">
