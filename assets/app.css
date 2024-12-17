@@ -615,6 +615,10 @@ video {
   left: -1rem !important;
 }
 
+.\!twcss-left-\[3px\] {
+  left: 3px !important;
+}
+
 .\!twcss-left-\[50\%\] {
   left: 50% !important;
 }
@@ -633,6 +637,10 @@ video {
 
 .\!twcss-top-\[116px\] {
   top: 116px !important;
+}
+
+.\!twcss-top-\[7px\] {
+  top: 7px !important;
 }
 
 .twcss-left-0 {
@@ -4759,6 +4767,11 @@ video {
 .\!twcss-py-0 {
   padding-top: 0px !important;
   padding-bottom: 0px !important;
+}
+
+.\!twcss-py-2 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
 
 .twcss-px-10 {
