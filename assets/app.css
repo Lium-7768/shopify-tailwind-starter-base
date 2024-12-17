@@ -8532,6 +8532,10 @@ video {
     flex-direction: row;
   }
 
+  .lg\:twcss-flex-col {
+    flex-direction: column;
+  }
+
   .lg\:twcss-gap-10 {
     gap: 2.5rem;
   }
