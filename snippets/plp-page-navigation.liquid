@@ -12,34 +12,41 @@
 
     <!-- Left Section -->
     <div class="twcss-flex twcss-items-center twcss-gap-4">
-      <div class="twcss-flex twcss-items-center twcss-gap-[10px]">
-        <span class="twcss-text-[14px]">Sorted By:</span>
-        <div class="twcss-relative">
-          <select
-            name="sort_by"
-            class="twcss-appearance-none twcss-text-[14px] twcss-h-11 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded twcss-py-1 twcss-pl-3 twcss-pr-8 twcss-cursor-pointer focus:twcss-outline-none"
-            id="SortBy"
-            aria-describedby="a11y-refresh-page-message"
-          >
-            {%- for option in collection.sort_options -%}
-              <option
-                class="twcss-text-[14px]"
-                value="{{ option.value | escape }}"
-                {% if option.value == sort_by %}
-                  selected="selected"
-                {% endif %}
+      {% if paginate.current_page > 1 %}
+        <div class="twcss-flex twcss-items-center twcss-gap-[10px]">
+          <span class="twcss-text-[14px]">Sorted By:</span>
+          <div class="twcss-relative">
+            <select
+              name="sort_by"
+              class="twcss-appearance-none twcss-text-[14px] twcss-h-11 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded twcss-py-1 twcss-pl-3 twcss-pr-8 twcss-cursor-pointer focus:twcss-outline-none"
+              id="SortBy"
+              aria-describedby="a11y-refresh-page-message"
+            >
+              {%- for option in collection.sort_options -%}
+                <option
+                  class="twcss-text-[14px]"
+                  value="{{ option.value | escape }}"
+                  {% if option.value == sort_by %}
+                    selected="selected"
+                  {% endif %}
+                >
+                  {{ option.name | escape }}
+                </option>
+              {%- endfor -%}
+            </select>
+            <div class="twcss-pointer-events-none twcss-absolute twcss-inset-y-0 twcss-right-0 twcss-flex twcss-items-center twcss-px-2">
+              <svg
+                class="twcss-h-4 twcss-w-4 twcss-text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
-                {{ option.name | escape }}
-              </option>
-            {%- endfor -%}
-          </select>
-          <div class="twcss-pointer-events-none twcss-absolute twcss-inset-y-0 twcss-right-0 twcss-flex twcss-items-center twcss-px-2">
-            <svg class="twcss-h-4 twcss-w-4 twcss-text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
           </div>
         </div>
-      </div>
+      {% endif %}
       <div class="twcss-text-[14px]">{{ collection.products_count }} total records</div>
     </div>
 
