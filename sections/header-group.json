@@ -14,24 +14,21 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
-          "disabled": true,
+        "menu_dGHpD7": {
+          "type": "menu",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "menu": "main-menu",
+            "menu_icons": "",
+            "menu_type": "dropdown"
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "menu_dGHpD7"
       ],
       "settings": {
         "color_scheme": "",
         "show_line_separator": true,
-        "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5,
         "enable_country_selector": false,
         "enable_language_selector": false
       }
@@ -43,8 +40,7 @@
           "type": "notification",
           "settings": {
             "show_notification": true,
-            "notification_link": "",
-            "icon_color": "#ffffff"
+            "notification_link": ""
           }
         },
         "custom_account_wNra3N": {
