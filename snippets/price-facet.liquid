@@ -2,7 +2,7 @@
 
 <div class="field">
   <input
-    class="field__input"
+    class="field__input twcss-text-base"
     name="{{ filter.min_value.param_name }}"
     id="{{ id_prefix }}{{ filter.label | escape }}-GTE"
     {%- if filter.min_value.value -%}
@@ -15,7 +15,7 @@
     data-min="0"
     data-max="{{ filter.range_max | money_without_currency }}"
   >
-  <label class="field__label" for="{{ id_prefix }}{{ filter.label | escape }}-GTE">
+  <label class="field__label twcss-text-sm" for="{{ id_prefix }}{{ filter.label | escape }}-GTE">
     {{- 'products.facets.from' | t -}}
   </label>
 </div>
