@@ -193,7 +193,7 @@
                           endif
                         -%}
                         <ul
-                          class="{{ visual_layout_class }}{% if filter_type == 'vertical' %} facets__list--vertical{% else %} facets__list{% endif %} list-unstyled"
+                          class="{{ visual_layout_class }}{% if filter_type == 'vertical' %} facets__list--vertical{% else %} facets__list twcss-flex twcss-flex-col twcss-gap-5{% endif %} list-unstyled"
                           role="list"
                         >
                           {%- for value in sorted_values -%}
