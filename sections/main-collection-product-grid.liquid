@@ -117,9 +117,7 @@
               {%- endfor -%}
             </ul>
 
-            {%- if paginate.pages > 1 -%}
-              {% render 'pagination', paginate: paginate, anchor: '' %}
-            {%- endif -%}
+            {% render 'plp-page-navigation', paginate: paginate %}
           </div>
         {%- endif -%}
       </div>
