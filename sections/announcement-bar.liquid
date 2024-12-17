@@ -1,11 +1,9 @@
-{{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
-{{ 'component-slider.css' | asset_url | stylesheet_tag }}
-
 <div
-  class='utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} utility-bar--bottom-border{% endif %}'
+  class='twcss-w-full twcss-bg-gradient-to-r {% if section.settings.show_line_separator %} twcss-border-b twcss-border-current twcss-border-opacity-10{% endif %}'
+  style='background: {{ section.settings.color_scheme }}'
   {{ block.shopify_attributes }}
 >
-  <div class='page-width utility-bar__grid'>
+  <div class='twcss-max-w-7xl twcss-mx-auto twcss-px-4 sm:twcss-px-6 lg:twcss-px-8'>
     {% if section.settings.menu != blank %}
       {%- if section.settings.menu_type == 'dropdown' -%}
         {% render 'header-dropdown-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
