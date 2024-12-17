@@ -12,12 +12,13 @@
         <div class="twcss-relative">
           <select
             name="sort_by"
-            class="twcss-appearance-none twcss-h-11 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded twcss-py-1 twcss-pl-3 twcss-pr-8 twcss-cursor-pointer focus:twcss-outline-none"
+            class="twcss-appearance-none twcss-text-[14px] twcss-h-11 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded twcss-py-1 twcss-pl-3 twcss-pr-8 twcss-cursor-pointer focus:twcss-outline-none"
             id="SortBy"
             aria-describedby="a11y-refresh-page-message"
           >
             {%- for option in collection.sort_options -%}
               <option
+                class="twcss-text-[14px]"
                 value="{{ option.value | escape }}"
                 {% if option.value == sort_by %}
                   selected="selected"
@@ -34,7 +35,7 @@
           </div>
         </div>
       </div>
-      <div class="twcss-text-gray-600">{{ collection.products_count }} total records</div>
+      <div class="twcss-text-[14px]">{{ collection.products_count }} total records</div>
     </div>
 
     <!-- Middle Section -->

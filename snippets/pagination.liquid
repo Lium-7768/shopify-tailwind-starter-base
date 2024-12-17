@@ -1,11 +1,11 @@
 <!-- Middle Section - Pagination -->
 <div class="twcss-flex twcss-items-center twcss-gap-4">
-  <span class="twcss-text-gray-600">
-    <span class="twcss-font-bold">
+  <span class="twcss-text-gray-600 twcss-text-[14px]">
+    <span class="twcss-font-bold twcss-text-[14px]">
       {{- paginate.current_offset | plus: 1 }}-
       {{- paginate.current_offset | plus: paginate.page_size | at_most: paginate.items -}}
     </span>
-    of <span class="twcss-font-bold">{{ paginate.items }}</span> Records
+    of <span class="twcss-font-bold twcss-text-[14px]">{{ paginate.items }}</span> Records
   </span>
   <div class="twcss-flex twcss-items-center twcss-gap-2">
     {% if paginate.current_page > 1 %}
@@ -14,7 +14,7 @@
         class="twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
       >
         {% render 'icon-chevron-left' %}
-        <span>Prev</span>
+        <span class="twcss-text-[14px] twcss-font-bold">Prev</span>
       </a>
     {% else %}
       <button
@@ -22,7 +22,7 @@
         class="twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
       >
         {% render 'icon-chevron-left' %}
-        <span>Prev</span>
+        <span class="twcss-text-[14px] twcss-font-bold">Prev</span>
       </button>
     {% endif %}
 
@@ -33,7 +33,7 @@
         href="{{ paginate.next.url }}"
         class="twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
       >
-        <span>Next</span>
+        <span class="twcss-text-[14px] twcss-font-bold">Next</span>
         {% render 'icon-chevron-right', class: 'twcss-h-6 twcss-w-6' %}
       </a>
     {% else %}
@@ -41,7 +41,7 @@
         disabled
         class="twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
       >
-        <span>Next</span>
+        <span class="twcss-text-[14px] twcss-font-bold">Next</span>
         {% render 'icon-chevron-right' %}
       </button>
     {% endif %}
