@@ -13,24 +13,12 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
-      "blocks": {
-        "menu_dGHpD7": {
-          "type": "menu",
-          "settings": {
-            "menu": "main-menu",
-            "menu_icons": "",
-            "menu_type": "dropdown"
-          }
-        }
-      },
-      "block_order": [
-        "menu_dGHpD7"
-      ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-724c636d-524f-45cc-8653-dd35022bf3de",
         "show_line_separator": true,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "menu": "main-menu",
+        "menu_icons": "",
+        "menu_type": "dropdown"
       }
     },
     "header": {
