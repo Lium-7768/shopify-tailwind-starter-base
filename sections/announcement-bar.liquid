@@ -6,25 +6,19 @@
   {{ block.shopify_attributes }}
 >
   <div class='page-width utility-bar__grid'>
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {%- when 'menu' -%}
-          {% if block.settings.menu != blank %}
-            {%- if block.settings.menu_type == 'dropdown' -%}
-              {% render 'header-dropdown-menu', menu: block.settings.menu, menu_icons: block.settings.menu_icons %}
-            {%- elsif block.settings.menu_type == 'mega' -%}
-              {% render 'header-mega-menu', menu: block.settings.menu, menu_icons: block.settings.menu_icons %}
-            {%- endif -%}
-          {% endif %}
-      {%- endcase -%}
-    {%- endfor -%}
+    {% if section.settings.menu != blank %}
+      {%- if section.settings.menu_type == 'dropdown' -%}
+        {% render 'header-dropdown-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
+      {%- elsif section.settings.menu_type == 'mega' -%}
+        {% render 'header-mega-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
+      {%- endif -%}
+    {% endif %}
   </div>
 </div>
 
 {% schema %}
 {
   "name": "t:sections.announcement-bar.name",
-  "max_blocks": 12,
   "class": "announcement-bar-section",
   "enabled_on": {
     "groups": ["header"]
@@ -41,47 +35,39 @@
       "id": "show_line_separator",
       "default": true,
       "label": "t:sections.header.settings.show_line_separator.label"
-    }
-  ],
-  "blocks": [
+    },
     {
-      "type": "menu",
-      "name": "Menu",
-      "settings": [
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "t:sections.header.settings.menu.label"
+    },
+    {
+      "type": "text",
+      "id": "menu_icons",
+      "label": "Menu Icons (JSON)",
+      "info": "Add menu icons in JSON format. Example: {\"menu-item-handle\":\"icon-name.svg\"}"
+    },
+    {
+      "type": "select",
+      "id": "menu_type",
+      "options": [
         {
-          "type": "link_list",
-          "id": "menu",
-          "label": "Select Menu",
-          "default": "main-menu"
+          "value": "dropdown",
+          "label": "Dropdown"
         },
         {
-          "type": "text",
-          "id": "menu_icons",
-          "label": "Menu Icons (JSON)",
-          "info": "Add menu icons in JSON format. Example: {\"menu-item-handle\":\"icon-name.svg\"}"
+          "value": "mega",
+          "label": "Mega Menu"
         },
         {
-          "type": "select",
-          "id": "menu_type",
-          "options": [
-            {
-              "value": "dropdown",
-              "label": "Dropdown"
-            },
-            {
-              "value": "mega",
-              "label": "Mega Menu"
-            },
-            {
-              "value": "drawer",
-              "label": "Drawer"
-            }
-          ],
-          "default": "dropdown",
-          "label": "Menu Type",
-          "info": "Choose how the menu should be displayed"
+          "value": "drawer",
+          "label": "Drawer"
         }
-      ]
+      ],
+      "default": "dropdown",
+      "label": "Menu Type",
+      "info": "Choose how the menu should be displayed"
     }
   ],
   "presets": [
