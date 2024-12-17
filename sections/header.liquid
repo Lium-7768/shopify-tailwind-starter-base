@@ -124,7 +124,7 @@
     endif
   -%}
   <!-- desktop header -->
-  <header class="twcss-items-center twcss-bg-primary-default twcss-text-white twcss-px-10 twcss-py-5 twcss-hidden lg:twcss-flex">
+  <header class="twcss-items-center twcss-bg-primary-default twcss-text-white twcss-px-10 twcss-py-5 twcss-hidden lg:twcss-flex twcss-gap-x-0 lg:twcss-gap-x-6">
     <button 
       type="button"
       class="twcss-py-2 twcss-px-3 twcss-border twcss-border-secondary-default twcss-font-bold twcss-rounded twcss-transition-colors twcss-flex twcss-items-center twcss-gap-2 twcss-cursor-pointer hover:twcss-bg-secondary-default hover:twcss-text-white"
@@ -168,7 +168,7 @@
           {%- if block.settings.show_notification -%}
             <a 
               href="{{ block.settings.notification_link }}" 
-              class="twcss-size-6 twcss-ml-4 twcss-mr-7"
+              class="twcss-size-6"
             >
               {{ 'icon-notification.svg' | inline_asset_content }}
             </a>
