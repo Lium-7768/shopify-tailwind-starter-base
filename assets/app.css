@@ -4673,6 +4673,10 @@ video {
      object-fit: cover;
 }
 
+.\!twcss-p-\[10px\] {
+  padding: 10px !important;
+}
+
 .twcss-p-2 {
   padding: 0.5rem;
 }
@@ -4822,6 +4826,11 @@ video {
 .\!twcss-text-lg {
   font-size: 1.125rem !important;
   line-height: 1.75rem !important;
+}
+
+.\!twcss-text-sm {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
 }
 
 .twcss-text-2xl {
