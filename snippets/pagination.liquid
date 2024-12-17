@@ -13,6 +13,7 @@
         href="{{ paginate.previous.url }}"
         class="twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
       >
+        {% render 'icon-chevron-left' %}
         <span>Prev</span>
       </a>
     {% else %}
@@ -20,6 +21,7 @@
         disabled
         class="twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
       >
+        {% render 'icon-chevron-left' %}
         <span>Prev</span>
       </button>
     {% endif %}
@@ -31,6 +33,7 @@
         href="{{ paginate.next.url }}"
         class="twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
       >
+        {% render 'icon-chevron-right' %}
         <span>Next</span>
       </a>
     {% else %}
@@ -38,6 +41,7 @@
         disabled
         class="twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
       >
+        {% render 'icon-chevron-right' %}
         <span>Next</span>
       </button>
     {% endif %}
