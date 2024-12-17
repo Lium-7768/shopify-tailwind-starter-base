@@ -158,6 +158,13 @@
                         <span class="twcss-size-6 twcss-block">{{- 'icon-caret.svg' | inline_asset_content -}}</span>
                       </div>
                     </summary>
+
+                    <input
+                      type="search"
+                      className="!twcss-w-full !twcss-px-3 !twcss-py-2 !twcss-border !twcss-border-[#EAEAEA] !twcss-rounded-md !twcss-text-sm !twcss-mb-3"
+                      placeholder="Search"
+                    >
+
                     <div
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
                       class="parent-display {% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical !twcss-pb-0{% endif %}"
