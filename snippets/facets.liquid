@@ -78,7 +78,7 @@
                   {%- for value in filter.active_values -%}
                     <facet-remove>
                       <a href="{{ value.url_to_remove }}" class="">
-                        <span class="">
+                        <span class="twcss-flex twcss-justify-between">
                           {{ filter.label | escape }}: {{ value.label | escape }}
                           <span class="svg-wrapper !twcss-h-5 !twcss-w-5">
                             {{- 'icon-close-small.svg' | inline_asset_content -}}
