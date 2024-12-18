@@ -2080,6 +2080,95 @@ video {
   border-color: rgb(146 44 44 / 0.95);
 }
 
+.twcss-border-destructive-light {
+  --tw-border-opacity: 1;
+  border-color: rgb(227 242 255 / var(--tw-border-opacity));
+}
+
+.twcss-border-destructive-light\/0 {
+  border-color: rgb(227 242 255 / 0);
+}
+
+.twcss-border-destructive-light\/10 {
+  border-color: rgb(227 242 255 / 0.1);
+}
+
+.twcss-border-destructive-light\/100 {
+  border-color: rgb(227 242 255 / 1);
+}
+
+.twcss-border-destructive-light\/15 {
+  border-color: rgb(227 242 255 / 0.15);
+}
+
+.twcss-border-destructive-light\/20 {
+  border-color: rgb(227 242 255 / 0.2);
+}
+
+.twcss-border-destructive-light\/25 {
+  border-color: rgb(227 242 255 / 0.25);
+}
+
+.twcss-border-destructive-light\/30 {
+  border-color: rgb(227 242 255 / 0.3);
+}
+
+.twcss-border-destructive-light\/35 {
+  border-color: rgb(227 242 255 / 0.35);
+}
+
+.twcss-border-destructive-light\/40 {
+  border-color: rgb(227 242 255 / 0.4);
+}
+
+.twcss-border-destructive-light\/45 {
+  border-color: rgb(227 242 255 / 0.45);
+}
+
+.twcss-border-destructive-light\/5 {
+  border-color: rgb(227 242 255 / 0.05);
+}
+
+.twcss-border-destructive-light\/50 {
+  border-color: rgb(227 242 255 / 0.5);
+}
+
+.twcss-border-destructive-light\/55 {
+  border-color: rgb(227 242 255 / 0.55);
+}
+
+.twcss-border-destructive-light\/60 {
+  border-color: rgb(227 242 255 / 0.6);
+}
+
+.twcss-border-destructive-light\/65 {
+  border-color: rgb(227 242 255 / 0.65);
+}
+
+.twcss-border-destructive-light\/70 {
+  border-color: rgb(227 242 255 / 0.7);
+}
+
+.twcss-border-destructive-light\/75 {
+  border-color: rgb(227 242 255 / 0.75);
+}
+
+.twcss-border-destructive-light\/80 {
+  border-color: rgb(227 242 255 / 0.8);
+}
+
+.twcss-border-destructive-light\/85 {
+  border-color: rgb(227 242 255 / 0.85);
+}
+
+.twcss-border-destructive-light\/90 {
+  border-color: rgb(227 242 255 / 0.9);
+}
+
+.twcss-border-destructive-light\/95 {
+  border-color: rgb(227 242 255 / 0.95);
+}
+
 .twcss-border-foreground {
   --tw-border-opacity: 1;
   border-color: rgb(10 10 10 / var(--tw-border-opacity));
@@ -2716,95 +2805,6 @@ video {
 
 .twcss-border-primary-foreground\/95 {
   border-color: rgb(19 59 133 / 0.95);
-}
-
-.twcss-border-primary-light {
-  --tw-border-opacity: 1;
-  border-color: rgb(247 229 229 / var(--tw-border-opacity));
-}
-
-.twcss-border-primary-light\/0 {
-  border-color: rgb(247 229 229 / 0);
-}
-
-.twcss-border-primary-light\/10 {
-  border-color: rgb(247 229 229 / 0.1);
-}
-
-.twcss-border-primary-light\/100 {
-  border-color: rgb(247 229 229 / 1);
-}
-
-.twcss-border-primary-light\/15 {
-  border-color: rgb(247 229 229 / 0.15);
-}
-
-.twcss-border-primary-light\/20 {
-  border-color: rgb(247 229 229 / 0.2);
-}
-
-.twcss-border-primary-light\/25 {
-  border-color: rgb(247 229 229 / 0.25);
-}
-
-.twcss-border-primary-light\/30 {
-  border-color: rgb(247 229 229 / 0.3);
-}
-
-.twcss-border-primary-light\/35 {
-  border-color: rgb(247 229 229 / 0.35);
-}
-
-.twcss-border-primary-light\/40 {
-  border-color: rgb(247 229 229 / 0.4);
-}
-
-.twcss-border-primary-light\/45 {
-  border-color: rgb(247 229 229 / 0.45);
-}
-
-.twcss-border-primary-light\/5 {
-  border-color: rgb(247 229 229 / 0.05);
-}
-
-.twcss-border-primary-light\/50 {
-  border-color: rgb(247 229 229 / 0.5);
-}
-
-.twcss-border-primary-light\/55 {
-  border-color: rgb(247 229 229 / 0.55);
-}
-
-.twcss-border-primary-light\/60 {
-  border-color: rgb(247 229 229 / 0.6);
-}
-
-.twcss-border-primary-light\/65 {
-  border-color: rgb(247 229 229 / 0.65);
-}
-
-.twcss-border-primary-light\/70 {
-  border-color: rgb(247 229 229 / 0.7);
-}
-
-.twcss-border-primary-light\/75 {
-  border-color: rgb(247 229 229 / 0.75);
-}
-
-.twcss-border-primary-light\/80 {
-  border-color: rgb(247 229 229 / 0.8);
-}
-
-.twcss-border-primary-light\/85 {
-  border-color: rgb(247 229 229 / 0.85);
-}
-
-.twcss-border-primary-light\/90 {
-  border-color: rgb(247 229 229 / 0.9);
-}
-
-.twcss-border-primary-light\/95 {
-  border-color: rgb(247 229 229 / 0.95);
 }
 
 .twcss-border-secondary-default {
@@ -3843,6 +3843,95 @@ video {
   background-color: rgb(146 44 44 / 0.95);
 }
 
+.twcss-bg-destructive-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(227 242 255 / var(--tw-bg-opacity));
+}
+
+.twcss-bg-destructive-light\/0 {
+  background-color: rgb(227 242 255 / 0);
+}
+
+.twcss-bg-destructive-light\/10 {
+  background-color: rgb(227 242 255 / 0.1);
+}
+
+.twcss-bg-destructive-light\/100 {
+  background-color: rgb(227 242 255 / 1);
+}
+
+.twcss-bg-destructive-light\/15 {
+  background-color: rgb(227 242 255 / 0.15);
+}
+
+.twcss-bg-destructive-light\/20 {
+  background-color: rgb(227 242 255 / 0.2);
+}
+
+.twcss-bg-destructive-light\/25 {
+  background-color: rgb(227 242 255 / 0.25);
+}
+
+.twcss-bg-destructive-light\/30 {
+  background-color: rgb(227 242 255 / 0.3);
+}
+
+.twcss-bg-destructive-light\/35 {
+  background-color: rgb(227 242 255 / 0.35);
+}
+
+.twcss-bg-destructive-light\/40 {
+  background-color: rgb(227 242 255 / 0.4);
+}
+
+.twcss-bg-destructive-light\/45 {
+  background-color: rgb(227 242 255 / 0.45);
+}
+
+.twcss-bg-destructive-light\/5 {
+  background-color: rgb(227 242 255 / 0.05);
+}
+
+.twcss-bg-destructive-light\/50 {
+  background-color: rgb(227 242 255 / 0.5);
+}
+
+.twcss-bg-destructive-light\/55 {
+  background-color: rgb(227 242 255 / 0.55);
+}
+
+.twcss-bg-destructive-light\/60 {
+  background-color: rgb(227 242 255 / 0.6);
+}
+
+.twcss-bg-destructive-light\/65 {
+  background-color: rgb(227 242 255 / 0.65);
+}
+
+.twcss-bg-destructive-light\/70 {
+  background-color: rgb(227 242 255 / 0.7);
+}
+
+.twcss-bg-destructive-light\/75 {
+  background-color: rgb(227 242 255 / 0.75);
+}
+
+.twcss-bg-destructive-light\/80 {
+  background-color: rgb(227 242 255 / 0.8);
+}
+
+.twcss-bg-destructive-light\/85 {
+  background-color: rgb(227 242 255 / 0.85);
+}
+
+.twcss-bg-destructive-light\/90 {
+  background-color: rgb(227 242 255 / 0.9);
+}
+
+.twcss-bg-destructive-light\/95 {
+  background-color: rgb(227 242 255 / 0.95);
+}
+
 .twcss-bg-foreground {
   --tw-bg-opacity: 1;
   background-color: rgb(10 10 10 / var(--tw-bg-opacity));
@@ -4479,95 +4568,6 @@ video {
 
 .twcss-bg-primary-foreground\/95 {
   background-color: rgb(19 59 133 / 0.95);
-}
-
-.twcss-bg-primary-light {
-  --tw-bg-opacity: 1;
-  background-color: rgb(247 229 229 / var(--tw-bg-opacity));
-}
-
-.twcss-bg-primary-light\/0 {
-  background-color: rgb(247 229 229 / 0);
-}
-
-.twcss-bg-primary-light\/10 {
-  background-color: rgb(247 229 229 / 0.1);
-}
-
-.twcss-bg-primary-light\/100 {
-  background-color: rgb(247 229 229 / 1);
-}
-
-.twcss-bg-primary-light\/15 {
-  background-color: rgb(247 229 229 / 0.15);
-}
-
-.twcss-bg-primary-light\/20 {
-  background-color: rgb(247 229 229 / 0.2);
-}
-
-.twcss-bg-primary-light\/25 {
-  background-color: rgb(247 229 229 / 0.25);
-}
-
-.twcss-bg-primary-light\/30 {
-  background-color: rgb(247 229 229 / 0.3);
-}
-
-.twcss-bg-primary-light\/35 {
-  background-color: rgb(247 229 229 / 0.35);
-}
-
-.twcss-bg-primary-light\/40 {
-  background-color: rgb(247 229 229 / 0.4);
-}
-
-.twcss-bg-primary-light\/45 {
-  background-color: rgb(247 229 229 / 0.45);
-}
-
-.twcss-bg-primary-light\/5 {
-  background-color: rgb(247 229 229 / 0.05);
-}
-
-.twcss-bg-primary-light\/50 {
-  background-color: rgb(247 229 229 / 0.5);
-}
-
-.twcss-bg-primary-light\/55 {
-  background-color: rgb(247 229 229 / 0.55);
-}
-
-.twcss-bg-primary-light\/60 {
-  background-color: rgb(247 229 229 / 0.6);
-}
-
-.twcss-bg-primary-light\/65 {
-  background-color: rgb(247 229 229 / 0.65);
-}
-
-.twcss-bg-primary-light\/70 {
-  background-color: rgb(247 229 229 / 0.7);
-}
-
-.twcss-bg-primary-light\/75 {
-  background-color: rgb(247 229 229 / 0.75);
-}
-
-.twcss-bg-primary-light\/80 {
-  background-color: rgb(247 229 229 / 0.8);
-}
-
-.twcss-bg-primary-light\/85 {
-  background-color: rgb(247 229 229 / 0.85);
-}
-
-.twcss-bg-primary-light\/90 {
-  background-color: rgb(247 229 229 / 0.9);
-}
-
-.twcss-bg-primary-light\/95 {
-  background-color: rgb(247 229 229 / 0.95);
 }
 
 .twcss-bg-secondary-default {
@@ -5907,6 +5907,95 @@ video {
   color: rgb(146 44 44 / 0.95);
 }
 
+.twcss-text-destructive-light {
+  --tw-text-opacity: 1;
+  color: rgb(227 242 255 / var(--tw-text-opacity));
+}
+
+.twcss-text-destructive-light\/0 {
+  color: rgb(227 242 255 / 0);
+}
+
+.twcss-text-destructive-light\/10 {
+  color: rgb(227 242 255 / 0.1);
+}
+
+.twcss-text-destructive-light\/100 {
+  color: rgb(227 242 255 / 1);
+}
+
+.twcss-text-destructive-light\/15 {
+  color: rgb(227 242 255 / 0.15);
+}
+
+.twcss-text-destructive-light\/20 {
+  color: rgb(227 242 255 / 0.2);
+}
+
+.twcss-text-destructive-light\/25 {
+  color: rgb(227 242 255 / 0.25);
+}
+
+.twcss-text-destructive-light\/30 {
+  color: rgb(227 242 255 / 0.3);
+}
+
+.twcss-text-destructive-light\/35 {
+  color: rgb(227 242 255 / 0.35);
+}
+
+.twcss-text-destructive-light\/40 {
+  color: rgb(227 242 255 / 0.4);
+}
+
+.twcss-text-destructive-light\/45 {
+  color: rgb(227 242 255 / 0.45);
+}
+
+.twcss-text-destructive-light\/5 {
+  color: rgb(227 242 255 / 0.05);
+}
+
+.twcss-text-destructive-light\/50 {
+  color: rgb(227 242 255 / 0.5);
+}
+
+.twcss-text-destructive-light\/55 {
+  color: rgb(227 242 255 / 0.55);
+}
+
+.twcss-text-destructive-light\/60 {
+  color: rgb(227 242 255 / 0.6);
+}
+
+.twcss-text-destructive-light\/65 {
+  color: rgb(227 242 255 / 0.65);
+}
+
+.twcss-text-destructive-light\/70 {
+  color: rgb(227 242 255 / 0.7);
+}
+
+.twcss-text-destructive-light\/75 {
+  color: rgb(227 242 255 / 0.75);
+}
+
+.twcss-text-destructive-light\/80 {
+  color: rgb(227 242 255 / 0.8);
+}
+
+.twcss-text-destructive-light\/85 {
+  color: rgb(227 242 255 / 0.85);
+}
+
+.twcss-text-destructive-light\/90 {
+  color: rgb(227 242 255 / 0.9);
+}
+
+.twcss-text-destructive-light\/95 {
+  color: rgb(227 242 255 / 0.95);
+}
+
 .twcss-text-foreground {
   --tw-text-opacity: 1;
   color: rgb(10 10 10 / var(--tw-text-opacity));
@@ -6548,95 +6637,6 @@ video {
 
 .twcss-text-primary-foreground\/95 {
   color: rgb(19 59 133 / 0.95);
-}
-
-.twcss-text-primary-light {
-  --tw-text-opacity: 1;
-  color: rgb(247 229 229 / var(--tw-text-opacity));
-}
-
-.twcss-text-primary-light\/0 {
-  color: rgb(247 229 229 / 0);
-}
-
-.twcss-text-primary-light\/10 {
-  color: rgb(247 229 229 / 0.1);
-}
-
-.twcss-text-primary-light\/100 {
-  color: rgb(247 229 229 / 1);
-}
-
-.twcss-text-primary-light\/15 {
-  color: rgb(247 229 229 / 0.15);
-}
-
-.twcss-text-primary-light\/20 {
-  color: rgb(247 229 229 / 0.2);
-}
-
-.twcss-text-primary-light\/25 {
-  color: rgb(247 229 229 / 0.25);
-}
-
-.twcss-text-primary-light\/30 {
-  color: rgb(247 229 229 / 0.3);
-}
-
-.twcss-text-primary-light\/35 {
-  color: rgb(247 229 229 / 0.35);
-}
-
-.twcss-text-primary-light\/40 {
-  color: rgb(247 229 229 / 0.4);
-}
-
-.twcss-text-primary-light\/45 {
-  color: rgb(247 229 229 / 0.45);
-}
-
-.twcss-text-primary-light\/5 {
-  color: rgb(247 229 229 / 0.05);
-}
-
-.twcss-text-primary-light\/50 {
-  color: rgb(247 229 229 / 0.5);
-}
-
-.twcss-text-primary-light\/55 {
-  color: rgb(247 229 229 / 0.55);
-}
-
-.twcss-text-primary-light\/60 {
-  color: rgb(247 229 229 / 0.6);
-}
-
-.twcss-text-primary-light\/65 {
-  color: rgb(247 229 229 / 0.65);
-}
-
-.twcss-text-primary-light\/70 {
-  color: rgb(247 229 229 / 0.7);
-}
-
-.twcss-text-primary-light\/75 {
-  color: rgb(247 229 229 / 0.75);
-}
-
-.twcss-text-primary-light\/80 {
-  color: rgb(247 229 229 / 0.8);
-}
-
-.twcss-text-primary-light\/85 {
-  color: rgb(247 229 229 / 0.85);
-}
-
-.twcss-text-primary-light\/90 {
-  color: rgb(247 229 229 / 0.9);
-}
-
-.twcss-text-primary-light\/95 {
-  color: rgb(247 229 229 / 0.95);
 }
 
 .twcss-text-red-500 {
@@ -7634,6 +7634,95 @@ video {
   --tw-ring-color: rgb(146 44 44 / 0.95);
 }
 
+.twcss-ring-destructive-light {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(227 242 255 / var(--tw-ring-opacity));
+}
+
+.twcss-ring-destructive-light\/0 {
+  --tw-ring-color: rgb(227 242 255 / 0);
+}
+
+.twcss-ring-destructive-light\/10 {
+  --tw-ring-color: rgb(227 242 255 / 0.1);
+}
+
+.twcss-ring-destructive-light\/100 {
+  --tw-ring-color: rgb(227 242 255 / 1);
+}
+
+.twcss-ring-destructive-light\/15 {
+  --tw-ring-color: rgb(227 242 255 / 0.15);
+}
+
+.twcss-ring-destructive-light\/20 {
+  --tw-ring-color: rgb(227 242 255 / 0.2);
+}
+
+.twcss-ring-destructive-light\/25 {
+  --tw-ring-color: rgb(227 242 255 / 0.25);
+}
+
+.twcss-ring-destructive-light\/30 {
+  --tw-ring-color: rgb(227 242 255 / 0.3);
+}
+
+.twcss-ring-destructive-light\/35 {
+  --tw-ring-color: rgb(227 242 255 / 0.35);
+}
+
+.twcss-ring-destructive-light\/40 {
+  --tw-ring-color: rgb(227 242 255 / 0.4);
+}
+
+.twcss-ring-destructive-light\/45 {
+  --tw-ring-color: rgb(227 242 255 / 0.45);
+}
+
+.twcss-ring-destructive-light\/5 {
+  --tw-ring-color: rgb(227 242 255 / 0.05);
+}
+
+.twcss-ring-destructive-light\/50 {
+  --tw-ring-color: rgb(227 242 255 / 0.5);
+}
+
+.twcss-ring-destructive-light\/55 {
+  --tw-ring-color: rgb(227 242 255 / 0.55);
+}
+
+.twcss-ring-destructive-light\/60 {
+  --tw-ring-color: rgb(227 242 255 / 0.6);
+}
+
+.twcss-ring-destructive-light\/65 {
+  --tw-ring-color: rgb(227 242 255 / 0.65);
+}
+
+.twcss-ring-destructive-light\/70 {
+  --tw-ring-color: rgb(227 242 255 / 0.7);
+}
+
+.twcss-ring-destructive-light\/75 {
+  --tw-ring-color: rgb(227 242 255 / 0.75);
+}
+
+.twcss-ring-destructive-light\/80 {
+  --tw-ring-color: rgb(227 242 255 / 0.8);
+}
+
+.twcss-ring-destructive-light\/85 {
+  --tw-ring-color: rgb(227 242 255 / 0.85);
+}
+
+.twcss-ring-destructive-light\/90 {
+  --tw-ring-color: rgb(227 242 255 / 0.9);
+}
+
+.twcss-ring-destructive-light\/95 {
+  --tw-ring-color: rgb(227 242 255 / 0.95);
+}
+
 .twcss-ring-foreground {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(10 10 10 / var(--tw-ring-opacity));
@@ -8255,95 +8344,6 @@ video {
 
 .twcss-ring-primary-foreground\/95 {
   --tw-ring-color: rgb(19 59 133 / 0.95);
-}
-
-.twcss-ring-primary-light {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(247 229 229 / var(--tw-ring-opacity));
-}
-
-.twcss-ring-primary-light\/0 {
-  --tw-ring-color: rgb(247 229 229 / 0);
-}
-
-.twcss-ring-primary-light\/10 {
-  --tw-ring-color: rgb(247 229 229 / 0.1);
-}
-
-.twcss-ring-primary-light\/100 {
-  --tw-ring-color: rgb(247 229 229 / 1);
-}
-
-.twcss-ring-primary-light\/15 {
-  --tw-ring-color: rgb(247 229 229 / 0.15);
-}
-
-.twcss-ring-primary-light\/20 {
-  --tw-ring-color: rgb(247 229 229 / 0.2);
-}
-
-.twcss-ring-primary-light\/25 {
-  --tw-ring-color: rgb(247 229 229 / 0.25);
-}
-
-.twcss-ring-primary-light\/30 {
-  --tw-ring-color: rgb(247 229 229 / 0.3);
-}
-
-.twcss-ring-primary-light\/35 {
-  --tw-ring-color: rgb(247 229 229 / 0.35);
-}
-
-.twcss-ring-primary-light\/40 {
-  --tw-ring-color: rgb(247 229 229 / 0.4);
-}
-
-.twcss-ring-primary-light\/45 {
-  --tw-ring-color: rgb(247 229 229 / 0.45);
-}
-
-.twcss-ring-primary-light\/5 {
-  --tw-ring-color: rgb(247 229 229 / 0.05);
-}
-
-.twcss-ring-primary-light\/50 {
-  --tw-ring-color: rgb(247 229 229 / 0.5);
-}
-
-.twcss-ring-primary-light\/55 {
-  --tw-ring-color: rgb(247 229 229 / 0.55);
-}
-
-.twcss-ring-primary-light\/60 {
-  --tw-ring-color: rgb(247 229 229 / 0.6);
-}
-
-.twcss-ring-primary-light\/65 {
-  --tw-ring-color: rgb(247 229 229 / 0.65);
-}
-
-.twcss-ring-primary-light\/70 {
-  --tw-ring-color: rgb(247 229 229 / 0.7);
-}
-
-.twcss-ring-primary-light\/75 {
-  --tw-ring-color: rgb(247 229 229 / 0.75);
-}
-
-.twcss-ring-primary-light\/80 {
-  --tw-ring-color: rgb(247 229 229 / 0.8);
-}
-
-.twcss-ring-primary-light\/85 {
-  --tw-ring-color: rgb(247 229 229 / 0.85);
-}
-
-.twcss-ring-primary-light\/90 {
-  --tw-ring-color: rgb(247 229 229 / 0.9);
-}
-
-.twcss-ring-primary-light\/95 {
-  --tw-ring-color: rgb(247 229 229 / 0.95);
 }
 
 .twcss-ring-secondary-default {
