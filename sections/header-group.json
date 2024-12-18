@@ -16,6 +16,7 @@
       "settings": {
         "color_scheme": "scheme-724c636d-524f-45cc-8653-dd35022bf3de",
         "show_line_separator": true,
+        "show_company_location": true,
         "menu": "main-menu",
         "menu_icons": "{\"quick-order\":\"icon-quick-order.svg\",\"price-list\":\"icon-price-list.svg\",\"orders\":\"icon-orders.svg\",\"quotes\":\"icon-quotes.svg\"}",
         "menu_type": "dropdown"
@@ -37,7 +38,7 @@
             "menu_1_title": "Profiles & Addresses",
             "account_menu_1": "customer-header-account-profiles-addresses",
             "menu_2_title": "Orders",
-            "account_menu_2": "customer-header-account-profiles-addresses",
+            "account_menu_2": "customer-account-order-menu",
             "sign_out_text": "Sign Out"
           }
         }
