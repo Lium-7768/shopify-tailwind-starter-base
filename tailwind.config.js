@@ -35,7 +35,8 @@ module.exports = {
         },
         destructive: {
           default: '#ff0000',
-          foreground: '#ffffff',
+          foreground: '#922c2c',
+          light: '#f7b7b7',
         },
         muted: {
           default: '#EBEBEB',
