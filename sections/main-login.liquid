@@ -94,6 +94,7 @@
     {%- endif -%}
 
     {%- form 'customer_login', novalidate: 'novalidate' -%}
+      <input type='hidden' name='return_to' value='{{ routes.root_url }}'>
       <div class='twcss-p-5 twcss-bg-destructive-light twcss-rounded twcss-text-destructive-foreground twcss-bg-opacity-50 twcss-text-left'>
         {%- if form.errors -%}
           <h2
