@@ -30,7 +30,7 @@
     {%- form 'recover_customer_password' -%}
       {% assign recover_success = form.posted_successfully? %}
       <div class='twcss-mt-7'>
-        <label for='RecoverEmail' class='twcss-block twcss-text-accent-default twcss-mb-2'>
+        <label for='RecoverEmail' class='twcss-block twcss-text-accent-default twcss-text-left twcss-mb-2'>
           {{ 'customer.login_page.email' | t }}
         </label>
         <input
