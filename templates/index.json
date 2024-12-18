@@ -236,24 +236,24 @@
         "item_RbCPY6": {
           "type": "item",
           "settings": {
-            "logo": "shopify://shop_images/Bathroom_Sink_Faucets.webp",
-            "name": "Bathroom Sink Faucets",
+            "logo": "shopify://shop_images/Bathroom_Sink_Faucet_Valves.webp",
+            "name": "Bathroom Sink Faucet Valves",
             "link": "shopify://collections"
           }
         },
         "item_a68Ep8": {
           "type": "item",
           "settings": {
-            "logo": "shopify://shop_images/Pull_Out_Kitchen_Faucets.webp",
-            "name": "Pull Out Kitchen Faucets",
+            "logo": "shopify://shop_images/Pressure_Balancing_Valves.webp",
+            "name": "Pressure Balancing Valves",
             "link": "shopify://collections"
           }
         },
         "item_D79LF4": {
           "type": "item",
           "settings": {
-            "logo": "shopify://shop_images/brand-lp.png",
-            "name": "LP",
+            "logo": "shopify://shop_images/Transfer_Diverter_Valves.webp",
+            "name": "Transfer & Diverter Valves",
             "link": "shopify://collections"
           }
         }
