@@ -118,6 +118,9 @@
       {%- endif -%}
 
       <div class='twcss-mt-8'>
+        <label for='CustomerEmail' class='twcss-block twcss-text-sm twcss-text-accent-default twcss-mt-2'>
+          {{ 'customer.login_page.email' | t }}
+        </label>
         <input
           type='email'
           name='customer[email]'
@@ -131,13 +134,13 @@
           {% endif %}
           placeholder='{{ 'customer.login_page.email' | t }}'
         >
-        <label for='CustomerEmail' class='twcss-block twcss-text-sm twcss-text-accent-default twcss-mt-2'>
-          {{ 'customer.login_page.email' | t }}
-        </label>
       </div>
 
       {%- if form.password_needed -%}
         <div class='twcss-mt-8'>
+          <label for='CustomerPassword' class='twcss-block twcss-text-sm twcss-text-accent-default twcss-mt-2'>
+            {{ 'customer.login_page.password' | t }}
+          </label>
           <input
             type='password'
             value=''
@@ -150,9 +153,6 @@
             {% endif %}
             placeholder='{{ 'customer.login_page.password' | t }}'
           >
-          <label for='CustomerPassword' class='twcss-block twcss-text-sm twcss-text-accent-default twcss-mt-2'>
-            {{ 'customer.login_page.password' | t }}
-          </label>
         </div>
 
         <a href='#recover' class='twcss-text-accent-default hover:twcss-underline'>
