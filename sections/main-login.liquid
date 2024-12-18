@@ -1,178 +1,186 @@
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-
 {%- if section.settings.enable_shop_login_button == false -%}
   {%- assign hide_shop_login_button = true -%}
 {%- endif -%}
 
-<div class='twcss-flex twcss-flex-col twcss-items-center twcss-max-w-[750px] twcss-mx-auto twcss-text-accent-default section-{{ section.id }}-padding'>
-  <h1 id='recover' tabindex='-1' class='twcss-text-2xl twcss-font-bold twcss-mb-4'>
-    {{ 'customer.recover_password.title' | t }}
-  </h1>
-  <div class='twcss-w-full twcss-max-w-[450px]'>
-    <p class='twcss-mb-4'>
-      {{ 'customer.recover_password.subtext' | t }}
-    </p>
+<div class='twcss-px-4 twcss-py-8 md:twcss-py-12'>
+  <div class='twcss-max-w-md twcss-mx-auto twcss-space-y-8'>
+    <h1 id='recover' tabindex='-1' class='twcss-text-2xl twcss-font-heading twcss-text-accent-default twcss-mb-4'>
+      {{ 'customer.recover_password.title' | t }}
+    </h1>
+    <div class='twcss-space-y-4'>
+      <p class='twcss-text-accent-default'>
+        {{ 'customer.recover_password.subtext' | t }}
+      </p>
 
-    {%- form 'recover_customer_password' -%}
-      {% assign recover_success = form.posted_successfully? %}
-      <div class='twcss-mb-4'>
-        <input
-          type='email'
-          value=''
-          name='email'
-          id='RecoverEmail'
-          autocorrect='off'
-          autocapitalize='off'
-          autocomplete='email'
-          {% if form.errors %}
-            aria-invalid='true'
-            aria-describedby='RecoverEmail-email-error'
-            autofocus
-          {% endif %}
-          placeholder='{{ 'customer.login_page.email' | t }}'
-          class='twcss-w-full twcss-p-2 twcss-border twcss-border-input twcss-rounded'
-        >
-        <label for='RecoverEmail' class='twcss-block twcss-mt-1 twcss-text-sm'>
-          {{ 'customer.login_page.email' | t }}
-        </label>
-      </div>
-      {%- if form.errors -%}
-        <small
-          id='RecoverEmail-email-error'
-          class='twcss-text-destructive-default twcss-flex twcss-items-center twcss-mb-4'
-        >
-          <span class='twcss-mr-2'>
-            {{- 'icon-error.svg' | inline_asset_content -}}
-          </span>
-          {{ form.errors.messages.form }}
-        </small>
-      {%- endif -%}
-
-      <button class='twcss-w-full twcss-bg-primary-default twcss-text-white twcss-py-2 twcss-px-4 twcss-rounded twcss-mb-4'>
-        {{ 'customer.login_page.submit' | t }}
-      </button>
-
-      <a href='#login' class='twcss-block twcss-text-center twcss-text-primary-default'>
-        {{ 'customer.login_page.cancel' | t }}
-      </a>
-    {%- endform -%}
-  </div>
-
-  <h1 id='login' tabindex='-1' class='twcss-text-2xl twcss-font-bold twcss-mb-4'>
-    {{ 'customer.login_page.title' | t }}
-  </h1>
-  <div class='twcss-w-full twcss-max-w-[450px]'>
-    {%- if recover_success == true -%}
-      <h3 class='twcss-flex twcss-items-center twcss-text-primary-default twcss-mb-4' tabindex='-1' autofocus>
-        <span class='twcss-mr-2'>
-          {{- 'icon-success.svg' | inline_asset_content -}}
-        </span>
-        {{ 'customer.recover_password.success' | t }}
-      </h3>
-    {%- endif -%}
-    {%- form 'customer_login', novalidate: 'novalidate' -%}
-      {%- if form.errors -%}
-        <h2 class='twcss-flex twcss-items-center twcss-text-destructive-default twcss-mb-4' tabindex='-1' autofocus>
-          <span class='twcss-visually-hidden'>{{ 'accessibility.error' | t }} </span>
-          <span class='twcss-mr-2'>
-            {{- 'icon-error.svg' | inline_asset_content -}}
-          </span>
-          {{ 'templates.contact.form.error_heading' | t }}
-        </h2>
-        <div class='twcss-text-destructive-default twcss-mb-4'>
-          {{ form.errors | default_errors }}
-        </div>
-      {%- endif -%}
-
-      {%- if shop.features.login_with_shop_classic_customer_accounts? -%}
-        <section name='sign-in-with-shop-provider' class='twcss-mb-4'>
-          {{ shop | login_button: hide_button: hide_shop_login_button }}
-
-          {%- unless hide_shop_login_button -%}
-            <p class='twcss-text-center twcss-my-4'>
-              {{ 'customer.login_page.alternate_provider_separator' | t }}
-            </p>
-          {%- endunless -%}
-        </section>
-      {%- endif -%}
-
-      <div class='twcss-mb-4'>
-        <input
-          type='email'
-          name='customer[email]'
-          id='CustomerEmail'
-          autocomplete='email'
-          autocorrect='off'
-          autocapitalize='off'
-          {% if form.errors contains 'form' %}
-            aria-invalid='true'
-          {% endif %}
-          placeholder='{{ 'customer.login_page.email' | t }}'
-          class='twcss-w-full twcss-p-2 twcss-border twcss-border-input twcss-rounded'
-        >
-        <label for='CustomerEmail' class='twcss-block twcss-mt-1 twcss-text-sm'>
-          {{ 'customer.login_page.email' | t }}
-        </label>
-      </div>
-
-      {%- if form.password_needed -%}
-        <div class='twcss-mb-4'>
-          <input
-            type='password'
-            value=''
-            name='customer[password]'
-            id='CustomerPassword'
-            autocomplete='current-password'
-            {% if form.errors contains 'form' %}
-              aria-invalid='true'
-            {% endif %}
-            placeholder='{{ 'customer.login_page.password' | t }}'
-            class='twcss-w-full twcss-p-2 twcss-border twcss-border-input twcss-rounded'
-          >
-          <label for='CustomerPassword' class='twcss-block twcss-mt-1 twcss-text-sm'>
-            {{ 'customer.login_page.password' | t }}
-          </label>
+      {%- form 'recover_customer_password' -%}
+        {% assign recover_success = form.posted_successfully? %}
+        <div class='twcss-space-y-2'>
+          <div class='twcss-relative'>
+            <input
+              type='email'
+              value=''
+              name='email'
+              id='RecoverEmail'
+              autocorrect='off'
+              autocapitalize='off'
+              autocomplete='email'
+              class='twcss-w-full twcss-px-4 twcss-py-2 twcss-border twcss-border-input twcss-rounded-md focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-primary-default'
+              {% if form.errors %}
+                aria-invalid='true'
+                aria-describedby='RecoverEmail-email-error'
+                autofocus
+              {% endif %}
+              placeholder='{{ 'customer.login_page.email' | t }}'
+            >
+            <label
+              for='RecoverEmail'
+              class='twcss-absolute twcss-left-4 twcss-top-2 twcss-text-muted-foreground twcss-text-sm'
+            >
+              {{ 'customer.login_page.email' | t }}
+            </label>
+          </div>
+          {%- if form.errors -%}
+            <small
+              id='RecoverEmail-email-error'
+              class='twcss-text-destructive-default twcss-flex twcss-items-center twcss-gap-2'
+            >
+              <span class='twcss-inline-flex'>
+                {{- 'icon-error.svg' | inline_asset_content -}}
+              </span>
+              {{ form.errors.messages.form }}
+            </small>
+          {%- endif -%}
         </div>
 
-        <a href='#recover' class='twcss-block twcss-text-center twcss-text-primary-default twcss-mb-4'>
-          {{ 'customer.login_page.forgot_password' | t }}
-        </a>
-      {%- endif -%}
+        <div class='twcss-flex twcss-items-center twcss-justify-between twcss-mt-6'>
+          <button class='twcss-bg-primary-default hover:twcss-bg-primary-foreground twcss-text-white twcss-px-6 twcss-py-2 twcss-rounded-md twcss-transition-colors'>
+            {{ 'customer.login_page.submit' | t }}
+          </button>
 
-      <button class='twcss-w-full twcss-bg-primary-default twcss-text-white twcss-py-2 twcss-px-4 twcss-rounded twcss-mb-4'>
-        {{ 'customer.login_page.sign_in' | t }}
-      </button>
-
-      <a href='{{ routes.account_register_url }}' class='twcss-block twcss-text-center twcss-text-primary-default'>
-        {{ 'customer.login_page.create_account' | t }}
-      </a>
-    {%- endform -%}
-  </div>
-
-  {%- if shop.checkout.guest_login -%}
-    <div class='twcss-w-full twcss-max-w-[450px] twcss-mt-8'>
-      <hr class='twcss-my-4'>
-      <h2 class='twcss-text-xl twcss-font-bold twcss-mb-4'>{{ 'customer.login_page.guest_title' | t }}</h2>
-
-      {%- form 'guest_login' -%}
-        <button class='twcss-w-full twcss-bg-primary-default twcss-text-white twcss-py-2 twcss-px-4 twcss-rounded'>
-          {{ 'customer.login_page.guest_continue' | t }}
-        </button>
+          <a href='#login' class='twcss-text-accent-default hover:twcss-underline'>
+            {{ 'customer.login_page.cancel' | t }}
+          </a>
+        </div>
       {%- endform -%}
     </div>
-  {%- endif -%}
+
+    <h1 id='login' tabindex='-1' class='twcss-text-2xl twcss-font-heading twcss-text-accent-default twcss-mb-4'>
+      {{ 'customer.login_page.title' | t }}
+    </h1>
+    <div class='twcss-space-y-6'>
+      {%- if recover_success == true -%}
+        <h3 class='twcss-text-primary-default twcss-flex twcss-items-center twcss-gap-2' tabindex='-1' autofocus>
+          <span class='twcss-inline-flex'>
+            {{- 'icon-success.svg' | inline_asset_content -}}
+          </span>
+          {{ 'customer.recover_password.success' | t }}
+        </h3>
+      {%- endif -%}
+
+      {%- form 'customer_login', novalidate: 'novalidate' -%}
+        {%- if form.errors -%}
+          <h2 class='twcss-text-destructive-default twcss-flex twcss-items-center twcss-gap-2' tabindex='-1' autofocus>
+            <span class='twcss-sr-only'>{{ 'accessibility.error' | t }} </span>
+            <span class='twcss-inline-flex'>
+              {{- 'icon-error.svg' | inline_asset_content -}}
+            </span>
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h2>
+          <div class='twcss-text-destructive-default'>
+            {{ form.errors | default_errors }}
+          </div>
+        {%- endif -%}
+
+        {%- if shop.features.login_with_shop_classic_customer_accounts? -%}
+          <section name='sign-in-with-shop-provider' class='twcss-space-y-4'>
+            {{ shop | login_button: hide_button: hide_shop_login_button }}
+
+            {%- unless hide_shop_login_button -%}
+              <p class='twcss-text-center twcss-text-accent-default'>
+                {{ 'customer.login_page.alternate_provider_separator' | t }}
+              </p>
+            {%- endunless -%}
+          </section>
+        {%- endif -%}
+
+        <div class='twcss-space-y-4'>
+          <div class='twcss-relative'>
+            <input
+              type='email'
+              name='customer[email]'
+              id='CustomerEmail'
+              autocomplete='email'
+              autocorrect='off'
+              autocapitalize='off'
+              class='twcss-w-full twcss-px-4 twcss-py-2 twcss-border twcss-border-input twcss-rounded-md focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-primary-default'
+              {% if form.errors contains 'form' %}
+                aria-invalid='true'
+              {% endif %}
+              placeholder='{{ 'customer.login_page.email' | t }}'
+            >
+            <label
+              for='CustomerEmail'
+              class='twcss-absolute twcss-left-4 twcss-top-2 twcss-text-muted-foreground twcss-text-sm'
+            >
+              {{ 'customer.login_page.email' | t }}
+            </label>
+          </div>
+
+          {%- if form.password_needed -%}
+            <div class='twcss-relative'>
+              <input
+                type='password'
+                value=''
+                name='customer[password]'
+                id='CustomerPassword'
+                autocomplete='current-password'
+                class='twcss-w-full twcss-px-4 twcss-py-2 twcss-border twcss-border-input twcss-rounded-md focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-primary-default'
+                {% if form.errors contains 'form' %}
+                  aria-invalid='true'
+                {% endif %}
+                placeholder='{{ 'customer.login_page.password' | t }}'
+              >
+              <label
+                for='CustomerPassword'
+                class='twcss-absolute twcss-left-4 twcss-top-2 twcss-text-muted-foreground twcss-text-sm'
+              >
+                {{ 'customer.login_page.password' | t }}
+              </label>
+            </div>
+
+            <a href='#recover' class='twcss-text-accent-default hover:twcss-underline twcss-block twcss-text-sm'>
+              {{ 'customer.login_page.forgot_password' | t }}
+            </a>
+          {%- endif -%}
+
+          <button class='twcss-w-full twcss-bg-primary-default hover:twcss-bg-primary-foreground twcss-text-white twcss-px-6 twcss-py-2 twcss-rounded-md twcss-transition-colors'>
+            {{ 'customer.login_page.sign_in' | t }}
+          </button>
+
+          <a
+            href='{{ routes.account_register_url }}'
+            class='twcss-block twcss-text-center twcss-text-accent-default hover:twcss-underline'
+          >
+            {{ 'customer.login_page.create_account' | t }}
+          </a>
+        </div>
+      {%- endform -%}
+    </div>
+
+    {%- if shop.checkout.guest_login -%}
+      <div class='twcss-mt-8 twcss-pt-8 twcss-border-t twcss-border-input'>
+        <h2 class='twcss-text-xl twcss-font-heading twcss-text-accent-default twcss-mb-4'>
+          {{ 'customer.login_page.guest_title' | t }}
+        </h2>
+
+        {%- form 'guest_login' -%}
+          <button class='twcss-w-full twcss-bg-primary-default hover:twcss-bg-primary-foreground twcss-text-white twcss-px-6 twcss-py-2 twcss-rounded-md twcss-transition-colors'>
+            {{ 'customer.login_page.guest_continue' | t }}
+          </button>
+        {%- endform -%}
+      </div>
+    {%- endif -%}
+  </div>
 </div>
 
 {% schema %}
@@ -184,30 +192,6 @@
       "id": "enable_shop_login_button",
       "label": "t:sections.main-login.shop_login_button.enable",
       "default": true
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
     }
   ]
 }
