@@ -8400,6 +8400,11 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:twcss-border-primary-default:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(23 70 162 / var(--tw-border-opacity));
+}
+
 .hover\:twcss-bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
