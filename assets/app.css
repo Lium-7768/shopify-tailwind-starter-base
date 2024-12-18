@@ -4935,6 +4935,10 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.twcss-bg-opacity-90 {
+  --tw-bg-opacity: 0.9;
+}
+
 .twcss-bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -7007,10 +7011,6 @@ video {
 .twcss-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.twcss-opacity-5 {
-  opacity: 0.05;
 }
 
 .twcss-shadow-lg {
