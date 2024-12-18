@@ -11,6 +11,8 @@ class PredictiveSearch extends SearchForm {
     this.abortController = new AbortController();
     this.searchTerm = '';
 
+    this.closeResults(true);
+
     this.setupEventListeners();
   }
 
