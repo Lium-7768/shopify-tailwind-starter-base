@@ -147,10 +147,18 @@
               "category_title": "Operational Products",
               "menu": "customer-header-products-drawer"
             }
+          },
+          "category_DgVyzA": {
+            "type": "category",
+            "settings": {
+              "category_title": "Logistics Services",
+              "menu": "product-logistics-services-menu"
+            }
           }
         },
         "block_order": [
-          "category_ygJgEG"
+          "category_ygJgEG",
+          "category_DgVyzA"
         ],
         "settings": {
           "drawer_logo": "shopify://shop_images/Header_logo_47b76850-8a9c-4e58-9dae-3917ee392a4e.svg",
