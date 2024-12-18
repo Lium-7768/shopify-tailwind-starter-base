@@ -29,8 +29,8 @@
 
     {%- form 'recover_customer_password' -%}
       {% assign recover_success = form.posted_successfully? %}
-      <div class='twcss-mt-8'>
-        <label for='RecoverEmail' class='twcss-block twcss-text-sm twcss-text-accent-default twcss-mb-2'>
+      <div class='twcss-mt-7'>
+        <label for='RecoverEmail' class='twcss-block twcss-text-accent-default twcss-mb-2'>
           {{ 'customer.login_page.email' | t }}
         </label>
         <input
@@ -62,11 +62,11 @@
         </small>
       {%- endif -%}
 
-      <button class='twcss-w-full twcss-bg-primary-default hover:twcss-bg-primary-foreground twcss-text-white twcss-py-3 twcss-px-6 twcss-rounded twcss-mt-8 twcss-mb-4'>
+      <button class='twcss-w-full twcss-bg-primary-default hover:twcss-bg-primary-foreground twcss-text-white twcss-py-3 twcss-px-6 twcss-rounded twcss-mt-7 twcss-mb-4'>
         {{ 'customer.login_page.submit' | t }}
       </button>
 
-      <a href='#login' class='twcss-text-accent-default hover:twcss-underline'>
+      <a href='#login' class='twcss-text-accent-default twcss-mt-7 hover:twcss-underline'>
         {{ 'customer.login_page.cancel' | t }}
       </a>
     {%- endform -%}
@@ -117,10 +117,10 @@
         </section>
       {%- endif -%}
 
-      <div class='twcss-mt-8'>
+      <div class='twcss-mt-7'>
         <label
           for='CustomerEmail'
-          class='twcss-block twcss-text-sm twcss-text-left twcss-text-accent-default twcss-mb-2'
+          class='twcss-block twcss-text-left twcss-text-accent-default twcss-mb-2'
         >
           {{ 'customer.login_page.email' | t }}
         </label>
@@ -140,10 +140,10 @@
       </div>
 
       {%- if form.password_needed -%}
-        <div class='twcss-mt-8'>
+        <div class='twcss-mt-7'>
           <label
             for='CustomerPassword'
-            class='twcss-block twcss-text-sm twcss-text-left twcss-text-accent-default twcss-mb-2'
+            class='twcss-block twcss-text-left twcss-text-accent-default twcss-mb-2'
           >
             {{ 'customer.login_page.password' | t }}
           </label>
@@ -166,7 +166,7 @@
         </a>
       {%- endif -%}
 
-      <button class='twcss-w-full twcss-bg-primary-default hover:twcss-bg-primary-foreground twcss-text-white twcss-py-3 twcss-px-6 twcss-rounded twcss-mt-8 twcss-mb-4'>
+      <button class='twcss-w-full twcss-bg-primary-default hover:twcss-bg-primary-foreground twcss-text-white twcss-py-3 twcss-px-6 twcss-rounded twcss-mt-7 twcss-mb-4'>
         {{ 'customer.login_page.sign_in' | t }}
       </button>
 
@@ -177,7 +177,7 @@
   </div>
 
   {%- if shop.checkout.guest_login -%}
-    <div class='twcss-mt-8'>
+    <div class='twcss-mt-7'>
       <hr class='twcss-border-input twcss-my-8'>
       <h2 class='twcss-text-accent-default twcss-text-xl twcss-mb-4'>{{ 'customer.login_page.guest_title' | t }}</h2>
 
