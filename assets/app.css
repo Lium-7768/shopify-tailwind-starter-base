@@ -1222,6 +1222,10 @@ video {
   align-items: stretch;
 }
 
+.twcss-justify-start {
+  justify-content: flex-start;
+}
+
 .twcss-justify-end {
   justify-content: flex-end;
 }
@@ -7003,6 +7007,10 @@ video {
 .twcss-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.twcss-opacity-5 {
+  opacity: 0.05;
 }
 
 .twcss-shadow-lg {
