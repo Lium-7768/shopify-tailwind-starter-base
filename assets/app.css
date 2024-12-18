@@ -773,6 +773,10 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.twcss-mb-7 {
+  margin-bottom: 1.75rem;
+}
+
 .twcss-ml-1 {
   margin-left: 0.25rem;
 }
@@ -4936,6 +4940,10 @@ video {
 
 .twcss-pt-5 {
   padding-top: 1.25rem;
+}
+
+.twcss-text-left {
+  text-align: left;
 }
 
 .twcss-text-center {
