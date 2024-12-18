@@ -141,12 +141,17 @@
 
       {%- if form.password_needed -%}
         <div class='twcss-my-7'>
-          <label
-            for='CustomerPassword'
-            class='twcss-block twcss-text-left twcss-text-accent-default twcss-mb-2'
-          >
-            {{ 'customer.login_page.password' | t }}
-          </label>
+          <div class='twcss-flex twcss-flex-row twcss-gap-4 twcss-items-center twcss-justify-between'>
+            <label
+              for='CustomerPassword'
+              class='twcss-block twcss-text-left twcss-text-accent-default twcss-mb-2'
+            >
+              {{ 'customer.login_page.password' | t }}
+            </label>
+            <a href='#recover' class='twcss-text-primary-default hover:twcss-underline'>
+              {{ 'customer.login_page.forgot_password' | t }}
+            </a>
+          </div>
           <input
             type='password'
             value=''
@@ -160,10 +165,6 @@
             placeholder='{{ 'customer.login_page.password' | t }}'
           >
         </div>
-
-        <a href='#recover' class='twcss-text-primary-default hover:twcss-underline'>
-          {{ 'customer.login_page.forgot_password' | t }}
-        </a>
       {%- endif -%}
 
       <div class='twcss-flex twcss-flex-row twcss-gap-4 twcss-items-center twcss-justify-between twcss-mt-7'>
