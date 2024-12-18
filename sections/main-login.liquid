@@ -84,25 +84,29 @@
         tabindex='-1'
         autofocus
       >
-        <span class='twcss-mr-2'>
-          {{- 'icon-success.svg' | inline_asset_content -}}
-        </span>
+        {% comment %}
+          <span class='twcss-mr-2'>
+            {{- 'icon-success.svg' | inline_asset_content -}}
+          </span>
+        {% endcomment %}
         {{ 'customer.recover_password.success' | t }}
       </h3>
     {%- endif -%}
 
     {%- form 'customer_login', novalidate: 'novalidate' -%}
-      <div class='twcss-p-5 twcss-bg-destructive-light twcss-rounded twcss-text-destructive-foreground'>
+      <div class='twcss-p-5 twcss-bg-destructive-light twcss-rounded twcss-text-destructive-foreground twcss-text-left'>
         {%- if form.errors -%}
           <h2
-            class='twcss-flex twcss-items-center twcss-justify-center twcss-mb-6'
+            class='twcss-flex twcss-items-center twcss-justify-center twcss-mb-6 twcss-text-left twcss-text-base'
             tabindex='-1'
             autofocus
           >
-            <span class='twcss-sr-only'>{{ 'accessibility.error' | t }} </span>
-            <span class='twcss-mr-2'>
-              {{- 'icon-error.svg' | inline_asset_content -}}
-            </span>
+            {% comment %} <span class='twcss-sr-only'>{{ 'accessibility.error' | t }} </span> {% endcomment %}
+            {% comment %}
+              <span class='twcss-mr-2'>
+                {{- 'icon-error.svg' | inline_asset_content -}}
+              </span>
+            {% endcomment %}
             {{ 'templates.contact.form.error_heading' | t }}
           </h2>
           {{ form.errors | default_errors }}
