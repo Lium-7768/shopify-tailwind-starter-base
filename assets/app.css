@@ -711,6 +711,11 @@ video {
   margin-bottom: 0.25rem;
 }
 
+.twcss-my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .twcss-my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -1072,6 +1077,10 @@ video {
 
 .twcss-max-w-\[285px\] {
   max-width: 285px;
+}
+
+.twcss-max-w-\[33\.4rem\] {
+  max-width: 33.4rem;
 }
 
 .twcss-max-w-full {
@@ -2155,6 +2164,11 @@ video {
 .twcss-border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
+.twcss-border-input {
+  --tw-border-opacity: 1;
+  border-color: rgb(224 224 224 / var(--tw-border-opacity));
 }
 
 .twcss-border-muted-default {
@@ -4982,6 +4996,11 @@ video {
 .twcss-text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.twcss-text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .twcss-text-xs {
@@ -8379,6 +8398,11 @@ video {
   background-color: rgb(234 88 12 / var(--tw-bg-opacity));
 }
 
+.hover\:twcss-bg-primary-foreground:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(19 59 133 / var(--tw-bg-opacity));
+}
+
 .hover\:twcss-bg-secondary-default:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(95 157 247 / var(--tw-bg-opacity));
@@ -8420,9 +8444,20 @@ video {
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
+.focus\:twcss-ring-1:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
 .focus\:twcss-ring-blue-500:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
+}
+
+.focus\:twcss-ring-ring:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(26 26 26 / var(--tw-ring-opacity));
 }
 
 .focus\:twcss-ring-offset-0:focus {
@@ -8484,6 +8519,10 @@ video {
 
   .md\:twcss-max-w-7xl {
     max-width: 80rem;
+  }
+
+  .md\:twcss-max-w-\[47\.8rem\] {
+    max-width: 47.8rem;
   }
 
   .md\:twcss-max-w-full {
