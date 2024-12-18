@@ -1,5 +1,5 @@
-<section class="md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto twcss-px-4 twcss-py-10">
-  <div class="twcss-relative twcss-max-w-sm md:twcss-max-w-full">
+<section class='md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto twcss-px-4 twcss-py-10 {% if customer.current_location.shipping_address.address1 == blank %}twcss-hidden{% endif %}'>
+  <div class='twcss-relative twcss-max-w-sm md:twcss-max-w-full'>
     {% render 'homepage-title',
       white_title: 'Featured',
       blue_title: 'Products',
@@ -7,30 +7,30 @@
       link_text: section.settings.link_text
     %}
 
-    <div class="twcss-relative ">
+    <div class='twcss-relative '>
       <div
-        id="featured-products-slider-prev"
+        id='featured-products-slider-prev'
         class='swiper-button-prev !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-[""]  !twcss-left-[-1rem] twcss-border twcss-border-[#EBEBEB]'
       >
         {% render 'icon-chevron-left' %}
       </div>
       <div
-        id="featured-products-slider-next"
+        id='featured-products-slider-next'
         class='swiper-button-next !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-[""]  !twcss-right-[-1rem] twcss-border twcss-border-[#EBEBEB]'
       >
         {% render 'icon-chevron-right' %}
       </div>
       {%- if section.settings.collection != blank -%}
-        <div id="featured-products-slider" class="swiper featured-products-slider twcss-relative  twcss-h-full">
-          <div class="swiper-wrapper">
+        <div id='featured-products-slider' class='swiper featured-products-slider twcss-relative  twcss-h-full'>
+          <div class='swiper-wrapper'>
             {%- for product in section.settings.collection.products limit: 25 -%}
-              <div class="swiper-slide !twcss-h-auto">
+              <div class='swiper-slide !twcss-h-auto'>
                 {% render 'product-card', product: product, show_vendor: true, show_new_tag: true %}
               </div>
             {%- endfor -%}
           </div>
 
-          <div id="featured-products-slider-pagination" class="swiper-pagination !twcss-relative twcss-mt-4"></div>
+          <div id='featured-products-slider-pagination' class='swiper-pagination !twcss-relative twcss-mt-4'></div>
         </div>
       {%- endif -%}
     </div>
