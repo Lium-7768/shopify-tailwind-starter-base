@@ -7,12 +7,16 @@
       <div class='twcss-overflow-hidden twcss-w-[206px] twcss-relative'>
         <p
           class='twcss-text-secondary-light twcss-block twcss-truncate twcss-whitespace-nowrap twcss-m-0 twcss-text-left'
-          title='{{ customer.current_location.shipping_address.address1 }}, {{ customer.current_location.shipping_address.city }}, {{ customer.current_location.shipping_address.province }} {{ customer.current_location.shipping_address.zip }}'
+          title='{% if customer.current_location.shipping_address.address1 %}{{ customer.current_location.shipping_address.address1 }}, {{ customer.current_location.shipping_address.city }}, {{ customer.current_location.shipping_address.province }} {{ customer.current_location.shipping_address.zip }}{% else %}Please select a location{% endif %}'
         >
-          {{ customer.current_location.shipping_address.address1 }},
-          {{ customer.current_location.shipping_address.city }},
-          {{ customer.current_location.shipping_address.province }}
-          {{ customer.current_location.shipping_address.zip }}
+          {% if customer.current_location.shipping_address.address1 %}
+            {{ customer.current_location.shipping_address.address1 }},
+            {{ customer.current_location.shipping_address.city }},
+            {{ customer.current_location.shipping_address.province }}
+            {{ customer.current_location.shipping_address.zip }}
+          {% else %}
+            Please select a location
+          {% endif %}
         </p>
       </div>
       {% if customer.company_available_locations.size > 1 %}
