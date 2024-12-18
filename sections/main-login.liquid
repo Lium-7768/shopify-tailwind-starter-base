@@ -19,7 +19,7 @@
 {%- endif -%}
 
 <div class='twcss-max-w-[33.4rem] md:twcss-max-w-[47.8rem] twcss-mx-auto twcss-px-6 twcss-text-center section-{{ section.id }}-padding'>
-  <h1 id='recover' class='twcss-text-accent-default twcss-text-2xl twcss-mb-4' tabindex='-1'>
+  <h1 id='recover' class='twcss-text-accent-default twcss-text-2xl twcss-font-bold twcss-mb-4' tabindex='-1'>
     {{ 'customer.recover_password.title' | t }}
   </h1>
   <div class='{% unless recover_success %}twcss-hidden{% endunless %}'>
@@ -72,7 +72,7 @@
     {%- endform -%}
   </div>
 
-  <h1 id='login' class='twcss-text-accent-default twcss-text-2xl twcss-mb-4' tabindex='-1'>
+  <h1 id='login' class='twcss-text-accent-default twcss-text-2xl twcss-mb-4 twcss-font-bold' tabindex='-1'>
     {{ 'customer.login_page.title' | t }}
   </h1>
   <div class='{% if recover_success %}twcss-hidden{% endif %}'>
