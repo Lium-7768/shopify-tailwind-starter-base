@@ -13,6 +13,15 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+      "blocks": {
+        "b2b_customer_account_quick_order_block_9jEQxc": {
+          "type": "shopify://apps/b2b-customer-account/blocks/quick-order-block/036dca94-f4d2-41fc-915f-03ffad9b3b73",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "b2b_customer_account_quick_order_block_9jEQxc"
+      ],
       "settings": {
         "color_scheme": "scheme-724c636d-524f-45cc-8653-dd35022bf3de",
         "show_line_separator": true,
