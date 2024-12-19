@@ -37,20 +37,22 @@
         {% endif %}
       </div>
 
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when '@app' -%}
-            {% render block %}
-        {%- endcase -%}
-      {%- endfor -%}
-
-      {% if section.settings.menu != blank %}
-        {%- if section.settings.menu_type == 'dropdown' -%}
-          {% render 'header-dropdown-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
-        {%- elsif section.settings.menu_type == 'mega' -%}
-          {% render 'header-mega-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
-        {%- endif -%}
-      {% endif %}
+      <div class='twcss-flex twcss-items-center twcss-gap-x-4'>
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+          {%- endcase -%}
+        {%- endfor -%}
+  
+        {% if section.settings.menu != blank %}
+          {%- if section.settings.menu_type == 'dropdown' -%}
+            {% render 'header-dropdown-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
+          {%- elsif section.settings.menu_type == 'mega' -%}
+            {% render 'header-mega-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
+          {%- endif -%}
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>
