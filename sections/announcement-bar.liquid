@@ -36,6 +36,14 @@
           {% endif %}
         {% endif %}
       </div>
+
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when '@app' -%}
+            {% render block %}
+        {%- endcase -%}
+      {%- endfor -%}
+
       {% if section.settings.menu != blank %}
         {%- if section.settings.menu_type == 'dropdown' -%}
           {% render 'header-dropdown-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
