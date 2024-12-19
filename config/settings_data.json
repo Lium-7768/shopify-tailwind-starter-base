@@ -154,11 +154,19 @@
               "category_title": "Logistics Services",
               "menu": "product-logistics-services-menu"
             }
+          },
+          "category_LDBtYL": {
+            "type": "category",
+            "settings": {
+              "category_title": "Technology and Digital Solutions",
+              "menu": "technology-and-digital-solutions-category"
+            }
           }
         },
         "block_order": [
           "category_ygJgEG",
-          "category_DgVyzA"
+          "category_DgVyzA",
+          "category_LDBtYL"
         ],
         "settings": {
           "drawer_logo": "shopify://shop_images/Header_logo_47b76850-8a9c-4e58-9dae-3917ee392a4e.svg",
