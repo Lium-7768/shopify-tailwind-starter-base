@@ -21,7 +21,7 @@
             <img
               width='90'
               height='90'
-              src='{{ block.settings.logo | image_url: 'medium' }}'
+              src='{{ block.settings.logo | img_url: 'medium' }}'
               alt='{{ block.settings.name }}'
               loading='lazy'
               class='twcss-max-h-16 twcss-w-auto twcss-mx-auto twcss-object-contain'
@@ -37,13 +37,13 @@
       </div>
       <div
         id='swiper-button-prev-brand'
-        class='swiper-button-prev '
+        class="swiper-button-prev !twcss-left-[-16px]"
       >
         {% render 'icon-chevron-left' %}
       </div>
       <div
         id='swiper-button-next-brand'
-        class='swiper-button-next'
+        class="swiper-button-next !twcss-right-[-16px]"
       >
         {% render 'icon-chevron-right' %}
       </div>
