@@ -85,6 +85,90 @@
         "collection": "automated-collection"
       }
     },
+    "distribution_solutions_wXkLVR": {
+      "type": "distribution-solutions",
+      "blocks": {
+        "solution_QWBCrC": {
+          "type": "solution",
+          "settings": {
+            "image": "shopify://shop_images/unsplash_2O2RZfPI26Y.png",
+            "title": "Freight Transport Solutions",
+            "link": "shopify://collections/hydrogen"
+          }
+        },
+        "solution_J7k7QQ": {
+          "type": "solution",
+          "settings": {
+            "image": "shopify://shop_images/unsplash_sw5qehkjlzI.png",
+            "title": "Warehouse and Distribution Solutions",
+            "link": ""
+          }
+        },
+        "solution_TjtcBk": {
+          "type": "solution",
+          "settings": {
+            "image": "shopify://shop_images/unsplash_pz_z3Tg6fSI.png",
+            "title": "Last-Mile Logistics",
+            "link": ""
+          }
+        },
+        "solution_N8HQJb": {
+          "type": "solution",
+          "settings": {
+            "image": "shopify://shop_images/unsplash_xGYp_h7fm2I.png",
+            "title": "Cold Chain Solutions",
+            "link": ""
+          }
+        },
+        "solution_hJQG8W": {
+          "type": "solution",
+          "settings": {
+            "image": "shopify://shop_images/unsplash_LOgrmWMvj_0.png",
+            "title": "Intermodal Transport Services",
+            "link": ""
+          }
+        },
+        "solution_jCnXEz": {
+          "type": "solution",
+          "settings": {
+            "image": "shopify://shop_images/unsplash_pz_z3Tg6fSI_4862ea05-ca13-4d61-93e3-1bab91a4b472.png",
+            "title": "Real-Time Tracking and Monitoring",
+            "link": ""
+          }
+        },
+        "solution_mqUwxH": {
+          "type": "solution",
+          "settings": {
+            "image": "shopify://shop_images/unsplash_YduNPEXoNeU.png",
+            "title": "Green Transportation Initiatives",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "solution_QWBCrC",
+        "solution_J7k7QQ",
+        "solution_TjtcBk",
+        "solution_N8HQJb",
+        "solution_hJQG8W",
+        "solution_jCnXEz",
+        "solution_mqUwxH"
+      ],
+      "settings": {
+        "white_title": "Distribution",
+        "blue_title": "Solutions",
+        "desktop_banner": "shopify://shop_images/unsplash_pdrckQDTxWY.png",
+        "mobile_banner": "shopify://shop_images/unsplash_pdrckQDTxWY_669cbc1e-a559-4538-8419-240a64af8943.png",
+        "banner_title": "Redefining Efficiency in Manufacturing and Distribution",
+        "banner_description": "Streamlining processes with innovative solutions, NEXAFLOW, empowering businesses to meet customer demands with precision and reliability.",
+        "banner_link": "shopify://collections/all",
+        "banner_link_text": "See more",
+        "show_banner": true,
+        "show_view_all": false,
+        "view_all_text": "View All Solutions",
+        "view_all_link": "shopify://collections"
+      }
+    },
     "featured_plumbing_CA7GXd": {
       "type": "featured-plumbing",
       "settings": {
@@ -99,6 +183,81 @@
         "banner_title": "",
         "banner_text": "",
         "banner_image": "shopify://shop_images/plumbing-solutions.png"
+      }
+    },
+    "distribution_solutions_WiQBEV": {
+      "type": "distribution-solutions",
+      "blocks": {
+        "solution_RQzWC4": {
+          "type": "solution",
+          "settings": {
+            "title": "Freight Transport Solutions",
+            "link": ""
+          }
+        },
+        "solution_GeaeTC": {
+          "type": "solution",
+          "settings": {
+            "title": "Warehouse and Distribution Solutions",
+            "link": ""
+          }
+        },
+        "solution_WCHpBV": {
+          "type": "solution",
+          "settings": {
+            "title": "Last-Mile Logistics",
+            "link": ""
+          }
+        },
+        "solution_Mjd96E": {
+          "type": "solution",
+          "settings": {
+            "title": "Cold Chain Solutions",
+            "link": ""
+          }
+        },
+        "solution_BxiMrW": {
+          "type": "solution",
+          "settings": {
+            "title": "Intermodal Transport Services",
+            "link": ""
+          }
+        },
+        "solution_gJRKCi": {
+          "type": "solution",
+          "settings": {
+            "title": "Real-Time Tracking and Monitoring",
+            "link": ""
+          }
+        },
+        "solution_A44idd": {
+          "type": "solution",
+          "settings": {
+            "title": "Green Transportation Initiatives",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "solution_RQzWC4",
+        "solution_GeaeTC",
+        "solution_WCHpBV",
+        "solution_Mjd96E",
+        "solution_BxiMrW",
+        "solution_gJRKCi",
+        "solution_A44idd"
+      ],
+      "settings": {
+        "white_title": "Featured",
+        "blue_title": "Categories",
+        "banner_title": "Redefining Efficiency in Manufacturing and Distribution",
+        "banner_description": "Streamlining processes with innovative solutions, NEXAFLOW, empowering businesses to meet customer demands with precision and reliability.",
+        "banner_link": "",
+        "banner_link_text": "See more",
+        "show_banner": false,
+        "show_view_all": true,
+        "view_all_text": "View All",
+        "view_all_link": "shopify://collections"
       }
     },
     "product_brands_Ph83qy": {
@@ -194,90 +353,6 @@
         "link_text": "View All",
         "link_url": "shopify://collections",
         "active_dot_color": "#5f9df7"
-      }
-    },
-    "distribution_solutions_wXkLVR": {
-      "type": "distribution-solutions",
-      "blocks": {
-        "solution_QWBCrC": {
-          "type": "solution",
-          "settings": {
-            "image": "shopify://shop_images/unsplash_2O2RZfPI26Y.png",
-            "title": "Freight Transport Solutions",
-            "link": "shopify://collections/hydrogen"
-          }
-        },
-        "solution_J7k7QQ": {
-          "type": "solution",
-          "settings": {
-            "image": "shopify://shop_images/unsplash_sw5qehkjlzI.png",
-            "title": "Warehouse and Distribution Solutions",
-            "link": ""
-          }
-        },
-        "solution_TjtcBk": {
-          "type": "solution",
-          "settings": {
-            "image": "shopify://shop_images/unsplash_pz_z3Tg6fSI.png",
-            "title": "Last-Mile Logistics",
-            "link": ""
-          }
-        },
-        "solution_N8HQJb": {
-          "type": "solution",
-          "settings": {
-            "image": "shopify://shop_images/unsplash_xGYp_h7fm2I.png",
-            "title": "Cold Chain Solutions",
-            "link": ""
-          }
-        },
-        "solution_hJQG8W": {
-          "type": "solution",
-          "settings": {
-            "image": "shopify://shop_images/unsplash_LOgrmWMvj_0.png",
-            "title": "Intermodal Transport Services",
-            "link": ""
-          }
-        },
-        "solution_jCnXEz": {
-          "type": "solution",
-          "settings": {
-            "image": "shopify://shop_images/unsplash_pz_z3Tg6fSI_4862ea05-ca13-4d61-93e3-1bab91a4b472.png",
-            "title": "Real-Time Tracking and Monitoring",
-            "link": ""
-          }
-        },
-        "solution_mqUwxH": {
-          "type": "solution",
-          "settings": {
-            "image": "shopify://shop_images/unsplash_YduNPEXoNeU.png",
-            "title": "Green Transportation Initiatives",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "solution_QWBCrC",
-        "solution_J7k7QQ",
-        "solution_TjtcBk",
-        "solution_N8HQJb",
-        "solution_hJQG8W",
-        "solution_jCnXEz",
-        "solution_mqUwxH"
-      ],
-      "settings": {
-        "white_title": "Featured",
-        "blue_title": "Categories",
-        "desktop_banner": "shopify://shop_images/unsplash_pdrckQDTxWY.png",
-        "mobile_banner": "shopify://shop_images/unsplash_pdrckQDTxWY_669cbc1e-a559-4538-8419-240a64af8943.png",
-        "banner_title": "Redefining Efficiency in Manufacturing and Distribution",
-        "banner_description": "Streamlining processes with innovative solutions, NEXAFLOW, empowering businesses to meet customer demands with precision and reliability.",
-        "banner_link": "shopify://collections/all",
-        "banner_link_text": "See more",
-        "show_banner": false,
-        "show_view_all": true,
-        "view_all_text": "View All Solutions",
-        "view_all_link": "shopify://collections"
       }
     },
     "product_brands_FQAwF4": {
@@ -451,9 +526,10 @@
     "banner_slider_eC74fk",
     "delivery_delay_notice_keD9NB",
     "featured_products_dVWqqB",
-    "featured_plumbing_CA7GXd",
-    "product_brands_Ph83qy",
     "distribution_solutions_wXkLVR",
+    "featured_plumbing_CA7GXd",
+    "distribution_solutions_WiQBEV",
+    "product_brands_Ph83qy",
     "product_brands_FQAwF4",
     "server_highlight_DGeehf"
   ]
