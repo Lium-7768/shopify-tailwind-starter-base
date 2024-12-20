@@ -359,6 +359,14 @@
             "name": "",
             "link": "shopify://products/the-collection-snowboard-oxygen"
           }
+        },
+        "item_zUURty": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/Excell.png",
+            "name": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -371,7 +379,8 @@
         "item_PnNUee",
         "item_Ww6ThQ",
         "item_jeDeNA",
-        "item_6G7XH4"
+        "item_6G7XH4",
+        "item_zUURty"
       ],
       "settings": {
         "white_title": "Featured",
