@@ -5,19 +5,23 @@
 {%- endstyle -%}
 
 <div class='twcss-mx-auto twcss-my-8 lg:twcss-my-[50px] twcss-px-5 lg:twcss-px-6 xlg:!twcss-max-w-[1280px] lg:!twcss-max-w-[1232px] xlg:!twcss-p-0 !twcss-pb-8 {% if customer.current_location.shipping_address.address1 == blank %}twcss-hidden{% endif %}'>
-  {% render 'homepage-title', white_title: '', blue_title: '', wrapper_classes: '!twcss-mb-[10px]' %}
+  <div class='twcss-flex twcss-items-center twcss-justify-between'>
+    {% render 'homepage-title', white_title: '', blue_title: '', wrapper_classes: '!twcss-mb-[10px]' %}
 
-  <div
-    id='swiper-button-prev-brand'
-    class='twcss-size-6'
-  >
-    {% render 'icon-chevron-left' %}
-  </div>
-  <div
-    id='swiper-button-next-brand'
-    class='twcss-size-6'
-  >
-    {% render 'icon-chevron-right' %}
+    <div class='twcss-flex twcss-items-center twcss-gap-4'>
+      <div
+        id='swiper-button-prev-brand'
+        class='twcss-size-6'
+      >
+        {% render 'icon-chevron-left' %}
+      </div>
+      <div
+        id='swiper-button-next-brand'
+        class='twcss-size-6'
+      >
+        {% render 'icon-chevron-right' %}
+      </div>
+    </div>
   </div>
 
   <div class='twcss-relative'>
