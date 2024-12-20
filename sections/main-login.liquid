@@ -116,7 +116,10 @@
         </div>
 
         {%- if shop.features.login_with_shop_classic_customer_accounts? -%}
-          <section name='sign-in-with-shop-provider' class='twcss-mb-6 twcss-flex twcss-justify-center'>
+          <section
+            name='sign-in-with-shop-provider'
+            class='twcss-mb-6 twcss-flex twcss-justify-center twcss-flex-row twcss-gap-4'
+          >
             {{ shop | login_button: hide_button: hide_shop_login_button }}
 
             {%- unless hide_shop_login_button -%}
