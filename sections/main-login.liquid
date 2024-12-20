@@ -95,23 +95,25 @@
 
     {%- form 'customer_login', novalidate: 'novalidate' -%}
       <input type='hidden' name='return_to' value='{{ routes.root_url }}'>
-      <div class='twcss-p-5 twcss-bg-destructive-light twcss-rounded twcss-text-destructive-foreground twcss-bg-opacity-50 twcss-text-left'>
-        {%- if form.errors -%}
-          <h2
-            class='twcss-flex twcss-items-center twcss-justify-start twcss-mb-2 twcss-text-lg twcss-font-bold'
-            tabindex='-1'
-            autofocus
-          >
-            {% comment %} <span class='twcss-sr-only'>{{ 'accessibility.error' | t }} </span> {% endcomment %}
-            {% comment %}
-              <span class='twcss-mr-2'>
-                {{- 'icon-error.svg' | inline_asset_content -}}
-              </span>
-            {% endcomment %}
-            {{ 'templates.contact.form.error_heading' | t }}
-          </h2>
-          {{ form.errors | default_errors }}
-        {%- endif -%}
+      <div class='twcss-bg-destructive-light twcss-rounded twcss-bg-opacity-50 twcss-text-left'>
+        <div class='twcss-text-destructive-foreground twcss-p-5'>
+          {%- if form.errors -%}
+            <h2
+              class='twcss-flex twcss-items-center twcss-justify-start twcss-mb-2 twcss-text-lg twcss-font-bold'
+              tabindex='-1'
+              autofocus
+            >
+              {% comment %} <span class='twcss-sr-only'>{{ 'accessibility.error' | t }} </span> {% endcomment %}
+              {% comment %}
+                <span class='twcss-mr-2'>
+                  {{- 'icon-error.svg' | inline_asset_content -}}
+                </span>
+              {% endcomment %}
+              {{ 'templates.contact.form.error_heading' | t }}
+            </h2>
+            {{ form.errors | default_errors }}
+          {%- endif -%}
+        </div>
 
         {%- if shop.features.login_with_shop_classic_customer_accounts? -%}
           <section name='sign-in-with-shop-provider' class='twcss-mb-6'>
