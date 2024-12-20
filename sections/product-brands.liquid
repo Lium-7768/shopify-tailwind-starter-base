@@ -4,31 +4,31 @@
   }
 {%- endstyle -%}
 
-<div class='twcss-mx-auto twcss-my-8 lg:twcss-my-[50px] twcss-px-5 lg:twcss-px-6 xlg:!twcss-max-w-[1280px] lg:!twcss-max-w-[1232px] xlg:!twcss-p-0 !twcss-pb-8 {% if customer.current_location.shipping_address.address1 == blank %}twcss-hidden{% endif %}'>
-  <h2 class='twcss-text-2xl twcss-font-bold twcss-mb-6'>Shop by brand</h2>
+<div class='twcss-mx-auto twcss-my-8 lg:twcss-my-[50px] twcss-px-5 lg:twcss-px-6 twcss-py-8 xlg:!twcss-max-w-[1280px] lg:!twcss-max-w-[1232px] xlg:!twcss-p-0 !twcss-py-0 !twcss-pb-8 {% if customer.current_location.shipping_address.address1 == blank %}twcss-hidden{% endif %}'>
+  {% render 'homepage-title', white_title: '', blue_title: '', wrapper_classes: '!twcss-mb-[10px]' %}
 
   <div class='twcss-relative'>
     <div id='carousel-swiper' class='swiper carousel-swiper !twcss-static'>
       <div class='swiper-wrapper twcss-gap-6'>
         {%- for block in section.blocks -%}
           <div
-            class='swiper-slide !twcss-w-[200px] !twcss-h-[120px] !twcss-mr-6 twcss-bg-[#f8f8f8] twcss-rounded-lg twcss-overflow-hidden twcss-flex twcss-items-center twcss-justify-center twcss-border twcss-border-gray-200 {%- if block.settings.link != blank -%}twcss-cursor-pointer hover:twcss-shadow-md twcss-transition-shadow{%- endif -%}'
+            class='swiper-slide twcss-flex-col twcss-justify-around !twcss-w-[90px] !twcss-h-[116px] !twcss-flex twcss-items-center lg:!twcss-w-[139px] !twcss-mr-0 {%- if block.settings.link != blank -%}twcss-cursor-pointer{%- endif -%}'
             {{ block.shopify_attributes }}
           >
             {%- if block.settings.link != blank -%}
-              <a
-                href='{{ block.settings.link }}'
-                class='twcss-w-full twcss-h-full twcss-flex twcss-items-center twcss-justify-center twcss-p-4'
-              >
+              <a href='{{ block.settings.link }}' class='twcss-block'>
             {%- endif -%}
             <img
-              src='{{ block.settings.logo | image_url: width: 300 }}'
-              width='160'
-              height='80'
+              width='200'
+              height='90'
+              src='{{ block.settings.logo | img_url: 'medium' }}'
               alt='{{ block.settings.name }}'
               loading='lazy'
-              class='twcss-max-w-[160px] twcss-max-h-[80px] twcss-w-auto twcss-object-contain'
+              class='twcss-max-h-16 twcss-w-auto twcss-mx-auto twcss-object-contain'
             >
+            {%- if block.settings.name != blank -%}
+              <div class='twcss-text-center'>{{ block.settings.name }}</div>
+            {%- endif -%}
             {%- if block.settings.link != blank -%}
               </a>
             {%- endif -%}
@@ -37,16 +37,17 @@
       </div>
       <div
         id='swiper-button-prev-brand'
-        class="swiper-button-prev !twcss-bg-white !twcss-w-8 !twcss-h-8 twcss-rounded-full twcss-shadow-md md:!twcss-flex !twcss-text-black after:!twcss-content-[''] !twcss-left-[-12px] twcss-border twcss-border-gray-100"
+        class='swiper-button-prev !twcss-left-[-16px]'
       >
         {% render 'icon-chevron-left' %}
       </div>
       <div
         id='swiper-button-next-brand'
-        class="swiper-button-next !twcss-bg-white !twcss-w-8 !twcss-h-8 twcss-rounded-full twcss-shadow-md md:!twcss-flex !twcss-text-black after:!twcss-content-[''] !twcss-right-[-12px] twcss-border twcss-border-gray-100"
+        class='swiper-button-next !twcss-right-[-16px]'
       >
         {% render 'icon-chevron-right' %}
       </div>
+      <div id='swiper-pagination-brand' class='swiper-pagination !twcss-top-[116px]'></div>
     </div>
   </div>
 </div>
@@ -54,17 +55,20 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     new Swiper('#carousel-swiper', {
-      slidesPerView: 'auto',
-      spaceBetween: 24,
+      slidesPerView: 3,
+      spaceBetween: 20,
       loop: false,
+      pagination: {
+        el: '#swiper-pagination-brand',
+        clickable: true,
+      },
       navigation: {
         nextEl: '#swiper-button-next-brand',
         prevEl: '#swiper-button-prev-brand',
       },
       breakpoints: {
         1280: {
-          slidesPerView: 6,
-          spaceBetween: 24,
+          slidesPerView: 8,
         },
       },
     });
