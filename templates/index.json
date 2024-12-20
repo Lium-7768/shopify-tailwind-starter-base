@@ -229,13 +229,6 @@
             "title": "Real-Time Tracking and Monitoring",
             "link": ""
           }
-        },
-        "solution_A44idd": {
-          "type": "solution",
-          "settings": {
-            "title": "Green Transportation Initiatives",
-            "link": ""
-          }
         }
       },
       "block_order": [
@@ -244,8 +237,7 @@
         "solution_WCHpBV",
         "solution_Mjd96E",
         "solution_BxiMrW",
-        "solution_gJRKCi",
-        "solution_A44idd"
+        "solution_gJRKCi"
       ],
       "settings": {
         "white_title": "Featured",
