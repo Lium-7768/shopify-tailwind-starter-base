@@ -312,6 +312,14 @@
             "link": "shopify://products/the-collection-snowboard-oxygen"
           }
         },
+        "item_BLJcBH": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/Virutex.png",
+            "name": "",
+            "link": "shopify://products/the-compare-at-price-snowboard"
+          }
+        },
         "item_aJExFi": {
           "type": "item",
           "settings": {
@@ -374,6 +382,7 @@
         "item_xP8446",
         "item_zUURty",
         "item_6G7XH4",
+        "item_BLJcBH",
         "item_aJExFi",
         "item_qAJKHe",
         "item_4JTxVT",
