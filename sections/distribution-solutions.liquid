@@ -1,6 +1,14 @@
 <section class='twcss-py-10'>
   <div class='twcss-px-4 md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto'>
-    {% render 'homepage-title', white_title: section.settings.white_title, blue_title: section.settings.blue_title %}
+    {% render 'homepage-title',
+      white_title: section.settings.white_title,
+      blue_title: section.settings.blue_title,
+      link_url: '/collections/all',
+      link_text: 'See all',
+      wrapper_classes: '!twcss-mb-5',
+      white_title_classes: '!twcss-text-lg',
+      blue_title_classes: '!twcss-text-lg'
+    %}
 
     <div class='twcss-flex twcss-flex-row twcss-justify-between twcss-gap-x-6 twcss-items-stretch twcss-mt-8'>
       {% for block in section.blocks %}
