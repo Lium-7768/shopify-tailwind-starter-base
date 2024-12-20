@@ -96,7 +96,7 @@
     {%- form 'customer_login', novalidate: 'novalidate' -%}
       <input type='hidden' name='return_to' value='{{ routes.root_url }}'>
       <div class=' twcss-rounded  twcss-bg-opacity-50 twcss-text-left'>
-        <div class='twcss-text-destructive-foreground twcss-p-5 twcss-bg-destructive-light'>
+        <div class='twcss-text-destructive-foreground twcss-p-5 twcss-bg-destructive-light twcss-mb-6'>
           {%- if form.errors -%}
             <h2
               class='twcss-flex twcss-items-center twcss-justify-start twcss-mb-2 twcss-text-lg twcss-font-bold'
@@ -118,7 +118,7 @@
         {%- if shop.features.login_with_shop_classic_customer_accounts? -%}
           <section
             name='sign-in-with-shop-provider'
-            class='twcss-mb-6 twcss-flex twcss-items-center twcss-flex-col'
+            class='twcss-flex twcss-items-center twcss-flex-col'
           >
             {{ shop | login_button: hide_button: hide_shop_login_button }}
 
