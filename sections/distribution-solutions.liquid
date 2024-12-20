@@ -21,6 +21,18 @@
         </div>
       {% endfor %}
     </div>
+
+    {% if section.settings.show_view_all and section.settings.view_all_link != blank %}
+      <div class='twcss-flex twcss-justify-center twcss-mt-8'>
+        <a
+          href='{{ section.settings.view_all_link }}'
+          class='twcss-text-[#1746A2] twcss-flex twcss-items-center twcss-gap-2 twcss-font-bold twcss-text-sm'
+        >
+          {{ section.settings.view_all_text }}
+          {% render 'icon-chevron-right' %}
+        </a>
+      </div>
+    {% endif %}
   </div>
 
   {% if section.settings.show_banner %}
@@ -122,15 +134,25 @@
       "default": true
     },
     {
+      "type": "header",
+      "content": "View All Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show View All Link",
+      "default": false
+    },
+    {
       "type": "text",
-      "id": "link_text",
-      "label": "Link Text",
-      "default": "View All"
+      "id": "view_all_text",
+      "label": "View All Text",
+      "default": "View All Solutions"
     },
     {
       "type": "url",
-      "id": "link_url",
-      "label": "Link URL"
+      "id": "view_all_link",
+      "label": "View All Link"
     }
   ],
   "blocks": [
@@ -153,11 +175,6 @@
           "type": "url",
           "id": "link",
           "label": "Solution Link"
-        },
-        {
-          "type": "url",
-          "id": "view_all_link",
-          "label": "View All Link"
         }
       ]
     }
