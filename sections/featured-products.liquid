@@ -1,8 +1,10 @@
-<section class='md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto twcss-px-4 twcss-py-10 {% if customer.current_location.shipping_address.address1 == blank %}twcss-hidden{% endif %}'>
+<section class='md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto twcss-px-4 twcss-pt-10 {% if customer.current_location.shipping_address.address1 == blank %}twcss-hidden{% endif %}'>
   <div class='twcss-relative twcss-max-w-sm md:twcss-max-w-full'>
     {% render 'homepage-title',
       white_title: 'Featured',
       blue_title: 'Products',
+      white_title_classes: '!twcss-text-lg',
+      blue_title_classes: '!twcss-text-lg',
       link_url: section.settings.link_url,
       link_text: section.settings.link_text
     %}
