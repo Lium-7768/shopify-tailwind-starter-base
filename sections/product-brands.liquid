@@ -2,6 +2,17 @@
   .swiper-pagination-bullet-active {
     background: {{ section.settings.active_dot_color }};
   }
+
+  /* 添加禁用状态的样式 */
+  .swiper-button-disabled {
+    background-color: #E5E7EB !important;
+    border-color: #E5E7EB !important;
+    cursor: not-allowed !important;
+  }
+
+  .swiper-button-disabled span {
+    color: #9CA3AF !important;
+  }
 {%- endstyle -%}
 
 <div class='twcss-mx-auto twcss-my-8 lg:twcss-my-[50px] twcss-px-4 xlg:!twcss-max-w-[1280px] lg:!twcss-max-w-[1232px] xlg:!twcss-p-0 !twcss-pb-8 {% if customer.current_location.shipping_address.address1 == blank %}twcss-hidden{% endif %}'>
@@ -16,7 +27,7 @@
     <div class='twcss-flex twcss-items-center'>
       <div
         id='swiper-button-prev-brand'
-        class='twcss-px-4 twcss-py-3 twcss-border twcss-text-accent-default twcss-flex twcss-items-center twcss-justify-center'
+        class='twcss-px-4 twcss-py-3 twcss-border twcss-text-accent-default twcss-flex twcss-items-center twcss-justify-center twcss-transition-colors'
       >
         <span class='twcss-size-4'>
           {% render 'icon-chevron-left' %}
@@ -24,7 +35,7 @@
       </div>
       <div
         id='swiper-button-next-brand'
-        class='twcss-px-4 twcss-py-3 twcss-border twcss-text-accent-default twcss-flex twcss-items-center twcss-justify-center'
+        class='twcss-px-4 twcss-py-3 twcss-border twcss-text-accent-default twcss-flex twcss-items-center twcss-justify-center twcss-transition-colors'
       >
         <span class='twcss-size-4'>
           {% render 'icon-chevron-right' %}
@@ -71,6 +82,7 @@
       slidesPerView: 3,
       spaceBetween: 20,
       loop: false,
+      watchOverflow: true,
       pagination: {
         el: '#swiper-pagination-brand',
         clickable: true,
@@ -78,6 +90,7 @@
       navigation: {
         nextEl: '#swiper-button-next-brand',
         prevEl: '#swiper-button-prev-brand',
+        disabledClass: 'swiper-button-disabled',
       },
       breakpoints: {
         1280: {
