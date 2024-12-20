@@ -185,79 +185,64 @@
     "distribution_solutions_WteDFf": {
       "type": "distribution-solutions",
       "blocks": {
-        "solution_d9zWRB": {
+        "solution_Vnak8a": {
           "type": "solution",
           "settings": {
-            "title": "Freight Transport Solutions",
+            "image": "shopify://shop_images/Single_Handle_Centerset_Bathroom_Sink_Faucet_with_Pop-Up_Drain_Assembly_in_Polished_Chrome.webp",
+            "title": "Solution Title",
             "link": ""
           }
         },
-        "solution_FnJtng": {
-          "type": "solution",
-          "settings": {
-            "title": "Warehouse and Distribution Solutions",
-            "link": ""
-          }
-        },
-        "solution_pMYaGT": {
-          "type": "solution",
-          "settings": {
-            "title": "Last-Mile Logistics",
-            "link": ""
-          }
-        },
-        "solution_WLJaqF": {
-          "type": "solution",
-          "settings": {
-            "title": "Cold Chain Solutions",
-            "link": ""
-          }
-        },
-        "solution_NRHGNp": {
-          "type": "solution",
-          "settings": {
-            "title": "Intermodal Transport Services",
-            "link": ""
-          }
-        },
-        "solution_rePBcC": {
-          "type": "solution",
-          "settings": {
-            "title": "Real-Time Tracking and Monitoring",
-            "link": ""
-          }
-        },
-        "solution_JeQmWn": {
+        "solution_8QwWwd": {
           "type": "solution",
           "settings": {
             "title": "Solution Title",
             "link": ""
           }
         },
-        "solution_6apWan": {
+        "solution_jRcypf": {
           "type": "solution",
           "settings": {
-            "title": "Green Transportation Initiatives",
+            "title": "Solution Title",
+            "link": ""
+          }
+        },
+        "solution_XcPjqa": {
+          "type": "solution",
+          "settings": {
+            "title": "Solution Title",
+            "link": ""
+          }
+        },
+        "solution_JteqMd": {
+          "type": "solution",
+          "settings": {
+            "title": "Solution Title",
+            "link": ""
+          }
+        },
+        "solution_zWGfY8": {
+          "type": "solution",
+          "settings": {
+            "title": "Solution Title",
             "link": ""
           }
         }
       },
       "block_order": [
-        "solution_d9zWRB",
-        "solution_FnJtng",
-        "solution_pMYaGT",
-        "solution_WLJaqF",
-        "solution_NRHGNp",
-        "solution_rePBcC",
-        "solution_JeQmWn",
-        "solution_6apWan"
+        "solution_Vnak8a",
+        "solution_8QwWwd",
+        "solution_jRcypf",
+        "solution_XcPjqa",
+        "solution_JteqMd",
+        "solution_zWGfY8"
       ],
       "settings": {
         "white_title": "Distribution",
         "blue_title": "Solutions",
         "banner_title": "",
         "banner_description": "",
-        "banner_link": "",
+        "banner_link": "shopify://policies/privacy-policy",
         "banner_link_text": "",
         "show_banner": false
       }
