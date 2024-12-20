@@ -182,6 +182,86 @@
         "banner_image": "shopify://shop_images/plumbing-solutions.png"
       }
     },
+    "distribution_solutions_WteDFf": {
+      "type": "distribution-solutions",
+      "blocks": {
+        "solution_d9zWRB": {
+          "type": "solution",
+          "settings": {
+            "title": "Freight Transport Solutions",
+            "link": ""
+          }
+        },
+        "solution_FnJtng": {
+          "type": "solution",
+          "settings": {
+            "title": "Warehouse and Distribution Solutions",
+            "link": ""
+          }
+        },
+        "solution_pMYaGT": {
+          "type": "solution",
+          "settings": {
+            "title": "Last-Mile Logistics",
+            "link": ""
+          }
+        },
+        "solution_WLJaqF": {
+          "type": "solution",
+          "settings": {
+            "title": "Cold Chain Solutions",
+            "link": ""
+          }
+        },
+        "solution_NRHGNp": {
+          "type": "solution",
+          "settings": {
+            "title": "Intermodal Transport Services",
+            "link": ""
+          }
+        },
+        "solution_rePBcC": {
+          "type": "solution",
+          "settings": {
+            "title": "Real-Time Tracking and Monitoring",
+            "link": ""
+          }
+        },
+        "solution_JeQmWn": {
+          "type": "solution",
+          "settings": {
+            "title": "Solution Title",
+            "link": ""
+          }
+        },
+        "solution_6apWan": {
+          "type": "solution",
+          "settings": {
+            "title": "Green Transportation Initiatives",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "solution_d9zWRB",
+        "solution_FnJtng",
+        "solution_pMYaGT",
+        "solution_WLJaqF",
+        "solution_NRHGNp",
+        "solution_rePBcC",
+        "solution_JeQmWn",
+        "solution_6apWan"
+      ],
+      "settings": {
+        "white_title": "Distribution",
+        "blue_title": "Solutions",
+        "banner_title": "",
+        "banner_description": "",
+        "banner_link": "",
+        "banner_link_text": "",
+        "show_banner": false
+      }
+    },
     "product_brands_Ph83qy": {
       "type": "product-brands",
       "blocks": {
@@ -450,6 +530,7 @@
     "featured_products_dVWqqB",
     "distribution_solutions_wXkLVR",
     "featured_plumbing_CA7GXd",
+    "distribution_solutions_WteDFf",
     "product_brands_Ph83qy",
     "product_brands_FQAwF4",
     "server_highlight_DGeehf"
