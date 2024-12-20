@@ -296,6 +296,22 @@
             "link": ""
           }
         },
+        "item_zUURty": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/Excell.png",
+            "name": "",
+            "link": ""
+          }
+        },
+        "item_6G7XH4": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/GBC.png",
+            "name": "",
+            "link": "shopify://products/the-collection-snowboard-oxygen"
+          }
+        },
         "item_aJExFi": {
           "type": "item",
           "settings": {
@@ -351,36 +367,20 @@
             "name": "ELEVATE",
             "link": ""
           }
-        },
-        "item_6G7XH4": {
-          "type": "item",
-          "settings": {
-            "logo": "shopify://shop_images/GBC.png",
-            "name": "",
-            "link": "shopify://products/the-collection-snowboard-oxygen"
-          }
-        },
-        "item_zUURty": {
-          "type": "item",
-          "settings": {
-            "logo": "shopify://shop_images/Excell.png",
-            "name": "",
-            "link": ""
-          }
         }
       },
       "block_order": [
         "item_66pei9",
         "item_xP8446",
+        "item_zUURty",
+        "item_6G7XH4",
         "item_aJExFi",
         "item_qAJKHe",
         "item_4JTxVT",
         "item_LkTeAm",
         "item_PnNUee",
         "item_Ww6ThQ",
-        "item_jeDeNA",
-        "item_6G7XH4",
-        "item_zUURty"
+        "item_jeDeNA"
       ],
       "settings": {
         "white_title": "Featured",
