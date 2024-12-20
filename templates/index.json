@@ -320,6 +320,14 @@
             "link": "shopify://products/the-compare-at-price-snowboard"
           }
         },
+        "item_PgM4kW": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/Lysform.png",
+            "name": "",
+            "link": ""
+          }
+        },
         "item_aJExFi": {
           "type": "item",
           "settings": {
@@ -375,14 +383,6 @@
             "name": "ELEVATE",
             "link": ""
           }
-        },
-        "item_PgM4kW": {
-          "type": "item",
-          "settings": {
-            "logo": "shopify://shop_images/Lysform.png",
-            "name": "",
-            "link": ""
-          }
         }
       },
       "block_order": [
@@ -391,14 +391,14 @@
         "item_zUURty",
         "item_6G7XH4",
         "item_BLJcBH",
+        "item_PgM4kW",
         "item_aJExFi",
         "item_qAJKHe",
         "item_4JTxVT",
         "item_LkTeAm",
         "item_PnNUee",
         "item_Ww6ThQ",
-        "item_jeDeNA",
-        "item_PgM4kW"
+        "item_jeDeNA"
       ],
       "settings": {
         "white_title": "Featured",
