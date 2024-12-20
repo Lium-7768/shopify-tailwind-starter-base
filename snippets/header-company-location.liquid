@@ -10,10 +10,7 @@
           title='{% if customer.current_location.shipping_address.address1 %}{{ customer.current_location.shipping_address.address1 }}, {{ customer.current_location.shipping_address.city }}, {{ customer.current_location.shipping_address.province }} {{ customer.current_location.shipping_address.zip }}{% else %}Please select a location{% endif %}'
         >
           {% if customer.current_location.shipping_address.address1 %}
-            {{ customer.current_location.shipping_address.address1 }},
-            {{ customer.current_location.shipping_address.city }},
-            {{ customer.current_location.shipping_address.province }}
-            {{ customer.current_location.shipping_address.zip }}
+            {{ customer.current_location.shipping_address.address1 }}
           {% else %}
             Please select a location
           {% endif %}
