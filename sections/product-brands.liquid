@@ -21,7 +21,7 @@
             <img
               width='90'
               height='90'
-              src='{{ block.settings.logo | image_url: 'medium' }}'
+              src='{{ block.settings.logo | img_url: 'medium' }}'
               alt='{{ block.settings.name }}'
               loading='lazy'
               class='twcss-max-h-16 twcss-w-auto twcss-mx-auto twcss-object-contain'
@@ -47,7 +47,6 @@
       >
         {% render 'icon-chevron-right' %}
       </div>
-      {% comment %} <div id='swiper-pagination-brand' class='swiper-pagination !twcss-top-[116px]'></div> {% endcomment %}
     </div>
   </div>
 </div>
