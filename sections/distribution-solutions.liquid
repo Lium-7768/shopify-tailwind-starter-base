@@ -3,8 +3,8 @@
     {% render 'homepage-title',
       white_title: section.settings.white_title,
       blue_title: section.settings.blue_title,
-      link_url: '/collections/all',
-      link_text: 'See all',
+      link_url: section.settings.view_all_link,
+      link_text: section.settings.view_all_text,
       wrapper_classes: '!twcss-mb-5',
       white_title_classes: '!twcss-text-lg',
       blue_title_classes: '!twcss-text-lg'
@@ -29,18 +29,6 @@
         </div>
       {% endfor %}
     </div>
-
-    {% if section.settings.show_view_all and section.settings.view_all_link != blank %}
-      <div class='twcss-flex twcss-justify-center twcss-mt-8'>
-        <a
-          href='{{ section.settings.view_all_link }}'
-          class='twcss-text-[#1746A2] twcss-flex twcss-items-center twcss-gap-2 twcss-font-bold twcss-text-sm'
-        >
-          {{ section.settings.view_all_text }}
-          {% render 'icon-chevron-right' %}
-        </a>
-      </div>
-    {% endif %}
   </div>
 
   {% if section.settings.show_banner %}
