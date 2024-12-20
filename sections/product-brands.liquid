@@ -4,7 +4,7 @@
   }
 {%- endstyle -%}
 
-<div class='twcss-mx-auto twcss-my-8 lg:twcss-my-[50px] twcss-px-5 lg:twcss-px-6 xlg:!twcss-max-w-[1280px] lg:!twcss-max-w-[1232px] xlg:!twcss-p-0 !twcss-pb-8 {% if customer.current_location.shipping_address.address1 == blank %}twcss-hidden{% endif %}'>
+<div class='twcss-mx-auto twcss-my-8 lg:twcss-my-[50px] xlg:!twcss-max-w-[1280px] lg:!twcss-max-w-[1232px] xlg:!twcss-p-0 !twcss-pb-8 {% if customer.current_location.shipping_address.address1 == blank %}twcss-hidden{% endif %}'>
   <div class='twcss-flex twcss-items-center twcss-justify-between twcss-mb-5'>
     {% render 'homepage-title', white_title: '', blue_title: '', wrapper_classes: '' %}
 
