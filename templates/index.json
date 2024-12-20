@@ -37,10 +37,10 @@
         "slide_d6kCGj": {
           "type": "slide",
           "settings": {
-            "image_mobile": "shopify://shop_images/03112023_q21-2023_lightbox_desktop_embotelladoras_andina_s.a._coca-cola_sin_azucar_1.jpg",
-            "image_desktop": "shopify://shop_images/Mesa_de_trabajo_1_2.jpg",
-            "heading": "SEAMLESS MANUFACTURING test",
-            "subheading": "Reliable Distribution test",
+            "image_mobile": "shopify://shop_images/banner-mobile.png",
+            "image_desktop": "shopify://shop_images/banner-desktop.png",
+            "heading": "SEAMLESS MANUFACTURING 2",
+            "subheading": "Reliable Distribution 2",
             "button_text": "See more",
             "button_link": "shopify://collections/all"
           }
