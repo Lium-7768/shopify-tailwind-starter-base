@@ -1,22 +1,22 @@
-<section class="twcss-py-10">
-  <div class="twcss-px-4 md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto">
+<section class='twcss-py-10'>
+  <div class='twcss-px-4 md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto'>
     {% render 'homepage-title', white_title: section.settings.white_title, blue_title: section.settings.blue_title %}
 
-    <div class="twcss-flex twcss-flex-row twcss-justify-between twcss-gap-x-6 twcss-items-stretch twcss-mt-8">
+    <div class='twcss-flex twcss-flex-row twcss-justify-between twcss-gap-x-6 twcss-items-stretch twcss-mt-8'>
       {% for block in section.blocks %}
-        <div class="twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-1 {% if forloop.index > 2 %} twcss-hidden md:!twcss-flex  {% endif %}">
-          <a href="{{ block.settings.link }}" class="twcss-block twcss-w-full">
-            <div class="twcss-w-full twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-bg-[#EEF5FF] twcss-flex twcss-justify-center twcss-items-center">
+        <div class='twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-1 {% if forloop.index > 2 %} twcss-hidden md:!twcss-flex  {% endif %}'>
+          <a href='{{ block.settings.link }}' class='twcss-block twcss-w-full'>
+            <div class='twcss-w-full twcss-aspect-square twcss-overflow-hidden twcss-rounded-lg twcss-mb-4 twcss-bg-[#EEF5FF] twcss-flex twcss-justify-center twcss-items-center'>
               <img
-                src="{{ block.settings.image | img_url: '400x400', crop: 'center' }}"
-                alt="{{ block.settings.title }}"
-                class="twcss-object-cover !twcss-w-[85%] !twcss-h-[85%]"
-                loading="lazy"
-                width="100%"
-                height="100%"
+                src='{{ block.settings.image | img_url: '400x400', crop: 'center' }}'
+                alt='{{ block.settings.title }}'
+                class='twcss-object-cover !twcss-w-[85%] !twcss-h-[85%]'
+                loading='lazy'
+                width='100%'
+                height='100%'
               >
             </div>
-            <div class="twcss-text-sm twcss-font-semibold">{{ block.settings.title }}</div>
+            <div class='twcss-text-sm twcss-font-semibold'>{{ block.settings.title }}</div>
           </a>
         </div>
       {% endfor %}
@@ -24,38 +24,38 @@
   </div>
 
   {% if section.settings.show_banner %}
-    <div class="md:twcss-px-4 md:twcss-max-w-7xl  twcss-mx-auto">
-      <div class="twcss-mt-8 twcss-flex twcss-flex-col md:twcss-flex-row twcss-justify-between twcss-items-center twcss-bg-[#FFF7E9]">
-        <div class="twcss-hidden md:twcss-block twcss-w-2/5 twcss-relative">
+    <div class='md:twcss-px-4 md:twcss-max-w-7xl  twcss-mx-auto'>
+      <div class='twcss-mt-8 twcss-flex twcss-flex-col md:twcss-flex-row twcss-justify-between twcss-items-center twcss-bg-[#FFF7E9]'>
+        <div class='twcss-hidden md:twcss-block twcss-w-2/5 twcss-relative'>
           <img
-            src="{{ section.settings.desktop_banner | img_url: 'master' }}"
-            alt="{{ section.settings.banner_title }}"
-            class="twcss-h-40 twcss-w-full twcss-object-cover [clip-path:polygon(0_0,85%_0,100%_100%,0%_100%)]"
-            loading="lazy"
-            width="100%"
-            height="100%"
+            src='{{ section.settings.desktop_banner | img_url: 'master' }}'
+            alt='{{ section.settings.banner_title }}'
+            class='twcss-h-40 twcss-w-full twcss-object-cover [clip-path:polygon(0_0,85%_0,100%_100%,0%_100%)]'
+            loading='lazy'
+            width='100%'
+            height='100%'
           >
         </div>
-        <div class="md:twcss-hidden twcss-w-full">
+        <div class='md:twcss-hidden twcss-w-full'>
           <img
-            src="{{ section.settings.mobile_banner | img_url: "master" }}"
-            alt="{{ section.settings.banner_title }}"
-            class="twcss-h-44  twcss-w-full twcss-object-cover [clip-path:polygon(0_0,0_100%,100%_75%,100%_0)]"
-            loading="lazy"
-            width="100%"
-            height="100%"
+            src='{{ section.settings.mobile_banner | img_url: "master" }}'
+            alt='{{ section.settings.banner_title }}'
+            class='twcss-h-44  twcss-w-full twcss-object-cover [clip-path:polygon(0_0,0_100%,100%_75%,100%_0)]'
+            loading='lazy'
+            width='100%'
+            height='100%'
           >
         </div>
-        <div class="twcss-flex twcss-flex-col twcss-justify-center twcss-px-4 md:twcss-px-8 twcss-w-full md:twcss-w-3/5 twcss-items-center twcss-p-2 md:twcss-p-6 twcss-text-center">
-          <div class="twcss-text-[#FF6B00] twcss-text-lg twcss-font-bold">
+        <div class='twcss-flex twcss-flex-col twcss-justify-center twcss-px-4 md:twcss-px-8 twcss-w-full md:twcss-w-3/5 twcss-items-center twcss-p-2 md:twcss-p-6 twcss-text-center'>
+          <div class='twcss-text-[#FF6B00] twcss-text-lg twcss-font-bold'>
             {{ section.settings.banner_title }}
           </div>
-          <div class="twcss-text-gray-700 md:twcss-mt-2 twcss-text-sm">
+          <div class='twcss-text-gray-700 md:twcss-mt-2 twcss-text-sm'>
             {% render 'bold-uppercase' with section.settings.banner_description as text %}
           </div>
           <a
-            href="{{ section.settings.banner_link }}"
-            class="twcss-text-[#1746A2] md:twcss-mt-4 twcss-flex twcss-items-center twcss-gap-2 twcss-font-bold twcss-text-sm"
+            href='{{ section.settings.banner_link }}'
+            class='twcss-text-[#1746A2] md:twcss-mt-4 twcss-flex twcss-items-center twcss-gap-2 twcss-font-bold twcss-text-sm'
           >
             {{ section.settings.banner_link_text }}
             {% render 'icon-chevron-right' %}
@@ -120,6 +120,17 @@
       "id": "show_banner",
       "label": "Show Banner",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text",
+      "default": "View All"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
     }
   ],
   "blocks": [
@@ -142,6 +153,11 @@
           "type": "url",
           "id": "link",
           "label": "Solution Link"
+        },
+        {
+          "type": "url",
+          "id": "view_all_link",
+          "label": "View All Link"
         }
       ]
     }
