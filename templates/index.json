@@ -242,8 +242,8 @@
       "settings": {
         "white_title": "Featured",
         "blue_title": "Categories",
-        "banner_title": "Redefining Efficiency in Manufacturing and Distribution",
-        "banner_description": "Streamlining processes with innovative solutions, NEXAFLOW, empowering businesses to meet customer demands with precision and reliability.",
+        "banner_title": "",
+        "banner_description": "",
         "banner_link": "",
         "banner_link_text": "See more",
         "show_banner": false,
