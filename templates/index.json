@@ -356,7 +356,7 @@
           "type": "item",
           "settings": {
             "logo": "shopify://shop_images/GBC.png",
-            "name": "GBC",
+            "name": "",
             "link": "shopify://products/the-collection-snowboard-oxygen"
           }
         }
