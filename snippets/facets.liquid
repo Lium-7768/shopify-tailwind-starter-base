@@ -58,13 +58,8 @@
                     <div class="twcss-flex twcss-items-center twcss-gap-2">
                       <span class="twcss-text-sm twcss-font-medium">
                         {{- filter.label | escape }}
-                        {%- if filter_type == 'vertical' -%}
-                          <span class="twcss-ml-1{% if filter.active_values.size == 0 %} twcss-hidden{% endif %}">
-                            ({{ filter.active_values.size }})</span
-                          >
-                        {%- endif -%}
                       </span>
-                      {%- if filter_type == 'vertical' and filter.operator == 'AND' -%}
+                      {%- if filter.operator == 'AND' -%}
                         <span class="twcss-text-xs twcss-text-muted-foreground">
                           {{ 'products.facets.filter_and_operator_subtitle' | t }}
                         </span>
@@ -111,7 +106,7 @@
                         endif
                       -%}
                       <ul
-                        class="{{ visual_layout_class }}{% if filter_type == 'vertical' %} facets__list--vertical{% else %} facets__list{% endif %} list-unstyled"
+                        class="{{ visual_layout_class }} list-unstyled"
                         role="list"
                       >
                         {%- for value in sorted_values -%}
@@ -141,7 +136,7 @@
                             </span>
                           {%- endcapture -%}
 
-                          <li class="list-menu__item facets__item{% if forloop.index > show_more_number and filter_type == 'vertical' %} show-more-item hidden{% endif %}">
+                          <li class="list-menu__item facets__item{% if forloop.index > show_more_number %} show-more-item hidden{% endif %}">
                             {%- if presentation == 'swatch' -%}
                               <div class="{{ label_class }}">
                                 <div class="swatch-input-wrapper">
