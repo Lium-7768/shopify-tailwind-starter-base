@@ -33,12 +33,12 @@
       {%- if filter_type == 'horizontal' -%}
         {% comment %} Sorting and product count are the last elements when filter type is horizontal {% endcomment %}
         {%- if enable_sorting -%}
-          <div class="twcss-flex twcss-items-center twcss-gap-x-2 facet-filters sorting">
-            <span class="twcss-text-base twcss-font-medium">{{ 'products.facets.sort_by_label' | t }}</span>
+          <div class="twcss-flex twcss-items-center twcss-gap-x-2 twcss-text-sm facet-filters sorting">
+            <span class="">{{ 'products.facets.sort_by_label' | t }}</span>
             <div class="twcss-relative twcss-border twcss-rounded facet-filters__field">
               <select
                 name="sort_by"
-                class="twcss-appearance-none twcss-bg-transparent twcss-border-none twcss-outline-none facet-filters__sort select__select"
+                class="facet-filters__sort select__select twcss-appearance-none twcss-text-sm twcss-bg-transparent twcss-border-none twcss-outline-none twcss-p-3"
                 id="SortBy"
                 aria-describedby="a11y-refresh-page-message"
               >
