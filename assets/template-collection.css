@@ -118,12 +118,6 @@
   margin-right: 2rem;
 }
 
-.product-grid--list .card__media img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-}
-
 .product-grid--list .card__content {
   flex: 1;
   text-align: left;
