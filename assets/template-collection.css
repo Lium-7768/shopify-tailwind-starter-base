@@ -114,8 +114,14 @@
 }
 
 .product-grid--list .card__media {
-  flex: 0 0 300px;
+  flex: 0 0 180px;
   margin-right: 2rem;
+}
+
+.product-grid--list .card__media img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
 }
 
 .product-grid--list .card__content {
