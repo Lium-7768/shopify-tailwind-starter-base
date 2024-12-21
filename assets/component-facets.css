@@ -1,3 +1,5 @@
+--color-background: #84888B;
+
 .facets-container {
   display: grid;
   grid-template-columns: repeat(2, auto);
