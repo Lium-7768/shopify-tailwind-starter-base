@@ -28,7 +28,7 @@
   <facet-filters-form class="twcss-hidden md:twcss-block">
     <form
       id="FacetFiltersForm"
-      class="twcss-flex twcss-flex-row twcss-bg-secondary-foreground"
+      class="twcss-flex twcss-flex-col twcss-bg-secondary-foreground"
     >
       <div class="twcss-flex twcss-items-center twcss-gap-4">
         {%- if filter_type == 'horizontal' -%}
@@ -87,7 +87,7 @@
         {%- endif -%}
       </div>
 
-      <div class="twcss-flex twcss-flex-wrap twcss-gap-4 twcss-flex-row">
+      <div class="twcss-flex twcss-flex-wrap twcss-gap-4 twcss-flex-col">
         {% if enable_filtering %}
           <div id="FacetsWrapperDesktop" class="twcss-w-full">
             {%- if results.filters != empty -%}
