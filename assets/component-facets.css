@@ -1010,7 +1010,7 @@ input.mobile-facets__checkbox {
 
   .facets-vertical-form {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     background-color: #F8F8F8;
     padding: 8px 20px;
