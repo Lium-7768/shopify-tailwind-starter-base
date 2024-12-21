@@ -25,11 +25,11 @@
 -%}
 
 <div class="twcss-w-full {% if filter_type == 'drawer' %}twcss-relative{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-  {%- if filter_type == 'vertical' or filter_type == 'horizontal' -%}
+  {%- if filter_type == 'horizontal' -%}
     <facet-filters-form class="twcss-hidden md:twcss-block">
       <form
         id="FacetFiltersForm"
-        class="{% if filter_type == 'horizontal' %}twcss-flex twcss-flex-wrap twcss-gap-4{% else %}twcss-flex twcss-flex-col twcss-gap-4{% endif %}"
+        class="twcss-flex twcss-flex-wrap twcss-gap-4"
       >
         {%- if results.terms -%}
           <input type="hidden" name="q" value="{{ results.terms | escape }}">
@@ -119,30 +119,32 @@
                 {% when 'boolean', 'list' %}
                   <details
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
-                    class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
+                    class="twcss-w-full js-filter"
                     data-index="{{ forloop.index }}"
                     {% if filter_type == 'vertical' and forloop.index == 1 %}
                       open
                     {% endif %}
                   >
                     <summary
-                      class="facets__summary caption-large focus-offset"
+                      class="twcss-flex twcss-items-center twcss-justify-between twcss-w-full twcss-py-3 twcss-cursor-pointer focus-offset"
                       aria-label="{{ filter.label | escape }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
                     >
-                      <div>
-                        <span class="facets__summary-label">
+                      <div class="twcss-flex twcss-items-center twcss-gap-2">
+                        <span class="twcss-text-sm twcss-font-medium">
                           {{- filter.label | escape }}
                           {%- if filter_type == 'vertical' -%}
-                            <span class="facets__selected{% if filter.active_values.size == 0 %} hidden{% endif %}">
+                            <span class="twcss-ml-1{% if filter.active_values.size == 0 %} twcss-hidden{% endif %}">
                               ({{ filter.active_values.size }})</span
                             >
                           {%- endif -%}
                         </span>
                         {%- if filter_type == 'vertical' and filter.operator == 'AND' -%}
-                          <span class="facets__and-helptext">
+                          <span class="twcss-text-xs twcss-text-muted-foreground">
                             {{ 'products.facets.filter_and_operator_subtitle' | t }}
                           </span>
                         {%- endif -%}
+                      </div>
+                      <div class="twcss-flex twcss-items-center">
                         <span class="twcss-size-6 twcss-block">
                           {{- 'icon-caret.svg' | inline_asset_content -}}
                         </span>
@@ -150,7 +152,7 @@
                     </summary>
                     <div
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
-                      class="parent-display {% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
+                      class="twcss-mt-2 twcss-pb-4"
                     >
                       {%- if filter_type != 'vertical' -%}
                         <div class="facets__header">
