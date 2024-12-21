@@ -75,7 +75,7 @@
                       <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
                         <span class="active-facets__button-inner button button--tertiary">
                           {{ filter.label }}: {{ value.label | escape }}
-                          {% render 'icon-close-small' %}
+                          <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
                           <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                         </span>
                       </a>
@@ -97,7 +97,7 @@
                             {%- else -%}
                               {{ filter.range_max | money }}
                             {%- endif -%}
-                            {% render 'icon-close-small' %}
+                            <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
                             <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                           </span>
                         </a>
@@ -181,10 +181,16 @@
                                   {% endif %}
                                 >
 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                  <rect x="0.5" y="0.5" width="23" height="23" rx="2.5" fill="white" stroke="#84888B"/>
+                                <svg
+                                  width="24px"
+                                  height="24px"
+                                  viewBox="0 0 16 16"
+                                  aria-hidden="true"
+                                  focusable="false"
+                                >
+                                  <rect width="24" height="24" stroke="currentColor" fill="none" stroke-width="1"></rect>
                                 </svg>
-                               
+
                                 <svg
                                   aria-hidden="true"
                                   class="icon icon-checkmark"
@@ -239,8 +245,14 @@
                                   {% endif %}
                                 >
 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                  <rect x="0.5" y="0.5" width="23" height="23" rx="2.5" fill="white" stroke="#84888B"/>
+                                <svg
+                                  width="24px"
+                                  height="24px"
+                                  viewBox="0 0 16 16"
+                                  aria-hidden="true"
+                                  focusable="false"
+                                >
+                                  <rect width="24" height="24" stroke="currentColor" fill="none" stroke-width="1"></rect>
                                 </svg>
 
                                 <svg
@@ -409,7 +421,7 @@
                     <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
                       <span class="active-facets__button-inner button button--tertiary">
                         {{ filter.label }}: {{ value.label | escape }}
-                        {% render 'icon-close-small' %}
+                        <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
                         <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                       </span>
                     </a>
@@ -431,7 +443,7 @@
                           {%- else -%}
                             {{ filter.range_max | money }}
                           {%- endif -%}
-                          {% render 'icon-close-small' %}
+                          <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
                           <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                         </span>
                       </a>
@@ -690,8 +702,14 @@
 
                                   <span class="mobile-facets__highlight"></span>
 
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <rect x="0.5" y="0.5" width="23" height="23" rx="2.5" fill="white" stroke="#84888B"/>
+                                  <svg
+                                    width="24px"
+                                    height="24px"
+                                    viewBox="0 0 16 16"
+                                    aria-hidden="true"
+                                    focusable="false"
+                                  >
+                                    <rect width="24" height="24" stroke="currentColor" fill="none" stroke-width="1"></rect>
                                   </svg>
 
                                   <svg
@@ -935,7 +953,7 @@
           <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
             <span class="active-facets__button-inner button button--tertiary">
               {{ filter.label }}: {{ value.label | escape }}
-              {% render 'icon-close-small' %}
+              <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
               <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
             </span>
           </a>
@@ -958,7 +976,7 @@
                 {%- else -%}
                   {{ filter.range_max | money }}
                 {%- endif -%}
-                {% render 'icon-close-small' %}
+                <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
                 <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
               </span>
             </a>
@@ -1064,7 +1082,7 @@
                 <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
                   <span class="active-facets__button-inner button button--tertiary">
                     {{ filter.label }}: {{ value.label | escape }}
-                    {% render 'icon-close-small' %}
+                    <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
                     <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                   </span>
                 </a>
@@ -1087,7 +1105,7 @@
                       {%- else -%}
                         {{ filter.range_max | money }}
                       {%- endif -%}
-                      {% render 'icon-close-small' %}
+                      <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
                       <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                     </span>
                   </a>
