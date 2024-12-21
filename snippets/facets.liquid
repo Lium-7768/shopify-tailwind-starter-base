@@ -75,7 +75,7 @@
                       <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
                         <span class="active-facets__button-inner button button--tertiary">
                           {{ filter.label }}: {{ value.label | escape }}
-                          <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
+                          {% render 'icon-close-small' %}
                           <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                         </span>
                       </a>
@@ -97,7 +97,7 @@
                             {%- else -%}
                               {{ filter.range_max | money }}
                             {%- endif -%}
-                            <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
+                            {% render 'icon-close-small' %}
                             <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                           </span>
                         </a>
@@ -421,7 +421,7 @@
                     <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
                       <span class="active-facets__button-inner button button--tertiary">
                         {{ filter.label }}: {{ value.label | escape }}
-                        <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
+                        {% render 'icon-close-small' %}
                         <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                       </span>
                     </a>
@@ -443,7 +443,7 @@
                           {%- else -%}
                             {{ filter.range_max | money }}
                           {%- endif -%}
-                          <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
+                          {% render 'icon-close-small' %}
                           <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                         </span>
                       </a>
@@ -953,7 +953,7 @@
           <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
             <span class="active-facets__button-inner button button--tertiary">
               {{ filter.label }}: {{ value.label | escape }}
-              <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
+              {% render 'icon-close-small' %}
               <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
             </span>
           </a>
@@ -976,7 +976,7 @@
                 {%- else -%}
                   {{ filter.range_max | money }}
                 {%- endif -%}
-                <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
+                {% render 'icon-close-small' %}
                 <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
               </span>
             </a>
@@ -1082,7 +1082,7 @@
                 <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
                   <span class="active-facets__button-inner button button--tertiary">
                     {{ filter.label }}: {{ value.label | escape }}
-                    <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
+                    {% render 'icon-close-small' %}
                     <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                   </span>
                 </a>
@@ -1105,7 +1105,7 @@
                       {%- else -%}
                         {{ filter.range_max | money }}
                       {%- endif -%}
-                      <span class="twcss-size-4">{% render 'icon-close-small' %}</span>
+                      {% render 'icon-close-small' %}
                       <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                     </span>
                   </a>
