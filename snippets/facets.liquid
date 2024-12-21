@@ -119,32 +119,30 @@
                 {% when 'boolean', 'list' %}
                   <details
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
-                    class="twcss-w-full js-filter"
+                    class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
                     data-index="{{ forloop.index }}"
                     {% if filter_type == 'vertical' and forloop.index == 1 %}
                       open
                     {% endif %}
                   >
                     <summary
-                      class="twcss-flex twcss-items-center twcss-justify-between twcss-w-full twcss-py-3 twcss-cursor-pointer focus-offset"
+                      class="facets__summary caption-large focus-offset"
                       aria-label="{{ filter.label | escape }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
                     >
-                      <div class="twcss-flex twcss-items-center twcss-gap-2">
-                        <span class="twcss-text-sm twcss-font-medium">
+                      <div>
+                        <span class="facets__summary-label">
                           {{- filter.label | escape }}
                           {%- if filter_type == 'vertical' -%}
-                            <span class="twcss-ml-1{% if filter.active_values.size == 0 %} twcss-hidden{% endif %}">
+                            <span class="facets__selected{% if filter.active_values.size == 0 %} hidden{% endif %}">
                               ({{ filter.active_values.size }})</span
                             >
                           {%- endif -%}
                         </span>
                         {%- if filter_type == 'vertical' and filter.operator == 'AND' -%}
-                          <span class="twcss-text-xs twcss-text-muted-foreground">
+                          <span class="facets__and-helptext">
                             {{ 'products.facets.filter_and_operator_subtitle' | t }}
                           </span>
                         {%- endif -%}
-                      </div>
-                      <div class="twcss-flex twcss-items-center">
                         <span class="twcss-size-6 twcss-block">
                           {{- 'icon-caret.svg' | inline_asset_content -}}
                         </span>
@@ -152,7 +150,7 @@
                     </summary>
                     <div
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
-                      class="twcss-mt-2 twcss-pb-4"
+                      class="parent-display {% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
                     >
                       {%- if filter_type != 'vertical' -%}
                         <div class="facets__header">
