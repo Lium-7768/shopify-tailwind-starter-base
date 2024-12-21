@@ -111,11 +111,19 @@
 .product-grid--list .card {
   display: flex;
   align-items: flex-start;
+  flex-direction: row;
+}
+
+.product-grid:not(.product-grid--list) .card:not(.ratio) {
+  flex-direction: column;
+}
+
+.product-grid--list .card:not(.ratio) {
+  flex-direction: row;
 }
 
 .product-grid--list .card__inner {
   flex: 0 0 300px;
-  margin-right: 2rem;
   max-width: 180px;
 }
 
