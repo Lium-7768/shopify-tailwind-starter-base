@@ -301,8 +301,8 @@
   opacity: 1;
   width: 24px;
   height: 24px;
-  top: 0.7rem;
-  left: -0.4rem;
+  top: 16px;
+  left: 0;
   z-index: -1;
   appearance: none;
   -webkit-appearance: none;
@@ -686,9 +686,8 @@ a.active-facets__button.focused .active-facets__button-inner,
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: 0.7rem;
-  right: 1rem;
-  width: 4.4rem;
+  top: 16px;
+  right: 0 width: 4.4rem;
   height: 4.4rem;
   z-index: 101;
   opacity: 0;
