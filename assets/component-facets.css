@@ -322,9 +322,9 @@
 .facet-checkbox .icon-checkmark {
   visibility: hidden;
   position: absolute;
-  left: 0.3rem;
+  left: 4px;
   z-index: 5;
-  top: 1.4rem;
+  top: 22px;
 }
 
 .facet-checkbox>input[type='checkbox']:checked~.icon-checkmark {
