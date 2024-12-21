@@ -316,7 +316,6 @@
   background-color: rgb(var(--color-background));
   margin-right: 1.2rem;
   flex-shrink: 0;
-  stroke: #84888D;
 }
 
 .facet-checkbox .icon-checkmark {
@@ -842,7 +841,6 @@ input.mobile-facets__checkbox {
   z-index: 2;
   margin-right: 1.2rem;
   flex-shrink: 0;
-  stroke: #84888D;
 }
 
 .mobile-facets__label .icon-checkmark {
