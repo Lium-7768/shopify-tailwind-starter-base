@@ -114,8 +114,9 @@
 }
 
 .product-grid--list .card__media {
-  flex: 0 0 180px;
+  flex: 0 0 300px;
   margin-right: 2rem;
+  max-width: 180px;
 }
 
 .product-grid--list .card__content {
@@ -128,9 +129,15 @@
   padding-left: 0;
 }
 
-/* Add size constraints for list view image */
-.product-grid--list .card__media img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
+/* Control image height in grid view */
+.product-grid:not(.product-grid--list) .card__media {
+  max-height: 180px;
+  overflow: hidden;
+}
+
+/* Ensure images maintain aspect ratio */
+.product-grid .card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
