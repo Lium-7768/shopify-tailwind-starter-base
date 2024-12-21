@@ -12,6 +12,9 @@ class FacetFiltersForm extends HTMLElement {
 
     const facetWrapper = this.querySelector('#FacetsWrapperDesktop');
     if (facetWrapper) facetWrapper.addEventListener('keyup', onKeyUpEscape);
+
+    // Add view switcher handlers
+    this.initializeViewSwitcher();
   }
 
   static setListeners() {
@@ -201,6 +204,44 @@ class FacetFiltersForm extends HTMLElement {
     FacetFiltersForm.toggleActiveFacets();
     const url = event.currentTarget.href.indexOf('?') == -1 ? '' : event.currentTarget.href.slice(event.currentTarget.href.indexOf('?') + 1);
     FacetFiltersForm.renderPage(url);
+  }
+
+  initializeViewSwitcher() {
+    const gridButton = document.querySelector('[data-view="grid"]');
+    const listButton = document.querySelector('[data-view="list"]');
+    const productGrid = document.getElementById('product-grid');
+    
+    if (!gridButton || !listButton || !productGrid) return;
+
+    // Load saved preference
+    const currentView = localStorage.getItem('collection-view-mode') || 'grid';
+    this.switchView(currentView, { gridButton, listButton, productGrid });
+
+    gridButton.addEventListener('click', () => {
+      this.switchView('grid', { gridButton, listButton, productGrid });
+    });
+
+    listButton.addEventListener('click', () => {
+      this.switchView('list', { gridButton, listButton, productGrid });
+    });
+  }
+
+  switchView(view, elements) {
+    const { gridButton, listButton, productGrid } = elements;
+    
+    // Save preference
+    localStorage.setItem('collection-view-mode', view);
+
+    // Update buttons state
+    if (view === 'grid') {
+      gridButton.classList.add('active');
+      listButton.classList.remove('active');
+      productGrid.classList.remove('product-grid--list');
+    } else {
+      listButton.classList.add('active');
+      gridButton.classList.remove('active');
+      productGrid.classList.add('product-grid--list');
+    }
   }
 }
 
