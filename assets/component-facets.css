@@ -170,8 +170,6 @@
 .facets {
   display: block;
   grid-column-start: span 2;
-  background-color: #F8F8F8;
-  padding: 8px 20px;
 }
 
 .facets__form {
@@ -1016,6 +1014,8 @@ input.mobile-facets__checkbox {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    background-color: #F8F8F8;
+    padding: 8px 20px;
   }
 
   .product-count-vertical {
