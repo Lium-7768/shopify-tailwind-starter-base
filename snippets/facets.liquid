@@ -112,24 +112,7 @@
                         </a>
                       </facet-remove>
                     {%- endfor -%}
-      
-                    {%- if filter.type == 'price_range' -%}
-                      {% assign min = filter.min_value.value %}
-                      {% assign max = filter.max_value.value %}
-                      {%- if min != null or max != null -%}
-                        <facet-remove>
-                          <a href="{{ filter.url_to_remove }}" class="active-facets__button active-facets__button--light">
-                            <span class="active-facets__button-inner button button--tertiary">
-                              {{ min | default: 0 | money }} - {{ max | default: filter.range_max | money }}
-                              <span class="twcss-size-6">
-                                {{- 'icon-close-small.svg' | inline_asset_content -}}
-                              </span>
-                              <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
-                            </span>
-                          </a>
-                        </facet-remove>
-                      {%- endif -%}
-                    {%- endif -%}
+    
                   {%- endfor -%}
                   <facet-remove class="active-facets__button-wrapper">
                     <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
@@ -293,42 +276,6 @@
                           {%- endfor -%}
                         </ul>
                       </fieldset>
-                    </div>
-                  </details>
-                {% when 'price_range' %}
-                  <details
-                    id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
-                    class="twcss-w-full js-filter"
-                    data-index="{{ forloop.index }}"
-                  >
-                    <summary class="facets__summary caption-large focus-offset">
-                      <div>
-                        <span>{{ filter.label | escape }}</span>
-                        <span class="twcss-size-6 twcss-block">
-                          {{- 'icon-caret.svg' | inline_asset_content -}}
-                        </span>
-                      </div>
-                    </summary>
-                    <div
-                      id="Facet-{{ forloop.index }}-{{ section.id }}"
-                      class="{% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
-                    >
-                      <div class="{% if filter_type == 'horizontal' %}facets__header{% else %}facets__header-vertical{% endif %}">
-                        {%- assign max_price_amount = filter.range_max | money | strip_html | escape -%}
-                        <span class="facets__selected">
-                          {{- 'products.facets.max_price' | t: price: max_price_amount -}}
-                        </span>
-                        {%- if filter_type != 'vertical' -%}
-                          <facet-remove>
-                            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
-                              {{ 'products.facets.reset' | t }}
-                            </a>
-                          </facet-remove>
-                        {%- endif -%}
-                      </div>
-                      <price-range class="facets__price">
-                        {% render 'price-facet', filter: filter, id_prefix: 'Filter-', filter_type: filter_type %}
-                      </price-range>
                     </div>
                   </details>
               {% endcase %}
@@ -573,61 +520,6 @@
                           </div>
                         </div>
                       </details>
-                    {% when 'price_range' %}
-                      <details
-                        id="Details-Mobile-{{ filter.param_name | escape }}-{{ section.id }}"
-                        class="mobile-facets__details js-filter"
-                        data-index="mobile-{{ forloop.index }}"
-                      >
-                        <summary class="mobile-facets__summary focus-inset">
-                          <div>
-                            <span>{{ filter.label | escape }}</span>
-                            <span class="mobile-facets__arrow">
-                              <span class="twcss-size-6">
-                                {{- 'icon-arrow.svg' | inline_asset_content -}}
-                              </span>
-                            </span>
-                          </div>
-                        </summary>
-                        <div
-                          id="FacetMobile-{{ forloop.index }}-{{ section.id }}"
-                          class="mobile-facets__submenu gradient"
-                        >
-                          <button
-                            class="mobile-facets__close-button link link--text focus-inset"
-                            aria-expanded="true"
-                            type="button"
-                          >
-                            <span class="twcss-size-6">
-                              {{- 'icon-arrow.svg' | inline_asset_content -}}
-                            </span>
-                            {{ filter.label | escape }}
-                          </button>
-
-                          {%- assign max_price_amount = filter.range_max | money | strip_html | escape -%}
-                          <p class="mobile-facets__info">
-                            {{ 'products.facets.max_price' | t: price: max_price_amount }}
-                          </p>
-
-                          <price-range class="facets__price">
-                            {% render 'price-facet', filter: filter, id_prefix: 'Mobile-Filter-' %}
-                          </price-range>
-                          <div class="mobile-facets__footer">
-                            <facet-remove class="mobile-facets__clear-wrapper">
-                              <a href="{{ filter.url_to_remove }}" class="mobile-facets__clear underlined-link">
-                                {{- 'products.facets.clear' | t -}}
-                              </a>
-                            </facet-remove>
-                            <button
-                              type="button"
-                              class="button button--primary"
-                              onclick="this.closest('.mobile-facets__wrapper').querySelector('summary').click()"
-                            >
-                              {{ 'products.facets.apply' | t }}
-                            </button>
-                          </div>
-                        </div>
-                      </details>
                   {% endcase %}
                 {%- endfor -%}
               {%- endif -%}
@@ -713,24 +605,6 @@
           </a>
         </facet-remove>
       {%- endfor -%}
-
-      {%- if filter.type == 'price_range' -%}
-        {% assign min = filter.min_value.value %}
-        {% assign max = filter.max_value.value %}
-        {%- if min != null or max != null -%}
-          <facet-remove>
-            <a href="{{ filter.url_to_remove }}" class="active-facets__button active-facets__button--light">
-              <span class="active-facets__button-inner button button--tertiary">
-                {{ min | default: 0 | money }} - {{ max | default: filter.range_max | money }}
-                <span class="twcss-size-6">
-                  {{- 'icon-close-small.svg' | inline_asset_content -}}
-                </span>
-                <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
-              </span>
-            </a>
-          </facet-remove>
-        {%- endif -%}
-      {%- endif -%}
     {%- endfor -%}
     <facet-remove class="active-facets__button-wrapper">
       <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
@@ -777,23 +651,6 @@
               </facet-remove>
             {%- endfor -%}
 
-            {%- if filter.type == 'price_range' -%}
-              {% assign min = filter.min_value.value %}
-              {% assign max = filter.max_value.value %}
-              {%- if min != null or max != null -%}
-                <facet-remove>
-                  <a href="{{ filter.url_to_remove }}" class="active-facets__button active-facets__button--light">
-                    <span class="active-facets__button-inner button button--tertiary">
-                      {{ min | default: 0 | money }} - {{ max | default: filter.range_max | money }}
-                      <span class="twcss-size-6">
-                        {{- 'icon-close-small.svg' | inline_asset_content -}}
-                      </span>
-                      <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
-                    </span>
-                  </a>
-                </facet-remove>
-              {%- endif -%}
-            {%- endif -%}
           {%- endfor -%}
           <facet-remove class="active-facets__button-wrapper">
             <a href="{{ results_url }}" class="active-facets__button-remove underlined-link">
