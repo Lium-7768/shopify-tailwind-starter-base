@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
-  padding-top: 1rem;
 }
 
 .active-facets-mobile {
@@ -1016,6 +1015,7 @@ input.mobile-facets__checkbox {
     align-items: center;
     background-color: #F8F8F8;
     padding: 8px 20px;
+    margin-bottom: 20px;
   }
 
   .product-count-vertical {
@@ -1078,7 +1078,6 @@ input.mobile-facets__checkbox {
 
   .facets-container-drawer {
     display: flex;
-    ;
     flex-flow: row wrap;
     align-items: center;
     column-gap: 0;
