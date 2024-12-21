@@ -127,3 +127,10 @@
 .product-grid--list .card__information {
   padding-left: 0;
 }
+
+/* Add size constraints for list view image */
+.product-grid--list .card__media img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
