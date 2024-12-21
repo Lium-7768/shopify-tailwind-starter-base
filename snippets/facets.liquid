@@ -38,28 +38,32 @@
               <h2 class="facet-filters__label caption-large text-body">
                 <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
               </h2>
-              <div class="select">
-                {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
-                <select
-                  name="sort_by"
-                  class="facet-filters__sort select__select caption-large"
-                  id="SortBy"
-                  aria-describedby="a11y-refresh-page-message"
-                >
-                  {%- for option in results.sort_options -%}
-                    <option
-                      value="{{ option.value | escape }}"
-                      {% if option.value == sort_by %}
-                        selected="selected"
-                      {% endif %}
-                    >
-                      {{ option.name | escape }}
-                    </option>
-                  {%- endfor -%}
-                </select>
-                <span class="twcss-size-6">
-                  {{- 'icon-caret.svg' | inline_asset_content -}}
-                </span>
+              <div class="twcss-flex twcss-items-center twcss-gap-2">
+                <span class="twcss-text-base twcss-font-medium">{{ 'products.facets.sort_by_label' | t }}:</span>
+                <div class="twcss-relative">
+                  <select
+                    name="sort_by"
+                    class="twcss-appearance-none twcss-bg-transparent twcss-border twcss-border-gray-300 twcss-rounded-md twcss-py-2 twcss-pl-4 twcss-pr-10 twcss-text-base focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-primary"
+                    id="SortBy"
+                    aria-describedby="a11y-refresh-page-message"
+                  >
+                    {%- for option in results.sort_options -%}
+                      <option
+                        value="{{ option.value | escape }}"
+                        {% if option.value == sort_by %}
+                          selected="selected"
+                        {% endif %}
+                      >
+                        {{ option.name | escape }}
+                      </option>
+                    {%- endfor -%}
+                  </select>
+                  <div class="twcss-pointer-events-none twcss-absolute twcss-inset-y-0 twcss-right-0 twcss-flex twcss-items-center twcss-px-2">
+                    <span class="twcss-size-5">
+                      {{- 'icon-caret.svg' | inline_asset_content -}}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
