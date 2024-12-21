@@ -1,6 +1,4 @@
-:root {
-  --color-background: #84888B;
-}
+--color-background: #84888B;
 
 .facets-container {
   display: grid;
