@@ -33,37 +33,30 @@
       {%- if filter_type == 'horizontal' -%}
         {% comment %} Sorting and product count are the last elements when filter type is horizontal {% endcomment %}
         {%- if enable_sorting -%}
-          <div class="facet-filters sorting caption">
-            <div class="facet-filters__field">
-              <h2 class="facet-filters__label caption-large text-body">
-                <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
-              </h2>
-              <div class="twcss-flex twcss-items-center twcss-gap-2">
-                <span class="twcss-text-base twcss-font-medium">{{ 'products.facets.sort_by_label' | t }}:</span>
-                <div class="twcss-relative">
-                  <select
-                    name="sort_by"
-                    class="twcss-appearance-none twcss-bg-transparent twcss-border twcss-border-gray-300 twcss-rounded-md twcss-py-2 twcss-pl-4 twcss-pr-10 twcss-text-base focus:twcss-outline-none focus:twcss-ring-2 focus:twcss-ring-primary"
-                    id="SortBy"
-                    aria-describedby="a11y-refresh-page-message"
+          <div class="twcss-flex twcss-items-center twcss-gap-2 facet-filters sorting">
+            <span class="twcss-text-base twcss-font-medium">{{ 'products.facets.sort_by_label' | t }}:</span>
+            <div class="twcss-relative facet-filters__field">
+              <select
+                name="sort_by"
+                class="twcss-appearance-none twcss-bg-transparent twcss-pr-8 twcss-pl-0 twcss-py-0 twcss-text-base twcss-font-normal twcss-border-none twcss-outline-none facet-filters__sort select__select"
+                id="SortBy"
+                aria-describedby="a11y-refresh-page-message"
+              >
+                {%- for option in results.sort_options -%}
+                  <option
+                    value="{{ option.value | escape }}"
+                    {% if option.value == sort_by %}
+                      selected="selected"
+                    {% endif %}
                   >
-                    {%- for option in results.sort_options -%}
-                      <option
-                        value="{{ option.value | escape }}"
-                        {% if option.value == sort_by %}
-                          selected="selected"
-                        {% endif %}
-                      >
-                        {{ option.name | escape }}
-                      </option>
-                    {%- endfor -%}
-                  </select>
-                  <div class="twcss-pointer-events-none twcss-absolute twcss-inset-y-0 twcss-right-0 twcss-flex twcss-items-center twcss-px-2">
-                    <span class="twcss-size-5">
-                      {{- 'icon-caret.svg' | inline_asset_content -}}
-                    </span>
-                  </div>
-                </div>
+                    {{ option.name | escape }}
+                  </option>
+                {%- endfor -%}
+              </select>
+              <div class="twcss-absolute twcss-right-0 twcss-top-1/2 twcss--translate-y-1/2 twcss-pointer-events-none">
+                <span class="twcss-size-6 twcss-block">
+                  {{- 'icon-caret.svg' | inline_asset_content -}}
+                </span>
               </div>
             </div>
           </div>
