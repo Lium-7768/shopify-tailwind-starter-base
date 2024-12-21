@@ -980,7 +980,7 @@ input.mobile-facets__checkbox {
   }
 
   .facets__heading--vertical {
-    margin: 0 0 1.5rem 0;
+    margin: 0;
     font-size: 1.5rem;
   }
 
@@ -990,7 +990,7 @@ input.mobile-facets__checkbox {
   }
 
   .facets__display-vertical {
-    padding-bottom: 1.5rem;
+    padding-bottom: 0;
   }
 
   .facets-vertical .facets-wrapper {
