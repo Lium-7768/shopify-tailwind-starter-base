@@ -78,6 +78,9 @@
 .facet-filters__field .select {
   width: auto;
   align-items: center;
+  border: 1px solid #BCBDB9;
+  border-radius: 5px;
+  padding: 12px;
 }
 
 .facet-filters__field .select:after,
