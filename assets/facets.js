@@ -237,10 +237,22 @@ class FacetFiltersForm extends HTMLElement {
       gridButton.classList.add('active');
       listButton.classList.remove('active');
       productGrid.classList.remove('product-grid--list');
+      
+      // Update button styles
+      gridButton.classList.remove('twcss-border-secondary-middle', 'twcss-text-secondary-middle');
+      gridButton.classList.add('twcss-border-secondary-default', 'twcss-text-secondary-default');
+      listButton.classList.remove('twcss-border-secondary-default', 'twcss-text-secondary-default');
+      listButton.classList.add('twcss-border-secondary-middle', 'twcss-text-secondary-middle');
     } else {
       listButton.classList.add('active');
       gridButton.classList.remove('active');
       productGrid.classList.add('product-grid--list');
+      
+      // Update button styles
+      listButton.classList.remove('twcss-border-secondary-middle', 'twcss-text-secondary-middle');
+      listButton.classList.add('twcss-border-secondary-default', 'twcss-text-secondary-default');
+      gridButton.classList.remove('twcss-border-secondary-default', 'twcss-text-secondary-default');
+      gridButton.classList.add('twcss-border-secondary-middle', 'twcss-text-secondary-middle');
     }
   }
 }
