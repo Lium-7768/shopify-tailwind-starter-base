@@ -87,14 +87,29 @@
         {%- endif -%}
       </div>
 
-      <div class="twcss-flex twcss-flex-wrap twcss-gap-4 twcss-flex-col">
+      <div class="twcss-flex twcss-flex-wrap twcss-gap-y-6 twcss-flex-col">
         {% if enable_filtering %}
           <div id="FacetsWrapperDesktop" class="twcss-w-full">
-            {%- if results.filters != empty -%}
-              <h2 class="twcss-text-sm twcss-font-medium twcss-mb-4" id="verticalTitle" tabindex="-1">
-                {{ 'products.facets.filter_by_label' | t }}
-              </h2>
-            {%- endif -%}
+            <div class="twcss-flex twcss-items-center twcss-justify-between">
+              {%- if results.filters != empty -%}
+                <h2 class="twcss-font-bold" id="verticalTitle" tabindex="-1">
+                  {{ 'products.facets.filter_by_label' | t }}
+                </h2>
+              {%- endif -%}
+              {%- for value in filter.active_values -%}
+                <facet-remove>
+                  <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
+                    <span class="active-facets__button-inner button button--tertiary">
+                      {{ filter.label | escape }}: {{ value.label | escape }}
+                      <span class="twcss-size-6">
+                        {{- 'icon-close-small.svg' | inline_asset_content -}}
+                      </span>
+                      <span class="visually-hidden twcss-font-semibold">{{ 'products.facets.clear_filter' | t }}</span>
+                    </span>
+                  </a>
+                </facet-remove>
+              {%- endfor -%}
+            </div>
   
             {%- for filter in results.filters -%}
               {% case filter.type %}
@@ -294,19 +309,6 @@
           {%- if filter_type == 'horizontal' -%}
             <div class="twcss-flex twcss-flex-wrap twcss-gap-2">
               {%- for filter in results.filters -%}
-                {%- for value in filter.active_values -%}
-                  <facet-remove>
-                    <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
-                      <span class="active-facets__button-inner button button--tertiary">
-                        {{ filter.label | escape }}: {{ value.label | escape }}
-                        <span class="twcss-size-6">
-                          {{- 'icon-close-small.svg' | inline_asset_content -}}
-                        </span>
-                        <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
-                      </span>
-                    </a>
-                  </facet-remove>
-                {%- endfor -%}
   
                 {%- if filter.type == 'price_range' -%}
                   {% assign min = filter.min_value.value %}
