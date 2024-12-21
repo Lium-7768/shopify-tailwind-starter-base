@@ -135,7 +135,9 @@
                             >
                           {%- endif -%}
                         </span>
-                        {% render 'icon-caret' %}
+                        <span class="twcss-size-6">
+                          {% render 'icon-caret' %}
+                        </span>
                       </div>
                     </summary>
                     <div
@@ -321,7 +323,9 @@
                     <summary class="facets__summary caption-large focus-offset">
                       <div>
                         <span>{{ filter.label | escape }}</span>
-                        {% render 'icon-caret' %}
+                        <span class="twcss-size-6">
+                          {% render 'icon-caret' %}
+                        </span>
                       </div>
                     </summary>
                     <div
@@ -656,7 +660,11 @@
                           <div>
                             <span>{{ filter.label | escape }}</span>
                             <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-arrow' %}</span>
-                            <noscript>{% render 'icon-caret' %}</noscript>
+                            <noscript>
+                              <span class="twcss-size-6">
+                                {% render 'icon-caret' %}
+                              </span>
+                            </noscript>
                           </div>
                         </summary>
                         <div
@@ -762,7 +770,11 @@
                           <div>
                             <span>{{ filter.label | escape }}</span>
                             <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-arrow' %}</span>
-                            <noscript>{% render 'icon-caret' %}</noscript>
+                            <noscript>
+                              <span class="twcss-size-6">
+                                {% render 'icon-caret' %}
+                              </span>
+                            </noscript>
                           </div>
                         </summary>
                         <div
@@ -892,7 +904,9 @@
                             </option>
                           {%- endfor -%}
                         </select>
-                        {% render 'icon-caret' %}
+                        <span class="twcss-size-6">
+                          {% render 'icon-caret' %}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -1004,7 +1018,9 @@
                   </option>
                 {%- endfor -%}
               </select>
-              {% render 'icon-caret' %}
+              <span class="twcss-size-6">
+                {% render 'icon-caret' %}
+              </span>
             </div>
           </div>
 
