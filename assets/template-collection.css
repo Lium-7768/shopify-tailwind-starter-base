@@ -149,7 +149,6 @@
 
 /* Grid layout card heading styles */
 .product-grid:not(.product-grid--list) .card__heading {
-  height: 38px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
