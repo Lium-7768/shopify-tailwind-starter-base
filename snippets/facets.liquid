@@ -70,10 +70,6 @@
                   </facet-remove>
                 </div>
                 {%- for filter in results.filters -%}
-                  <div style="display: none;">
-                    Filter Type: {{ filter.type | json }}
-                    Filter Label: {{ filter.label | json }}
-                  </div>
                   {%- for value in filter.active_values -%}
                     <facet-remove>
                       <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
@@ -394,85 +390,6 @@
                           </label>
                         </div>
                       </price-range>
-                    </div>
-                  </details>
-                {% when 'category' %}
-                  <details
-                    id="Details-Mobile-{{ forloop.index }}-{{ section.id }}"
-                    class="mobile-facets__details js-filter"
-                    data-index="mobile-{{ forloop.index }}"
-                  >
-                    <summary class="mobile-facets__summary focus-inset">
-                      <div class="twcss-flex twcss-items-center twcss-justify-between twcss-w-full">
-                        <span class="twcss-text-base twcss-font-medium">{{ filter.label | escape }}</span>
-                        <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-arrow' %}</span>
-                        <noscript>
-                          <span class="twcss-size-6">
-                            {% render 'icon-caret' %}
-                          </span>
-                        </noscript>
-                      </div>
-                    </summary>
-                    <div
-                      id="FacetMobile-{{ forloop.index }}-{{ section.id }}"
-                      class="mobile-facets__submenu gradient"
-                    >
-                      <button
-                        class="mobile-facets__close-button link link--text focus-inset twcss-flex twcss-items-center twcss-gap-2"
-                        aria-expanded="true"
-                        type="button"
-                      >
-                        {% render 'icon-arrow' %}
-                        {{ filter.label | escape }}
-                      </button>
-
-                      <ul class="twcss-space-y-2 twcss-mt-4">
-                        {%- for value in filter.values -%}
-                          <li class="twcss-flex twcss-items-center twcss-gap-3">
-                            <label
-                              for="Filter-{{ filter.param_name | escape }}-mobile-{{ forloop.index }}"
-                              class="twcss-flex twcss-items-center twcss-gap-3 twcss-cursor-pointer {% if value.count == 0 and value.active == false %}twcss-opacity-50{% endif %}"
-                            >
-                              <input
-                                class="twcss-sr-only"
-                                type="checkbox"
-                                name="{{ value.param_name }}"
-                                value="{{ value.value }}"
-                                id="Filter-{{ filter.param_name | escape }}-mobile-{{ forloop.index }}"
-                                {% if value.active %}checked{% endif %}
-                                {% if value.count == 0 and value.active == false %}disabled{% endif %}
-                              >
-                              <span class="twcss-w-5 twcss-h-5 twcss-border twcss-border-gray-300 twcss-rounded twcss-flex twcss-items-center twcss-justify-center twcss-bg-white">
-                                {%- if value.active -%}
-                                  <svg class="twcss-w-3 twcss-h-3" viewBox="0 0 12 9" fill="none">
-                                    <path d="M1 4L4.5 7.5L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                  </svg>
-                                {%- endif -%}
-                              </span>
-                              
-                              <span class="twcss-text-sm">{{ value.label | escape }} ({{ value.count }})</span>
-                            </label>
-                          </li>
-                        {%- endfor -%}
-                      </ul>
-
-                      <div class="no-js-hidden mobile-facets__footer twcss-mt-6">
-                        <facet-remove class="mobile-facets__clear-wrapper">
-                          <a href="{{ filter.url_to_remove }}" class="mobile-facets__clear underlined-link">
-                            {{- 'products.facets.clear' | t -}}
-                          </a>
-                        </facet-remove>
-                        <button
-                          type="button"
-                          class="no-js-hidden button button--primary"
-                          onclick="this.closest('.mobile-facets__wrapper').querySelector('summary').click()"
-                        >
-                          {{ 'products.facets.apply' | t }}
-                        </button>
-                        <noscript>
-                          <button class="button button--primary">{{ 'products.facets.apply' | t }}</button>
-                        </noscript>
-                      </div>
                     </div>
                   </details>
               {% endcase %}
