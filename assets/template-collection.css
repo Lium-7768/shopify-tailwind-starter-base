@@ -137,6 +137,14 @@
   padding-left: 0;
 }
 
+.product-grid--list .card__information .card__heading {
+  height: 38px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
+}
+
 .product-grid:not(.product-grid--list) .card__inner {
   height: 180px;
   overflow: hidden;
