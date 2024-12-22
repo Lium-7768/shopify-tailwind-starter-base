@@ -3551,8 +3551,7 @@ details-disclosure>details {
 
 .spinner {
   animation: rotate 2s linear infinite;
-  stroke: currentColor;
-  /* Uses the current text color */
+  stroke: #BCBDB9;
 }
 
 .spinner .path {
