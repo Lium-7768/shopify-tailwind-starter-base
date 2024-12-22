@@ -70,6 +70,10 @@
                   </facet-remove>
                 </div>
                 {%- for filter in results.filters -%}
+                  <div style="display: none;">
+                    Filter Type: {{ filter.type | json }}
+                    Filter Label: {{ filter.label | json }}
+                  </div>
                   {%- for value in filter.active_values -%}
                     <facet-remove>
                       <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
