@@ -152,6 +152,7 @@
               id="CardLink-{{ section_id }}-{{ card_product.id }}"
               class="full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
+              title="{{ card_product.title | escape }}"
             >
               {{ card_product.title | escape }}
             </a>
