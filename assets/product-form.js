@@ -1,4 +1,3 @@
-
 if (!customElements.get('product-form')) {
   customElements.define('product-form', class ProductForm extends HTMLElement {
     constructor() {
@@ -35,9 +34,19 @@ if (!customElements.get('product-form')) {
         this.cart.setActiveElement(document.activeElement);
       }
     
-      //Added to generate selling plan add to cart response
-      const sellingPlanId = window?.getCurrentSellingPlanId();
-      formData.append("selling_plan", sellingPlanId);
+      // Modified selling plan handling
+      if (typeof window.getCurrentSellingPlanId === 'function') {
+        const sellingPlanId = window.getCurrentSellingPlanId();
+        if (sellingPlanId) {
+          formData.append("selling_plan", sellingPlanId);
+        }
+      } else {
+        // Fallback to get selling plan from form if it exists
+        const sellingPlanInput = this.form.querySelector('[name="selling_plan"]');
+        if (sellingPlanInput) {
+          formData.append("selling_plan", sellingPlanInput.value);
+        }
+      }
       
       config.body = formData;
 
