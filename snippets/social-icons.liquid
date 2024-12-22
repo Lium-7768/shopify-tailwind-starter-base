@@ -50,13 +50,13 @@
       </a>
     </li>
   {%- endif -%}
-  {%- if settings.social_shopify_link != blank -%}
+  {%- if settings.social_spotify_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_shopify_link }}" class="link list-social__link">
+      <a href="{{ settings.social_spotify_link }}" class="link list-social__link">
         <span class="svg-wrapper">
-          {{- 'icon-shopify-footer.svg' | inline_asset_content -}}
+          {{- 'icon-spotify.svg' | inline_asset_content -}}
         </span>
-        <span class="visually-hidden">{{ 'general.social.links.shopify' | t }}</span>
+        <span class="visually-hidden">{{ 'general.social.links.spotify' | t }}</span>
       </a>
     </li>
   {%- endif -%}
