@@ -157,14 +157,11 @@
   position: relative;
 }
 
-/* 移除之前的hover效果 */
 .product-grid:not(.product-grid--list) .card__heading:hover {
-  height: 38px;
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
 
-/* 添加tooltip样式 */
 .product-grid:not(.product-grid--list) .card__heading a {
   position: relative;
 }
@@ -173,7 +170,6 @@
   cursor: help;
 }
 
-/* List layout card heading styles */
 .product-grid--list .card__heading {
   width: 100%;
   height: auto;
