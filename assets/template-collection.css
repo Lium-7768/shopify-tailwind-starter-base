@@ -123,8 +123,7 @@
 }
 
 .product-grid--list .card__inner {
-  flex: 0 0 300px;
-  max-width: 180px;
+  flex: 0 0 180px;
 }
 
 .product-grid--list .card__content {
