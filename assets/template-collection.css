@@ -138,7 +138,7 @@
 }
 
 .product-grid:not(.product-grid--list) .card__inner {
-  max-height: 180px;
+  height: 180px;
   overflow: hidden;
 }
 .product-grid .card__inner img {
