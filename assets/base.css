@@ -3550,46 +3550,36 @@ details-disclosure>details {
 }
 
 .spinner {
-  animation: rotator 1.4s linear infinite;
+  animation: rotate 2s linear infinite;
+  stroke: currentColor;
+  /* Uses the current text color */
 }
 
-@keyframes rotator {
-  0% {
-    transform: rotate(0deg);
-  }
+.spinner .path {
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
 
+@keyframes rotate {
   100% {
-    transform: rotate(270deg);
-  }
-}
-
-.path {
-  stroke-dasharray: 280;
-  stroke-dashoffset: 0;
-  transform-origin: center;
-  stroke: rgb(var(--color-foreground));
-  animation: dash 1.4s ease-in-out infinite;
-}
-
-@media screen and (forced-colors: active) {
-  .path {
-    stroke: CanvasText;
+    transform: rotate(360deg);
   }
 }
 
 @keyframes dash {
   0% {
-    stroke-dashoffset: 280;
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
   }
 
   50% {
-    stroke-dashoffset: 75;
-    transform: rotate(135deg);
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
   }
 
   100% {
-    stroke-dashoffset: 280;
-    transform: rotate(450deg);
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
   }
 }
 
