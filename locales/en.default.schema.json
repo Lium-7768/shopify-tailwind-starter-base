@@ -1865,6 +1865,9 @@
           "label": "Show product rating",
           "info": "To display a rating, add a product rating app. [Learn more](https://help.shopify.com/manual/online-store/themes/theme-structure/page-types#product-grid-section-settings)"
         },
+        "enable_quick_buy": {
+          "label": "Enable quick add"
+        },
         "header__1": {
           "content": "Filtering and sorting"
         },
