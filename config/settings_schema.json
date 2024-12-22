@@ -1371,9 +1371,9 @@
       },
       {
         "type": "text",
-        "id": "social_shopify_link",
-        "label": "t:settings_schema.social-media.settings.social_shopify_link.label",
-        "placeholder": "t:settings_schema.social-media.settings.social_shopify_link.info"
+        "id": "social_spotify_link",
+        "label": "t:settings_schema.social-media.settings.social_spotify_link.label",
+        "placeholder": "t:settings_schema.social-media.settings.social_spotify_link.info"
       }
     ]
   },
