@@ -430,8 +430,7 @@
 .card--standard:not(.card--horizontal) > .card__content .card__badge,
 .card--standard.card--text.article-card > .card__content .card__information,
 .card--standard > .card__content .card__caption {
-  /* display: none; */
-  visibility: hidden;
+  display: none;
 }
 
 .card--standard:not(.card--horizontal) .placeholder-svg {
