@@ -1320,10 +1320,6 @@ video {
   white-space: nowrap;
 }
 
-.twcss-break-words {
-  overflow-wrap: break-word;
-}
-
 .twcss-rounded {
   border-radius: 0.25rem;
 }
