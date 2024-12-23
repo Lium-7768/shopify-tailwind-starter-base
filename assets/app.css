@@ -1236,10 +1236,6 @@ video {
   row-gap: 0.5rem;
 }
 
-.twcss-gap-y-3 {
-  row-gap: 0.75rem;
-}
-
 .twcss-gap-y-4 {
   row-gap: 1rem;
 }
@@ -1258,6 +1254,12 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.twcss-space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 
 .twcss-space-y-4 > :not([hidden]) ~ :not([hidden]) {
@@ -8956,8 +8958,10 @@ video {
     row-gap: 0px;
   }
 
-  .lg\:twcss-gap-y-5 {
-    row-gap: 1.25rem;
+  .lg\:twcss-space-y-5 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
   }
 
   .lg\:\!twcss-p-0 {
