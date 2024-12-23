@@ -935,6 +935,10 @@ video {
   max-height: 206px;
 }
 
+.twcss-min-h-\[56px\] {
+  min-height: 56px;
+}
+
 .\!twcss-w-10 {
   width: 2.5rem !important;
 }
