@@ -22,7 +22,7 @@ async function getProductBySkuId(skuId) {
   try {
     const data = await client.request(getProductBySkuIdStr, {
         variables: {
-          skuId: skuId,
+          query: skuId,
         },
       });
     return data;
