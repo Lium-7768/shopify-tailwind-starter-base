@@ -8,21 +8,34 @@ const client = ShopifyStorefrontAPIClient.createStorefrontApiClient({
 // getProductBySkuId
 
 const getProductBySkuIdStr = `
-  query suggestions($query: String!) {
-    predictiveSearch(query: $query, searchableFields: [VARIANTS_SKU]) {
-      products {
+  query getMultipleVariants($variantIds: [ID!]!) {
+  nodes(ids: $variantIds) {
+    ... on ProductVariant {
+      id
+      title
+      product {
         id
         title
+        description
+        variants(first: 10) {
+          nodes {
+            id
+            title
+            sku
+
+          }
+        }
       }
     }
   }
+}
 `;
 
 async function getProductBySkuId(skuId) {
   try {
     const data = await client.request(getProductBySkuIdStr, {
         variables: {
-          query: skuId,
+          variantIds: [skuId],
         },
       });
     return data;
