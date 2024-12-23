@@ -181,6 +181,7 @@
 .product-grid--list .card__information {
   flex: 1;
   min-width: 0;
+  padding: 0;
 }
 
 .product-grid:not(.product-grid--list) .card__information {
