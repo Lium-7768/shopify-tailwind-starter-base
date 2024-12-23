@@ -30,7 +30,7 @@ class PartnerSearch extends PredictiveSearch {
     )
       .then((response) => response.text())
       .then((result) => console.log(result))
-      .catch((error) => console.error(error));
+      .catch((error) => console.log(error));
   }
 
   getSearchResults(searchTerm) {
