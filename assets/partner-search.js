@@ -46,7 +46,7 @@ class PartnerSearch extends PredictiveSearch {
       if(!data.skuId) {
         throw new Error('No product found');
       }else{
-        getProductById( `gid://shopify/Product/${data.skuId}`).then((product)=>{
+        getProductBySkuId( `gid://shopify/Product/${data.skuId}`).then((product)=>{
           console.log(product);
         });
       } 
