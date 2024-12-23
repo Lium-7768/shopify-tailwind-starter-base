@@ -115,7 +115,6 @@
   min-width: 0;
   text-align: left;
   padding: 0;
-  flex-direction: row;
 }
 
 .product-grid--list .card__information {
@@ -161,9 +160,40 @@
   overflow: visible;
 }
 
-.product-grid:not(.product-grid--list) .card__content {
+/* 现有的 card__content 样式 */
+.product-grid--list .card__content {
   flex: 1;
   min-width: 0;
-  flex-direction: column;
+  text-align: left;
+  padding: 0;
+}
+
+/* 添加 grid 和 list 视图的布局样式 */
+.product-grid:not(.product-grid--list) .card__content {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
   padding: 1rem;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.product-grid--list .card__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* 确保 grid 视图下的信息正确排列 */
+.product-grid:not(.product-grid--list) .card__information {
+  grid-row-start: 2;
+  padding: 1.3rem 1rem;
+}
+
+/* list 视图下的信息布局 */
+.product-grid--list .card__information {
+  flex: 1;
+  min-width: 0;
 }
