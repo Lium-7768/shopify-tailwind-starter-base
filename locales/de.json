@@ -188,7 +188,7 @@
       "clear_all": "Alle entfernen",
       "from": "Von",
       "filter_and_sort": "Filtern und sortieren",
-      "filter_by_label": "Filter:",
+      "filter_by_label": "Filter by:",
       "filter_button": "Filter",
       "filters_selected": {
         "one": "{{ count }} ausgewählt",
