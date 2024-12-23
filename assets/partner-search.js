@@ -30,6 +30,7 @@ class PartnerSearch extends PredictiveSearch {
   }
 
   getSearchResults(searchTerm) {
+    super.setLiveRegionLoadingState();
     this.getProductByPartnerNumber(searchTerm).then((data)=>{
       console.log(data);
     }).catch((error)=>{
