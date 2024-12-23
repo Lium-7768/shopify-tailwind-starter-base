@@ -136,49 +136,51 @@
         </div>
       </div>
       <div class='card__content'>
-        <div class='card__information'>
-          {%- if show_vendor -%}
-            <span class='visually-hidden'>{{ 'accessibility.vendor' | t }}</span>
-            <div class='light'>{{ card_product.vendor }}</div>
-          {%- endif -%}
-          <h3
-            class='card__heading twcss-min-h-[56px] {% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %} twcss-my-1'
-            {% if card_product.featured_media or settings.card_style == 'card' %}
-              id='title-{{ section_id }}-{{ card_product.id }}'
-            {% endif %}
-          >
-            <a
-              href='{{ card_product.url }}'
-              id='CardLink-{{ section_id }}-{{ card_product.id }}'
-              class='full-unstyled-link'
-              aria-labelledby='CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}'
-              title='{{ card_product.title | escape }}'
+        <div>
+          <div class='card__information'>
+            {%- if show_vendor -%}
+              <span class='visually-hidden'>{{ 'accessibility.vendor' | t }}</span>
+              <div class='light'>{{ card_product.vendor }}</div>
+            {%- endif -%}
+            <h3
+              class='card__heading twcss-min-h-[56px] {% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %} twcss-my-1'
+              {% if card_product.featured_media or settings.card_style == 'card' %}
+                id='title-{{ section_id }}-{{ card_product.id }}'
+              {% endif %}
             >
-              {{ card_product.title | escape }}
-            </a>
-          </h3>
-        </div>
-        <div class='twcss-flex twcss-flex-col twcss-gap-2'>
-          {% if card_product.metafields.custom.customer_product_number %}
-            <div class='twcss-flex twcss-gap-x-1 twcss-text-sm'>
-              <span class=''>Customer Product #</span>
-              <span class='twcss-text-muted-light'>{{ card_product.metafields.custom.customer_product_number }}</span>
-            </div>
-          {% endif %}
+              <a
+                href='{{ card_product.url }}'
+                id='CardLink-{{ section_id }}-{{ card_product.id }}'
+                class='full-unstyled-link'
+                aria-labelledby='CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}'
+                title='{{ card_product.title | escape }}'
+              >
+                {{ card_product.title | escape }}
+              </a>
+            </h3>
+          </div>
+          <div class='twcss-flex twcss-flex-col twcss-gap-2'>
+            {% if card_product.metafields.custom.customer_product_number %}
+              <div class='twcss-flex twcss-gap-x-1 twcss-text-sm'>
+                <span class=''>Customer Product #</span>
+                <span class='twcss-text-muted-light'>{{ card_product.metafields.custom.customer_product_number }}</span>
+              </div>
+            {% endif %}
 
-          {% if card_product.id %}
-            <div class='twcss-flex twcss-gap-x-1 twcss-text-sm'>
-              <span class=''>Supplier Product #</span>
-              <span class='twcss-text-muted-light'>{{ card_product.id }}</span>
-            </div>
-          {% endif %}
+            {% if card_product.id %}
+              <div class='twcss-flex twcss-gap-x-1 twcss-text-sm'>
+                <span class=''>Supplier Product #</span>
+                <span class='twcss-text-muted-light'>{{ card_product.id }}</span>
+              </div>
+            {% endif %}
 
-          {% if card_product.category.name %}
-            <div class='twcss-flex twcss-gap-x-1 twcss-text-sm'>
-              <span class=''>Category:</span>
-              <span class='twcss-text-muted-light'>{{ card_product.category.name }}</span>
-            </div>
-          {% endif %}
+            {% if card_product.category.name %}
+              <div class='twcss-flex twcss-gap-x-1 twcss-text-sm'>
+                <span class=''>Category:</span>
+                <span class='twcss-text-muted-light'>{{ card_product.category.name }}</span>
+              </div>
+            {% endif %}
+          </div>
         </div>
         <div class='card__information twcss-max-w-[286px] twcss-space-y-3 lg:twcss-space-y-5'>
           <div class='card-information'>
