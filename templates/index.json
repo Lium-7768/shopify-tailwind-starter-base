@@ -282,7 +282,7 @@
           "settings": {
             "logo": "shopify://shop_images/Excell.png",
             "name": "",
-            "link": ""
+            "link": "shopify://collections/automated-collection"
           }
         },
         "item_6G7XH4": {
@@ -306,7 +306,7 @@
           "settings": {
             "logo": "shopify://shop_images/Lysform.png",
             "name": "",
-            "link": ""
+            "link": "shopify://products/the-complete-snowboard"
           }
         },
         "item_aJExFi": {
