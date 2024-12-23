@@ -39,4 +39,4 @@ class PartnerSearch extends SearchForm {
   }
 }
 
-customElements.define('predictive-search', PredictiveSearch);
+customElements.define('partner-search', PartnerSearch);
