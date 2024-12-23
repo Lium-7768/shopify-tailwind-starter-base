@@ -69,7 +69,9 @@
           tabindex='-1'
           data-predictive-search
         >
-          {%- render 'loading-spinner', class: 'predictive-search__loading-state twcss-size-6' -%}
+          {%- render 'loading-spinner',
+            class: 'predictive-search__loading-state twcss-size-6 twcss-text-muted-default'
+          -%}
         </div>
 
         <span class='twcss-sr-only predictive-search-status' role='status' aria-hidden='true'></span>
