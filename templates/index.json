@@ -325,14 +325,6 @@
             "link": ""
           }
         },
-        "item_4JTxVT": {
-          "type": "item",
-          "settings": {
-            "logo": "shopify://shop_images/brand-tamko.png",
-            "name": "",
-            "link": ""
-          }
-        },
         "item_LkTeAm": {
           "type": "item",
           "settings": {
@@ -372,6 +364,14 @@
             "name": "",
             "link": "shopify://collections/hydrogen"
           }
+        },
+        "item_4JTxVT": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/brand-tamko.png",
+            "name": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -383,12 +383,12 @@
         "item_PgM4kW",
         "item_aJExFi",
         "item_qAJKHe",
-        "item_4JTxVT",
         "item_LkTeAm",
         "item_PnNUee",
         "item_Ww6ThQ",
         "item_jeDeNA",
-        "item_LJKmFa"
+        "item_LJKmFa",
+        "item_4JTxVT"
       ],
       "settings": {
         "white_title": "Featured",
