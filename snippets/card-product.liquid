@@ -179,10 +179,10 @@
             {% endcomment %}
 
             {% if card_product.id %}
-              <div class='twcss-grid twcss-grid-cols-[auto,1fr] twcss-gap-1 twcss-text-sm twcss-min-h-[20px]'>
-                <div class='twcss-whitespace-nowrap'>Supplier Product</div>
+              <div class='twcss-grid twcss-grid-cols-[auto,1fr] twcss-gap-1 twcss-text-sm twcss-min-h-[20px] twcss-items-start'>
+                <div class='twcss-whitespace-nowrap twcss-leading-5'>Supplier Product</div>
                 <div class='twcss-overflow-hidden'>
-                  <div class='twcss-overflow-hidden twcss-text-ellipsis twcss-whitespace-nowrap twcss-text-muted-light'>
+                  <div class='twcss-overflow-hidden twcss-text-ellipsis twcss-whitespace-nowrap twcss-text-muted-light twcss-leading-5'>
                     #
                     {{- card_product.id -}}
                   </div>
@@ -190,11 +190,11 @@
               </div>
             {% endif %}
 
-            <div class='twcss-grid twcss-grid-cols-[auto,1fr] twcss-gap-1 twcss-text-sm twcss-min-h-[20px]'>
+            <div class='twcss-grid twcss-grid-cols-[auto,1fr] twcss-gap-1 twcss-text-sm twcss-min-h-[20px] twcss-items-start'>
               {% if card_product.category.name %}
-                <div class='twcss-whitespace-nowrap'>Category</div>
+                <div class='twcss-whitespace-nowrap twcss-leading-5'>Category</div>
                 <div class='twcss-overflow-hidden'>
-                  <div class='twcss-overflow-hidden twcss-text-ellipsis twcss-whitespace-nowrap twcss-text-muted-light'>
+                  <div class='twcss-overflow-hidden twcss-text-ellipsis twcss-whitespace-nowrap twcss-text-muted-light twcss-leading-5'>
                     {{- card_product.category.name -}}
                   </div>
                 </div>
