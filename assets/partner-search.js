@@ -1,17 +1,17 @@
-class PartnerSearch extends SearchForm {
+class PartnerSearch extends PredictiveSearch {
   constructor() {
     super();
+    this.customer = JSON.parse(this.getAttribute('data-customer'));
   }
 
   getProductByPartnerNumber(partnerNumber) {
     const myHeaders = new Headers();
     myHeaders.append('accept', 'application/json');
     myHeaders.append('Content-Type', 'application/json');
-    const customerData = JSON.parse(this.getAttribute('data-customer'));
 
     const raw = JSON.stringify({
       storeName: window.Shopify.shop,
-      companyId: customerData.current_company.id,
+      companyId: this.customer.current_company.id,
       data: {
         customerPartnerNumber: partnerNumber,
       },
