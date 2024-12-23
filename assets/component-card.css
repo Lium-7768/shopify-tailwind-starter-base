@@ -437,9 +437,9 @@
   width: 100%;
 }
 
-.card--standard > .card__content {
+/* .card--standard > .card__content {
   padding: 0;
-}
+} */
 
 .card--standard > .card__content .card__information {
   padding-left: 0;
@@ -528,10 +528,10 @@
 }
 
 /* Card Shapes */
-/* 
+
 .card--shape .card__content {
   padding-top: 0;
-} */
+}
 
 .card--shape.card--standard:not(.card--text) .card__inner {
   border: 0;
