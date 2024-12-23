@@ -50,6 +50,8 @@ class PartnerSearch extends PredictiveSearch {
           const firstProduct = product?.data?.nodes?.[0];
           if (firstProduct?.product?.handle) {
             window.location.href = `/products/${firstProduct.product.handle}`;
+          }else{
+            throw new Error('No product found');
           }
         });
       } 
