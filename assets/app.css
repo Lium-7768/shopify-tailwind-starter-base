@@ -1028,6 +1028,10 @@ video {
   max-width: 285px;
 }
 
+.twcss-max-w-\[286px\] {
+  max-width: 286px;
+}
+
 .twcss-max-w-\[33\.4rem\] {
   max-width: 33.4rem;
 }
@@ -3405,11 +3409,6 @@ video {
 .twcss-bg-blue-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
-}
-
-.twcss-bg-button-default {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 115 29 / var(--tw-bg-opacity));
 }
 
 .twcss-bg-card-default {
