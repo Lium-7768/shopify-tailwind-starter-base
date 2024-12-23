@@ -180,7 +180,7 @@
 }
 
 .product-grid--list .card__information {
-  max-width: 285px;
+  flex: 1;
   min-width: 0;
 }
 
