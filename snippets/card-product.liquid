@@ -166,21 +166,21 @@
           <div class='twcss-flex twcss-flex-col twcss-gap-2 twcss-mt-5'>
             {% comment %}
               {% if card_product.metafields.customerPartnerNumber %}
-                <div class='twcss-flex twcss-gap-x-1 twcss-text-sm twcss-min-h-[20px]'>
+                <div class='twcss-flex twcss-gap-x-1 twcss-min-h-[20px]'>
                   <span class=''>Customer Product #</span>
                   <span class='twcss-text-muted-light'>{{ card_product.metafields.customerPartnerNumber }}</span>
                 </div>
               {% endif %}
             {% endcomment %}
 
-            <div class='twcss-flex twcss-gap-x-1 twcss-text-sm twcss-min-h-[20px]'>
+            <div class='twcss-flex twcss-gap-x-1 twcss-min-h-[20px]'>
               {% if card_product.id %}
                 <span class=''>Supplier Product #</span>
                 <span class='twcss-text-muted-light'>{{ card_product.id }}</span>
               {% endif %}
             </div>
 
-            <div class='twcss-flex twcss-gap-x-1 twcss-text-sm twcss-min-h-[20px]'>
+            <div class='twcss-flex twcss-gap-x-1 twcss-min-h-[20px]'>
               {% if card_product.category.name %}
                 <span class=''>Category:</span>
                 <span class='twcss-text-muted-light'>{{ card_product.category.name }}</span>
