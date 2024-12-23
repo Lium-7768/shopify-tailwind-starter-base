@@ -41,6 +41,7 @@ module.exports = {
         muted: {
           default: '#EBEBEB',
           foreground: '#737373',
+          light: '#84888B',
         },
         accent: {
           default: '#353535',
@@ -53,6 +54,9 @@ module.exports = {
         card: {
           default: '#ffffff',
           foreground: '#0a0a0a',
+        },
+        button: {
+          default: '#FF731D',
         },
       },
       fontFamily: {
