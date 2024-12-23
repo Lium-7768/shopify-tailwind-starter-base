@@ -367,7 +367,7 @@ quick-add-modal .product-form__buttons {
   padding: 16px;
   min-width: 100%;
   box-sizing: border-box;
-  border-radius: 16px 0;
+  border-radius: 16px 0 0 16px;
   font-weight: 700;
   font-size: 14px;
   color: #fff;
