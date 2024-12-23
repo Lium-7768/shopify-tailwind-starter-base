@@ -45,7 +45,11 @@ class PartnerSearch extends PredictiveSearch {
     this.getProductByPartnerNumber(searchTerm).then((data)=>{
       if(!data.skuId) {
         throw new Error('No product found');
-      }
+      }else{
+        getProductById( `gid://shopify/Product/${data.skuId}`).then((product)=>{
+          console.log(product);
+        });
+      } 
     }).catch((error)=>{
       super.getSearchResults(searchTerm);
     });

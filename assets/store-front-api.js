@@ -11,7 +11,7 @@ const getProductByIdStr = `
   query getProductById($id: ID!) {
     product(id: $id) {
       title
-      onlineStoreUrl
+      id
     }
   }
 `;
@@ -25,6 +25,6 @@ async function getProductById(id) {
       });
     return data;
   } catch (error) { 
-    console.error('Error getting product by id:', error.message);
+    console.error('Error updating cart attributes:', error.message);
   }
 }
