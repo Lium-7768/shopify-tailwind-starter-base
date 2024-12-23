@@ -160,23 +160,23 @@
         </div>
         <div class='twcss-flex twcss-flex-col twcss-gap-2'>
           {% if card_product.metafields.custom.customer_product_number %}
-            <div class='twcss-flex twcss-gap-1'>
-              <span class='twcss-text-sm'>Customer Product #</span>
-              <span class='twcss-text-sm'>{{ card_product.metafields.custom.customer_product_number }}</span>
+            <div class='twcss-flex twcss-gap-1 twcss-text-sm'>
+              <span class=''>Customer Product #</span>
+              <span class='twcss-text-muted-light'>{{ card_product.metafields.custom.customer_product_number }}</span>
             </div>
           {% endif %}
 
-          {% if card_product.metafields.custom.supplier_product_number %}
-            <div class='twcss-flex twcss-gap-1'>
-              <span class='twcss-text-sm'>Supplier Product #</span>
-              <span class='twcss-text-sm'>{{ card_product.metafields.custom.supplier_product_number }}</span>
+          {% if card_product.id %}
+            <div class='twcss-flex twcss-gap-1 twcss-text-sm'>
+              <span class=''>Supplier Product #</span>
+              <span class='twcss-text-muted-light'>{{ card_product.id }}</span>
             </div>
           {% endif %}
 
           {% if card_product.category.name %}
             <div class='twcss-flex twcss-gap-x-1 twcss-text-sm'>
               <span class=''>Category:</span>
-              <span class='twcss-text-muted-default'>{{ card_product.category.name }}</span>
+              <span class='twcss-text-muted-light'>{{ card_product.category.name }}</span>
             </div>
           {% endif %}
         </div>
