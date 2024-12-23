@@ -190,10 +190,14 @@
               </div>
             {% endif %}
 
-            <div class='twcss-flex twcss-gap-x-1 twcss-text-sm twcss-min-h-[20px]'>
+            <div class='twcss-grid twcss-grid-cols-[auto,1fr] twcss-gap-1 twcss-text-sm twcss-min-h-[20px]'>
               {% if card_product.category.name %}
-                <span class=''>Category:</span>
-                <span class='twcss-text-muted-light'>{{ card_product.category.name }}</span>
+                <div class='twcss-whitespace-nowrap'>Category</div>
+                <div class='twcss-overflow-hidden'>
+                  <div class='twcss-overflow-hidden twcss-text-ellipsis twcss-whitespace-nowrap twcss-text-muted-light'>
+                    {{- card_product.category.name -}}
+                  </div>
+                </div>
               {% endif %}
             </div>
           </div>
