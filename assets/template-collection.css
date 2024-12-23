@@ -115,6 +115,7 @@
   min-width: 0;
   text-align: left;
   padding: 0;
+  flex-direction: row;
 }
 
 .product-grid--list .card__information {
@@ -158,4 +159,11 @@
   width: 100%;
   height: auto;
   overflow: visible;
+}
+
+.product-grid:not(.product-grid--list) .card__content {
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  padding: 1rem;
 }
