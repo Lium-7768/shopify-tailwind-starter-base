@@ -364,6 +364,14 @@
             "name": "ELEVATE",
             "link": ""
           }
+        },
+        "item_LJKmFa": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/ACCO_KENSINGTON.png",
+            "name": "",
+            "link": "shopify://collections/hydrogen"
+          }
         }
       },
       "block_order": [
@@ -379,7 +387,8 @@
         "item_LkTeAm",
         "item_PnNUee",
         "item_Ww6ThQ",
-        "item_jeDeNA"
+        "item_jeDeNA",
+        "item_LJKmFa"
       ],
       "settings": {
         "white_title": "Featured",
