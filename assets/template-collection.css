@@ -186,5 +186,5 @@
 
 .product-grid:not(.product-grid--list) .card__information {
   grid-row: auto;
-  padding: 1.3rem 1rem;
+  padding: 0 4px;
 }
