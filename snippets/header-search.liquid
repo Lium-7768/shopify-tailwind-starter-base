@@ -105,7 +105,7 @@
         <div class='twcss-relative twcss-w-full twcss-max-w-2xl twcss-mx-auto twcss-mt-20 twcss-p-4'>
           {%- if settings.predictive_search_enabled -%}
             <script>
-              console.log('Customer Information:', {{ customer }});
+              console.log('Customer Information:', {{ JSON.stringify(customer) }});
             
             </script>
             <partner-search class='twcss-block' data-loading-text='{{ 'accessibility.loading' | t }}' data-id='{{ customer.current_company.id | default: '' }}'>
