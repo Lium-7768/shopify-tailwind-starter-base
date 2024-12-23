@@ -12,19 +12,10 @@ const getProductBySkuIdStr = `
   nodes(ids: $variantIds) {
     ... on ProductVariant {
       id
-      title
       product {
         id
+        handle
         title
-        description
-        variants(first: 10) {
-          nodes {
-            id
-            title
-            sku
-
-          }
-        }
       }
     }
   }

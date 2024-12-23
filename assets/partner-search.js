@@ -47,7 +47,10 @@ class PartnerSearch extends PredictiveSearch {
         throw new Error('No product found');
       }else{
         getProductBySkuId( `gid://shopify/ProductVariant/${data.skuId}`).then((product)=>{
-          console.log(product);
+          const firstProduct = product?.data?.nodes?.[0];
+          if (firstProduct?.product?.handle) {
+            window.location.href = `/products/${firstProduct.product.handle}`;
+          }
         });
       } 
     }).catch((error)=>{
