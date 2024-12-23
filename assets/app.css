@@ -672,6 +672,10 @@ video {
   margin: 0px;
 }
 
+.twcss-m-auto {
+  margin: auto;
+}
+
 .twcss-mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
@@ -937,6 +941,10 @@ video {
 
 .twcss-max-h-\[206px\] {
   max-height: 206px;
+}
+
+.twcss-min-h-\[20px\] {
+  min-height: 20px;
 }
 
 .twcss-min-h-\[56px\] {
