@@ -38,6 +38,7 @@
 
 .collection-hero__title {
   margin: 20px 0;
+  font-weight: 700;
 }
 
 .collection-hero__title + .collection-hero__description {
