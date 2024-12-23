@@ -432,7 +432,7 @@ span.active-facets__button-inner:after {
 
   .active-facets__button-wrapper *,
   span.active-facets__button-inner {
-    font-size: 1.4rem;
+    font-size: 16px;
   }
 }
 
@@ -980,12 +980,12 @@ input.mobile-facets__checkbox {
 
   .facets__heading--vertical {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 16px;
   }
 
   .facets__header-vertical {
     padding: 1.5rem 2rem 1.5rem 0;
-    font-size: 1.4rem;
+    font-size: 16px;
   }
 
   .facets__display-vertical {
