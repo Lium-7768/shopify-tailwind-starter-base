@@ -9,7 +9,7 @@ const client = ShopifyStorefrontAPIClient.createStorefrontApiClient({
 
 const getProductBySkuIdStr = `
   query suggestions($query: String!) {
-    predictiveSearch(query: $query, searchableFields: ["VARIANTS_SKU"]) {
+    predictiveSearch(query: $query, searchableFields: [VARIANTS_SKU]) {
       products {
         id
         title
