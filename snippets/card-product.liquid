@@ -99,44 +99,42 @@
           </div>
         {%- endif -%}
         <div></div>
-        {% comment %}
-          <div class='card__content'>
-            <div class='card__information'>
-              <h3
-                class='card__heading'
-                {% if card_product.featured_media == null and settings.card_style == 'standard' %}
-                  id='title-{{ section_id }}-{{ card_product.id }}'
-                {% endif %}
+        <div class='card__content'>
+          <div class='card__information'>
+            <h3
+              class='card__heading'
+              {% if card_product.featured_media == null and settings.card_style == 'standard' %}
+                id='title-{{ section_id }}-{{ card_product.id }}'
+              {% endif %}
+            >
+              <a
+                href='{{ card_product.url }}'
+                id='StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}'
+                class='full-unstyled-link'
+                aria-labelledby='StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
               >
-                <a
-                  href='{{ card_product.url }}'
-                  id='StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}'
-                  class='full-unstyled-link'
-                  aria-labelledby='StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
-                >
-                  {{ card_product.title | escape }}
-                </a>
-              </h3>
-            </div>
-            <div class='card__badge {{ settings.badge_position }}'>
-              {%- if card_product.available == false -%}
-                <span
-                  id='NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
-                  class='badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}'
-                >
-                  {{- 'products.product.sold_out' | t -}}
-                </span>
-              {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-                <span
-                  id='NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
-                  class='badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}'
-                >
-                  {{- 'products.product.on_sale' | t -}}
-                </span>
-              {%- endif -%}
-            </div>
+                {{ card_product.title | escape }}
+              </a>
+            </h3>
           </div>
-        {% endcomment %}
+          <div class='card__badge {{ settings.badge_position }}'>
+            {%- if card_product.available == false -%}
+              <span
+                id='NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
+                class='badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}'
+              >
+                {{- 'products.product.sold_out' | t -}}
+              </span>
+            {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+              <span
+                id='NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
+                class='badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}'
+              >
+                {{- 'products.product.on_sale' | t -}}
+              </span>
+            {%- endif -%}
+          </div>
+        </div>
       </div>
       <div class='card__content'>
         <div class='card__information'>
@@ -162,10 +160,10 @@
           </h3>
 
           <div class='twcss-flex twcss-flex-col twcss-gap-2 twcss-mt-5'>
-            {% if card_product.customerPartnerNumber %}
+            {% if card_product.metafields.customerPartnerNumber %}
               <div class='twcss-flex twcss-gap-x-1 twcss-text-sm'>
                 <span class=''>Customer Product #</span>
-                <span class='twcss-text-muted-light'>{{ card_product.customerPartnerNumber }}</span>
+                <span class='twcss-text-muted-light'>{{ card_product.metafields.customerPartnerNumber }}</span>
               </div>
             {% endif %}
 
