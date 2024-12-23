@@ -12,9 +12,7 @@ class PartnerSearch extends PredictiveSearch {
     const raw = JSON.stringify({
       storeName: window.Shopify.shop,
       companyId: this.companyId,
-      data: {
-        customerPartnerNumber: partnerNumber,
-      },
+      customerPartnerNumber: partnerNumber,
     });
 
     const requestOptions = {
