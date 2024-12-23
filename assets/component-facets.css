@@ -46,7 +46,7 @@
 .facet-filters__label {
   display: block;
   color: var(--color-foreground-85);
-  font-size: 1.4rem;
+  font-size: 16px;
   margin: 0 8px 0 0;
 }
 
@@ -105,7 +105,7 @@
   background-color: transparent;
   border: 0;
   border-radius: 0;
-  font-size: 1.4rem;
+  font-size: 16px;
   height: auto;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
   margin: 0;
