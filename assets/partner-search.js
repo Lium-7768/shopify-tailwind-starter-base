@@ -2,11 +2,6 @@ class PartnerSearch extends PredictiveSearch {
   constructor() {
     super();
     this.companyId = this.getAttribute('data-id');
-  }
-
-  constructor() {
-    super();
-    this.companyId = this.getAttribute('data-id');
     this.debounceTimer = null;
   }
 
