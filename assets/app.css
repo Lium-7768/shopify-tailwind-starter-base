@@ -1024,6 +1024,10 @@ video {
   width: 100vw;
 }
 
+.twcss-min-w-0 {
+  min-width: 0px;
+}
+
 .twcss-min-w-\[474px\] {
   min-width: 474px;
 }
