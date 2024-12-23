@@ -179,10 +179,10 @@
         "products_to_show_tablet": 2,
         "products_to_show_desktop": 3,
         "show_vendor": false,
-        "collection_url": "",
+        "collection_url": "shopify://collections/hydrogen",
         "banner_title": "",
         "banner_text": "",
-        "banner_image": "shopify://shop_images/plumbing-solutions.png"
+        "banner_image": "shopify://shop_images/03112023_q21-2023_lightbox_desktop_embotelladoras_andina_s.a._coca-cola_sin_azucar_1.jpg"
       }
     },
     "distribution_solutions_WiQBEV": {
