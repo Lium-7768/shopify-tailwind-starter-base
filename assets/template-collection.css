@@ -173,7 +173,6 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
-  gap: 0.5rem;
   padding: 1rem;
   width: 100%;
   flex-grow: 1;
@@ -186,5 +185,5 @@
 
 .product-grid:not(.product-grid--list) .card__information {
   grid-row: auto;
-  padding: 0 4px;
+  padding: 4px 0;
 }
