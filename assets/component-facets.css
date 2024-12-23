@@ -226,6 +226,7 @@
 }
 
 .facets__summary span {
+  font-weight: 700;
   transition: text-decoration var(--duration-short) ease;
 }
 
@@ -981,6 +982,7 @@ input.mobile-facets__checkbox {
   .facets__heading--vertical {
     margin: 0;
     font-size: 16px;
+    font-weight: 700;
   }
 
   .facets__header-vertical {
