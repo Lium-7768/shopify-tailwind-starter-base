@@ -1024,10 +1024,6 @@ video {
   width: 100vw;
 }
 
-.twcss-min-w-0 {
-  min-width: 0px;
-}
-
 .twcss-min-w-\[474px\] {
   min-width: 474px;
 }
@@ -1146,6 +1142,10 @@ video {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+.twcss-grid-cols-\[auto\,1fr\] {
+  grid-template-columns: auto 1fr;
+}
+
 .twcss-flex-row {
   flex-direction: row;
 }
@@ -1200,6 +1200,10 @@ video {
 
 .twcss-justify-items-center {
   justify-items: center;
+}
+
+.twcss-gap-1 {
+  gap: 0.25rem;
 }
 
 .twcss-gap-2 {
