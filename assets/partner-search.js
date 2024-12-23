@@ -22,18 +22,19 @@ class PartnerSearch extends PredictiveSearch {
       redirect: 'follow',
     };
 
-    fetch(
+    return fetch(
       'http://b2b-customer-account-app-szwh.vercel.app/api/v1/product/customer-partner-number-search',
       requestOptions,
     )
       .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log(error));
   }
 
   getSearchResults(searchTerm) {
-    super.getSearchResults(searchTerm);
-    // this.getProductByPartnerNumber(searchTerm);
+    this.getProductByPartnerNumber(searchTerm).then((data)=>{
+      console.log(data);
+    }).catch((error)=>{
+      super.getSearchResults(searchTerm);
+    });
   }
 }
 

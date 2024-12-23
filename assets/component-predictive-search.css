@@ -234,3 +234,41 @@ predictive-search[loading]
   object-fit: contain;
   font-family: 'object-fit: contain';
 }
+
+partner-search[open] .predictive-search,
+partner-search[loading] .predictive-search {
+  display: block;
+}
+
+partner-search .spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 0;
+}
+
+partner-search:not([loading]) .predictive-search__loading-state,
+partner-search:not([loading]) .predictive-search-status__loading {
+  display: none;
+}
+
+partner-search[loading] .predictive-search__loading-state {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+partner-search[loading] .predictive-search__search-for-button {
+  display: none;
+}
+
+partner-search[loading]
+  .predictive-search__results-groups-wrapper
+  ~ .predictive-search__loading-state {
+  display: none;
+}
+
+partner-search[loading]
+  .predictive-search__results-groups-wrapper
+  ~ .predictive-search__search-for-button {
+  display: initial;
+}
