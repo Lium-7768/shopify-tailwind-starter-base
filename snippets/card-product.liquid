@@ -100,21 +100,23 @@
         {%- endif -%}
         <div class='card__content'>
           <div class='card__information'>
-            <h3
-              class='card__heading'
-              {% if card_product.featured_media == null and settings.card_style == 'standard' %}
-                id='title-{{ section_id }}-{{ card_product.id }}'
-              {% endif %}
-            >
-              <a
-                href='{{ card_product.url }}'
-                id='StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}'
-                class='full-unstyled-link'
-                aria-labelledby='StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
+            {% comment %}
+              <h3
+                class='card__heading'
+                {% if card_product.featured_media == null and settings.card_style == 'standard' %}
+                  id='title-{{ section_id }}-{{ card_product.id }}'
+                {% endif %}
               >
-                {{ card_product.title | escape }}
-              </a>
-            </h3>
+                <a
+                  href='{{ card_product.url }}'
+                  id='StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}'
+                  class='full-unstyled-link'
+                  aria-labelledby='StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}'
+                >
+                  {{ card_product.title | escape }}
+                </a>
+              </h3>
+            {% endcomment %}
           </div>
           <div class='card__badge {{ settings.badge_position }}'>
             {%- if card_product.available == false -%}
@@ -403,11 +405,9 @@
           {%- endif -%}
 
           <h3 class='card__heading twcss-min-h-[56px] {% if settings.card_style == 'standard' %} h5{% endif %} twcss-my-1'>
-            {% comment %}
-              <a role='link' aria-disabled='true' class='full-unstyled-link'>
-                {{ 'onboarding.product_title' | t }}
-              </a>
-            {% endcomment %}
+            <a role='link' aria-disabled='true' class='full-unstyled-link'>
+              {{ 'onboarding.product_title' | t }}
+            </a>
           </h3>
           <div class='card-information'>
             {% render 'price' %}
