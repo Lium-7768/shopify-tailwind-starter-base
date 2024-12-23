@@ -178,10 +178,14 @@
               {% endif %}
             {% endcomment %}
 
-            <div class='twcss-flex twcss-gap-x-1 twcss-text-sm twcss-min-h-[20px] twcss-max-w-full'>
+            <div class='twcss-flex twcss-min-h-[20px] twcss-w-full twcss-text-sm'>
               {% if card_product.id %}
-                <span class='twcss-whitespace-nowrap'>Supplier Product</span>
-                <span class='twcss-text-muted-light twcss-truncate twcss-flex-1'># {{ card_product.id }}</span>
+                <div class='twcss-flex twcss-min-w-0 twcss-w-full'>
+                  <span class='twcss-whitespace-nowrap twcss-flex-shrink-0'>Supplier Product #</span>
+                  <span class='twcss-text-muted-light twcss-ml-1 twcss-overflow-hidden twcss-text-ellipsis twcss-whitespace-nowrap'>
+                    {{- card_product.id -}}
+                  </span>
+                </div>
               {% endif %}
             </div>
 
