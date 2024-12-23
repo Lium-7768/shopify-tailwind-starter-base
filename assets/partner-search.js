@@ -1,7 +1,7 @@
 class PartnerSearch extends PredictiveSearch {
   constructor() {
     super();
-    this.customer = JSON.parse(this.getAttribute('data-customer'));
+    this.companyId = this.getAttribute('data-id');
   }
 
   getProductByPartnerNumber(partnerNumber) {
@@ -11,7 +11,7 @@ class PartnerSearch extends PredictiveSearch {
 
     const raw = JSON.stringify({
       storeName: window.Shopify.shop,
-      companyId: this.customer.current_company.id,
+      companyId: this.companyId,
       data: {
         customerPartnerNumber: partnerNumber,
       },
