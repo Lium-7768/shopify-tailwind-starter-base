@@ -32,8 +32,8 @@ class PartnerSearch extends PredictiveSearch {
   }
 
   getSearchResults(searchTerm) {
-    this.getProductByPartnerNumber(searchTerm);
     super.getSearchResults(searchTerm);
+    // this.getProductByPartnerNumber(searchTerm);
   }
 }
 
