@@ -325,7 +325,7 @@ h1,
 
   h1,
   .h1 {
-    font-size: calc(var(--font-heading-scale) * 4rem);
+    font-size: 24px;
   }
 }
 
