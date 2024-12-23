@@ -5083,6 +5083,11 @@ video {
      object-fit: cover;
 }
 
+.twcss-object-fill {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
 .twcss-p-2 {
   padding: 0.5rem;
 }
