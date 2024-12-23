@@ -159,8 +159,9 @@
                 {{ card_product.title | escape }}
               </a>
             </h3>
+          {% else %}
+            <h3 class='twcss-block twcss-min-h-[56px]'></h3>
           {% endif %}
-          <h3 class='card__heading twcss-min-h-[56px]'></h3>
 
           <div class='twcss-flex twcss-flex-col twcss-gap-2 twcss-mt-5'>
             {% comment %}
