@@ -12,7 +12,11 @@
   <!-- Desktop Search Input (>=1280px) -->
   <div class='twcss-hidden lg:twcss-block'>
     {%- if settings.predictive_search_enabled -%}
-      <partner-search class='twcss-block' data-loading-text='{{ 'accessibility.loading' | t }}' data-id='{{ customer.current_company.id | default: '' }}'>
+      <partner-search
+        class='twcss-block'
+        data-loading-text='{{ 'accessibility.loading' | t }}'
+        data-id='{{ customer.current_company.id | default: '' }}'
+      >
     {%- else -%}
       <search-form class='twcss-block'>
     {%- endif -%}
@@ -65,7 +69,7 @@
           tabindex='-1'
           data-predictive-search
         >
-          {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
+          {%- render 'loading-spinner', class: 'predictive-search__loading-state twcss-size-6' -%}
         </div>
 
         <span class='twcss-sr-only predictive-search-status' role='status' aria-hidden='true'></span>
@@ -104,7 +108,11 @@
         <div class='twcss-absolute twcss-inset-0 twcss-bg-black/50 !twcss-block modal-overlay'></div>
         <div class='twcss-relative twcss-w-full twcss-max-w-2xl twcss-mx-auto twcss-mt-20 twcss-p-4'>
           {%- if settings.predictive_search_enabled -%}
-            <partner-search class='twcss-block' data-loading-text='{{ 'accessibility.loading' | t }}' data-id='{{ customer.current_company.id | default: '' }}'>
+            <partner-search
+              class='twcss-block'
+              data-loading-text='{{ 'accessibility.loading' | t }}'
+              data-id='{{ customer.current_company.id | default: '' }}'
+            >
           {%- else -%}
             <search-form class='twcss-block'>
           {%- endif -%}
