@@ -169,37 +169,32 @@
           {% endif %}
 
           <div class='twcss-flex twcss-flex-col twcss-gap-2 twcss-mt-5'>
-            {% comment %}
-              {% if card_product.metafields.customerPartnerNumber %}
-                <div class='twcss-flex twcss-gap-x-1 twcss-text-sm twcss-min-h-[20px]'>
-                  <span class=''>Customer Product #</span>
-                  <span class='twcss-text-muted-light'>{{ card_product.metafields.customerPartnerNumber }}</span>
-                </div>
-              {% endif %}
-            {% endcomment %}
-
-            {% if card_product.id %}
-              <div class='twcss-grid twcss-grid-cols-[auto,1fr] twcss-gap-1 twcss-text-sm twcss-min-h-[20px] twcss-items-start'>
-                <div class='twcss-whitespace-nowrap twcss-leading-5'>Supplier Product</div>
-                <div class='twcss-overflow-hidden'>
-                  <div class='twcss-overflow-hidden twcss-text-ellipsis twcss-whitespace-nowrap twcss-text-muted-light twcss-leading-5'>
+            <div class='twcss-grid twcss-grid-cols-[auto,1fr] twcss-gap-1 twcss-text-sm twcss-min-h-[20px] twcss-items-start'>
+              <div class='twcss-whitespace-nowrap twcss-leading-5'>Supplier Product</div>
+              <div class='twcss-overflow-hidden'>
+                <div class='twcss-overflow-hidden twcss-text-ellipsis twcss-whitespace-nowrap twcss-text-muted-light twcss-leading-5'>
+                  {% if card_product.id %}
                     #
                     {{- card_product.id -}}
-                  </div>
+                  {% else %}
+                    --
+                  {% endif %}
                 </div>
               </div>
-            {% endif %}
+            </div>
 
-            {% if card_product.category.name %}
-              <div class='twcss-grid twcss-grid-cols-[auto,1fr] twcss-gap-1 twcss-text-sm twcss-min-h-[20px] twcss-items-start'>
-                <div class='twcss-whitespace-nowrap twcss-leading-5'>Category</div>
-                <div class='twcss-overflow-hidden'>
-                  <div class='twcss-overflow-hidden twcss-text-ellipsis twcss-whitespace-nowrap twcss-text-muted-light twcss-leading-5'>
+            <div class='twcss-grid twcss-grid-cols-[auto,1fr] twcss-gap-1 twcss-text-sm twcss-min-h-[20px] twcss-items-start'>
+              <div class='twcss-whitespace-nowrap twcss-leading-5'>Category</div>
+              <div class='twcss-overflow-hidden'>
+                <div class='twcss-overflow-hidden twcss-text-ellipsis twcss-whitespace-nowrap twcss-text-muted-light twcss-leading-5'>
+                  {% if card_product.category.name %}
                     {{- card_product.category.name -}}
-                  </div>
+                  {% else %}
+                    --
+                  {% endif %}
                 </div>
               </div>
-            {% endif %}
+            </div>
           </div>
         </div>
 
