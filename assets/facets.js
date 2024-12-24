@@ -209,21 +209,7 @@ class FacetFiltersForm extends HTMLElement {
   }
 
   createSearchParams(form) {
-    const formData = new FormData(form);
-    const finalParams = new URLSearchParams();
-
-    if (form.id !== 'FacetPerPageForm') {
-      const currentParams = new URLSearchParams(window.location.search);
-      if (currentParams.has('page_size')) {
-        finalParams.set('page_size', currentParams.get('page_size'));
-      }
-    }
-
-    for (const [key, value] of formData.entries()) {
-      finalParams.set(key, value);
-    }
-
-    return finalParams.toString();
+    return new URLSearchParams(formData).toString();
   }
 
   onSubmitForm(searchParams, event) {
@@ -244,6 +230,7 @@ class FacetFiltersForm extends HTMLElement {
       const forms = [];
       const isMobile =
         event.target.closest('form').id === 'FacetFiltersFormMobile';
+      const finalParams = new URLSearchParams();
 
       sortFilterForms.forEach((form) => {
         if (!isMobile) {
@@ -255,13 +242,19 @@ class FacetFiltersForm extends HTMLElement {
           ) {
             const noJsElements = document.querySelectorAll('.no-js-list');
             noJsElements.forEach((el) => el.remove());
-            forms.push(this.createSearchParams(form));
+            const formData = new FormData(form);
+            for (const [key, value] of formData.entries()) {
+              finalParams.set(key, value);
+            }
           }
         } else if (form.id === 'FacetFiltersFormMobile') {
-          forms.push(this.createSearchParams(form));
+          const formData = new FormData(form);
+          for (const [key, value] of formData.entries()) {
+            finalParams.set(key, value);
+          }
         }
       });
-      this.onSubmitForm(forms.join('&'), event);
+      this.onSubmitForm(finalParams.toString(), event);
     }
   }
 
