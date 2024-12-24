@@ -4,8 +4,9 @@
 -%}
 
 <!-- Debug request object -->
-<div style='display: none;'>
+<div style=''>
   <pre>
+    Request query key: {{ request.query_key }}
     Request params: {{ request.params | json }}
     Request path: {{ request.path }}
     Request page type: {{ request.page_type }}
