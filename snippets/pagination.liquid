@@ -1,58 +1,33 @@
 <!-- Middle Section - Pagination -->
+{%- liquid
+  assign per_page_options = '12,24,36,48' | split: ','
+  assign current_per_page = paginate.page_size | default: 12 | toString
+-%}
+
 <div class='twcss-flex twcss-items-center twcss-gap-4'>
   {% if show_per_page %}
-    <div class='twcss-flex twcss-items-center twcss-gap-3'>
-      <span class='twcss-text-[14px] twcss-text-gray-600'>Per page:</span>
-      <div class='twcss-relative'>
+    <div class='twcss-flex twcss-items-center twcss-gap-2'>
+      <span class='twcss-text-gray-600 twcss-text-[14px]'>Per page:</span>
+      <div class='select twcss-w-24'>
         <select
-          class='twcss-appearance-none twcss-w-[60px] twcss-h-[40px] twcss-px-3 twcss-text-[14px] twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded-[4px] hover:twcss-border-gray-400 focus:twcss-outline-none'
-          onchange='window.location.href = this.value;'
+          name='per_page'
+          class='twcss-w-full twcss-h-11 twcss-px-3 twcss-py-1 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded'
+          aria-describedby='a11y-refresh-page-message'
         >
-          {% for option in per_page_options %}
-            {% comment %} 构建基础 URL {% endcomment %}
-            {% assign current_url = collection.url %}
-
-            {% comment %} 添加排序参数 {% endcomment %}
-            {% assign query_params = '' %}
-            {% if collection.sort_by %}
-              {% assign query_params = query_params | append: '&sort_by=' | append: collection.sort_by %}
-            {% endif %}
-
-            {% comment %} 添加其他筛选参数 {% endcomment %}
-            {% if collection.current_vendor %}
-              {% assign query_params = query_params | append: '&vendor=' | append: collection.current_vendor %}
-            {% endif %}
-            {% if collection.current_type %}
-              {% assign query_params = query_params | append: '&type=' | append: collection.current_type %}
-            {% endif %}
-
-            {% comment %} 构建最终 URL {% endcomment %}
-            {% if query_params != '' %}
-              {% assign current_url = current_url | append: '?per_page=' | append: option | append: query_params %}
-            {% else %}
-              {% assign current_url = current_url | append: '?per_page=' | append: option %}
-            {% endif %}
+          {%- for option in per_page_options -%}
             <option
-              value='{{ current_url }}'
-              {% assign option_number = option | times: 1 %}
-              {% if paginate.page_size == option_number %}
-                selected
+              value='{{ option }}'
+              {% if option == current_per_page %}
+                selected='selected'
               {% endif %}
             >
               {{ option }}
             </option>
-          {% endfor %}
+          {%- endfor -%}
         </select>
-        <div class='twcss-pointer-events-none twcss-absolute twcss-inset-y-0 twcss-right-0 twcss-flex twcss-items-center twcss-px-2'>
-          <svg
-            class='twcss-h-3 twcss-w-3 twcss-text-gray-600'
-            viewBox='0 0 12 12'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path d='M2.5 4.5L6 8L9.5 4.5' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>
-          </svg>
-        </div>
+        <span class='twcss-size-6 twcss-pt-2'>
+          {% render 'icon-caret' %}
+        </span>
       </div>
     </div>
   {% endif %}

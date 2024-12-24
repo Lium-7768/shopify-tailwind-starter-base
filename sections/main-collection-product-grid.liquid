@@ -25,13 +25,8 @@
 
 <div class='section-{{ section.id }}-padding'>
   {%- liquid
-    assign per_page_options = '12,24,36' | split: ','
-    assign current_per_page = request.params.per_page | default: per_page_options[0]
-    assign per_page = current_per_page | times: 1
+    assign per_page = request.params.per_page | default: 12 | times: 1
   -%}
-  <div>
-    {{ request.params }}
-  </div>
   {%- paginate collection.products by per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
@@ -203,7 +198,7 @@
             </ul>
 
             {%- if paginate.pages > 1 -%}
-              {% render 'pagination', paginate: paginate, show_per_page: true, per_page_options: per_page_options %}
+              {% render 'pagination', paginate: paginate, show_per_page: true %}
             {%- endif -%}
           </div>
         {%- endif -%}
