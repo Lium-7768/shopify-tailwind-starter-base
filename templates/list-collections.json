@@ -26,7 +26,7 @@
       "settings": {
         "image": "shopify://shop_images/plumbing-solutions.png",
         "height": "adapt",
-        "desktop_image_width": "medium",
+        "desktop_image_width": "small",
         "layout": "image_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
