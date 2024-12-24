@@ -4,7 +4,7 @@
 -%}
 
 <!-- Debug request object -->
-<div style=''>
+<div style='display: none;'>
   <pre>
     Request params: {{ request.params | json }}
     Request path: {{ request.path }}
@@ -13,6 +13,7 @@
     Request locale: {{ request.locale }}
     Request host: {{ request.host }}
     Request origin: {{ request.origin }}
+    Request query: {{ request.query }}
   </pre>
 </div>
 
