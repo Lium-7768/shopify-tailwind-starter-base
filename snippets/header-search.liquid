@@ -20,7 +20,7 @@
     {%- else -%}
       <search-form class='twcss-block'>
     {%- endif -%}
-    <form action='http://localhost:5173/partner-search' method='get' role='search' class='twcss-relative'>
+    <form action='{{ routes.search_url }}' method='get' role='search' class='twcss-relative'>
       <div class='twcss-relative'>
         <input
           class='twcss-w-full twcss-p-3 twcss-leading-4 twcss-rounded twcss-border twcss-text-accent-default twcss-bg-white focus:twcss-outline-none focus:twcss-ring-0 focus:twcss-ring-offset-0 [appearance:none] [&::-webkit-search-decoration]:twcss-hidden [&::-webkit-search-cancel-button]:twcss-hidden [&::-webkit-search-results-button]:twcss-hidden [&::-webkit-search-results-decoration]:twcss-hidden'
@@ -118,7 +118,7 @@
           {%- else -%}
             <search-form class='twcss-block'>
           {%- endif -%}
-          <form action='http://localhost:5173/partner-search' method='get' role='search' class='twcss-relative'>
+          <form action='{{ routes.search_url }}' method='get' role='search' class='twcss-relative'>
             <div class='twcss-relative'>
               <input
                 class='twcss-w-full twcss-p-3 twcss-lead twcss-border twcss-rounded twcss-text-accent-default [appearance:none] [&::-webkit-search-decoration]:twcss-hidden [&::-webkit-search-cancel-button]:twcss-hidden [&::-webkit-search-results-button]:twcss-hidden [&::-webkit-search-results-decoration]:twcss-hidden'
