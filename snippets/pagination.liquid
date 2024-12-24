@@ -7,7 +7,8 @@
         class='twcss-border twcss-border-gray-300 twcss-rounded twcss-px-2 twcss-py-1'
         onchange='location = this.value;'
       >
-        {% for option in (8..24) | step: 4 %}
+        {% assign per_page_options = '8,12,16,20,24' | split: ',' %}
+        {% for option in per_page_options %}
           <option
             value='?per_page={{ option }}'
             {% if option == paginate.page_size %}
