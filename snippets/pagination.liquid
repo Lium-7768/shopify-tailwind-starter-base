@@ -1,58 +1,48 @@
-{%- liquid
-  assign per_page_options = '12,24,36,48' | split: ','
-  assign current_per_page = paginate.page_size | toString
--%}
-{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
-{%- assign plan_name = contentForQuerystring
-  | split: '"pageurl":"'
-  | last
-  | split: '"'
-  | first
-  | replace: '\/', '/'
-  | replace: '%20', ' '
-  | replace: '\u0026', '&'
-  | split: '?'
-  | last
--%}
-<!-- Debug request object -->
-<div style=''>
-  <pre>
-    Request content_for_query_string: {{ plan_name }}
-    Request query key: {{ request.query_key }}
-    Request params: {{ request.params | json }}
-    Request path: {{ request.path }}
-    Request page type: {{ request.page_type }}
-    Request route: {{ request.route }}
-    Request locale: {{ request.locale }}
-    Request host: {{ request.host }}
-    Request origin: {{ request.origin }}
-    Request query: {{ request.query }}
-  </pre>
-</div>
-
 <!-- Middle Section - Pagination -->
 {%- if show_per_page -%}
-  <facet-filters-form class='facets facets-vertical-sort'>
+  <facet-filters-form class='facets facets-vertical-sort page-width small-hide no-js-hidden'>
     <form class='facets-vertical-form' id='FacetPerPageForm'>
       <div class='twcss-flex twcss-items-center twcss-gap-2'>
         <span class='twcss-text-gray-600 twcss-text-[14px]'>Per page:</span>
         <div class='select'>
           <select
             name='per_page'
-            class='facet-filters__sort select__select twcss-text-[14px]'
+            class='facet-filters__sort select__select caption-large'
             id='PerPage'
             aria-describedby='a11y-refresh-page-message'
           >
-            {%- for option in per_page_options -%}
-              <option
-                value='{{ option }}'
-                {% if option == current_per_page %}
-                  selected='selected'
-                {% endif %}
-              >
-                {{ option }}
-              </option>
-            {%- endfor -%}
+            <option
+              value='12'
+              {% if paginate.page_size == 12 %}
+                selected='selected'
+              {% endif %}
+            >
+              12
+            </option>
+            <option
+              value='24'
+              {% if paginate.page_size == 24 %}
+                selected='selected'
+              {% endif %}
+            >
+              24
+            </option>
+            <option
+              value='36'
+              {% if paginate.page_size == 36 %}
+                selected='selected'
+              {% endif %}
+            >
+              36
+            </option>
+            <option
+              value='48'
+              {% if paginate.page_size == 48 %}
+                selected='selected'
+              {% endif %}
+            >
+              48
+            </option>
           </select>
           <span class='twcss-size-6 twcss-pt-2'>
             {% render 'icon-caret' %}
