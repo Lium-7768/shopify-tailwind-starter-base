@@ -1,59 +1,58 @@
 <!-- Middle Section - Pagination -->
-{%- if show_per_page -%}
-  <facet-filters-form class='facets facets-vertical-sort page-width small-hide no-js-hidden'>
-    <form class='facets-vertical-form' id='FacetPerPageForm'>
-      <div class='twcss-flex twcss-items-center twcss-gap-2'>
-        <span class='twcss-text-gray-600 twcss-text-[14px]'>Per page:</span>
-        <div class='select'>
-          <select
-            name='per_page'
-            class='facet-filters__sort select__select caption-large'
-            id='PerPage'
-            aria-describedby='a11y-refresh-page-message'
-          >
-            <option
-              value='12'
-              {% if paginate.page_size == 12 %}
-                selected='selected'
-              {% endif %}
-            >
-              12
-            </option>
-            <option
-              value='24'
-              {% if paginate.page_size == 24 %}
-                selected='selected'
-              {% endif %}
-            >
-              24
-            </option>
-            <option
-              value='36'
-              {% if paginate.page_size == 36 %}
-                selected='selected'
-              {% endif %}
-            >
-              36
-            </option>
-            <option
-              value='48'
-              {% if paginate.page_size == 48 %}
-                selected='selected'
-              {% endif %}
-            >
-              48
-            </option>
-          </select>
-          <span class='twcss-size-6 twcss-pt-2'>
-            {% render 'icon-caret' %}
-          </span>
-        </div>
-      </div>
-    </form>
-  </facet-filters-form>
-{%- endif -%}
-
 <div class='twcss-flex twcss-items-center twcss-gap-4'>
+  {%- if show_per_page -%}
+    <facet-filters-form class='facets facets-vertical-sort page-width small-hide no-js-hidden'>
+      <form class='facets-vertical-form' id='FacetPerPageForm'>
+        <div class='twcss-flex twcss-items-center twcss-gap-2'>
+          <span class='twcss-text-gray-600 twcss-text-[14px]'>Per page:</span>
+          <div class='select'>
+            <select
+              name='per_page'
+              class='facet-filters__sort select__select caption-large'
+              id='PerPage'
+              aria-describedby='a11y-refresh-page-message'
+            >
+              <option
+                value='12'
+                {% if paginate.page_size == 12 %}
+                  selected='selected'
+                {% endif %}
+              >
+                12
+              </option>
+              <option
+                value='24'
+                {% if paginate.page_size == 24 %}
+                  selected='selected'
+                {% endif %}
+              >
+                24
+              </option>
+              <option
+                value='36'
+                {% if paginate.page_size == 36 %}
+                  selected='selected'
+                {% endif %}
+              >
+                36
+              </option>
+              <option
+                value='48'
+                {% if paginate.page_size == 48 %}
+                  selected='selected'
+                {% endif %}
+              >
+                48
+              </option>
+            </select>
+            <span class='twcss-size-6 twcss-pt-2'>
+              {% render 'icon-caret' %}
+            </span>
+          </div>
+        </div>
+      </form>
+    </facet-filters-form>
+  {%- endif -%}
   <span class='twcss-text-gray-600 twcss-text-[14px]'>
     <span class='twcss-font-bold twcss-text-[14px]'>
       {{- paginate.current_offset | plus: 1 }}-
