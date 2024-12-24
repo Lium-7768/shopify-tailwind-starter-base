@@ -1,17 +1,18 @@
 <!-- Middle Section - Pagination -->
 <div class='twcss-flex twcss-items-center twcss-gap-4'>
   {%- if show_per_page -%}
-    <div class='twcss-flex twcss-items-center twcss-gap-2'>
+    <form method='get' action='{{ request.path }}' class='twcss-flex twcss-items-center twcss-gap-2'>
       <span class='twcss-text-gray-600 twcss-text-[14px]'>Per page:</span>
       <select
+        name='view'
         class='twcss-border twcss-border-gray-300 twcss-rounded twcss-px-2 twcss-py-1'
-        onchange='location = this.value;'
+        onchange='this.form.submit()'
       >
         {% assign per_page_options = '8,12,16,20,24' | split: ',' %}
         {% for option in per_page_options %}
           <option
-            value='{{ request.path }}?{% if request.parameters.sort_by %}sort_by={{ request.parameters.sort_by }}&{% endif %}per_page={{ option }}'
-            {% if option == current_per_page %}
+            value='{{ option }}'
+            {% if request.parameters.view == option %}
               selected
             {% endif %}
           >
@@ -19,7 +20,10 @@
           </option>
         {% endfor %}
       </select>
-    </div>
+      {% if request.parameters.sort_by %}
+        <input type='hidden' name='sort_by' value='{{ request.parameters.sort_by }}'>
+      {% endif %}
+    </form>
   {%- endif -%}
 
   <span class='twcss-text-gray-600 twcss-text-[14px]'>
