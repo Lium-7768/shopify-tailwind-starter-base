@@ -9,6 +9,26 @@
  */
 {
   "sections": {
+    "banner_slider_WTiCW7": {
+      "type": "banner-slider",
+      "blocks": {
+        "slide_6AqQVV": {
+          "type": "slide",
+          "settings": {
+            "image_mobile": "shopify://shop_images/banner-mobile.png",
+            "image_desktop": "shopify://shop_images/banner-desktop.png",
+            "heading": "Auto Collection",
+            "subheading": "Reliable Distribution",
+            "button_text": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_6AqQVV"
+      ],
+      "settings": {}
+    },
     "banner": {
       "type": "main-collection-banner",
       "settings": {
@@ -37,6 +57,7 @@
     }
   },
   "order": [
+    "banner_slider_WTiCW7",
     "banner",
     "product-grid"
   ]
