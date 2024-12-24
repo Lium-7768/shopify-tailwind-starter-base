@@ -24,8 +24,7 @@
 {%- endstyle -%}
 
 <div class='section-{{ section.id }}-padding'>
-  {%- assign per_page = request.parameters.per_page | default: section.settings.products_per_page -%}
-  {%- paginate collection.products by per_page -%}
+  {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
       <facet-filters-form class='facets facets-vertical-sort page-width small-hide no-js-hidden'>
@@ -196,12 +195,11 @@
             </ul>
 
             {%- if paginate.pages > 1 -%}
-              {%
-                render 'pagination',
+              {% assign per_page_options = '12,24,36,48' | split: ',' %}
+              {% render 'pagination',
                 paginate: paginate,
-                show_per_page: true,
-                per_page_options: section.settings.per_page_options | default: '12,24,36' | split: ',',
-                section: section,
+                show_per_page: section.settings.enable_per_page_select,
+                per_page_options: per_page_options,
                 anchor: ''
               %}
             {%- endif -%}
@@ -218,10 +216,16 @@
   "class": "section",
   "settings": [
     {
+      "type": "checkbox",
+      "id": "enable_per_page_select",
+      "default": false,
+      "label": "Enable products per page selector"
+    },
+    {
       "type": "range",
       "id": "products_per_page",
       "min": 8,
-      "max": 24,
+      "max": 48,
       "step": 4,
       "default": 12,
       "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
@@ -365,13 +369,6 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
-    },
-    {
-      "type": "text",
-      "id": "per_page_options",
-      "label": "Per page options",
-      "default": "12,24,36",
-      "info": "Comma-separated list of options"
     }
   ]
 }
