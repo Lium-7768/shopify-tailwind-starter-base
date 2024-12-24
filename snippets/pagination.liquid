@@ -10,8 +10,8 @@
         {% assign per_page_options = '8,12,16,20,24' | split: ',' %}
         {% for option in per_page_options %}
           <option
-            value='{{ request.path }}?per_page={{ option }}'
-            {% if option == paginate.page_size %}
+            value='{{ request.path }}?{% if request.parameters.sort_by %}sort_by={{ request.parameters.sort_by }}&{% endif %}per_page={{ option }}'
+            {% if option == current_per_page %}
               selected
             {% endif %}
           >
@@ -32,7 +32,7 @@
   <div class='twcss-flex twcss-items-center twcss-gap-2'>
     {% if paginate.current_page > 1 %}
       <a
-        href='{{ paginate.previous.url }}{% if paginate.page_size != section.settings.products_per_page %}&per_page={{ paginate.page_size }}{% endif %}'
+        href='{{ paginate.previous.url }}{% if current_per_page != section.settings.products_per_page %}&per_page={{ current_per_page }}{% endif %}'
         class='twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50'
       >
         {% render 'icon-chevron-left' %}
@@ -52,7 +52,7 @@
 
     {% if paginate.next %}
       <a
-        href='{{ paginate.next.url }}{% if paginate.page_size != section.settings.products_per_page %}&per_page={{ paginate.page_size }}{% endif %}'
+        href='{{ paginate.next.url }}{% if current_per_page != section.settings.products_per_page %}&per_page={{ current_per_page }}{% endif %}'
         class='twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50'
       >
         <span class='twcss-text-[14px] twcss-font-bold'>Next</span>

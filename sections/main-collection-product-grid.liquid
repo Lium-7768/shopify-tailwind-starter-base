@@ -199,7 +199,12 @@
             </ul>
 
             {%- if paginate.pages > 1 -%}
-              {% render 'pagination', paginate: paginate, show_per_page: true, anchor: '' %}
+              {% render 'pagination',
+                paginate: paginate,
+                show_per_page: section.settings.show_per_page,
+                current_per_page: items_per_page,
+                anchor: ''
+              %}
             {%- endif -%}
           </div>
         {%- endif -%}
