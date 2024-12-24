@@ -11,7 +11,7 @@
           {% for option in per_page_options %}
             <option
               value='{{ paginate.page_link }}?view={{ paginate.view }}&per_page={{ option }}'
-              {% if paginate.page_size == option %}
+              {% if paginate.page_size == option | times: 1 %}
                 selected
               {% endif %}
             >
