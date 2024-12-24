@@ -170,24 +170,14 @@
 
           <div class='twcss-flex twcss-flex-col twcss-gap-2 twcss-mt-5'>
             <div class='twcss-grid twcss-grid-cols-[auto,1fr] twcss-gap-1 twcss-text-sm twcss-min-h-[20px] twcss-items-start'>
-              <div class='twcss-whitespace-nowrap twcss-leading-5'>Customer Product</div>
-              <div class='twcss-overflow-hidden'>
-                <div class='twcss-overflow-hidden twcss-text-ellipsis twcss-whitespace-nowrap twcss-text-muted-light twcss-leading-5'>
-                  {% if card_product.metafields.custom.supplier_id %}
-                    #
-                    {{- card_product.metafields.custom.supplier_id -}}
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-
-            <div class='twcss-grid twcss-grid-cols-[auto,1fr] twcss-gap-1 twcss-text-sm twcss-min-h-[20px] twcss-items-start'>
               <div class='twcss-whitespace-nowrap twcss-leading-5'>Supplier Product</div>
               <div class='twcss-overflow-hidden'>
                 <div class='twcss-overflow-hidden twcss-text-ellipsis twcss-whitespace-nowrap twcss-text-muted-light twcss-leading-5'>
                   {% if card_product.id %}
                     #
                     {{- card_product.id -}}
+                  {% else %}
+                    --
                   {% endif %}
                 </div>
               </div>
