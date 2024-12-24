@@ -1,3 +1,7 @@
+:root {
+  font-size: 16px;
+}
+
 .quick-add {
   position: relative;
   grid-row-start: 4;
