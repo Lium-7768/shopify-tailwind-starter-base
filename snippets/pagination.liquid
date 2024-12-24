@@ -9,8 +9,18 @@
           onchange='window.location.href = this.value;'
         >
           {% for option in per_page_options %}
+            {% assign current_url = paginate.page_link %}
+            {% if collection.sort_by %}
+              {% assign current_url = current_url | append: '&sort_by=' | append: collection.sort_by %}
+            {% endif %}
+            {% if collection.current_vendor %}
+              {% assign current_url = current_url | append: '&vendor=' | append: collection.current_vendor %}
+            {% endif %}
+            {% if collection.current_type %}
+              {% assign current_url = current_url | append: '&type=' | append: collection.current_type %}
+            {% endif %}
             <option
-              value='{{ paginate.page_link }}?view={{ paginate.view }}&per_page={{ option }}'
+              value='{{ current_url }}?per_page={{ option }}'
               {% assign option_number = option | times: 1 %}
               {% if paginate.page_size == option_number %}
                 selected
