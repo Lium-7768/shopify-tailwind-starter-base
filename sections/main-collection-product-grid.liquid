@@ -23,8 +23,31 @@
   }
 {%- endstyle -%}
 
+{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+{%- assign url_params = contentForQuerystring
+  | split: '"pageurl":"'
+  | last
+  | split: '"'
+  | first
+  | replace: '\/', '/'
+  | replace: '%20', ' '
+  | replace: '\u0026', '&'
+  | split: '?'
+  | last
+-%}
+
 <div class='section-{{ section.id }}-padding'>
-  {%- assign per_page = request.params.per_page | default: 12 | times: 1 -%}
+  {%- assign per_page = 12 -%}
+  {%- assign params = url_params | split: '&' -%}
+  {%- if url_params != blank -%}
+    {%- for param in params -%}
+      {%- assign key_value = param | split: '=' -%}
+      {%- if key_value[0] == 'per_page' -%}
+        {%- assign per_page = key_value[1] | times: 1 -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
   {%- paginate collection.products by per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
