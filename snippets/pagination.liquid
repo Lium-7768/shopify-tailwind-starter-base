@@ -9,7 +9,7 @@
           name='per_page'
           onchange='window.location.href=this.value'
         >
-          {% assign current_per_page = paginate.page_size %}
+          {% assign current_per_page = paginate.page_size | default: section.settings.products_per_page %}
           {% for option in per_page_options %}
             <option
               value='{{ paginate.current_page_url | append: "?view=" | append: paginate.current_view | append: "&per_page=" | append: option }}'
