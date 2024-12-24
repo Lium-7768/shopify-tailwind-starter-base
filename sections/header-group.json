@@ -73,10 +73,28 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "1735033504f46da25a": {
+      "type": "apps",
+      "blocks": {
+        "b2b_customer_account_partner_code_search_action_zBmGhG": {
+          "type": "shopify://apps/b2b-customer-account/blocks/partner-code-search-action/036dca94-f4d2-41fc-915f-03ffad9b3b73",
+          "settings": {
+            "partner_code_search_link": "http://b2b-customer-account-app-szwh.vercel.app/api/v1/product-variant/customer-partner-number/search"
+          }
+        }
+      },
+      "block_order": [
+        "b2b_customer_account_partner_code_search_action_zBmGhG"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "1735033504f46da25a"
   ]
 }
