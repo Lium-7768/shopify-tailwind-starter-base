@@ -3,6 +3,19 @@
   assign current_per_page = paginate.page_size | toString
 -%}
 
+<!-- Debug request object -->
+<div style='display: none;'>
+  <pre>
+    Request params: {{ request.params | json }}
+    Request path: {{ request.path }}
+    Request page type: {{ request.page_type }}
+    Request route: {{ request.route }}
+    Request locale: {{ request.locale }}
+    Request host: {{ request.host }}
+    Request origin: {{ request.origin }}
+  </pre>
+</div>
+
 <!-- Middle Section - Pagination -->
 {%- if show_per_page -%}
   <facet-filters-form class='facets facets-vertical-sort'>
@@ -11,7 +24,7 @@
         <span class='twcss-text-gray-600 twcss-text-[14px]'>Per page:</span>
         <div class='select'>
           <select
-            name='page_size'
+            name='per_page'
             class='facet-filters__sort select__select twcss-text-[14px]'
             id='PerPage'
             aria-describedby='a11y-refresh-page-message'
