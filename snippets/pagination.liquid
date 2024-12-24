@@ -9,18 +9,31 @@
           onchange='window.location.href = this.value;'
         >
           {% for option in per_page_options %}
-            {% assign current_url = paginate.page_link %}
+            {% comment %} 构建基础 URL {% endcomment %}
+            {% assign current_url = collection.url %}
+
+            {% comment %} 添加排序参数 {% endcomment %}
+            {% assign query_params = '' %}
             {% if collection.sort_by %}
-              {% assign current_url = current_url | append: '&sort_by=' | append: collection.sort_by %}
+              {% assign query_params = query_params | append: '&sort_by=' | append: collection.sort_by %}
             {% endif %}
+
+            {% comment %} 添加其他筛选参数 {% endcomment %}
             {% if collection.current_vendor %}
-              {% assign current_url = current_url | append: '&vendor=' | append: collection.current_vendor %}
+              {% assign query_params = query_params | append: '&vendor=' | append: collection.current_vendor %}
             {% endif %}
             {% if collection.current_type %}
-              {% assign current_url = current_url | append: '&type=' | append: collection.current_type %}
+              {% assign query_params = query_params | append: '&type=' | append: collection.current_type %}
+            {% endif %}
+
+            {% comment %} 构建最终 URL {% endcomment %}
+            {% if query_params != '' %}
+              {% assign current_url = current_url | append: '?per_page=' | append: option | append: query_params %}
+            {% else %}
+              {% assign current_url = current_url | append: '?per_page=' | append: option %}
             {% endif %}
             <option
-              value='{{ current_url }}?per_page={{ option }}'
+              value='{{ current_url }}'
               {% assign option_number = option | times: 1 %}
               {% if paginate.page_size == option_number %}
                 selected
