@@ -9,6 +9,7 @@
 }
 
 .quick-add-modal {
+  --color-foreground: 0, 0, 0;
   box-sizing: border-box;
   opacity: 0;
   position: fixed;
