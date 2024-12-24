@@ -29,6 +29,9 @@
     assign current_per_page = request.params.per_page | default: per_page_options[0]
     assign per_page = current_per_page | times: 1
   -%}
+  <div>
+    {{ per_page }}
+  </div>
   {%- paginate collection.products by per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
