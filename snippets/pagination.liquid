@@ -7,11 +7,19 @@
           <span class='twcss-text-gray-600 twcss-text-[14px]'>Per page:</span>
           <div class='select'>
             <select
-              name='per_page'
+              name='page_size'
               class='facet-filters__sort select__select caption-large'
               id='PerPage'
               aria-describedby='a11y-refresh-page-message'
             >
+              <option
+                value='8'
+                {% if paginate.page_size == 8 %}
+                  selected='selected'
+                {% endif %}
+              >
+                8
+              </option>
               <option
                 value='12'
                 {% if paginate.page_size == 12 %}
@@ -21,28 +29,20 @@
                 12
               </option>
               <option
-                value='24'
-                {% if paginate.page_size == 24 %}
+                value='16'
+                {% if paginate.page_size == 16 %}
                   selected='selected'
                 {% endif %}
               >
-                24
+                16
               </option>
               <option
-                value='36'
-                {% if paginate.page_size == 36 %}
+                value='20'
+                {% if paginate.page_size == 20 %}
                   selected='selected'
                 {% endif %}
               >
-                36
-              </option>
-              <option
-                value='48'
-                {% if paginate.page_size == 48 %}
-                  selected='selected'
-                {% endif %}
-              >
-                48
+                20
               </option>
             </select>
             <span class='twcss-size-6 twcss-pt-2'>
