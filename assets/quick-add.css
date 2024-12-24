@@ -258,7 +258,7 @@
   cursor: pointer;
   padding: 17px;
   z-index: 5;
-  width: 56px;
+  width: 40px;
   position: fixed;
   top: 21px;
   right: 21px;
@@ -314,7 +314,7 @@ quick-add-modal .product__column-sticky {
 
   quick-add-modal .product:not(.product--no-media) .product__info-wrapper {
     padding-top: 28px;
-    padding-left: 56px;
+    padding-left: 40px;
     max-width: 54%;
     width: calc(54% - var(--grid-desktop-horizontal-spacing) / 2);
   }
