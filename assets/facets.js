@@ -10,16 +10,6 @@ class FacetFiltersForm extends HTMLElement {
     const facetForm = this.querySelector('form');
     facetForm.addEventListener('input', this.debouncedOnSubmit.bind(this));
 
-    // Add per page change handler
-    const perPageSelect = document.querySelector('select[name="per_page"]');
-    if (perPageSelect) {
-      perPageSelect.addEventListener('change', (event) => {
-        const searchParams = new URLSearchParams(window.location.search);
-        searchParams.set('per_page', event.target.value);
-        this.onSubmitForm(searchParams.toString(), event);
-      });
-    }
-
     const facetWrapper = this.querySelector('#FacetsWrapperDesktop');
     if (facetWrapper) facetWrapper.addEventListener('keyup', onKeyUpEscape);
 
@@ -247,7 +237,8 @@ class FacetFiltersForm extends HTMLElement {
           if (
             form.id === 'FacetSortForm' ||
             form.id === 'FacetFiltersForm' ||
-            form.id === 'FacetSortDrawerForm'
+            form.id === 'FacetSortDrawerForm' ||
+            form.id === 'FacetPerPageForm'
           ) {
             const noJsElements = document.querySelectorAll('.no-js-list');
             noJsElements.forEach((el) => el.remove());
