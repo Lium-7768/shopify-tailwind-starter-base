@@ -1,23 +1,17 @@
-{% comment %}
-  Accepts:
-  - paginate: {Object} Paginate Liquid object
-  - show_per_page: {Boolean} Whether to show per page dropdown (optional, default: false)
-{% endcomment %}
-
 <!-- Middle Section - Pagination -->
 <div class='twcss-flex twcss-items-center twcss-gap-4'>
   {% if show_per_page %}
     <div class='twcss-flex twcss-items-center twcss-gap-2'>
       <span class='twcss-text-gray-600 twcss-text-[14px]'>Per page:</span>
       <select
-        class='twcss-h-9 twcss-w-16 twcss-rounded twcss-border twcss-border-gray-300 twcss-bg-white twcss-px-2 twcss-text-[14px] twcss-text-gray-600 focus:twcss-border-primary focus:twcss-outline-none'
+        class='twcss-h-11 twcss-px-3 twcss-py-1 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded'
         onchange='window.location.href = this.value'
       >
-        {% assign per_page_options = '12,24,36,48' | split: ',' %}
+        {% assign current_per_page = section.settings.products_per_page | default: 12 %}
         {% for option in per_page_options %}
           <option
-            value='{{ paginate.current_page_url | append: '?view=' | append: option }}'
-            {% if paginate.page_size == option %}
+            value='{{ request.path }}?per_page={{ option }}{% if request.sort_by %}&sort_by={{ request.sort_by }}{% endif %}'
+            {% if current_per_page == option %}
               selected
             {% endif %}
           >
@@ -35,7 +29,6 @@
     </span>
     of <span class='twcss-font-bold twcss-text-[14px]'>{{ paginate.items }}</span> Records
   </span>
-
   <div class='twcss-flex twcss-items-center twcss-gap-2'>
     {% if paginate.current_page > 1 %}
       <a
