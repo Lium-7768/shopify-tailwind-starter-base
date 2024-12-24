@@ -41,6 +41,7 @@
       "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 8,
+        "show_per_page": true,
         "columns_desktop": 4,
         "image_ratio": "adapt",
         "show_secondary_image": true,
