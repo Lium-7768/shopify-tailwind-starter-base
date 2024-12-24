@@ -2,10 +2,22 @@
   assign per_page_options = '12,24,36,48' | split: ','
   assign current_per_page = paginate.page_size | toString
 -%}
-
+{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+{%- assign plan_name = contentForQuerystring
+  | split: '"pageurl":"'
+  | last
+  | split: '"'
+  | first
+  | replace: '\/', '/'
+  | replace: '%20', ' '
+  | replace: '\u0026', '&'
+  | split: '?'
+  | last
+-%}
 <!-- Debug request object -->
 <div style=''>
   <pre>
+    Request content_for_query_string: {{ plan_name }}
     Request query key: {{ request.query_key }}
     Request params: {{ request.params | json }}
     Request path: {{ request.path }}
