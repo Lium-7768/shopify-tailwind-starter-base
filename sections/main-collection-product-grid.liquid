@@ -42,7 +42,7 @@
   {%- if url_params != blank -%}
     {%- for param in params -%}
       {%- assign key_value = param | split: '=' -%}
-      {%- if key_value[0] == 'per_page' -%}
+      {%- if key_value[0] == 'page_size' -%}
         {%- assign per_page = key_value[1] | times: 1 -%}
         {%- break -%}
       {%- endif -%}
