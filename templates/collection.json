@@ -40,6 +40,7 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
+        "enable_per_page_select": true,
         "products_per_page": 8,
         "columns_desktop": 4,
         "image_ratio": "adapt",
