@@ -9,24 +9,14 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-list-collections",
-      "settings": {
-        "title": "Collections",
-        "sort": "alphabetical",
-        "image_ratio": "portrait",
-        "columns_desktop": 3,
-        "columns_mobile": "2"
-      }
-    },
     "image_with_text_yrdPLT": {
       "type": "image-with-text",
       "blocks": {
         "heading_bz8JKM": {
           "type": "heading",
           "settings": {
-            "heading": "Test Category",
-            "heading_size": "h1"
+            "heading": "All Collections",
+            "heading_size": "h2"
           }
         }
       },
@@ -34,7 +24,7 @@
         "heading_bz8JKM"
       ],
       "settings": {
-        "image": "shopify://shop_images/unsplash_2O2RZfPI26Y.png",
+        "image": "shopify://shop_images/plumbing-solutions.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -47,6 +37,16 @@
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "title": "Collections",
+        "sort": "alphabetical",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "columns_mobile": "2"
       }
     }
   },
