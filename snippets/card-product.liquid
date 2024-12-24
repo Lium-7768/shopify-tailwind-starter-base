@@ -234,7 +234,9 @@
               </p>
             {%- endif -%}
 
-            {% render 'price', product: card_product, price_class: '' %}
+            <div class='twcss-overflow-hidden'>
+              {% render 'price', product: card_product, price_class: 'twcss-truncate twcss-block' %}
+            </div>
           </div>
 
           <div class='twcss-flex twcss-items-center twcss-gap-2'>
