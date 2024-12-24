@@ -9,24 +9,6 @@
  */
 {
   "sections": {
-    "banner_slider_yEQe8M": {
-      "type": "banner-slider",
-      "blocks": {
-        "slide_7jnkzn": {
-          "type": "slide",
-          "settings": {
-            "heading": "",
-            "subheading": "Reliable Distribution",
-            "button_text": "See more",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "slide_7jnkzn"
-      ],
-      "settings": {}
-    },
     "banner": {
       "type": "main-collection-banner",
       "settings": {
@@ -55,7 +37,6 @@
     }
   },
   "order": [
-    "banner_slider_yEQe8M",
     "banner",
     "product-grid"
   ]
