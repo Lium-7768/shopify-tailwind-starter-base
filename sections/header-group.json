@@ -60,10 +60,20 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "custom_liquid_TfnaTD": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "this is test",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "custom_liquid_TfnaTD"
   ]
 }
