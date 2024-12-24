@@ -117,7 +117,7 @@
   }
 
   .quick-add-modal__content-info--bulk .quick-order-list__table th {
-    padding-top: 35px;
+    padding-top: 25px;
   }
 
   .quick-add-modal__content-info--bulk thead {
@@ -154,7 +154,7 @@
 
   .quick-add-modal__content-info--bulk-details,
   .quick-add-modal__content-info--bulk quick-order-list {
-    padding: 0 35px;
+    padding: 0 25px;
   }
 }
 
@@ -197,8 +197,8 @@
     flex-direction: column;
     position: sticky;
     top: 0;
-    margin-top: -35px;
-    padding-top: 35px;
+    margin-top: -25px;
+    padding-top: 25px;
   }
 }
 
@@ -209,7 +209,7 @@
 }
 
 .quick-add-modal__content-info {
-  --modal-padding: 35px;
+  --modal-padding: 25px;
   padding-right: 62px;
   display: flex;
   overflow-y: auto;
