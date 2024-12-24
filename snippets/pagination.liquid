@@ -1,13 +1,13 @@
 <!-- Middle Section - Pagination -->
 <div class='twcss-flex twcss-items-center twcss-gap-4'>
   {% if show_per_page %}
-    <div class='twcss-flex twcss-items-center twcss-gap-2'>
+    <div class='twcss-flex twcss-items-center twcss-gap-3'>
+      <span class='twcss-text-[14px] twcss-text-gray-600'>Per page:</span>
       <div class='twcss-relative'>
         <select
-          class='twcss-appearance-none twcss-w-[100px] twcss-h-[40px] twcss-pl-3 twcss-pr-8 twcss-text-[14px] twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-border-gray-400 focus:twcss-outline-none focus:twcss-ring-1 focus:twcss-ring-gray-400'
+          class='twcss-appearance-none twcss-w-[60px] twcss-h-[40px] twcss-px-3 twcss-text-[14px] twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded-[4px] hover:twcss-border-gray-400 focus:twcss-outline-none'
           onchange='window.location.href = this.value;'
         >
-          <option value='' disabled>Per page:</option>
           {% for option in per_page_options %}
             <option
               value='{{ paginate.page_link }}?view={{ paginate.view }}&per_page={{ option }}'
@@ -20,8 +20,13 @@
           {% endfor %}
         </select>
         <div class='twcss-pointer-events-none twcss-absolute twcss-inset-y-0 twcss-right-0 twcss-flex twcss-items-center twcss-px-2'>
-          <svg class='twcss-h-4 twcss-w-4 twcss-text-gray-400' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'></path>
+          <svg
+            class='twcss-h-3 twcss-w-3 twcss-text-gray-600'
+            viewBox='0 0 12 12'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path d='M2.5 4.5L6 8L9.5 4.5' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/>
           </svg>
         </div>
       </div>
