@@ -36,6 +36,8 @@
   | last
 -%}
 
+{{ url_params }}
+
 <div class='section-{{ section.id }}-padding'>
   {%- assign per_page = 8 -%}
   {%- assign params = url_params | split: '&' -%}
