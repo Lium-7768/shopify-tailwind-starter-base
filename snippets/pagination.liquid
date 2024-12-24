@@ -1,47 +1,76 @@
+{% comment %}
+  Accepts:
+  - paginate: {Object} Paginate Liquid object
+  - show_per_page: {Boolean} Whether to show per page dropdown (optional, default: false)
+{% endcomment %}
+
 <!-- Middle Section - Pagination -->
-<div class="twcss-flex twcss-items-center twcss-gap-4">
-  <span class="twcss-text-gray-600 twcss-text-[14px]">
-    <span class="twcss-font-bold twcss-text-[14px]">
+<div class='twcss-flex twcss-items-center twcss-gap-4'>
+  {% if show_per_page %}
+    <div class='twcss-flex twcss-items-center twcss-gap-2'>
+      <span class='twcss-text-gray-600 twcss-text-[14px]'>Per page:</span>
+      <select
+        class='twcss-h-9 twcss-w-16 twcss-rounded twcss-border twcss-border-gray-300 twcss-bg-white twcss-px-2 twcss-text-[14px] twcss-text-gray-600 focus:twcss-border-primary focus:twcss-outline-none'
+        onchange='window.location.href = this.value'
+      >
+        {% assign per_page_options = '12,24,36,48' | split: ',' %}
+        {% for option in per_page_options %}
+          <option
+            value='{{ paginate.current_page_url | append: '?view=' | append: option }}'
+            {% if paginate.page_size == option %}
+              selected
+            {% endif %}
+          >
+            {{ option }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+  {% endif %}
+
+  <span class='twcss-text-gray-600 twcss-text-[14px]'>
+    <span class='twcss-font-bold twcss-text-[14px]'>
       {{- paginate.current_offset | plus: 1 }}-
       {{- paginate.current_offset | plus: paginate.page_size | at_most: paginate.items -}}
     </span>
-    of <span class="twcss-font-bold twcss-text-[14px]">{{ paginate.items }}</span> Records
+    of <span class='twcss-font-bold twcss-text-[14px]'>{{ paginate.items }}</span> Records
   </span>
-  <div class="twcss-flex twcss-items-center twcss-gap-2">
+
+  <div class='twcss-flex twcss-items-center twcss-gap-2'>
     {% if paginate.current_page > 1 %}
       <a
-        href="{{ paginate.previous.url }}"
-        class="twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
+        href='{{ paginate.previous.url }}'
+        class='twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50'
       >
         {% render 'icon-chevron-left' %}
-        <span class="twcss-text-[14px] twcss-font-bold">Prev</span>
+        <span class='twcss-text-[14px] twcss-font-bold'>Prev</span>
       </a>
     {% else %}
       <button
         disabled
-        class="twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
+        class='twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded'
       >
         {% render 'icon-chevron-left' %}
-        <span class="twcss-text-[14px] twcss-font-bold">Prev</span>
+        <span class='twcss-text-[14px] twcss-font-bold'>Prev</span>
       </button>
     {% endif %}
 
-    <span class="twcss-text-gray-600"> {{ paginate.current_page }} of {{ paginate.pages }} </span>
+    <span class='twcss-text-gray-600'> {{ paginate.current_page }} of {{ paginate.pages }} </span>
 
     {% if paginate.next %}
       <a
-        href="{{ paginate.next.url }}"
-        class="twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
+        href='{{ paginate.next.url }}'
+        class='twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50'
       >
-        <span class="twcss-text-[14px] twcss-font-bold">Next</span>
+        <span class='twcss-text-[14px] twcss-font-bold'>Next</span>
         {% render 'icon-chevron-right', class: 'twcss-h-6 twcss-w-6' %}
       </a>
     {% else %}
       <button
         disabled
-        class="twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
+        class='twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded'
       >
-        <span class="twcss-text-[14px] twcss-font-bold">Next</span>
+        <span class='twcss-text-[14px] twcss-font-bold'>Next</span>
         {% render 'icon-chevron-right' %}
       </button>
     {% endif %}
