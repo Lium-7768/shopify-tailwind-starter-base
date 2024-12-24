@@ -45,7 +45,7 @@
         "title": "Collections",
         "sort": "alphabetical",
         "image_ratio": "portrait",
-        "columns_desktop": 4,
+        "columns_desktop": 5,
         "columns_mobile": "2"
       }
     }
