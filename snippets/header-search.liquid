@@ -12,7 +12,7 @@
   <!-- Desktop Search Input (>=1280px) -->
   <div class='twcss-hidden lg:twcss-block'>
     {%- if settings.predictive_search_enabled -%}
-      <partner-search
+      <predictive-search
         class='twcss-block'
         data-loading-text='{{ 'accessibility.loading' | t }}'
         data-id='{{ customer.current_company.id | default: '' }}'
@@ -20,7 +20,7 @@
     {%- else -%}
       <search-form class='twcss-block'>
     {%- endif -%}
-    <form action='{{ routes.search_url }}' method='get' role='search' class='twcss-relative'>
+    <form action='http://localhost:5173/partner-search' method='get' role='search' class='twcss-relative'>
       <div class='twcss-relative'>
         <input
           class='twcss-w-full twcss-p-3 twcss-leading-4 twcss-rounded twcss-border twcss-text-accent-default twcss-bg-white focus:twcss-outline-none focus:twcss-ring-0 focus:twcss-ring-offset-0 [appearance:none] [&::-webkit-search-decoration]:twcss-hidden [&::-webkit-search-cancel-button]:twcss-hidden [&::-webkit-search-results-button]:twcss-hidden [&::-webkit-search-results-decoration]:twcss-hidden'
@@ -78,7 +78,7 @@
       {%- endif -%}
     </form>
     {%- if settings.predictive_search_enabled -%}
-      </partner-search>
+      </predictive-search>
     {%- else -%}
       </search-form>
     {%- endif -%}
@@ -110,7 +110,7 @@
         <div class='twcss-absolute twcss-inset-0 twcss-bg-black/50 !twcss-block modal-overlay'></div>
         <div class='twcss-relative twcss-w-full twcss-max-w-2xl twcss-mx-auto twcss-mt-20 twcss-p-4'>
           {%- if settings.predictive_search_enabled -%}
-            <partner-search
+            <predictive-search
               class='twcss-block'
               data-loading-text='{{ 'accessibility.loading' | t }}'
               data-id='{{ customer.current_company.id | default: '' }}'
@@ -118,7 +118,7 @@
           {%- else -%}
             <search-form class='twcss-block'>
           {%- endif -%}
-          <form action='{{ routes.search_url }}' method='get' role='search' class='twcss-relative'>
+          <form action='http://localhost:5173/partner-search' method='get' role='search' class='twcss-relative'>
             <div class='twcss-relative'>
               <input
                 class='twcss-w-full twcss-p-3 twcss-lead twcss-border twcss-rounded twcss-text-accent-default [appearance:none] [&::-webkit-search-decoration]:twcss-hidden [&::-webkit-search-cancel-button]:twcss-hidden [&::-webkit-search-results-button]:twcss-hidden [&::-webkit-search-results-decoration]:twcss-hidden'
@@ -166,7 +166,7 @@
             {%- endif -%}
           </form>
           {%- if settings.predictive_search_enabled -%}
-            </partner-search>
+            </predictive-search>
           {%- else -%}
             </search-form>
           {%- endif -%}
