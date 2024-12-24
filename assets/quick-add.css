@@ -1,7 +1,3 @@
-:root {
-  font-size: 10px;
-}
-
 .quick-add {
   position: relative;
   grid-row-start: 4;
@@ -9,7 +5,7 @@
 }
 
 .card--card .quick-add {
-  margin: 0 1.3rem 1rem;
+  margin: 0 18.2px 14px;
 }
 
 .quick-add-modal {
@@ -47,7 +43,7 @@
 }
 
 .quick-add-modal__content {
-  --modal-height-offset: 3.2rem;
+  --modal-height-offset: 44.8px;
   position: absolute;
   top: 0;
   left: 50%;
@@ -57,12 +53,12 @@
   background-color: rgb(var(--color-background));
   overflow: hidden;
   max-width: var(--page-width);
-  width: calc(100% - 3rem);
+  width: calc(100% - 42px);
 }
 
 @media screen and (min-width: 750px) {
   .quick-add-modal__content {
-    --modal-height-offset: 10rem;
+    --modal-height-offset: 140px;
     margin-top: var(--modal-height-offset);
     width: 80%;
     max-height: calc(100% - var(--modal-height-offset) * 2);
@@ -70,8 +66,8 @@
   }
 
   quick-add-modal .quick-add-modal__toggle {
-    top: 2rem;
-    right: 2rem;
+    top: 28px;
+    right: 28px;
   }
 }
 
@@ -100,18 +96,18 @@
 }
 
 .section-bulk-quick-order-list-padding {
-  padding-top: 2.7rem;
-  padding-bottom: 2.7rem;
+  padding-top: 37.8px;
+  padding-bottom: 37.8px;
 }
 
 @media screen and (min-width: 750px) {
   .section-bulk-quick-order-list-padding {
-    padding-top: 3.6rem;
-    padding-bottom: 3.6rem;
+    padding-top: 50.4px;
+    padding-bottom: 50.4px;
   }
 
   .quick-add-modal__content-info--bulk .card__information-volume-pricing-note {
-    padding-left: 1.6rem;
+    padding-left: 22.4px;
   }
 }
 
@@ -135,12 +131,12 @@
 .quick-add-modal__content-info--bulk .quick-add__product-media,
 .quick-add-modal__content-info--bulk .quick-add__product-container,
 .quick-add-modal__content-info--bulk .quick-add__info {
-  width: 4.8rem;
-  height: 7rem;
+  width: 67.2px;
+  height: 98px;
 }
 
 .quick-add-modal__content-info--bulk-details {
-  padding-left: 1rem;
+  padding-left: 14px;
 }
 
 .quick-add-modal__content-info--bulk-details > a:hover {
@@ -152,18 +148,18 @@
   .quick-add-modal__content-info--bulk .quick-add__product-media,
   .quick-add-modal__content-info--bulk .quick-add__product-container,
   .quick-add-modal__content-info--bulk .quick-add__info {
-    width: 17rem;
-    height: 22rem;
+    width: 238px;
+    height: 308px;
   }
 
   .quick-add-modal__content-info--bulk-details,
   .quick-add-modal__content-info--bulk quick-order-list {
-    padding: 0 2.5rem;
+    padding: 0 35px;
   }
 }
 
 .quick-add__product-media {
-  margin-bottom: 1rem;
+  margin-bottom: 14px;
 }
 
 .quick-add-modal__content-info--bulk .quick-add__product-container img {
@@ -192,7 +188,7 @@
   }
 
   .quick-add-modal__content-info.quick-add-modal__content-info--bulk {
-    --modal-padding: 1.5rem;
+    --modal-padding: 21px;
   }
 }
 
@@ -213,8 +209,8 @@
 }
 
 .quick-add-modal__content-info {
-  --modal-padding: 2.5rem;
-  padding-right: 4.4rem;
+  --modal-padding: 35px;
+  padding-right: 61.6px;
   display: flex;
   overflow-y: auto;
   padding: var(--modal-padding);
@@ -234,8 +230,8 @@
 
 @media screen and (max-width: 749px) {
   quick-add-modal .slider .product__media-item.grid__item {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: 21px;
+    margin-right: 21px;
   }
 
   .quick-add-modal__content {
@@ -253,19 +249,19 @@
 
 .quick-add-modal__toggle {
   background-color: rgb(var(--color-background));
-  border: 0.1rem solid rgba(var(--color-foreground), 0.1);
+  border: 1.4px solid rgba(var(--color-foreground), 0.1);
   border-radius: 50%;
   color: rgba(var(--color-foreground), 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  padding: 1.2rem;
+  padding: 16.8px;
   z-index: 5;
-  width: 4rem;
+  width: 56px;
   position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 21px;
+  right: 21px;
 }
 
 .quick-add-modal__toggle:hover {
@@ -275,7 +271,7 @@
 .quick-add-modal__toggle .icon {
   height: auto;
   margin: 0;
-  width: 2.2rem;
+  width: 30.8px;
 }
 
 quick-add-modal .product:not(.featured-product) .product__view-details {
@@ -283,7 +279,7 @@ quick-add-modal .product:not(.featured-product) .product__view-details {
 }
 
 .quick-add-modal__content--bulk .product__view-details .icon {
-  margin-left: 1.2rem;
+  margin-left: 16.8px;
 }
 
 quick-add-modal .quick-add-hidden,
@@ -317,8 +313,8 @@ quick-add-modal .product__column-sticky {
   }
 
   quick-add-modal .product:not(.product--no-media) .product__info-wrapper {
-    padding-top: 2rem;
-    padding-left: 4rem;
+    padding-top: 28px;
+    padding-left: 56px;
     max-width: 54%;
     width: calc(54% - var(--grid-desktop-horizontal-spacing) / 2);
   }
