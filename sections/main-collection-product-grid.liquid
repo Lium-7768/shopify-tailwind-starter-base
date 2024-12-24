@@ -195,13 +195,7 @@
             </ul>
 
             {%- if paginate.pages > 1 -%}
-              {% assign per_page_options = '12,24,36,48' | split: ',' %}
-              {% render 'pagination',
-                paginate: paginate,
-                show_per_page: section.settings.enable_per_page_select,
-                per_page_options: per_page_options,
-                anchor: ''
-              %}
+              {% render 'pagination', paginate: paginate, show_per_page: true, anchor: '' %}
             {%- endif -%}
           </div>
         {%- endif -%}
@@ -216,18 +210,12 @@
   "class": "section",
   "settings": [
     {
-      "type": "checkbox",
-      "id": "enable_per_page_select",
-      "default": false,
-      "label": "Enable products per page selector"
-    },
-    {
       "type": "range",
       "id": "products_per_page",
       "min": 8,
-      "max": 48,
+      "max": 24,
       "step": 4,
-      "default": 12,
+      "default": 16,
       "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
     },
     {

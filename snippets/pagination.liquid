@@ -1,32 +1,25 @@
 <!-- Middle Section - Pagination -->
 <div class='twcss-flex twcss-items-center twcss-gap-4'>
-  {% if show_per_page %}
+  {%- if show_per_page -%}
     <div class='twcss-flex twcss-items-center twcss-gap-2'>
       <span class='twcss-text-gray-600 twcss-text-[14px]'>Per page:</span>
-      <div class='twcss-relative'>
-        <select
-          class='twcss-h-8 twcss-pl-3 twcss-pr-8 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded twcss-appearance-none'
-          name='per_page'
-          onchange='window.location.href=this.value'
-        >
-          {% assign current_per_page = paginate.page_size | default: section.settings.products_per_page %}
-          {% for option in per_page_options %}
-            <option
-              value='{{ paginate.current_page_url | append: "?view=" | append: paginate.current_view | append: "&per_page=" | append: option }}'
-              {% if option == current_per_page %}
-                selected
-              {% endif %}
-            >
-              {{ option }}
-            </option>
-          {% endfor %}
-        </select>
-        <span class='twcss-absolute twcss-right-2 twcss-top-1/2 twcss--translate-y-1/2 twcss-pointer-events-none'>
-          {% render 'icon-caret' %}
-        </span>
-      </div>
+      <select
+        class='twcss-border twcss-border-gray-300 twcss-rounded twcss-px-2 twcss-py-1'
+        onchange='location = this.value;'
+      >
+        {% for option in (8..24) | step: 4 %}
+          <option
+            value='?per_page={{ option }}'
+            {% if option == paginate.page_size %}
+              selected
+            {% endif %}
+          >
+            {{ option }}
+          </option>
+        {% endfor %}
+      </select>
     </div>
-  {% endif %}
+  {%- endif -%}
 
   <span class='twcss-text-gray-600 twcss-text-[14px]'>
     <span class='twcss-font-bold twcss-text-[14px]'>
