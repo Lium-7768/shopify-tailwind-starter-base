@@ -36,7 +36,7 @@
   <div class='twcss-flex twcss-items-center twcss-gap-2'>
     {% if paginate.current_page > 1 %}
       <a
-        href='{{ paginate.previous.url }}{% if current_per_page != section.settings.products_per_page %}&per_page={{ current_per_page }}{% endif %}'
+        href='{{ paginate.previous.url }}{% if request.parameters.view %}&view={{ request.parameters.view }}{% endif %}'
         class='twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50'
       >
         {% render 'icon-chevron-left' %}
@@ -56,7 +56,7 @@
 
     {% if paginate.next %}
       <a
-        href='{{ paginate.next.url }}{% if current_per_page != section.settings.products_per_page %}&per_page={{ current_per_page }}{% endif %}'
+        href='{{ paginate.next.url }}{% if request.parameters.view %}&view={{ request.parameters.view }}{% endif %}'
         class='twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50'
       >
         <span class='twcss-text-[14px] twcss-font-bold'>Next</span>
