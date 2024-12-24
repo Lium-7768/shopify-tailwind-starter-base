@@ -144,7 +144,7 @@
         <div class='card__information'>
           {%- if show_vendor -%}
             <span class='visually-hidden'>{{ 'accessibility.vendor' | t }}</span>
-            <div class='light'>{{ card_product.vendor }}</div>
+            <div class='light twcss-truncate twcss-overflow-hidden'>{{ card_product.vendor }}</div>
           {%- endif -%}
 
           {% if card_product.featured_media %}
@@ -413,7 +413,7 @@
         <div class='card__information'>
           {%- if show_vendor -%}
             <span class='visually-hidden'>{{ 'accessibility.vendor' | t }}</span>
-            <div class='light'>{{ 'products.product.vendor' | t }}</div>
+            <div class='light twcss-truncate twcss-overflow-hidden'>{{ 'products.product.vendor' | t }}</div>
           {%- endif -%}
 
           <h3 class='card__heading !twcss-text-base {% if settings.card_style == 'standard' %} h5{% endif %} twcss-my-1'>
