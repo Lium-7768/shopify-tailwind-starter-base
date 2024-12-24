@@ -25,7 +25,7 @@
 
 <div class='section-{{ section.id }}-padding'>
   {%- assign per_page = request.params.page_size | default: 12 | times: 1 -%}
-  {{ request.params.page_size }}
+  {{ per_page }}
   {%- paginate collection.products by per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
