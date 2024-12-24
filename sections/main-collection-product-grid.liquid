@@ -23,10 +23,31 @@
   }
 {%- endstyle -%}
 
+{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+{%- assign url_params = contentForQuerystring
+  | split: '"pageurl":"'
+  | last
+  | split: '"'
+  | first
+  | replace: '\/', '/'
+  | replace: '%20', ' '
+  | replace: '\u0026', '&'
+  | split: '?'
+  | last
+-%}
+
 <div class='section-{{ section.id }}-padding'>
+  {{ url_params }}
   {%- assign per_page = 8 -%}
-  {%- if request.page_size -%}
-    {%- assign per_page = request.page_size | times: 1 -%}
+  {%- assign params = url_params | split: '&' -%}
+  {%- if url_params != blank -%}
+    {%- for param in params -%}
+      {%- assign key_value = param | split: '=' -%}
+      {%- if key_value[0] == 'page_size' -%}
+        {%- assign per_page = key_value[1] | times: 1 -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
   {%- endif -%}
   {{ per_page }}
   {%- paginate collection.products by per_page -%}
