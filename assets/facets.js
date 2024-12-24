@@ -210,14 +210,20 @@ class FacetFiltersForm extends HTMLElement {
 
   createSearchParams(form) {
     const formData = new FormData(form);
-    const searchParams = new URLSearchParams(window.location.search);
-    const currentPageSize = searchParams.get('page_size');
+    const finalParams = new URLSearchParams();
 
-    if (form.id !== 'FacetPerPageForm' && currentPageSize) {
-      formData.append('page_size', currentPageSize);
+    if (form.id !== 'FacetPerPageForm') {
+      const currentParams = new URLSearchParams(window.location.search);
+      if (currentParams.has('page_size')) {
+        finalParams.set('page_size', currentParams.get('page_size'));
+      }
     }
 
-    return new URLSearchParams(formData).toString();
+    for (const [key, value] of formData.entries()) {
+      finalParams.set(key, value);
+    }
+
+    return finalParams.toString();
   }
 
   onSubmitForm(searchParams, event) {
