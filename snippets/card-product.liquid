@@ -235,31 +235,6 @@
             </div>
           </div>
 
-          <div class='compare-wrapper'>
-            <label class='compare-label'>
-              <input
-                type='checkbox'
-                name='compare'
-                class='compare-checkbox'
-                value='{{ card_product.id }}'
-                data-product-title='{{ card_product.title }}'
-                data-product-image='{{ card_product.featured_media | image_url: width: 100 }}'
-                data-product-url='{{ card_product.url }}'
-              >
-              <div class='compare-checkbox-custom'>
-                <svg
-                  class='compare-checkbox-icon'
-                  viewBox='0 0 16 16'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <span class='compare-text'>Compare</span>
-            </label>
-          </div>
-
           {%- if show_quick_add -%}
             <div class='quick-add no-js-hidden'>
               {%- liquid
