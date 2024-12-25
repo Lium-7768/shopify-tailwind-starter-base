@@ -74,8 +74,6 @@ class ProductCompare {
       img.src = product.image;
       img.alt = product.title;
 
-      clone.querySelector('span').textContent = product.title;
-
       const removeButton = clone.querySelector('.remove-compare');
       removeButton.addEventListener('click', () =>
         this.removeProduct(product.id),
