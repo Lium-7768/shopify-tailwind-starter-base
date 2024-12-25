@@ -1229,7 +1229,14 @@
           "options__4": {
             "label": "Large"
           },
+          "options__5": {
+            "label": "Custom"
+          },
           "info": "For best results, use an image with a 3:2 aspect ratio. [Learn more](https://help.shopify.com/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
+        },
+        "custom_height": {
+          "label": "Custom height",
+          "info": "Set a custom height in pixels for the banner"
         },
         "desktop_content_position": {
           "options__1": {
