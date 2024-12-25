@@ -236,10 +236,28 @@
           </div>
 
           <div class='twcss-flex twcss-items-center twcss-gap-2'>
-            <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'>
-              <rect x="0.5" y="0.5" width="23" height="23" rx="2.5" fill="white" stroke="#84888B"/>
-            </svg>
-            <span class='twcss-text-sm'> Compare </span>
+            <label class='twcss-cursor-pointer twcss-flex twcss-items-center twcss-gap-2'>
+              <input
+                type='checkbox'
+                name='compare'
+                class='compare-checkbox twcss-hidden'
+                value='{{ card_product.id }}'
+                data-product-title='{{ card_product.title }}'
+                data-product-image='{{ card_product.featured_media | image_url: width: 100 }}'
+                data-product-url='{{ card_product.url }}'
+              >
+              <div class='compare-checkbox-custom twcss-w-6 twcss-h-6 twcss-border twcss-border-[#84888B] twcss-rounded twcss-flex twcss-items-center twcss-justify-center'>
+                <svg
+                  class='compare-checkbox-icon twcss-hidden twcss-w-4 twcss-h-4 twcss-text-primary'
+                  viewBox='0 0 16 16'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class='twcss-text-sm'>Compare</span>
+            </label>
           </div>
 
           {%- if show_quick_add -%}

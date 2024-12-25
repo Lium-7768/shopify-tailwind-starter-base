@@ -399,5 +399,8 @@
     {%- endif -%}
 
     <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script>
+
+    {% render 'compare-bar' %}
+    {{ 'compare-functionality.js' | asset_url | script_tag }}
   </body>
 </html>

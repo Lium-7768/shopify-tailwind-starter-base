@@ -1,0 +1,36 @@
+<div
+  id='compare-bar'
+  class='twcss-fixed twcss-bottom-0 twcss-left-0 twcss-right-0 twcss-bg-white twcss-border-t twcss-border-gray-200 twcss-transform twcss-translate-y-full twcss-transition-transform twcss-duration-300 twcss-z-50'
+>
+  <div class='twcss-container twcss-mx-auto twcss-px-4 twcss-py-4'>
+    <div class='twcss-flex twcss-items-center twcss-justify-between'>
+      <div class='twcss-flex twcss-items-center twcss-gap-4' id='compare-products'>
+        <!-- Compare products will be inserted here -->
+      </div>
+      <div class='twcss-flex twcss-items-center twcss-gap-4'>
+        <button id='compare-clear' class='twcss-text-sm twcss-text-gray-600'>Clear All</button>
+        <button
+          id='compare-button'
+          class='twcss-px-6 twcss-py-2 twcss-bg-primary twcss-text-white twcss-rounded twcss-text-sm'
+          disabled
+        >
+          Compare (<span id='compare-count'>0</span>)
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<template id='compare-product-template'>
+  <div class='compare-product twcss-flex twcss-flex-col twcss-items-center twcss-gap-2'>
+    <div class='twcss-relative'>
+      <img class='twcss-w-20 twcss-h-20 twcss-object-cover' src='' alt=''>
+      <button class='remove-compare twcss-absolute twcss-top-0 twcss-right-0 twcss-transform twcss-translate-x-1/2 twcss--translate-y-1/2 twcss-bg-white twcss-rounded-full twcss-p-1 twcss-shadow'>
+        <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <span class='twcss-text-xs twcss-text-center twcss-line-clamp-2'></span>
+  </div>
+</template>
