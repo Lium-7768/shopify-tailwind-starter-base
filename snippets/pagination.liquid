@@ -1,100 +1,47 @@
 <!-- Middle Section - Pagination -->
-<div class='twcss-flex twcss-items-center twcss-gap-4'>
-  {%- if show_per_page -%}
-    <facet-filters-form class='facets no-js-hidden'>
-      <form class='facets-vertical-form' id='FacetPerPageForm'>
-        <div class='twcss-flex twcss-items-center twcss-gap-2'>
-          <span class='twcss-text-gray-600 twcss-text-[14px]'>Per page:</span>
-          <div class='select'>
-            <select
-              name='page_size'
-              class='facet-filters__sort select__select caption-large'
-              id='PerPage'
-              aria-describedby='a11y-refresh-page-message'
-            >
-              <option
-                value='8'
-                {% if paginate.page_size == 8 %}
-                  selected='selected'
-                {% endif %}
-              >
-                8
-              </option>
-              <option
-                value='12'
-                {% if paginate.page_size == 12 %}
-                  selected='selected'
-                {% endif %}
-              >
-                12
-              </option>
-              <option
-                value='16'
-                {% if paginate.page_size == 16 %}
-                  selected='selected'
-                {% endif %}
-              >
-                16
-              </option>
-              <option
-                value='20'
-                {% if paginate.page_size == 20 %}
-                  selected='selected'
-                {% endif %}
-              >
-                20
-              </option>
-            </select>
-            <span class='twcss-size-6 twcss-pt-2'>
-              {% render 'icon-caret' %}
-            </span>
-          </div>
-        </div>
-      </form>
-    </facet-filters-form>
-  {%- endif -%}
-  <span class='twcss-text-gray-600 twcss-text-[14px]'>
-    <span class='twcss-font-bold twcss-text-[14px]'>
+<div class="twcss-flex twcss-items-center twcss-gap-4">
+  <span class="twcss-text-gray-600 twcss-text-[14px]">
+    <span class="twcss-font-bold twcss-text-[14px]">
       {{- paginate.current_offset | plus: 1 }}-
       {{- paginate.current_offset | plus: paginate.page_size | at_most: paginate.items -}}
     </span>
-    of <span class='twcss-font-bold twcss-text-[14px]'>{{ paginate.items }}</span> Records
+    of <span class="twcss-font-bold twcss-text-[14px]">{{ paginate.items }}</span> Records
   </span>
-  <div class='twcss-flex twcss-items-center twcss-gap-2'>
+  <div class="twcss-flex twcss-items-center twcss-gap-2">
     {% if paginate.current_page > 1 %}
       <a
-        href='{{ paginate.previous.url }}'
-        class='twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50'
+        href="{{ paginate.previous.url }}"
+        class="twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
       >
         {% render 'icon-chevron-left' %}
-        <span class='twcss-text-[14px] twcss-font-bold'>Prev</span>
+        <span class="twcss-text-[14px] twcss-font-bold">Prev</span>
       </a>
     {% else %}
       <button
         disabled
-        class='twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded'
+        class="twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
       >
         {% render 'icon-chevron-left' %}
-        <span class='twcss-text-[14px] twcss-font-bold'>Prev</span>
+        <span class="twcss-text-[14px] twcss-font-bold">Prev</span>
       </button>
     {% endif %}
 
-    <span class='twcss-text-gray-600'> {{ paginate.current_page }} of {{ paginate.pages }} </span>
+    <span class="twcss-text-gray-600"> {{ paginate.current_page }} of {{ paginate.pages }} </span>
 
     {% if paginate.next %}
       <a
-        href='{{ paginate.next.url }}'
-        class='twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50'
+        href="{{ paginate.next.url }}"
+        class="twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
       >
-        <span class='twcss-text-[14px] twcss-font-bold'>Next</span>
+        <span class="twcss-text-[14px] twcss-font-bold">Next</span>
         {% render 'icon-chevron-right', class: 'twcss-h-6 twcss-w-6' %}
       </a>
     {% else %}
       <button
         disabled
-        class='twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded'
+        class="twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
       >
-        <span class='twcss-text-[14px] twcss-font-bold'>Next</span>
+        <span class="twcss-text-[14px] twcss-font-bold">Next</span>
         {% render 'icon-chevron-right' %}
       </button>
     {% endif %}
