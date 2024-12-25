@@ -93,7 +93,7 @@
           "settings": {
             "image": "shopify://shop_images/unsplash_2O2RZfPI26Y.png",
             "title": "Freight Transport Solutions",
-            "link": "shopify://collections/hydrogen"
+            "link": "shopify://collections/featured-plumbing-products"
           }
         },
         "solution_J7k7QQ": {
@@ -174,12 +174,12 @@
       "settings": {
         "title": "Featured Plumbing Products",
         "view_all_text": "",
-        "collection": "hydrogen",
+        "collection": "featured-plumbing-products",
         "products_to_show_mobile": 1,
         "products_to_show_tablet": 2,
         "products_to_show_desktop": 3,
         "show_vendor": false,
-        "collection_url": "shopify://collections/hydrogen",
+        "collection_url": "shopify://collections/featured-plumbing-products",
         "banner_title": "",
         "banner_text": "",
         "banner_image": "shopify://shop_images/plumbing-solutions.png"
@@ -233,7 +233,7 @@
           "settings": {
             "image": "shopify://shop_images/Moen_Chrome_Two_Handle_Centerset_Bathroom_Sink_Faucet_with_50-50_Drain_Assembly.webp",
             "title": "Bathroom Sink Faucets",
-            "link": "shopify://collections/hydrogen"
+            "link": "shopify://collections/featured-plumbing-products"
           }
         }
       },
@@ -362,7 +362,7 @@
           "settings": {
             "logo": "shopify://shop_images/ACCO_KENSINGTON.png",
             "name": "",
-            "link": "shopify://collections/hydrogen"
+            "link": "shopify://collections/featured-plumbing-products"
           }
         },
         "item_4JTxVT": {
