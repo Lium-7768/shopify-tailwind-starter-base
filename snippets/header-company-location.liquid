@@ -146,6 +146,11 @@
             event.preventDefault();
             const selectedLocation = document.querySelector('input[name="location"]:checked');
             if (selectedLocation) {
+              // Store location ID and company ID in session storage
+              sessionStorage.setItem('custom-location-id', selectedLocation.dataset.locationId);
+              sessionStorage.setItem('custom-company-id', '{{ customer.current_company.id }}');
+
+              // Redirect to new location
               window.location.href = selectedLocation.dataset.locationUrl;
             }
           });
