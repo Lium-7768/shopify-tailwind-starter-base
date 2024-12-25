@@ -129,9 +129,9 @@
 
 .compare-clear {
   font-size: 14px;
-  color: #1e293b;
-  background-color: #f1f5f9;
-  border: none;
+  color: #0f61a0;
+  background-color: #d3e9fd;
+  border: 1px solid #d3e9fd;
   cursor: pointer;
   padding: 8px 24px;
   border-radius: 4px;
@@ -142,14 +142,14 @@
 }
 
 .compare-clear:hover {
-  background-color: #e2e8f0;
+  background-color: #c2e0fc;
 }
 
 .compare-button {
   padding: 8px 24px;
-  background-color: #0ea5e9;
-  color: #fff;
-  border: none;
+  background-color: #1379c8;
+  color: #ffffff;
+  border: 1px solid #1379c8;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 500;
@@ -160,7 +160,7 @@
 }
 
 .compare-button:hover:not(:disabled) {
-  background-color: #0284c7;
+  background-color: #0f61a0;
 }
 
 .compare-button:disabled {

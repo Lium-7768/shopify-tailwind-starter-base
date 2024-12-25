@@ -101,9 +101,9 @@ class ProductCompare {
     this.compareButton.disabled = this.selectedProducts.size < 2;
 
     if (this.selectedProducts.size === 0) {
-      this.compareBar.classList.add('twcss-translate-y-full');
+      this.compareBar.classList.remove('active');
     } else {
-      this.compareBar.classList.remove('twcss-translate-y-full');
+      this.compareBar.classList.add('active');
     }
   }
 
@@ -118,7 +118,7 @@ class ProductCompare {
         checkbox.checked = false;
       });
 
-      this.compareBar.classList.add('twcss-translate-y-full');
+      this.compareBar.classList.remove('active');
     });
   }
 
