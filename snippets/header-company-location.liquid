@@ -147,9 +147,9 @@
             const selectedLocation = document.querySelector('input[name="location"]:checked');
             if (selectedLocation) {
               // Store location ID and company ID in session storage
-              sessionStorage.setItem('custom-location-id', selectedLocation.dataset.locationId);
-              sessionStorage.setItem('custom-company-id', '{{ customer.current_company.id }}');
-              sessionStorage.setItem('custom-store-name', '{{ shop.domain }}');
+              sessionStorage.setItem('company-location-id', selectedLocation.dataset.locationId);
+              sessionStorage.setItem('company-id', '{{ customer.current_company.id }}');
+              sessionStorage.setItem('store-name', '{{ shop.domain }}');
 
               // Redirect to new location
               window.location.href = selectedLocation.dataset.locationUrl;
