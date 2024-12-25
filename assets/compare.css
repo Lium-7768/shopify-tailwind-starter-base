@@ -12,6 +12,19 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 添加禁用状态的样式 */
+.compare-checkbox-disabled .compare-checkbox-custom {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+  cursor: not-allowed;
+}
+
+.compare-checkbox-disabled .compare-text {
+  color: #9ca3af;
+  cursor: not-allowed;
 }
 
 .compare-checkbox-icon {

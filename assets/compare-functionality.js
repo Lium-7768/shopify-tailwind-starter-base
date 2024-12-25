@@ -33,8 +33,6 @@ class ProductCompare {
   addProduct(checkbox) {
     if (this.selectedProducts.size >= this.maxProducts) {
       checkbox.checked = false;
-      // Show error message (implement your own notification system)
-      alert(`You can only compare up to ${this.maxProducts} products`);
       return;
     }
 
@@ -47,15 +45,16 @@ class ProductCompare {
 
     this.selectedProducts.set(productData.id, productData);
     this.updateCompareBar();
+    this.updateCheckboxStates();
     this.saveProducts();
   }
 
   removeProduct(productId) {
     this.selectedProducts.delete(productId);
     this.updateCompareBar();
+    this.updateCheckboxStates();
     this.saveProducts();
 
-    // Uncheck the corresponding checkbox
     const checkbox = document.querySelector(
       `.compare-checkbox[value="${productId}"]`,
     );
@@ -97,9 +96,9 @@ class ProductCompare {
     this.clearButton.addEventListener('click', () => {
       this.selectedProducts.clear();
       this.updateCompareBar();
+      this.updateCheckboxStates();
       this.saveProducts();
 
-      // Uncheck all checkboxes
       document.querySelectorAll('.compare-checkbox').forEach((checkbox) => {
         checkbox.checked = false;
       });
@@ -125,8 +124,8 @@ class ProductCompare {
     if (saved) {
       this.selectedProducts = new Map(JSON.parse(saved));
       this.updateCompareBar();
+      this.updateCheckboxStates();
 
-      // Check corresponding checkboxes
       this.selectedProducts.forEach((_, id) => {
         const checkbox = document.querySelector(
           `.compare-checkbox[value="${id}"]`,
@@ -134,6 +133,23 @@ class ProductCompare {
         if (checkbox) checkbox.checked = true;
       });
     }
+  }
+
+  updateCheckboxStates() {
+    const allCheckboxes = document.querySelectorAll('.compare-label');
+    const isMaxReached = this.selectedProducts.size >= this.maxProducts;
+
+    allCheckboxes.forEach((label) => {
+      const checkbox = label.querySelector('.compare-checkbox');
+
+      if (!checkbox.checked && isMaxReached) {
+        label.classList.add('compare-checkbox-disabled');
+        checkbox.disabled = true;
+      } else {
+        label.classList.remove('compare-checkbox-disabled');
+        checkbox.disabled = false;
+      }
+    });
   }
 }
 
