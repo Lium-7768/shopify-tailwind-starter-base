@@ -98,14 +98,14 @@
   width: 120px;
   height: 120px;
   background-color: #fff;
-  border: 1px solid #d1d5db;
-  border-radius: 4px;
 }
 
 .compare-product-image {
   width: 120px;
   height: 120px;
   object-fit: cover;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
 }
 
 .remove-compare {
