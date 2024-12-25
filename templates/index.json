@@ -80,9 +80,9 @@
       "settings": {
         "white_title": "Featured",
         "blue_title": "Products",
-        "link_url": "shopify://collections/automated-collection",
+        "link_url": "shopify://collections/featured-products-collection",
         "link_text": "See all",
-        "collection": "automated-collection"
+        "collection": "featured-products-collection"
       }
     },
     "distribution_solutions_wXkLVR": {
@@ -282,7 +282,7 @@
           "settings": {
             "logo": "shopify://shop_images/Excell.png",
             "name": "",
-            "link": "shopify://collections/automated-collection"
+            "link": "shopify://collections/featured-products-collection"
           }
         },
         "item_6G7XH4": {
