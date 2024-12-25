@@ -89,7 +89,6 @@ class ProductCompare {
       const productElement = clone.querySelector('.compare-product');
       productElement.classList.add('compare-product-placeholder');
 
-      // 移除图片
       const imgWrapper = clone.querySelector('.compare-product-image-wrapper');
       imgWrapper.innerHTML = `<span class="compare-product-number">${
         this.selectedProducts.size + i + 1
@@ -101,10 +100,10 @@ class ProductCompare {
     this.compareCount.textContent = this.selectedProducts.size;
     this.compareButton.disabled = this.selectedProducts.size < 2;
 
-    if (this.selectedProducts.size > 0) {
-      this.compareBar.classList.remove('twcss-translate-y-full');
-    } else {
+    if (this.selectedProducts.size === 0) {
       this.compareBar.classList.add('twcss-translate-y-full');
+    } else {
+      this.compareBar.classList.remove('twcss-translate-y-full');
     }
   }
 
@@ -118,6 +117,8 @@ class ProductCompare {
       document.querySelectorAll('.compare-checkbox').forEach((checkbox) => {
         checkbox.checked = false;
       });
+
+      this.compareBar.classList.add('twcss-translate-y-full');
     });
   }
 
