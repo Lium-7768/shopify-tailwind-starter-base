@@ -179,7 +179,7 @@
         "products_to_show_tablet": 2,
         "products_to_show_desktop": 3,
         "show_vendor": false,
-        "collection_url": "shopify://collections/faucet",
+        "collection_url": "shopify://collections/featured-plumbing-collection",
         "banner_title": "",
         "banner_text": "",
         "banner_image": "shopify://shop_images/plumbing-solutions.png"
