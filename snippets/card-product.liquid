@@ -148,8 +148,8 @@
           {%- endif -%}
 
           <h3
-            class='card__heading !twcss-text-base twcss-min-h-[50px] {% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %} twcss-my-1'
-            {% if card_product.featured_media or settings.card_style == 'card' %}
+            class='card__heading !twcss-text-base twcss-min-h-[50px] {% if settings.card_style == 'standard' %} h5{% endif %} twcss-my-1'
+            {% if settings.card_style == 'card' %}
               id='title-{{ section_id }}-{{ card_product.id }}'
             {% endif %}
           >
