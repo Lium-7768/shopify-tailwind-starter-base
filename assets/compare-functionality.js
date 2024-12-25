@@ -65,8 +65,10 @@ class ProductCompare {
     this.compareProducts.innerHTML = '';
     const template = document.getElementById('compare-product-template');
 
+    // 先添加已选择的产品
     this.selectedProducts.forEach((product) => {
       const clone = template.content.cloneNode(true);
+      const productElement = clone.querySelector('.compare-product');
 
       const img = clone.querySelector('img');
       img.src = product.image;
@@ -81,6 +83,22 @@ class ProductCompare {
 
       this.compareProducts.appendChild(clone);
     });
+
+    // 添加占位符
+    const remainingSlots = this.maxProducts - this.selectedProducts.size;
+    for (let i = 0; i < remainingSlots; i++) {
+      const clone = template.content.cloneNode(true);
+      const productElement = clone.querySelector('.compare-product');
+      productElement.classList.add('compare-product-placeholder');
+
+      // 移除图片
+      const imgWrapper = clone.querySelector('.compare-product-image-wrapper');
+      imgWrapper.innerHTML = `<span class="compare-product-number">${
+        this.selectedProducts.size + i + 1
+      }</span>`;
+
+      this.compareProducts.appendChild(clone);
+    }
 
     this.compareCount.textContent = this.selectedProducts.size;
     this.compareButton.disabled = this.selectedProducts.size < 2;

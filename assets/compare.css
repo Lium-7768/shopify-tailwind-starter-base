@@ -69,19 +69,20 @@
 .compare-bar-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 24px 16px;
 }
 
 .compare-bar-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
 }
 
 .compare-products-list {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 40px;
 }
 
 .compare-product {
@@ -89,10 +90,14 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  width: 80px;
 }
 
 .compare-product-image-wrapper {
   position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
 }
 
 .compare-product-image {
@@ -127,7 +132,7 @@
 .compare-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 40px;
 }
 
 .compare-clear {
@@ -151,4 +156,24 @@
 .compare-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+/* 占位符样式 */
+.compare-product-placeholder .compare-product-image-wrapper {
+  background-color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compare-product-placeholder .compare-product-number {
+  font-size: 24px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* 移除占位符的标题和关闭按钮 */
+.compare-product-placeholder .compare-product-title,
+.compare-product-placeholder .remove-compare {
+  display: none;
 }
