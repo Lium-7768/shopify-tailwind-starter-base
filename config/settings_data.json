@@ -179,7 +179,7 @@
     "blocks": {
       "1435789019416763996": {
         "type": "shopify://apps/b2b-customer-account/blocks/compare-bar/036dca94-f4d2-41fc-915f-03ffad9b3b73",
-        "disabled": true,
+        "disabled": false,
         "settings": {}
       }
     },
