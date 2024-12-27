@@ -181,7 +181,7 @@
         "type": "shopify://apps/b2b-customer-account/blocks/compare-tray/036dca94-f4d2-41fc-915f-03ffad9b3b73",
         "disabled": false,
         "settings": {
-          "include_in_compare": "['/collections', '/search']"
+          "include_in_compare": "'/collections', '/search'"
         }
       }
     },
