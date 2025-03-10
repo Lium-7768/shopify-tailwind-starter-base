@@ -8,59 +8,59 @@
   {% render 'header-search', input_id: 'My-Id'%}
 {% endcomment %}
 
-<details-modal class="twcss-relative md:twcss-flex-1">
+<details-modal class='twcss-relative md:twcss-flex-1'>
   <!-- Desktop Search Input (>=1280px) -->
-  <div class="twcss-hidden md:twcss-block">
+  <div class='twcss-hidden md:twcss-block'>
     {%- if settings.predictive_search_enabled -%}
       <predict-search
-        class="twcss-block"
-        data-loading-text="{{ 'accessibility.loading' | t }}"
-        data-id="{{ customer.current_company.id | default: '' }}"
-        data-store="{{ shop.domain | default: '' }}"
+        class='twcss-block'
+        data-loading-text='{{ 'accessibility.loading' | t }}'
+        data-id='{{ customer.current_company.id | default: '' }}'
+        data-store='{{ shop.domain | default: '' }}'
       >
     {%- else -%}
-      <search-form class="twcss-block">
+      <search-form class='twcss-block'>
     {%- endif -%}
-    <form action="{{ routes.search_url }}" method="get" role="search" class="twcss-relative">
-      <div class="twcss-relative">
-        <input type="hidden" name="type" value="product">
+    <form action='/pages/coveo-search' method='get' role='search' class='twcss-relative'>
+      <div class='twcss-relative'>
+        <input type='hidden' name='type' value='product'>
         <input
-          class="twcss-w-full twcss-p-3 twcss-leading-5 twcss-text-sm twcss-rounded twcss-text-accent-default twcss-bg-white focus:twcss-outline-none focus:twcss-ring-0 focus:twcss-ring-offset-0 [appearance:none] [&::-webkit-search-decoration]:twcss-hidden [&::-webkit-search-cancel-button]:twcss-hidden [&::-webkit-search-results-button]:twcss-hidden [&::-webkit-search-results-decoration]:twcss-hidden"
-          id="{{ input_id }}-desktop"
-          type="search"
-          name="q"
-          value="{{ search.terms | escape }}"
-          placeholder="What can we help you find?"
+          class='twcss-w-full twcss-p-3 twcss-leading-5 twcss-text-sm twcss-rounded twcss-text-accent-default twcss-bg-white focus:twcss-outline-none focus:twcss-ring-0 focus:twcss-ring-offset-0 [appearance:none] [&::-webkit-search-decoration]:twcss-hidden [&::-webkit-search-cancel-button]:twcss-hidden [&::-webkit-search-results-button]:twcss-hidden [&::-webkit-search-results-decoration]:twcss-hidden'
+          id='{{ input_id }}-desktop'
+          type='search'
+          name='q'
+          value='{{ search.terms | escape }}'
+          placeholder='What can we help you find?'
           {%- if settings.predictive_search_enabled -%}
-            role="combobox"
-            aria-expanded="false"
-            aria-owns="predictive-search-results"
-            aria-controls="predictive-search-results"
-            aria-haspopup="listbox"
-            aria-autocomplete="list"
-            autocorrect="off"
-            autocomplete="off"
-            autocapitalize="off"
-            spellcheck="false"
+            role='combobox'
+            aria-expanded='false'
+            aria-owns='predictive-search-results'
+            aria-controls='predictive-search-results'
+            aria-haspopup='listbox'
+            aria-autocomplete='list'
+            autocorrect='off'
+            autocomplete='off'
+            autocapitalize='off'
+            spellcheck='false'
           {%- endif -%}
         >
-        <label class="twcss-sr-only" for="{{ input_id }}-desktop">{{ 'general.search.search' | t }}</label>
-        <input type="hidden" name="options[prefix]" value="last">
+        <label class='twcss-sr-only' for='{{ input_id }}-desktop'>{{ 'general.search.search' | t }}</label>
+        <input type='hidden' name='options[prefix]' value='last'>
         <button
-          type="reset"
-          class="twcss-absolute twcss-right-11 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %} hidden{% endif %}"
-          aria-label="{{ 'general.search.reset' | t }}"
+          type='reset'
+          class='twcss-absolute twcss-right-11 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %} hidden{% endif %}'
+          aria-label='{{ 'general.search.reset' | t }}'
         >
-          <span class="twcss-size-6 twcss-text-accent-default twcss-block">
+          <span class='twcss-size-6 twcss-text-accent-default twcss-block'>
             {{- 'icon-reset.svg' | inline_asset_content -}}
           </span>
         </button>
         <button
-          style="padding: 8px 10px"
-          class="twcss-absolute twcss-bg-secondary-default twcss-right-0 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 twcss-px-[10px] twcss-h-full twcss-rounded-r"
-          aria-label="{{ 'general.search.search' | t }}"
+          style='padding: 8px 10px'
+          class='twcss-absolute twcss-bg-secondary-default twcss-right-0 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 twcss-px-[10px] twcss-h-full twcss-rounded-r'
+          aria-label='{{ 'general.search.search' | t }}'
         >
-          <span class="twcss-size-6 twcss-text-white twcss-block">
+          <span class='twcss-size-6 twcss-text-white twcss-block'>
             {{- 'icon-search.svg' | inline_asset_content -}}
           </span>
         </button>
@@ -68,8 +68,8 @@
 
       {%- if settings.predictive_search_enabled -%}
         <div
-          class="twcss-absolute twcss-overflow-hidden twcss-left-0 twcss-right-0 twcss-bg-white !twcss-rounded twcss-border twcss-text-accent-default predictive-search twcss-hidden"
-          tabindex="-1"
+          class='twcss-absolute twcss-overflow-hidden twcss-left-0 twcss-right-0 twcss-bg-white !twcss-rounded twcss-border twcss-text-accent-default predictive-search twcss-hidden'
+          tabindex='-1'
           data-predictive-search
         >
           {%- render 'loading-spinner',
@@ -77,7 +77,7 @@
           -%}
         </div>
 
-        <span class="twcss-sr-only predictive-search-status" role="status" aria-hidden="true"></span>
+        <span class='twcss-sr-only predictive-search-status' role='status' aria-hidden='true'></span>
       {%- endif -%}
     </form>
     {%- if settings.predictive_search_enabled -%}
@@ -88,71 +88,71 @@
   </div>
 
   <!-- Mobile Search Icon and Modal (<1280px) -->
-  <div class="md:twcss-hidden">
+  <div class='md:twcss-hidden'>
     <details>
       <summary
-        class="twcss-flex twcss-items-center twcss-cursor-pointer twcss-focus:outline-none twcss-focus:ring-2 twcss-focus:ring-offset-2"
-        aria-haspopup="dialog"
-        aria-label="{{ 'general.search.search' | t }}"
+        class='twcss-flex twcss-items-center twcss-cursor-pointer twcss-focus:outline-none twcss-focus:ring-2 twcss-focus:ring-offset-2'
+        aria-haspopup='dialog'
+        aria-label='{{ 'general.search.search' | t }}'
       >
-        <span class="twcss-flex twcss-items-center">
-          <span class="twcss-size-6">
+        <span class='twcss-flex twcss-items-center'>
+          <span class='twcss-size-6'>
             {{- 'icon-search.svg' | inline_asset_content -}}
           </span>
-          <span class="twcss-size-6 twcss-hidden group-open:twcss-block">
+          <span class='twcss-size-6 twcss-hidden group-open:twcss-block'>
             {{- 'icon-close.svg' | inline_asset_content -}}
           </span>
         </span>
       </summary>
       <div
-        class="twcss-fixed twcss-z-10 twcss-inset-0 twcss-bg-gradient-to-b twcss-from-background"
-        role="dialog"
-        aria-modal="true"
-        aria-label="{{ 'general.search.search' | t }}"
+        class='twcss-fixed twcss-z-10 twcss-inset-0 twcss-bg-gradient-to-b twcss-from-background'
+        role='dialog'
+        aria-modal='true'
+        aria-label='{{ 'general.search.search' | t }}'
       >
-        <div class="twcss-absolute twcss-inset-0 twcss-bg-black/50 !twcss-block modal-overlay"></div>
-        <div class="twcss-relative twcss-w-full twcss-max-w-2xl twcss-mx-auto twcss-mt-20 twcss-p-4">
+        <div class='twcss-absolute twcss-inset-0 twcss-bg-black/50 !twcss-block modal-overlay'></div>
+        <div class='twcss-relative twcss-w-full twcss-max-w-2xl twcss-mx-auto twcss-mt-20 twcss-p-4'>
           {%- if settings.predictive_search_enabled -%}
             <predict-search
-              class="twcss-block"
-              data-loading-text="{{ 'accessibility.loading' | t }}"
-              data-id="{{ customer.current_company.id | default: '' }}"
-              data-store="{{ shop.domain | default: '' }}"
+              class='twcss-block'
+              data-loading-text='{{ 'accessibility.loading' | t }}'
+              data-id='{{ customer.current_company.id | default: '' }}'
+              data-store='{{ shop.domain | default: '' }}'
             >
           {%- else -%}
-            <search-form class="twcss-block">
+            <search-form class='twcss-block'>
           {%- endif -%}
-          <form action="{{ routes.search_url }}" method="get" role="search" class="twcss-relative">
-            <div class="twcss-relative">
+          <form action='/pages/coveo-search' method='get' role='search' class='twcss-relative'>
+            <div class='twcss-relative'>
               <input
-                class="twcss-w-full twcss-p-3 twcss-lead twcss-text-sm twcss-border twcss-rounded twcss-text-accent-default [appearance:none] [&::-webkit-search-decoration]:twcss-hidden [&::-webkit-search-cancel-button]:twcss-hidden [&::-webkit-search-results-button]:twcss-hidden [&::-webkit-search-results-decoration]:twcss-hidden"
-                id="{{ input_id }}"
-                type="search"
-                name="q"
-                value="{{ search.terms | escape }}"
-                placeholder="What can we help you find?"
+                class='twcss-w-full twcss-p-3 twcss-lead twcss-text-sm twcss-border twcss-rounded twcss-text-accent-default [appearance:none] [&::-webkit-search-decoration]:twcss-hidden [&::-webkit-search-cancel-button]:twcss-hidden [&::-webkit-search-results-button]:twcss-hidden [&::-webkit-search-results-decoration]:twcss-hidden'
+                id='{{ input_id }}'
+                type='search'
+                name='q'
+                value='{{ search.terms | escape }}'
+                placeholder='What can we help you find?'
                 {%- if settings.predictive_search_enabled -%}
-                  role="combobox"
-                  aria-expanded="false"
-                  aria-owns="predictive-search-results"
-                  aria-controls="predictive-search-results"
-                  aria-haspopup="listbox"
-                  aria-autocomplete="list"
-                  autocorrect="off"
-                  autocomplete="off"
-                  autocapitalize="off"
-                  spellcheck="false"
+                  role='combobox'
+                  aria-expanded='false'
+                  aria-owns='predictive-search-results'
+                  aria-controls='predictive-search-results'
+                  aria-haspopup='listbox'
+                  aria-autocomplete='list'
+                  autocorrect='off'
+                  autocomplete='off'
+                  autocapitalize='off'
+                  spellcheck='false'
                 {%- endif -%}
               >
-              <label class="twcss-sr-only" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
-              <input type="hidden" name="type" value="product">
-              <input type="hidden" name="options[prefix]" value="last">
+              <label class='twcss-sr-only' for='{{ input_id }}'>{{ 'general.search.search' | t }}</label>
+              <input type='hidden' name='type' value='product'>
+              <input type='hidden' name='options[prefix]' value='last'>
               <button
-                type="reset"
-                class="twcss-absolute twcss-right-3 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %} hidden{% endif %}"
-                aria-label="{{ 'general.search.reset' | t }}"
+                type='reset'
+                class='twcss-absolute twcss-right-3 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %} hidden{% endif %}'
+                aria-label='{{ 'general.search.reset' | t }}'
               >
-                <span class="twcss-size-6 twcss-text-accent-default twcss-block">
+                <span class='twcss-size-6 twcss-text-accent-default twcss-block'>
                   {{- 'icon-reset.svg' | inline_asset_content -}}
                 </span>
               </button>
@@ -160,14 +160,14 @@
 
             {%- if settings.predictive_search_enabled -%}
               <div
-                class="twcss-bg-white twcss-rounded twcss-border twcss-border-primary-default twcss-text-accent-default predictive-search twcss-hidden twcss-w-full"
-                tabindex="-1"
+                class='twcss-bg-white twcss-rounded twcss-border twcss-border-primary-default twcss-text-accent-default predictive-search twcss-hidden twcss-w-full'
+                tabindex='-1'
                 data-predictive-search
               >
                 {%- render 'loading-spinner', class: 'predictive-search__loading-state twcss-hidden' -%}
               </div>
 
-              <span class="twcss-sr-only predictive-search-status" role="status" aria-hidden="true"></span>
+              <span class='twcss-sr-only predictive-search-status' role='status' aria-hidden='true'></span>
             {%- endif -%}
           </form>
           {%- if settings.predictive_search_enabled -%}
@@ -176,11 +176,11 @@
             </search-form>
           {%- endif -%}
           <button
-            type="button"
-            class="search-modal__close-button modal__close-button link link--text focus-inset hidden"
-            aria-label="{{ 'accessibility.close' | t }}"
+            type='button'
+            class='search-modal__close-button modal__close-button link link--text focus-inset hidden'
+            aria-label='{{ 'accessibility.close' | t }}'
           >
-            <span class="svg-wrapper">
+            <span class='svg-wrapper'>
               {{- 'icon-close.svg' | inline_asset_content -}}
             </span>
           </button>
