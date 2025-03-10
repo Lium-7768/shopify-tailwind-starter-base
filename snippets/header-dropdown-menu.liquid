@@ -9,27 +9,30 @@
 {%- assign cleaned_icons = raw_icons | remove: '\"' | remove: '""' | default: '{}' -%}
 {%- assign menu_icons_string = cleaned_icons -%}
 
-<nav class='twcss-relative'>
-  <ul class='twcss-flex twcss-flex-wrap twcss-items-start twcss-gap-4' role='list'>
+<nav class="twcss-relative">
+  <ul class="twcss-flex twcss-flex-wrap twcss-items-center twcss-gap-2" role="list">
     {%- for link in section.settings.menu.links -%}
       <li>
         <a
-          href='{{ link.url }}'
-          class='twcss-flex twcss-flex-row twcss-items-center twcss-text-white hover:twcss-underline twcss-gap-x-2'
+          href="{{ link.url }}"
+          class="twcss-flex twcss-flex-row twcss-items-center twcss-text-white hover:twcss-underline twcss-gap-x-2"
         >
           {%- assign icon_key = '"' | append: link.handle | append: '":"' -%}
           {%- if menu_icons_string contains icon_key -%}
             {%- assign icon_part = menu_icons_string | split: icon_key | last -%}
             {%- assign icon_name = icon_part | split: '"' | first -%}
-            <span class='twcss-size-6 twcss-block'>
+            <span class="twcss-size-6 twcss-block">
               {{ icon_name | inline_asset_content }}
             </span>
           {%- endif -%}
-          <span class='twcss-text-center twcss-font-bold'>
+          <span class="twcss-text-center twcss-font-semibold twcss-text-sm">
             {{- link.title | escape -}}
           </span>
         </a>
       </li>
+      {%- unless forloop.last -%}
+        <li style="height: 14px;width: 1px; background: #214998;display: block"></li>
+      {%- endunless -%}
     {%- endfor -%}
   </ul>
 </nav>

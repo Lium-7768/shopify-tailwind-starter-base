@@ -20,50 +20,61 @@
             "heading": "SEAMLESS MANUFACTURING",
             "subheading": "Reliable Distribution",
             "button_text": "See more",
-            "button_link": "shopify://blogs/news"
-          }
-        },
-        "slide_qRgEpY": {
-          "type": "slide",
-          "settings": {
-            "image_mobile": "shopify://shop_images/banner-mobile.png",
-            "image_desktop": "shopify://shop_images/banner-desktop.png",
-            "heading": "SEAMLESS MANUFACTURING 1",
-            "subheading": "Reliable Distribution 1",
-            "button_text": "See more",
-            "button_link": "shopify://blogs/news"
+            "button_link": "shopify://blogs/news",
+            "text_alignment": "left",
+            "content_text_align": "left"
           }
         },
         "slide_d6kCGj": {
           "type": "slide",
           "settings": {
-            "image_mobile": "shopify://shop_images/banner-mobile.png",
-            "image_desktop": "shopify://shop_images/banner-desktop.png",
-            "heading": "SEAMLESS MANUFACTURING 2",
-            "subheading": "Reliable Distribution 2",
+            "image_mobile": "shopify://shop_images/Image_2.png",
+            "image_desktop": "shopify://shop_images/Image_2.png",
+            "heading": "PREMIUM BATHROOM FIXURES",
+            "subheading": "For Modern Workspaces",
             "button_text": "See more",
-            "button_link": "shopify://collections/all"
+            "button_link": "shopify://collections/all",
+            "text_alignment": "right",
+            "content_text_align": "right"
+          }
+        },
+        "slide_qRgEpY": {
+          "type": "slide",
+          "settings": {
+            "image_mobile": "shopify://shop_images/Image.png",
+            "image_desktop": "shopify://shop_images/Image.png",
+            "heading": "POWERFUL DRILLS",
+            "subheading": "Professional Performance",
+            "button_text": "See more",
+            "button_link": "shopify://blogs/news",
+            "text_alignment": "left",
+            "content_text_align": "left"
           }
         },
         "slide_dAQJCm": {
           "type": "slide",
           "settings": {
-            "image_mobile": "shopify://shop_images/banner-mobile.png",
-            "image_desktop": "shopify://shop_images/banner-desktop.png",
-            "heading": "SEAMLESS MANUFACTURING 3",
-            "subheading": "Reliable Distribution 3",
+            "image_mobile": "shopify://shop_images/Image3.png",
+            "image_desktop": "shopify://shop_images/Image3.png",
+            "heading": "EFFICIENT TRANSFER PUMPS",
+            "subheading": "Reliable solutions for seamless transfer",
             "button_text": "See more",
-            "button_link": "shopify://pages/contact"
+            "button_link": "shopify://pages/contact",
+            "text_alignment": "right",
+            "content_text_align": "right"
           }
         }
       },
       "block_order": [
         "slide_7iMn6f",
-        "slide_qRgEpY",
         "slide_d6kCGj",
+        "slide_qRgEpY",
         "slide_dAQJCm"
       ],
-      "settings": {}
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_delay": 5
+      }
     },
     "delivery_delay_notice_keD9NB": {
       "type": "delivery-delay-notice",
@@ -75,6 +86,15 @@
         "button_text": "See more info »"
       }
     },
+    "custom_liquid_7eMApX": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% assign company_metafield = company.metafields| inspect%}\n   <p id=\"companyId\">123{{ company_metafield }}</p>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "featured_products_dVWqqB": {
       "type": "featured-products",
       "settings": {
@@ -82,7 +102,8 @@
         "blue_title": "Products",
         "link_url": "shopify://collections/featured-products",
         "link_text": "See all",
-        "collection": "featured-products"
+        "collection": "featured-products",
+        "enable_quick_add": true
       }
     },
     "distribution_solutions_wXkLVR": {
@@ -93,7 +114,7 @@
           "settings": {
             "image": "shopify://shop_images/unsplash_2O2RZfPI26Y.png",
             "title": "Freight Transport Solutions",
-            "link": "shopify://collections/faucet"
+            "link": "shopify://collections/kitchen-faucet"
           }
         },
         "solution_J7k7QQ": {
@@ -162,7 +183,7 @@
         "banner_title": "Redefining Efficiency in Manufacturing and Distribution",
         "banner_description": "Streamlining processes with innovative solutions, NEXAFLOW, empowering businesses to meet customer demands with precision and reliability.",
         "banner_link": "",
-        "banner_link_text": "",
+        "banner_link_text": "See more",
         "show_banner": true,
         "show_view_all": false,
         "view_all_text": "",
@@ -172,9 +193,10 @@
     "featured_plumbing_CA7GXd": {
       "type": "featured-plumbing",
       "settings": {
-        "title": "Featured Plumbing Products",
-        "view_all_text": "",
-        "collection": "faucet",
+        "white_title": "Featured",
+        "blue_title": "Plumbing Products",
+        "view_all_text": "See all",
+        "collection": "featured-plumbing-collection",
         "products_to_show_mobile": 1,
         "products_to_show_tablet": 2,
         "products_to_show_desktop": 3,
@@ -182,7 +204,10 @@
         "collection_url": "shopify://collections/featured-plumbing-collection",
         "banner_title": "",
         "banner_text": "",
-        "banner_image": "shopify://shop_images/plumbing-solutions.png"
+        "banner_image": "shopify://shop_images/cae167bf403d1d1a718d769518dbba33_jpg.jpg",
+        "banner_image_pad": "shopify://shop_images/featured-plumbing-pad.png",
+        "banner_image_mb": "shopify://shop_images/plumber-mb.png",
+        "enable_quick_add": true
       }
     },
     "distribution_solutions_WiQBEV": {
@@ -191,49 +216,57 @@
         "solution_RQzWC4": {
           "type": "solution",
           "settings": {
-            "image": "shopify://shop_images/Single_Handle_Centerset_Bathroom_Sink_Faucet_with_Pop-Up_Drain_Assembly_in_Polished_Chrome.webp",
-            "title": "Bathroom Sink Faucets",
-            "link": ""
+            "image": "shopify://shop_images/Single_Handle_Monoblock_Bathroom_Sink_Faucet_in_Polished_Chrome3.webp",
+            "title": "Bathroom Faucets",
+            "link": "shopify://collections/bathroom-sink-faucets"
           }
         },
         "solution_GeaeTC": {
           "type": "solution",
           "settings": {
-            "image": "shopify://shop_images/Two_Handle_Kitchen_Faucets.webp",
-            "title": "Bathroom Sink Faucets",
-            "link": ""
+            "image": "shopify://shop_images/Commercial_Style_Kitchen_Faucet_in_Stainless_Steel1.webp",
+            "title": "Kichen Faucets",
+            "link": "shopify://collections/kitchen-faucet"
           }
         },
         "solution_WCHpBV": {
           "type": "solution",
           "settings": {
-            "image": "shopify://shop_images/Moen_Chrome_Plated_Two_Handle_Centerset_Bathroom_Sink_Faucet.webp",
-            "title": "Bathroom Sink Faucets",
-            "link": ""
+            "image": "shopify://shop_images/Layton_Multi_Function_Magnetic_Hand_Shower_in_Polished_Chrome.webp",
+            "title": "Handle Shower",
+            "link": "shopify://collections/handle-shower"
           }
         },
         "solution_Mjd96E": {
           "type": "solution",
           "settings": {
-            "image": "shopify://shop_images/Delta_Faucet_Matte_Black_Two_Handle_Widespread_Bathroom_Sink_Faucet_with_Metal_Drain_Assembly.webp",
-            "title": "Bathroom Sink Faucets",
+            "image": "shopify://shop_images/Modern_Square_Door_Knob_in_Iron_Black_K788PSKSQT514_7f4e6d8b-d0a4-4697-9d2e-cabc1f6619e1.webp",
+            "title": "Knobs",
             "link": ""
           }
         },
         "solution_BxiMrW": {
           "type": "solution",
           "settings": {
-            "image": "shopify://shop_images/4381710_primary.jpg",
+            "image": "shopify://shop_images/Two_Handle_Widespread_Bathroom_Sink_Faucet_in_Polished_Chrome1.webp",
             "title": "Bathroom Sink Faucets",
-            "link": ""
+            "link": "shopify://collections/bathroom-sink-faucets"
           }
         },
         "solution_gJRKCi": {
           "type": "solution",
           "settings": {
-            "image": "shopify://shop_images/Moen_Chrome_Two_Handle_Centerset_Bathroom_Sink_Faucet_with_50-50_Drain_Assembly.webp",
-            "title": "Bathroom Sink Faucets",
-            "link": "shopify://collections/faucet"
+            "image": "shopify://shop_images/Single_Handle_Pull_Out_Kitchen_Faucet_in_White3.webp",
+            "title": "Kitchen Sink Faucets",
+            "link": "shopify://collections/kitchen-faucet"
+          }
+        },
+        "solution_4Ggt6c": {
+          "type": "solution",
+          "settings": {
+            "image": "shopify://shop_images/125_Flanged_Cast_Iron_90_Degree_Elbow.webp",
+            "title": "Pipe Fittings",
+            "link": "shopify://collections/pipe-fittings"
           }
         }
       },
@@ -243,7 +276,8 @@
         "solution_WCHpBV",
         "solution_Mjd96E",
         "solution_BxiMrW",
-        "solution_gJRKCi"
+        "solution_gJRKCi",
+        "solution_4Ggt6c"
       ],
       "settings": {
         "white_title": "Featured",
@@ -261,10 +295,18 @@
     "product_brands_FQAwF4": {
       "type": "product-brands",
       "blocks": {
+        "item_ekkMYQ": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/GBC.png",
+            "name": "",
+            "link": ""
+          }
+        },
         "item_66pei9": {
           "type": "item",
           "settings": {
-            "logo": "shopify://shop_images/brand-atlas.png",
+            "logo": "shopify://shop_images/proflo.png",
             "name": "",
             "link": ""
           }
@@ -272,7 +314,7 @@
         "item_xP8446": {
           "type": "item",
           "settings": {
-            "logo": "shopify://shop_images/brand-lp.png",
+            "logo": "shopify://shop_images/westcraft.png",
             "name": "",
             "link": ""
           }
@@ -280,7 +322,7 @@
         "item_zUURty": {
           "type": "item",
           "settings": {
-            "logo": "shopify://shop_images/Excell.png",
+            "logo": "shopify://shop_images/raptor.png",
             "name": "",
             "link": "shopify://collections/featured-products"
           }
@@ -288,7 +330,7 @@
         "item_6G7XH4": {
           "type": "item",
           "settings": {
-            "logo": "shopify://shop_images/GBC.png",
+            "logo": "shopify://shop_images/armateck.png",
             "name": "",
             "link": "shopify://products/the-collection-snowboard-oxygen"
           }
@@ -296,7 +338,7 @@
         "item_BLJcBH": {
           "type": "item",
           "settings": {
-            "logo": "shopify://shop_images/Virutex.png",
+            "logo": "shopify://shop_images/proselect-large-logo.png",
             "name": "",
             "link": "shopify://products/the-compare-at-price-snowboard"
           }
@@ -304,91 +346,38 @@
         "item_PgM4kW": {
           "type": "item",
           "settings": {
-            "logo": "shopify://shop_images/Lysform.png",
+            "logo": "shopify://shop_images/durastar-logo.png",
             "name": "",
             "link": "shopify://products/the-complete-snowboard"
           }
         },
-        "item_aJExFi": {
+        "item_CAV4rg": {
           "type": "item",
           "settings": {
-            "logo": "shopify://shop_images/Equalit.png",
+            "logo": "shopify://shop_images/Kohler_Logo_CORP_2012-11-21_BLK.png",
             "name": "",
             "link": ""
           }
         },
-        "item_qAJKHe": {
+        "item_4e4Qww": {
           "type": "item",
           "settings": {
-            "logo": "shopify://shop_images/Dulcedia.png",
-            "name": "",
-            "link": ""
-          }
-        },
-        "item_LkTeAm": {
-          "type": "item",
-          "settings": {
-            "logo": "shopify://shop_images/brand-hardle.png",
-            "name": "",
-            "link": ""
-          }
-        },
-        "item_PnNUee": {
-          "type": "item",
-          "settings": {
-            "logo": "shopify://shop_images/brand-velux.png",
-            "name": "",
-            "link": ""
-          }
-        },
-        "item_Ww6ThQ": {
-          "type": "item",
-          "settings": {
-            "logo": "shopify://shop_images/brand-built.png",
-            "name": "",
-            "link": ""
-          }
-        },
-        "item_jeDeNA": {
-          "type": "item",
-          "settings": {
-            "logo": "shopify://shop_images/branc-elevate.png",
-            "name": "ELEVATE",
-            "link": ""
-          }
-        },
-        "item_LJKmFa": {
-          "type": "item",
-          "settings": {
-            "logo": "shopify://shop_images/ACCO_KENSINGTON.png",
-            "name": "",
-            "link": "shopify://collections/faucet"
-          }
-        },
-        "item_4JTxVT": {
-          "type": "item",
-          "settings": {
-            "logo": "shopify://shop_images/brand-tamko.png",
+            "logo": "shopify://shop_images/Jones_Stephens.png",
             "name": "",
             "link": ""
           }
         }
       },
       "block_order": [
+        "item_ekkMYQ",
         "item_66pei9",
         "item_xP8446",
         "item_zUURty",
         "item_6G7XH4",
         "item_BLJcBH",
         "item_PgM4kW",
-        "item_aJExFi",
-        "item_qAJKHe",
-        "item_LkTeAm",
-        "item_PnNUee",
-        "item_Ww6ThQ",
-        "item_jeDeNA",
-        "item_LJKmFa",
-        "item_4JTxVT"
+        "item_CAV4rg",
+        "item_4e4Qww"
       ],
       "settings": {
         "white_title": "Featured",
@@ -437,6 +426,7 @@
   "order": [
     "banner_slider_eC74fk",
     "delivery_delay_notice_keD9NB",
+    "custom_liquid_7eMApX",
     "featured_products_dVWqqB",
     "distribution_solutions_wXkLVR",
     "featured_plumbing_CA7GXd",

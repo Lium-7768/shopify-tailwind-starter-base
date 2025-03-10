@@ -289,8 +289,8 @@
                 aria-selected='false'
               >
                 <a
-                  href='{{ product.url }}'
-                  class='twcss-flex twcss-items-center twcss-py-2 twcss-gap-x-5'
+                  href='{{ product.selected_or_first_available_variant.url }}'
+                  class='twcss-flex twcss-items-center twcss-py-2.5 twcss-gap-x-5'
                   tabindex='-1'
                 >
                   {%- if product.featured_media != blank -%}
@@ -298,19 +298,22 @@
                       class='predictive-search__image'
                       src='{{ product.featured_media | image_url: width: 150 }}'
                       alt='{{ product.featured_media.alt | escape }}'
-                      width='50'
-                      height='{{ 50 | divided_by: product.featured_media.preview_image.aspect_ratio }}'
+                      width='38'
+                      height='{{ 38 | divided_by: product.featured_media.preview_image.aspect_ratio }}'
                     >
                   {%- endif -%}
-                  <div class='predictive-search__item-content{% unless settings.predictive_search_show_vendor or settings.predictive_search_show_price %} predictive-search__item-content--centered{% endunless %}'>
+                  <div class='predictive-search__item-content twcss-truncate{% unless settings.predictive_search_show_vendor or settings.predictive_search_show_price %} predictive-search__item-content--centered{% endunless %}'>
                     {%- if settings.predictive_search_show_vendor -%}
                       <span class='visually-hidden'>{{ 'accessibility.vendor' | t }}</span>
                       <div class='predictive-search__item-vendor caption-with-letter-spacing'>
                         {{ product.vendor }}
                       </div>
                     {%- endif -%}
-                    <p class='twcss-text-accent-default twcss-text-sm twcss-font-semibold'>
+                    <p class='twcss-text-accent-default twcss-text-sm twcss-truncate'>
                       {{ product.title | escape }}
+                    </p>
+                    <p class="twcss-text-primary-default twcss-text-sm">
+                      {{ product.selected_or_first_available_variant.sku  }}
                     </p>
                     {%- if settings.predictive_search_show_price -%}
                       {% render 'price', product: product, use_variant: true, show_badges: false %}

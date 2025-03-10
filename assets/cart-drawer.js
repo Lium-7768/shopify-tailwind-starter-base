@@ -21,6 +21,9 @@ class CartDrawer extends HTMLElement {
     cartLink.setAttribute('aria-haspopup', 'dialog');
     cartLink.addEventListener('click', (event) => {
       event.preventDefault();
+      if ('/cart' === window.location.pathname) {
+        return;
+      }
       this.open(cartLink);
     });
     cartLink.addEventListener('keydown', (event) => {

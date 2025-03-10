@@ -1,0 +1,7 @@
+<div class="twcss-text-sm twcss-mb-5 twcss-capitalize">
+  {%- if cart.items.size == 1 -%}
+    {{ 'sections.header.cart_count.one' | t: count: cart.items.size }}
+  {%- else -%}
+    {{ 'sections.header.cart_count.other' | t: count: cart.items.size }}
+  {%- endif -%}
+</div>

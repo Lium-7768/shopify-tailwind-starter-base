@@ -1,15 +1,22 @@
 {%- style -%}
-  #swiper-pagination-banner .swiper-pagination-bullet-active{
+  #swiper-pagination-banner .swiper-pagination-bullet-active {
     border: 1px solid white;
-      height: 12px;
-      width: 12px
+    height: 12px;
+    width: 12px;
+  }
+  .text-shadow-title {
+    text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  .text-shadow-subtitle {
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6);
   }
 {%- endstyle -%}
 
 <div class="banner-slider swiper" id="banner-slider">
   <div class="swiper-wrapper">
     {%- for block in section.blocks -%}
-      <div class="swiper-slide twcss-relative twcss-h-[400px] md:twcss-h-[600px]" {{ block.shopify_attributes }}>
+      <div class="swiper-slide twcss-relative !twcss-h-[400px] " {{ block.shopify_attributes }}>
         <div class="twcss-w-full twcss-h-full">
           {%- if block.settings.image_mobile != blank or block.settings.image_desktop != blank -%}
             <img
@@ -33,22 +40,24 @@
           {%- endif -%}
         </div>
 
-        <div class="twcss-absolute twcss-top-[50%] twcss-translate-y-[-50%] twcss-left-[50%] twcss-translate-x-[-50%] twcss-pl-[60px] lg:twcss-w-[1280px] twcss-w-full">
+        <div class="twcss-absolute twcss-top-[50%] twcss-translate-y-[-50%] twcss-left-[50%] twcss-translate-x-[-50%] twcss-pl-[60px] twcss-pr-[60px] lg:twcss-w-[1280px] twcss-w-full twcss-flex {% if block.settings.text_alignment == 'left' %}twcss-justify-start{% elsif block.settings.text_alignment == 'right' %}twcss-justify-end{% else %}twcss-justify-center{% endif %}">
           <div
             id="swiper-button-prev-banner"
             class="swiper-button-prev !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-left-0"
           >
-            {% render 'icon-chevron-left' %}
+            <div class="twcss-w-6 twcss-h-6 twcss-flex twcss-items-center twcss-justify-center">
+              {% render 'icon-chevron-left' %}
+            </div>
           </div>
-          <div class="twcss-w-[263px] lg:twcss-w-[435px]">
+          <div class="twcss-w-[263px] lg:twcss-w-fit {% if block.settings.content_text_align == 'left' %}twcss-text-left{% elsif block.settings.content_text_align == 'right' %}twcss-text-right{% else %}twcss-text-center{% endif %}">
             {%- if block.settings.heading != blank -%}
-              <h2 class="twcss-text-2xl lg:twcss-text-[38px] lg:twcss-leading-[38px] twcss-font-black twcss-text-white">
+              <h2 class="!twcss-tracking-normal text-shadow-title twcss-text-2xl lg:twcss-text-[38px] lg:twcss-leading-[38px] twcss-font-black twcss-text-white">
                 {{ block.settings.heading }}
               </h2>
             {%- endif -%}
 
             {%- if block.settings.subheading != blank -%}
-              <p class="twcss-text-lg md:twcss-text-xl twcss-text-orange-400 twcss-mb-3 twcss-font-bold">
+              <p class="!twcss-tracking-normal text-shadow-subtitle twcss-text-lg md:twcss-text-2xl twcss-text-[#FFAD7B] twcss-mb-3 twcss-font-bold">
                 {{ block.settings.subheading }}
               </p>
             {%- endif -%}
@@ -56,7 +65,7 @@
             {%- if block.settings.button_text != blank and block.settings.button_link != blank -%}
               <a
                 href="{{ block.settings.button_link }}"
-                class="twcss-inline-flex twcss-items-center twcss-text-white hover:twcss-text-orange-400 twcss-transition-colors twcss-font-bold"
+                class=" twcss-text-sm twcss-inline-flex twcss-items-center twcss-text-white hover:twcss-text-orange-400 twcss-transition-colors twcss-font-bold"
               >
                 {{ block.settings.button_text }}
                 {% render 'icon-chevron-right' %}
@@ -67,7 +76,9 @@
             id="swiper-button-next-banner"
             class="swiper-button-next !twcss-bg-white !twcss-w-[40px] !twcss-h-[40px] twcss-rounded-full twcss-shadow-lg md:!twcss-flex !twcss-text-black after:!twcss-content-['']  !twcss-right-0"
           >
-            {% render 'icon-chevron-right' %}
+            <div class="twcss-w-6 twcss-h-6 twcss-flex twcss-items-center twcss-justify-center">
+              {% render 'icon-chevron-right' %}
+            </div>
           </div>
         </div>
       </div>
@@ -88,10 +99,14 @@
       fadeEffect: {
         crossFade: true
       },
-      // autoplay: {
-      //   delay: 5000,
-      //   disableOnInteraction: false
-      // },
+      autoplay: {% if section.settings.enable_autoplay %}
+        {
+          delay: {{ section.settings.autoplay_delay | times: 1000 }},
+          disableOnInteraction: false
+        }
+      {% else %}
+        false
+      {% endif %},
       pagination: {
         el: '#swiper-pagination-banner',
         clickable: true
@@ -107,6 +122,23 @@
 {% schema %}
 {
   "name": "Banner Slider",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Enable Autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_delay",
+      "label": "Autoplay Delay (seconds)",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    }
+  ],
   "max_blocks": 8,
   "blocks": [
     {
@@ -145,6 +177,46 @@
           "type": "url",
           "id": "button_link",
           "label": "Button Link"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "select",
+          "id": "content_text_align",
+          "label": "Content Text Align",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
         }
       ]
     }

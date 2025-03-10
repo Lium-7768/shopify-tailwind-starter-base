@@ -1,60 +1,96 @@
 {%- style -%}
   .banner-image {
-    aspect-ratio: 1/1;
+    /* aspect-ratio: 1/1; */
+    /* max-height: 32.3rem; */
   }
   @media (min-width: 768px) {
     .banner-image {
-      aspect-ratio: 16/9;
+      /* aspect-ratio: 16/9; */
     }
   }
 {%- endstyle -%}
 
-<div class="twcss-mx-auto twcss-px-5 !twcss-py-0 xlg:!twcss-max-w-[1280px] lg:!twcss-max-w-[1232px] lg:!twcss-p-0 lg:twcss-px-6">
-  <div class="twcss-flex twcss-flex-col lg:twcss-flex-row twcss-gap-6">
-    <div class="twcss-flex-1">
-      {% render 'homepage-title',
-        white_title: 'Featured',
-        blue_title: 'Plumbing Products',
-        link_url: '/collections/all',
-        link_text: 'See all',
-        wrapper_classes: '!twcss-mb-5',
-        white_title_classes: '!twcss-text-lg',
-        blue_title_classes: '!twcss-text-lg'
-      %}
+{%- if section.settings.enable_quick_add -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 
-      <div class="twcss-grid twcss-grid-cols-1 lg:twcss-grid-cols-3 twcss-gap-4">
-        {%- for product in section.settings.collection.products limit: 3 -%}
-          <div class="{% if forloop.index > 1 %}twcss-hidden lg:twcss-block{% endif %}">
-            {%- render 'product-card', product: product, show_vendor: section.settings.show_vendor -%}
-          </div>
-        {%- endfor -%}
-      </div>
-    </div>
+{% if section.settings.collection != blank or section.settings.collection.products.size > 0 %}
+  <div class="twcss-mx-auto twcss-px-5 !twcss-py-0 xlg:!twcss-max-w-[1280px] lg:!twcss-max-w-[1232px] lg:!twcss-p-0 lg:twcss-px-6">
+    <div class="twcss-flex twcss-flex-col lg:twcss-flex-row twcss-gap-6">
+      <div class="twcss-flex-1">
+        {% render 'homepage-title',
+          white_title: section.settings.white_title,
+          blue_title: section.settings.blue_title,
+          link_url: section.settings.collection_url,
+          link_text: section.settings.view_all_text,
+          wrapper_classes: '!twcss-mb-5',
+          white_title_classes: '!twcss-text-lg !twcss-font-bold',
+          blue_title_classes: '!twcss-text-lg twcss-font-bold'
+        %}
 
-    <div class="twcss-w-full lg:twcss-flex-1">
-      <div class="twcss-bg-blue-600 twcss-rounded-lg twcss-overflow-hidden twcss-h-full twcss-relative">
-        <div class="twcss-text-white twcss-absolute lg:twcss-left-[30px] twcss-left-0 twcss-top-0 lg:twcss-top-[50%] lg:twcss-translate-y-[-50%] twcss-pt-5 twcss-px-6 twcss-max-w-[285px]">
-          <h3 class="twcss-text-4xl twcss-font-extrabold twcss-mb-2">
-            {{ section.settings.banner_title }}
-          </h3>
-          <p class="twcss-leading-none lg:twcss-text-[22px] twcss-text-[20px]">
-            {{ section.settings.banner_text }}
-          </p>
+        <div class="twcss-grid twcss-grid-cols-1 md:twcss-grid-cols-3 twcss-gap-4">
+          {%- assign shown_products = 0 -%}
+          {%- for product in section.settings.collection.products -%}
+            {%- if product.available and shown_products < 3 -%}
+              <div class="{% if shown_products > 0 %}twcss-hidden md:twcss-block{% endif %} featured-plumbing-products-wrapper">
+                {%- render 'product-card',
+                  product: product,
+                  show_vendor: section.settings.show_vendor,
+                  section_id: section.id,
+                  show_quick_add: section.settings.enable_quick_add
+                -%}
+              </div>
+              {%- assign shown_products = shown_products | plus: 1 -%}
+            {%- endif -%}
+          {%- endfor -%}
         </div>
-        {%- if section.settings.banner_image != blank -%}
-          <img
-            height="100%"
-            width="100%"
-            src="{{ section.settings.banner_image | img_url: '800x' }}"
-            alt="{{ section.settings.banner_title | escape }}"
-            class="twcss-w-full twcss-h-full banner-image"
-            loading="lazy"
-          >
-        {%- endif -%}
+      </div>
+
+      <div class="twcss-w-full lg:twcss-flex-1">
+        <div class=" twcss-overflow-hidden twcss-h-full twcss-relative">
+          <div class="twcss-text-white twcss-absolute lg:twcss-left-[30px] twcss-left-0 twcss-top-0 lg:twcss-top-[50%] lg:twcss-translate-y-[-50%] twcss-pt-5 twcss-px-6 twcss-max-w-[285px]">
+            <h3 class="twcss-text-4xl twcss-font-extrabold twcss-mb-2">
+              {{ section.settings.banner_title }}
+            </h3>
+            <p class="twcss-leading-none lg:twcss-text-[22px] twcss-text-[20px]">
+              {{ section.settings.banner_text }}
+            </p>
+          </div>
+          {%- if section.settings.banner_image != blank -%}
+            <img
+              height="100%"
+              width="100%"
+              src="{{ section.settings.banner_image | image_url: width: 800 }}"
+              alt="{{ section.settings.banner_title | escape }}"
+              class="twcss-object-cover twcss-h-[533px] twcss-rounded-lg twcss-hidden lg:twcss-block"
+              loading="lazy"
+            >
+            <img
+              height="100%"
+              width="100%"
+              src="{{ section.settings.banner_image_pad | image_url: width: 720 }}"
+              alt="{{ section.settings.banner_title | escape }}"
+              class="twcss-object-cover twcss-h-[533px] twcss-rounded-lg twcss-hidden md:twcss-block lg:twcss-hidden"
+              loading="lazy"
+            >
+            {%- if section.settings.banner_image_mb != blank -%}
+              <img
+                height="100%"
+                width="100%"
+                src="{{ section.settings.banner_image_mb | image_url: width: 320 }}"
+                alt="{{ section.settings.banner_title | escape }}"
+                class="twcss-object-cover twcss-rounded-lg twcss-block md:twcss-hidden"
+                loading="lazy"
+              >
+            {%- endif -%}
+          {%- endif -%}
+        </div>
       </div>
     </div>
   </div>
-</div>
+{% endif %}
 
 {% schema %}
 {
@@ -62,9 +98,15 @@
   "settings": [
     {
       "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "Featured Plumbing Products"
+      "id": "white_title",
+      "label": "White Title",
+      "default": "Featured"
+    },
+    {
+      "type": "text",
+      "id": "blue_title",
+      "label": "Blue Title",
+      "default": "Plumbing Products"
     },
     {
       "type": "text",
@@ -130,15 +172,59 @@
     {
       "type": "image_picker",
       "id": "banner_image",
-      "label": "Banner image"
+      "label": "Banner image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_pad",
+      "label": "Banner image pad"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_mb",
+      "label": "Banner image mobile"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "label": "Enable Quick Add",
+      "default": false
     }
   ],
   "presets": [
     {
       "name": "Featured Plumbing",
-      "settings": {
-      }
+      "settings": {}
     }
   ]
 }
 {% endschema %}
+
+<script>
+  (function () {
+    const template = document.getElementById('list-price-template');
+    if (template) {
+      const listPrice = document.querySelectorAll('.list-price-your-price');
+      const yourPrice = document.querySelectorAll('.only-your-price');
+      if (listPrice && yourPrice) {
+        listPrice.forEach((item) => {
+          item.classList.remove('twcss-hidden');
+        });
+        yourPrice.forEach((item) => {
+          item.classList.add('twcss-hidden');
+        });
+      }
+    } else {
+      const listPrice = document.querySelectorAll('.list-price-your-price');
+      const yourPrice = document.querySelectorAll('.only-your-price');
+      if (listPrice && yourPrice) {
+        listPrice.forEach((item) => {
+          item.classList.add('twcss-hidden');
+        });
+        yourPrice.forEach((item) => {
+          item.classList.remove('twcss-hidden');
+        });
+      }
+    }
+  })();
+</script>

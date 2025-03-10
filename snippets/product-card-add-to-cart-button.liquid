@@ -39,48 +39,53 @@
 -%}
 
 {% comment %} Add to Cart {% endcomment %}
-<div class='{{ cart_class }}'>
-  <product-form class='twcss-flex-1'>
-    <div class='product-form__error-message-wrapper' role='alert' hidden>
-      <span class='product-form__error-message'></span>
+<div class="{{ cart_class }}">
+  <product-form class="twcss-flex-1">
+    <div class="product-form__error-message-wrapper" role="alert" hidden>
+      <span class="product-form__error-message"></span>
     </div>
 
     <form
-      method='post'
-      action='/cart/add'
-      id='product-form-{{ product.id }}'
-      accept-charset='UTF-8'
-      class='twcss-flex-1'
-      enctype='multipart/form-data'
-      novalidate='novalidate'
-      data-type='add-to-cart-form'
+      method="post"
+      action="/cart/add"
+      id="product-form-{{ product.id }}"
+      accept-charset="UTF-8"
+      class="twcss-flex-1 twcss-flex"
+      enctype="multipart/form-data"
+      novalidate="novalidate"
+      data-type="add-to-cart-form"
+      data-section="{{ section_id }}"
     >
-      <input type='hidden' name='form_type' value='product'>
-      <input type='hidden' name='utf8' value='✓'>
-      <input type='hidden' name='id' value='{{ product.variants.first.id }}'>
-      <input type='hidden' name='quantity' value='1'>
+      <input type="hidden" name="form_type" value="product">
+      <input type="hidden" name="utf8" value="✓">
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <input type="hidden" name="product-id" value="{{ product.id }}">
+      <input type="hidden" name="section-id" value="{{ section_id }}">
+      <input type="hidden" name="quantity" value="1">
+      <input type="hidden" name="url" value="{{ product.url }}">
 
       <button
-        type='submit'
-        name='add'
-        class='product-card-add-to-cart-button twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-center hover:twcss-bg-orange-600 twcss-text-white twcss-text-sm twcss-px-4 twcss-py-2 twcss-rounded-tl-md twcss-rounded-bl-md twcss-w-full twcss-font-bold twcss-relative'
-        {% unless product.available %}
+        type="submit"
+        name="add"
+        class="product-card-add-to-cart-button twcss-bg-orange-500 twcss-flex twcss-items-center twcss-justify-center hover:twcss-bg-orange-600 twcss-text-white twcss-text-sm twcss-rounded twcss-w-full twcss-font-bold twcss-relative twcss-p-4"
+        {% unless product.selected_or_first_available_variant.available %}
           disabled
         {% endunless %}
       >
         <span>
-          {%- if product.available -%}
+          {%- if product.selected_or_first_available_variant.available -%}
             Add to Cart
           {%- else -%}
             Sold out
           {%- endif -%}
         </span>
-        {% render 'loading-spinner', class: 'loading-overlay__spinner' %}
+        {% render 'loading-spinner', class: 'loading__spinner' %}
       </button>
+      {% comment %}
+        <div class="twcss-w-[46px] twcss-h-auto twcss-flex twcss-items-center twcss-justify-center twcss-border-l-[0.5px] twcss-border-white twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-rounded-tr-md twcss-rounded-br-md">
+          {% render 'icon-chevron-down' %}
+        </div>
+      {% endcomment %}
     </form>
   </product-form>
-
-  <div class='twcss-w-[46px] twcss-h-full twcss-flex twcss-items-center twcss-justify-center twcss-border-l-[0.5px] twcss-border-white twcss-bg-orange-500 hover:twcss-bg-orange-600 twcss-text-white twcss-rounded-tr-md twcss-rounded-br-md'>
-    {% render 'icon-chevron-down' %}
-  </div>
 </div>

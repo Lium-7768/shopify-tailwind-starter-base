@@ -193,7 +193,9 @@ cart-items {
 }
 
 .cart__ctas {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -213,10 +215,5 @@ cart-items {
 
   [data-shopify-buttoncontainer] {
     justify-content: flex-end;
-  }
-
-  .cart__ctas {
-    display: flex;
-    gap: 1rem;
   }
 }

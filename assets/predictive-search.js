@@ -11,8 +11,6 @@ class PredictiveSearch extends SearchForm {
     this.abortController = new AbortController();
     this.searchTerm = '';
 
-    this.closeResults(true);
-
     this.setupEventListeners();
   }
 
@@ -198,7 +196,7 @@ class PredictiveSearch extends SearchForm {
     fetch(
       `${routes.predictive_search_url}?q=${encodeURIComponent(
         searchTerm,
-      )}&section_id=predictive-search`,
+      )}&section_id=predictive-search&resources[options][fields]=variants.sku,title,vendor,variants.title,body`,
       { signal: this.abortController.signal },
     )
       .then((response) => {
@@ -252,6 +250,19 @@ class PredictiveSearch extends SearchForm {
   }
 
   renderSearchResults(resultsMarkup) {
+    const highlightText = (text, term) => {
+      if (!term) return text;
+      const regex = new RegExp(`(${term})`, 'gi');
+      return text.replace(regex, '<strong>$1</strong>');
+    };
+
+    this.searchTerm = this.searchTerm.trim(); // Asegurar que no haya espacios extra
+    if (this.searchTerm.length) {
+      resultsMarkup = resultsMarkup.replace(/>([^<]+)</g, (match, content) => {
+        return `>${highlightText(content, this.searchTerm)}<`;
+      });
+    }
+
     this.predictiveSearchResults.innerHTML = resultsMarkup;
     this.setAttribute('results', true);
 

@@ -6,71 +6,111 @@
   - show_new_tag: Whether to display new product tag (optional)
   - card_type: 'list' or 'grid' (optional), defaults to 'grid'
   - enable_compare: Whether to enable compare checkbox (optional), defaults to false
+  - section_id: Section ID (optional)
 {% endcomment %}
-<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel='stylesheet' href='{{ 'component-menu-drawer.css' | asset_url }}' media='print' onload="this.media='all'">
+<link rel='stylesheet' href='{{ 'component-cart-items.css' | asset_url }}' media='print' onload="this.media='all'">
 
-<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-
-<div class="{{ class | default: '' }} twcss-bg-[#f8f8f8] twcss-border twcss-border-[#EBEBEB] twcss-rounded-md twcss-w-full twcss-h-full twcss-flex {% if card_type == 'list' %}twcss-flex-row twcss-p-[0.625rem] md:twcss-p-0{% else %}twcss-flex-col{% endif %}">
-  <div class="{% if card_type == 'list' %}twcss-w-28 twcss-h-28 md:twcss-w-52 md:twcss-h-52 twcss-mr-3 md:twcss-mr-0 twcss-border md:twcss-border-0 md:twcss-border-r{% else %}twcss-h-52 twcss-border-b{% endif %}  twcss-bg-white twcss-border-[#EBEBEB] twcss-flex-shrink-0">
-    <a href="{{ product.url }}" class="twcss-block twcss-h-full">
+<div class='{{ class | default: '' }} twcss-overflow-hidden twcss-bg-[#f8f8f8] twcss-border twcss-border-[#EBEBEB] twcss-rounded-md twcss-w-full twcss-h-full twcss-flex {% if card_type == 'list' %}twcss-flex-row twcss-p-[0.625rem] md:twcss-p-0{% else %}twcss-flex-col{% endif %}'>
+  <div class='{% if card_type == 'list' %}twcss-w-28 twcss-h-28 md:twcss-w-52 md:twcss-h-52 twcss-mr-3 md:twcss-mr-0 twcss-border md:twcss-border-0 md:twcss-border-r{% else %}twcss-h-52 twcss-border-b{% endif %}  twcss-bg-white twcss-border-[#EBEBEB] twcss-flex-shrink-0'>
+    <a href='{{ product.url }}' class='twcss-block twcss-h-full'>
       <img
-        src="{{ product.featured_image | img_url: '240x240', crop: 'center' }}"
-        alt="{{ product.title }}"
-        class="twcss-object-contain twcss-w-full twcss-h-full"
-        loading="lazy"
-        width="240"
-        height="240"
+        src='{{ product.featured_image | img_url: '240x240', crop: 'center' }}'
+        alt='{{ product.title }}'
+        class='twcss-object-contain twcss-w-full twcss-h-full'
+        loading='lazy'
+        width='240'
+        height='240'
       >
     </a>
   </div>
 
   {% comment %} Product Info {% endcomment %}
-  <div class="twcss-flex twcss-flex-col twcss-justify-between twcss-rounded-bl-md twcss-rounded-br-md  {% if card_type == 'list' %} md:twcss-w-1/2 md:twcss-p-5{% else %}twcss-p-[0.5rem_0.75rem_0.75rem] twcss-flex-1{% endif %}">
-    <div class="twcss-flex twcss-flex-col twcss-flex-1 twcss-mb-2">
-      <div class="twcss-flex twcss-justify-between twcss-flex-col">
-        <div class="twcss-text-[#84888B] twcss-text-xs twcss-font-bold">
+  <div class='twcss-text-accent-default twcss-tracking-normal  twcss-flex twcss-flex-col twcss-justify-between twcss-rounded-bl-md twcss-rounded-br-md  {% if card_type == 'list' %} md:twcss-w-1/2 md:twcss-p-5{% else %}twcss-p-[0.5rem_0.75rem_0.75rem] twcss-flex-1{% endif %}'>
+    <div class='twcss-flex twcss-flex-col twcss-flex-1 twcss-mb-2'>
+      <div class='twcss-flex twcss-justify-between twcss-flex-col product-card-information'>
+        <div class='twcss-text-muted-light twcss-text-xs twcss-font-bold swiper-no-swiping'>
           {{ product.vendor }}
         </div>
-
         <a
-          href="{{ product.url }}"
-          class="twcss-text-base twcss-font-bold twcss-line-clamp-2 twcss-text-[#353535] twcss-overflow-hidden twcss-text-ellipsis twcss-leading-5"
-          alt="{{ product.title }}"
+          href='{{ product.url }}'
+          class='twcss-text-base twcss-font-bold twcss-line-clamp-2  twcss-overflow-hidden twcss-text-ellipsis twcss-leading-5  swiper-no-swiping twcss-min-h-10'
+          alt='{{ product.title }}'
         >
           {{ product.title }}
         </a>
-        <p alt="{{ product.price | money }}" class="twcss-text-sm twcss-mt-0 twcss-block md:twcss-hidden">
-          Price:
-          <span class="twcss-font-bold twcss-mx-1 twcss-text-lg">{{ product.price | money }}</span>
-          / each
-        </p>
-      </div>
 
-      {% if show_new_tag %}
-        {% assign current_time = 'now' | date: '%s' %}
-        {% assign published_time = product.published_at | date: '%s' %}
-        {% assign days_since_published = current_time | minus: published_time | divided_by: 86400 %}
-        <div
-          class="twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded-xl twcss-my-1"
-          style="opacity: {%- if days_since_published <= 30 -%}1{%- else -%}0{%- endif -%}"
-        >
-          New
+        <div class='twcss-overflow-hidden twcss-flex twcss-items-end swiper-no-swiping'>
+          <span class='twcss-text-xs twcss-pr-1 js-price-label'>
+            <span class='js-price-text'>
+              {{ 'products.product.price.list-price' | t }}
+            </span>
+          </span>
+          <span class='price-item twcss-text-xs'>
+            <span class='twcss-line-through twcss-decoration-1'>
+              {%- capture namespace -%}
+                {%- render 'metafield-namespaces', namespace_key: 'custom_price' -%}
+              {%- endcapture -%}
+              {%- if namespace != blank -%}
+                {% assign price_json = product.selected_or_first_available_variant.metafields[namespace].custom_original_price %}
+                {% assign amount = price_json | split: '"amount":"' | last | split: '"' | first %}
+                {{ amount | money }}
+              {%- endif -%}
+            </span>
+          </span>
         </div>
-      {% endif %}
 
-      <div class="twcss-space-y-0 twcss-text-xs twcss-text-[#353535]">
-        <p class="twcss-mt-0">
-          Customer Partner Number <span class="twcss-text-[#84888B]">{{ product.id }}</span>
-        </p>
-        <p class="twcss-mt-0">
-          Supplier Product # <span class="twcss-text-[#84888B]">{{ product.metafields.custom.supplier_id }}</span>
-        </p>
-        <p class="twcss-mt-0">
-          Supplier: <span class="twcss-text-[#84888B]">{{ product.vendor }}</span>
+        <div
+          class='twcss-overflow-hidden swiper-no-swiping twcss-flex twcss-items-center twcss-h-[22px]'
+          style='height: 22px;'
+        >
+          <span class='twcss-text-xs twcss-pr-1 js-price-label'>
+            {{ 'products.product.price.your-price' | t }}
+          </span>
+          {% render 'price',
+            product: product,
+            price_class: 'twcss-truncate twcss-block  !twcss-text-xs',
+            price_number_class: 'twcss-text-lg'
+          %}
+        </div>
+
+        {% if show_new_tag %}
+          {% assign current_time = 'now' | date: '%s' %}
+          {% assign published_time = product.published_at | default: product.created_at | date: '%s' %}
+          {% assign days_since_published = current_time | minus: published_time | divided_by: 86400 %}
+          <div
+            class='twcss-w-fit twcss-bg-secondary-default twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded-xl twcss-my-[6px]'
+            style='margin: 6px 0; opacity: {%- if days_since_published <= 30 -%}1{%- else -%}0{%- endif -%}'
+          >
+            New
+          </div>
+        {% endif %}
+      </div>
+
+      <div class='twcss-space-y-0 twcss-text-xs swiper-no-swiping'>
+        <p class='twcss-mt-0 twcss-flex twcss-items-center'>
+          {{ 'products.product.sku' | t }}
+          <textarea
+            style='resize: none; background: transparent'
+            disabled
+            class='twcss-text-[#84888B] twcss-flex-1 twcss-h-4 twcss-ml-1 twcss-resize-none twcss-bg-transparent'
+          >{{ product.variants.first.sku }}</textarea>
         </p>
       </div>
+
+      {% comment %}
+        {% if show_new_tag %}
+          {% assign current_time = 'now' | date: '%s' %}
+          {% assign published_time = product.published_at | date: '%s' %}
+          {% assign days_since_published = current_time | minus: published_time | divided_by: 86400 %}
+          <div
+            class='twcss-w-fit twcss-bg-blue-500 twcss-text-white twcss-px-2 twcss-py-0.5 twcss-text-xs twcss-rounded-xl twcss-mt-1'
+            style='opacity: {%- if days_since_published <= 30 -%}1{%- else -%}0{%- endif -%}'
+          >
+            New
+          </div>
+        {% endif %}
+      {% endcomment %}
     </div>
 
     {%- liquid
@@ -93,24 +133,134 @@
       {% render 'product-card-compare', product: product, compare_class: compare_class_list, card_type: card_type %}
     {% endif %}
 
-    {% render 'product-card-add-to-cart-button', product: product, cart_class: cart_class_list %}
+    {%- if show_quick_add -%}
+      <div class='quick-add no-js-hidden twcss-flex-1'>
+        {%- liquid
+          assign product_form_id = 'quick-add-' | append: section_id | append: product.id
+          assign qty_rules = false
+          if product.selected_or_first_available_variant.quantity_rule.min > 1 or product.selected_or_first_available_variant.quantity_rule.max != null or product.selected_or_first_available_variant.quantity_rule.increment > 1
+            assign qty_rules = true
+          endif
+        -%}
+        {%- if product.variants.size > 1 or qty_rules -%}
+          <modal-opener data-modal='#QuickAdd-{{ product.id }}'>
+            <button
+              id='{{ product_form_id }}-submit'
+              type='submit'
+              name='add'
+              class='quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add animate-arrow{% endif %} twcss-flex twcss-items-center twcss-gap-2 !twcss-min-w-full'
+              aria-haspopup='dialog'
+              aria-labelledby='{{ product_form_id }}-submit title-{{ section_id }}-{{ product.id }}'
+              data-product-url='{{ product.url }}'
+            >
+              <span class='twcss-truncate twcss-flex-1'>{{ 'products.product.choose_options' | t }}</span>
+              {%- if horizontal_quick_add -%}
+                <span class='icon-wrap twcss-flex-shrink-0'>{% render 'icon-arrow' %}</span>
+              {%- endif -%}
+              <div class='loading__spinner hidden twcss-flex-shrink-0'>
+                <svg
+                  aria-hidden='true'
+                  focusable='false'
+                  class='spinner twcss-text-secondary-middle twcss-size-6'
+                  viewBox='0 0 66 66'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                </svg>
+              </div>
+            </button>
+          </modal-opener>
+          <quick-add-modal id='QuickAdd-{{ product.id }}' class='quick-add-modal'>
+            <div
+              role='dialog'
+              aria-label='{{ 'products.product.choose_product_options' | t: product_name: product.title | escape }}'
+              aria-modal='true'
+              class='quick-add-modal__content global-settings-popup'
+              tabindex='-1'
+            >
+              <button
+                id='ModalClose-{{ product.id }}'
+                type='button'
+                class='quick-add-modal__toggle'
+                aria-label='{{ 'accessibility.close' | t }}'
+              >
+                {% render 'icon-close' %}
+              </button>
+              <div id='QuickAddInfo-{{ product.id }}' class='quick-add-modal__content-info'></div>
+            </div>
+          </quick-add-modal>
+        {%- else -%}
+          <product-form>
+            {%- form 'product',
+              product,
+              id: product_form_id,
+              class: 'form',
+              novalidate: 'novalidate',
+              data-type: 'add-to-cart-form'
+            -%}
+              <input
+                type='hidden'
+                name='id'
+                value='{{ product.selected_or_first_available_variant.id }}'
+                disabled
+              >
+              <button
+                id='{{ product_form_id }}-submit'
+                type='submit'
+                name='add'
+                class='quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %} !twcss-min-w-full'
+                aria-haspopup='dialog'
+                aria-labelledby='{{ product_form_id }}-submit title-{{ section_id }}-{{ product.id }}'
+                aria-live='polite'
+                data-sold-out-message='true'
+                {% if product.selected_or_first_available_variant.available == false %}
+                  disabled
+                {% endif %}
+              >
+                <span>
+                  {%- if product.selected_or_first_available_variant.available -%}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {%- else -%}
+                    {{ 'products.product.sold_out' | t }}
+                  {%- endif -%}
+                </span>
+                <span class='sold-out-message hidden'>
+                  {{ 'products.product.sold_out' | t }}
+                </span>
+                {%- if horizontal_quick_add -%}
+                  <span class='icon-wrap'>{% render 'icon-plus' %}</span>
+                {%- endif -%}
+                <div class='loading__spinner hidden'>
+                  <svg
+                    aria-hidden='true'
+                    focusable='false'
+                    class='spinner twcss-text-secondary-middle twcss-size-6'
+                    viewBox='0 0 66 66'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                  </svg>
+                </div>
+              </button>
+            {%- endform -%}
+          </product-form>
+
+          {% comment %} add to shopping list button {% endcomment %}
+          {% comment %}
+            {% if card_product.selected_or_first_available_variant.available %}
+              {% render 'product-card-add-to-shopping-list-button', product: card_product, variant: card_product.selected_or_first_available_variant %}
+            {% endif %}
+          {% endcomment %}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {% comment %}
+      {% render 'product-card-add-to-cart-button',
+        product: product,
+        cart_class: cart_class_list,
+        section_id: section.id
+      %}
+    {% endcomment %}
   </div>
-
-  {% if card_type == 'list' %}
-    {% comment %} Add to Cart Button {% endcomment %}
-
-    <div class="twcss-flex-col twcss-mb-2 twcss-flex-1 twcss-p-8 twcss-space-y-5 twcss-hidden md:twcss-flex">
-      <p alt="{{ product.price | money }}" class="twcss-text-sm twcss-mt-0 twcss-hidden md:twcss-block ">
-        Price:
-        <span class="twcss-font-bold twcss-mx-1 twcss-text-lg">{{ product.price | money }}</span>
-        / each
-      </p>
-
-      {% if enable_compare %}
-        {% render 'product-card-compare', product: product, compare_class: 'twcss-mb-0', card_type: card_type %}
-      {% endif %}
-
-      {% render 'product-card-add-to-cart-button', product: product %}
-    </div>
-  {% endif %}
 </div>

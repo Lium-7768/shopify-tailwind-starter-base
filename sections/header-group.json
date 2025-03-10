@@ -13,23 +13,59 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+      "blocks": {
+        "b2b_customer_account_company_management_block_B8gqiN": {
+          "type": "shopify://apps/aaxis-streamline-dev/blocks/company-management-block/036dca94-f4d2-41fc-915f-03ffad9b3b73",
+          "settings": {
+            "company_management_label": "Company Management",
+            "company_management_link": "/apps/customer-account/company-management/ship-to-locations"
+          }
+        },
+        "b2b_customer_account_price_list_block_cD6x66": {
+          "type": "shopify://apps/aaxis-streamline-dev/blocks/price-list-block/036dca94-f4d2-41fc-915f-03ffad9b3b73",
+          "settings": {
+            "price_list_label": "Price List"
+          }
+        },
+        "b2b_customer_account_quick_order_block_kHNKBg": {
+          "type": "shopify://apps/aaxis-streamline-dev/blocks/quick-order-block/036dca94-f4d2-41fc-915f-03ffad9b3b73",
+          "settings": {
+            "quick_order_label": "Quick Order",
+            "quick_order_link": "/apps/customer-account/quick-order"
+          }
+        }
+      },
+      "block_order": [
+        "b2b_customer_account_company_management_block_B8gqiN",
+        "b2b_customer_account_price_list_block_cD6x66",
+        "b2b_customer_account_quick_order_block_kHNKBg"
+      ],
       "settings": {
         "color_scheme": "scheme-724c636d-524f-45cc-8653-dd35022bf3de",
         "show_line_separator": true,
         "show_company_location": true,
         "menu": "main-menu",
-        "menu_icons": "{\"quick-order\":\"icon-quick-order.svg\",\"price-list\":\"icon-price-list.svg\",\"orders\":\"icon-orders.svg\",\"quotes\":\"icon-quotes.svg\"}",
-        "menu_type": "dropdown"
+        "menu_icons": "{\"quick-order\":\"icon-quick-order.svg\",\"orders\":\"icon-orders.svg\",\"quotes\":\"icon-quotes.svg\"}",
+        "menu_type": "dropdown",
+        "enable_country_selector": false,
+        "enable_language_selector": true
       }
     },
     "header": {
       "type": "header",
       "blocks": {
-        "notification_ABepkm": {
-          "type": "notification",
+        "b2b_customer_account_quick_order_block_BkUBCU": {
+          "type": "shopify://apps/aaxis-streamline-dev/blocks/quick-order-block/036dca94-f4d2-41fc-915f-03ffad9b3b73",
           "settings": {
-            "show_notification": true,
-            "notification_link": ""
+            "quick_order_label": "Quick Order",
+            "quick_order_link": "/apps/customer-account/quick-order"
+          }
+        },
+        "b2b_customer_account_shopping_lists_block_ymDQJV": {
+          "type": "shopify://apps/aaxis-streamline-dev/blocks/shopping-lists-block/036dca94-f4d2-41fc-915f-03ffad9b3b73",
+          "settings": {
+            "shopping_lists_label": "Shopping Lists",
+            "shopping_lists_link": "/apps/customer-account/shopping-lists"
           }
         },
         "custom_account_wNra3N": {
@@ -44,14 +80,15 @@
         }
       },
       "block_order": [
-        "notification_ABepkm",
+        "b2b_customer_account_quick_order_block_BkUBCU",
+        "b2b_customer_account_shopping_lists_block_ymDQJV",
         "custom_account_wNra3N"
       ],
       "settings": {
         "menu": "main-menu",
         "menu_icons": "{\"quick-order\":\"icon-quick-order.svg\",\"price-list\":\"icon-price-list.svg\",\"orders\":\"icon-orders.svg\",\"quotes\":\"icon-quotes.svg\"}",
         "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "sticky_header_type": "always",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "",
@@ -65,9 +102,9 @@
       "type": "apps",
       "blocks": {
         "b2b_customer_account_partner_code_search_action_zBmGhG": {
-          "type": "shopify://apps/b2b-customer-account/blocks/partner-code-search-action/036dca94-f4d2-41fc-915f-03ffad9b3b73",
+          "type": "shopify://apps/aaxis-streamline-dev/blocks/partner-code-search-action/036dca94-f4d2-41fc-915f-03ffad9b3b73",
           "settings": {
-            "partner_code_search_link": "https://b2b-customer-account-app-szwh.vercel.app/api/v1/product-variant/customer-partner-number/search"
+            "partner_code_search_link": "https://b2b-rds.aaxisdev.net/api/v1/product-variant/customer-partner-number/search"
           }
         }
       },
@@ -77,11 +114,22 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "custom_liquid_TXdcfG": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<div class=\"md:twcss-hidden twcss-block mobile-lcoation\">\n         \n            {% if customer %}\n              {% render 'header-company-location', customer: customer %}\n            {% endif %}\n          \n        </div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
     "announcement-bar",
     "header",
-    "1735033504f46da25a"
+    "1735033504f46da25a",
+    "custom_liquid_TXdcfG"
   ]
 }

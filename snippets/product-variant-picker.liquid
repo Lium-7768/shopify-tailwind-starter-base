@@ -9,6 +9,13 @@
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
 {%- unless product.has_only_default_variant -%}
+  <style>
+    {% if product.variants.size == 1 %}
+      #variant-selects-{{ section.id }} {
+        display: none;
+      }
+    {% endif %}
+  </style>
   <variant-selects
     id="variant-selects-{{ section.id }}"
     data-section="{{ section.id }}"

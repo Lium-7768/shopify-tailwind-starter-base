@@ -1,0 +1,54 @@
+{% comment %} 
+  Parameters:
+  - product: The product object (required)
+  - variant: The product variant object (required)
+  - quantity: The quantity of the product (optional, default: 1)
+  - product_form_id: The product form id (optional, default: product_form_id)
+  - section_id: The section id (optional, default: section_id)
+{% endcomment %}
+<button
+  class="add-to-list-button quick-add__submit button button--full-width button--secondary twcss-flex twcss-items-center twcss-gap-2 twcss-my-2 !twcss-bg-white !twcss-border !twcss-border-solid !twcss-border-secondary-default !twcss-text-secondary-default"
+  data-product-product-id="{{ product.id }}"
+  data-product-product-name="{{ product.title | escape }}"
+  data-product-product-variant-id="{{ variant.id }}"
+  data-product-sku-id="{{ variant.sku }}"
+  data-product-image-url="{{ product.featured_image | image_url: width: 100 }}"
+  data-product-url="{{ product.url }}"
+  data-product-update-at="{{ product.updated_at }}"
+  onclick="addToShoppingList(this)"
+>
+  Add to Shopping List
+</button>
+
+
+
+<script>
+    try{
+        {% comment %} code in app extension {% endcomment %}
+        window.shoppingListModal = new ShoppingListModal();
+    }catch{
+    }
+  function addToShoppingList(button) {
+    const formElement = document.getElementById('{{ product_form_id }}');
+    const variantInput = formElement.querySelector('input[name="id"]');
+
+    const sectionId = '{{ section_id }}';
+    const quantityInput = document.querySelector(`[data-section="${sectionId}"] input[name="quantity"]`);
+    const quantity = quantityInput ? quantityInput.value : 1;
+    const variantId = variantInput ? variantInput.value : button.dataset.productProductVariantId;
+    
+
+    const productData = {
+      productId: button.dataset.productProductId,
+      productName: button.dataset.productProductName,
+      productVariantId: variantId,
+      skuId: button.dataset.productSkuId,
+      imageUrl: button.dataset.productImageUrl,
+      url: button.dataset.productUrl,
+      quantity: quantity,
+      updateAt: button.dataset.productUpdateAt
+    };
+    
+    sessionStorage.setItem('shopping-list-items', JSON.stringify(productData));
+  }
+</script>

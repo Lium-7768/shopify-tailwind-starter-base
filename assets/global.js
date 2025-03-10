@@ -851,6 +851,8 @@ class SliderComponent extends HTMLElement {
     this.prevButton = this.querySelector('button[name="previous"]');
     this.nextButton = this.querySelector('button[name="next"]');
 
+    this.direction = this.getAttribute('data-direction') || 'horizontal';
+
     if (!this.slider || !this.nextButton) return;
 
     this.initPages();
@@ -864,16 +866,24 @@ class SliderComponent extends HTMLElement {
 
   initPages() {
     this.sliderItemsToShow = Array.from(this.sliderItems).filter(
-      (element) => element.clientWidth > 0,
+      (element) => element.clientWidth > 0 || element.clientHeight > 0,
     );
     if (this.sliderItemsToShow.length < 2) return;
-    this.sliderItemOffset =
-      this.sliderItemsToShow[1].offsetLeft -
-      this.sliderItemsToShow[0].offsetLeft;
-    this.slidesPerPage = Math.floor(
-      (this.slider.clientWidth - this.sliderItemsToShow[0].offsetLeft) /
-        this.sliderItemOffset,
-    );
+
+    if (this.direction === 'horizontal') {
+      this.sliderItemOffset =
+        this.sliderItemsToShow[1].offsetLeft - this.sliderItemsToShow[0].offsetLeft;
+      this.slidesPerPage = Math.floor(
+        (this.slider.clientWidth - this.sliderItemsToShow[0].offsetLeft) / this.sliderItemOffset,
+      );
+    } else if (this.direction === 'vertical') {
+      this.sliderItemOffset =
+        this.sliderItemsToShow[1].offsetTop - this.sliderItemsToShow[0].offsetTop;
+      this.slidesPerPage = Math.floor(
+        (this.slider.clientHeight - this.sliderItemsToShow[0].offsetTop) / this.sliderItemOffset,
+      );
+    }
+
     this.totalPages = this.sliderItemsToShow.length - this.slidesPerPage + 1;
     this.update();
   }
@@ -884,13 +894,14 @@ class SliderComponent extends HTMLElement {
   }
 
   update() {
-    // Temporarily prevents unneeded updates resulting from variant changes
-    // This should be refactored as part of https://github.com/Shopify/dawn/issues/2057
     if (!this.slider || !this.nextButton) return;
 
     const previousPage = this.currentPage;
-    this.currentPage =
-      Math.round(this.slider.scrollLeft / this.sliderItemOffset) + 1;
+    if (this.direction === 'horizontal') {
+      this.currentPage = Math.round(this.slider.scrollLeft / this.sliderItemOffset) + 1;
+    } else if (this.direction === 'vertical') {
+      this.currentPage = Math.round(this.slider.scrollTop / this.sliderItemOffset) + 1;
+    }
 
     if (this.currentPageElement && this.pageTotalElement) {
       this.currentPageElement.textContent = this.currentPage;
@@ -910,49 +921,76 @@ class SliderComponent extends HTMLElement {
 
     if (this.enableSliderLooping) return;
 
-    if (
-      this.isSlideVisible(this.sliderItemsToShow[0]) &&
-      this.slider.scrollLeft === 0
-    ) {
-      this.prevButton.setAttribute('disabled', 'disabled');
-    } else {
-      this.prevButton.removeAttribute('disabled');
-    }
+    if (this.direction === 'horizontal') {
+      if (this.isSlideVisible(this.sliderItemsToShow[0]) && this.slider.scrollLeft === 0) {
+        this.prevButton.setAttribute('disabled', 'disabled');
+      } else {
+        this.prevButton.removeAttribute('disabled');
+      }
 
-    if (
-      this.isSlideVisible(
-        this.sliderItemsToShow[this.sliderItemsToShow.length - 1],
-      )
-    ) {
-      this.nextButton.setAttribute('disabled', 'disabled');
-    } else {
-      this.nextButton.removeAttribute('disabled');
+      if (this.isSlideVisible(this.sliderItemsToShow[this.sliderItemsToShow.length - 1])) {
+        this.nextButton.setAttribute('disabled', 'disabled');
+      } else {
+        this.nextButton.removeAttribute('disabled');
+      }
+    } else if (this.direction === 'vertical') {
+      if (this.isSlideVisible(this.sliderItemsToShow[0], 0, 'vertical') && this.slider.scrollTop === 0) {
+        this.prevButton.setAttribute('disabled', 'disabled');
+      } else {
+        this.prevButton.removeAttribute('disabled');
+      }
+
+      if (this.isSlideVisible(this.sliderItemsToShow[this.sliderItemsToShow.length - 1], 0, 'vertical')) {
+        this.nextButton.setAttribute('disabled', 'disabled');
+      } else {
+        this.nextButton.removeAttribute('disabled');
+      }
     }
   }
 
-  isSlideVisible(element, offset = 0) {
-    const lastVisibleSlide =
-      this.slider.clientWidth + this.slider.scrollLeft - offset;
-    return (
-      element.offsetLeft + element.clientWidth <= lastVisibleSlide &&
-      element.offsetLeft >= this.slider.scrollLeft
-    );
+  isSlideVisible(element, offset = 0, direction = 'horizontal') {
+    if (direction === 'horizontal') {
+      const lastVisibleSlide = this.slider.clientWidth + this.slider.scrollLeft - offset;
+      return (
+        element.offsetLeft + element.clientWidth <= lastVisibleSlide &&
+        element.offsetLeft >= this.slider.scrollLeft
+      );
+    } else if (direction === 'vertical') {
+      const lastVisibleSlide = this.slider.clientHeight + this.slider.scrollTop - offset;
+      return (
+        element.offsetTop + element.clientHeight <= lastVisibleSlide &&
+        element.offsetTop >= this.slider.scrollTop
+      );
+    }
   }
 
   onButtonClick(event) {
     event.preventDefault();
     const step = event.currentTarget.dataset.step || 1;
-    this.slideScrollPosition =
-      event.currentTarget.name === 'next'
-        ? this.slider.scrollLeft + step * this.sliderItemOffset
-        : this.slider.scrollLeft - step * this.sliderItemOffset;
+    if (this.direction === 'horizontal') {
+      this.slideScrollPosition =
+        event.currentTarget.name === 'next'
+          ? this.slider.scrollLeft + step * this.sliderItemOffset
+          : this.slider.scrollLeft - step * this.sliderItemOffset;
+    } else if (this.direction === 'vertical') {
+      this.slideScrollPosition =
+        event.currentTarget.name === 'next'
+          ? this.slider.scrollTop + step * this.sliderItemOffset
+          : this.slider.scrollTop - step * this.sliderItemOffset;
+    }
     this.setSlidePosition(this.slideScrollPosition);
   }
 
   setSlidePosition(position) {
-    this.slider.scrollTo({
-      left: position,
-    });
+    if (this.direction === 'horizontal') {
+      this.slider.scrollTo({
+        left: position,
+      });
+    } else if (this.direction === 'vertical') {
+      this.slider.scrollTo({
+        top: position,
+      });
+    }
   }
 }
 
@@ -1328,6 +1366,27 @@ class ProductRecommendations extends HTMLElement {
     this.observer.observe(this);
   }
 
+initSwiper() {
+    new Swiper('#related-products-slider', {
+    slidesPerView: 5,
+      pagination: {
+        el: '#related-products-slider-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 16,
+        },
+        1280: {
+          slidesPerView: 5,
+          spaceBetween: 24,
+        },
+      },
+      noSwipingClass:"swiper-no-swiping",
+    });
+  }
+  
   loadRecommendations(productId) {
     fetch(
       `${this.dataset.url}&product_id=${productId}&section_id=${this.dataset.sectionId}`,
@@ -1352,6 +1411,7 @@ class ProductRecommendations extends HTMLElement {
         if (html.querySelector('.grid__item')) {
           this.classList.add('product-recommendations--loaded');
         }
+        this.initSwiper()
       })
       .catch((e) => {
         console.error(e);

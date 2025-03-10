@@ -18,6 +18,11 @@ if (!customElements.get('localization-form')) {
           searchIcon: this.querySelector('.country-filter__search-icon'),
           liveRegion: this.querySelector('#sr-country-search-results'),
         };
+
+        if (this.elements.input?.value) {
+          localStorage.setItem('b2b-accelerator-language', this.elements.input.value);
+        }
+
         this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
         this.addEventListener('keydown', this.onContainerKeyDown.bind(this));
         this.addEventListener('focusout', this.closeSelector.bind(this));
@@ -68,6 +73,7 @@ if (!customElements.get('localization-form')) {
       hidePanel() {
         this.elements.button.setAttribute('aria-expanded', 'false');
         this.elements.panel.setAttribute('hidden', true);
+        this.elements.panel.querySelector('.disclosure__list-overlay').style.display = 'none';
         if (this.elements.search) {
           this.elements.search.value = '';
           this.filterCountries();
@@ -76,7 +82,7 @@ if (!customElements.get('localization-form')) {
         document.body.classList.remove('overflow-hidden-mobile');
         document
           .querySelector('.menu-drawer')
-          .classList.remove('country-selector-open');
+          ?.classList.remove('country-selector-open');
         this.header.preventHide = false;
       }
 
@@ -147,13 +153,18 @@ if (!customElements.get('localization-form')) {
       onItemClick(event) {
         event.preventDefault();
         const form = this.querySelector('form');
-        this.elements.input.value = event.currentTarget.dataset.value;
+        const selectedLocale = event.currentTarget.dataset.value;
+        this.elements.input.value = selectedLocale;
+        
+        localStorage.setItem('b2b-accelerator-language', selectedLocale);
+        
         if (form) form.submit();
       }
 
       openSelector() {
         this.elements.button.focus();
         this.elements.panel.toggleAttribute('hidden');
+        this.elements.panel.querySelector('.disclosure__list-overlay').style.display = 'block';
         this.elements.button.setAttribute(
           'aria-expanded',
           (
@@ -171,7 +182,7 @@ if (!customElements.get('localization-form')) {
         }
         document
           .querySelector('.menu-drawer')
-          .classList.add('country-selector-open');
+          ?.classList.add('country-selector-open');
       }
 
       closeSelector(event) {

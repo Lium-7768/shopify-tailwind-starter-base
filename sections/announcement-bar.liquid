@@ -1,14 +1,14 @@
 <div
-  class='twcss-w-full twcss-bg-gradient-to-r {% if section.settings.show_line_separator %} twcss-border-b twcss-border-current twcss-border-opacity-10{% endif %}'
-  style='background: {{ section.settings.color_scheme }}'
+  class="twcss-w-full twcss-bg-gradient-to-r {% if section.settings.show_line_separator %} twcss-border-b twcss-border-current twcss-border-opacity-10{% endif %}"
+  style="background: {{ section.settings.color_scheme }}"
   {{ block.shopify_attributes }}
 >
-  <div class='twcss-bg-primary-foreground twcss-text-white twcss-px-10 twcss-py-3'>
-    <div class='twcss-flex twcss-items-center twcss-justify-between twcss-flex-col lg:twcss-flex-row twcss-gap-y-4 lg:twcss-gap-y-0'>
-      <div class='twcss-flex twcss-items-start twcss-gap-x-6 twcss-flex-col lg:twcss-flex-row twcss-gap-y-4 lg:twcss-gap-y-0 twcss-items-center'>
-        <a href='{{ routes.root_url }}' class='twcss-flex twcss-items-center twcss-justify-center'>
+  <div class="twcss-bg-[#001F5C] twcss-text-white twcss-px-6 twcss-py-2.5 md:twcss-py-3">
+    <div class="twcss-flex twcss-items-center twcss-justify-between twcss-flex-col md:twcss-flex-row twcss-gap-y-4 md:twcss-gap-y-0">
+      <div class="twcss-flex twcss-items-center md:twcss-items-start twcss-gap-x-5 twcss-flex-col md:twcss-flex-row twcss-gap-y-4 md:twcss-gap-y-0">
+        <a href="{{ routes.root_url }}" class="twcss-flex twcss-items-center twcss-justify-center">
           {%- if settings.logo != blank -%}
-            <div class='header__heading-logo-wrapper'>
+            <div class="header__heading-logo-wrapper">
               {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
               {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
               {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
@@ -17,34 +17,34 @@
                 settings.logo
                 | image_url: width: 600
                 | image_tag:
-                  class: '',
+                  class: 'md:twcss-w-[128px] md:twcss-h-auto twcss-h-[27px]',
                   widths: widths,
-                  height: logo_height,
-                  width: settings.logo_width,
                   alt: logo_alt,
                   sizes: sizes,
                   preload: true
               }}
             </div>
           {%- else -%}
-            <span class=''>{{ shop.name }}</span>
+            <span class="">{{ shop.name }}</span>
           {%- endif -%}
         </a>
-        {% if section.settings.show_company_location %}
-          {% if customer %}
-            {% render 'header-company-location', customer: customer %}
+        <div class="md:twcss-block twcss-hidden">
+          {% if section.settings.show_company_location %}
+            {% if customer %}
+              {% render 'header-company-location', customer: customer %}
+            {% endif %}
           {% endif %}
-        {% endif %}
+        </div>
       </div>
 
-      <div class='twcss-flex twcss-items-center twcss-gap-x-4'>
+      <div class="twcss-items-center twcss-gap-x-2 twcss-hidden md:twcss-flex header-icons">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
           {%- endcase -%}
         {%- endfor -%}
-  
+
         {% if section.settings.menu != blank %}
           {%- if section.settings.menu_type == 'dropdown' -%}
             {% render 'header-dropdown-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
@@ -52,10 +52,75 @@
             {% render 'header-mega-menu', menu: section.settings.menu, menu_icons: section.settings.menu_icons %}
           {%- endif -%}
         {% endif %}
+
+        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+          <localization-form>
+            {%- form 'localization', id: 'AnnouncementCountryForm', class: 'localization-form' -%}
+              <div>
+                <h2 class="visually-hidden" id="AnnouncementCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                {%- render 'country-localization',
+                  localPosition: 'AnnouncementCountry',
+                  container_class: 'twcss-flex twcss-items-center'
+                -%}
+              </div>
+            {%- endform -%}
+          </localization-form>
+        {%- endif -%}
+
+        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+          <localization-form>
+            {%- form 'localization', id: 'AnnouncementLanguageForm', class: 'localization-form' -%}
+              <div>
+                <h2 class="visually-hidden" id="AnnouncementLanguageLabel">
+                  {{ 'localization.language_label' | t }}
+                </h2>
+                {%- render 'language-localization',
+                  localPosition: 'AnnouncementLanguage',
+                  container_class: 'twcss-flex twcss-items-center'
+                -%}
+              </div>
+            {%- endform -%}
+          </localization-form>
+        {%- endif -%}
       </div>
     </div>
   </div>
 </div>
+
+<style>
+    .header-icons > div a {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+     .header-icons > div a:after {
+      content: '';
+      display:block;
+      height: 14px;
+      width: 1px;
+      margin-left: 4px;
+      background: #214998;
+    }
+    @media(max-width: 1279px) {
+      .header-icons p, .header-icons li .twcss-text-center {
+        display: none;
+      }
+    }
+    @media(max-width: 749px) {
+    header [data-block-handle=shopping-lists-block] {
+      display: none!important;
+    }
+       }
+
+  @media(max-width: 749px) {
+    .quick-order-wrapper p {
+      display: none;
+    }
+    .quick-order-wrapper {
+      color: #1746A2
+    }
+  }
+</style>
 
 {% schema %}
 {
@@ -116,7 +181,29 @@
       "default": "dropdown",
       "label": "Menu Type",
       "info": "Choose how the menu should be displayed"
-    }
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__3.content",
+      "info": "t:sections.footer.settings.header__4.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_country_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__5.content",
+      "info": "t:sections.footer.settings.header__6.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_language_selector.label"
+    },
   ],
   "blocks": [
     {

@@ -37,7 +37,7 @@
         </cart-note>
       {%- endif -%}
 
-      <div class="cart__blocks">
+      <div class="cart__blocks !twcss-max-w-[28rem]">
         {% for block in section.blocks %}
           {%- case block.type -%}
             {%- when '@app' -%}
@@ -59,11 +59,13 @@
                 </div>
 
                 <div class="totals">
-                  <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-                  <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+                  <h2 class="totals__total !twcss-text-[1.2rem]">{{ 'sections.cart.estimated_total' | t }}</h2>
+                  <p class="totals__total-value twcss-font-bold twcss-text-right !twcss-text-[1.2rem]">
+                    {{ cart.total_price | money }}
+                  </p>
                 </div>
 
-                <small class="tax-note caption-large rte">
+                <small class="tax-note caption-large rte !twcss-text-sm !twcss-my-5">
                   {%- if cart.duties_included and cart.taxes_included -%}
                     {%- if shop.shipping_policy.body == blank -%}
                       {{ 'sections.cart.duties_and_taxes_included_shipping_at_checkout_without_policy' | t }}
@@ -108,7 +110,7 @@
                 <button
                   type="submit"
                   id="checkout"
-                  class="cart__checkout-button button"
+                  class="twcss-bg-button-default twcss-rounded twcss-font-bold twcss-text-sm twcss-text-white twcss-py-4 twcss-w-full"
                   name="checkout"
                   {% if cart == empty %}
                     disabled
@@ -117,6 +119,12 @@
                 >
                   {{ 'sections.cart.checkout' | t }}
                 </button>
+                <a
+                  href="{{ routes.all_products_collection_url }}"
+                  class="twcss-text-secondary-main twcss-font-bold twcss-text-sm twcss-py-4 twcss-border twcss-border-secondary-main twcss-rounded twcss-w-full twcss-text-center !twcss-mt-0"
+                >
+                  {{- 'general.continue_shopping' | t -}}
+                </a>
               </div>
 
               {%- if additional_checkout_buttons -%}

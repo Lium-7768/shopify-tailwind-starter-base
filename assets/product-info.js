@@ -225,7 +225,9 @@ if (!customElements.get('product-info')) {
               destination.classList.toggle('hidden', shouldHide(source));
             }
           };
-
+          updateSourceFromDestination('sku');
+          updateSourceFromDestination('documents');
+          updateSourceFromDestination('custom');
           updateSourceFromDestination('price');
           updateSourceFromDestination('Sku', ({ classList }) =>
             classList.contains('hidden'),
@@ -465,7 +467,6 @@ if (!customElements.get('product-info')) {
 
       updateQuantityRules(sectionId, html) {
         if (!this.quantityInput) return;
-        this.setQuantityBoundries();
 
         const quantityFormUpdated = html.getElementById(
           `Quantity-Form-${sectionId}`,
@@ -498,6 +499,7 @@ if (!customElements.get('product-info')) {
             current.innerHTML = updated.innerHTML;
           }
         }
+        this.setQuantityBoundries();
       }
 
       get productForm() {

@@ -17,8 +17,8 @@
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
-    "spacing_grid_horizontal": 8,
-    "spacing_grid_vertical": 8,
+    "spacing_grid_horizontal": 24,
+    "spacing_grid_vertical": 24,
     "animations_reveal_on_scroll": false,
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
@@ -47,7 +47,7 @@
     "card_color_scheme": "scheme-2",
     "card_border_thickness": 0,
     "card_border_opacity": 10,
-    "card_corner_radius": 0,
+    "card_corner_radius": 4,
     "card_shadow_opacity": 0,
     "card_shadow_horizontal_offset": 0,
     "card_shadow_vertical_offset": 4,
@@ -83,7 +83,7 @@
     "text_boxes_shadow_blur": 5,
     "media_border_thickness": 1,
     "media_border_opacity": 5,
-    "media_radius": 0,
+    "media_radius": 20,
     "media_shadow_opacity": 0,
     "media_shadow_horizontal_offset": 0,
     "media_shadow_vertical_offset": 4,
@@ -116,7 +116,7 @@
     "social_tumblr_link": "",
     "social_vimeo_link": "",
     "social_linkedin_link": "https://www.linkedin.com/",
-    "social_spotify_link": "https://open.spotify.com/",
+    "social_spotify_link": "",
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
@@ -125,6 +125,7 @@
     "show_vendor": false,
     "show_cart_note": false,
     "cart_drawer_collection": "",
+    "cart_color_scheme": "scheme-1",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -182,6 +183,52 @@
         "disabled": false,
         "settings": {
           "include_in_compare": "'/collections', '/search'"
+        }
+      },
+      "16442395106245802419": {
+        "type": "shopify://apps/b2b-customer-account/blocks/add-to-shopping-list-modal/036dca94-f4d2-41fc-915f-03ffad9b3b73",
+        "disabled": false,
+        "settings": {
+          "modal_title": "Add to Shopping List",
+          "products_section_title": "Products",
+          "lists_section_title": "Shopping Lists",
+          "save_button_text": "Save",
+          "create_list_button_text": "Create New List",
+          "create_modal_title": "Create New List",
+          "list_name_label": "Shopping List Name",
+          "list_description_label": "List Description",
+          "default_list_label": "Set as default",
+          "create_button_text": "Create and Add",
+          "cancel_button_text": "Cancel"
+        }
+      },
+      "1822310261212521359": {
+        "type": "shopify://apps/aaxis-streamline-dev/blocks/customer-partner-number/036dca94-f4d2-41fc-915f-03ffad9b3b73",
+        "disabled": false,
+        "settings": {
+          "selector_groups": "{\n    \"home-featured-products-section\": {\n        \"container\": \".featured-products-slider .product-card-box\",\n        \"sku_link\": \".featured-products-slider .product-card-box .product-card-information a\",\n        \"insert_position\": \".featured-products-slider .product-card-information\"\n    },\n    \"home-featured-plumbing-products-section\": {\n        \"container\": \".featured-plumbing-products-wrapper\",\n        \"sku_link\": \".product-card-information a\",\n        \"insert_position\": \".featured-plumbing-products-wrapper .product-card-information\"\n    },\n    \"plp\": {\n        \"container\": \".product-card-wrapper\",\n        \"sku_link\": \".card__content .card__information .card__heading a\",\n        \"insert_position\": \".card__content .card__information .card-information\"\n    }\n}",
+          "customer_partner_number_label": "Customer Partner Number:"
+        }
+      },
+      "8748148688032128749": {
+        "type": "shopify://apps/aaxis-streamline-dev/blocks/cart-item-selector/036dca94-f4d2-41fc-915f-03ffad9b3b73",
+        "disabled": false,
+        "settings": {
+          "select_all_text": "Select All",
+          "delete_selected_text": "Delete Selected",
+          "show_clear_cart": true,
+          "show_add_to_list": true,
+          "show_request_for_quote": true,
+          "clear_cart_text": "Clear Cart",
+          "clear_cart_confirm_title": "Clear Cart",
+          "clear_cart_confirm_description": "Are you sure you want to clear the cart?",
+          "clear_cart_confirm_button": "Confirm",
+          "clear_cart_cancel_button": "Cancel",
+          "request_for_quote_text": "Request for Quote",
+          "delete_selected_confirm_title": "Delete Selected Items",
+          "delete_selected_confirm_description": "Are you sure you want to delete selected items?",
+          "delete_selected_confirm_button": "Confirm",
+          "delete_selected_cancel_button": "Cancel"
         }
       }
     },
@@ -439,5 +486,8 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": []
   }
 }

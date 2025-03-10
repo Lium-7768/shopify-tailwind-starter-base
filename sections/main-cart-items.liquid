@@ -11,11 +11,20 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .is-empty {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px !important;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px !important;
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+     .is-empty {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px !important;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px !important;
+  }
   }
 {%- endstyle -%}
 
@@ -26,17 +35,25 @@
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
 <cart-items class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
-  <div class="page-width">
-    <div class="title-wrapper-with-link">
-      <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-      <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
-        {{- 'general.continue_shopping' | t -}}
-      </a>
+  <div class="page-width twcss-text-accent-default">
+    <div class="twcss-mb-4">
+      <h1 class="twcss-text-accent-default twcss-text-2xl !twcss-font-bold">{{ 'sections.cart.title' | t }}</h1>
     </div>
 
-    <div class="cart__warnings">
+    <div id="shopping-cart-item" class="twcss-text-sm twcss-mb-5 twcss-capitalize">
+      {%- if cart.items.size == 1 -%}
+        {{ 'sections.header.cart_count.one' | t: count: cart.items.size }}
+      {%- else -%}
+        {{ 'sections.header.cart_count.other' | t: count: cart.items.size }}
+      {%- endif -%}
+    </div>
+
+    <div class="cart__warnings !twcss-pt-0">
       <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
-      <a href="{{ routes.all_products_collection_url }}" class="button">
+      <a
+        href="{{ routes.all_products_collection_url }}"
+        class="button !twcss-bg-button-default !twcss-rounded !twcss-font-bold !twcss-text-white"
+      >
         {{ 'general.continue_shopping' | t }}
       </a>
 
@@ -52,26 +69,38 @@
       <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
         <div class="js-contents">
           {%- if cart != empty -%}
-            <table class="cart-items">
+            <table class="cart-items !twcss-border-collapse !twcss-border !twcss-border-custom-secondary-light !twcss-rounded-lg">
               <caption class="visually-hidden">
                 {{ 'sections.cart.title' | t }}
               </caption>
               <thead>
-                <tr>
-                  <th class="caption-with-letter-spacing" colspan="2" scope="col">
+                <tr class="!twcss-border-custom-secondary-light !twcss-border-b !twcss-border-solid !twcss-mb-0 twcss-bg-custom-secondary-light">
+                  <th
+                    class="caption-with-letter-spacing !twcss-font-bold !twcss-py-4 !twcss-align-middle !twcss-capitalize !twcss-text-accent-default"
+                    colspan="2"
+                    scope="col"
+                  >
                     {{ 'sections.cart.headings.product' | t }}
                   </th>
-                  <th class="medium-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">
+                  <th
+                    class="medium-hide large-up-hide right caption-with-letter-spacing !twcss-py-4 !twcss-align-middle !twcss-font-bold !twcss-capitalize !twcss-text-accent-default"
+                    colspan="1"
+                    scope="col"
+                  >
                     {{ 'sections.cart.headings.total' | t }}
                   </th>
                   <th
-                    class="cart-items__heading--wide cart-items__heading--quantity small-hide caption-with-letter-spacing"
+                    class="cart-items__heading--wide cart-items__heading--quantity small-hide caption-with-letter-spacing !twcss-py-4 !twcss-align-middle !twcss-font-bold !twcss-capitalize !twcss-text-accent-default"
                     colspan="1"
                     scope="col"
                   >
                     {{ 'sections.cart.headings.quantity' | t }}
                   </th>
-                  <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">
+                  <th
+                    class="small-hide right caption-with-letter-spacing !twcss-py-4 !twcss-align-middle !twcss-font-bold !twcss-capitalize !twcss-text-accent-default"
+                    colspan="1"
+                    scope="col"
+                  >
                     {{ 'sections.cart.headings.total' | t }}
                   </th>
                 </tr>
@@ -79,15 +108,18 @@
 
               <tbody>
                 {%- for item in cart.items -%}
-                  <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
-                    <td class="cart-item__media">
+                  <tr
+                    class="cart-item !twcss-gap-0 lg:!twcss-gap-4 !twcss-border-custom-secondary-light !twcss-border-b !twcss-border-solid"
+                    id="CartItem-{{ item.index | plus: 1 }}"
+                  >
+                    <td class="cart-item__media !twcss-pt-8 lg:!twcss-pl-8 ">
                       {% if item.image %}
                         {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
                         <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
-                        <div class="cart-item__image-container gradient global-media-settings">
+                        <div class="cart-item__image-container gradient global-media-settings !twcss-pointer-events-none">
                           <img
                             src="{{ item.image | image_url: width: 300 }}"
-                            class="cart-item__image"
+                            class="cart-item__image !twcss-max-w-28 !twcss-max-h-28 twcss-object-contain"
                             alt="{{ item.image.alt | escape }}"
                             loading="lazy"
                             width="150"
@@ -97,42 +129,76 @@
                       {% endif %}
                     </td>
 
-                    <td class="cart-item__details">
+                    <td class="cart-item__details !twcss-pt-8 lg:!twcss-pl-8 !twcss-space-y-[0.4rem]">
                       {%- if settings.show_vendor -%}
                         <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
                       {%- endif -%}
 
-                      <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
+                      <a href="{{ item.url }}" class="cart-item__name h4 break !twcss-text-sm">
+                        {{- item.product.title | escape -}}
+                      </a>
 
                       {%- if item.original_price != item.final_price -%}
-                        <div class="cart-item__discounted-prices">
+                        <div class="cart-item__discounted-prices !twcss-text-base">
                           <span class="visually-hidden">
                             {{ 'products.product.price.regular_price' | t }}
                           </span>
-                          <s class="cart-item__old-price product-option">
+                          <s class="cart-item__old-price product-option !twcss-text-sm">
                             {{- item.original_price | money -}}
                           </s>
                           <span class="visually-hidden">
                             {{ 'products.product.price.sale_price' | t }}
                           </span>
-                          <strong class="cart-item__final-price product-option">
+                          <strong class="cart-item__final-price product-option !twcss-text-sm">
                             {{ item.final_price | money }}
                           </strong>
+                          <span>/</span>
+                          <span>
+                            {%- capture namespace -%}
+                              {%- render 'metafield-namespaces', namespace_key: 'custom_price' -%}
+                            {%- endcapture -%}
+                            {%- if namespace != blank -%}
+                              {{ item.variant.metafields[namespace].custom_uom }}
+                            {%- endif -%}
+                          </span>
                         </div>
                       {%- else -%}
-                        <div class="product-option">
+                        <div class="product-option !twcss-text-sm !twcss-font-bold">
                           {{ item.original_price | money }}
+                          <span>/</span>
+                          <span>
+                            {%- capture namespace -%}
+                              {%- render 'metafield-namespaces', namespace_key: 'custom_price' -%}
+                            {%- endcapture -%}
+                            {%- if namespace != blank -%}
+                              {{ item.variant.metafields[namespace].custom_uom }}
+                            {%- endif -%}
+                          </span>
                         </div>
                       {%- endif -%}
+
+                      <div class="twcss-grid twcss-grid-cols-[auto,1fr] twcss-gap-1 twcss-text-sm twcss-min-h-[20px] twcss-items-start">
+                        <div class="twcss-whitespace-nowrap twcss-leading-5">
+                          {{ 'products.product.sku' | t }}
+                        </div>
+                        <div class="twcss-overflow-hidden">
+                          <div
+                            class="twcss-overflow-hidden twcss-text-ellipsis twcss-whitespace-nowrap twcss-text-muted-light twcss-leading-5"
+                            data-sku="{{ item.variant.sku }}"
+                          >
+                            {{- item.variant.sku -}}
+                          </div>
+                        </div>
+                      </div>
 
                       {%- if item.product.has_only_default_variant == false
                         or item.properties.size != 0
                         or item.selling_plan_allocation != null
                       -%}
-                        <dl>
+                        <dl class="twcss-hidden">
                           {%- if item.product.has_only_default_variant == false -%}
                             {%- for option in item.options_with_values -%}
-                              <div class="product-option">
+                              <div class="product-option !twcss-text-sm">
                                 <dt>{{ option.name }}:</dt>
                                 <dd>{{ option.value }}</dd>
                               </div>
@@ -142,7 +208,7 @@
                           {%- for property in item.properties -%}
                             {%- assign property_first_char = property.first | slice: 0 -%}
                             {%- if property.last != blank and property_first_char != '_' -%}
-                              <div class="product-option">
+                              <div class="product-option !twcss-text-sm">
                                 <dt>{{ property.first }}:</dt>
                                 <dd>
                                   {%- if property.last contains '/uploads/' -%}
@@ -158,7 +224,9 @@
                           {%- endfor -%}
                         </dl>
 
-                        <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+                        <p class="product-option !twcss-text-sm">
+                          {{ item.selling_plan_allocation.selling_plan.name }}
+                        </p>
                       {%- endif -%}
 
                       <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
@@ -171,28 +239,28 @@
                       </ul>
                     </td>
 
-                    <td class="cart-item__totals right medium-hide large-up-hide">
+                    <td class="cart-item__totals right medium-hide large-up-hide !twcss-pt-8 lg:!twcss-pl-8 !twcss-pr-[10px]">
                       {%- render 'loading-spinner' -%}
                       <div class="cart-item__price-wrapper">
                         {%- if item.original_line_price != item.final_line_price -%}
-                          <dl class="cart-item__discounted-prices">
+                          <dl class="cart-item__discounted-prices !twcss-text-base">
                             <dt class="visually-hidden">
                               {{ 'products.product.price.regular_price' | t }}
                             </dt>
                             <dd>
-                              <s class="cart-item__old-price price price--end">
+                              <s class="cart-item__old-price price price--end !twcss-text-sm twcss-font-bold">
                                 {{ item.original_line_price | money }}
                               </s>
                             </dd>
                             <dt class="visually-hidden">
                               {{ 'products.product.price.sale_price' | t }}
                             </dt>
-                            <dd class="price price--end">
+                            <dd class="price price--end !twcss-text-sm twcss-font-bold">
                               {{ item.final_line_price | money }}
                             </dd>
                           </dl>
                         {%- else -%}
-                          <span class="price price--end">
+                          <span class="price price--end !twcss-text-sm twcss-font-bold">
                             {{ item.original_line_price | money }}
                           </span>
                         {%- endif -%}
@@ -224,23 +292,25 @@
                         assign has_vol_pricing = true
                       endif
                     -%}
-                    <td class="cart-item__quantity{% if has_qty_rules or has_vol_pricing %} cart-item__quantity--info{% endif %}">
+                    <td class="cart-item__quantity{% if has_qty_rules or has_vol_pricing %} cart-item__quantity--info{% endif %} !twcss-pt-8 lg:!twcss-pl-8">
                       <quantity-popover>
                         <div class="cart-item__quantity-wrapper quantity-popover-wrapper">
                           <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
                             {{ 'products.product.quantity.label' | t }}
                           </label>
                           <div class="quantity-popover-container{% if has_qty_rules or has_vol_pricing %} quantity-popover-container--hover{% endif %}">
-                            {%- if has_qty_rules or has_vol_pricing -%}
-                              <button
-                                type="button"
-                                aria-expanded="false"
-                                class="quantity-popover__info-button quantity-popover__info-button--icon-only button button--tertiary small-hide medium-hide"
-                              >
-                                {{- 'icon-info.svg' | inline_asset_content -}}
-                              </button>
-                            {%- endif -%}
-                            <quantity-input class="quantity cart-quantity">
+                            {% comment %}
+                              {%- if has_qty_rules or has_vol_pricing -%}
+                                <button
+                                  type='button'
+                                  aria-expanded='false'
+                                  class='quantity-popover__info-button quantity-popover__info-button--icon-only button button--tertiary small-hide medium-hide !twcss-absolute twcss-left-[-4rem]'
+                                >
+                                  {{- 'icon-info.svg' | inline_asset_content -}}
+                                </button>
+                              {%- endif -%}
+                            {% endcomment %}
+                            <quantity-input class="quantity cart-quantity twcss-border twcss-border-gray-200">
                               <button class="quantity__button" name="minus" type="button">
                                 <span class="visually-hidden">
                                   {{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}
@@ -284,7 +354,7 @@
                           >
                             <a
                               href="{{ item.url_to_remove }}"
-                              class="button button--tertiary"
+                              class="button button--tertiary !twcss-min-w-0 !twcss-w-[22px]"
                               aria-label="{{ 'sections.cart.remove_title' | t: title: item.title | escape }}"
                             >
                               <span class="svg-wrapper">
@@ -293,25 +363,27 @@
                             </a>
                           </cart-remove-button>
                         </div>
-                        {%- if has_qty_rules or has_vol_pricing -%}
-                          <button
-                            type="button"
-                            class="quantity-popover__info-button quantity-popover__info-button--icon-with-label button button--tertiary large-up-hide"
-                            aria-expanded="false"
-                          >
-                            {{- 'icon-info.svg' | inline_asset_content -}}
-                            <span>
-                              {%- if has_vol_pricing -%}
-                                {{ 'products.product.volume_pricing.note' | t }}
-                              {%- elsif has_qty_rules -%}
-                                {{ 'products.product.quantity.note' | t }}
-                              {%- endif -%}
-                            </span>
-                          </button>
-                        {%- endif -%}
+                        {% comment %}
+                          {%- if has_qty_rules or has_vol_pricing -%}
+                            <button
+                              type='button'
+                              class='quantity-popover__info-button quantity-popover__info-button--icon-with-label button button--tertiary large-up-hide'
+                              aria-expanded='false'
+                            >
+                              {{- 'icon-info.svg' | inline_asset_content -}}
+                              <span>
+                                {%- if has_vol_pricing -%}
+                                  {{ 'products.product.volume_pricing.note' | t }}
+                                {%- elsif has_qty_rules -%}
+                                  {{ 'products.product.quantity.note' | t }}
+                                {%- endif -%}
+                              </span>
+                            </button>
+                          {%- endif -%}
+                        {% endcomment %}
                         {%- if has_vol_pricing or has_qty_rules -%}
                           <div
-                            class="cart-items__info global-settings-popup quantity-popover__info"
+                            class="cart-items__info global-settings-popup quantity-popover__info lg:!twcss-translate-x-[-115%]"
                             tabindex="-1"
                             hidden
                           >
@@ -379,7 +451,7 @@
                           </div>
                         {%- endif -%}
                         <div class="cart-item__error" id="Line-item-error-{{ item.index | plus: 1 }}" role="alert">
-                          <small class="cart-item__error-text"></small>
+                          <small class="cart-item__error-text !twcss-text-sm"></small>
                           <span class="svg-wrapper">
                             {{- 'icon-error.svg' | inline_asset_content -}}
                           </span>
@@ -387,7 +459,7 @@
                       </quantity-popover>
                     </td>
 
-                    <td class="cart-item__totals right small-hide">
+                    <td class="cart-item__totals right small-hide !twcss-pt-8 lg:!twcss-pl-8 lg:!twcss-pr-[10px]">
                       {%- render 'loading-spinner' -%}
                       <div class="cart-item__price-wrapper">
                         {%- if item.original_line_price != item.final_line_price -%}
@@ -403,12 +475,12 @@
                             <dt class="visually-hidden">
                               {{ 'products.product.price.sale_price' | t }}
                             </dt>
-                            <dd class="price price--end">
+                            <dd class="price price--end !twcss-text-sm twcss-font-bold">
                               {{ item.final_line_price | money }}
                             </dd>
                           </dl>
                         {%- else -%}
-                          <span class="price price--end">
+                          <span class="price price--end !twcss-text-sm twcss-font-bold">
                             {{ item.original_line_price | money }}
                           </span>
                         {%- endif -%}

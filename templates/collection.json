@@ -11,6 +11,7 @@
   "sections": {
     "image_banner_NyD3EB": {
       "type": "image-banner",
+      "disabled": true,
       "settings": {
         "image_2": "shopify://shop_images/a-bridge-sitting-in-thick-pink-and-purple-fog.jpg",
         "image_overlay_opacity": 0,
@@ -37,10 +38,9 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 8,
         "columns_desktop": 4,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
+        "image_ratio": "square",
+        "show_secondary_image": false,
         "show_vendor": true,
         "show_rating": true,
         "enable_quick_add": true,

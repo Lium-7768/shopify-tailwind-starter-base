@@ -1,16 +1,16 @@
 <section class='twcss-py-10'>
-  <div class='twcss-px-4 md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto'>
+  <div class='twcss-px-5 lg:twcss-px-0 md:twcss-max-w-7xl twcss-mx-auto'>
     {% render 'homepage-title',
       white_title: section.settings.white_title,
       blue_title: section.settings.blue_title,
       link_url: section.settings.view_all_link,
       link_text: section.settings.view_all_text,
-      wrapper_classes: '!twcss-mb-5',
-      white_title_classes: '!twcss-text-lg',
-      blue_title_classes: '!twcss-text-lg'
+      wrapper_classes: '',
+      white_title_classes: '',
+      blue_title_classes: ''
     %}
 
-    <div class='twcss-flex twcss-flex-row twcss-justify-between twcss-gap-x-6 twcss-items-stretch twcss-mt-8'>
+    <div class='twcss-flex twcss-flex-row twcss-justify-between twcss-gap-x-6 twcss-items-stretch twcss-mt-4'>
       {% for block in section.blocks %}
         <div class='twcss-flex twcss-flex-col twcss-items-center twcss-text-center twcss-flex-1 {% if forloop.index > 2 %} twcss-hidden md:!twcss-flex  {% endif %}'>
           <a href='{{ block.settings.link }}' class='twcss-block twcss-w-full'>
@@ -24,7 +24,9 @@
                 height='100%'
               >
             </div>
-            <div class='twcss-text-sm twcss-font-semibold'>{{ block.settings.title }}</div>
+            <span class='twcss-text-sm twcss-font-semibold twcss-tracking-normal twcss-text-accent-default'>
+              {{- block.settings.title -}}
+            </span>
           </a>
         </div>
       {% endfor %}
@@ -32,8 +34,8 @@
   </div>
 
   {% if section.settings.show_banner %}
-    <div class='md:twcss-px-4 md:twcss-max-w-7xl  twcss-mx-auto'>
-      <div class='twcss-mt-8 twcss-flex twcss-flex-col md:twcss-flex-row twcss-justify-between twcss-items-center twcss-bg-[#FFF7E9]'>
+    <div class='md:twcss-max-w-7xl  twcss-mx-auto'>
+      <div class='twcss-mt-8 twcss-flex twcss-flex-col md:twcss-flex-row twcss-justify-between twcss-items-center twcss-bg-[#FFF7E9] twcss-rounded-lg twcss-overflow-hidden'>
         <div class='twcss-hidden md:twcss-block twcss-w-2/5 twcss-relative'>
           <img
             src='{{ section.settings.desktop_banner | img_url: 'master' }}'

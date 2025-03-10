@@ -8,6 +8,10 @@
   <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
+{{ 'quick-add.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
@@ -16,7 +20,7 @@
 
 <style>
   .template-search__header {
-    margin-bottom: 3rem;
+    margin-bottom: 0;
   }
 
   .template-search__search {
@@ -29,17 +33,24 @@
   }
 
   .template-search--empty {
-    padding-bottom: 18rem;
-  }
-
-  @media screen and (min-width: 750px) {
-    .template-search__header {
-      margin-bottom: 5rem;
-    }
+    padding: 0 !important;
   }
 
   .search__button .icon {
     height: 1.8rem;
+  }
+
+  .quick-add__submit {
+    padding: 16px;
+    min-width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    background-color: #ff731d;
+    line-height: 1.2;
+    min-height: auto;
   }
 </style>
 
@@ -66,22 +77,22 @@
 {% paginate search.results by 24 %}
   <div class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section-{{ section.id }}-padding">
     <div class="template-search__header page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      <h1 class="h2 center">
+      <h1 class="center twcss-text-lg twcss-font-bold twcss-mb-9 twcss-hidden">
         {%- if search.performed -%}
           {{- 'templates.search.title' | t -}}
         {%- else -%}
           {{- 'general.search.search' | t -}}
         {%- endif -%}
       </h1>
-      <div class="template-search__search">
+      <div class="template-search__search twcss-hidden">
         {%- if settings.predictive_search_enabled -%}
           <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
         {%- endif -%}
         <main-search>
-          <form action="{{ routes.search_url }}" method="get" role="search" class="search">
-            <div class="field">
+          <form action="{{ routes.search_url }}" method="get" role="search" class="twcss-relative">
+            <div class="twcss-relative">
               <input
-                class="search__input field__input"
+                class="twcss-w-full twcss-p-3 twcss-leading-4 twcss-rounded twcss-border twcss-text-accent-default twcss-bg-white focus:twcss-outline-none focus:twcss-ring-0 focus:twcss-ring-offset-0 [appearance:none] [&::-webkit-search-decoration]:twcss-hidden [&::-webkit-search-cancel-button]:twcss-hidden [&::-webkit-search-results-button]:twcss-hidden [&::-webkit-search-results-decoration]:twcss-hidden"
                 id="Search-In-Template"
                 type="search"
                 name="q"
@@ -100,7 +111,8 @@
                   spellcheck="false"
                 {%- endif -%}
               >
-              <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label>
+              {% comment %} <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label> {% endcomment %}
+              <input type="hidden" name="type" value="product">
               <input name="options[prefix]" type="hidden" value="last">
 
               {%- if settings.predictive_search_enabled -%}
@@ -113,15 +125,19 @@
 
               <button
                 type="reset"
-                class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
+                class="twcss-absolute twcss-right-11 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 hover:twcss-scale-110 {% if search.terms == blank %} hidden{% endif %}"
                 aria-label="{{ 'general.search.reset' | t }}"
               >
-                <span class="svg-wrapper">
+                <span class="twcss-size-6 twcss-text-accent-default twcss-block">
                   {{- 'icon-reset.svg' | inline_asset_content -}}
                 </span>
               </button>
-              <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-                <span class="svg-wrapper">
+              <button
+                class="twcss-absolute twcss-bg-secondary-default twcss-right-0 twcss-top-1/2 twcss-transform -twcss-translate-y-1/2 twcss-p-2 twcss-h-full twcss-rounded-r"
+                type="submit"
+                aria-label="{{ 'general.search.search' | t }}"
+              >
+                <span class="twcss-size-6 twcss-text-white twcss-block">
                   {{- 'icon-search.svg' | inline_asset_content -}}
                 </span>
               </button>
@@ -141,7 +157,7 @@
           {%- endif -%}
         {%- endunless -%}
         {%- if search.results_count == 0 and search.filters == empty -%}
-          <p role="status">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+          <p role="status" class="center twcss-mt-20">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
         {%- endif -%}
       {%- endif -%}
     </div>
@@ -150,41 +166,43 @@
         and section.settings.filter_type == 'vertical'
         and search.filters != empty
       -%}
-        <facet-filters-form class="facets facets-vertical-sort page-width small-hide">
-          <form class="facets-vertical-form" id="FacetSortForm">
-            <div class="facet-filters sorting caption">
-              <div class="facet-filters__field">
-                <h2 class="facet-filters__label caption-large text-body">
-                  <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
-                </h2>
-                <div class="select">
-                  {%- assign sort_by = search.sort_by | default: search.default_sort_by -%}
-                  <select
-                    name="sort_by"
-                    class="facet-filters__sort select__select caption-large"
-                    id="SortBy"
-                    aria-describedby="a11y-refresh-page-message"
-                  >
-                    {%- for option in search.sort_options -%}
-                      <option
-                        value="{{ option.value | escape }}"
-                        {% if option.value == sort_by %}
-                          selected="selected"
-                        {% endif %}
-                      >
-                        {{ option.name | escape }}
-                      </option>
-                    {%- endfor -%}
-                  </select>
-                  <span class="svg-wrapper">
-                    {{- 'icon-caret.svg' | inline_asset_content -}}
-                  </span>
+        <facet-filters-form class="facets facets-vertical-sort page-width small-hide !twcss-mb-5">
+          <form class="twcss-flex twcss-items-center twcss-bg-[#F8F8F8] twcss-px-5 twcss-py-2" id="FacetSortForm">
+            <div class="twcss-flex twcss-items-center">
+              <div class="facet-filters sorting caption">
+                <div class="facet-filters__field">
+                  <h2 class="facet-filters__label caption-large text-body">
+                    <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
+                  </h2>
+                  <div class="select">
+                    {%- assign sort_by = search.sort_by | default: search.default_sort_by -%}
+                    <select
+                      name="sort_by"
+                      class="facet-filters__sort select__select caption-large !twcss-py-3 !twcss-pl-3 !twcss-w-[140px] twcss-text-accent-default !twcss-bg-white !twcss-truncate !twcss-text-ellipsis !twcss-overflow-hidden"
+                      id="SortBy"
+                      aria-describedby="a11y-refresh-page-message"
+                    >
+                      {%- for option in search.sort_options -%}
+                        <option
+                          value="{{ option.value | escape }}"
+                          {% if option.value == sort_by %}
+                            selected="selected"
+                          {% endif %}
+                        >
+                          {{ option.name | escape }}
+                        </option>
+                      {%- endfor -%}
+                    </select>
+                    <span class="twcss-w-4 twcss-absolute twcss-right-3 twcss-text-accent-default">
+                      {% render 'icon-caret' %}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="product-count-vertical light" role="status">
-              <h2 class="product-count__text text-body">
+            <div class="product-count-vertical" role="status">
+              <h2 class="twcss-text-sm twcss-text-accent-default">
                 <span id="ProductCountDesktop">
                   {%- if search.results_count -%}
                     {{ 'templates.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
@@ -264,7 +282,7 @@
                   {%- endif -%}
 
                   <li
-                    class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                    class="twcss-rounded grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                     {% if settings.animations_reveal_on_scroll %}
                       data-cascade
                     {% endif %}
@@ -280,7 +298,10 @@
                           show_vendor: section.settings.show_vendor,
                           show_rating: section.settings.show_rating,
                           lazy_load: lazy_load,
-                          skip_styles: skip_card_product_styles
+                          skip_styles: skip_card_product_styles,
+                          show_quick_add: true,
+                          section_id: section.id,
+                          show_vendor: true
                         %}
                         {%- assign skip_card_product_styles = true -%}
                       {%- when 'article' -%}

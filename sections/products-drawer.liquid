@@ -28,27 +28,27 @@
 
 <products-drawer>
   <div
-    id='products-drawer-{{ section.id }}'
-    class='twcss-fixed twcss-inset-0 twcss-z-50 twcss-overflow-hidden'
-    aria-labelledby='slide-over-title'
-    role='dialog'
-    aria-modal='true'
-    style='display: none;'
+    id="products-drawer-{{ section.id }}"
+    class="twcss-fixed twcss-inset-0 twcss-z-50 twcss-overflow-hidden"
+    aria-labelledby="slide-over-title"
+    role="dialog"
+    aria-modal="true"
+    style="display: none;"
   >
     <div
-      class='products-drawer-overlay-{{ section.id }} twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity !twcss-block'
-      aria-hidden='true'
+      class="products-drawer-overlay-{{ section.id }} twcss-absolute twcss-inset-0 twcss-bg-black/50 twcss-transition-opacity !twcss-block"
+      aria-hidden="true"
     ></div>
 
-    <div class='twcss-absolute twcss-inset-0 twcss-overflow-hidden twcss-pointer-events-none'>
-      <div class='twcss-pointer-events-none twcss-fixed twcss-inset-y-0 twcss-left-0 twcss-flex twcss-max-w-full'>
-        <div class='twcss-pointer-events-auto twcss-w-screen twcss-max-w-md'>
-          <div class='twcss-flex twcss-h-full twcss-flex-col twcss-overflow-auto twcss-bg-white'>
+    <div class="twcss-absolute twcss-inset-0 twcss-overflow-hidden twcss-pointer-events-none">
+      <div class="twcss-pointer-events-none twcss-fixed twcss-inset-y-0 twcss-left-0 twcss-flex twcss-max-w-full">
+        <div class="twcss-pointer-events-auto twcss-w-screen twcss-max-w-md">
+          <div class="twcss-flex twcss-h-full twcss-flex-col twcss-overflow-auto twcss-bg-white">
             <!-- Header -->
-            <div class='twcss-flex twcss-items-center twcss-justify-between twcss-px-6 twcss-py-4'>
-              <div class='twcss-flex twcss-items-center'>
+            <div class="twcss-flex twcss-items-center twcss-justify-between twcss-px-6 twcss-py-4">
+              <div class="twcss-flex twcss-items-center">
                 {%- if section.settings.drawer_logo != blank -%}
-                  <div class='twcss-h-8'>
+                  <div class="twcss-h-8">
                     {%- assign logo_alt = section.settings.drawer_logo.alt | default: shop.name | escape -%}
                     {{
                       section.settings.drawer_logo
@@ -57,40 +57,101 @@
                     }}
                   </div>
                 {%- else -%}
-                  <span class='twcss-text-lg twcss-font-medium'>{{ shop.name }}</span>
+                  <span class="twcss-text-lg twcss-font-medium">{{ shop.name }}</span>
                 {%- endif -%}
               </div>
               <button
-                type='button'
-                class='products-drawer-close twcss-text-accent-default twcss-size-6 hover:twcss-text-gray-500'
+                type="button"
+                class="products-drawer-close twcss-text-accent-default twcss-size-6 hover:twcss-text-gray-500"
               >
-                <span class='twcss-sr-only'>Close panel</span>
-                <span class='twcss-text-accent-default twcss-size-6'>
-                  {{- 'icon-close.svg' | inline_asset_content -}}
+                <span class="twcss-sr-only">Close panel</span>
+                <span class="twcss-text-accent-default twcss-size-6">
+                  {{- 'icon-close-light.svg' | inline_asset_content -}}
                 </span>
               </button>
             </div>
 
             <!-- Categories -->
-            <div class='twcss-flex-1'>
+            <div class="twcss-flex-1">
               {%- for block in section.blocks -%}
-                <div class='twcss-py-4 twcss-px-6 {% unless forloop.first %}twcss-border-t twcss-border-gray-200{% endunless %}'>
-                  <h3 class='twcss-text-lg twcss-font-semibold twcss-text-primary-default'>
+                <div class="twcss-py-4 twcss-px-6">
+                  <h3 class="twcss-text-base twcss-font-bold twcss-text-primary-default">
                     {{ block.settings.category_title }}
                   </h3>
-                  <div class='twcss-mt-2'>
+                  <div class="twcss-mt-2">
                     {%- for link in block.settings.menu.links -%}
-                      <a
-                        href='{{ link.url }}'
-                        class='twcss-block twcss-py-3 twcss-border-b twcss-border-muted-default'
-                      >
-                        <div class='twcss-flex twcss-items-center twcss-justify-between'>
-                          <span class='twcss-text-accent-default'>{{ link.title }}</span>
-                          <span class='twcss-text-secondary-middle twcss-rotate-90 twcss-size-4'>
-                            {{ 'icon-caret.svg' | inline_asset_content }}
-                          </span>
+                      <div class="twcss-menu-item">
+                        <div class="twcss-block twcss-py-3 {% unless forloop.last %}twcss-border-b twcss-border-muted-default{% endunless %} twcss-cursor-pointer">
+                          <div class="twcss-flex twcss-items-center twcss-justify-between twcss-menu-trigger twcss-text-secondary-middle ">
+                            <a href="{{ link.url }}" class="twcss-menu-link twcss-text-sm twcss-text-accent-default">
+                              {{- link.title -}}
+                            </a>
+                            <span class="twcss-submenu-toggle twcss-text-secondary-middle twcss-rotate-90 twcss-size-4">
+                              {{ 'icon-caret.svg' | inline_asset_content }}
+                            </span>
+                          </div>
                         </div>
-                      </a>
+                        {%- if link.links.size > 0 -%}
+                          <div class="twcss-submenu twcss-hidden">
+                            {%- for child_link in link.links -%}
+                              <div class="twcss-menu-item twcss-pl-2">
+                                <div class="twcss-block twcss-py-3 twcss-border-b twcss-border-muted-default twcss-cursor-pointer">
+                                  <div class="twcss-flex twcss-items-center twcss-justify-between twcss-menu-trigger">
+                                    <a href="{{ child_link.url }}" class="twcss-text-accent-default twcss-menu-link">
+                                      {{- child_link.title -}}
+                                    </a>
+                                    <span class="twcss-submenu-toggle twcss-text-secondary-middle twcss-rotate-90 twcss-size-4">
+                                      {{ 'icon-caret.svg' | inline_asset_content }}
+                                    </span>
+                                  </div>
+                                </div>
+                                {%- if child_link.links.size > 0 -%}
+                                  <div class="twcss-submenu twcss-hidden">
+                                    {%- for grandchild_link in child_link.links -%}
+                                      <div class="twcss-menu-item twcss-pl-4">
+                                        <div class="twcss-block twcss-py-3 twcss-border-b twcss-border-muted-default twcss-cursor-pointer">
+                                          <div class="twcss-flex twcss-items-center twcss-justify-between twcss-menu-trigger">
+                                            <a
+                                              href="{{ grandchild_link.url }}"
+                                              class="twcss-text-accent-default twcss-menu-link"
+                                            >
+                                              {{- grandchild_link.title -}}
+                                            </a>
+                                            <span class="twcss-submenu-toggle twcss-text-secondary-middle twcss-rotate-90 twcss-size-4">
+                                              {{ 'icon-caret.svg' | inline_asset_content }}
+                                            </span>
+                                          </div>
+                                        </div>
+                                        {%- if grandchild_link.links.size > 0 -%}
+                                          <div class="twcss-submenu twcss-hidden">
+                                            {%- for great_grandchild_link in grandchild_link.links -%}
+                                              <div class="twcss-menu-item twcss-pl-6">
+                                                <div class="twcss-block twcss-py-3 twcss-border-b twcss-border-muted-default twcss-cursor-pointer">
+                                                  <div class="twcss-flex twcss-items-center twcss-justify-between twcss-menu-trigger">
+                                                    <a
+                                                      href="{{ great_grandchild_link.url }}"
+                                                      class="twcss-text-accent-default twcss-menu-link"
+                                                    >
+                                                      {{- great_grandchild_link.title -}}
+                                                    </a>
+                                                    <span class="twcss-submenu-toggle twcss-text-secondary-middle twcss-rotate-90 twcss-size-4">
+                                                      {{ 'icon-caret.svg' | inline_asset_content }}
+                                                    </span>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            {%- endfor -%}
+                                          </div>
+                                        {%- endif -%}
+                                      </div>
+                                    {%- endfor -%}
+                                  </div>
+                                {%- endif -%}
+                              </div>
+                            {%- endfor -%}
+                          </div>
+                        {%- endif -%}
+                      </div>
                     {%- endfor -%}
                   </div>
                 </div>
@@ -123,6 +184,8 @@
       } else {
         this.bindEvents();
       }
+
+      this.toggleSubmenu();
     }
 
     bindEvents() {
@@ -154,6 +217,50 @@
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && this.drawer.style.display === 'block') {
           this.close();
+        }
+      });
+    }
+
+    toggleSubmenu() {
+      const menuItems = this.querySelectorAll('.twcss-menu-item');
+
+      menuItems.forEach((menuItem) => {
+        const menuTrigger = menuItem.querySelector('.twcss-menu-trigger');
+        if (!menuTrigger) return;
+
+        const menuBlock = menuTrigger.closest('.twcss-block');
+        const menuLink = menuItem.querySelector('.twcss-menu-link');
+        const submenu = menuItem.querySelector('.twcss-submenu');
+        const toggle = menuItem.querySelector('.twcss-submenu-toggle');
+
+        if (submenu && toggle && menuBlock) {
+          menuBlock.addEventListener('click', (e) => {
+            // Skip if clicking the link itself
+            if (e.target === menuLink || menuLink.contains(e.target)) {
+              return;
+            }
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Close other menus at the same level
+            const parentContainer = menuItem.parentElement;
+            const siblingMenuItems = parentContainer.querySelectorAll(':scope > .twcss-menu-item');
+            siblingMenuItems.forEach((sibling) => {
+              if (sibling !== menuItem) {
+                const siblingSubmenu = sibling.querySelector('.twcss-submenu');
+                const siblingToggle = sibling.querySelector('.twcss-submenu-toggle');
+                if (siblingSubmenu && !siblingSubmenu.classList.contains('twcss-hidden')) {
+                  siblingSubmenu.classList.add('twcss-hidden');
+                  siblingToggle.classList.add('twcss-rotate-90');
+                }
+              }
+            });
+
+            // Toggle current menu
+            toggle.classList.toggle('twcss-rotate-90');
+            submenu.classList.toggle('twcss-hidden');
+          });
         }
       });
     }

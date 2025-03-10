@@ -1,0 +1,92 @@
+/* 默认亮色主题 */
+:root,
+[data-theme="light"] {
+  /* Primary colors */
+  --color-primary-default: #1746A2;
+  --color-primary-foreground: #133B85;
+  
+  /* Secondary colors */
+  --color-secondary-default: #5F9DF7;
+  --color-secondary-foreground: #E3F2FF;
+  --color-secondary-light: #C2E3FF;
+  --color-secondary-middle: #BCBDB9;
+  --color-secondary-main: #68ACE5;
+  
+  /* Destructive colors */
+  --color-destructive-default: #ff0000;
+  --color-destructive-foreground: #922c2c;
+  --color-destructive-light: #f7b7b7;
+
+  /* Muted colors */
+  --color-muted-default: #EBEBEB;
+  --color-muted-foreground: #737373;
+  --color-muted-light: #84888B;
+  
+  /* Accent colors */
+  --color-accent-default: #353535;
+  --color-accent-foreground: #1a1a1a;
+
+  /* Popover colors */
+  --color-popover-default: #ffffff;
+  --color-popover-foreground: #0a0a0a;
+
+  /* Card colors */
+  --color-card-default: #ffffff;
+  --color-card-foreground: #0a0a0a;
+
+  /* Button colors */
+  --color-button-default: #FF731D;
+
+  /* Base colors */
+  --color-border: #e0e0e0;
+  --color-input: #e0e0e0;
+  --color-ring: #1a1a1a;
+  --color-background: #ffffff;
+  --color-foreground: #0a0a0a;
+}
+
+/* 深色主题 */
+[data-theme="dark"] {
+  --color-primary-default: #5F9DF7;
+  --color-primary-foreground: #C2E3FF;
+  
+  --color-secondary-default: #1746A2;
+  --color-secondary-foreground: #133B85;
+  --color-secondary-light: #284B80;
+  --color-secondary-middle: #4D4E4C;
+  --color-secondary-main: #2B5C8A;
+  
+  --color-accent-default: #E3F2FF;
+  --color-accent-foreground: #FFFFFF;
+  
+  --color-muted-default: #2C2C2C;
+  --color-muted-foreground: #BCBCBC;
+  --color-muted-light: #999999;
+  
+  --color-background: #1A1A1A;
+  --color-foreground: #FFFFFF;
+  --color-border: #404040;
+}
+
+/* 蓝色主题 */
+[data-theme="blue"] {
+  --color-primary-default: #0066CC;
+  --color-primary-foreground: #003366;
+  
+  --color-secondary-default: #66B2FF;
+  --color-secondary-foreground: #E5F2FF;
+  --color-secondary-light: #99CCFF;
+  --color-secondary-middle: #B3D9FF;
+  --color-secondary-main: #3399FF;
+  
+  --color-accent-default: #004C99;
+  --color-accent-foreground: #002B59;
+  
+  --color-muted-default: #F0F7FF;
+  --color-muted-foreground: #668099;
+  --color-muted-light: #99A6B3;
+  
+  --color-background: #FFFFFF;
+  --color-foreground: #00264D;
+  --color-border: #CCE0FF;
+} 

@@ -13,10 +13,24 @@
     aria-controls="{{ localPosition }}List"
     aria-describedby="{{ localPosition }}Label"
   >
+    <img
+      src="{{ 'icon-country-' | append: localization.language.iso_code | downcase | append: '.svg' | asset_url }}"
+      alt=""
+      class="country-flag"
+      width="24"
+      height="24"
+    >
     <span>{{ localization.language.endonym_name | capitalize }}</span>
     {{ 'icon-caret.svg' | inline_asset_content }}
   </button>
   <div class="disclosure__list-wrapper language-selector" hidden>
+    <div
+      data-state="open"
+      class="disclosure__list-overlay twcss-fixed twcss-top-[88px] twcss-bottom-auto twcss-left-0 twcss-right-0 md:twcss-inset-0 twcss-z-[1001] twcss-bg-[rgba(52,55,53,0.6)] twcss-data-[state=open]:twcss-animate-in twcss-data-[state=closed]:twcss-animate-out twcss-data-[state=closed]:twcss-fade-out-0 twcss-data-[state=open]:twcss-fade-in-0"
+      style="pointer-events: auto;"
+      data-aria-hidden="true"
+      aria-hidden="true"
+    ></div>
     <ul id="{{ localPosition }}List" role="list" class="disclosure__list list-unstyled">
       {%- for language in localization.available_languages -%}
         <li class="disclosure__item" tabindex="-1">
@@ -30,13 +44,13 @@
             {% endif %}
             data-value="{{ language.iso_code }}"
           >
-            <span
-              {% if language.iso_code != localization.language.iso_code %}
-                class="visibility-hidden"
-              {% endif %}
+            <img
+              src="{{ 'icon-country-' | append: language.iso_code | downcase | append: '.svg' | asset_url }}"
+              alt=""
+              class="country-flag"
+              width="24"
+              height="24"
             >
-              {{- 'icon-checkmark.svg' | inline_asset_content -}}
-            </span>
             <span>
               {{ language.endonym_name | capitalize }}
             </span>

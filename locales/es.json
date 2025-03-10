@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "password_page": {
@@ -33,7 +42,9 @@
       "label": "Paginación",
       "page": "Página {{ number }}",
       "next": "Página siguiente",
-      "previous": "Pagina anterior"
+      "previous": "Pagina anterior",
+      "of-label": "de",
+      "records-label": "archivos"
     },
     "search": {
       "search": "Búsqueda",
@@ -127,7 +138,9 @@
         "from_price_html": "A partir de {{ price }}",
         "regular_price": "Precio habitual",
         "sale_price": "Precio de oferta",
-        "unit_price": "Precio unitario"
+        "unit_price": "Precio unitario",
+        "list-price": "Precio de lista:",
+        "your-price": "Su precio:"
       },
       "share": "Compartir este producto",
       "sold_out": "Agotado",
@@ -167,7 +180,7 @@
       "inventory_low_stock_show_count": "Bajas existencias: quedan {{ quantity }}",
       "inventory_out_of_stock": "Agotado",
       "inventory_out_of_stock_continue_selling": "En existencias",
-      "sku": "SKU",
+      "sku": "SKU:",
       "volume_pricing": {
         "title": "Precios por volumen",
         "note": "Precio por volumen disponible",
@@ -178,7 +191,13 @@
       "product_variants": "Variantes de producto",
       "taxes_included": "Impuestos incluidos.",
       "duties_included": "Aranceles incluidos.",
-      "duties_and_taxes_included": "Aranceles e impuestos incluidos."
+      "duties_and_taxes_included": "Aranceles e impuestos incluidos.",
+      "list-price": "Precio de lista:",
+      "your-price": "Su precio:",
+      "collapsible_row": {
+        "description": "Descripción",
+        "documents": "Documentos"
+      }
     },
     "modal": {
       "label": "Galería multimedia"
@@ -215,7 +234,8 @@
       "filter_selected_accessibility": "{{ type }} ({{ count }} filtros seleccionados)",
       "show_more": "Mostrar más",
       "show_less": "Mostrar menos",
-      "filter_and_operator_subtitle": "Seleccionar todos"
+      "filter_and_operator_subtitle": "Seleccionar todos",
+      "per_page_label": "Por página:"
     }
   },
   "templates": {
@@ -281,7 +301,9 @@
         "one": "{{ count }} artículo",
         "other": "{{ count }} artículos",
         "many": "{{ count }} artículos"
-      }
+      },
+      "products-label": "Productos",
+      "location-label": "Envie a"
     },
     "cart": {
       "title": "Tu carrito",
@@ -328,7 +350,8 @@
       "view_all_label": "Ver todos los productos de la colección {{ collection_name }}"
     },
     "collection_list": {
-      "view_all": "Ver todo"
+      "view_all": "Ver todo",
+      "display": "Mostrar"
     },
     "collection_template": {
       "title": "Colección",
@@ -535,6 +558,29 @@
       "send_on_label": "Enviar el (opcional)",
       "expanded": "Formulario del destinatario de la tarjeta de regalo expandido",
       "collapsed": "Formulario del destinatario de tarjeta de regalo contraído"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "general": {
+        "errors": {
+          "buyer_identity": {
+            "company_purchase_permission_required": "El cliente no tiene permiso para realizar pedidos a la empresa.",
+            "personal_order_not_allowed": "No se permiten pedidos personales para esta tienda."
+          }
+        }
+      },
+      "field_errors": {
+        "split_cart_tax_engine_not_supported": "Todos los artículos deben utilizar el mismo método de envío para el motor de impuestos utilizado por la ubicación de la tienda."
+      }
+    }
+  },
+  "customer_accounts": {
+    "shop_ads": {
+      "subtitle": "Disponible por tiempo limitado",
+      "button": "Explorar en la tienda",
+      "previous_button": "Anterior",
+      "next_button": "Próximo"
     }
   }
 }

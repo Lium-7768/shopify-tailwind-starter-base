@@ -15,6 +15,24 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .footer__content-top {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .footer__content-bottom-wrapper {
+    max-width: none !important;
+  }
+
+  @media screen and (max-width: 750px) {
+    .footer__copyright {
+      padding: 8px 0 !important;
+      letter-spacing: normal !important;
+      line-height: 1 !important;
+      font-size: 10px !important;
+    }
+  }
+
   @media screen and (min-width: 750px) {
     .footer {
       margin-top: {{ section.settings.margin_top }}px;
@@ -27,7 +45,7 @@
   }
 {%- endstyle -%}
 
-<footer class='footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding'>
+<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding twcss-overflow-hidden !twcss-pt-0 md:!twcss-pt-8">
   {%- liquid
     assign has_social_icons = true
     if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
@@ -49,7 +67,7 @@
     or section.settings.enable_follow_on_shop
   -%}
     {%- unless only_empty_brand -%}
-      <div class='footer__content-top page-width'>
+      <div class="footer__content-top page-width !twcss-flex twcss-justify-center !twcss-px-0 md:!twcss-px-8 lg:!twcss-px-20 !twcss-pb-0 md:!twcss-pb-[50px]">
         {%- if section.blocks.size > 0 -%}
           {% comment %}
             {%- liquid
@@ -63,53 +81,58 @@
             -%}
           {% endcomment %}
           <div
-            class='twcss-grid twcss-grid-cols-1 md:twcss-grid-cols-2 lg:twcss-grid-cols-5 twcss-gap-5 lg:twcss-gap-10 {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+            class="twcss-tracking-normal xlg:!twcss-max-w-[1280px] twcss-grid twcss-grid-cols-1 md:twcss-grid-cols-2 lg:twcss-grid-cols-5 md:twcss-gap-5 lg:twcss-gap-10 twcss-w-full{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
             {% endif %}
           >
             {%- for block in section.blocks -%}
               <div
-                class='{% if block.type == "link_list" %} twcss-space-y-4{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+                class="{% if block.type == "link_list" %} md:twcss-space-y-4{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
-                  style='--animation-order: {{ forloop.index }};'
+                  style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
                 {%- if block.settings.heading != blank -%}
-                  <h2 class='twcss-text-lg twcss-font-bold twcss-mb-5'>{{- block.settings.heading -}}</h2>
+                  <h2 class="twcss-text-lg twcss-font-bold md:twcss-mb-5  {% if block.type == 'link_list' %}twcss-p-[12px_16px_8px_16px] md:twcss-p-0 twcss-bg-[#EBEBEB] md:twcss-bg-transparent {% else %} twcss-p-[12px_20px_8px] md:twcss-p-0 {% endif %}">
+                    {{- block.settings.heading -}}
+                  </h2>
                 {%- endif -%}
 
                 {%- case block.type -%}
                   {%- when '@app' -%}
                     {% render block %}
                   {%- when 'text' -%}
-                    <div class='twcss-prose twcss-max-w-none'>
+                    <div class="twcss-prose twcss-max-w-none">
                       {{ block.settings.subtext }}
                     </div>
                   {%- when 'link_list' -%}
                     {%- if block.settings.menu != blank -%}
-                      <ul class='twcss-space-y-5'>
+                      <ul class="md:twcss-space-y-5">
                         {%- for link in block.settings.menu.links -%}
-                          <li>
+                          <li class="twcss-border-b border-[#EBEBEB] md:twcss-border-none twcss-p-[16px_16px_16px_24px] md:twcss-p-0 twcss-flex twcss-items-center twcss-justify-between md:twcss-list-item">
                             <a
-                              href='{{ link.url }}'
-                              class='twcss-text-accent-default hover:twcss-underline twcss-transition-colors{% if link.active %} twcss-font-semibold{% endif %}'
+                              href="{{ link.url }}"
+                              class="twcss-text-accent-default hover:twcss-underline twcss-transition-colors twcss-text-sm"
                             >
                               {{ link.title | escape }}
                             </a>
+                            <span class=" twcss-text-secondary-default twcss-rotate-90 twcss-size-4 twcss-block md:twcss-hidden ">
+                              {{ 'icon-caret.svg' | inline_asset_content }}
+                            </span>
                           </li>
                         {%- endfor -%}
                       </ul>
                     {%- endif -%}
                   {%- when 'brand_information' -%}
-                    <div class='twcss-space-y-4'>
+                    <div class="twcss-space-y-4">
                       {%- if settings.brand_image != blank -%}
                         {%- assign brand_image_height = settings.brand_image_width
                           | divided_by: settings.brand_image.aspect_ratio
                         -%}
-                        <div class='twcss-relative' style='max-width: min(100%, {{ settings.brand_image_width }}px);'>
+                        <div class="twcss-relative" style="max-width: min(100%, {{ settings.brand_image_width }}px);">
                           {{
                             settings.brand_image
                             | image_url: width: 1100
@@ -123,25 +146,25 @@
                         </div>
                       {%- endif -%}
                       {%- if settings.brand_headline != blank -%}
-                        <h2 class='twcss-text-lg twcss-font-semibold'>{{ settings.brand_headline }}</h2>
+                        <h2 class="twcss-text-lg twcss-font-semibold">{{ settings.brand_headline }}</h2>
                       {%- endif -%}
                       {%- if settings.brand_description != blank -%}
-                        <div class='twcss-prose twcss-max-w-none'>{{ settings.brand_description }}</div>
+                        <div class="twcss-prose twcss-max-w-none">{{ settings.brand_description }}</div>
                       {%- endif -%}
                     </div>
                   {%- when 'image' -%}
-                    <div class='twcss-space-y-4 {% if block.settings.alignment == "center" %}twcss-text-center{% elsif block.settings.alignment == "right" %}twcss-text-right{% endif %}'>
+                    <div class="twcss-space-y-4 {% if block.settings.alignment == "center" %}twcss-text-center{% elsif block.settings.alignment == "right" %}twcss-text-right{% endif %}">
                       {%- if block.settings.image != blank -%}
                         {%- assign image_size_2x = block.settings.image_width | times: 2 | at_most: 5760 -%}
-                        <div class='twcss-relative' style='max-width: min(100%, {{ block.settings.image_width }}px);'>
+                        <div class="twcss-relative" style="max-width: min(100%, {{ block.settings.image_width }}px);">
                           <img
-                            srcset='{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_2x }} 2x'
-                            src='{{ block.settings.image | image_url: width: 760 }}'
-                            alt='{{ block.settings.image.alt | escape }}'
-                            loading='lazy'
-                            width='{{ block.settings.image.width }}'
-                            height='{{ block.settings.image.height }}'
-                            class='twcss-w-full twcss-h-auto'
+                            srcset="{{ block.settings.image | image_url: width: block.settings.image_width }}, {{ block.settings.image | image_url: width: image_size_2x }} 2x"
+                            src="{{ block.settings.image | image_url: width: 760 }}"
+                            alt="{{ block.settings.image.alt | escape }}"
+                            loading="lazy"
+                            width="{{ block.settings.image.width }}"
+                            height="{{ block.settings.image.height }}"
+                            class="twcss-w-full twcss-h-auto"
                           >
                         </div>
                       {%- else -%}
@@ -149,46 +172,46 @@
                       {%- endif -%}
                     </div>
                   {%- when 'custom_sign_up' %}
-                    <div>
-                      <div class='twcss-space-y-5'>
+                    <div class="twcss-p-[12px_20px_20px] md:twcss-p-0 twcss-border-b border-[#EBEBEB] md:twcss-border-none ">
+                      <div class="twcss-space-y-5 twcss-text-[13px] twcss-text-accent-default">
                         {{ block.settings.text }}
                       </div>
-                      <div class='footer-block__newsletter'>
+                      <div class="footer-block__newsletter">
                         {%- if section.settings.newsletter_heading != blank -%}
-                          <h2 class='footer-block__heading inline-richtext'>
+                          <h2 class="footer-block__heading inline-richtext">
                             {{ section.settings.newsletter_heading }}
                           </h2>
                         {%- endif -%}
                         {%- form 'customer', id: 'ContactFooter', class: 'twcss-space-y-4' -%}
-                          <input type='hidden' name='contact[tags]' value='newsletter'>
-                          <div class='twcss-relative'>
-                            <div class='twcss-relative'>
+                          <input type="hidden" name="contact[tags]" value="newsletter">
+                          <div class="twcss-relative">
+                            <div class="twcss-relative">
                               <input
-                                id='NewsletterForm--{{ section.id }}'
-                                type='email'
-                                name='contact[email]'
-                                class='twcss-w-full twcss-rounded twcss-border twcss-border-muted-default twcss-px-4 twcss-py-2 twcss-pr-12'
-                                value='{{ form.email }}'
-                                aria-required='true'
-                                autocorrect='off'
-                                autocapitalize='off'
-                                autocomplete='email'
+                                id="NewsletterForm--{{ section.id }}"
+                                type="email"
+                                name="contact[email]"
+                                class="twcss-w-full twcss-rounded twcss-border twcss-border-muted-default twcss-px-4 twcss-py-2 twcss-pr-12"
+                                value="{{ form.email }}"
+                                aria-required="true"
+                                autocorrect="off"
+                                autocapitalize="off"
+                                autocomplete="email"
                                 {% if form.errors %}
                                   autofocus
-                                  aria-invalid='true'
-                                  aria-describedby='ContactFooter-error'
+                                  aria-invalid="true"
+                                  aria-describedby="ContactFooter-error"
                                 {% elsif form.posted_successfully? %}
-                                  aria-describedby='ContactFooter-success'
+                                  aria-describedby="ContactFooter-success"
                                 {% endif %}
-                                placeholder='{{ 'newsletter.label' | t }}'
+                                placeholder="{{ 'newsletter.label' | t }}"
                                 required
                               >
                               <button
-                                type='submit'
-                                class='twcss-absolute twcss-r-rounded twcss-bg-secondary-default twcss-text-white twcss-font-bold twcss-text-sm twcss-right-0 twcss-top-0 twcss-h-full twcss-px-3 twcss-flex twcss-items-center twcss-justify-center'
-                                name='commit'
-                                id='Subscribe'
-                                aria-label='{{ 'newsletter.button_label' | t }}'
+                                type="submit"
+                                class="twcss-absolute twcss-rounded-r twcss-bg-secondary-default twcss-text-white twcss-font-bold twcss-text-sm twcss-right-0 twcss-top-0 twcss-h-full twcss-px-3 twcss-flex twcss-items-center twcss-justify-center"
+                                name="commit"
+                                id="Subscribe"
+                                aria-label="{{ 'newsletter.button_label' | t }}"
                               >
                                 Sign Up
                               </button>
@@ -196,10 +219,10 @@
 
                             {%- if form.errors -%}
                               <small
-                                class='twcss-text-destructive-default twcss-flex twcss-items-center twcss-gap-2 twcss-mt-2'
-                                id='ContactFooter-error'
+                                class="twcss-text-destructive-default twcss-flex twcss-items-center twcss-gap-2 twcss-mt-2"
+                                id="ContactFooter-error"
                               >
-                                <span class='twcss-w-4 twcss-h-4'>
+                                <span class="twcss-w-4 twcss-h-4">
                                   {{- 'icon-error.svg' | inline_asset_content -}}
                                 </span>
                                 {{- form.errors.translated_fields.email | capitalize }}
@@ -210,12 +233,12 @@
 
                           {%- if form.posted_successfully? -%}
                             <h3
-                              class='twcss-text-success-default twcss-flex twcss-items-center twcss-gap-2'
-                              id='ContactFooter-success'
-                              tabindex='-1'
+                              class="twcss-text-success-default twcss-flex twcss-items-center twcss-gap-2 twcss-text-xs"
+                              id="ContactFooter-success"
+                              tabindex="-1"
                               autofocus
                             >
-                              <span class='twcss-w-4 twcss-h-4'>
+                              <span class="twcss-w-4 twcss-h-4">
                                 {{- 'icon-success.svg' | inline_asset_content -}}
                               </span>
                               {{- 'newsletter.success' | t }}
@@ -225,9 +248,9 @@
                       </div>
                     </div>
                   {%- when 'custom_follow' %}
-                    <div class='twcss-space-y-5'>
+                    <div class="twcss-space-y-5">
                       {%- if has_social_icons -%}
-                        {%- render 'social-icons', class: '' -%}
+                        {%- render 'social-icons', class: '!twcss-p-[12px_20px_20px] md:twcss-p-0' -%}
                       {%- endif -%}
                     </div>
                 {%- endcase -%}
@@ -237,48 +260,48 @@
         {%- endif -%}
 
         <div
-          class='footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+          class="footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {% if settings.animations_reveal_on_scroll %}
             data-cascade
           {% endif %}
         >
           {%- if section.settings.newsletter_enable -%}
-            <div class='footer-block__newsletter'>
+            <div class="footer-block__newsletter">
               {%- if section.settings.newsletter_heading != blank -%}
-                <h2 class='footer-block__heading inline-richtext'>{{ section.settings.newsletter_heading }}</h2>
+                <h2 class="footer-block__heading inline-richtext">{{ section.settings.newsletter_heading }}</h2>
               {%- endif -%}
               {%- form 'customer', id: 'ContactFooter', class: 'twcss-space-y-4' -%}
-                <input type='hidden' name='contact[tags]' value='newsletter'>
-                <div class='twcss-relative'>
-                  <div class='twcss-relative'>
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <div class="twcss-relative">
+                  <div class="twcss-relative">
                     <input
-                      id='NewsletterForm--{{ section.id }}'
-                      type='email'
-                      name='contact[email]'
-                      class='twcss-w-full twcss-rounded-[4px] twcss-border twcss-border-muted-default twcss-px-4 twcss-py-2 twcss-pr-12'
-                      value='{{ form.email }}'
-                      aria-required='true'
-                      autocorrect='off'
-                      autocapitalize='off'
-                      autocomplete='email'
+                      id="NewsletterForm--{{ section.id }}"
+                      type="email"
+                      name="contact[email]"
+                      class="twcss-w-full twcss-rounded-[4px] twcss-border twcss-border-muted-default twcss-px-4 twcss-py-2 twcss-pr-12"
+                      value="{{ form.email }}"
+                      aria-required="true"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      autocomplete="email"
                       {% if form.errors %}
                         autofocus
-                        aria-invalid='true'
-                        aria-describedby='ContactFooter-error'
+                        aria-invalid="true"
+                        aria-describedby="ContactFooter-error"
                       {% elsif form.posted_successfully? %}
-                        aria-describedby='ContactFooter-success'
+                        aria-describedby="ContactFooter-success"
                       {% endif %}
-                      placeholder='{{ 'newsletter.label' | t }}'
+                      placeholder="{{ 'newsletter.label' | t }}"
                       required
                     >
                     <button
-                      type='submit'
-                      class='twcss-absolute twcss-right-0 twcss-top-0 twcss-h-full twcss-px-3 twcss-flex twcss-items-center twcss-justify-center'
-                      name='commit'
-                      id='Subscribe'
-                      aria-label='{{ 'newsletter.button_label' | t }}'
+                      type="submit"
+                      class="twcss-absolute twcss-right-0 twcss-top-0 twcss-h-full twcss-px-3 twcss-flex twcss-items-center twcss-justify-center"
+                      name="commit"
+                      id="Subscribe"
+                      aria-label="{{ 'newsletter.button_label' | t }}"
                     >
-                      <span class='twcss-w-5 twcss-h-5'>
+                      <span class="twcss-w-5 twcss-h-5">
                         {{- 'icon-arrow.svg' | inline_asset_content -}}
                       </span>
                     </button>
@@ -286,10 +309,10 @@
 
                   {%- if form.errors -%}
                     <small
-                      class='twcss-text-destructive-default twcss-flex twcss-items-center twcss-gap-2 twcss-mt-2'
-                      id='ContactFooter-error'
+                      class="twcss-text-destructive-default twcss-flex twcss-items-center twcss-gap-2 twcss-mt-2"
+                      id="ContactFooter-error"
                     >
-                      <span class='twcss-w-4 twcss-h-4'>
+                      <span class="twcss-w-4 twcss-h-4">
                         {{- 'icon-error.svg' | inline_asset_content -}}
                       </span>
                       {{- form.errors.translated_fields.email | capitalize }}
@@ -300,12 +323,12 @@
 
                 {%- if form.posted_successfully? -%}
                   <h3
-                    class='twcss-text-success-default twcss-flex twcss-items-center twcss-gap-2'
-                    id='ContactFooter-success'
-                    tabindex='-1'
+                    class="twcss-text-success-default twcss-flex twcss-items-center twcss-gap-2 twcss-text-xs"
+                    id="ContactFooter-success"
+                    tabindex="-1"
                     autofocus
                   >
-                    <span class='twcss-w-4 twcss-h-4'>
+                    <span class="twcss-w-4 twcss-h-4">
                       {{- 'icon-success.svg' | inline_asset_content -}}
                     </span>
                     {{- 'newsletter.success' | t }}
@@ -316,7 +339,7 @@
           {%- endif -%}
 
           {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
-            <div class='footer__follow-on-shop'>
+            <div class="footer__follow-on-shop">
               {{ shop | login_button: action: 'follow' }}
             </div>
           {%- endif -%}
@@ -326,18 +349,18 @@
   {%- endif -%}
 
   <div
-    class='footer__content-bottom{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+    class="footer__content-bottom{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     {% if settings.animations_reveal_on_scroll %}
       data-cascade
     {% endif %}
   >
-    <div class='footer__content-bottom-wrapper page-width'>
-      <div class='footer__column footer__localization isolate'>
+    <div class="footer__content-bottom-wrapper page-width">
+      <div class="footer__column footer__localization isolate">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <localization-form>
             {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
               <div>
-                <h2 class='caption-large text-body' id='FooterCountryLabel'>{{ 'localization.country_label' | t }}</h2>
+                <h2 class="caption-large text-body" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
                 {%- render 'country-localization', localPosition: 'FooterCountry' -%}
               </div>
             {%- endform -%}
@@ -348,7 +371,7 @@
           <localization-form>
             {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
               <div>
-                <h2 class='caption-large text-body' id='FooterLanguageLabel'>
+                <h2 class="caption-large text-body" id="FooterLanguageLabel">
                   {{ 'localization.language_label' | t }}
                 </h2>
                 {%- render 'language-localization', localPosition: 'FooterLanguage' -%}
@@ -357,13 +380,13 @@
           </localization-form>
         {%- endif -%}
       </div>
-      <div class='footer__column footer__column--info'>
+      <div class="footer__column footer__column--info">
         {%- if section.settings.payment_enable -%}
-          <div class='footer__payment'>
-            <span class='visually-hidden'>{{ 'sections.footer.payment' | t }}</span>
-            <ul class='list list-payment' role='list'>
+          <div class="footer__payment">
+            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+            <ul class="list list-payment" role="list">
               {%- for type in shop.enabled_payment_types -%}
-                <li class='list-payment__item'>
+                <li class="list-payment__item">
                   {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
                 </li>
               {%- endfor -%}
@@ -372,9 +395,11 @@
         {%- endif -%}
       </div>
     </div>
-    <div class='footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}'>
-      <div class='footer__copyright caption'>
-        <small> &copy; {{ 'now' | date: '%Y' }}, Hexaflow, Inc. Powered by AAXIS. All Rights Reserved. </small>
+    <div class="footer__content-bottom-wrapper !twcss-max-w-none w-screen page-width footer__content-bottom-wrapper--center">
+      <div class="footer__copyright caption">
+        <span class="!twcss-text-[10px] md:!twcss-text-xs twcss-text-accent-default">
+          &copy; {{ 'now' | date: '%Y' }}, Exaflow, Inc. Powered by AAXIS. All Rights Reserved.
+        </span>
         {% comment %}
           <small class='copyright__content'
             >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
@@ -382,12 +407,12 @@
           <small class='copyright__content'>{{ powered_by_link }}</small>
         {% endcomment %}
         {%- if section.settings.show_policy -%}
-          <ul class='policies list-unstyled'>
+          <ul class="policies list-unstyled">
             {%- for policy in shop.policies -%}
               {%- if policy != blank -%}
                 <li>
-                  <small class='copyright__content'
-                    ><a href='{{ policy.url }}'>{{ policy.title | escape }}</a></small
+                  <small class="copyright__content"
+                    ><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small
                   >
                 </li>
               {%- endif -%}
@@ -580,28 +605,6 @@
       "id": "show_social",
       "default": true,
       "label": "t:sections.footer.settings.show_social.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__3.content",
-      "info": "t:sections.footer.settings.header__4.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_country_selector",
-      "default": true,
-      "label": "t:sections.footer.settings.enable_country_selector.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.footer.settings.header__5.content",
-      "info": "t:sections.footer.settings.header__6.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_language_selector",
-      "default": true,
-      "label": "t:sections.footer.settings.enable_language_selector.label"
     },
     {
       "type": "header",

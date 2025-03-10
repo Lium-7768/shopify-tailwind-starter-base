@@ -43,8 +43,10 @@
     "pagination": {
       "label": "Pagination",
       "page": "Page {{ number }}",
-      "next": "Next page",
-      "previous": "Previous page"
+      "next": "Next",
+      "previous": "Prev",
+      "of-label": "of",
+      "records-label": "records"
     },
     "search": {
       "search": "Search",
@@ -69,7 +71,7 @@
     }
   },
   "newsletter": {
-    "label": "Email",
+    "label": "Email Address",
     "success": "Thanks for subscribing",
     "button_label": "Subscribe"
   },
@@ -117,7 +119,7 @@
   },
   "products": {
     "product": {
-      "add_to_cart": "Add to cart",
+      "add_to_cart": "Add to Cart",
       "choose_options": "Choose options",
       "choose_product_options": "Choose options for {{ product_name }}",
       "description": "Description",
@@ -127,7 +129,6 @@
       "inventory_low_stock_show_count": "Low stock: {{ quantity }} left",
       "inventory_out_of_stock": "Out of stock",
       "inventory_out_of_stock_continue_selling": "In stock",
-      "sku": "SKU",
       "on_sale": "Sale",
       "product_variants": "Product variants",
       "media": {
@@ -173,7 +174,9 @@
         "from_price_html": "From {{ price }}",
         "regular_price": "Regular price",
         "sale_price": "Sale price",
-        "unit_price": "Unit price"
+        "unit_price": "Unit price",
+        "list-price": "List Price:",
+        "your-price": "Your Price:"
       },
       "share": "Share this product",
       "sold_out": "Sold out",
@@ -188,7 +191,12 @@
       "taxes_included": "Taxes included.",
       "duties_included": "Duties included.",
       "duties_and_taxes_included": "Duties and taxes included.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout."
+      "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+      "sku": "SKU:",
+      "collapsible_row": {
+        "description": "Description",
+        "documents": "Documents"
+      }
     },
     "modal": {
       "label": "Media gallery"
@@ -197,10 +205,10 @@
       "filter_and_operator_subtitle": "Match all",
       "apply": "Apply",
       "clear": "Clear",
-      "clear_all": "Remove all",
+      "clear_all": "Clear All",
       "from": "From",
-      "filter_and_sort": "Filter and sort",
-      "filter_by_label": "Filter by:",
+      "filter_and_sort": "Filters and sort",
+      "filter_by_label": "Filter by",
       "filter_button": "Filter",
       "filters_selected": {
         "one": "{{ count }} selected",
@@ -220,9 +228,10 @@
       },
       "reset": "Reset",
       "sort_button": "Sort",
-      "sort_by_label": "Sort by:",
+      "sort_by_label": "Sorted By:",
       "to": "To",
-      "clear_filter": "Remove filter"
+      "clear_filter": "Remove filter",
+      "per_page_label": "Per page:"
     }
   },
   "templates": {
@@ -290,16 +299,18 @@
       "cart_count": {
         "one": "{{ count }} item",
         "other": "{{ count }} items"
-      }
+      },
+      "location-label": "Ship to",
+      "products-label": "Products"
     },
     "cart": {
-      "title": "Your cart",
+      "title": "Your Cart",
       "caption": "Cart items",
       "remove_title": "Remove {{ title }}",
       "estimated_total": "Estimated total",
       "new_estimated_total": "New estimated total",
       "note": "Order special instructions",
-      "checkout": "Check out",
+      "checkout": "Checkout",
       "empty": "Your cart is empty",
       "cart_error": "There was an error while updating your cart. Please try again.",
       "cart_quantity_error_html": "You can only add {{ quantity }} of this item to your cart.",
@@ -337,7 +348,8 @@
       "view_all_label": "View all products in the {{ collection_name }} collection"
     },
     "collection_list": {
-      "view_all": "View all"
+      "view_all": "View all",
+      "display": "Display"
     },
     "collection_template": {
       "empty": "No products found",

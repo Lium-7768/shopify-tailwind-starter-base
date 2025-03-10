@@ -289,11 +289,12 @@
 
 .footer__content-bottom-wrapper--center {
   justify-content: center;
+  background-color: #EBEBEB;
 }
 
 .footer__copyright {
   text-align: center;
-  margin-top: 1.5rem;
+  padding: 16px 0;
 }
 
 @media screen and (min-width: 750px) {

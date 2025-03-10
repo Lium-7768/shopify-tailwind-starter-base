@@ -41,17 +41,48 @@
     </a>
   {%- endif -%}
 {% endcomment %}
+<style>
+  body.account-dropdown-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
 
-<div class='twcss-relative'>
+  .header-account-open-button {
+    position: relative;
+    color: #C2E3FF;
+    z-index: 1002;
+    background: #1746A2;
+  }
+
+  [data-account-dropdown='account-button-mobile'] {
+    position: fixed;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    background: rgba(0, 0, 0, 0.2);
+  }
+  [data-account-dropdown='account-button-mobile'] > div {
+    background: #fff;
+  }
+  @media (max-width: 767px) {
+    [data-account-dropdown='account-button-mobile'] {
+      top: 80px;
+    }
+    [data-account-dropdown='account-button-mobile'] > div {
+      border-radius: 0px 0px 8px 8px;
+    }
+  }
+</style>
+<div class="twcss-relative">
   {% if customer %}
     <button
-      class='twcss-flex twcss-items-center twcss-gap-x-2'
-      id='{{ id }}'
+      class="twcss-flex twcss-items-center twcss-gap-x-2 twcss-py-2 twcss-px-3 twcss-text-white twcss-rounded"
+      id="{{ id }}"
     >
-      <span class='twcss-size-6'>
+      <span class="twcss-size-6">
         {{ 'icon-account.svg' | inline_asset_content }}
       </span>
-      <span class='twcss-font-semibol twcss-hidden lg:twcss-flex'>
+      <span class="twcss-font-semibol twcss-hidden lg:twcss-flex">
         {%- if customer -%}
           {{ customer.first_name }}
         {%- else -%}
@@ -59,35 +90,45 @@
         {%- endif -%}
       </span>
       <span
-        class='twcss-w-4 twcss-transition-transform twcss-duration-200 twcss-rotate-180 twcss-hidden lg:twcss-flex'
-        data-account-icon='{{ id }}'
+        class="twcss-w-4 twcss-transition-transform twcss-duration-200 twcss-rotate-180 twcss-hidden lg:twcss-flex"
+        data-account-icon="{{ id }}"
       >
         {{ 'icon-caret.svg' | inline_asset_content }}
       </span>
     </button>
   {% else %}
-    <a href='{{ routes.account_login_url }}' class='twcss-flex twcss-items-center twcss-gap-x-2'>
-      <span class='twcss-size-6'>
+    <a href="{{ routes.account_login_url }}" class="twcss-flex twcss-items-center twcss-gap-x-2">
+      <span class="twcss-size-6">
         {{ 'icon-account.svg' | inline_asset_content }}
       </span>
     </a>
   {% endif %}
 
   <div
-    class='twcss-absolute twcss-right-0 twcss-mt-2 twcss-w-[210px] twcss-bg-white twcss-rounded twcss-shadow-lg twcss-hidden'
-    data-account-dropdown='{{ id }}'
+    class=" twcss-absolute twcss-right-0 twcss-mt-2 twcss-w-[205px] twcss-bg-white twcss-rounded twcss-shadow-lg twcss-hidden"
+    data-account-dropdown="{{ id }}"
   >
-    <div class='twcss-p-6 twcss-text-sm twcss-space-y-4'>
+    <div
+      data-state="open"
+      class="header-account-dropdown-overlay twcss-fixed twcss-top-[88px] twcss-bottom-auto twcss-left-0 twcss-right-0 md:twcss-inset-0 twcss-z-[1001] twcss-bg-[rgba(52,55,53,0.6)] !twcss-block twcss-data-[state=open]:twcss-animate-in twcss-data-[state=closed]:twcss-animate-out twcss-data-[state=closed]:twcss-fade-out-0 twcss-data-[state=open]:twcss-fade-in-0"
+      style="pointer-events: auto;"
+      data-aria-hidden="true"
+      aria-hidden="true"
+    ></div>
+    <div
+      style="line-height: 17px"
+      class="header-account-dropdown-content twcss-py-6 twcss-pr-6 twcss-pl-4 twcss-text-sm twcss-leading-[17px] twcss-tracking-normal twcss-bg-white twcss-rounded twcss-z-[1002] twcss-relative"
+    >
       {% if block.settings.menu_1_title != blank %}
-        <div class='twcss-font-semibold twcss-text-accent-default'>
+        <div class="twcss-font-semibold twcss-text-accent-default twcss-mb-2 twcss-pl-2">
           {{ block.settings.menu_1_title }}
         </div>
       {% endif %}
 
       {% for link in linklists[block.settings.account_menu_1].links %}
         <a
-          href='{{ link.url }}'
-          class='twcss-block twcss-text-accent-default hover:twcss-bg-muted-light'
+          href="{{ link.url }}"
+          class="twcss-block twcss-text-accent-default hover:twcss-bg-gray-50 twcss-py-2 twcss-pl-2"
         >
           {{ link.title }}
         </a>
@@ -95,28 +136,28 @@
 
       {% if block.settings.account_menu_2 != blank %}
         {% if block.settings.menu_2_title != blank %}
-          <div class='twcss-border-t twcss-border-secondary-middle !twcss-block'></div>
-          <div class='twcss-font-semibold twcss-text-accent-default'>
+          <div class="twcss-border-t twcss-border-secondary-middle !twcss-block twcss-mt-2 twcss-ml-2"></div>
+          <div class="twcss-font-semibold twcss-text-accent-default twcss-mb-2 twcss-pl-2 twcss-mt-4">
             {{ block.settings.menu_2_title }}
           </div>
         {% endif %}
 
         {% for link in linklists[block.settings.account_menu_2].links %}
           <a
-            href='{{ link.url }}'
-            class='twcss-block twcss-text-accent-default hover:twcss-bg-muted-light'
+            href="{{ link.url }}"
+            class="twcss-block twcss-text-accent-default hover:twcss-bg-gray-50 twcss-py-2 twcss-pl-2"
           >
             {{ link.title }}
           </a>
         {% endfor %}
       {% endif %}
 
-      <div class='twcss-border-t twcss-border-secondary-middle !twcss-block'></div>
+      <div class="twcss-border-t twcss-border-secondary-middle !twcss-block twcss-mt-2 twcss-ml-2"></div>
       <a
-        href='{{ routes.account_logout_url }}'
-        class='twcss-font-bold twcss-text-primary-default twcss-flex twcss-items-center twcss-gap-x-1'
+        href="{{ routes.account_logout_url }}"
+        class="twcss-font-bold twcss-text-primary-default twcss-flex twcss-items-center twcss-gap-x-1 twcss-mt-4 twcss-pl-2"
       >
-        <span class='twcss-size-6'>
+        <span class="twcss-size-6">
           {{ 'icon-sign-out.svg' | inline_asset_content }}
         </span>
         {{ block.settings.sign_out_text }}
@@ -131,20 +172,56 @@
     const accountButton = document.querySelector('#{{ id }}');
     const accountDropdown = document.querySelector(`[data-account-dropdown="{{ id }}"]`);
     const accountIcon = document.querySelector(`[data-account-icon="{{ id }}"]`);
+    const overlay = accountDropdown.querySelector('.header-account-dropdown-overlay');
+    const dropdownContent = accountDropdown.querySelector('.header-account-dropdown-content');
 
     if (accountButton && accountDropdown) {
-      accountButton.addEventListener('click', () => {
+      accountButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+
         accountDropdown.classList.toggle('twcss-hidden');
         accountIcon.style.transform = accountDropdown.classList.contains('twcss-hidden')
           ? 'rotate(180deg)'
           : 'rotate(0deg)';
+        document.body.classList.toggle('account-dropdown-open', !accountDropdown.classList.contains('twcss-hidden'));
+
+        if (document.documentElement.clientWidth > 768) {
+          accountButton.style.color = !accountDropdown.classList.contains('twcss-hidden') ? '#C2E3FF' : '#fff';
+          if (!accountDropdown.classList.contains('twcss-hidden')) {
+            accountButton.classList.add('header-account-open-button')
+          }
+        } else {
+          accountButton.parentElement.style.background = !accountDropdown.classList.contains('twcss-hidden')
+            ? 'rgba(95, 157, 247, 0.30)'
+            : 'none';
+        }
       });
 
-      // Close dropdown when clicking outside
       document.addEventListener('click', (event) => {
-        if (!accountButton.contains(event.target) && !accountDropdown.contains(event.target)) {
-          accountDropdown.classList.add('twcss-hidden');
-          accountIcon.style.transform = 'rotate(180deg)';
+        if (!accountDropdown.classList.contains('twcss-hidden')) {
+          if (!accountButton.contains(event.target) && !accountDropdown.contains(event.target)) {
+            accountDropdown.classList.add('twcss-hidden');
+            accountIcon.style.transform = 'rotate(180deg)';
+            document.body.classList.remove('account-dropdown-open');
+
+            if (document.documentElement.clientWidth > 768) {
+              accountButton.style.color = '#fff';
+            } else {
+              accountButton.parentElement.style.background = 'none';
+            }
+          }
+        }
+      });
+
+      overlay.addEventListener('click', () => {
+        accountDropdown.classList.add('twcss-hidden');
+        accountIcon.style.transform = 'rotate(180deg)';
+        document.body.classList.remove('account-dropdown-open');
+
+        if (document.documentElement.clientWidth > 768) {
+          accountButton.style.color = '#fff';
+        } else {
+          accountButton.parentElement.style.background = 'none';
         }
       });
     }

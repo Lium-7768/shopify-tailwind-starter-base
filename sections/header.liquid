@@ -122,15 +122,18 @@
       assign localization_forms = true
     endif
   -%}
+
+  {% render 'theme-switcher' %}
+  
   <!-- desktop header -->
-  <header class="twcss-items-center twcss-bg-primary-default twcss-text-white twcss-px-10 twcss-py-5 twcss-hidden lg:twcss-flex twcss-gap-x-0 lg:twcss-gap-x-6">
+  <header class="twcss-items-center twcss-bg-primary-default twcss-text-white twcss-px-6 twcss-py-5 twcss-hidden md:twcss-flex twcss-gap-x-0 md:twcss-gap-x-6">
     <button 
       type="button"
-      class="twcss-py-2 twcss-px-3 twcss-border twcss-border-secondary-default twcss-font-bold twcss-rounded twcss-transition-colors twcss-flex twcss-items-center twcss-gap-2 twcss-cursor-pointer hover:twcss-bg-secondary-default hover:twcss-text-white"
+      class="twcss-py-2 twcss-tracking-normal twcss-px-3 twcss-border twcss-border-secondary-default twcss-font-bold twcss-rounded twcss-transition-colors twcss-flex twcss-items-center twcss-gap-2 twcss-cursor-pointer hover:twcss-bg-secondary-default hover:twcss-text-white"
       data-drawer-trigger="products-drawer"
     >
       <span class='twcss-size-6'>{{'icon-hamburger.svg' | inline_asset_content }}</span>
-      Products
+      {{ 'sections.header.products-label' | t }}
     </button>
 
     {% comment %} <div class="desktop-localization-wrapper twcss-text-white">
@@ -194,16 +197,18 @@
       {%- endif -%}
     </a> {% endcomment %}
 
-    <a href="{{ routes.cart_url }}" class="twcss-flex twcss-items-center twcss-gap-x-1 twcss-rounded twcss-bg-secondary-default twcss-font-semibold twcss-py-2 twcss-px-4 twcss-text-white" id="cart-icon-bubble">
+    <a href="{{ routes.cart_url }}" class="twcss-flex twcss-text-sm twcss-items-center twcss-gap-x-1 twcss-rounded twcss-bg-secondary-default twcss-font-bold twcss-py-2 twcss-px-3 twcss-text-white" id="cart-icon-bubble">
       <div class="twcss-flex twcss-items-center twcss-gap-x-1">
-        <span class="twcss-size-6">{{'icon-cart.svg' | inline_asset_content }}</span>
+        <span class="twcss-size-6 twcss-inline-flex">{{'icon-cart.svg' | inline_asset_content }}</span>
         <span>
-          {{ 'sections.header.cart_count' | t: count: cart.item_count }}
+          {%- if cart.items.size == 1 -%}
+            {{ 'sections.header.cart_count.one' | t: count: cart.items.size }}
+          {%- else -%}
+            {{ 'sections.header.cart_count.other' | t: count: cart.items.size }}
+          {%- endif -%}
         </span>
       </div>
-      <span>
-        |
-      </span>
+      <span>|</span>
       <span class="">
         {{ cart.total_price | money_without_trailing_zeros }}
       </span>
@@ -212,17 +217,13 @@
   </header>
 
   <!-- mobile header -->
-  <header class="twcss-items-center twcss-bg-primary-default twcss-text-white twcss-flex lg:twcss-hidden twcss-flex-col">
-    <div class="twcss-grid twcss-grid-flow-col twcss-auto-cols-fr twcss-justify-items-center twcss-w-full twcss-py-2 twcss-bg-secondary-light twcss-text-primary-default">
+  <header class="twcss-items-center twcss-bg-primary-default twcss-text-white twcss-flex md:twcss-hidden twcss-flex-col">
+    <div class="twcss-grid twcss-grid-flow-col twcss-auto-cols-fr twcss-justify-items-center twcss-w-full twcss-bg-secondary-light twcss-text-primary-default mobile-header-cions-wrapper">
       <button type="button" class="twcss-flex twcss-items-center twcss-gap-x-1" data-drawer-trigger="products-drawer">
         <span class="twcss-size-6">{{'icon-hamburger.svg' | inline_asset_content }}</span>
       </button>
       
       {% render 'header-search', input_id: 'Search-In-Modal' %}
-
-      <a href="{{ routes.cart_url }}" class="twcss-size-6" id="cart-icon-bubble">
-        <span class="twcss-size-6">{{'icon-cart.svg' | inline_asset_content }}</span>
-      </a>
 
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -232,15 +233,19 @@
             {%- if block.settings.show_notification -%}
               <a 
                 href="{{ block.settings.notification_link }}" 
-                class="twcss-size-6"
+                class="twcss-size-10"
               >
                 {{ 'icon-notification.svg' | inline_asset_content }}
               </a>
             {%- endif -%}
           {%- when 'custom_account' -%}
+          <a href="{{ routes.cart_url }}" class="twcss-size-10" id="cart-icon-bubble">
+              <span class="twcss-size-6">{{'icon-cart.svg' | inline_asset_content }}</span>
+          </a>
             {% render 'header-account-dropdown-menu', block: block, id: 'account-button-mobile' %}
         {%- endcase -%}
       {%- endfor -%}
+      
     </div>
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
@@ -249,6 +254,32 @@
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
 {%- endif -%}
 
+<style>
+  .mobile-header-cions-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .mobile-header-cions-wrapper > a, .mobile-header-cions-wrapper > details-modal, .mobile-header-cions-wrapper > button, .mobile-header-cions-wrapper > div {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    padding: 8px 0;
+  }
+  .mobile-header-cions-wrapper > * {
+    position: relative;
+  }
+  .mobile-header-cions-wrapper > *:not(:last-child):not(:nth-last-child(2))::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 15px;
+  background-color: #BCBDB9;
+}
+</style>
+  
 {% javascript %}
   class StickyHeader extends HTMLElement {
     constructor() {

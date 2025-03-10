@@ -1,47 +1,56 @@
 <!-- Middle Section - Pagination -->
-<div class="twcss-flex twcss-items-center twcss-gap-4">
-  <span class="twcss-text-gray-600 twcss-text-[14px]">
+<div class="twcss-flex twcss-items-center twcss-gap-6 twcss-justify-center twcss-flex-col md:twcss-flex-row">
+  <span class="twcss-text-accent-default twcss-text-[14px]">
     <span class="twcss-font-bold twcss-text-[14px]">
       {{- paginate.current_offset | plus: 1 }}-
       {{- paginate.current_offset | plus: paginate.page_size | at_most: paginate.items -}}
     </span>
-    of <span class="twcss-font-bold twcss-text-[14px]">{{ paginate.items }}</span> Records
+    of <span class="twcss-font-bold twcss-text-[14px]">{{ paginate.items }}</span>
+    {{ 'general.pagination.records-label' | t }}
   </span>
-  <div class="twcss-flex twcss-items-center twcss-gap-2">
+  <div class="twcss-flex twcss-items-center twcss-gap-6">
     {% if paginate.current_page > 1 %}
       <a
-        href="{{ paginate.previous.url }}"
-        class="twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
+        href="{{ paginate.previous.url }}{% if request.querystring contains 'page_size=' %}&{{ request.querystring | split: '&' | where: 'contains', 'page_size=' | first }}{% endif %}"
+        class="twcss-flex twcss-items-center twcss-p-[10px] twcss-gap-1 twcss-text-secondary-default twcss-bg-white twcss-border twcss-border-secondary-default twcss-rounded hover:twcss-bg-gray-50"
       >
         {% render 'icon-chevron-left' %}
-        <span class="twcss-text-[14px] twcss-font-bold">Prev</span>
+        <span class="twcss-text-[14px] twcss-font-bold twcss-leading-normal">
+          {{- 'general.pagination.previous' | t -}}
+        </span>
       </a>
     {% else %}
       <button
         disabled
-        class="twcss-flex twcss-h-11 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
+        class="twcss-flex twcss-h-10 twcss-items-center twcss-px-3 twcss-py-1 twcss-gap-1 twcss-text-secondary-middle twcss-bg-[#f8f8f8] twcss-border twcss-rounded"
       >
         {% render 'icon-chevron-left' %}
-        <span class="twcss-text-[14px] twcss-font-bold">Prev</span>
+        <span class="twcss-text-[14px] twcss-font-bold twcss-leading-normal">
+          {{- 'general.pagination.previous' | t -}}
+        </span>
       </button>
     {% endif %}
 
-    <span class="twcss-text-gray-600"> {{ paginate.current_page }} of {{ paginate.pages }} </span>
+    <span class="twcss-text-accent-default">
+      {{ paginate.current_page }}
+      {{ 'general.pagination.of-label' | t }}
+      {{ paginate.pages }}
+    </span>
 
     {% if paginate.next %}
       <a
-        href="{{ paginate.next.url }}"
-        class="twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-600 twcss-bg-white twcss-border twcss-border-gray-300 twcss-rounded hover:twcss-bg-gray-50"
+        href="{{ paginate.next.url }}{% if request.querystring contains 'page_size=' %}&{{ request.querystring | split: '&' | where: 'contains', 'page_size=' | first }}{% endif %}"
+        class="twcss-flex twcss-items-center twcss-p-[10px] twcss-gap-1 twcss-text-secondary-default twcss-bg-white twcss-border twcss-border-secondary-default twcss-rounded hover:twcss-bg-gray-50"
       >
-        <span class="twcss-text-[14px] twcss-font-bold">Next</span>
+        <span class="twcss-text-[14px] twcss-font-bold twcss-leading-normal">{{ 'general.pagination.next' | t }}</span>
         {% render 'icon-chevron-right', class: 'twcss-h-6 twcss-w-6' %}
       </a>
     {% else %}
       <button
         disabled
-        class="twcss-flex twcss-items-center twcss-h-11 twcss-px-3 twcss-py-1 twcss-gap-2 twcss-text-gray-400 twcss-bg-gray-100 twcss-border twcss-border-gray-300 twcss-rounded"
+        class="twcss-flex twcss-items-center twcss-h-10 twcss-px-3 twcss-py-1 twcss-gap-1 twcss-text-secondary-middle twcss-bg-[#f8f8f8] twcss-border twcss-rounded"
       >
-        <span class="twcss-text-[14px] twcss-font-bold">Next</span>
+        <span class="twcss-text-[14px] twcss-font-bold twcss-leading-normal">{{ 'general.pagination.next' | t }}</span>
         {% render 'icon-chevron-right' %}
       </button>
     {% endif %}

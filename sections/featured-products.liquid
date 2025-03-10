@@ -1,79 +1,106 @@
-<section class='md:twcss-max-w-7xl twcss-max-w-screen-sm twcss-mx-auto twcss-px-4 twcss-pt-10 {% if customer.current_location.shipping_address.address1 == blank %}twcss-hidden{% endif %}'>
-  <div class='twcss-relative twcss-max-w-sm md:twcss-max-w-full'>
-    {% render 'homepage-title',
-      white_title: 'Featured',
-      blue_title: 'Products',
-      wrapper_classes: 'twcss-mt-8 twcss-mb-5',
-      white_title_classes: '!twcss-text-lg',
-      blue_title_classes: '!twcss-text-lg',
-      link_url: section.settings.link_url,
-      link_text: section.settings.link_text
-    %}
+{%- if section.settings.enable_quick_add -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 
-    <div class='twcss-relative '>
-      <div
-        id='featured-products-slider-prev'
-        class='swiper-button-prev !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-[""]  !twcss-left-[-1rem] twcss-border twcss-border-[#EBEBEB]'
-      >
-        {% render 'icon-chevron-left' %}
-      </div>
-      <div
-        id='featured-products-slider-next'
-        class='swiper-button-next !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-[""]  !twcss-right-[-1rem] twcss-border twcss-border-[#EBEBEB]'
-      >
-        {% render 'icon-chevron-right' %}
-      </div>
-      {%- if section.settings.collection != blank -%}
-        <div id='featured-products-slider' class='swiper featured-products-slider twcss-relative  twcss-h-full'>
-          <div class='swiper-wrapper'>
-            {%- for product in section.settings.collection.products limit: 25 -%}
-              {%- if product.available -%}
-                <div class='swiper-slide !twcss-h-auto'>
-                  {% render 'product-card', product: product, show_vendor: true, show_new_tag: true %}
-                </div>
-              {%- endif -%}
-            {%- endfor -%}
+{% if section.settings.collection != blank or section.settings.collection.products.size > 0 %}
+  <section class="md:twcss-max-w-7xl twcss-mx-auto twcss-px-5 lg:twcss-px-0 {% if customer.current_location.shipping_address.address1 == blank %}twcss-hidden{% endif %}">
+    <div class="twcss-relative twcss-max-w-full">
+      {% render 'homepage-title',
+        white_title: section.settings.white_title,
+        blue_title: section.settings.blue_title,
+        wrapper_classes: 'twcss-mt-8 twcss-mb-2',
+        white_title_classes: '',
+        blue_title_classes: '',
+        link_url: section.settings.link_url,
+        link_text: section.settings.link_text
+      %}
+
+      <div class="twcss-relative ">
+        <div
+          id="featured-products-slider-prev"
+          class='swiper-button-prev !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-[""]  !twcss-left-[calc(-1rem-5px)] !twcss-top-[calc(50%-20px)] twcss-border twcss-border-[#EBEBEB]'
+        >
+          <div class="twcss-w-6 twcss-h-6 twcss-flex twcss-items-center twcss-justify-center">
+            {% render 'icon-chevron-left' %}
           </div>
-
-          <div id='featured-products-slider-pagination' class='swiper-pagination !twcss-relative twcss-mt-4'></div>
         </div>
-      {%- endif -%}
+        <div
+          id="featured-products-slider-next"
+          class='swiper-button-next !twcss-bg-white !twcss-w-10 !twcss-h-10 twcss-rounded-full twcss-shadow-lg  !twcss-hidden md:!twcss-flex !twcss-text-black after:!twcss-content-[""]  !twcss-right-[calc(-1rem-5px)] !twcss-top-[calc(50%-20px)] twcss-border twcss-border-[#EBEBEB]'
+        >
+          <div class="twcss-w-6 twcss-h-6 twcss-flex twcss-items-center twcss-justify-center">
+            {% render 'icon-chevron-right' %}
+          </div>
+        </div>
+        {%- if section.settings.collection != blank -%}
+          <div
+            id="featured-products-slider"
+            class="swiper featured-products-slider twcss-relative  twcss-h-full product-grid"
+          >
+            <div class="swiper-wrapper">
+              {%- for product in section.settings.collection.products limit: 25 -%}
+                {%- if product.available -%}
+                  <div class="swiper-slide !twcss-h-auto product-card-box">
+                    {% render 'product-card',
+                      product: product,
+                      show_vendor: true,
+                      show_new_tag: true,
+                      section_id: section.id,
+                      show_quick_add: section.settings.enable_quick_add
+                    %}
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+
+            <div id="featured-products-slider-pagination" class="swiper-pagination !twcss-relative twcss-mt-8"></div>
+          </div>
+        {%- endif -%}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+{% endif %}
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-   const x = new Swiper('#featured-products-slider', {
+    const x = new Swiper('#featured-products-slider', {
+      slidesPerView: 4,
+      slidesPerGroup: 4,
       pagination: {
         el: '#featured-products-slider-pagination',
         clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 3,
       },
       navigation: {
         nextEl: '#featured-products-slider-next',
         prevEl: '#featured-products-slider-prev',
       },
       breakpoints: {
-        {% comment %} // >= 768px
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 24,
-        },
-        // >= 1024px
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 24,
-        }, {% endcomment %}
-        // >= 1280px
         320: {
           slidesPerView: 1,
+          slidesPerGroup: 1,
           spaceBetween: 16,
         },
+        768: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+          spaceBetween: 24,
+        },
         1280: {
-          slidesPerView: 5,
+          slidesPerView: 4,
+          slidesPerGroup: 4,
           spaceBetween: 24,
         },
       },
+      noSwipingClass: 'swiper-no-swiping',
     });
   });
 </script>
@@ -109,6 +136,12 @@
       "type": "collection",
       "id": "collection",
       "label": "Collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "label": "Enable Quick Add",
+      "default": false
     }
   ],
   "presets": [
@@ -119,3 +152,32 @@
   ]
 }
 {% endschema %}
+
+<script>
+  (function () {
+    const template = document.getElementById('list-price-template');
+    if (template) {
+      const listPrice = document.querySelectorAll('.list-price-your-price');
+      const yourPrice = document.querySelectorAll('.only-your-price');
+      if (listPrice && yourPrice) {
+        listPrice.forEach((item) => {
+          item.classList.remove('twcss-hidden');
+        });
+        yourPrice.forEach((item) => {
+          item.classList.add('twcss-hidden');
+        });
+      }
+    } else {
+      const listPrice = document.querySelectorAll('.list-price-your-price');
+      const yourPrice = document.querySelectorAll('.only-your-price');
+      if (listPrice && yourPrice) {
+        listPrice.forEach((item) => {
+          item.classList.add('twcss-hidden');
+        });
+        yourPrice.forEach((item) => {
+          item.classList.remove('twcss-hidden');
+        });
+      }
+    }
+  })();
+</script>

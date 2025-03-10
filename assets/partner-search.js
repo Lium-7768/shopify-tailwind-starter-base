@@ -18,8 +18,8 @@ class PartnerSearch extends PredictiveSearch {
 
         const raw = JSON.stringify({
           storeName: window.Shopify.shop,
-          companyId: this.companyId,
-          customerPartnerNumber: partnerNumber,
+          companyId: 'gid://shopify/Company/' + this.companyId,
+          data: [partnerNumber],
         });
 
         const requestOptions = {
@@ -30,7 +30,7 @@ class PartnerSearch extends PredictiveSearch {
         };
 
         fetch(
-          'http://b2b-customer-account-app-szwh.vercel.app/api/v1/product/customer-partner-number-search',
+          'https://shopify-rds.aaxisdev.net/api/v1/product-variant/customer-partner-number/fetch',
           requestOptions,
         )
           .then((response) => response.json())
@@ -42,22 +42,18 @@ class PartnerSearch extends PredictiveSearch {
 
   getSearchResults(searchTerm) {
     super.setLiveRegionLoadingState();
-    this.getProductByPartnerNumber(searchTerm).then((data)=>{
-      if(!data.skuId) {
-        throw new Error('No product found');
-      }else{
-        getProductBySkuId( `gid://shopify/ProductVariant/${data.skuId}`).then((product)=>{
-          const firstProduct = product?.data?.nodes?.[0];
-          if (firstProduct?.product?.handle) {
-            window.location.href = `/products/${firstProduct.product.handle}`;
-          }else{
-            throw new Error('No product found');
-          }
-        });
-      } 
-    }).catch((error)=>{
-      super.getSearchResults(searchTerm);
-    });
+    this.getProductByPartnerNumber(searchTerm)
+      .then((data) => {
+        const skuId = data.skuDetails?.[0]?.skuId;
+        if (!skuId) {
+          throw new Error('No product found');
+        } else {
+          super.getSearchResults(skuId);
+        }
+      })
+      .catch((error) => {
+        super.getSearchResults(searchTerm);
+      });
   }
 }
 

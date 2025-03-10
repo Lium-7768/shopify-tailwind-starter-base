@@ -35,4 +35,5 @@
 .svg-wrapper {
   width: 30px;
   height: 30px;
+  color: rgb(var(--color-foreground));
 }

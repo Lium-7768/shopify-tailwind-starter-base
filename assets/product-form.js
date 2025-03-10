@@ -8,6 +8,7 @@ if (!customElements.get('product-form')) {
       this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
       this.cart = document.querySelector('cart-notification') || document.querySelector('cart-drawer');
       this.submitButton = this.querySelector('[type="submit"]');
+      this.submitButtonText = this.submitButton.querySelector('span');
       if (document.querySelector('cart-drawer')) this.submitButton.setAttribute('aria-haspopup', 'dialog');
 
       this.hideErrors = this.dataset.hideErrors === 'true';
@@ -21,7 +22,9 @@ if (!customElements.get('product-form')) {
 
       this.submitButton.setAttribute('aria-disabled', true);
       this.submitButton.classList.add('loading');
-      this.querySelector('.loading-overlay__spinner').classList.remove('hidden');
+      if (this.querySelector('.loading__spinner')) {
+        this.querySelector('.loading__spinner').classList.remove('hidden')
+      };
 
       const config = fetchConfig('javascript');
       config.headers['X-Requested-With'] = 'XMLHttpRequest';
@@ -88,7 +91,9 @@ if (!customElements.get('product-form')) {
           this.submitButton.classList.remove('loading');
           if (this.cart && this.cart.classList.contains('is-empty')) this.cart.classList.remove('is-empty');
           if (!this.error) this.submitButton.removeAttribute('aria-disabled');
-          this.querySelector('.loading-overlay__spinner').classList.add('hidden');
+          if (this.querySelector('.loading__spinner')) {
+            this.querySelector('.loading__spinner').classList.add('hidden');
+          }
         });
     }
 
@@ -104,6 +109,20 @@ if (!customElements.get('product-form')) {
       if (errorMessage) {
         this.errorMessage.textContent = errorMessage;
       }
+    }
+
+    toggleSubmitButton(disable = true, text) {
+      if (disable) {
+        this.submitButton.setAttribute('disabled', 'disabled');
+        if (text) this.submitButtonText.textContent = text;
+      } else {
+        this.submitButton.removeAttribute('disabled');
+        this.submitButtonText.textContent = window.variantStrings.addToCart;
+      }
+    }
+
+    get variantIdInput() {
+      return this.form.querySelector('[name=id]');
     }
   });
 }

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "password_page": {
@@ -215,7 +224,8 @@
       "filter_selected_accessibility": "{{ type }} ({{ count }} filtres sélectionnés)",
       "show_more": "Afficher plus",
       "show_less": "Afficher moins",
-      "filter_and_operator_subtitle": "Tout associer"
+      "filter_and_operator_subtitle": "Tout associer",
+      "per_page_label": "Par page :"
     }
   },
   "templates": {
@@ -535,6 +545,27 @@
       "send_on_label": "Envoyer le (facultatif)",
       "expanded": "Formulaire de destinataire de carte-cadeau agrandi",
       "collapsed": "Formulaire de destinataire de carte-cadeau réduit"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "general": {
+        "errors": {
+          "buyer_identity": {
+            "company_purchase_permission_required": "Le client n’a pas l’autorisation de passer des commandes d’entreprise.",
+            "personal_order_not_allowed": "Les commandes personnelles ne sont pas autorisées pour cette boutique."
+          }
+        }
+      },
+      "field_errors": {
+        "split_cart_tax_engine_not_supported": "Tous les articles doivent utiliser la même méthode de livraison pour le moteur de taxe utilisé par l'emplacement du magasin."
+      }
+    }
+  },
+  "customer_accounts": {
+    "shop_ads": {
+      "subtitle": "Disponible pour une durée limitée",
+      "button": "Découvrir sur Shop"
     }
   }
 }

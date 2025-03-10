@@ -160,6 +160,11 @@ class CartItems extends HTMLElement {
         section: document.getElementById('main-cart-footer').dataset.id,
         selector: '.js-contents',
       },
+      {
+        id: 'shopping-cart-item',
+        section: 'shopping-cart-item',
+        selector: '#shopify-section-shopping-cart-item',
+      },
     ];
   }
 

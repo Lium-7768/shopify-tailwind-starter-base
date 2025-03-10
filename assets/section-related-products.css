@@ -3,5 +3,7 @@
 }
 
 .related-products__heading {
-  margin: 0 0 3rem;
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: black;
 }

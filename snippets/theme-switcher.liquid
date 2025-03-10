@@ -1,0 +1,274 @@
+<style>
+  /* 主题切换器样式 */
+  .theme-switcher {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .theme-button {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: 4px;
+    background: var(--color-background);
+    color: var(--color-foreground);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .theme-button:hover {
+    background: var(--color-primary-default);
+    color: var(--color-secondary-light);
+  }
+
+  .theme-button[data-active="true"] {
+    background: var(--color-primary-default);
+    color: var(--color-secondary-light);
+    border-color: var(--color-primary-foreground);
+  }
+
+  .theme-color-circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .light-theme-circle {
+    background: linear-gradient(135deg, #FFFFFF 50%, #1746A2 50%);
+    border: 1px solid #e0e0e0;
+  }
+
+  .dark-theme-circle {
+    background: linear-gradient(135deg, #1A1A1A 50%, #5F9DF7 50%);
+    border: 1px solid #404040;
+  }
+
+  .blue-theme-circle {
+    background: linear-gradient(135deg, #E5F2FF 50%, #0066CC 50%);
+    border: 1px solid #CCE0FF;
+  }
+
+  /* 主题特定样式重写 - 这些将覆盖Tailwind编译的样式 */
+
+  /* 通用样式 */
+  body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* 深色主题 */
+  body.theme-dark {
+    background-color: var(--color-background) !important;
+    color: var(--color-foreground) !important;
+  }
+
+  /* 深色主题覆盖样式 */
+  .theme-dark .header {
+    background-color: #1A1A1A !important;
+    color: #FFFFFF !important;
+  }
+
+  .theme-dark .footer {
+    background-color: #1A1A1A !important;
+    color: #FFFFFF !important;
+  }
+
+  .theme-dark .card,
+  .theme-dark .product-card {
+    background-color: #2C2C2C !important;
+    color: #FFFFFF !important;
+    border-color: #404040 !important;
+  }
+
+  .theme-dark .button-primary {
+    background-color: var(--color-primary-default) !important;
+    color: var(--color-secondary-light) !important;
+  }
+
+  .theme-dark .button-secondary {
+    background-color: var(--color-secondary-default) !important;
+    color: var(--color-foreground) !important;
+  }
+
+  /* 蓝色主题 */
+  body.theme-blue {
+    background-color: var(--color-background) !important;
+    color: var(--color-foreground) !important;
+  }
+
+  /* 蓝色主题覆盖样式 */
+  .theme-blue .header {
+    background-color: #0066CC !important;
+    color: #FFFFFF !important;
+  }
+
+  .theme-blue .footer {
+    background-color: #003366 !important;
+    color: #FFFFFF !important;
+  }
+
+  .theme-blue .card,
+  .theme-blue .product-card {
+    background-color: #FFFFFF !important;
+    color: #00264D !important;
+    border-color: #99CCFF !important;
+  }
+
+  .theme-blue .button-primary {
+    background-color: var(--color-primary-default) !important;
+    color: var(--color-secondary-light) !important;
+  }
+
+  .theme-blue .button-secondary {
+    background-color: var(--color-secondary-default) !important;
+    color: var(--color-foreground) !important;
+  }
+
+  /* 强制覆盖通用元素 */
+  .theme-overlay-bg {
+    background-color: var(--color-background) !important;
+  }
+
+  .theme-text {
+    color: var(--color-foreground) !important;
+  }
+
+  .theme-border {
+    border-color: var(--color-border) !important;
+  }
+
+  .theme-button-primary {
+    background-color: var(--color-primary-default) !important;
+    color: var(--color-secondary-light) !important;
+  }
+
+  .theme-button-secondary {
+    background-color: var(--color-secondary-default) !important;
+    color: var(--color-foreground) !important;
+  }
+</style>
+
+<div class="theme-switcher">
+  <button class="theme-button" data-theme="light" aria-label="Light theme">
+    <span class="theme-color-circle light-theme-circle"></span>
+    <span class="theme-name">亮色</span>
+  </button>
+  <button class="theme-button" data-theme="dark" aria-label="Dark theme">
+    <span class="theme-color-circle dark-theme-circle"></span>
+    <span class="theme-name">暗色</span>
+  </button>
+  <button class="theme-button" data-theme="blue" aria-label="Blue theme">
+    <span class="theme-color-circle blue-theme-circle"></span>
+    <span class="theme-name">蓝色</span>
+  </button>
+</div>
+
+<script>
+  class ThemeSwitcher {
+    constructor() {
+      this.currentTheme = localStorage.getItem('theme') || 'light';
+      this.buttons = document.querySelectorAll('.theme-button');
+      this.init();
+    }
+
+    init() {
+      // 设置初始主题
+      document.documentElement.setAttribute('data-theme', this.currentTheme);
+
+      // 设置body主题类
+      if (this.currentTheme !== 'light') {
+        document.body.classList.add('theme-' + this.currentTheme);
+      }
+
+      this.updateActiveButton();
+
+      // 添加点击事件监听器
+      this.buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const theme = button.getAttribute('data-theme');
+          this.setTheme(theme);
+        });
+      });
+    }
+
+    setTheme(theme) {
+      // 移除当前主题类
+      document.body.classList.remove('theme-light', 'theme-dark', 'theme-blue');
+
+      // 添加新主题类（如果不是默认亮色主题）
+      if (theme !== 'light') {
+        document.body.classList.add('theme-' + theme);
+      }
+
+      this.currentTheme = theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      this.updateActiveButton();
+
+      // 派发主题变更事件，方便其他组件响应主题变化
+      const themeChangeEvent = new CustomEvent('themechange', {
+        detail: { theme: theme }
+      });
+      document.dispatchEvent(themeChangeEvent);
+
+      // 强制应用主题类到特定元素
+      this.applyThemeToElements();
+    }
+
+    applyThemeToElements() {
+      // 查找关键UI元素并添加主题类
+      // 这是一个示例，您需要根据您的主题结构调整选择器
+
+      // 为header添加主题类
+      const headers = document.querySelectorAll('header, .header');
+      headers.forEach(header => {
+        header.classList.add('theme-overlay-bg');
+      });
+
+      // 为footer添加主题类
+      const footers = document.querySelectorAll('footer, .footer');
+      footers.forEach(footer => {
+        footer.classList.add('theme-overlay-bg');
+      });
+
+      // 为按钮添加主题类
+      const primaryButtons = document.querySelectorAll('.button:not(.button-secondary), .btn:not(.btn-secondary)');
+      primaryButtons.forEach(button => {
+        button.classList.add('theme-button-primary');
+      });
+
+      const secondaryButtons = document.querySelectorAll('.button-secondary, .btn-secondary');
+      secondaryButtons.forEach(button => {
+        button.classList.add('theme-button-secondary');
+      });
+
+      // 为卡片添加主题类
+      const cards = document.querySelectorAll('.card, .product-card');
+      cards.forEach(card => {
+        card.classList.add('theme-overlay-bg', 'theme-border');
+      });
+    }
+
+    updateActiveButton() {
+      this.buttons.forEach(button => {
+        const isActive = button.getAttribute('data-theme') === this.currentTheme;
+        button.setAttribute('data-active', isActive);
+      });
+    }
+  }
+
+  // 在DOM加载完成后初始化主题切换器
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      new ThemeSwitcher();
+    });
+  } else {
+    // DOM已经加载完成
+    new ThemeSwitcher();
+  }
+</script>
